@@ -18,6 +18,7 @@
 <script setup lang="ts">
 const route = useRoute();
 const { data: article } = await useAsyncData(`content-${route.path}`, () => {
+  // Try to find the article in any content directory
   return queryContent(route.path).findOne();
 });
 

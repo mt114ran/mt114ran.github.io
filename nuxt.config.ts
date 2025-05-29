@@ -4,15 +4,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/content', '@nuxtjs/tailwindcss'],
   css: ['~/assets/css/main.css'],
-  content: {
-    navigation: {
-      fields: ['title', 'description', 'date']
-    },
-    markdown: {
-      toc: {
-        depth: 3,
-        searchDepth: 3
-      }
+  content: {},
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {}
     }
   },
   app: {
