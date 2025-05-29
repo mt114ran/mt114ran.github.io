@@ -18,7 +18,7 @@
 <script setup lang="ts">
 const route = useRoute();
 const { data: article } = await useAsyncData(`content-${route.path}`, () => {
-  return queryContent().where({ _path: route.path }).findOne();
+  return queryContent(route.path).findOne();
 });
 
 const formatDate = (date: string) => {
