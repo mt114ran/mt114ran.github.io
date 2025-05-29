@@ -37,9 +37,9 @@
 </template>
 
 <script setup lang="ts">
-// Query blog content with a simpler approach
+// Query blog posts from the blog directory
 const { data: posts, pending } = await useAsyncData('blog-posts', () => {
-  return queryContent('blog')
+  return queryContent('/blog')
     .only(['title', 'description', 'date', '_path'])
     .sort({ date: -1 })
     .find();
