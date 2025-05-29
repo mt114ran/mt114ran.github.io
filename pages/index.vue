@@ -23,7 +23,8 @@
 
 <script setup lang="ts">
 const { data: articles } = await useAsyncData('articles', () =>
-  queryContent('articles')
+  queryContent()
+    .where({ _path: { $contains: '/articles/' } })
     .sort({ date: -1 })
     .find()
 )
