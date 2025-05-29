@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 const { data: articles } = await useAsyncData('articles', () =>
-  queryContent('/1.articles')
+  queryContent('1.articles')
     .sort({ date: -1 })
     .find()
 )
