@@ -1,5 +1,8 @@
 import { getAllPostSlugs, getPostData } from '@/lib/posts'
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
+
+// 各記事の詳細ページのviewファイルです。
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function BlogPostPage(props: any) {
@@ -16,6 +19,9 @@ export default async function BlogPostPage(props: any) {
         className="prose dark:prose-invert"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}
       />
+      <Link href="/blog" className="text-blue-600 hover:underline">
+        ← 一覧に戻る
+      </Link>
     </div>
   )
 }
