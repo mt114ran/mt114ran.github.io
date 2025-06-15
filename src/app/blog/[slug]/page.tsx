@@ -1,27 +1,26 @@
-import { getPostData } from '@/lib/posts'
+import { getAllPostSlugs, getPostData } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 
-type Props = {
-  params: {
-    slug: string
-  }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function BlogPostPage(props: any) {
+  const { slug } = await Promise.resolve(props.params)
+  const post = await getPostData(slug).catch(() => null)
+
+  if (!post) notFound()
+
+  return (
+    <div className="max-w-2xl mx-auto py-10 px-4">
+      <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
+      <p className="text-gray-500 text-sm mb-8">{post.date}</p>
+      <article
+        className="prose dark:prose-invert"
+        dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+      />
+    </div>
+  )
 }
 
-export default async function BlogPostPage({ params }: Props) {
-  try {
-    const post = await getPostData(params.slug)
-
-    return (
-      <div className="max-w-2xl mx-auto py-10 px-4">
-        <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
-        <p className="text-gray-500 text-sm mb-8">{post.date}</p>
-        <article
-          className="prose dark:prose-invert"
-          dangerouslySetInnerHTML={{ __html: post.contentHtml }}
-        />
-      </div>
-    )
-  } catch {
-    notFound()
-  }
+export async function generateStaticParams() {
+  const slugs = getAllPostSlugs()
+  return slugs.map(({ slug }) => ({ slug }))
 }
