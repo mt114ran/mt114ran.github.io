@@ -25,11 +25,11 @@ export function getSortedPostsData() {
 
     return {
       slug,
-      ...(matterResult.data as { title: string; date: string }),
+      ...(matterResult.data as { title: string; create: string, update?: string, tags?: string[] }),
     };
   });
 
-  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return allPostsData.sort((a, b) => (a.create < b.create ? 1 : -1));
 }
 
 export async function getPostData(slug: string) {
@@ -43,6 +43,6 @@ export async function getPostData(slug: string) {
   return {
     slug,
     contentHtml,
-    ...(matterResult.data as { title: string; date: string }),
+    ...(matterResult.data as { title: string; create: string; update?: string; tags?: string[] }),
   };
 }
