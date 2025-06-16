@@ -1,8 +1,5 @@
-/* globals.css */
+@import "tailwindcss";
 
-@tailwind utilities;
-
-/* カスタムプロパティ定義 */
 :root {
   --background: #ffffff;
   --foreground: #171717;
