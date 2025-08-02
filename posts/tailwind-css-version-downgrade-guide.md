@@ -403,7 +403,7 @@ graph LR
 
 この記事が、同じような問題に直面した方の助けになれば幸いです。
 
-## クイズの答え
+## 記事冒頭の質問の回答
 
 1. `@import "tailwindcss"`（従来は`@tailwind base; @tailwind components; @tailwind utilities;`）
 2. v4との互換性が完全ではないため

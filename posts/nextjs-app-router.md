@@ -62,7 +62,7 @@ export default function RootLayout({
 
 App Routerを使いこなすことで、より高速でSEOフレンドリーなWebアプリケーションを構築できます。
 
-## クイズの答え
+## 記事冒頭の質問の回答
 
 1. appディレクトリ
 2. 'use client'

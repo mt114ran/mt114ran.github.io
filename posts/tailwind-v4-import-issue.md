@@ -150,7 +150,7 @@ Tailwind CSS v4の新しい`@import`構文は、まだすべての環境で完�
 
 これらの対応により、美しいダークテーマのサイトを実現できます。
 
-## クイズの答え
+## 記事冒頭の質問の回答
 
 1. `@import "tailwindcss"`
 2. 従来の`@tailwind`ディレクティブを使用する（`@tailwind base; @tailwind components; @tailwind utilities;`）

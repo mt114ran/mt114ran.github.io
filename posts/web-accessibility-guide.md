@@ -193,7 +193,7 @@ test('should not have accessibility violations', async () => {
 
 アクセシビリティは後付けではなく、設計段階から考慮すべき重要な要素です。
 
-## クイズの答え
+## 記事冒頭の質問の回答
 
 1. SEO向上、UX改善（包括性も含む）
 2. 4.5対1

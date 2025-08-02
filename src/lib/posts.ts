@@ -44,14 +44,24 @@ export async function getPostData(slug: string) {
   
   // クイズセクションにカスタムクラスを追加
   contentHtml = contentHtml.replace(
-    /<h2[^>]*>([^<]*クイズ[^<]*)<\/h2>/gi,
+    /<h2[^>]*>([^<]*記事を読むとわかるようになること[^<]*)<\/h2>/gi,
     '<h2 class="quiz-title">$1</h2>'
   );
   
-  // クイズの答えセクションにカスタムクラスを追加
+  // クイズの答えセクションを折りたたみ式に変更
   contentHtml = contentHtml.replace(
-    /<h2[^>]*>クイズの答え<\/h2>/gi,
-    '<h2 class="quiz-answer-title">クイズの答え</h2><p class="quiz-answer-hint">（答えはドラッグして選択すると見えます）</p>'
+    /<h2[^>]*>(?:クイズの答え|記事冒頭の質問の回答)<\/h2>\s*(<(?:ul|ol)[^>]*>[\s\S]*?<\/(?:ul|ol)>)/gi,
+    (match, list) => {
+      return `<h2 class="quiz-answer-title">記事冒頭の質問の回答</h2>
+<div class="quiz-answer-wrapper">
+  <button class="quiz-answer-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('show');">
+    クリックして回答を表示
+  </button>
+  <div class="quiz-answer-content">
+    ${list}
+  </div>
+</div>`;
+    }
   );
 
   return {

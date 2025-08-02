@@ -243,7 +243,7 @@ Claude CodeにPlaywright MCPを連携させることで、ブラウザ自動化�
 - [Claude Code ドキュメント](https://docs.anthropic.com/en/docs/claude-code)
 - [Playwright MCP Server リポジトリ](https://github.com/modelcontextprotocol/servers/tree/main/src/playwright)
 
-## クイズの答え
+## 記事冒頭の質問の回答
 
 1. **MCPとは何の略で、どのような目的で使用されるツールですか？**
    - Model Context Protocolの略で、AIモデルが外部ツールやサービスと通信するためのプロトコルです。
