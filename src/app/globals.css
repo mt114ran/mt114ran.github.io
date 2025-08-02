@@ -1,15 +1,12 @@
-@import "tailwindcss";
-
-@theme {
-  --color-background: #000000;
-  --color-foreground: #ffffff;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html {
   color-scheme: dark;
 }
 
 body {
-  @apply bg-background text-foreground;
+  @apply bg-black text-white;
   font-family: Arial, Helvetica, sans-serif;
 }
