@@ -1,0 +1,176 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/3f825679c3fcef29.css","style"]
+0:{"P":null,"b":"KLuXmNhMsBFsS7gU5iaze","p":"","c":["","blog","web-accessibility-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","web-accessibility-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3f825679c3fcef29.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","web-accessibility-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","x8ijPANJzEycG1PQafRbj",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+13:I[6874,["874","static/chunks/874-992333f59fd2c78c.js","953","static/chunks/app/blog/%5Bslug%5D/page-7639be5d959e6d48.js"],""]
+12:T158c,<h1>Webアクセシビリティ実装ガイド：すべての人に使いやすいサイトを</h1>
+<p>アクセシブルなWebサイトを構築するための実践的なガイドラインを紹介します。</p>
+<h2>なぜアクセシビリティが重要か</h2>
+<ul>
+<li><strong>包括性</strong>: すべてのユーザーがサービスを利用できる</li>
+<li><strong>法的要件</strong>: 多くの国で法的要件となっている</li>
+<li><strong>SEO向上</strong>: アクセシブルなサイトは検索エンジンにも優しい</li>
+<li><strong>UX改善</strong>: すべてのユーザーにとって使いやすくなる</li>
+</ul>
+<h2>1. セマンティックHTML</h2>
+<p>適切なHTML要素を使用することが基本です。</p>
+<pre><code class="language-html">&#x3C;!-- 悪い例 -->
+&#x3C;div onclick="handleClick()">クリック&#x3C;/div>
+
+&#x3C;!-- 良い例 -->
+&#x3C;button type="button" onclick="handleClick()">クリック&#x3C;/button>
+</code></pre>
+<h3>見出しの階層構造</h3>
+<pre><code class="language-html">&#x3C;h1>ページタイトル&#x3C;/h1>
+  &#x3C;h2>セクション1&#x3C;/h2>
+    &#x3C;h3>サブセクション1-1&#x3C;/h3>
+    &#x3C;h3>サブセクション1-2&#x3C;/h3>
+  &#x3C;h2>セクション2&#x3C;/h2>
+</code></pre>
+<h2>2. ARIA属性の活用</h2>
+<pre><code class="language-html">&#x3C;!-- ロールの明示 -->
+&#x3C;nav role="navigation" aria-label="メインナビゲーション">
+  &#x3C;!-- ナビゲーション内容 -->
+&#x3C;/nav>
+
+&#x3C;!-- 状態の通知 -->
+&#x3C;button aria-expanded="false" aria-controls="menu">
+  メニュー
+&#x3C;/button>
+
+&#x3C;!-- ライブリージョン -->
+&#x3C;div aria-live="polite" aria-atomic="true">
+  &#x3C;p>更新されました&#x3C;/p>
+&#x3C;/div>
+</code></pre>
+<h2>3. キーボードナビゲーション</h2>
+<pre><code class="language-typescript">// フォーカス管理の例
+const Modal = ({ isOpen, onClose }) => {
+  const modalRef = useRef&#x3C;HTMLDivElement>(null);
+  
+  useEffect(() => {
+    if (isOpen) {
+      modalRef.current?.focus();
+    }
+  }, [isOpen]);
+
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      onClose();
+    }
+  };
+
+  return (
+    &#x3C;div
+      ref={modalRef}
+      tabIndex={-1}
+      onKeyDown={handleKeyDown}
+      role="dialog"
+      aria-modal="true"
+    >
+      {/* モーダル内容 */}
+    &#x3C;/div>
+  );
+};
+</code></pre>
+<h2>4. 色のコントラスト</h2>
+<p>WCAG 2.1のガイドラインに従います：</p>
+<ul>
+<li><strong>通常テキスト</strong>: 最小コントラスト比 4.5:1</li>
+<li><strong>大きなテキスト</strong> (18pt以上): 最小コントラスト比 3:1</li>
+<li><strong>AAA準拠</strong>: 通常テキスト 7:1、大きなテキスト 4.5:1</li>
+</ul>
+<pre><code class="language-css">/* 良いコントラストの例 */
+.text-primary {
+  color: #1a1a1a;  /* 濃いグレー */
+  background-color: #ffffff;  /* 白 */
+}
+
+/* 色だけに依存しない */
+.error {
+  color: #d32f2f;
+  border: 2px solid #d32f2f;
+  background-color: #ffebee;
+}
+</code></pre>
+<h2>5. フォームのアクセシビリティ</h2>
+<pre><code class="language-html">&#x3C;form>
+  &#x3C;div class="form-group">
+    &#x3C;label for="email">
+      メールアドレス
+      &#x3C;span aria-label="必須" class="required">*&#x3C;/span>
+    &#x3C;/label>
+    &#x3C;input
+      type="email"
+      id="email"
+      name="email"
+      required
+      aria-required="true"
+      aria-describedby="email-error"
+    />
+    &#x3C;span id="email-error" role="alert" class="error">
+      有効なメールアドレスを入力してください
+    &#x3C;/span>
+  &#x3C;/div>
+&#x3C;/form>
+</code></pre>
+<h2>6. 画像とメディア</h2>
+<pre><code class="language-html">&#x3C;!-- 装飾的な画像 -->
+&#x3C;img src="decoration.png" alt="" role="presentation" />
+
+&#x3C;!-- 情報を含む画像 -->
+&#x3C;img src="chart.png" alt="2024年の売上推移：1月100万円から12月200万円に増加" />
+
+&#x3C;!-- 動画 -->
+&#x3C;video controls>
+  &#x3C;source src="video.mp4" type="video/mp4" />
+  &#x3C;track kind="captions" src="captions_ja.vtt" srclang="ja" label="日本語" />
+  &#x3C;track kind="captions" src="captions_en.vtt" srclang="en" label="English" />
+&#x3C;/video>
+</code></pre>
+<h2>7. テスト方法</h2>
+<h3>自動テスト</h3>
+<pre><code class="language-javascript">// axe-coreを使用した例
+import { axe } from 'jest-axe';
+
+test('should not have accessibility violations', async () => {
+  const { container } = render(&#x3C;MyComponent />);
+  const results = await axe(container);
+  expect(results).toHaveNoViolations();
+});
+</code></pre>
+<h3>手動テスト</h3>
+<ul>
+<li>キーボードのみでナビゲーション</li>
+<li>スクリーンリーダーでのテスト（NVDA、JAWS、VoiceOver）</li>
+<li>ブラウザの拡張機能（Wave、axe DevTools）</li>
+</ul>
+<h2>チェックリスト</h2>
+<ul>
+<li>[ ] すべての機能がキーボードでアクセス可能</li>
+<li>[ ] 適切な見出し構造</li>
+<li>[ ] フォーム要素にラベルがある</li>
+<li>[ ] 画像に適切なalt属性</li>
+<li>[ ] 色のコントラスト比が基準を満たしている</li>
+<li>[ ] エラーメッセージが明確</li>
+<li>[ ] フォーカスインジケーターが見える</li>
+<li>[ ] ARIAランドマークが適切に設定されている</li>
+</ul>
+<p>アクセシビリティは後付けではなく、設計段階から考慮すべき重要な要素です。</p>
+4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":"Webアクセシビリティ実装ガイド：すべての人に使いやすいサイトを"}],["$","ul",null,{"className":"list-none border-b border-gray-500 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日: ","2024-05-10"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日: ","2024-05-15"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["タグ: ","Accessibility, Web Development, UX"]}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$12"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t flex justify-between","children":[["$","$L13",null,{"href":"/","className":"text-blue-600 hover:underline","children":"← ホームへ"}],["$","$L13",null,{"href":"/blog","className":"text-blue-600 hover:underline","children":"記事一覧へ →"}]]}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}
