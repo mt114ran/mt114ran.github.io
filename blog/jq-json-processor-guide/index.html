@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/a2b1d43c73e5b288.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-f029a09104d09cbc.js"/><script src="/_next/static/chunks/4bd1b696-67ee12fb04071d3b.js" async=""></script><script src="/_next/static/chunks/684-bc1e486cc8d76675.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/874-992333f59fd2c78c.js" async=""></script><script src="/_next/static/chunks/app/blog/%5Bslug%5D/page-7639be5d959e6d48.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><div class="max-w-2xl mx-auto py-10 px-4"><h1 class="text-3xl font-bold mb-2">jq入門：JSONデータを自在に操作するコマンドラインツール</h1><ul class="list-none border-b border-gray-600 pb-4 mb-6"><li class="text-gray-400 text-sm">作成日: <!-- -->2025-08-02</li><li class="text-gray-400 text-sm">更新日: <!-- -->2025-08-02</li><li class="text-gray-400 text-sm">タグ: <!-- -->jq, JSON, CLI, データ処理, 初心者向け</li></ul><article class="prose dark:prose-invert"><h1>jqとは</h1>
+<p>jq（ジェイキュー）は、JSONデータを処理するための軽量で柔軟なコマンドラインツールです。sedやawkがテキストデータを処理するように、jqはJSONデータを簡単に操作、フィルタリング、変換できます。</p>
+<h2>なぜjqが必要なのか</h2>
+<p>現代のWeb開発では、APIレスポンスや設定ファイルなど、JSONデータを扱う機会が非常に多くあります。しかし、巨大なJSONファイルから必要な情報だけを抽出したり、データ構造を変換したりするのは、通常のテキストエディタでは困難です。jqを使えば、これらの作業を効率的に行えます。</p>
+<h2>インストール方法</h2>
+<h3>macOS</h3>
+<pre><code class="language-bash">brew install jq
+</code></pre>
+<h3>Ubuntu/Debian</h3>
+<pre><code class="language-bash">sudo apt-get install jq
+</code></pre>
+<h3>CentOS/RHEL</h3>
+<pre><code class="language-bash">sudo yum install jq
+</code></pre>
+<p>インストール後、以下のコマンドでバージョンを確認できます：</p>
+<pre><code class="language-bash">jq --version
+</code></pre>
+<h2>基本的な使い方</h2>
+<h3>1. JSONの整形表示</h3>
+<p>最も基本的な使い方は、JSONを見やすく整形することです。</p>
+<pre><code class="language-bash"># 整形前のJSON
+echo '{"name":"田中太郎","age":30,"city":"東京"}' | jq '.'
+
+# 出力結果
+{
+  "name": "田中太郎",
+  "age": 30,
+  "city": "東京"
+}
+</code></pre>
+<h3>2. 特定のフィールドを抽出</h3>
+<p><code>.</code> を使ってオブジェクトのプロパティにアクセスできます。</p>
+<pre><code class="language-bash"># nameフィールドだけを取得
+echo '{"name":"田中太郎","age":30,"city":"東京"}' | jq '.name'
+# 出力: "田中太郎"
+
+# 複数のフィールドを取得
+echo '{"name":"田中太郎","age":30,"city":"東京"}' | jq '.name, .age'
+# 出力:
+# "田中太郎"
+# 30
+</code></pre>
+<h3>3. 配列の操作</h3>
+<p>配列データの処理も簡単です。</p>
+<pre><code class="language-bash"># 配列の全要素を取得
+echo '[1,2,3,4,5]' | jq '.[]'
+# 出力:
+# 1
+# 2
+# 3
+# 4
+# 5
+
+# 配列の最初の要素
+echo '[1,2,3,4,5]' | jq '.[0]'
+# 出力: 1
+
+# 配列の長さを取得
+echo '[1,2,3,4,5]' | jq 'length'
+# 出力: 5
+</code></pre>
+<h2>実務でよく使われる使用例</h2>
+<h3>1. APIレスポンスの解析</h3>
+<p>GitHub APIからリポジトリ情報を取得して解析する例：</p>
+<pre><code class="language-bash"># GitHubのリポジトリ情報を取得
+curl -s https://api.github.com/repos/torvalds/linux | jq '{
+  name: .name,
+  stars: .stargazers_count,
+  language: .language,
+  created: .created_at
+}'
+
+# 出力例:
+{
+  "name": "linux",
+  "stars": 168000,
+  "language": "C",
+  "created": "2011-09-04T22:48:12Z"
+}
+</code></pre>
+<h3>2. ログファイルのJSON解析</h3>
+<p>構造化ログ（JSON形式）から特定の条件でフィルタリング：</p>
+<pre><code class="language-bash"># エラーログだけを抽出
+cat app.log | jq 'select(.level == "ERROR")'
+
+# 特定の時間帯のログを抽出
+cat app.log | jq 'select(.timestamp > "2025-08-01T00:00:00Z")'
+
+# エラーメッセージだけを一覧表示
+cat app.log | jq 'select(.level == "ERROR") | .message'
+</code></pre>
+<h3>3. package.jsonの依存関係確認</h3>
+<p>Node.jsプロジェクトの依存関係を確認：</p>
+<pre><code class="language-bash"># 本番環境の依存関係をリスト表示
+cat package.json | jq '.dependencies | keys[]'
+
+# 特定のパッケージのバージョンを確認
+cat package.json | jq '.dependencies.react'
+
+# 依存関係の数を数える
+cat package.json | jq '.dependencies | length'
+</code></pre>
+<h3>4. 複数のJSONファイルをマージ</h3>
+<p>設定ファイルの結合：</p>
+<pre><code class="language-bash"># 2つの設定ファイルをマージ
+jq -s '.[0] * .[1]' base-config.json env-config.json > final-config.json
+
+# 配列を結合
+jq -s 'add' file1.json file2.json file3.json
+</code></pre>
+<h3>5. データの変換と集計</h3>
+<p>売上データの集計例：</p>
+<pre><code class="language-bash"># 売上データから合計金額を計算
+echo '[
+  {"product": "A", "price": 1000, "quantity": 3},
+  {"product": "B", "price": 2000, "quantity": 2},
+  {"product": "C", "price": 1500, "quantity": 4}
+]' | jq '[.[] | .price * .quantity] | add'
+# 出力: 13000
+
+# 商品ごとの売上を計算して新しいフィールドを追加
+echo '[
+  {"product": "A", "price": 1000, "quantity": 3},
+  {"product": "B", "price": 2000, "quantity": 2}
+]' | jq '.[] | . + {total: .price * .quantity}'
+</code></pre>
+<h2>実務での活用シーン</h2>
+<h3>1. CI/CDパイプライン</h3>
+<p>デプロイメント設定の動的な変更：</p>
+<pre><code class="language-bash"># package.jsonのバージョンを更新
+jq '.version = "2.0.0"' package.json > tmp.json &#x26;&#x26; mv tmp.json package.json
+
+# 環境変数に基づいて設定を変更
+jq --arg env "$ENVIRONMENT" '.environment = $env' config.json > tmp.json &#x26;&#x26; mv tmp.json config.json
+</code></pre>
+<h3>2. モニタリングとアラート</h3>
+<p>CloudWatchやDatadogのメトリクスデータ処理：</p>
+<pre><code class="language-bash"># CloudWatchメトリクスから異常値を検出
+aws cloudwatch get-metric-statistics \
+  --namespace AWS/EC2 \
+  --metric-name CPUUtilization \
+  --dimensions Name=InstanceId,Value=i-1234567890abcdef0 \
+  --start-time 2025-08-01T00:00:00Z \
+  --end-time 2025-08-02T00:00:00Z \
+  --period 3600 \
+  --statistics Average \
+  --output json | jq '.Datapoints[] | select(.Average > 80)'
+</code></pre>
+<h3>3. データベースのJSONカラム処理</h3>
+<p>PostgreSQLやMySQLのJSON型カラムのデータ処理：</p>
+<pre><code class="language-bash"># PostgreSQLからエクスポートしたJSONデータを整形
+psql -c "SELECT row_to_json(users) FROM users WHERE active = true" -t | jq '.'
+
+# 特定のJSON属性でグループ化
+cat users.json | jq 'group_by(.department) | map({department: .[0].department, count: length})'
+</code></pre>
+<h3>4. テストデータの生成</h3>
+<p>APIテスト用のモックデータ生成：</p>
+<pre><code class="language-bash"># 連番付きのテストデータを生成
+jq -n '[range(1;11) | {id: ., name: "User\(.)", email: "user\(.)@example.com"}]'
+
+# ランダムなデータを含むテストデータ
+jq -n '[range(1;6) | {
+  id: .,
+  score: (. * 17 % 100),
+  status: (["active", "inactive", "pending"][. % 3])
+}]'
+</code></pre>
+<h2>便利なオプション</h2>
+<h3>よく使うオプション一覧</h3>
+<ul>
+<li><code>-r</code>: 文字列の引用符を除去（Raw output）</li>
+<li><code>-s</code>: 複数のJSONを配列として読み込み（Slurp）</li>
+<li><code>-c</code>: 出力をコンパクトに（Compact）</li>
+<li><code>-e</code>: エラー時に非ゼロの終了コードを返す</li>
+<li><code>-n</code>: 入力なしでjqを実行（Null input）</li>
+</ul>
+<pre><code class="language-bash"># 引用符なしで出力
+echo '{"name":"田中"}' | jq -r '.name'
+# 出力: 田中
+
+# コンパクトな出力
+echo '{"name":"田中","age":30}' | jq -c '.'
+# 出力: {"name":"田中","age":30}
+</code></pre>
+<h2>トラブルシューティング</h2>
+<h3>1. パースエラーが発生する場合</h3>
+<pre><code class="language-bash"># 不正なJSONをチェック
+echo '{"name": "田中",}' | jq '.' 2>&#x26;1
+# エラー: parse error: Expected another key-value pair at line 1, column 18
+</code></pre>
+<h3>2. nullや未定義のフィールドを安全に処理</h3>
+<pre><code class="language-bash"># null許容の処理
+echo '{"name":null}' | jq '.name // "デフォルト名"'
+# 出力: "デフォルト名"
+
+# オプショナルチェーン的な処理
+echo '{}' | jq '.user.name? // "未設定"'
+# 出力: "未設定"
+</code></pre>
+<h3>3. 大きなJSONファイルの処理</h3>
+<pre><code class="language-bash"># ストリーミング処理で大きなファイルを扱う
+jq --stream '. | select(.[0][0] == "name")' huge-file.json
+
+# メモリ使用量を抑えながら処理
+jq -c '.[]' huge-array.json | while read line; do
+  echo "$line" | jq '.name'
+done
+</code></pre>
+<h2>まとめ</h2>
+<p>jqは、JSONデータを扱う開発者にとって必須のツールです。基本的なフィルタリングから複雑なデータ変換まで、幅広い用途で活用できます。</p>
+<p>特に以下のような場面で威力を発揮します：</p>
+<ul>
+<li>APIのレスポンス解析とデバッグ</li>
+<li>ログファイルの解析と監視</li>
+<li>設定ファイルの動的な更新</li>
+<li>テストデータの生成</li>
+<li>データの変換と集計</li>
+</ul>
+<p>最初は基本的な操作から始めて、徐々に複雑な処理にチャレンジしていくことをお勧めします。jqをマスターすることで、JSONデータの処理が劇的に効率化され、開発生産性が大幅に向上するでしょう。</p>
+<h2>参考リンク</h2>
+<ul>
+<li><a href="https://jqlang.github.io/jq/manual/">jq公式マニュアル</a></li>
+<li><a href="https://jqplay.org/">jq Playground（オンラインで試せる）</a></li>
+<li><a href="https://github.com/jqlang/jq/wiki/Cookbook">jq Cookbook</a></li>
+</ul>
+</article><nav class="mt-8 pt-4 border-t border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-f029a09104d09cbc.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n5:I[9665,[],\"MetadataBoundary\"]\n7:I[9665,[],\"OutletBoundary\"]\na:I[4911,[],\"AsyncMetadataOutlet\"]\nc:I[9665,[],\"ViewportBoundary\"]\ne:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/a2b1d43c73e5b288.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"FSiLkd7OJRuT91XfVzIwy\",\"p\":\"\",\"c\":[\"\",\"blog\",\"jq-json-processor-guide\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"jq-json-processor-guide\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/a2b1d43c73e5b288.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"blog\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"jq-json-processor-guide\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",[\"$\",\"$L5\",null,{\"children\":\"$L6\"}],null,[\"$\",\"$L7\",null,{\"children\":[\"$L8\",\"$L9\",[\"$\",\"$La\",null,{\"promise\":\"$@b\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"XJJBksgSFGbpEGBEv6DiE\",{\"children\":[[\"$\",\"$Lc\",null,{\"children\":\"$Ld\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$e\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"f:\"$Sreact.suspense\"\n10:I[4911,[],\"AsyncMetadata\"]\n6:[\"$\",\"$f\",null,{\"fallback\":null,\"children\":[\"$\",\"$L10\",null,{\"promise\":\"$@11\"}]}]\n"])</script><script>self.__next_f.push([1,"9:null\n"])</script><script>self.__next_f.push([1,"13:I[6874,[\"874\",\"static/chunks/874-992333f59fd2c78c.js\",\"953\",\"static/chunks/app/blog/%5Bslug%5D/page-7639be5d959e6d48.js\"],\"\"]\n12:T2479,"])</script><script>self.__next_f.push([1,"\u003ch1\u003ejqとは\u003c/h1\u003e\n\u003cp\u003ejq（ジェイキュー）は、JSONデータを処理するための軽量で柔軟なコマンドラインツールです。sedやawkがテキストデータを処理するように、jqはJSONデータを簡単に操作、フィルタリング、変換できます。\u003c/p\u003e\n\u003ch2\u003eなぜjqが必要なのか\u003c/h2\u003e\n\u003cp\u003e現代のWeb開発では、APIレスポンスや設定ファイルなど、JSONデータを扱う機会が非常に多くあります。しかし、巨大なJSONファイルから必要な情報だけを抽出したり、データ構造を変換したりするのは、通常のテキストエディタでは困難です。jqを使えば、これらの作業を効率的に行えます。\u003c/p\u003e\n\u003ch2\u003eインストール方法\u003c/h2\u003e\n\u003ch3\u003emacOS\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003ebrew install jq\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eUbuntu/Debian\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003esudo apt-get install jq\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eCentOS/RHEL\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003esudo yum install jq\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eインストール後、以下のコマンドでバージョンを確認できます：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003ejq --version\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003e基本的な使い方\u003c/h2\u003e\n\u003ch3\u003e1. JSONの整形表示\u003c/h3\u003e\n\u003cp\u003e最も基本的な使い方は、JSONを見やすく整形することです。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 整形前のJSON\necho '{\"name\":\"田中太郎\",\"age\":30,\"city\":\"東京\"}' | jq '.'\n\n# 出力結果\n{\n  \"name\": \"田中太郎\",\n  \"age\": 30,\n  \"city\": \"東京\"\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e2. 特定のフィールドを抽出\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003e.\u003c/code\u003e を使ってオブジェクトのプロパティにアクセスできます。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# nameフィールドだけを取得\necho '{\"name\":\"田中太郎\",\"age\":30,\"city\":\"東京\"}' | jq '.name'\n# 出力: \"田中太郎\"\n\n# 複数のフィールドを取得\necho '{\"name\":\"田中太郎\",\"age\":30,\"city\":\"東京\"}' | jq '.name, .age'\n# 出力:\n# \"田中太郎\"\n# 30\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e3. 配列の操作\u003c/h3\u003e\n\u003cp\u003e配列データの処理も簡単です。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 配列の全要素を取得\necho '[1,2,3,4,5]' | jq '.[]'\n# 出力:\n# 1\n# 2\n# 3\n# 4\n# 5\n\n# 配列の最初の要素\necho '[1,2,3,4,5]' | jq '.[0]'\n# 出力: 1\n\n# 配列の長さを取得\necho '[1,2,3,4,5]' | jq 'length'\n# 出力: 5\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003e実務でよく使われる使用例\u003c/h2\u003e\n\u003ch3\u003e1. APIレスポンスの解析\u003c/h3\u003e\n\u003cp\u003eGitHub APIからリポジトリ情報を取得して解析する例：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# GitHubのリポジトリ情報を取得\ncurl -s https://api.github.com/repos/torvalds/linux | jq '{\n  name: .name,\n  stars: .stargazers_count,\n  language: .language,\n  created: .created_at\n}'\n\n# 出力例:\n{\n  \"name\": \"linux\",\n  \"stars\": 168000,\n  \"language\": \"C\",\n  \"created\": \"2011-09-04T22:48:12Z\"\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e2. ログファイルのJSON解析\u003c/h3\u003e\n\u003cp\u003e構造化ログ（JSON形式）から特定の条件でフィルタリング：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# エラーログだけを抽出\ncat app.log | jq 'select(.level == \"ERROR\")'\n\n# 特定の時間帯のログを抽出\ncat app.log | jq 'select(.timestamp \u003e \"2025-08-01T00:00:00Z\")'\n\n# エラーメッセージだけを一覧表示\ncat app.log | jq 'select(.level == \"ERROR\") | .message'\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e3. package.jsonの依存関係確認\u003c/h3\u003e\n\u003cp\u003eNode.jsプロジェクトの依存関係を確認：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 本番環境の依存関係をリスト表示\ncat package.json | jq '.dependencies | keys[]'\n\n# 特定のパッケージのバージョンを確認\ncat package.json | jq '.dependencies.react'\n\n# 依存関係の数を数える\ncat package.json | jq '.dependencies | length'\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e4. 複数のJSONファイルをマージ\u003c/h3\u003e\n\u003cp\u003e設定ファイルの結合：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 2つの設定ファイルをマージ\njq -s '.[0] * .[1]' base-config.json env-config.json \u003e final-config.json\n\n# 配列を結合\njq -s 'add' file1.json file2.json file3.json\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e5. データの変換と集計\u003c/h3\u003e\n\u003cp\u003e売上データの集計例：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 売上データから合計金額を計算\necho '[\n  {\"product\": \"A\", \"price\": 1000, \"quantity\": 3},\n  {\"product\": \"B\", \"price\": 2000, \"quantity\": 2},\n  {\"product\": \"C\", \"price\": 1500, \"quantity\": 4}\n]' | jq '[.[] | .price * .quantity] | add'\n# 出力: 13000\n\n# 商品ごとの売上を計算して新しいフィールドを追加\necho '[\n  {\"product\": \"A\", \"price\": 1000, \"quantity\": 3},\n  {\"product\": \"B\", \"price\": 2000, \"quantity\": 2}\n]' | jq '.[] | . + {total: .price * .quantity}'\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003e実務での活用シーン\u003c/h2\u003e\n\u003ch3\u003e1. CI/CDパイプライン\u003c/h3\u003e\n\u003cp\u003eデプロイメント設定の動的な変更：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# package.jsonのバージョンを更新\njq '.version = \"2.0.0\"' package.json \u003e tmp.json \u0026#x26;\u0026#x26; mv tmp.json package.json\n\n# 環境変数に基づいて設定を変更\njq --arg env \"$ENVIRONMENT\" '.environment = $env' config.json \u003e tmp.json \u0026#x26;\u0026#x26; mv tmp.json config.json\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e2. モニタリングとアラート\u003c/h3\u003e\n\u003cp\u003eCloudWatchやDatadogのメトリクスデータ処理：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# CloudWatchメトリクスから異常値を検出\naws cloudwatch get-metric-statistics \\\n  --namespace AWS/EC2 \\\n  --metric-name CPUUtilization \\\n  --dimensions Name=InstanceId,Value=i-1234567890abcdef0 \\\n  --start-time 2025-08-01T00:00:00Z \\\n  --end-time 2025-08-02T00:00:00Z \\\n  --period 3600 \\\n  --statistics Average \\\n  --output json | jq '.Datapoints[] | select(.Average \u003e 80)'\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e3. データベースのJSONカラム処理\u003c/h3\u003e\n\u003cp\u003ePostgreSQLやMySQLのJSON型カラムのデータ処理：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# PostgreSQLからエクスポートしたJSONデータを整形\npsql -c \"SELECT row_to_json(users) FROM users WHERE active = true\" -t | jq '.'\n\n# 特定のJSON属性でグループ化\ncat users.json | jq 'group_by(.department) | map({department: .[0].department, count: length})'\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e4. テストデータの生成\u003c/h3\u003e\n\u003cp\u003eAPIテスト用のモックデータ生成：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 連番付きのテストデータを生成\njq -n '[range(1;11) | {id: ., name: \"User\\(.)\", email: \"user\\(.)@example.com\"}]'\n\n# ランダムなデータを含むテストデータ\njq -n '[range(1;6) | {\n  id: .,\n  score: (. * 17 % 100),\n  status: ([\"active\", \"inactive\", \"pending\"][. % 3])\n}]'\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003e便利なオプション\u003c/h2\u003e\n\u003ch3\u003eよく使うオプション一覧\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003e-r\u003c/code\u003e: 文字列の引用符を除去（Raw output）\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e-s\u003c/code\u003e: 複数のJSONを配列として読み込み（Slurp）\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e-c\u003c/code\u003e: 出力をコンパクトに（Compact）\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e-e\u003c/code\u003e: エラー時に非ゼロの終了コードを返す\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e-n\u003c/code\u003e: 入力なしでjqを実行（Null input）\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 引用符なしで出力\necho '{\"name\":\"田中\"}' | jq -r '.name'\n# 出力: 田中\n\n# コンパクトな出力\necho '{\"name\":\"田中\",\"age\":30}' | jq -c '.'\n# 出力: {\"name\":\"田中\",\"age\":30}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eトラブルシューティング\u003c/h2\u003e\n\u003ch3\u003e1. パースエラーが発生する場合\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 不正なJSONをチェック\necho '{\"name\": \"田中\",}' | jq '.' 2\u003e\u0026#x26;1\n# エラー: parse error: Expected another key-value pair at line 1, column 18\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e2. nullや未定義のフィールドを安全に処理\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# null許容の処理\necho '{\"name\":null}' | jq '.name // \"デフォルト名\"'\n# 出力: \"デフォルト名\"\n\n# オプショナルチェーン的な処理\necho '{}' | jq '.user.name? // \"未設定\"'\n# 出力: \"未設定\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e3. 大きなJSONファイルの処理\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# ストリーミング処理で大きなファイルを扱う\njq --stream '. | select(.[0][0] == \"name\")' huge-file.json\n\n# メモリ使用量を抑えながら処理\njq -c '.[]' huge-array.json | while read line; do\n  echo \"$line\" | jq '.name'\ndone\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eまとめ\u003c/h2\u003e\n\u003cp\u003ejqは、JSONデータを扱う開発者にとって必須のツールです。基本的なフィルタリングから複雑なデータ変換まで、幅広い用途で活用できます。\u003c/p\u003e\n\u003cp\u003e特に以下のような場面で威力を発揮します：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eAPIのレスポンス解析とデバッグ\u003c/li\u003e\n\u003cli\u003eログファイルの解析と監視\u003c/li\u003e\n\u003cli\u003e設定ファイルの動的な更新\u003c/li\u003e\n\u003cli\u003eテストデータの生成\u003c/li\u003e\n\u003cli\u003eデータの変換と集計\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e最初は基本的な操作から始めて、徐々に複雑な処理にチャレンジしていくことをお勧めします。jqをマスターすることで、JSONデータの処理が劇的に効率化され、開発生産性が大幅に向上するでしょう。\u003c/p\u003e\n\u003ch2\u003e参考リンク\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://jqlang.github.io/jq/manual/\"\u003ejq公式マニュアル\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://jqplay.org/\"\u003ejq Playground（オンラインで試せる）\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://github.com/jqlang/jq/wiki/Cookbook\"\u003ejq Cookbook\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto py-10 px-4\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold mb-2\",\"children\":\"jq入門：JSONデータを自在に操作するコマンドラインツール\"}],[\"$\",\"ul\",null,{\"className\":\"list-none border-b border-gray-600 pb-4 mb-6\",\"children\":[[\"$\",\"li\",null,{\"className\":\"text-gray-400 text-sm\",\"children\":[\"作成日: \",\"2025-08-02\"]}],[\"$\",\"li\",null,{\"className\":\"text-gray-400 text-sm\",\"children\":[\"更新日: \",\"2025-08-02\"]}],[\"$\",\"li\",null,{\"className\":\"text-gray-400 text-sm\",\"children\":[\"タグ: \",\"jq, JSON, CLI, データ処理, 初心者向け\"]}]]}],[\"$\",\"article\",null,{\"className\":\"prose dark:prose-invert\",\"dangerouslySetInnerHTML\":{\"__html\":\"$12\"}}],[\"$\",\"nav\",null,{\"className\":\"mt-8 pt-4 border-t border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L13\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L13\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}]]}]\n"])</script><script>self.__next_f.push([1,"d:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n8:null\n"])</script><script>self.__next_f.push([1,"11:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\nb:{\"metadata\":\"$11:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>
