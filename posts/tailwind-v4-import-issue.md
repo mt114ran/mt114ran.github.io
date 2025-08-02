@@ -7,7 +7,7 @@ create: "2025-08-02 12:45"
 
 # Tailwind CSS v4の@import構文でスタイルが適用されない問題と解決方法
 
-## 記事を読むとわかるようになること
+## クイズ：この記事でわかること
 
 1. Tailwind CSS v4で新しく導入された@import構文はどのような記述ですか？
 2. v4の新しい構文で問題が発生した場合の解決策として推奨されている方法は何ですか？
@@ -150,7 +150,7 @@ Tailwind CSS v4の新しい`@import`構文は、まだすべての環境で完�
 
 これらの対応により、美しいダークテーマのサイトを実現できます。
 
-## 記事冒頭の質問の回答
+## クイズの回答：ふりかえり
 
 1. `@import "tailwindcss"`
 2. 従来の`@tailwind`ディレクティブを使用する（`@tailwind base; @tailwind components; @tailwind utilities;`）

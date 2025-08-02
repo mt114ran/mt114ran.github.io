@@ -44,18 +44,32 @@ export async function getPostData(slug: string) {
   
   // クイズセクションにカスタムクラスを追加
   contentHtml = contentHtml.replace(
-    /<h2[^>]*>([^<]*記事を読むとわかるようになること[^<]*)<\/h2>/gi,
+    /<h2[^>]*>([^<]*クイズ：この記事でわかること[^<]*)<\/h2>/gi,
     '<h2 class="quiz-title">$1</h2>'
   );
   
+  // 最初のクイズの質問を抽出してボタンテキストとして使用
+  const extractQuestions = (html: string) => {
+    const quizMatch = html.match(/<h2[^>]*>[^<]*クイズ：この記事でわかること[^<]*<\/h2>\s*<ol[^>]*>([\s\S]*?)<\/ol>/i);
+    if (quizMatch) {
+      const questions = quizMatch[1].match(/<li[^>]*>([^<]+)<\/li>/g);
+      if (questions && questions.length > 0) {
+        return questions[0].replace(/<li[^>]*>|<\/li>/g, '').trim();
+      }
+    }
+    return 'クリックして回答を表示';
+  };
+  
+  const firstQuestion = extractQuestions(contentHtml);
+  
   // クイズの答えセクションを折りたたみ式に変更
   contentHtml = contentHtml.replace(
-    /<h2[^>]*>(?:クイズの答え|記事冒頭の質問の回答)<\/h2>\s*(<(?:ul|ol)[^>]*>[\s\S]*?<\/(?:ul|ol)>)/gi,
+    /<h2[^>]*>(?:クイズの答え|記事冒頭の質問の回答|クイズの回答：ふりかえり)<\/h2>\s*(<(?:ul|ol)[^>]*>[\s\S]*?<\/(?:ul|ol)>)/gi,
     (match, list) => {
-      return `<h2 class="quiz-answer-title">記事冒頭の質問の回答</h2>
+      return `<h2 class="quiz-answer-title">クイズの回答：ふりかえり</h2>
 <div class="quiz-answer-wrapper">
   <button class="quiz-answer-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('show');">
-    クリックして回答を表示
+    ${firstQuestion}
   </button>
   <div class="quiz-answer-content">
     ${list}

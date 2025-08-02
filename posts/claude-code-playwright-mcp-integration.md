@@ -6,7 +6,7 @@ create: "2025-08-02 19:30"
 update: "2025-08-02 19:45"
 ---
 
-## 記事を読むとわかるようになること
+## クイズ：この記事でわかること
 
 1. MCPとは何の略で、どのような目的で使用されるツールですか？
 2. Playwright MCPを使用するメリットは何ですか？
@@ -243,7 +243,7 @@ Claude CodeにPlaywright MCPを連携させることで、ブラウザ自動化�
 - [Claude Code ドキュメント](https://docs.anthropic.com/en/docs/claude-code)
 - [Playwright MCP Server リポジトリ](https://github.com/modelcontextprotocol/servers/tree/main/src/playwright)
 
-## 記事冒頭の質問の回答
+## クイズの回答：ふりかえり
 
 1. **MCPとは何の略で、どのような目的で使用されるツールですか？**
    - Model Context Protocolの略で、AIモデルが外部ツールやサービスと通信するためのプロトコルです。

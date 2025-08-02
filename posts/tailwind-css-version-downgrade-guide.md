@@ -8,7 +8,7 @@ tags: ['Tailwind CSS', 'トラブルシューティング', '初心者向け', '
 
 # Tailwind CSS v4からv3へのダウングレード完全ガイド
 
-## 記事を読むとわかるようになること
+## クイズ：この記事でわかること
 
 1. Tailwind CSS v4で導入された新しいCSS記法は何ですか？
 2. `@tailwindcss/typography`プラグインがv4で問題となる理由は何ですか？
@@ -403,7 +403,7 @@ graph LR
 
 この記事が、同じような問題に直面した方の助けになれば幸いです。
 
-## 記事冒頭の質問の回答
+## クイズの回答：ふりかえり
 
 1. `@import "tailwindcss"`（従来は`@tailwind base; @tailwind components; @tailwind utilities;`）
 2. v4との互換性が完全ではないため
