@@ -50,26 +50,48 @@ export async function getPostData(slug: string) {
   
   // クイズの質問と回答を抽出して構造化
   const extractQuestionsAndAnswers = (html: string) => {
-    // 質問を抽出
-    const quizMatch = html.match(/<h2[^>]*>[^<]*クイズ：この記事でわかること[^<]*<\/h2>\s*<ol[^>]*>([\s\S]*?)<\/ol>/i);
+    // 質問を抽出（olタグとplain textの両方に対応）
+    const quizMatch = html.match(/<h2[^>]*>[^<]*クイズ：この記事でわかること[^<]*<\/h2>\s*((?:<ol[^>]*>[\s\S]*?<\/ol>|(?:\d+\.[\s\S]*?)(?=\n\n|$)))/i);
     const questions: string[] = [];
     if (quizMatch) {
-      const questionMatches = quizMatch[1].match(/<li[^>]*>([^<]+)<\/li>/g);
-      if (questionMatches) {
-        questionMatches.forEach(q => {
-          questions.push(q.replace(/<li[^>]*>|<\/li>/g, '').trim());
+      if (quizMatch[1].includes('<ol')) {
+        const questionMatches = quizMatch[1].match(/<li[^>]*>([^<]+)<\/li>/g);
+        if (questionMatches) {
+          questionMatches.forEach(q => {
+            questions.push(q.replace(/<li[^>]*>|<\/li>/g, '').trim());
+          });
+        }
+      } else {
+        // プレーンテキストの番号付きリストに対応
+        const lines = quizMatch[1].split('\n');
+        lines.forEach(line => {
+          const match = line.match(/^\d+\.\s*(.+)$/);
+          if (match) {
+            questions.push(match[1].trim());
+          }
         });
       }
     }
     
-    // 回答を抽出
-    const answerMatch = html.match(/<h2[^>]*>(?:クイズの答え|記事冒頭の質問の回答|クイズの回答：ふりかえり)<\/h2>\s*<ol[^>]*>([\s\S]*?)<\/ol>/i);
+    // 回答を抽出（olタグとplain textの両方に対応）
+    const answerMatch = html.match(/<h2[^>]*>(?:クイズの答え|記事冒頭の質問の回答|クイズの回答：ふりかえり)<\/h2>\s*((?:<ol[^>]*>[\s\S]*?<\/ol>|(?:\d+\.[\s\S]*?)(?=\n\n|##|$)))/i);
     const answers: string[] = [];
     if (answerMatch) {
-      const answerMatches = answerMatch[1].match(/<li[^>]*>([\s\S]*?)<\/li>/g);
-      if (answerMatches) {
-        answerMatches.forEach(a => {
-          answers.push(a.replace(/<li[^>]*>|<\/li>/g, '').trim());
+      if (answerMatch[1].includes('<ol')) {
+        const answerMatches = answerMatch[1].match(/<li[^>]*>([\s\S]*?)<\/li>/g);
+        if (answerMatches) {
+          answerMatches.forEach(a => {
+            answers.push(a.replace(/<li[^>]*>|<\/li>/g, '').trim());
+          });
+        }
+      } else {
+        // プレーンテキストの番号付きリストに対応
+        const lines = answerMatch[1].split('\n');
+        lines.forEach(line => {
+          const match = line.match(/^\d+\.\s*(.+)$/);
+          if (match) {
+            answers.push(match[1].trim());
+          }
         });
       }
     }
@@ -81,8 +103,12 @@ export async function getPostData(slug: string) {
   
   // クイズの答えセクションを折りたたみ式に変更
   contentHtml = contentHtml.replace(
-    /<h2[^>]*>(?:クイズの答え|記事冒頭の質問の回答|クイズの回答：ふりかえり)<\/h2>\s*<(?:ul|ol)[^>]*>[\s\S]*?<\/(?:ul|ol)>/gi,
+    /<h2[^>]*>(?:クイズの答え|記事冒頭の質問の回答|クイズの回答：ふりかえり)<\/h2>[\s\S]*?(?=<h2|$)/gi,
     () => {
+      if (questions.length === 0 || answers.length === 0) {
+        return '<h2 class="quiz-answer-title">クイズの回答：ふりかえり</h2>\n<p>回答が見つかりません</p>';
+      }
+      
       let result = '<h2 class="quiz-answer-title">クイズの回答：ふりかえり</h2>\n';
       
       questions.forEach((question, index) => {

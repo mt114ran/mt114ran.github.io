@@ -80,7 +80,7 @@ body {
 .prose .quiz-title + ul,
 .prose .quiz-title + ol,
 .prose .quiz-title + p {
-  @apply bg-gray-800 px-6 py-3 rounded-lg mb-4;
+  @apply bg-gray-800 px-8 py-4 rounded-lg mb-4;
 }
 
 .prose .quiz-title + ul li,
