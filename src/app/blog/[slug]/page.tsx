@@ -14,7 +14,7 @@ export default async function BlogPostPage(props: any) {
   return (
     <div className="max-w-2xl mx-auto py-10 px-4">
       <h1 className="text-3xl font-bold mb-2">
-        <span className="text-gray-600">#{post.id}</span> {post.title}
+        <span className="text-green-600">#{post.id}</span> {post.title}
       </h1>
       <ul className="list-none border-b border-gray-600 pb-4 mb-6">
         {post.create && (
