@@ -1,8 +1,9 @@
 ---
+id: 5
 title: "Webアクセシビリティ実装ガイド：すべての人に使いやすいサイトを"
 tags: ["Accessibility", "Web Development", "UX"]
-create: "2024-05-10"
-update: "2024-05-15"
+create: "2024-05-10 15:30"
+update: "2024-05-15 18:20"
 ---
 
 # Webアクセシビリティ実装ガイド：すべての人に使いやすいサイトを

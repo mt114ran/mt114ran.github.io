@@ -1,8 +1,9 @@
 ---
+id: 1
 title: "Next.js App Routerの基本概念と実装パターン"
 tags: ["Next.js", "React", "App Router"]
-create: "2024-01-10"
-update: "2024-01-15"
+create: "2024-01-10 09:15"
+update: "2024-01-15 16:45"
 ---
 
 # Next.js App Routerの基本概念と実装パターン

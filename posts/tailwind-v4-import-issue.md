@@ -1,7 +1,8 @@
 ---
+id: 9
 title: "Tailwind CSS v4の@import構文でスタイルが適用されない問題と解決方法"
 tags: ["Tailwind CSS", "Next.js", "CSS", "Troubleshooting"]
-create: "2025-08-02"
+create: "2025-08-02 12:45"
 ---
 
 # Tailwind CSS v4の@import構文でスタイルが適用されない問題と解決方法

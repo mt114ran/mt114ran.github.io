@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(osascript:*)",
+      "WebFetch(domain:mt114ran.github.io)",
+      "Bash(curl:*)",
+      "Bash(ls:*)"
+    ],
+    "deny": []
+  }
+}
