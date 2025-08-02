@@ -48,33 +48,56 @@ export async function getPostData(slug: string) {
     '<h2 class="quiz-title">$1</h2>'
   );
   
-  // 最初のクイズの質問を抽出してボタンテキストとして使用
-  const extractQuestions = (html: string) => {
+  // クイズの質問と回答を抽出して構造化
+  const extractQuestionsAndAnswers = (html: string) => {
+    // 質問を抽出
     const quizMatch = html.match(/<h2[^>]*>[^<]*クイズ：この記事でわかること[^<]*<\/h2>\s*<ol[^>]*>([\s\S]*?)<\/ol>/i);
+    const questions: string[] = [];
     if (quizMatch) {
-      const questions = quizMatch[1].match(/<li[^>]*>([^<]+)<\/li>/g);
-      if (questions && questions.length > 0) {
-        return questions[0].replace(/<li[^>]*>|<\/li>/g, '').trim();
+      const questionMatches = quizMatch[1].match(/<li[^>]*>([^<]+)<\/li>/g);
+      if (questionMatches) {
+        questionMatches.forEach(q => {
+          questions.push(q.replace(/<li[^>]*>|<\/li>/g, '').trim());
+        });
       }
     }
-    return 'クリックして回答を表示';
+    
+    // 回答を抽出
+    const answerMatch = html.match(/<h2[^>]*>(?:クイズの答え|記事冒頭の質問の回答|クイズの回答：ふりかえり)<\/h2>\s*<ol[^>]*>([\s\S]*?)<\/ol>/i);
+    const answers: string[] = [];
+    if (answerMatch) {
+      const answerMatches = answerMatch[1].match(/<li[^>]*>([\s\S]*?)<\/li>/g);
+      if (answerMatches) {
+        answerMatches.forEach(a => {
+          answers.push(a.replace(/<li[^>]*>|<\/li>/g, '').trim());
+        });
+      }
+    }
+    
+    return { questions, answers };
   };
   
-  const firstQuestion = extractQuestions(contentHtml);
+  const { questions, answers } = extractQuestionsAndAnswers(contentHtml);
   
   // クイズの答えセクションを折りたたみ式に変更
   contentHtml = contentHtml.replace(
-    /<h2[^>]*>(?:クイズの答え|記事冒頭の質問の回答|クイズの回答：ふりかえり)<\/h2>\s*(<(?:ul|ol)[^>]*>[\s\S]*?<\/(?:ul|ol)>)/gi,
-    (match, list) => {
-      return `<h2 class="quiz-answer-title">クイズの回答：ふりかえり</h2>
-<div class="quiz-answer-wrapper">
+    /<h2[^>]*>(?:クイズの答え|記事冒頭の質問の回答|クイズの回答：ふりかえり)<\/h2>\s*<(?:ul|ol)[^>]*>[\s\S]*?<\/(?:ul|ol)>/gi,
+    () => {
+      let result = '<h2 class="quiz-answer-title">クイズの回答：ふりかえり</h2>\n';
+      
+      questions.forEach((question, index) => {
+        const answer = answers[index] || '回答が見つかりません';
+        result += `<div class="quiz-answer-wrapper">
   <button class="quiz-answer-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('show');">
-    ${firstQuestion}
+    ${index + 1}. ${question}
   </button>
   <div class="quiz-answer-content">
-    ${list}
+    <p>${answer}</p>
   </div>
-</div>`;
+</div>\n`;
+      });
+      
+      return result;
     }
   );
 
