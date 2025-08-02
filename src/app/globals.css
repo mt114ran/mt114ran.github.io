@@ -46,8 +46,26 @@ body {
   @apply text-gray-100;
 }
 
+/* インラインコードのスタイル */
+.prose :not(pre) > code {
+  @apply bg-gray-800 text-orange-400 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+/* codeタグの前後に追加されるバッククォートを削除 */
+.prose code::before {
+  content: none;
+}
+
+.prose code::after {
+  content: none;
+}
+
 .prose pre {
   @apply bg-gray-900;
+}
+
+.prose pre code {
+  @apply text-gray-100;
 }
 
 .prose a {
