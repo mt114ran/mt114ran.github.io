@@ -1,7 +1,8 @@
 ---
+id: 2
 title: "TypeScript開発のベストプラクティス2024"
 tags: ["TypeScript", "JavaScript", "Best Practices"]
-create: "2024-02-20"
+create: "2024-02-20 10:00"
 ---
 
 # TypeScript開発のベストプラクティス2024

@@ -1,7 +1,8 @@
 ---
+id: 4
 title: "Git上級者向けTips集：効率的なバージョン管理"
 tags: ["Git", "Version Control", "Tips"]
-create: "2024-04-01"
+create: "2024-04-01 14:30"
 ---
 
 # Git上級者向けTips集：効率的なバージョン管理

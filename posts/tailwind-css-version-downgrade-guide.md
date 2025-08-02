@@ -1,7 +1,8 @@
 ---
+id: 7
 title: 'Tailwind CSS v4からv3へのダウングレード完全ガイド：バージョン互換性問題の解決'
-create: '2025-08-02'
-update: '2025-08-02'
+create: '2025-08-02 07:00'
+update: '2025-08-02 19:30'
 tags: ['Tailwind CSS', 'トラブルシューティング', '初心者向け', 'Next.js', 'CSS']
 ---
 
