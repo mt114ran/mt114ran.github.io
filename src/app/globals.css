@@ -1,10 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --background: #000000;
-  --foreground: #ffffff;
+@theme {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
 }
 
 html {
@@ -12,7 +10,6 @@ html {
 }
 
 body {
-  background-color: #000000;
-  color: #ffffff;
+  @apply bg-background text-foreground;
   font-family: Arial, Helvetica, sans-serif;
 }
