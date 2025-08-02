@@ -6,11 +6,6 @@ create: "2025-08-02 19:30"
 update: "2025-08-02 19:45"
 ---
 
-## クイズ：この記事でわかること
-
-1. MCPとは何の略で、どのような目的で使用されるツールですか？
-2. Playwright MCPを使用するメリットは何ですか？
-3. Claude Codeで外部ツールを連携させる際の設定ファイルの場所はどこですか？
 
 ## はじめに
 
@@ -243,13 +238,3 @@ Claude CodeにPlaywright MCPを連携させることで、ブラウザ自動化�
 - [Claude Code ドキュメント](https://docs.anthropic.com/en/docs/claude-code)
 - [Playwright MCP Server リポジトリ](https://github.com/modelcontextprotocol/servers/tree/main/src/playwright)
 
-## クイズの回答：ふりかえり
-
-1. **MCPとは何の略で、どのような目的で使用されるツールですか？**
-   - Model Context Protocolの略で、AIモデルが外部ツールやサービスと通信するためのプロトコルです。
-
-2. **Playwright MCPを使用するメリットは何ですか？**
-   - 自然言語での指示でブラウザ操作が可能、AIによるコンテキスト理解、柔軟なエラー処理、自動的なテストシナリオ生成などのメリットがあります。
-
-3. **Claude Codeで外部ツールを連携させる際の設定ファイルの場所はどこですか？**
-   - `~/.claude/settings.json`です。
