@@ -8,6 +8,12 @@ update: "2024-01-15 16:45"
 
 # Next.js App Routerの基本概念と実装パターン
 
+## クイズ：記事を読むとわかるようになること
+
+1. Next.js App Routerではどのディレクトリ内のフォルダ構造がURLパスになりますか？
+2. App Routerでサーバーコンポーネントからクライアントコンポーネントに切り替えるために使用するディレクティブは何ですか？
+3. App Routerで複数のページで共通のレイアウトを定義するために使用するファイル名は何ですか？
+
 Next.js 13で導入されたApp Routerは、従来のPages Routerとは異なるアプローチでルーティングを管理します。
 
 ## 主な特徴
@@ -55,3 +61,9 @@ export default function RootLayout({
 - ストリーミングSSR
 
 App Routerを使いこなすことで、より高速でSEOフレンドリーなWebアプリケーションを構築できます。
+
+## クイズの答え
+
+1. appディレクトリ
+2. 'use client'
+3. layout.tsx

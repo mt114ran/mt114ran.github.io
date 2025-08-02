@@ -71,3 +71,49 @@ body {
 .prose a {
   @apply text-blue-400 hover:text-blue-300;
 }
+
+/* クイズセクションのスタイル */
+.prose .quiz-title {
+  @apply bg-gray-800 text-white px-6 py-4 rounded-lg mt-8 mb-4;
+}
+
+.prose .quiz-title + ul,
+.prose .quiz-title + ol,
+.prose .quiz-title + p {
+  @apply bg-gray-800 px-6 py-3 rounded-lg mb-4;
+}
+
+.prose .quiz-title + ul li,
+.prose .quiz-title + ol li {
+  @apply my-2;
+}
+
+/* クイズの答えセクション */
+.prose .quiz-answer-title {
+  @apply bg-gray-800 text-white px-6 py-4 rounded-lg mt-8 mb-0;
+}
+
+.prose .quiz-answer-hint {
+  @apply bg-gray-800 text-gray-400 px-6 py-2 rounded-lg mb-0 italic text-sm;
+}
+
+.prose .quiz-answer-title + .quiz-answer-hint + ul,
+.prose .quiz-answer-title + .quiz-answer-hint + ol,
+.prose .quiz-answer-title + .quiz-answer-hint + p {
+  @apply bg-gray-800 px-6 py-3 rounded-lg;
+}
+
+.prose .quiz-answer-title + .quiz-answer-hint + ul li,
+.prose .quiz-answer-title + .quiz-answer-hint + ol li {
+  @apply my-2 text-gray-800 selection:text-white selection:bg-blue-500;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.prose .quiz-answer-title + .quiz-answer-hint + ul li strong,
+.prose .quiz-answer-title + .quiz-answer-hint + ol li strong,
+.prose .quiz-answer-title + .quiz-answer-hint + p strong {
+  @apply text-gray-800 selection:text-white;
+}

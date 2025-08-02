@@ -40,7 +40,19 @@ export async function getPostData(slug: string) {
   const processedContent = await remark()
     .use(html, { sanitize: false })
     .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  let contentHtml = processedContent.toString();
+  
+  // クイズセクションにカスタムクラスを追加
+  contentHtml = contentHtml.replace(
+    /<h2[^>]*>([^<]*クイズ[^<]*)<\/h2>/gi,
+    '<h2 class="quiz-title">$1</h2>'
+  );
+  
+  // クイズの答えセクションにカスタムクラスを追加
+  contentHtml = contentHtml.replace(
+    /<h2[^>]*>クイズの答え<\/h2>/gi,
+    '<h2 class="quiz-answer-title">クイズの答え</h2><p class="quiz-answer-hint">（答えはドラッグして選択すると見えます）</p>'
+  );
 
   return {
     slug,
