@@ -1,0 +1,231 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/85a3e497b41442e0.css","style"]
+0:{"P":null,"b":"gvSjHb3BjUIuxoXA0Kr0m","p":"","c":["","blog","claude-code-playwright-mcp-integration",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","claude-code-playwright-mcp-integration","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/85a3e497b41442e0.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","claude-code-playwright-mcp-integration","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","KuZLicN1WuiplRYCZrfs5",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["874","static/chunks/874-992333f59fd2c78c.js","953","static/chunks/app/blog/%5Bslug%5D/page-22a331a24ce6a1f3.js"],""]
+13:T2559,<h2>クイズ：記事を読むとわかるようになること</h2>
+<ol>
+<li>MCPとは何の略で、どのような目的で使用されるツールですか？</li>
+<li>Playwright MCPを使用するメリットは何ですか？</li>
+<li>Claude Codeで外部ツールを連携させる際の設定ファイルの場所はどこですか？</li>
+</ol>
+<h2>はじめに</h2>
+<p>今回は、Claude CodeにPlaywright MCPを連携させて、AIアシスタントがブラウザを自動操作できるようにする方法について解説します。この連携により、Webアプリケーションのテスト自動化、スクレイピング、UIの動作確認などが、自然言語での指示だけで実現できるようになります。</p>
+<h2>対応した内容</h2>
+<p>Claude CodeにPlaywright MCPサーバーを連携させ、以下の機能を実現しました：</p>
+<ul>
+<li>ブラウザの起動と制御</li>
+<li>Webページへのナビゲーション</li>
+<li>ページ要素の操作（クリック、テキスト入力、選択など）</li>
+<li>スクリーンショットの取得</li>
+<li>ページ内容の取得と解析</li>
+<li>JavaScriptコードの実行</li>
+</ul>
+<h2>導入した技術の解説</h2>
+<h3>MCP (Model Context Protocol)</h3>
+<p>MCPは、AIモデルが外部ツールやサービスと通信するためのプロトコルです。Claude Codeでは、MCPサーバーを通じて様々な外部機能を統合できます。</p>
+<p>主な特徴：</p>
+<ul>
+<li>標準化されたプロトコルによる通信</li>
+<li>セキュアな接続と認証</li>
+<li>非同期処理のサポート</li>
+<li>エラーハンドリング機構</li>
+</ul>
+<h3>Playwright</h3>
+<p>Playwrightは、Microsoftが開発したブラウザ自動化ライブラリです。複数のブラウザ（Chromium、Firefox、WebKit）をサポートし、モダンなWebアプリケーションのテストに適しています。</p>
+<p>主な特徴：</p>
+<ul>
+<li>クロスブラウザ対応</li>
+<li>ヘッドレス/ヘッドフルモード</li>
+<li>自動待機機構</li>
+<li>ネットワークインターセプト</li>
+<li>モバイルデバイスエミュレーション</li>
+</ul>
+<h2>用語の解説</h2>
+<h3>ヘッドレスブラウザ</h3>
+<p>GUIを表示せずにバックグラウンドで動作するブラウザ。CI/CD環境やサーバー上での自動テストに適している。</p>
+<h3>セレクター</h3>
+<p>HTML要素を特定するための文字列。CSSセレクター、XPath、テキストコンテンツなどで指定可能。</p>
+<h3>アクセシビリティスナップショット</h3>
+<p>ページの構造をアクセシビリティツリーとして表現したもの。スクリーンリーダーが認識する情報に近い形式。</p>
+<h3>ダイアログハンドリング</h3>
+<p>alert、confirm、promptなどのブラウザダイアログを自動的に処理する機能。</p>
+<h2>実装手順と遭遇した問題</h2>
+<h3>1. Playwright MCPサーバーのインストール</h3>
+<pre><code class="language-bash">npm install -g @modelcontextprotocol/server-playwright
+</code></pre>
+<h3>2. Claude Code設定ファイルの更新</h3>
+<p><code>~/.claude/settings.json</code>に以下の設定を追加：</p>
+<pre><code class="language-json">{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-playwright"
+      ]
+    }
+  }
+}
+</code></pre>
+<h3>遭遇した問題点</h3>
+<h4>問題1: ブラウザが起動しない</h4>
+<p><strong>症状</strong>: Playwrightコマンドを実行してもブラウザが表示されない</p>
+<p><strong>原因</strong>: デフォルトでヘッドレスモードで起動するため</p>
+<p><strong>解決方法</strong>:
+設定ファイルにヘッドフルモードの指定を追加：</p>
+<pre><code class="language-json">{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-playwright"
+      ],
+      "env": {
+        "PLAYWRIGHT_HEADLESS": "false"
+      }
+    }
+  }
+}
+</code></pre>
+<h4>問題2: Claude Codeが新しいMCPツールを認識しない</h4>
+<p><strong>症状</strong>: 設定追加後もPlaywrightコマンドが使用できない</p>
+<p><strong>原因</strong>: Claude Codeの再起動が必要</p>
+<p><strong>解決方法</strong>:
+Claude Codeを完全に終了して再起動：</p>
+<pre><code class="language-bash"># Claude Codeセッションを終了
+exit
+
+# 新しいセッションを開始
+claude
+</code></pre>
+<h2>実務でよくある使用ケース</h2>
+<h3>1. E2Eテストの自動生成</h3>
+<pre><code class="language-javascript">// ログインフローのテスト例
+await browser.navigate("https://example.com/login");
+await browser.type('[name="username"]', "testuser");
+await browser.type('[name="password"]', "testpass");
+await browser.click('[type="submit"]');
+await browser.wait_for("Dashboard");
+</code></pre>
+<h3>2. Webスクレイピング</h3>
+<pre><code class="language-javascript">// 商品情報の取得例
+await browser.navigate("https://shopping-site.com/products");
+const snapshot = await browser.snapshot();
+// スナップショットから必要な情報を抽出
+</code></pre>
+<h3>3. フォーム入力の自動化</h3>
+<pre><code class="language-javascript">// 複数フィールドの一括入力
+const formData = {
+  name: "山田太郎",
+  email: "yamada@example.com",
+  tel: "090-1234-5678"
+};
+
+for (const [field, value] of Object.entries(formData)) {
+  await browser.type(`[name="${field}"]`, value);
+}
+</code></pre>
+<h3>4. パフォーマンステスト</h3>
+<pre><code class="language-javascript">// ページロード時間の計測
+const startTime = Date.now();
+await browser.navigate("https://example.com");
+await browser.wait_for("main-content");
+const loadTime = Date.now() - startTime;
+console.log(`Page load time: ${loadTime}ms`);
+</code></pre>
+<h2>セキュリティ上の注意点</h2>
+<ol>
+<li>
+<p><strong>認証情報の取り扱い</strong></p>
+<ul>
+<li>パスワードなどの機密情報は環境変数で管理</li>
+<li>ログに認証情報が出力されないよう注意</li>
+</ul>
+</li>
+<li>
+<p><strong>スクレイピング時の配慮</strong></p>
+<ul>
+<li>robots.txtの遵守</li>
+<li>適切なリクエスト間隔の設定</li>
+<li>サイトの利用規約の確認</li>
+</ul>
+</li>
+<li>
+<p><strong>CORSとセキュリティポリシー</strong></p>
+<ul>
+<li>クロスオリジンリクエストの制限を理解</li>
+<li>Content Security Policyの影響を考慮</li>
+</ul>
+</li>
+</ol>
+<h2>トラブルシューティング</h2>
+<h3>ブラウザがインストールされていないエラー</h3>
+<pre><code class="language-bash"># Playwrightブラウザのインストール
+npx playwright install chromium
+</code></pre>
+<h3>タイムアウトエラー</h3>
+<p>要素の待機時間を調整：</p>
+<pre><code class="language-javascript">// デフォルトのタイムアウトを延長
+await browser.wait_for("element", { timeout: 30000 });
+</code></pre>
+<h3>要素が見つからないエラー</h3>
+<p>アクセシビリティスナップショットで要素を確認：</p>
+<pre><code class="language-javascript">const snapshot = await browser.snapshot();
+console.log(snapshot); // 要素の構造を確認
+</code></pre>
+<h2>まとめ</h2>
+<p>Claude CodeにPlaywright MCPを連携させることで、ブラウザ自動化タスクをAIアシスタントに任せることができるようになりました。この統合により、以下のメリットが得られます：</p>
+<ol>
+<li><strong>自然言語での指示</strong>: 複雑なセレクターやAPIを覚える必要がない</li>
+<li><strong>コンテキスト理解</strong>: AIがページ内容を理解して適切な操作を選択</li>
+<li><strong>エラー処理</strong>: 予期しないエラーに対してAIが柔軟に対応</li>
+<li><strong>テストシナリオ生成</strong>: ユーザーストーリーから自動的にテストケースを作成</li>
+</ol>
+<p>この技術を活用することで、Webアプリケーション開発の効率が大幅に向上し、品質保証プロセスも強化されます。</p>
+<h2>参考リンク</h2>
+<ul>
+<li><a href="https://modelcontextprotocol.io/">MCP (Model Context Protocol) 公式ドキュメント</a></li>
+<li><a href="https://playwright.dev/">Playwright 公式ドキュメント</a></li>
+<li><a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code ドキュメント</a></li>
+<li><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/playwright">Playwright MCP Server リポジトリ</a></li>
+</ul>
+<h2>クイズの答え</h2>
+<ol>
+<li>
+<p><strong>MCPとは何の略で、どのような目的で使用されるツールですか？</strong></p>
+<ul>
+<li>Model Context Protocolの略で、AIモデルが外部ツールやサービスと通信するためのプロトコルです。</li>
+</ul>
+</li>
+<li>
+<p><strong>Playwright MCPを使用するメリットは何ですか？</strong></p>
+<ul>
+<li>自然言語での指示でブラウザ操作が可能、AIによるコンテキスト理解、柔軟なエラー処理、自動的なテストシナリオ生成などのメリットがあります。</li>
+</ul>
+</li>
+<li>
+<p><strong>Claude Codeで外部ツールを連携させる際の設定ファイルの場所はどこですか？</strong></p>
+<ul>
+<li><code>~/.claude/settings.json</code>です。</li>
+</ul>
+</li>
+</ol>
+4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-gray-600","children":["#",11]}]," ","Claude CodeでPlaywright MCPを連携させてブラウザ自動化を実現する"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-02 19:30"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日時: ","2025-08-02 19:45"]}],["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Claude Code"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"MCP"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Playwright"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"自動化"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ブラウザテスト"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}
