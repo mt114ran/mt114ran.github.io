@@ -37,9 +37,14 @@ export default async function BlogPostPage(props: any) {
         className="prose dark:prose-invert"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}
       />
-      <Link href="/blog" className="text-blue-600 hover:underline">
-        一覧に戻る
-      </Link>
+      <nav className="mt-8 pt-4 border-t flex justify-between">
+        <Link href="/" className="text-blue-600 hover:underline">
+          ← ホームへ
+        </Link>
+        <Link href="/blog" className="text-blue-600 hover:underline">
+          記事一覧へ →
+        </Link>
+      </nav>
     </div>
   )
 }

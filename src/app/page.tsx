@@ -12,7 +12,12 @@ export default function Home() {
       </p>
       
       <section>
-        <h2 className="text-2xl font-semibold mb-4">記事一覧</h2>
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-2xl font-semibold">最新記事</h2>
+          <Link href="/blog" className="text-blue-600 hover:underline text-sm">
+            すべての記事を見る →
+          </Link>
+        </div>
         <ul className="space-y-4">
           {posts.map((post) => (
             <li key={post.slug} className="border-b pb-4">

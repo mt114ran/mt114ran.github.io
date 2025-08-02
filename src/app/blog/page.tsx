@@ -8,7 +8,12 @@ export default function BlogIndex() {
 
   return (
     <div className="max-w-2xl mx-auto py-10 px-4">
-      <h1 className="text-3xl font-bold mb-6">maita tomoya dev io</h1>
+      <nav className="mb-6">
+        <Link href="/" className="text-blue-600 hover:underline">
+          ← ホームへ戻る
+        </Link>
+      </nav>
+      <h1 className="text-3xl font-bold mb-6">記事一覧</h1>
       <ul className="space-y-4">
         {posts.map((post) => (
           <li key={post.slug}>
