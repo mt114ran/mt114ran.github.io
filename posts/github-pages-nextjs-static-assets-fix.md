@@ -7,7 +7,7 @@ tags: ['GitHub Pages', 'Next.js', 'Jekyll', 'Static Site']
 
 # GitHub PagesでNext.jsの静的アセットが404になる問題の解決方法
 
-## クイズ：記事を読むとわかるようになること
+## 記事を読むとわかるようになること
 
 1. GitHub Pagesがデフォルトで使用する静的サイトジェネレーターは何ですか？
 2. Jekyll がアンダースコアで始まるディレクトリをどのように扱いますか？

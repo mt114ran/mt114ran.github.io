@@ -74,7 +74,7 @@ body {
 
 /* クイズセクションのスタイル */
 .prose .quiz-title {
-  @apply bg-gray-800 text-white px-6 py-4 rounded-lg mt-8 mb-4;
+  @apply text-white mt-8 mb-4;
 }
 
 .prose .quiz-title + ul,

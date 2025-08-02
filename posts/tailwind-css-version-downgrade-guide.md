@@ -8,7 +8,7 @@ tags: ['Tailwind CSS', 'トラブルシューティング', '初心者向け', '
 
 # Tailwind CSS v4からv3へのダウングレード完全ガイド
 
-## クイズ：記事を読むとわかるようになること
+## 記事を読むとわかるようになること
 
 1. Tailwind CSS v4で導入された新しいCSS記法は何ですか？
 2. `@tailwindcss/typography`プラグインがv4で問題となる理由は何ですか？
