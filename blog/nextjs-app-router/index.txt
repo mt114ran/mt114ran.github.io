@@ -8,14 +8,106 @@ c:I[9665,[],"ViewportBoundary"]
 e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/css/85a3e497b41442e0.css","style"]
-0:{"P":null,"b":"mD0xsBBOMQ5jVMwzlmTx3","p":"","c":["","blog","nextjs-app-router",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","nextjs-app-router","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/85a3e497b41442e0.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","nextjs-app-router","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","di7giyqdQwfYVGux1fUJe",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+:HL["/_next/static/css/e1e085347ecf8985.css","style"]
+0:{"P":null,"b":"Op7AamAIw8DQgiBIeh-Ge","p":"","c":["","blog","nextjs-app-router",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","nextjs-app-router","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e1e085347ecf8985.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","nextjs-app-router","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","P1NI4KSgvyvIjKfbgtU1e",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
 12:I[6874,["874","static/chunks/874-992333f59fd2c78c.js","953","static/chunks/app/blog/%5Bslug%5D/page-22a331a24ce6a1f3.js"],""]
-4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-gray-600","children":["#",1]}]," ","Next.js App Routerの基本概念と実装パターン"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2024-01-10 09:15"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日時: ","2024-01-15 16:45"]}],["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Next.js"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"React"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"App Router"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"<h1>Next.js App Routerの基本概念と実装パターン</h1>\n<p>Next.js 13で導入されたApp Routerは、従来のPages Routerとは異なるアプローチでルーティングを管理します。</p>\n<h2>主な特徴</h2>\n<h3>1. ファイルベースルーティング</h3>\n<p>App Routerでは、<code>app</code>ディレクトリ内のフォルダ構造がそのままURLパスになります。</p>\n<pre><code class=\"language-typescript\">app/\n  page.tsx        // /\n  about/\n    page.tsx      // /about\n  blog/\n    [slug]/\n      page.tsx    // /blog/[slug]\n</code></pre>\n<h3>2. サーバーコンポーネント</h3>\n<p>デフォルトでサーバーコンポーネントとして動作し、必要に応じて<code>'use client'</code>ディレクティブでクライアントコンポーネントに切り替えます。</p>\n<h3>3. レイアウトの共有</h3>\n<p><code>layout.tsx</code>ファイルを使用して、複数のページで共通のレイアウトを定義できます。</p>\n<h2>実装例</h2>\n<pre><code class=\"language-typescript\">// app/layout.tsx\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    &#x3C;html lang=\"ja\">\n      &#x3C;body>{children}&#x3C;/body>\n    &#x3C;/html>\n  )\n}\n</code></pre>\n<h2>パフォーマンスの最適化</h2>\n<ul>\n<li>自動的なコード分割</li>\n<li>プリフェッチとキャッシング</li>\n<li>ストリーミングSSR</li>\n</ul>\n<p>App Routerを使いこなすことで、より高速でSEOフレンドリーなWebアプリケーションを構築できます。</p>\n"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+13:T1736,<h1>Next.js App Routerの基本概念と実装パターン</h1>
+<h2 class="quiz-title">クイズ：この記事でわかること</h2>
+<ol>
+<li>Next.js App Routerではどのディレクトリ内のフォルダ構造がURLパスになりますか？</li>
+<li>App Routerでサーバーコンポーネントからクライアントコンポーネントに切り替えるために使用するディレクティブは何ですか？</li>
+<li>App Routerで複数のページで共通のレイアウトを定義するために使用するファイル名は何ですか？</li>
+</ol>
+<p><a href="https://nextjs.org/">Next.js</a> 13で導入された<strong>App Router</strong>は、従来のPages Routerとは異なるアプローチで<strong>ルーティング</strong>（URLとページの対応付け）を管理します。</p>
+<h3>用語解説</h3>
+<ul>
+<li><strong>Next.js</strong>: Reactベースのフルスタックフレームワーク。サーバーサイドレンダリング（SSR）や静的サイト生成（SSG）が簡単に実装できる</li>
+<li><strong>ルーティング</strong>: URLパスとページコンポーネントを紐付ける仕組み</li>
+<li><strong>フレームワーク</strong>: アプリケーション開発の土台となるソフトウェアの枠組み</li>
+</ul>
+<h2>主な特徴</h2>
+<h3>1. ファイルベースルーティング</h3>
+<p>App Routerでは、<code>app</code>ディレクトリ内のフォルダ構造がそのまま<strong>URLパス</strong>になります。</p>
+<p>💡 <strong>初心者向け解説</strong>: ファイルやフォルダの配置だけでページのURLが決まるため、設定ファイルを書く必要がありません。</p>
+<pre><code class="language-typescript">app/
+  page.tsx        // /
+  about/
+    page.tsx      // /about
+  blog/
+    [slug]/
+      page.tsx    // /blog/[slug]
+</code></pre>
+<h3>2. サーバーコンポーネント</h3>
+<p>デフォルトで<strong>サーバーコンポーネント</strong>として動作し、必要に応じて<code>'use client'</code><strong>ディレクティブ</strong>でクライアントコンポーネントに切り替えます。</p>
+<h4>用語解説</h4>
+<ul>
+<li><strong>サーバーコンポーネント</strong>: サーバー側で実行され、HTMLを生成してからブラウザに送るコンポーネント。<a href="https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components">React Server Components</a>の仕組み</li>
+<li><strong>クライアントコンポーネント</strong>: ブラウザ側で実行される従来のReactコンポーネント</li>
+<li><strong>ディレクティブ</strong>: コードの動作を指定する特別な命令文</li>
+</ul>
+<h3>3. レイアウトの共有</h3>
+<p><code>layout.tsx</code>ファイルを使用して、複数のページで共通の<strong>レイアウト</strong>を定義できます。</p>
+<p>💡 <strong>初心者向け解説</strong>: レイアウトとは、ヘッダーやサイドバーなど、複数のページで共通して使う部分のことです。</p>
+<h2>実装例</h2>
+<p>以下は<strong>TypeScript</strong>（型付きJavaScript）を使った実装例です：</p>
+<pre><code class="language-typescript">// app/layout.tsx
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    &#x3C;html lang="ja">
+      &#x3C;body>{children}&#x3C;/body>
+    &#x3C;/html>
+  )
+}
+</code></pre>
+<h2>パフォーマンスの最適化</h2>
+<ul>
+<li><strong>コード分割</strong>: 必要なコードだけを読み込む技術。ページ表示速度が向上</li>
+<li><strong>プリフェッチ</strong>: ユーザーが次に訪れそうなページを事前に読み込む技術</li>
+<li><strong>キャッシング</strong>: 一度読み込んだデータを保存して再利用する仕組み</li>
+<li><strong>ストリーミングSSR</strong>: ページの一部を順次送信して表示速度を向上させる技術</li>
+</ul>
+<p>App Routerを使いこなすことで、より高速で<strong>SEO</strong>フレンドリーなWebアプリケーションを構築できます。</p>
+<p>💡 <strong>SEO（Search Engine Optimization）</strong>: 検索エンジン最適化。GoogleやBingなどの検索結果で上位に表示されやすくする技術</p>
+<h2>参考リンク</h2>
+<ul>
+<li><a href="https://nextjs.org/docs">Next.js 公式ドキュメント（日本語）</a></li>
+<li><a href="https://ja.react.dev/">React 公式ドキュメント</a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript">MDN Web Docs - JavaScript</a></li>
+</ul>
+<h2 class="quiz-answer-title">クイズの回答：ふりかえり</h2>
+<div class="quiz-answer-wrapper">
+  <button class="quiz-answer-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('show');">
+    1. Next.js App Routerではどのディレクトリ内のフォルダ構造がURLパスになりますか？
+  </button>
+  <div class="quiz-answer-content">
+    <p>appディレクトリ</p>
+  </div>
+</div>
+<div class="quiz-answer-wrapper">
+  <button class="quiz-answer-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('show');">
+    2. App Routerでサーバーコンポーネントからクライアントコンポーネントに切り替えるために使用するディレクティブは何ですか？
+  </button>
+  <div class="quiz-answer-content">
+    <p>'use client'</p>
+  </div>
+</div>
+<div class="quiz-answer-wrapper">
+  <button class="quiz-answer-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('show');">
+    3. App Routerで複数のページで共通のレイアウトを定義するために使用するファイル名は何ですか？
+  </button>
+  <div class="quiz-answer-content">
+    <p>layout.tsx</p>
+  </div>
+</div>
+4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",1]}]," ","Next.js App Routerの基本概念と実装パターン"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2024-01-10 09:15"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日時: ","2024-01-15 16:45"]}],["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Next.js"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"React"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"App Router"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
 11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
