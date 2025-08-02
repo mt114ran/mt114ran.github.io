@@ -8,11 +8,6 @@ update: "2024-01-15 16:45"
 
 # Next.js App Routerの基本概念と実装パターン
 
-## クイズ：この記事でわかること
-
-1. Next.js App Routerではどのディレクトリ内のフォルダ構造がURLパスになりますか？
-2. App Routerでサーバーコンポーネントからクライアントコンポーネントに切り替えるために使用するディレクティブは何ですか？
-3. App Routerで複数のページで共通のレイアウトを定義するために使用するファイル名は何ですか？
 
 [Next.js](https://nextjs.org/) 13で導入された**App Router**は、従来のPages Routerとは異なるアプローチで**ルーティング**（URLとページの対応付け）を管理します。
 
@@ -87,8 +82,3 @@ App Routerを使いこなすことで、より高速で**SEO**フレンドリー
 - [React 公式ドキュメント](https://ja.react.dev/)
 - [MDN Web Docs - JavaScript](https://developer.mozilla.org/ja/docs/Web/JavaScript)
 
-## クイズの回答：ふりかえり
-
-1. appディレクトリ
-2. 'use client'
-3. layout.tsx

@@ -7,14 +7,6 @@ create: "2024-02-20 10:00"
 
 # TypeScript開発のベストプラクティス2024
 
-## クイズ：記事を読むとわかるようになること
-
-1. TypeScriptはJavaScriptに型チェック機能を追加した言語ですか？（Yes/No）
-2. TypeScriptの型チェックを厳しくする設定は`strict`ですか？（Yes/No）
-3. 以下のうち、TypeScriptで使える組み込みのUtilityタイプはどれですか？
-   a) Partial
-   b) Complete
-   c) Total
 
 TypeScriptを効果的に活用するためのベストプラクティスをまとめました。
 
@@ -91,8 +83,3 @@ type Color = typeof colors[number]; // 'red' | 'green' | 'blue'
 
 これらのベストプラクティスを実践することで、型安全性を保ちながら生産的な開発が可能になります。
 
-## クイズ：ふりかえり
-
-1. Yes（TypeScriptはJavaScriptに型チェック機能を追加した言語です）
-2. Yes（`strict: true`でTypeScriptの型チェックを厳しくできます）
-3. a) Partial（PartialはTypeScriptの組み込みUtilityタイプです）
