@@ -26,9 +26,9 @@ export default function BlogIndex() {
       </div>
       <ul className="space-y-0">
         {posts.map((post) => (
-          <li key={post.slug} className="border-b border-gray-700 pb-4 mb-4">
+          <li key={post.slug} className="border-b border-gray-700 pb-4 mb-4 pt-2">
             <Link href={`/blog/${post.slug}`} className="text-blue-400 hover:text-blue-300 hover:underline text-lg font-semibold">
-              <span className="text-gray-600">#{post.id}</span> {post.title}
+              <span className="text-green-600">#{post.id}</span> {post.title}
             </Link>
             {/* 作成日と更新日を表示する。更新日はない場合は作成日だけを表示する。 */}
             <p className="text-gray-500 text-sm mt-1">

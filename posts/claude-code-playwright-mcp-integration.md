@@ -1,9 +1,9 @@
 ---
-layout: post
+id: 11
 title: "Claude CodeでPlaywright MCPを連携させてブラウザ自動化を実現する"
-date: 2025-08-02 19:00:00 +0900
-categories: [AI, 自動化, ブラウザテスト]
 tags: [Claude Code, MCP, Playwright, 自動化, ブラウザテスト]
+create: "2025-08-02 19:30"
+update: "2025-08-02 19:45"
 ---
 
 ## クイズ：記事を読むとわかるようになること
@@ -41,7 +41,7 @@ MCPは、AIモデルが外部ツールやサービスと通信するためのプ
 
 ### Playwright
 
-Playwrightは、Microsoft が開発したブラウザ自動化ライブラリです。複数のブラウザ（Chromium、Firefox、WebKit）をサポートし、モダンなWebアプリケーションのテストに適しています。
+Playwrightは、Microsoftが開発したブラウザ自動化ライブラリです。複数のブラウザ（Chromium、Firefox、WebKit）をサポートし、モダンなWebアプリケーションのテストに適しています。
 
 主な特徴：
 - クロスブラウザ対応
@@ -98,7 +98,7 @@ npm install -g @modelcontextprotocol/server-playwright
 
 **原因**: デフォルトでヘッドレスモードで起動するため
 
-**解決方法**: 
+**解決方法**:
 設定ファイルにヘッドフルモードの指定を追加：
 
 ```json
@@ -124,7 +124,7 @@ npm install -g @modelcontextprotocol/server-playwright
 
 **原因**: Claude Codeの再起動が必要
 
-**解決方法**: 
+**解決方法**:
 Claude Codeを完全に終了して再起動：
 
 ```bash

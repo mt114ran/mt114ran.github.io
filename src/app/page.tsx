@@ -32,7 +32,7 @@ export default function Home() {
           {posts.map((post) => (
             <li key={post.slug} className="border-b border-gray-700 pb-4">
               <Link href={`/blog/${post.slug}`} className="text-blue-400 hover:text-blue-300 hover:underline text-lg">
-                <span className="text-gray-600">#{post.id}</span> {post.title}
+                <span className="text-green-600">#{post.id}</span> {post.title}
               </Link>
               <p className="text-gray-500 text-sm mt-1">
                 {post.update ? `作成日時: ${post.create}、更新日時: ${post.update}` : `作成日時: ${post.create}`}
