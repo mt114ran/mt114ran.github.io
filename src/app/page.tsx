@@ -7,28 +7,28 @@ export default function Home() {
   return (
     <main className="max-w-2xl mx-auto py-10 px-4">
       <h1 className="text-4xl font-bold mb-4">maita tomoya dev io</h1>
-      <p className="text-gray-600 mb-8">
+      <p className="text-gray-300 mb-8">
         技術記事や学習記録を掲載しています。
       </p>
       
       <section>
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-semibold">最新記事</h2>
-          <Link href="/blog" className="text-blue-600 hover:underline text-sm">
+          <Link href="/blog" className="text-blue-400 hover:text-blue-300 hover:underline text-sm">
             すべての記事を見る →
           </Link>
         </div>
         <ul className="space-y-4">
           {posts.map((post) => (
-            <li key={post.slug} className="border-b pb-4">
-              <Link href={`/blog/${post.slug}`} className="text-blue-600 hover:underline text-lg">
+            <li key={post.slug} className="border-b border-gray-700 pb-4">
+              <Link href={`/blog/${post.slug}`} className="text-blue-400 hover:text-blue-300 hover:underline text-lg">
                 {post.title}
               </Link>
-              <p className="text-gray-500 text-sm mt-1">
+              <p className="text-gray-400 text-sm mt-1">
                 {post.update ? `作成日: ${post.create}、更新日: ${post.update}` : `作成日: ${post.create}`}
               </p>
               {post.tags && post.tags.length > 0 && (
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-400 text-sm">
                   Tags: {post.tags.join(', ')}
                 </p>
               )}
