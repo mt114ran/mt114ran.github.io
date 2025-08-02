@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getSortedPostsData } from '@/lib/posts'
 
 // 記事一覧ページのviewファイル
@@ -13,12 +14,21 @@ export default function BlogIndex() {
           ← ホームへ戻る
         </Link>
       </nav>
-      <h1 className="text-3xl font-bold mb-6">記事一覧</h1>
+      <div className="flex justify-between items-start mb-6">
+        <h1 className="text-3xl font-bold">記事一覧</h1>
+        <Image 
+          src="/favicon.png" 
+          alt="ブログアイコン" 
+          width={50} 
+          height={50}
+          className="rounded-lg"
+        />
+      </div>
       <ul className="space-y-0">
         {posts.map((post) => (
-          <li key={post.slug} className="border-b border-gray-700 pb-4 mb-4">
+          <li key={post.slug} className="border-b border-gray-700 pb-4 mb-4 pt-2">
             <Link href={`/blog/${post.slug}`} className="text-blue-400 hover:text-blue-300 hover:underline text-lg font-semibold">
-              <span className="text-gray-600">#{post.id}</span> {post.title}
+              <span className="text-green-600">#{post.id}</span> {post.title}
             </Link>
             {/* 作成日と更新日を表示する。更新日はない場合は作成日だけを表示する。 */}
             <p className="text-gray-500 text-sm mt-1">

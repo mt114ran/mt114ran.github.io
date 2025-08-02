@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getSortedPostsData } from '@/lib/posts'
 
 export default function Home() {
@@ -6,7 +7,16 @@ export default function Home() {
 
   return (
     <main className="max-w-2xl mx-auto py-10 px-4">
-      <h1 className="text-4xl font-bold mb-4">maita tomoya dev io</h1>
+      <div className="flex justify-between items-start mb-4">
+        <h1 className="text-4xl font-bold">maita tomoya dev io</h1>
+        <Image 
+          src="/favicon.png" 
+          alt="ブログアイコン" 
+          width={60} 
+          height={60}
+          className="rounded-lg"
+        />
+      </div>
       <p className="text-gray-300 mb-8">
         技術記事や学習記録を掲載しています。
       </p>
@@ -22,7 +32,7 @@ export default function Home() {
           {posts.map((post) => (
             <li key={post.slug} className="border-b border-gray-700 pb-4">
               <Link href={`/blog/${post.slug}`} className="text-blue-400 hover:text-blue-300 hover:underline text-lg">
-                <span className="text-gray-600">#{post.id}</span> {post.title}
+                <span className="text-green-600">#{post.id}</span> {post.title}
               </Link>
               <p className="text-gray-500 text-sm mt-1">
                 {post.update ? `作成日時: ${post.create}、更新日時: ${post.update}` : `作成日時: ${post.create}`}
