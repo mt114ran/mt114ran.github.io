@@ -10,3 +10,46 @@ body {
   @apply bg-black text-white;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Prose (記事本文) のカスタマイズ */
+.prose {
+  @apply text-white;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply text-white;
+}
+
+.prose p {
+  @apply text-gray-100;
+}
+
+.prose strong {
+  @apply text-white font-bold;
+}
+
+.prose ul li,
+.prose ol li {
+  @apply text-gray-100;
+}
+
+.prose blockquote {
+  @apply text-gray-200 border-gray-600;
+}
+
+.prose code {
+  @apply text-gray-100;
+}
+
+.prose pre {
+  @apply bg-gray-900;
+}
+
+.prose a {
+  @apply text-blue-400 hover:text-blue-300;
+}

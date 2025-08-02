@@ -37,7 +37,9 @@ export async function getPostData(slug: string) {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   const matterResult = matter(fileContents);
-  const processedContent = await remark().use(html).process(matterResult.content);
+  const processedContent = await remark()
+    .use(html, { sanitize: false })
+    .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
   return {
