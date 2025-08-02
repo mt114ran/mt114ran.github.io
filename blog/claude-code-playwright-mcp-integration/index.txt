@@ -8,20 +8,14 @@ c:I[9665,[],"ViewportBoundary"]
 e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/css/e1e085347ecf8985.css","style"]
-0:{"P":null,"b":"Op7AamAIw8DQgiBIeh-Ge","p":"","c":["","blog","claude-code-playwright-mcp-integration",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","claude-code-playwright-mcp-integration","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e1e085347ecf8985.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","claude-code-playwright-mcp-integration","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","VR3DLJAhSPKA_HvOuDf1e",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+:HL["/_next/static/css/01a1003f3afdeb66.css","style"]
+0:{"P":null,"b":"m5qA9FQ2Gb4qiynrLQCBS","p":"","c":["","blog","claude-code-playwright-mcp-integration",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","claude-code-playwright-mcp-integration","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/01a1003f3afdeb66.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","claude-code-playwright-mcp-integration","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","ZAeqkdXLSfAFl1G2pof3o",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
 12:I[6874,["874","static/chunks/874-992333f59fd2c78c.js","953","static/chunks/app/blog/%5Bslug%5D/page-22a331a24ce6a1f3.js"],""]
-13:T2903,<h2 class="quiz-title">クイズ：この記事でわかること</h2>
-<ol>
-<li>MCPとは何の略で、どのような目的で使用されるツールですか？</li>
-<li>Playwright MCPを使用するメリットは何ですか？</li>
-<li>Claude Codeで外部ツールを連携させる際の設定ファイルの場所はどこですか？</li>
-</ol>
-<h2>はじめに</h2>
+13:T20bd,<h2>はじめに</h2>
 <p>今回は、Claude CodeにPlaywright MCPを連携させて、AIアシスタントがブラウザを自動操作できるようにする方法について解説します。この連携により、Webアプリケーションのテスト自動化、スクレイピング、UIの動作確認などが、自然言語での指示だけで実現できるようになります。</p>
 <h2>対応した内容</h2>
 <p>Claude CodeにPlaywright MCPサーバーを連携させ、以下の機能を実現しました：</p>
@@ -203,37 +197,6 @@ console.log(snapshot); // 要素の構造を確認
 <li><a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code ドキュメント</a></li>
 <li><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/playwright">Playwright MCP Server リポジトリ</a></li>
 </ul>
-<h2 class="quiz-answer-title">クイズの回答：ふりかえり</h2>
-<div class="quiz-answer-wrapper">
-  <button class="quiz-answer-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('show');">
-    1. MCPとは何の略で、どのような目的で使用されるツールですか？
-  </button>
-  <div class="quiz-answer-content">
-    <p><p><strong>MCPとは何の略で、どのような目的で使用されるツールですか？</strong></p>
-<ul>
-Model Context Protocolの略で、AIモデルが外部ツールやサービスと通信するためのプロトコルです。</p>
-  </div>
-</div>
-<div class="quiz-answer-wrapper">
-  <button class="quiz-answer-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('show');">
-    2. Playwright MCPを使用するメリットは何ですか？
-  </button>
-  <div class="quiz-answer-content">
-    <p><p><strong>Playwright MCPを使用するメリットは何ですか？</strong></p>
-<ul>
-自然言語での指示でブラウザ操作が可能、AIによるコンテキスト理解、柔軟なエラー処理、自動的なテストシナリオ生成などのメリットがあります。</p>
-  </div>
-</div>
-<div class="quiz-answer-wrapper">
-  <button class="quiz-answer-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('show');">
-    3. Claude Codeで外部ツールを連携させる際の設定ファイルの場所はどこですか？
-  </button>
-  <div class="quiz-answer-content">
-    <p><p><strong>Claude Codeで外部ツールを連携させる際の設定ファイルの場所はどこですか？</strong></p>
-<ul>
-<code>~/.claude/settings.json</code>です。</p>
-  </div>
-</div>
 4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",11]}]," ","Claude CodeでPlaywright MCPを連携させてブラウザ自動化を実現する"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-02 19:30"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日時: ","2025-08-02 19:45"]}],["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Claude Code"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"MCP"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Playwright"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"自動化"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ブラウザテスト"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
