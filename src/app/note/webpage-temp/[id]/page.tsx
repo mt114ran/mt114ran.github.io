@@ -96,6 +96,16 @@ export default async function TemplateDetailPage(props: PageProps) {
               <span>必要に応じて、テキストや画像、色などをカスタマイズしてご使用ください。</span>
             </li>
           </ol>
+          <div className="mt-6 p-4 bg-blue-900/30 border border-blue-600 rounded">
+            <p className="text-blue-400 mb-2">📚 初めての方へ</p>
+            <p className="text-gray-300 text-sm">
+              HTMLやCSSが初めての方は、
+              <Link href="/note/webpage-temp/guide" className="text-blue-400 hover:text-blue-300 underline">
+                初心者向けWeb制作学習ガイド
+              </Link>
+              をご覧ください。実際に手を動かしながら学べる詳しい手順を解説しています。
+            </p>
+          </div>
         </div>
 
         {/* 注意事項 */}
