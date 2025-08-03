@@ -1,0 +1,322 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/49e53022a7b53d46.css","style"]
+0:{"P":null,"b":"fBuHId9Dw5TtWFUMBP-Je","p":"","c":["","note","webpage-temp","cafe-modern",""],"i":false,"f":[[["",{"children":["note",{"children":["webpage-temp",{"children":[["id","cafe-modern","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/49e53022a7b53d46.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["note",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["webpage-temp",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["id","cafe-modern","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","9sS54Quo8s1NUTh1ZK37e",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+12:I[6874,["874","static/chunks/874-7c785913e0ea474a.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-d8ed4ae6509ba7cd.js"],""]
+13:I[9320,["874","static/chunks/874-7c785913e0ea474a.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-d8ed4ae6509ba7cd.js"],"default"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+14:Td74,<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Cafe - こだわりのコーヒーと空間</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">Modern Cafe</div>
+                <ul class="nav-menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#access">Access</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Modern Cafe</h1>
+            <p class="hero-subtitle">こだわりのコーヒーと心地よい空間</p>
+            <button class="cta-button">予約する</button>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">私たちのこだわり</h2>
+            <div class="about-grid">
+                <div class="about-item">
+                    <h3>厳選されたコーヒー豆</h3>
+                    <p>世界各地から厳選した最高品質のコーヒー豆を使用しています。</p>
+                </div>
+                <div class="about-item">
+                    <h3>心地よい空間</h3>
+                    <p>ゆったりとした時間を過ごせる、こだわりの空間設計。</p>
+                </div>
+                <div class="about-item">
+                    <h3>季節のメニュー</h3>
+                    <p>旬の食材を使った、季節限定メニューをご用意しています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="section menu">
+        <div class="container">
+            <h2 class="section-title">Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Coffee</h3>
+                    <ul>
+                        <li>ブレンドコーヒー - ¥450</li>
+                        <li>カフェラテ - ¥500</li>
+                        <li>カプチーノ - ¥480</li>
+                        <li>エスプレッソ - ¥380</li>
+                    </ul>
+                </div>
+                <div class="menu-item">
+                    <h3>Food</h3>
+                    <ul>
+                        <li>クロワッサン - ¥350</li>
+                        <li>サンドイッチセット - ¥850</li>
+                        <li>本日のケーキ - ¥550</li>
+                        <li>季節のタルト - ¥600</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="access" class="section access">
+        <div class="container">
+            <h2 class="section-title">Access</h2>
+            <div class="access-info">
+                <p>〒150-0001 東京都渋谷区神宮前1-2-3</p>
+                <p>営業時間: 8:00 - 21:00（L.O. 20:30）</p>
+                <p>定休日: 毎週水曜日</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Modern Cafe. All rights reserved.</p>
+    </footer>
+</body>
+</html>15:Td31,* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #8b7355;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.2s;
+    animation-fill-mode: both;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background: white;
+    color: #764ba2;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 1s ease 0.4s;
+    animation-fill-mode: both;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+}
+
+.about {
+    background: #f8f9fa;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.about-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.about-item:hover {
+    transform: translateY(-5px);
+}
+
+.about-item h3 {
+    color: #8b7355;
+    margin-bottom: 1rem;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.menu-item h3 {
+    color: #8b7355;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.menu-item ul {
+    list-style: none;
+}
+
+.menu-item li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.access {
+    background: #f8f9fa;
+}
+
+.access-info {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.access-info p {
+    margin-bottom: 0.5rem;
+}
+
+.footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+}4:["$","div",null,{"className":"min-h-screen bg-gray-900 text-gray-100","children":["$","div",null,{"className":"max-w-7xl mx-auto py-10 px-4","children":[["$","nav",null,{"className":"mb-6 flex gap-4","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"ホーム"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","$L12",null,{"href":"/note/webpage-temp","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"テンプレート一覧"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","span",null,{"className":"text-gray-400","children":"カフェ - モダン"}]]}],["$","div",null,{"className":"mb-8","children":[["$","div",null,{"className":"flex items-center gap-4 mb-4","children":[["$","h1",null,{"className":"text-3xl font-bold","children":"カフェ - モダン"}],["$","span",null,{"className":"px-3 py-1 bg-blue-600 text-white rounded text-sm","children":"カフェ"}]]}],["$","p",null,{"className":"text-gray-300 text-lg mb-4","children":"洗練されたモダンデザインのカフェWebサイトテンプレート"}],["$","div",null,{"className":"flex flex-wrap gap-2 mb-4","children":[["$","span","0",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","レスポンシブデザイン"]}],["$","span","1",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","スムーズなアニメーション"]}],["$","span","2",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","モバイルファースト"]}],["$","span","3",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","予約フォーム付き"]}]]}],["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span","0",{"className":"text-sm text-gray-500","children":["#","カフェ"]}],["$","span","1",{"className":"text-sm text-gray-500","children":["#","モダン"]}],["$","span","2",{"className":"text-sm text-gray-500","children":["#","ミニマル"]}],["$","span","3",{"className":"text-sm text-gray-500","children":["#","レスポンシブ"]}]]}]]}],["$","$L13",null,{"template":{"id":"cafe-modern","title":"カフェ - モダン","category":"カフェ","description":"洗練されたモダンデザインのカフェWebサイトテンプレート","thumbnail":"/template-images/cafe-modern.jpg","features":["レスポンシブデザイン","スムーズなアニメーション","モバイルファースト","予約フォーム付き"],"tags":["カフェ","モダン","ミニマル","レスポンシブ"],"code":{"html":"$14","css":"$15","js":"// スムーズスクロール\ndocument.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {\n    anchor.addEventListener('click', function (e) {\n        e.preventDefault();\n        const target = document.querySelector(this.getAttribute('href'));\n        if (target) {\n            const headerHeight = document.querySelector('.header').offsetHeight;\n            const targetPosition = target.offsetTop - headerHeight;\n            window.scrollTo({\n                top: targetPosition,\n                behavior: 'smooth'\n            });\n        }\n    });\n});\n\n// 予約ボタンのクリック処理\ndocument.querySelector('.cta-button').addEventListener('click', function() {\n    alert('予約フォームへ遷移します（実装予定）');\n});"}}}],["$","div",null,{"className":"mt-12 bg-gray-800 rounded-lg p-6","children":[["$","h2",null,{"className":"text-xl font-bold mb-4","children":"使用方法"}],["$","ol",null,{"className":"space-y-3 text-gray-300","children":[["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"1."}],["$","span",null,{"children":"上のタブからHTML、CSS、JavaScriptのコードをそれぞれコピーします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"2."}],["$","span",null,{"children":"新しいHTMLファイルを作成し、HTMLコードを貼り付けます。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"3."}],["$","span",null,{"children":"CSSコードを<style>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"4."}],["$","span",null,{"children":"JavaScriptコードを<script>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"5."}],["$","span",null,{"children":"必要に応じて、テキストや画像、色などをカスタマイズしてご使用ください。"}]]}]]}]]}],["$","div",null,{"className":"mt-8 bg-yellow-900/30 border border-yellow-600 rounded-lg p-6","children":[["$","h3",null,{"className":"text-yellow-400 font-bold mb-2","children":"注意事項"}],["$","ul",null,{"className":"space-y-2 text-gray-300 text-sm","children":[["$","li",null,{"children":"• このテンプレートは学習・参考用として提供されています。"}],["$","li",null,{"children":"• 実際のプロジェクトで使用する際は、セキュリティやパフォーマンスの最適化を行ってください。"}],["$","li",null,{"children":"• 画像やアイコンは実際のものに置き換えてご使用ください。"}],["$","li",null,{"children":"• レスポンシブ対応していますが、実機でのテストを推奨します。"}]]}]]}],["$","div",null,{"className":"mt-8 text-center","children":["$","$L12",null,{"href":"/note/webpage-temp","className":"inline-block px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors","children":"テンプレート一覧へ戻る"}]}]]}]}]
+9:null
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}

@@ -1,0 +1,511 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/49e53022a7b53d46.css","style"]
+0:{"P":null,"b":"fBuHId9Dw5TtWFUMBP-Je","p":"","c":["","note","webpage-temp","retail-fashion",""],"i":false,"f":[[["",{"children":["note",{"children":["webpage-temp",{"children":[["id","retail-fashion","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/49e53022a7b53d46.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["note",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["webpage-temp",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["id","retail-fashion","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","yt23c1TWGnlg_ekaneaS5",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+12:I[6874,["874","static/chunks/874-7c785913e0ea474a.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-d8ed4ae6509ba7cd.js"],""]
+13:I[9320,["874","static/chunks/874-7c785913e0ea474a.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-d8ed4ae6509ba7cd.js"],"default"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+14:T19bd,<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STYLE BOUTIQUE - トレンドファッション</title>
+</head>
+<body>
+    <div class="announcement-bar">
+        <p>期間限定セール開催中！全品20%OFF</p>
+    </div>
+    
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <button class="menu-toggle">☰</button>
+            </div>
+            <div class="logo">
+                <h1>STYLE BOUTIQUE</h1>
+            </div>
+            <div class="header-right">
+                <button class="search-btn">🔍</button>
+                <button class="cart-btn">🛒 <span class="cart-count">0</span></button>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="#new">NEW ARRIVAL</a>
+            <a href="#women">WOMEN</a>
+            <a href="#men">MEN</a>
+            <a href="#sale">SALE</a>
+            <a href="#about">ABOUT</a>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>2025 Spring Collection</h2>
+            <p>新作コレクション入荷</p>
+            <button class="shop-now-btn">Shop Now</button>
+        </div>
+    </section>
+
+    <section id="new" class="products-section">
+        <div class="container">
+            <h2 class="section-title">New Arrivals</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="badge new">NEW</span>
+                        <div class="product-placeholder">商品画像</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>デザイナーTシャツ</h3>
+                        <p class="price">¥4,500</p>
+                        <button class="add-to-cart">カートに追加</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="badge new">NEW</span>
+                        <div class="product-placeholder">商品画像</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>スリムフィットデニム</h3>
+                        <p class="price">¥8,900</p>
+                        <button class="add-to-cart">カートに追加</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="badge sale">SALE</span>
+                        <div class="product-placeholder">商品画像</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>カジュアルジャケット</h3>
+                        <p class="price">
+                            <span class="original-price">¥12,000</span>
+                            ¥9,600
+                        </p>
+                        <button class="add-to-cart">カートに追加</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-placeholder">商品画像</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>ワンピース</h3>
+                        <p class="price">¥7,200</p>
+                        <button class="add-to-cart">カートに追加</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <h3>品質保証</h3>
+                    <p>厳選された素材のみ使用</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚚</div>
+                    <h3>送料無料</h3>
+                    <p>5,000円以上のご購入で</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">↩</div>
+                    <h3>返品可能</h3>
+                    <p>30日間返品保証</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💳</div>
+                    <h3>安全な決済</h3>
+                    <p>SSL暗号化通信</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p>STYLE BOUTIQUEは、最新のトレンドを取り入れた高品質なファッションアイテムを提供しています。</p>
+                <p>お客様一人ひとりのスタイルを大切にし、自信を持って着られる服をお届けします。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>カスタマーサービス</h3>
+                <ul>
+                    <li><a href="#">お問い合わせ</a></li>
+                    <li><a href="#">サイズガイド</a></li>
+                    <li><a href="#">配送について</a></li>
+                    <li><a href="#">返品・交換</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>会社情報</h3>
+                <ul>
+                    <li><a href="#">会社概要</a></li>
+                    <li><a href="#">採用情報</a></li>
+                    <li><a href="#">プレスリリース</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>フォローする</h3>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 STYLE BOUTIQUE. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>15:T1329,* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.announcement-bar {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.header {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-left, .header-right {
+    display: flex;
+    gap: 15px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.cart-btn {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+    background: #f8f8f8;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #666;
+}
+
+.hero-section {
+    height: 500px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.shop-now-btn {
+    background: white;
+    color: #333;
+    padding: 15px 40px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.shop-now-btn:hover {
+    transform: scale(1.05);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.products-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    position: relative;
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.product-placeholder {
+    height: 350px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: white;
+    z-index: 1;
+}
+
+.badge.new {
+    background: #4CAF50;
+}
+
+.badge.sale {
+    background: #ff4444;
+}
+
+.product-info {
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 10px;
+}
+
+.add-to-cart {
+    background: #000;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #333;
+}
+
+.features-section {
+    background: #f8f8f8;
+    padding: 60px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+}
+
+.about-section {
+    padding: 80px 0;
+}
+
+.about-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer {
+    background: #222;
+    color: #fff;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .hero-content h2 {
+        font-size: 32px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+}4:["$","div",null,{"className":"min-h-screen bg-gray-900 text-gray-100","children":["$","div",null,{"className":"max-w-7xl mx-auto py-10 px-4","children":[["$","nav",null,{"className":"mb-6 flex gap-4","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"ホーム"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","$L12",null,{"href":"/note/webpage-temp","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"テンプレート一覧"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","span",null,{"className":"text-gray-400","children":"小売店 - ファッション"}]]}],["$","div",null,{"className":"mb-8","children":[["$","div",null,{"className":"flex items-center gap-4 mb-4","children":[["$","h1",null,{"className":"text-3xl font-bold","children":"小売店 - ファッション"}],["$","span",null,{"className":"px-3 py-1 bg-blue-600 text-white rounded text-sm","children":"小売店"}]]}],["$","p",null,{"className":"text-gray-300 text-lg mb-4","children":"スタイリッシュなファッション小売店向けWebサイトテンプレート"}],["$","div",null,{"className":"flex flex-wrap gap-2 mb-4","children":[["$","span","0",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","商品カタログ"]}],["$","span","1",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","カート機能UI"]}],["$","span","2",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","サイズガイド"]}],["$","span","3",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","セール情報表示"]}]]}],["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span","0",{"className":"text-sm text-gray-500","children":["#","小売店"]}],["$","span","1",{"className":"text-sm text-gray-500","children":["#","ファッション"]}],["$","span","2",{"className":"text-sm text-gray-500","children":["#","EC"]}],["$","span","3",{"className":"text-sm text-gray-500","children":["#","モダン"]}]]}]]}],["$","$L13",null,{"template":{"id":"retail-fashion","title":"小売店 - ファッション","category":"小売店","description":"スタイリッシュなファッション小売店向けWebサイトテンプレート","thumbnail":"/template-images/retail-fashion.jpg","features":["商品カタログ","カート機能UI","サイズガイド","セール情報表示"],"tags":["小売店","ファッション","EC","モダン"],"code":{"html":"$14","css":"$15","js":"// カート機能のシミュレーション\nlet cartCount = 0;\n\ndocument.querySelectorAll('.add-to-cart').forEach(button => {\n    button.addEventListener('click', function() {\n        cartCount++;\n        document.querySelector('.cart-count').textContent = cartCount;\n        \n        // アニメーション効果\n        this.textContent = '追加しました！';\n        this.style.background = '#4CAF50';\n        \n        setTimeout(() => {\n            this.textContent = 'カートに追加';\n            this.style.background = '#000';\n        }, 1500);\n    });\n});\n\n// メニュートグル\ndocument.querySelector('.menu-toggle').addEventListener('click', function() {\n    alert('モバイルメニュー表示（実装予定）');\n});\n\n// 検索機能\ndocument.querySelector('.search-btn').addEventListener('click', function() {\n    const searchTerm = prompt('検索キーワードを入力:');\n    if (searchTerm) {\n        alert(`\"${searchTerm}\" を検索中...`);\n    }\n});\n\n// カートボタン\ndocument.querySelector('.cart-btn').addEventListener('click', function() {\n    alert(`カート内のアイテム数: ${cartCount}`);\n});"}}}],["$","div",null,{"className":"mt-12 bg-gray-800 rounded-lg p-6","children":[["$","h2",null,{"className":"text-xl font-bold mb-4","children":"使用方法"}],["$","ol",null,{"className":"space-y-3 text-gray-300","children":[["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"1."}],["$","span",null,{"children":"上のタブからHTML、CSS、JavaScriptのコードをそれぞれコピーします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"2."}],["$","span",null,{"children":"新しいHTMLファイルを作成し、HTMLコードを貼り付けます。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"3."}],["$","span",null,{"children":"CSSコードを<style>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"4."}],["$","span",null,{"children":"JavaScriptコードを<script>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"5."}],["$","span",null,{"children":"必要に応じて、テキストや画像、色などをカスタマイズしてご使用ください。"}]]}]]}]]}],["$","div",null,{"className":"mt-8 bg-yellow-900/30 border border-yellow-600 rounded-lg p-6","children":[["$","h3",null,{"className":"text-yellow-400 font-bold mb-2","children":"注意事項"}],["$","ul",null,{"className":"space-y-2 text-gray-300 text-sm","children":[["$","li",null,{"children":"• このテンプレートは学習・参考用として提供されています。"}],["$","li",null,{"children":"• 実際のプロジェクトで使用する際は、セキュリティやパフォーマンスの最適化を行ってください。"}],["$","li",null,{"children":"• 画像やアイコンは実際のものに置き換えてご使用ください。"}],["$","li",null,{"children":"• レスポンシブ対応していますが、実機でのテストを推奨します。"}]]}]]}],["$","div",null,{"className":"mt-8 text-center","children":["$","$L12",null,{"href":"/note/webpage-temp","className":"inline-block px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors","children":"テンプレート一覧へ戻る"}]}]]}]}]
+9:null
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}
