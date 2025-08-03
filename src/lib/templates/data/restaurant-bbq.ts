@@ -1,0 +1,1951 @@
+import { WebTemplate, TEMPLATE_CATEGORIES } from '../types'
+
+export const restaurantBbqTemplate: WebTemplate = {
+  id: 'restaurant-bbq',
+  title: '焼肉店',
+  category: TEMPLATE_CATEGORIES.RESTAURANT,
+  description: '本格焼肉店の美味しさと雰囲気を表現するWebサイトテンプレート',
+  thumbnail: '/template-images/restaurant-bbq.jpg',
+  features: [
+    '力強いデザイン',
+    '部位別メニュー紹介',
+    '食べ放題プラン',
+    '宴会・歓送迎会対応'
+  ],
+  tags: ['レストラン', '焼肉', '食べ放題', '宴会', '和牛'],
+  code: {
+    html: `<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>焼肉 炎蔵 - 和牛専門店</title>
+</head>
+<body>
+    <div class="site-wrapper">
+        <header class="header">
+            <div class="header-content">
+                <div class="brand">
+                    <h1>焼肉 炎蔵</h1>
+                    <span class="brand-sub">和牛専門店</span>
+                </div>
+                <nav class="navigation">
+                    <ul class="nav-links">
+                        <li><a href="#home">ホーム</a></li>
+                        <li><a href="#meat">お肉へのこだわり</a></li>
+                        <li><a href="#menu">メニュー</a></li>
+                        <li><a href="#tabehoudai">食べ放題</a></li>
+                        <li><a href="#party">宴会</a></li>
+                        <li><a href="#info">店舗情報</a></li>
+                        <li><a href="#reserve" class="reserve-link">予約</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section id="home" class="hero">
+                <div class="hero-bg">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1920&h=800&fit=crop" alt="焼肉" class="hero-img">
+                    <div class="hero-filter"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2 class="hero-title">焼肉 炎蔵</h2>
+                        <p class="hero-tagline">最高級A5ランク和牛をお手頃価格で</p>
+                        <div class="hero-badges">
+                            <span class="badge">A5ランク和牛</span>
+                            <span class="badge">食べ放題あり</span>
+                            <span class="badge">個室完備</span>
+                        </div>
+                        <button class="hero-btn">今すぐ予約</button>
+                    </div>
+                </div>
+                <div class="hero-flame">🔥</div>
+            </section>
+
+            <section id="meat" class="meat-commitment">
+                <div class="container">
+                    <h2 class="section-heading">お肉へのこだわり</h2>
+                    <div class="section-tagline">最高品質の和牛を産地直送でお届け</div>
+                    
+                    <div class="commitment-content">
+                        <div class="commitment-text">
+                            <div class="commitment-intro">
+                                <p class="intro-lead">炎蔵では、全国各地の契約牧場から厳選したA5ランクの和牛のみを使用しています。</p>
+                                <p>肉質、脂の甘さ、柔らかさ、すべてにおいて最高級の品質をお客様にお届けするため、毎日市場に足を運び、目利きの職人が一頭一頭選び抜いています。</p>
+                            </div>
+                            
+                            <div class="meat-origins">
+                                <h3>取り扱い和牛産地</h3>
+                                <div class="origins-grid">
+                                    <div class="origin-item">
+                                        <span class="origin-name">松阪牛</span>
+                                        <span class="origin-desc">三重県</span>
+                                    </div>
+                                    <div class="origin-item">
+                                        <span class="origin-name">神戸牛</span>
+                                        <span class="origin-desc">兵庫県</span>
+                                    </div>
+                                    <div class="origin-item">
+                                        <span class="origin-name">近江牛</span>
+                                        <span class="origin-desc">滋賀県</span>
+                                    </div>
+                                    <div class="origin-item">
+                                        <span class="origin-name">飛騨牛</span>
+                                        <span class="origin-desc">岐阜県</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="commitment-visual">
+                            <div class="meat-showcase">
+                                <img src="https://images.unsplash.com/photo-1588347818108-8e0c2141c1c9?w=600&h=400&fit=crop" alt="A5ランク和牛">
+                                <div class="showcase-label">A5ランク和牛</div>
+                            </div>
+                            <div class="quality-points">
+                                <div class="quality-item">
+                                    <div class="quality-icon">🏆</div>
+                                    <span class="quality-text">A5ランクのみ使用</span>
+                                </div>
+                                <div class="quality-item">
+                                    <div class="quality-icon">🚚</div>
+                                    <span class="quality-text">産地直送</span>
+                                </div>
+                                <div class="quality-item">
+                                    <div class="quality-icon">👨‍🍳</div>
+                                    <span class="quality-text">職人の目利き</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="menu" class="menu">
+                <div class="container">
+                    <h2 class="section-heading">メニュー</h2>
+                    <div class="section-tagline">部位別に厳選した極上の一品</div>
+                    
+                    <div class="menu-categories">
+                        <div class="category-tabs">
+                            <button class="category-tab active" data-category="premium">特選</button>
+                            <button class="category-tab" data-category="rare">希少部位</button>
+                            <button class="category-tab" data-category="standard">定番</button>
+                            <button class="category-tab" data-category="hormone">ホルモン</button>
+                            <button class="category-tab" data-category="side">サイド</button>
+                        </div>
+
+                        <div class="menu-panels">
+                            <div class="menu-panel active" id="premium">
+                                <div class="menu-items">
+                                    <div class="menu-card featured">
+                                        <div class="card-ribbon">店長おすすめ</div>
+                                        <div class="card-image">
+                                            <img src="https://images.unsplash.com/photo-1588347818108-8e0c2141c1c9?w=400&h=300&fit=crop" alt="特選カルビ">
+                                        </div>
+                                        <div class="card-content">
+                                            <h3>特選カルビ</h3>
+                                            <p class="meat-origin">松阪牛 A5ランク</p>
+                                            <p class="meat-desc">極上の霜降りカルビ。口の中でとろける絶品</p>
+                                            <div class="card-price">¥2,800</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-card">
+                                        <div class="card-image">
+                                            <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=400&h=300&fit=crop" alt="特選ロース">
+                                        </div>
+                                        <div class="card-content">
+                                            <h3>特選ロース</h3>
+                                            <p class="meat-origin">神戸牛 A5ランク</p>
+                                            <p class="meat-desc">きめ細かな肉質と上品な脂身</p>
+                                            <div class="card-price">¥3,200</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-card">
+                                        <div class="card-image">
+                                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop" alt="特選ハラミ">
+                                        </div>
+                                        <div class="card-content">
+                                            <h3>特選ハラミ</h3>
+                                            <p class="meat-origin">近江牛 A5ランク</p>
+                                            <p class="meat-desc">やわらかくジューシーな赤身</p>
+                                            <div class="card-price">¥2,600</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="menu-panel" id="rare">
+                                <div class="menu-items">
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>シャトーブリアン</h3>
+                                            <p class="meat-origin">飛騨牛 A5ランク</p>
+                                            <p class="meat-desc">ヒレ肉の最高部位。一頭からわずかしか取れない</p>
+                                            <div class="card-price">¥4,800</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>ザブトン</h3>
+                                            <p class="meat-origin">松阪牛 A5ランク</p>
+                                            <p class="meat-desc">肩ロースの希少部位。絶妙な霜降り</p>
+                                            <div class="card-price">¥3,800</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>イチボ</h3>
+                                            <p class="meat-origin">神戸牛 A5ランク</p>
+                                            <p class="meat-desc">お尻の希少部位。赤身の旨味が濃厚</p>
+                                            <div class="card-price">¥3,400</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>ミスジ</h3>
+                                            <p class="meat-origin">近江牛 A5ランク</p>
+                                            <p class="meat-desc">肩の希少部位。独特の食感</p>
+                                            <div class="card-price">¥2,900</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="menu-panel" id="standard">
+                                <div class="menu-items">
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>上カルビ</h3>
+                                            <p class="meat-desc">程よい霜降りのカルビ</p>
+                                            <div class="card-price">¥1,800</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>上ロース</h3>
+                                            <p class="meat-desc">ジューシーなロース肉</p>
+                                            <div class="card-price">¥2,000</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>ハラミ</h3>
+                                            <p class="meat-desc">やわらかい赤身の定番</p>
+                                            <div class="card-price">¥1,600</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>タン塩</h3>
+                                            <p class="meat-desc">厚切りタンを塩で</p>
+                                            <div class="card-price">¥1,400</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="menu-panel" id="hormone">
+                                <div class="menu-items">
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>特選ホルモン</h3>
+                                            <p class="meat-desc">新鮮なホルモンを特製ダレで</p>
+                                            <div class="card-price">¥900</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>レバー</h3>
+                                            <p class="meat-desc">新鮮レバーをごま油で</p>
+                                            <div class="card-price">¥800</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>センマイ</h3>
+                                            <p class="meat-desc">コリコリ食感のセンマイ</p>
+                                            <div class="card-price">¥700</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="menu-panel" id="side">
+                                <div class="menu-items">
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>キムチ盛り合わせ</h3>
+                                            <p class="meat-desc">自家製キムチ3種</p>
+                                            <div class="card-price">¥800</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>サンチュ</h3>
+                                            <p class="meat-desc">新鮮なサンチュ</p>
+                                            <div class="card-price">¥500</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>石焼ビビンバ</h3>
+                                            <p class="meat-desc">アツアツの石焼ビビンバ</p>
+                                            <div class="card-price">¥1,200</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-card">
+                                        <div class="card-content">
+                                            <h3>冷麺</h3>
+                                            <p class="meat-desc">さっぱり冷麺</p>
+                                            <div class="card-price">¥1,000</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tabehoudai" class="all-you-can-eat">
+                <div class="container">
+                    <h2 class="section-heading">食べ放題プラン</h2>
+                    <div class="section-tagline">お得に楽しめる食べ放題コース</div>
+                    
+                    <div class="plan-cards">
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3>スタンダードプラン</h3>
+                                <div class="plan-time">90分</div>
+                            </div>
+                            <div class="plan-price">
+                                <span class="price-main">¥3,280</span>
+                                <span class="price-sub">（税込）</span>
+                            </div>
+                            <div class="plan-content">
+                                <ul class="plan-items">
+                                    <li>カルビ・ロース・ハラミ</li>
+                                    <li>タン塩・豚バラ</li>
+                                    <li>ホルモン各種</li>
+                                    <li>サラダ・キムチ</li>
+                                    <li>ライス・スープ</li>
+                                </ul>
+                                <div class="plan-note">ドリンクバー +¥480</div>
+                            </div>
+                        </div>
+
+                        <div class="plan-card popular">
+                            <div class="popular-badge">人気No.1</div>
+                            <div class="plan-header">
+                                <h3>プレミアムプラン</h3>
+                                <div class="plan-time">120分</div>
+                            </div>
+                            <div class="plan-price">
+                                <span class="price-main">¥4,580</span>
+                                <span class="price-sub">（税込）</span>
+                            </div>
+                            <div class="plan-content">
+                                <ul class="plan-items">
+                                    <li>上カルビ・上ロース</li>
+                                    <li>特選ハラミ・厚切りタン</li>
+                                    <li>海鮮（エビ・ホタテ）</li>
+                                    <li>キムチ盛り合わせ</li>
+                                    <li>石焼ビビンバ・冷麺</li>
+                                    <li>デザート各種</li>
+                                </ul>
+                                <div class="plan-note">ドリンクバー込み</div>
+                            </div>
+                        </div>
+
+                        <div class="plan-card luxury">
+                            <div class="luxury-badge">特選</div>
+                            <div class="plan-header">
+                                <h3>和牛プラン</h3>
+                                <div class="plan-time">120分</div>
+                            </div>
+                            <div class="plan-price">
+                                <span class="price-main">¥6,800</span>
+                                <span class="price-sub">（税込）</span>
+                            </div>
+                            <div class="plan-content">
+                                <ul class="plan-items">
+                                    <li>A5ランク和牛各種</li>
+                                    <li>希少部位（ザブトン・イチボ）</li>
+                                    <li>厚切りタン・特選ハラミ</li>
+                                    <li>海鮮盛り合わせ</li>
+                                    <li>季節の一品料理</li>
+                                    <li>プレミアムデザート</li>
+                                </ul>
+                                <div class="plan-note">飲み放題込み（生ビール・酎ハイ等）</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="party" class="party">
+                <div class="container">
+                    <div class="party-content">
+                        <div class="party-info">
+                            <h2 class="section-heading">宴会・歓送迎会</h2>
+                            <div class="section-tagline">各種ご宴会承ります</div>
+                            
+                            <div class="party-details">
+                                <p class="party-lead">最大80名様まで対応可能な宴会場をご用意。歓送迎会、忘年会、新年会、同窓会など、様々なシーンでご利用いただけます。</p>
+                                
+                                <div class="party-features">
+                                    <div class="feature-group">
+                                        <h3>宴会場設備</h3>
+                                        <ul>
+                                            <li>個室（4名〜20名様）</li>
+                                            <li>大宴会場（30名〜80名様）</li>
+                                            <li>プロジェクター・音響設備</li>
+                                            <li>カラオケ設備</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-group">
+                                        <h3>宴会プラン</h3>
+                                        <ul>
+                                            <li>2時間飲み放題付き ¥4,500〜</li>
+                                            <li>3時間飲み放題付き ¥5,500〜</li>
+                                            <li>幹事様1名無料（10名様以上）</li>
+                                            <li>送迎バス手配可能</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="party-cta">
+                                    <p>詳細はお電話でお問い合わせください</p>
+                                    <a href="tel:03-1234-5678" class="cta-phone">03-1234-5678</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="party-visual">
+                            <div class="party-image">
+                                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop" alt="宴会場">
+                            </div>
+                            <div class="capacity-info">
+                                <div class="capacity-item">
+                                    <span class="capacity-number">80</span>
+                                    <span class="capacity-label">名様まで</span>
+                                </div>
+                                <div class="capacity-item">
+                                    <span class="capacity-number">個室</span>
+                                    <span class="capacity-label">完備</span>
+                                </div>
+                                <div class="capacity-item">
+                                    <span class="capacity-number">設備</span>
+                                    <span class="capacity-label">充実</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="info" class="store-info">
+                <div class="container">
+                    <div class="info-layout">
+                        <div class="info-details">
+                            <h2 class="section-heading">店舗情報</h2>
+                            <div class="section-tagline">アクセス・営業時間</div>
+                            
+                            <div class="info-sections">
+                                <div class="info-section">
+                                    <h3>営業時間</h3>
+                                    <div class="hours-list">
+                                        <div class="hours-item">
+                                            <span class="hours-day">月〜木</span>
+                                            <span class="hours-time">17:00〜24:00（L.O. 23:30）</span>
+                                        </div>
+                                        <div class="hours-item">
+                                            <span class="hours-day">金・土・祝前日</span>
+                                            <span class="hours-time">17:00〜翌2:00（L.O. 1:30）</span>
+                                        </div>
+                                        <div class="hours-item">
+                                            <span class="hours-day">日・祝日</span>
+                                            <span class="hours-time">16:00〜23:00（L.O. 22:30）</span>
+                                        </div>
+                                        <div class="hours-item">
+                                            <span class="hours-day">定休日</span>
+                                            <span class="hours-time">なし（年中無休）</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-section">
+                                    <h3>アクセス</h3>
+                                    <div class="address-info">
+                                        <p class="address">〒160-0022<br>東京都新宿区新宿3-15-8<br>新宿炎ビル 2F・3F</p>
+                                        <div class="access-methods">
+                                            <p>JR新宿駅 東南口より徒歩2分</p>
+                                            <p>地下鉄新宿三丁目駅 C8出口より徒歩1分</p>
+                                            <p>都営新宿線新宿三丁目駅より徒歩1分</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-section">
+                                    <h3>店舗詳細</h3>
+                                    <div class="store-details">
+                                        <div class="detail-item">
+                                            <span class="detail-label">席数</span>
+                                            <span class="detail-value">120席（個室・テーブル・掘りごたつ）</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">駐車場</span>
+                                            <span class="detail-value">提携駐車場あり（3時間無料）</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">予約</span>
+                                            <span class="detail-value">電話・ネット予約可</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">支払い</span>
+                                            <span class="detail-value">現金・各種カード・電子マネー</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-visual">
+                            <div class="store-gallery">
+                                <div class="gallery-main">
+                                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop" alt="店内の様子">
+                                    <div class="gallery-label">店内の様子</div>
+                                </div>
+                                <div class="gallery-sub">
+                                    <div class="gallery-item">
+                                        <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=300&h=200&fit=crop" alt="個室">
+                                        <div class="gallery-label">個室</div>
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="https://images.unsplash.com/photo-1524634126442-357e0eac3c14?w=300&h=200&fit=crop" alt="外観">
+                                        <div class="gallery-label">外観</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="reserve" class="reservation">
+                <div class="container">
+                    <div class="reservation-content">
+                        <h2 class="section-heading">ご予約</h2>
+                        <div class="section-tagline">お電話・ネットでご予約承ります</div>
+                        
+                        <div class="reservation-methods">
+                            <div class="method-card phone">
+                                <div class="method-icon">📞</div>
+                                <h3>お電話での予約</h3>
+                                <div class="phone-number">03-1234-5678</div>
+                                <div class="phone-hours">受付時間: 15:00〜24:00</div>
+                                <p>お急ぎの場合やご不明な点がございましたら、お気軽にお電話ください。</p>
+                            </div>
+                            
+                            <div class="method-card online">
+                                <div class="method-icon">💻</div>
+                                <h3>ネット予約</h3>
+                                <button class="online-reserve-btn">オンライン予約</button>
+                                <div class="online-note">24時間受付可能</div>
+                                <p>ネット予約なら24時間いつでもご予約いただけます。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="reservation-notes">
+                            <h3>ご予約について</h3>
+                            <div class="notes-grid">
+                                <div class="note-item">
+                                    <h4>キャンセルについて</h4>
+                                    <p>当日キャンセルの場合、キャンセル料が発生する場合がございます。</p>
+                                </div>
+                                <div class="note-item">
+                                    <h4>お子様連れについて</h4>
+                                    <p>お子様連れでもご安心してご利用いただけます。お子様用の椅子もご用意しております。</p>
+                                </div>
+                                <div class="note-item">
+                                    <h4>アレルギーについて</h4>
+                                    <p>食物アレルギーをお持ちの方は、事前にお知らせください。</p>
+                                </div>
+                                <div class="note-item">
+                                    <h4>団体利用について</h4>
+                                    <p>10名様以上のご利用は、事前にお電話でご相談ください。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3>焼肉 炎蔵</h3>
+                    <p>和牛専門店</p>
+                    <div class="footer-address">
+                        <p>〒160-0022 東京都新宿区新宿3-15-8 新宿炎ビル 2F・3F</p>
+                        <p>TEL: 03-1234-5678</p>
+                    </div>
+                </div>
+                
+                <div class="footer-info">
+                    <h4>営業時間</h4>
+                    <p>月〜木: 17:00〜24:00</p>
+                    <p>金・土・祝前日: 17:00〜翌2:00</p>
+                    <p>日・祝日: 16:00〜23:00</p>
+                    <p class="no-holiday">年中無休</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 焼肉炎蔵. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>`,
+    css: `@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #333;
+    background: #1a1a1a;
+    line-height: 1.6;
+}
+
+.site-wrapper {
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(255, 69, 0, 0.3);
+    border-bottom: 2px solid #ff4500;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: #ff4500;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.brand-sub {
+    font-size: 0.9rem;
+    color: #ff8c00;
+    display: block;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 50%;
+    background: #ff4500;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover {
+    color: #ff4500;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.reserve-link {
+    background: linear-gradient(135deg, #ff4500 0%, #ff6347 100%);
+    color: white !important;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+}
+
+.reserve-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 69, 0, 0.5);
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+.hero-tagline {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    opacity: 0.95;
+}
+
+.hero-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.hero-btn {
+    background: linear-gradient(135deg, #ff4500 0%, #ff6347 100%);
+    color: white;
+    padding: 1.3rem 3.5rem;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 25px rgba(255, 69, 0, 0.5);
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 69, 0, 0.6);
+}
+
+.hero-flame {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    font-size: 4rem;
+    animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; transform: rotate(-5deg); }
+    50% { opacity: 0.8; transform: rotate(5deg); }
+}
+
+/* Common Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 6rem 0;
+    background: #fff;
+}
+
+section:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.section-heading {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.section-tagline {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+/* Meat Commitment */
+.meat-commitment {
+    background: #fff;
+}
+
+.commitment-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.intro-lead {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ff4500;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.commitment-intro p {
+    margin-bottom: 1.8rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.meat-origins {
+    margin-top: 3rem;
+}
+
+.meat-origins h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.origins-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.origin-item {
+    background: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 4px solid #ff4500;
+}
+
+.origin-name {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.origin-desc {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.meat-showcase {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+}
+
+.meat-showcase img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.showcase-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 69, 0, 0.9);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.quality-points {
+    display: flex;
+    justify-content: space-around;
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.quality-item {
+    text-align: center;
+}
+
+.quality-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.quality-text {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Menu */
+.menu {
+    background: #f8f8f8;
+}
+
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.category-tab {
+    padding: 1rem 2rem;
+    background: white;
+    border: 2px solid #ff4500;
+    color: #ff4500;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.category-tab.active,
+.category-tab:hover {
+    background: #ff4500;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(255, 69, 0, 0.4);
+}
+
+.menu-panel {
+    display: none;
+}
+
+.menu-panel.active {
+    display: block;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.menu-card.featured {
+    border: 3px solid #ff4500;
+}
+
+.card-ribbon {
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    background: #ff4500;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transform: rotate(5deg);
+    z-index: 1;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.meat-origin {
+    color: #ff4500;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.meat-desc {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.card-price {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #ff4500;
+    text-align: right;
+}
+
+/* All You Can Eat */
+.all-you-can-eat {
+    background: #fff;
+}
+
+.plan-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.plan-card {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card.popular {
+    border-color: #ff4500;
+    transform: scale(1.05);
+}
+
+.plan-card.luxury {
+    background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+    color: white;
+}
+
+.popular-badge,
+.luxury-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff4500;
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.luxury-badge {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #333;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.plan-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.plan-time {
+    color: #ff4500;
+    font-weight: 600;
+    background: rgba(255, 69, 0, 0.1);
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.luxury .plan-time {
+    background: rgba(255, 215, 0, 0.2);
+    color: #ffd700;
+}
+
+.plan-price {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.price-main {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ff4500;
+}
+
+.luxury .price-main {
+    color: #ffd700;
+}
+
+.price-sub {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+.plan-items {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.plan-items li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.luxury .plan-items li {
+    border-bottom-color: #444;
+}
+
+.plan-items li::before {
+    content: '🥩';
+    position: absolute;
+    left: 0;
+}
+
+.plan-items li:last-child {
+    border-bottom: none;
+}
+
+.plan-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.luxury .plan-note {
+    color: #ccc;
+}
+
+/* Party */
+.party {
+    background: #f8f8f8;
+}
+
+.party-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.party-lead {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+}
+
+.party-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.feature-group h3 {
+    font-size: 1.3rem;
+    color: #ff4500;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.feature-group ul {
+    list-style: none;
+}
+
+.feature-group li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.feature-group li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #ff4500;
+}
+
+.party-cta {
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border-left: 4px solid #ff4500;
+}
+
+.party-cta p {
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.cta-phone {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #ff4500;
+    text-decoration: none;
+}
+
+.party-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.capacity-info {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.capacity-item {
+    text-align: center;
+}
+
+.capacity-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #ff4500;
+}
+
+.capacity-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* Store Info */
+.store-info {
+    background: #fff;
+}
+
+.info-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.info-sections {
+    display: grid;
+    gap: 3rem;
+}
+
+.info-section h3 {
+    font-size: 1.5rem;
+    color: #ff4500;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.hours-list {
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+.hours-day {
+    font-weight: 700;
+    color: #333;
+}
+
+.hours-time {
+    color: #666;
+}
+
+.address-info {
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.address {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.access-methods p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.store-details {
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 700;
+    color: #333;
+}
+
+.detail-value {
+    color: #666;
+    text-align: right;
+}
+
+.store-gallery {
+    display: grid;
+    gap: 1rem;
+}
+
+.gallery-main {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.gallery-sub {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.gallery-label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Reservation */
+.reservation {
+    background: #f8f8f8;
+}
+
+.reservation-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.method-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.method-card.phone {
+    border-left: 5px solid #ff4500;
+}
+
+.method-card.online {
+    border-left: 5px solid #00bcd4;
+}
+
+.method-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.method-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.phone-number {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #ff4500;
+    margin-bottom: 0.5rem;
+}
+
+.phone-hours {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.online-reserve-btn {
+    background: #00bcd4;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.online-reserve-btn:hover {
+    background: #00acc1;
+    transform: scale(1.05);
+}
+
+.online-note {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.reservation-notes {
+    margin-top: 4rem;
+}
+
+.reservation-notes h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.note-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #ff4500;
+}
+
+.note-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.note-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    color: #ccc;
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.footer-main h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2rem;
+    color: #ff4500;
+    margin-bottom: 0.5rem;
+}
+
+.footer-main > p {
+    color: #ff8c00;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.footer-address p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.footer-info h4 {
+    color: #ff4500;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.footer-info p {
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.no-holiday {
+    color: #ff4500;
+    font-weight: 600;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.copyright {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .commitment-content,
+    .party-content,
+    .info-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .category-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+    
+    .menu-items,
+    .plan-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .party-features {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .reservation-methods {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+    }
+}`,
+    js: `// カテゴリータブ機能
+document.querySelectorAll('.category-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        // すべてのタブからactiveクラスを削除
+        document.querySelectorAll('.category-tab').forEach(t => {
+            t.classList.remove('active');
+        });
+        
+        // すべてのパネルを非表示
+        document.querySelectorAll('.menu-panel').forEach(panel => {
+            panel.classList.remove('active');
+        });
+        
+        // クリックされたタブにactiveクラス追加
+        this.classList.add('active');
+        
+        // 対応するパネルを表示
+        const categoryId = this.getAttribute('data-category');
+        document.getElementById(categoryId).classList.add('active');
+    });
+});
+
+// スムーズスクロール
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// ヒーロー予約ボタン
+document.querySelector('.hero-btn').addEventListener('click', function() {
+    document.querySelector('#reserve').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+});
+
+// オンライン予約ボタン
+document.querySelector('.online-reserve-btn').addEventListener('click', function() {
+    alert('オンライン予約システムへ移動します（実装予定）');
+});
+
+// ヘッダーのスクロール効果
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(26, 26, 26, 0.98)';
+        header.style.boxShadow = '0 2px 30px rgba(255, 69, 0, 0.4)';
+    } else {
+        header.style.background = 'rgba(26, 26, 26, 0.95)';
+        header.style.boxShadow = '0 2px 20px rgba(255, 69, 0, 0.3)';
+    }
+});
+
+// 要素のアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// アニメーション対象要素の初期化
+document.querySelectorAll('.menu-card, .plan-card, .method-card, .note-item').forEach(item => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(40px)';
+    item.style.transition = 'all 0.8s ease';
+    observer.observe(item);
+});
+
+// 炎のアニメーション強化
+const flame = document.querySelector('.hero-flame');
+if (flame) {
+    setInterval(() => {
+        flame.style.transform = \`rotate(\${Math.random() * 20 - 10}deg) scale(\${0.8 + Math.random() * 0.4})\`;
+    }, 200);
+}
+
+// メニューカードの特別ホバー効果
+document.querySelectorAll('.menu-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        const ribbon = this.querySelector('.card-ribbon');
+        if (ribbon) {
+            ribbon.style.transform = 'rotate(5deg) scale(1.1)';
+            ribbon.style.transition = 'transform 0.3s ease';
+        }
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        const ribbon = this.querySelector('.card-ribbon');
+        if (ribbon) {
+            ribbon.style.transform = 'rotate(5deg) scale(1)';
+        }
+    });
+});
+
+// 産地アイテムのクリック効果
+document.querySelectorAll('.origin-item').forEach(item => {
+    item.addEventListener('click', function() {
+        const name = this.querySelector('.origin-name').textContent;
+        this.style.background = '#fff5f5';
+        this.style.borderLeftColor = '#ff6347';
+        this.style.transform = 'scale(1.02)';
+        this.style.transition = 'all 0.3s ease';
+        
+        setTimeout(() => {
+            this.style.background = '#f8f8f8';
+            this.style.borderLeftColor = '#ff4500';
+            this.style.transform = 'scale(1)';
+        }, 500);
+        
+        alert(\`\${name}について詳しい情報は店舗までお問い合わせください。\`);
+    });
+    
+    // カーソルポインターに変更
+    item.style.cursor = 'pointer';
+});
+
+// 品質ポイントのアニメーション
+document.querySelectorAll('.quality-item').forEach((item, index) => {
+    item.addEventListener('mouseenter', function() {
+        const icon = this.querySelector('.quality-icon');
+        icon.style.transform = 'scale(1.3) rotate(10deg)';
+        icon.style.transition = 'transform 0.3s ease';
+    });
+    
+    item.addEventListener('mouseleave', function() {
+        const icon = this.querySelector('.quality-icon');
+        icon.style.transform = 'scale(1) rotate(0deg)';
+    });
+});
+
+// 電話番号のクリック効果
+document.querySelectorAll('.phone-number, .cta-phone').forEach(phone => {
+    phone.addEventListener('click', function() {
+        this.style.transform = 'scale(1.05)';
+        this.style.transition = 'transform 0.2s ease';
+        
+        setTimeout(() => {
+            this.style.transform = 'scale(1)';
+        }, 200);
+    });
+});
+
+// ギャラリー画像のクリック効果
+document.querySelectorAll('.gallery-item img, .gallery-main img').forEach(img => {
+    img.addEventListener('click', function() {
+        const label = this.parentElement.querySelector('.gallery-label').textContent;
+        alert(\`\${label}の拡大画像を表示します（実装予定）\`);
+    });
+    
+    img.style.cursor = 'pointer';
+});
+
+// プランカードの特別効果
+document.querySelectorAll('.plan-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        if (this.classList.contains('luxury')) {
+            this.style.boxShadow = '0 25px 80px rgba(255, 215, 0, 0.3)';
+        } else {
+            this.style.boxShadow = '0 25px 80px rgba(255, 69, 0, 0.2)';
+        }
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.1)';
+    });
+});
+
+// パーティー機能の統計カウンター
+function animateCounter() {
+    const counters = document.querySelectorAll('.capacity-number');
+    
+    counters.forEach(counter => {
+        const text = counter.textContent;
+        if (!isNaN(text)) {
+            const target = parseInt(text);
+            let current = 0;
+            const increment = target / 30;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current);
+                }
+            }, 50);
+        }
+    });
+}
+
+// 統計セクションが見えたときにアニメーション開始
+const statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounter();
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const capacityInfo = document.querySelector('.capacity-info');
+if (capacityInfo) {
+    statsObserver.observe(capacityInfo);
+}`
+  }
+}
