@@ -28,7 +28,12 @@ export const sportsGymTemplate: WebTemplate = {
                 <span class="logo-icon">💪</span>
                 <h1>POWER FITNESS</h1>
             </div>
-            <nav class="nav">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="nav">
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#programs">Programs</a></li>
@@ -425,6 +430,37 @@ body {
 
 .join-btn:hover {
     background: #ff5722;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    padding: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 /* Hero */
@@ -944,16 +980,47 @@ td.weight {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .header .container {
-        flex-direction: column;
-        gap: 10px;
+    .header {
         padding: 10px 0;
+    }
+    
+    .header .container {
+        flex-wrap: wrap;
+        position: relative;
+    }
+    
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        margin-top: 10px;
+        padding: 20px;
+        z-index: 999;
+    }
+    
+    .nav.active {
+        display: block;
     }
     
     .nav ul {
         flex-direction: column;
         text-align: center;
-        gap: 10px;
+        gap: 20px;
+    }
+    
+    .join-btn {
+        display: none;
     }
     
     .hero-content h2 {
@@ -976,7 +1043,26 @@ td.weight {
         flex-wrap: wrap;
     }
 }`,
-    js: `// スライダー機能
+    js: `// ハンバーガーメニュー
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+
+if (hamburger) {
+    hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+    
+    // メニューリンクをクリックしたら閉じる
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+        });
+    });
+}
+
+// スライダー機能
 let currentSlide = 0;
 const trainerCards = document.querySelectorAll('.trainer-card');
 const dots = document.querySelectorAll('.dot');
