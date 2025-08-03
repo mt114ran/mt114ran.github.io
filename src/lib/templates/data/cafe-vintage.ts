@@ -392,26 +392,30 @@ section {
     .header {
         padding: 1rem;
         position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     
     .header-content {
         margin-bottom: 0;
+        flex: 1;
+        padding-right: 50px;
     }
     
     .logo {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     
     .tagline {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     .hamburger {
         display: flex;
         position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
+        right: 15px;
+        top: 1rem;
     }
     
     .navigation {
