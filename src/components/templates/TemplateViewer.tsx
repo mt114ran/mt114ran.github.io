@@ -16,8 +16,18 @@ export default function TemplateViewer({ template }: TemplateViewerProps) {
 
   // プレビュー用のHTMLを生成
   const getPreviewHtml = () => {
-    // bodyタグ内のコンテンツを抽出
-    const bodyContent = template.code.html.match(/<body[^>]*>([\s\S]*)<\/body>/)?.[1] || template.code.html
+    // HTMLからheadとbodyの内容を抽出
+    const htmlContent = template.code.html
+    const bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*)<\/body>/)
+    const headMatch = htmlContent.match(/<head[^>]*>([\s\S]*)<\/head>/)
+    
+    // bodyの内容（bodyタグ自体は除く）
+    const bodyContent = bodyMatch ? bodyMatch[1] : htmlContent
+    
+    // headの内容からtitleとmetaを抽出（scriptとstyleは除く）
+    const headContent = headMatch ? headMatch[1] : ''
+    const titleMatch = headContent.match(/<title[^>]*>[\s\S]*?<\/title>/)
+    const metaMatches = headContent.match(/<meta[^>]*>/g) || []
     
     return `
       <!DOCTYPE html>
@@ -25,6 +35,7 @@ export default function TemplateViewer({ template }: TemplateViewerProps) {
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        ${titleMatch ? titleMatch[0] : ''}
         <style>${template.code.css}</style>
       </head>
       <body>

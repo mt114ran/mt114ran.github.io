@@ -348,6 +348,13 @@ body {
     padding: 100px 0;
     text-align: center;
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content h2 {
