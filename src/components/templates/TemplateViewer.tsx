@@ -27,7 +27,6 @@ export default function TemplateViewer({ template }: TemplateViewerProps) {
     // headの内容からtitleとmetaを抽出（scriptとstyleは除く）
     const headContent = headMatch ? headMatch[1] : ''
     const titleMatch = headContent.match(/<title[^>]*>[\s\S]*?<\/title>/)
-    const metaMatches = headContent.match(/<meta[^>]*>/g) || []
     
     return `
       <!DOCTYPE html>

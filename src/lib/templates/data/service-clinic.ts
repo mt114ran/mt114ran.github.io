@@ -721,12 +721,12 @@ section {
     .header-main {
         padding: 10px 0;
     }
-    
+
     .header-content {
         position: relative;
         padding: 10px 20px;
     }
-    
+
     .hamburger {
         display: flex;
         position: absolute;
@@ -734,7 +734,7 @@ section {
         top: 50%;
         transform: translateY(-50%);
     }
-    
+
     .main-nav {
         display: none;
         position: absolute;
@@ -745,29 +745,29 @@ section {
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         z-index: 1000;
     }
-    
+
     .main-nav.active {
         display: block;
     }
-    
+
     .main-nav ul {
         flex-direction: column;
         padding: 20px;
         gap: 15px;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
     }
-    
+
     .about-content {
         grid-template-columns: 1fr;
     }
-    
+
     .access-content {
         grid-template-columns: 1fr;
     }
-    
+
     .doctors-list {
         grid-template-columns: 1fr;
     }
@@ -781,7 +781,7 @@ if (hamburger && mainNav) {
         this.classList.toggle('active');
         mainNav.classList.toggle('active');
     });
-    
+
     // メニューリンクをクリックしたら閉じる
     const navLinks = mainNav.querySelectorAll('a');
     navLinks.forEach(link => {
