@@ -1,0 +1,2619 @@
+import { WebTemplate, TEMPLATE_CATEGORIES } from '../types'
+
+export const medicalDentalTemplate: WebTemplate = {
+  id: 'medical-dental',
+  title: '歯科クリニック',
+  category: TEMPLATE_CATEGORIES.MEDICAL,
+  description: '温かみのある歯科クリニック向けのフレンドリーなWebサイトテンプレート',
+  thumbnail: '/template-images/medical-dental.jpg',
+  features: [
+    '診療内容・治療説明',
+    '医院の特徴・コンセプト',
+    'ドクター・スタッフ紹介',
+    '予約システム連携',
+    '治療前後の症例写真'
+  ],
+  tags: ['歯科', 'デンタル', 'クリニック', '予防歯科', 'オーラルケア'],
+  code: {
+    html: `<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スマイル歯科クリニック - あなたの笑顔を大切に</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🦷 スマイル歯科クリニック</h1>
+                    <span class="tagline">Smile Dental Clinic</span>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="main-nav" id="main-nav">
+                    <ul>
+                        <li><a href="#about">医院について</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#treatments">診療案内</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#general">一般歯科</a></li>
+                                <li><a href="#preventive">予防歯科</a></li>
+                                <li><a href="#cosmetic">審美歯科</a></li>
+                                <li><a href="#orthodontics">矯正歯科</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#staff">ドクター・スタッフ</a></li>
+                        <li><a href="#clinic-info">医院案内</a></li>
+                        <li><a href="#access">アクセス</a></li>
+                        <li class="nav-cta"><a href="#appointment">ご予約</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-layout">
+                    <div class="hero-text">
+                        <h2>あなたの<span class="highlight">笑顔</span>を<br>一生大切に</h2>
+                        <p>患者様一人ひとりのお口の健康を第一に考え、痛みの少ない治療と予防歯科に力を入れています。明るく清潔な環境で、安心して通院いただけるクリニックです。</p>
+                        <div class="hero-buttons">
+                            <a href="#appointment" class="btn-primary">初診予約</a>
+                            <a href="#treatments" class="btn-outline">診療案内</a>
+                        </div>
+                        <div class="hero-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>完全予約制</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>無痛治療</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>最新設備</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="clinic-image">
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=400&fit=crop" alt="クリニック外観">
+                        </div>
+                        <div class="floating-elements">
+                            <div class="floating-card card-1">
+                                <div class="card-icon">😊</div>
+                                <div class="card-text">笑顔の<br>患者様</div>
+                            </div>
+                            <div class="floating-card card-2">
+                                <div class="card-icon">🦷</div>
+                                <div class="card-text">健康な<br>歯</div>
+                            </div>
+                            <div class="floating-card card-3">
+                                <div class="card-icon">✨</div>
+                                <div class="card-text">美しい<br>口元</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-info">
+        <div class="container">
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-icon">🕒</div>
+                    <h3>診療時間</h3>
+                    <p>平日 9:00-19:00<br>土曜 9:00-17:00</p>
+                    <small>日曜・祝日休診</small>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <h3>お電話予約</h3>
+                    <p class="phone-number">03-1234-5678</p>
+                    <small>お気軽にお電話ください</small>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>アクセス</h3>
+                    <p>JR山手線<br>新宿駅東口徒歩3分</p>
+                    <small>駅近で通いやすい立地</small>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">🚗</div>
+                    <h3>駐車場</h3>
+                    <p>専用駐車場<br>3台完備</p>
+                    <small>お車でもお越しいただけます</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">医院について</h2>
+                    <p class="section-subtitle">患者様の笑顔のために</p>
+                    
+                    <div class="about-description">
+                        <p>スマイル歯科クリニックは、「患者様の笑顔を一生守る」ことを使命として、2015年に開院いたしました。</p>
+                        <p>治療だけでなく予防に重点を置き、患者様お一人おひとりに合わせたオーダーメイドの治療計画をご提案しています。痛みの少ない治療、丁寧な説明、清潔で快適な環境づくりを心がけ、お子様からご高齢の方まで安心して通院いただけるクリニックを目指しています。</p>
+                    </div>
+                    
+                    <div class="clinic-values">
+                        <div class="value-item">
+                            <div class="value-icon">❤️</div>
+                            <h4>患者様第一</h4>
+                            <p>お一人おひとりのご要望に寄り添った治療を心がけています。</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">🛡️</div>
+                            <h4>予防重視</h4>
+                            <p>治療よりも予防。健康な歯を維持するサポートをいたします。</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">⚡</div>
+                            <h4>最新技術</h4>
+                            <p>常に最新の技術と設備で、より良い治療を提供します。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="clinic-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">2,500+</div>
+                            <div class="stat-label">患者様実績</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">8年</div>
+                            <div class="stat-label">開院年数</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">満足度</div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&h=600&fit=crop" alt="診療室内部">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="treatments" class="treatments">
+        <div class="container">
+            <h2 class="section-title">診療案内</h2>
+            <p class="section-subtitle">幅広い歯科治療に対応しています</p>
+            
+            <div class="treatment-categories">
+                <div class="treatment-nav">
+                    <button class="treatment-tab active" data-category="general">一般歯科</button>
+                    <button class="treatment-tab" data-category="preventive">予防歯科</button>
+                    <button class="treatment-tab" data-category="cosmetic">審美歯科</button>
+                    <button class="treatment-tab" data-category="orthodontics">矯正歯科</button>
+                </div>
+                
+                <div class="treatment-content">
+                    <div class="treatment-panel active" id="general">
+                        <div class="treatment-layout">
+                            <div class="treatment-image">
+                                <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=500&h=300&fit=crop" alt="一般歯科治療">
+                            </div>
+                            <div class="treatment-details">
+                                <h3>一般歯科</h3>
+                                <p class="treatment-desc">虫歯治療、歯周病治療など、基本的な歯科治療を丁寧に行います。</p>
+                                
+                                <div class="treatment-list">
+                                    <h4>主な治療内容</h4>
+                                    <ul>
+                                        <li>虫歯治療（詰め物・被せ物）</li>
+                                        <li>歯周病治療・歯石除去</li>
+                                        <li>根管治療（歯の根の治療）</li>
+                                        <li>抜歯・外科処置</li>
+                                        <li>入れ歯・ブリッジ</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="treatment-features">
+                                    <div class="feature-badge">
+                                        <span class="badge-icon">💎</span>
+                                        <span>セラミック治療</span>
+                                    </div>
+                                    <div class="feature-badge">
+                                        <span class="badge-icon">🔬</span>
+                                        <span>マイクロスコープ</span>
+                                    </div>
+                                    <div class="feature-badge">
+                                        <span class="badge-icon">⚡</span>
+                                        <span>レーザー治療</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="treatment-panel" id="preventive">
+                        <div class="treatment-layout">
+                            <div class="treatment-image">
+                                <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&h=300&fit=crop" alt="予防歯科">
+                            </div>
+                            <div class="treatment-details">
+                                <h3>予防歯科</h3>
+                                <p class="treatment-desc">虫歯や歯周病を未然に防ぐための予防ケアに力を入れています。</p>
+                                
+                                <div class="treatment-list">
+                                    <h4>予防メニュー</h4>
+                                    <ul>
+                                        <li>定期健診・クリーニング</li>
+                                        <li>フッ素塗布</li>
+                                        <li>シーラント（歯の溝埋め）</li>
+                                        <li>PMTC（プロによる清掃）</li>
+                                        <li>ブラッシング指導</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="prevention-plan">
+                                    <h4>予防プログラム</h4>
+                                    <div class="plan-steps">
+                                        <div class="step">
+                                            <span class="step-number">1</span>
+                                            <span class="step-text">検査・診断</span>
+                                        </div>
+                                        <div class="step">
+                                            <span class="step-number">2</span>
+                                            <span class="step-text">クリーニング</span>
+                                        </div>
+                                        <div class="step">
+                                            <span class="step-number">3</span>
+                                            <span class="step-text">指導・アドバイス</span>
+                                        </div>
+                                        <div class="step">
+                                            <span class="step-number">4</span>
+                                            <span class="step-text">定期フォロー</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="treatment-panel" id="cosmetic">
+                        <div class="treatment-layout">
+                            <div class="treatment-image">
+                                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&h=300&fit=crop" alt="審美歯科">
+                            </div>
+                            <div class="treatment-details">
+                                <h3>審美歯科</h3>
+                                <p class="treatment-desc">美しい口元と自然な笑顔のための審美的な歯科治療を提供します。</p>
+                                
+                                <div class="treatment-list">
+                                    <h4>審美治療メニュー</h4>
+                                    <ul>
+                                        <li>ホワイトニング（オフィス・ホーム）</li>
+                                        <li>オールセラミック</li>
+                                        <li>ラミネートベニア</li>
+                                        <li>ガムピーリング</li>
+                                        <li>審美的な詰め物・被せ物</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="cosmetic-options">
+                                    <div class="option-card">
+                                        <h5>オフィスホワイトニング</h5>
+                                        <p>1回で効果を実感</p>
+                                        <span class="price">¥15,000</span>
+                                    </div>
+                                    <div class="option-card">
+                                        <h5>ホームホワイトニング</h5>
+                                        <p>ご自宅で気軽に</p>
+                                        <span class="price">¥25,000</span>
+                                    </div>
+                                    <div class="option-card">
+                                        <h5>デュアルホワイトニング</h5>
+                                        <p>最も効果的</p>
+                                        <span class="price">¥35,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="treatment-panel" id="orthodontics">
+                        <div class="treatment-layout">
+                            <div class="treatment-image">
+                                <img src="https://images.unsplash.com/photo-1606811842689-23dfddce3e95?w=500&h=300&fit=crop" alt="矯正歯科">
+                            </div>
+                            <div class="treatment-details">
+                                <h3>矯正歯科</h3>
+                                <p class="treatment-desc">美しい歯並びと正しい噛み合わせで、健康的な口元を実現します。</p>
+                                
+                                <div class="treatment-list">
+                                    <h4>矯正治療の種類</h4>
+                                    <ul>
+                                        <li>ワイヤー矯正（メタル・セラミック）</li>
+                                        <li>マウスピース矯正（インビザライン）</li>
+                                        <li>舌側矯正（リンガル矯正）</li>
+                                        <li>部分矯正</li>
+                                        <li>小児矯正</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="orthodontic-benefits">
+                                    <h4>矯正治療のメリット</h4>
+                                    <div class="benefit-grid">
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">😊</span>
+                                            <span>美しい笑顔</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">🦷</span>
+                                            <span>清掃性向上</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">💪</span>
+                                            <span>噛む力改善</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">🎯</span>
+                                            <span>顎関節症予防</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="staff" class="staff">
+        <div class="container">
+            <h2 class="section-title">ドクター・スタッフ紹介</h2>
+            <p class="section-subtitle">経験豊富なスタッフがお迎えします</p>
+            
+            <div class="staff-grid">
+                <div class="staff-card main-doctor">
+                    <div class="staff-photo">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=300&fit=crop&crop=face" alt="院長">
+                    </div>
+                    <div class="staff-info">
+                        <h3>田中 健一</h3>
+                        <p class="staff-title">院長</p>
+                        <p class="staff-qualification">歯科医師 / 歯学博士</p>
+                        
+                        <div class="staff-bio">
+                            <p>東京歯科大学卒業後、大学病院での研修を経て当院を開院。患者様お一人おひとりに寄り添った治療を心がけています。</p>
+                        </div>
+                        
+                        <div class="staff-specialties">
+                            <h4>専門分野</h4>
+                            <div class="specialty-tags">
+                                <span class="specialty-tag">一般歯科</span>
+                                <span class="specialty-tag">審美歯科</span>
+                                <span class="specialty-tag">インプラント</span>
+                            </div>
+                        </div>
+                        
+                        <div class="staff-credentials">
+                            <h4>所属・資格</h4>
+                            <ul>
+                                <li>日本歯科医師会会員</li>
+                                <li>日本審美歯科学会認定医</li>
+                                <li>インビザライン認定ドクター</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-photo">
+                        <img src="https://images.unsplash.com/photo-1594824047770-d90e6e7e0bb4?w=200&h=200&fit=crop&crop=face" alt="副院長">
+                    </div>
+                    <div class="staff-info">
+                        <h3>佐藤 美咲</h3>
+                        <p class="staff-title">副院長</p>
+                        <p class="staff-qualification">歯科医師</p>
+                        
+                        <div class="staff-bio">
+                            <p>小児歯科を専門とし、お子様の歯の健康をサポート。優しい診療でお子様にも人気です。</p>
+                        </div>
+                        
+                        <div class="staff-specialties">
+                            <h4>専門分野</h4>
+                            <div class="specialty-tags">
+                                <span class="specialty-tag">小児歯科</span>
+                                <span class="specialty-tag">予防歯科</span>
+                                <span class="specialty-tag">矯正歯科</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-photo">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face" alt="歯科衛生士">
+                    </div>
+                    <div class="staff-info">
+                        <h3>山田 雄子</h3>
+                        <p class="staff-title">歯科衛生士</p>
+                        <p class="staff-qualification">歯科衛生士</p>
+                        
+                        <div class="staff-bio">
+                            <p>予防歯科のエキスパートとして、患者様の口腔ケアをトータルサポートいたします。</p>
+                        </div>
+                        
+                        <div class="staff-specialties">
+                            <h4>専門分野</h4>
+                            <div class="specialty-tags">
+                                <span class="specialty-tag">PMTC</span>
+                                <span class="specialty-tag">ブラッシング指導</span>
+                                <span class="specialty-tag">口腔ケア</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-photo">
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=200&h=200&fit=crop&crop=face" alt="受付スタッフ">
+                    </div>
+                    <div class="staff-info">
+                        <h3>鈴木 花子</h3>
+                        <p class="staff-title">受付・歯科助手</p>
+                        <p class="staff-qualification">歯科助手</p>
+                        
+                        <div class="staff-bio">
+                            <p>患者様に安心してご来院いただけるよう、丁寧な対応を心がけています。</p>
+                        </div>
+                        
+                        <div class="staff-specialties">
+                            <h4>担当業務</h4>
+                            <div class="specialty-tags">
+                                <span class="specialty-tag">受付対応</span>
+                                <span class="specialty-tag">診療補助</span>
+                                <span class="specialty-tag">院内管理</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">患者様の声</h2>
+            <p class="section-subtitle">皆様からいただいた温かいお声をご紹介</p>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-item active">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p>"長年の歯の悩みが解決しました。先生の説明がとても丁寧で、安心して治療を受けることができました。スタッフの皆さんも優しく、リラックスして通院できています。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>A.Tさん（40代女性）</h4>
+                            <p>一般歯科・審美歯科</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p>"子どもの歯の治療でお世話になっています。先生が子どもの扱いがとても上手で、歯医者さんを怖がっていた娘も今では楽しみにしています。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>K.Sさん（30代女性）</h4>
+                            <p>小児歯科・予防歯科</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p>"ホワイトニングをお願いしました。自然な白さになり、とても満足しています。料金も明確で、追加費用の心配もありませんでした。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>M.Iさん（20代男性）</h4>
+                            <p>審美歯科・ホワイトニング</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <button class="prev-btn" id="prev-testimonial">‹</button>
+                <div class="testimonial-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+                <button class="next-btn" id="next-testimonial">›</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="clinic-info" class="clinic-info">
+        <div class="container">
+            <h2 class="section-title">医院案内</h2>
+            <p class="section-subtitle">清潔で快適な空間で治療を受けていただけます</p>
+            
+            <div class="clinic-layout">
+                <div class="clinic-gallery">
+                    <div class="gallery-main">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=400&fit=crop" alt="受付・待合室" id="main-gallery-image">
+                    </div>
+                    <div class="gallery-thumbs">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=150&h=100&fit=crop" alt="受付・待合室" class="thumb active" data-main="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=400&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=150&h=100&fit=crop" alt="診療室" class="thumb" data-main="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=150&h=100&fit=crop" alt="レントゲン室" class="thumb" data-main="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&h=400&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=150&h=100&fit=crop" alt="カウンセリングルーム" class="thumb" data-main="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&h=400&fit=crop">
+                    </div>
+                </div>
+                
+                <div class="clinic-details">
+                    <div class="clinic-features">
+                        <h3>院内設備</h3>
+                        <div class="equipment-list">
+                            <div class="equipment-item">
+                                <div class="equipment-icon">📡</div>
+                                <div>
+                                    <h4>デジタルレントゲン</h4>
+                                    <p>被爆量を大幅に軽減した最新設備</p>
+                                </div>
+                            </div>
+                            
+                            <div class="equipment-item">
+                                <div class="equipment-icon">🔬</div>
+                                <div>
+                                    <h4>口腔内カメラ</h4>
+                                    <p>治療部位を詳細に観察・記録</p>
+                                </div>
+                            </div>
+                            
+                            <div class="equipment-item">
+                                <div class="equipment-icon">⚡</div>
+                                <div>
+                                    <h4>レーザー治療器</h4>
+                                    <p>痛みの少ない優しい治療</p>
+                                </div>
+                            </div>
+                            
+                            <div class="equipment-item">
+                                <div class="equipment-icon">🧼</div>
+                                <div>
+                                    <h4>高圧滅菌器</h4>
+                                    <p>徹底した感染症対策</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinic-amenities">
+                        <h3>院内サービス</h3>
+                        <div class="amenity-grid">
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🎵</span>
+                                <span>BGM・アロマ</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">📚</span>
+                                <span>雑誌・書籍</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">☕</span>
+                                <span>ドリンクサービス</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🧸</span>
+                                <span>キッズスペース</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">♿</span>
+                                <span>バリアフリー</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">📶</span>
+                                <span>Wi-Fi完備</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="appointment" class="appointment">
+        <div class="container">
+            <h2 class="section-title">ご予約・お問い合わせ</h2>
+            <p class="section-subtitle">お気軽にお電話またはWebでご予約ください</p>
+            
+            <div class="appointment-methods">
+                <div class="method-card phone-booking">
+                    <div class="method-header">
+                        <div class="method-icon">📞</div>
+                        <h3>お電話でのご予約</h3>
+                    </div>
+                    <div class="phone-info">
+                        <p class="phone-number">03-1234-5678</p>
+                        <p class="phone-hours">受付時間: 平日 9:00-18:30 / 土曜 9:00-16:30</p>
+                        <p class="phone-note">お急ぎの方はお電話でのご予約がおすすめです</p>
+                    </div>
+                </div>
+                
+                <div class="method-card web-booking">
+                    <div class="method-header">
+                        <div class="method-icon">💻</div>
+                        <h3>Web予約</h3>
+                    </div>
+                    <div class="web-form">
+                        <form class="booking-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">お名前</label>
+                                    <input type="text" id="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">電話番号</label>
+                                    <input type="tel" id="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">メールアドレス</label>
+                                    <input type="email" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="visit-type">受診内容</label>
+                                    <select id="visit-type" required>
+                                        <option value="">選択してください</option>
+                                        <option value="first">初診</option>
+                                        <option value="checkup">定期健診</option>
+                                        <option value="cleaning">クリーニング</option>
+                                        <option value="treatment">治療相談</option>
+                                        <option value="emergency">痛みがある</option>
+                                        <option value="whitening">ホワイトニング</option>
+                                        <option value="orthodontics">矯正相談</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="preferred-date">希望日</label>
+                                    <input type="date" id="preferred-date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="preferred-time">希望時間</label>
+                                    <select id="preferred-time">
+                                        <option value="">選択してください</option>
+                                        <option value="morning">午前</option>
+                                        <option value="afternoon">午後</option>
+                                        <option value="evening">夕方</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">ご質問・ご要望</label>
+                                <textarea id="message" rows="4" placeholder="症状やご相談内容がございましたらお聞かせください"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary">予約リクエストを送信</button>
+                            <p class="form-note">送信後、スタッフより確認のお電話をさせていただきます。</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="access" class="access">
+        <div class="container">
+            <h2 class="section-title">アクセス</h2>
+            
+            <div class="access-content">
+                <div class="access-info">
+                    <h3>スマイル歯科クリニック</h3>
+                    
+                    <div class="location-details">
+                        <div class="detail-item">
+                            <div class="detail-icon">📍</div>
+                            <div>
+                                <h4>住所</h4>
+                                <p>〒160-0022<br>東京都新宿区新宿3-1-1 新宿ビル2F</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">🚃</div>
+                            <div>
+                                <h4>最寄り駅</h4>
+                                <p>JR山手線「新宿駅」東口より徒歩3分<br>東京メトロ丸ノ内線「新宿駅」より徒歩2分</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">🚗</div>
+                            <div>
+                                <h4>駐車場</h4>
+                                <p>専用駐車場3台完備<br>（満車の場合は近隣コインパーキングをご利用ください）</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">🕒</div>
+                            <div>
+                                <h4>診療時間</h4>
+                                <div class="schedule-compact">
+                                    <p>平日：9:00-13:00 / 14:30-19:00</p>
+                                    <p>土曜：9:00-13:00 / 14:30-17:00</p>
+                                    <p>休診日：日曜・祝日</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <h4>アクセスマップ</h4>
+                        <p>新宿駅東口から徒歩3分の好立地</p>
+                        <button class="btn-outline">Googleマップで開く</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section main-info">
+                    <h3>🦷 スマイル歯科クリニック</h3>
+                    <p>あなたの笑顔を一生大切に</p>
+                    <div class="contact-info">
+                        <p>〒160-0022 東京都新宿区新宿3-1-1 新宿ビル2F</p>
+                        <p>TEL: 03-1234-5678</p>
+                        <p>Email: info@smile-dental.jp</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>診療案内</h4>
+                    <ul>
+                        <li><a href="#treatments">一般歯科</a></li>
+                        <li><a href="#treatments">予防歯科</a></li>
+                        <li><a href="#treatments">審美歯科</a></li>
+                        <li><a href="#treatments">矯正歯科</a></li>
+                        <li><a href="#treatments">小児歯科</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>医院情報</h4>
+                    <ul>
+                        <li><a href="#about">医院について</a></li>
+                        <li><a href="#staff">ドクター紹介</a></li>
+                        <li><a href="#clinic-info">院内設備</a></li>
+                        <li><a href="#access">アクセス</a></li>
+                        <li><a href="#appointment">ご予約</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>診療時間</h4>
+                    <div class="schedule-footer">
+                        <table>
+                            <tr>
+                                <td>平日</td>
+                                <td>9:00-19:00</td>
+                            </tr>
+                            <tr>
+                                <td>土曜</td>
+                                <td>9:00-17:00</td>
+                            </tr>
+                            <tr>
+                                <td>休診</td>
+                                <td>日曜・祝日</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 スマイル歯科クリニック. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">プライバシーポリシー</a>
+                    <a href="#">利用規約</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>`,
+    css: `@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Pacifico&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: white;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    color: #00b894;
+    margin: 0;
+    line-height: 1;
+}
+
+.tagline {
+    font-size: 11px;
+    color: #74b9ff;
+    display: block;
+    margin-top: 2px;
+    letter-spacing: 1px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #2d3436;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s;
+    padding: 10px 0;
+}
+
+.main-nav a:hover {
+    color: #00b894;
+}
+
+.nav-cta a {
+    background: #00b894;
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.nav-cta a:hover {
+    background: #00a085;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+}
+
+/* Dropdown Menu */
+.nav-item {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #636e72;
+    border-radius: 0;
+}
+
+.dropdown-menu a:hover {
+    background: #f8f9fa;
+    color: #00b894;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #2d3436;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 50%, #00b894 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="teeth" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10,5 Q15,0 20,5 Q15,10 10,5 Q5,0 10,5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23teeth)"/></svg>');
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    margin-top: 80px;
+}
+
+.hero-text h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.highlight {
+    background: linear-gradient(45deg, #fdcb6e, #e17055);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    background: #00b894;
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #00a085;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 184, 148, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    padding: 16px 32px;
+    border: 2px solid white;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #0984e3;
+}
+
+.hero-features {
+    display: flex;
+    gap: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+}
+
+.feature-icon {
+    color: #fdcb6e;
+    font-weight: bold;
+}
+
+/* Hero Visual */
+.hero-visual {
+    position: relative;
+}
+
+.clinic-image {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.clinic-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.floating-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: float 6s ease-in-out infinite;
+}
+
+.card-1 {
+    top: 20%;
+    right: -30px;
+    animation-delay: 0s;
+}
+
+.card-2 {
+    bottom: 30%;
+    left: -30px;
+    animation-delay: 2s;
+}
+
+.card-3 {
+    top: 60%;
+    right: 20px;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+.card-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2d3436;
+    line-height: 1.2;
+}
+
+/* Quick Info */
+.quick-info {
+    padding: 60px 0;
+    background: #f8f9fa;
+    margin-top: -30px;
+    position: relative;
+    z-index: 10;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.info-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #2d3436;
+}
+
+.info-card p {
+    color: #636e72;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.phone-number {
+    font-size: 20px;
+    font-weight: 700;
+    color: #00b894 !important;
+}
+
+.info-card small {
+    color: #b2bec3;
+    font-size: 12px;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #2d3436;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #636e72;
+    margin-bottom: 60px;
+    font-size: 18px;
+}
+
+/* About */
+.about {
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-description {
+    margin-bottom: 40px;
+}
+
+.about-description p {
+    color: #636e72;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.clinic-values {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.value-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #00b894;
+}
+
+.value-icon {
+    font-size: 24px;
+    min-width: 30px;
+    margin-top: 2px;
+}
+
+.value-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2d3436;
+}
+
+.value-item p {
+    color: #636e72;
+    line-height: 1.6;
+}
+
+.about-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.clinic-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: #00b894;
+    display: block;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #636e72;
+    margin-top: 5px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Treatments */
+.treatments {
+    background: #f8f9fa;
+}
+
+.treatment-categories {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.treatment-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+    background: white;
+    padding: 8px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.treatment-tab {
+    background: transparent;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #636e72;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.treatment-tab.active {
+    background: #00b894;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+}
+
+.treatment-panel {
+    display: none;
+}
+
+.treatment-panel.active {
+    display: block;
+}
+
+.treatment-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.treatment-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.treatment-details h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #2d3436;
+}
+
+.treatment-desc {
+    color: #636e72;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.treatment-list h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2d3436;
+}
+
+.treatment-list ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.treatment-list li {
+    padding: 8px 0;
+    color: #636e72;
+    position: relative;
+    padding-left: 20px;
+}
+
+.treatment-list li:before {
+    content: "🦷";
+    position: absolute;
+    left: 0;
+    font-size: 14px;
+}
+
+.treatment-features {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.feature-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #e8f5e8;
+    color: #00b894;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.badge-icon {
+    font-size: 14px;
+}
+
+/* Prevention Plan */
+.prevention-plan h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2d3436;
+}
+
+.plan-steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.step-number {
+    background: #00b894;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.step-text {
+    color: #2d3436;
+    font-weight: 500;
+}
+
+/* Cosmetic Options */
+.cosmetic-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.option-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.option-card:hover {
+    border-color: #00b894;
+    transform: translateY(-3px);
+}
+
+.option-card h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2d3436;
+}
+
+.option-card p {
+    color: #636e72;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #00b894;
+}
+
+/* Orthodontic Benefits */
+.orthodontic-benefits h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2d3436;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.benefit-icon {
+    font-size: 20px;
+    min-width: 25px;
+}
+
+/* Staff */
+.staff {
+    background: white;
+}
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.staff-card {
+    background: #f8f9fa;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.staff-card:hover {
+    transform: translateY(-5px);
+}
+
+.staff-card.main-doctor {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    padding: 40px;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: white;
+}
+
+.staff-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 4px solid white;
+}
+
+.main-doctor .staff-photo {
+    margin: 0;
+    width: 180px;
+    height: 180px;
+}
+
+.staff-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.staff-info {
+    padding: 30px;
+    text-align: center;
+}
+
+.main-doctor .staff-info {
+    padding: 0;
+    text-align: left;
+    color: white;
+}
+
+.staff-info h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2d3436;
+}
+
+.main-doctor .staff-info h3 {
+    color: white;
+    font-size: 28px;
+}
+
+.staff-title {
+    font-size: 14px;
+    color: #00b894;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.main-doctor .staff-title {
+    color: #fdcb6e;
+}
+
+.staff-qualification {
+    font-size: 12px;
+    color: #636e72;
+    margin-bottom: 20px;
+}
+
+.main-doctor .staff-qualification {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.staff-bio {
+    margin-bottom: 25px;
+}
+
+.staff-bio p {
+    color: #636e72;
+    line-height: 1.6;
+}
+
+.main-doctor .staff-bio p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.staff-specialties h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2d3436;
+}
+
+.main-doctor .staff-specialties h4 {
+    color: white;
+}
+
+.specialty-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.specialty-tag {
+    background: #e8f5e8;
+    color: #00b894;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.main-doctor .specialty-tag {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.staff-credentials h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.staff-credentials ul {
+    list-style: none;
+}
+
+.staff-credentials li {
+    padding: 5px 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.staff-credentials li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #fdcb6e;
+    font-weight: 600;
+}
+
+/* Testimonials */
+.testimonials {
+    background: #f8f9fa;
+}
+
+.testimonial-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.testimonial-item {
+    display: none;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.testimonial-item.active {
+    display: block;
+}
+
+.testimonial-rating {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.testimonial-content p {
+    font-size: 18px;
+    color: #2d3436;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.author-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3436;
+    margin-bottom: 5px;
+}
+
+.author-info p {
+    color: #00b894;
+    font-size: 14px;
+}
+
+.testimonial-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.prev-btn,
+.next-btn {
+    background: #00b894;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background: #00a085;
+    transform: scale(1.1);
+}
+
+.testimonial-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: #00b894;
+}
+
+/* Clinic Info */
+.clinic-info {
+    background: white;
+}
+
+.clinic-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.clinic-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.gallery-thumbs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.thumb {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    border: 2px solid transparent;
+}
+
+.thumb.active,
+.thumb:hover {
+    opacity: 1;
+    border-color: #00b894;
+}
+
+.clinic-features h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #2d3436;
+}
+
+.equipment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.equipment-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.equipment-icon {
+    font-size: 24px;
+    min-width: 30px;
+    margin-top: 2px;
+}
+
+.equipment-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2d3436;
+}
+
+.equipment-item p {
+    color: #636e72;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.clinic-amenities h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #2d3436;
+}
+
+.amenity-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.amenity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.amenity-icon {
+    font-size: 18px;
+    min-width: 22px;
+}
+
+/* Appointment */
+.appointment {
+    background: #f8f9fa;
+}
+
+.appointment-methods {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.method-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.method-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.method-icon {
+    font-size: 32px;
+    color: #00b894;
+}
+
+.method-header h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.phone-info .phone-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #00b894;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.phone-hours,
+.phone-note {
+    color: #636e72;
+    margin-bottom: 10px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #2d3436;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00b894;
+}
+
+.form-note {
+    font-size: 12px;
+    color: #636e72;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Access */
+.access {
+    background: white;
+}
+
+.access-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.access-info h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #2d3436;
+}
+
+.location-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.detail-icon {
+    font-size: 20px;
+    min-width: 25px;
+    color: #00b894;
+    margin-top: 2px;
+}
+
+.detail-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2d3436;
+}
+
+.detail-item p {
+    color: #636e72;
+    line-height: 1.5;
+}
+
+.schedule-compact p {
+    margin-bottom: 5px;
+}
+
+.map-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-placeholder {
+    background: #f8f9fa;
+    border: 2px dashed #ddd;
+    border-radius: 15px;
+    padding: 60px 40px;
+    text-align: center;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-placeholder h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #636e72;
+    margin-bottom: 10px;
+}
+
+.map-placeholder p {
+    color: #b2bec3;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+    background: #2d3436;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section.main-info h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    color: #00b894;
+    margin-bottom: 15px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-section p {
+    color: #b2bec3;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #b2bec3;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #00b894;
+}
+
+.schedule-footer table {
+    width: 100%;
+}
+
+.schedule-footer td {
+    padding: 5px 0;
+    color: #b2bec3;
+    font-size: 14px;
+}
+
+.schedule-footer td:first-child {
+    font-weight: 500;
+    width: 60px;
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid #636e72;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #b2bec3;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00b894;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .main-nav ul li {
+        border-bottom: 1px solid #f8f9fa;
+        width: 100%;
+    }
+    
+    .main-nav a {
+        padding: 15px 0;
+        display: block;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: #f8f9fa;
+        margin-top: 10px;
+    }
+    
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .hero-text h2 {
+        font-size: 36px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .hero-features {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .floating-elements {
+        display: none;
+    }
+    
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content,
+    .treatment-layout,
+    .clinic-layout,
+    .appointment-methods,
+    .access-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .staff-card.main-doctor {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .plan-steps,
+    .cosmetic-options,
+    .benefit-grid,
+    .amenity-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+}`,
+    js: `// ハンバーガーメニュー
+const hamburger = document.getElementById('hamburger');
+const mainNav = document.getElementById('main-nav');
+
+if (hamburger && mainNav) {
+    hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mainNav.classList.toggle('active');
+    });
+    
+    // メニューリンクをクリックしたら閉じる
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mainNav.classList.remove('active');
+        });
+    });
+}
+
+// スムーズスクロール
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// 治療タブ切り替え
+const treatmentTabs = document.querySelectorAll('.treatment-tab');
+const treatmentPanels = document.querySelectorAll('.treatment-panel');
+
+treatmentTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        
+        // アクティブなタブとパネルをリセット
+        treatmentTabs.forEach(t => t.classList.remove('active'));
+        treatmentPanels.forEach(panel => panel.classList.remove('active'));
+        
+        // 新しいタブとパネルをアクティブに
+        this.classList.add('active');
+        document.getElementById(category).classList.add('active');
+    });
+});
+
+// 患者様の声スライダー
+const testimonials = document.querySelectorAll('.testimonial-item');
+const dots = document.querySelectorAll('.dot');
+const prevBtn = document.getElementById('prev-testimonial');
+const nextBtn = document.getElementById('next-testimonial');
+let currentTestimonial = 0;
+
+function showTestimonial(index) {
+    testimonials.forEach(item => item.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    testimonials[index].classList.add('active');
+    dots[index].classList.add('active');
+}
+
+function nextTestimonial() {
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    showTestimonial(currentTestimonial);
+}
+
+function prevTestimonial() {
+    currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(currentTestimonial);
+}
+
+if (nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', nextTestimonial);
+    prevBtn.addEventListener('click', prevTestimonial);
+}
+
+// ドット制御
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentTestimonial = index;
+        showTestimonial(currentTestimonial);
+    });
+});
+
+// 自動スライド
+setInterval(nextTestimonial, 5000);
+
+// ギャラリー画像切り替え
+const mainGalleryImage = document.getElementById('main-gallery-image');
+const thumbImages = document.querySelectorAll('.thumb');
+
+thumbImages.forEach(thumb => {
+    thumb.addEventListener('click', function() {
+        const mainImageSrc = this.getAttribute('data-main');
+        
+        // アクティブなサムネイルを更新
+        thumbImages.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        
+        // メイン画像を更新
+        if (mainGalleryImage) {
+            mainGalleryImage.src = mainImageSrc;
+        }
+    });
+});
+
+// 予約フォーム送信
+const bookingForm = document.querySelector('.booking-form');
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('予約リクエストを送信しました。確認のお電話をお待ちください。');
+    });
+}
+
+// 電話番号クリック
+document.addEventListener('click', function(e) {
+    const text = e.target.textContent;
+    if (text && text.includes('03-1234-5678')) {
+        if (confirm('電話をかけますか？')) {
+            window.location.href = 'tel:03-1234-5678';
+        }
+    }
+});
+
+// Googleマップボタン
+document.querySelector('.map-placeholder button')?.addEventListener('click', function() {
+    alert('Googleマップでクリニックの場所を開きます（実装予定）');
+});
+
+// スクロールアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// アニメーション対象要素を観察
+window.addEventListener('load', () => {
+    const animateElements = document.querySelectorAll('.info-card, .value-item, .staff-card, .equipment-item');
+    animateElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+    });
+});
+
+// 統計数字のカウントアニメーション
+function animateValue(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        element.textContent = value + (element.dataset.suffix || '');
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// 統計セクションが表示されたときのアニメーション
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const statNumbers = entry.target.querySelectorAll('.stat-number');
+            statNumbers.forEach(statNumber => {
+                if (!statNumber.classList.contains('animated')) {
+                    const text = statNumber.textContent;
+                    const number = parseInt(text.replace(/[^0-9]/g, ''));
+                    if (!isNaN(number)) {
+                        statNumber.dataset.suffix = text.replace(/[0-9]/g, '');
+                        statNumber.textContent = '0';
+                        animateValue(statNumber, 0, number, 2000);
+                        statNumber.classList.add('animated');
+                    }
+                }
+            });
+        }
+    });
+}, { threshold: 0.5 });
+
+// 統計セクションを観察
+document.querySelectorAll('.clinic-stats').forEach(stats => {
+    statsObserver.observe(stats);
+});
+
+// フローティングカードのアニメーション
+window.addEventListener('load', function() {
+    const floatingCards = document.querySelectorAll('.floating-card');
+    floatingCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px) scale(0.8)';
+        
+        setTimeout(() => {
+            card.style.transition = 'all 0.8s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+        }, 500 + (index * 200));
+    });
+});
+
+// ホバーエフェクト
+document.querySelectorAll('.option-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// 価格カードのクリックイベント
+document.querySelectorAll('.option-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const treatmentName = this.querySelector('h5').textContent;
+        alert(treatmentName + 'についてお問い合わせページへ遷移します（実装予定）');
+    });
+});`
+  }
+}

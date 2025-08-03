@@ -1,0 +1,2792 @@
+import { WebTemplate } from '../types';
+import { TEMPLATE_CATEGORIES } from '../types';
+
+export const mediaMagazineTemplate: WebTemplate = {
+  id: 'media-magazine',
+  title: 'ライフスタイル雑誌・マガジン',
+  category: TEMPLATE_CATEGORIES.MEDIA,
+  description: 'ライフスタイル雑誌やマガジンサイト向けのスタイリッシュなテンプレート',
+  thumbnail: '/template-images/media-magazine.jpg',
+  features: [
+    '記事カテゴリ管理',
+    'フォトギャラリー',
+    '読者投稿機能',
+    'メールマガジン',
+    'SNS連携',
+    '広告スペース'
+  ],
+  tags: ['雑誌', 'ライフスタイル', 'マガジン', 'メディア', 'ブログ'],
+  code: {
+    html: `
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIFESTYLE PLUS - あなたの毎日をもっと素敵に</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-actions">
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                    <div class="header-utils">
+                        <a href="#" class="newsletter-link">Newsletter</a>
+                        <a href="#" class="subscribe-link">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="nav-brand">
+                        <h1>LIFESTYLE</h1>
+                        <span class="brand-plus">PLUS</span>
+                        <p class="tagline">Live beautifully, every day</p>
+                    </div>
+                    
+                    <ul class="nav-menu">
+                        <li><a href="#home" class="active">HOME</a></li>
+                        <li class="dropdown">
+                            <a href="#fashion">FASHION</a>
+                            <div class="dropdown-menu">
+                                <a href="#">トレンド</a>
+                                <a href="#">コーディネート</a>
+                                <a href="#">アクセサリー</a>
+                                <a href="#">バッグ・シューズ</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#beauty">BEAUTY</a>
+                            <div class="dropdown-menu">
+                                <a href="#">スキンケア</a>
+                                <a href="#">メイクアップ</a>
+                                <a href="#">ヘアケア</a>
+                                <a href="#">ネイル</a>
+                            </div>
+                        </li>
+                        <li><a href="#lifestyle">LIFESTYLE</a></li>
+                        <li><a href="#travel">TRAVEL</a></li>
+                        <li><a href="#food">FOOD</a></li>
+                        <li><a href="#wellness">WELLNESS</a></li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <button class="search-toggle">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="search-overlay">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search articles..." class="search-input">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                        <button class="search-close"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="featured-article">
+                        <div class="article-image">
+                            <img src="/api/placeholder/800/600" alt="Featured Article" class="featured-img">
+                            <div class="article-overlay">
+                                <div class="article-category">FASHION</div>
+                                <h2 class="article-title">2024年春のトレンドカラーで<br>新しい自分を発見しよう</h2>
+                                <p class="article-excerpt">今年の春は、パステルピンクとミントグリーンが注目色。自分らしいスタイルを見つけるためのコーディネート術をファッションエディターが解説します。</p>
+                                <div class="article-meta">
+                                    <div class="author-info">
+                                        <img src="/api/placeholder/40/40" alt="Author" class="author-avatar">
+                                        <div class="author-details">
+                                            <span class="author-name">田中 美咲</span>
+                                            <span class="publish-date">March 15, 2024</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="read-more-btn">READ MORE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="trending-articles">
+                        <h3 class="section-title">TRENDING NOW</h3>
+                        <div class="trending-list">
+                            <article class="trending-item">
+                                <div class="trending-image">
+                                    <img src="/api/placeholder/150/120" alt="Trending">
+                                </div>
+                                <div class="trending-content">
+                                    <span class="trending-category">BEAUTY</span>
+                                    <h4>春の肌トーンに合わせた<br>ベースメイクの選び方</h4>
+                                    <span class="trending-date">3 hours ago</span>
+                                </div>
+                            </article>
+                            
+                            <article class="trending-item">
+                                <div class="trending-image">
+                                    <img src="/api/placeholder/150/120" alt="Trending">
+                                </div>
+                                <div class="trending-content">
+                                    <span class="trending-category">LIFESTYLE</span>
+                                    <h4>朝の5分で変わる<br>ポジティブな一日の始め方</h4>
+                                    <span class="trending-date">5 hours ago</span>
+                                </div>
+                            </article>
+                            
+                            <article class="trending-item">
+                                <div class="trending-image">
+                                    <img src="/api/placeholder/150/120" alt="Trending">
+                                </div>
+                                <div class="trending-content">
+                                    <span class="trending-category">TRAVEL</span>
+                                    <h4>桜が美しい関西の<br>隠れた名所5選</h4>
+                                    <span class="trending-date">8 hours ago</span>
+                                </div>
+                            </article>
+                            
+                            <article class="trending-item">
+                                <div class="trending-image">
+                                    <img src="/api/placeholder/150/120" alt="Trending">
+                                </div>
+                                <div class="trending-content">
+                                    <span class="trending-category">FOOD</span>
+                                    <h4>簡単なのに映える<br>春野菜のカラフルサラダ</h4>
+                                    <span class="trending-date">12 hours ago</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="latest" class="latest-articles">
+            <div class="container">
+                <div class="section-header">
+                    <h2>LATEST ARTICLES</h2>
+                    <div class="category-filters">
+                        <button class="filter-btn active" data-category="all">ALL</button>
+                        <button class="filter-btn" data-category="fashion">FASHION</button>
+                        <button class="filter-btn" data-category="beauty">BEAUTY</button>
+                        <button class="filter-btn" data-category="lifestyle">LIFESTYLE</button>
+                        <button class="filter-btn" data-category="travel">TRAVEL</button>
+                        <button class="filter-btn" data-category="food">FOOD</button>
+                    </div>
+                </div>
+                
+                <div class="articles-grid">
+                    <article class="article-card" data-category="fashion">
+                        <div class="card-image">
+                            <img src="/api/placeholder/350/250" alt="Article Image">
+                            <div class="image-overlay">
+                                <a href="#" class="read-link">READ ARTICLE</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">FASHION</span>
+                            <h3>春のワードローブ更新術：投資すべき5つのアイテム</h3>
+                            <p class="card-excerpt">長く愛用できる質の良いアイテムの選び方と、効果的なワードローブの整理方法をスタイリストがアドバイス。</p>
+                            <div class="card-meta">
+                                <div class="author-mini">
+                                    <img src="/api/placeholder/30/30" alt="Author">
+                                    <span>山田 花子</span>
+                                </div>
+                                <span class="card-date">March 14</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="article-card" data-category="beauty">
+                        <div class="card-image">
+                            <img src="/api/placeholder/350/250" alt="Article Image">
+                            <div class="image-overlay">
+                                <a href="#" class="read-link">READ ARTICLE</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">BEAUTY</span>
+                            <h3>敏感肌でも安心！春のスキンケアルーティン</h3>
+                            <p class="card-excerpt">季節の変わり目に起こりやすい肌トラブルを防ぐ、敏感肌向けのスキンケア方法を皮膚科医が解説。</p>
+                            <div class="card-meta">
+                                <div class="author-mini">
+                                    <img src="/api/placeholder/30/30" alt="Author">
+                                    <span>佐藤 麗子</span>
+                                </div>
+                                <span class="card-date">March 13</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="article-card" data-category="lifestyle">
+                        <div class="card-image">
+                            <img src="/api/placeholder/350/250" alt="Article Image">
+                            <div class="image-overlay">
+                                <a href="#" class="read-link">READ ARTICLE</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">LIFESTYLE</span>
+                            <h3>在宅ワークを快適にする部屋づくりのコツ</h3>
+                            <p class="card-excerpt">集中力が上がり、リラックスもできる理想的なホームオフィスの作り方をインテリアデザイナーが提案。</p>
+                            <div class="card-meta">
+                                <div class="author-mini">
+                                    <img src="/api/placeholder/30/30" alt="Author">
+                                    <span>鈴木 翔太</span>
+                                </div>
+                                <span class="card-date">March 12</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="article-card" data-category="travel">
+                        <div class="card-image">
+                            <img src="/api/placeholder/350/250" alt="Article Image">
+                            <div class="image-overlay">
+                                <a href="#" class="read-link">READ ARTICLE</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">TRAVEL</span>
+                            <h3>女子旅におすすめ！関東近郊の温泉地巡り</h3>
+                            <p class="card-excerpt">日帰りでも十分楽しめる、アクセス抜群の温泉地をピックアップ。女性に嬉しい美肌効果も期待できる温泉を厳選。</p>
+                            <div class="card-meta">
+                                <div class="author-mini">
+                                    <img src="/api/placeholder/30/30" alt="Author">
+                                    <span>高橋 愛美</span>
+                                </div>
+                                <span class="card-date">March 11</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="article-card" data-category="food">
+                        <div class="card-image">
+                            <img src="/api/placeholder/350/250" alt="Article Image">
+                            <div class="image-overlay">
+                                <a href="#" class="read-link">READ ARTICLE</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">FOOD</span>
+                            <h3>忙しい朝でも作れる栄養満点スムージーレシピ</h3>
+                            <p class="card-excerpt">野菜不足解消と美肌効果が期待できる、簡単で美味しいスムージーレシピを管理栄養士が紹介。</p>
+                            <div class="card-meta">
+                                <div class="author-mini">
+                                    <img src="/api/placeholder/30/30" alt="Author">
+                                    <span>川田 奈美</span>
+                                </div>
+                                <span class="card-date">March 10</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="article-card" data-category="beauty">
+                        <div class="card-image">
+                            <img src="/api/placeholder/350/250" alt="Article Image">
+                            <div class="image-overlay">
+                                <a href="#" class="read-link">READ ARTICLE</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">BEAUTY</span>
+                            <h3>プロが教える！ナチュラルメイクのテクニック</h3>
+                            <p class="card-excerpt">素肌感を活かしながら、きちんと感も演出できるナチュラルメイクの基本技術をメイクアップアーティストが解説。</p>
+                            <div class="card-meta">
+                                <div class="author-mini">
+                                    <img src="/api/placeholder/30/30" alt="Author">
+                                    <span>渡辺 由香</span>
+                                </div>
+                                <span class="card-date">March 9</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="load-more-container">
+                    <button class="load-more-btn">LOAD MORE ARTICLES</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-collection" class="featured-collection">
+            <div class="container">
+                <div class="collection-header">
+                    <h2>EDITOR'S PICK</h2>
+                    <p>編集部が厳選した特別な記事をお届け</p>
+                </div>
+                
+                <div class="collection-content">
+                    <div class="main-feature">
+                        <div class="feature-image">
+                            <img src="/api/placeholder/600/450" alt="Editor's Pick">
+                        </div>
+                        <div class="feature-text">
+                            <span class="feature-label">SPECIAL FEATURE</span>
+                            <h3>持続可能なファッションを楽しむ：エシカルブランド特集</h3>
+                            <p class="feature-description">環境に配慮しながらもスタイルを諦めない、次世代のファッションブランドを徹底取材。サステナブルな素材選びから、長く愛用できるアイテムの見極め方まで、これからの時代に必要なファッション選択術を特集します。</p>
+                            <div class="feature-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">15</span>
+                                    <span class="stat-label">Brands Featured</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">3</span>
+                                    <span class="stat-label">Weeks Research</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">50+</span>
+                                    <span class="stat-label">Expert Interviews</span>
+                                </div>
+                            </div>
+                            <a href="#" class="feature-btn">READ FULL FEATURE</a>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-features">
+                        <article class="sub-feature-item">
+                            <div class="sub-feature-image">
+                                <img src="/api/placeholder/280/200" alt="Sub Feature">
+                            </div>
+                            <div class="sub-feature-content">
+                                <span class="sub-feature-category">WELLNESS</span>
+                                <h4>マインドフルネス生活で心の健康を保つ</h4>
+                                <p>日常に取り入れやすい瞑想法と、ストレス解消のための簡単なテクニックを紹介。</p>
+                            </div>
+                        </article>
+                        
+                        <article class="sub-feature-item">
+                            <div class="sub-feature-image">
+                                <img src="/api/placeholder/280/200" alt="Sub Feature">
+                            </div>
+                            <div class="sub-feature-content">
+                                <span class="sub-feature-category">INTERIOR</span>
+                                <h4>小さなスペースを最大活用するインテリア術</h4>
+                                <p>限られた空間でも快適に過ごせる、プロのインテリアコーディネート術を公開。</p>
+                            </div>
+                        </article>
+                        
+                        <article class="sub-feature-item">
+                            <div class="sub-feature-image">
+                                <img src="/api/placeholder/280/200" alt="Sub Feature">
+                            </div>
+                            <div class="sub-feature-content">
+                                <span class="sub-feature-category">HEALTH</span>
+                                <h4>忙しい女性のための栄養バランス完全ガイド</h4>
+                                <p>時間がなくても健康的な食生活を送るための、実践的な栄養管理方法を解説。</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="photo-gallery">
+            <div class="container">
+                <div class="gallery-header">
+                    <h2>PHOTO GALLERY</h2>
+                    <p>インスピレーションを与える美しい写真をお楽しみください</p>
+                </div>
+                
+                <div class="gallery-filters">
+                    <button class="gallery-filter active" data-filter="all">ALL</button>
+                    <button class="gallery-filter" data-filter="fashion">FASHION</button>
+                    <button class="gallery-filter" data-filter="beauty">BEAUTY</button>
+                    <button class="gallery-filter" data-filter="lifestyle">LIFESTYLE</button>
+                    <button class="gallery-filter" data-filter="travel">TRAVEL</button>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="fashion">
+                        <img src="/api/placeholder/300/400" alt="Fashion Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>Spring Fashion Editorial</h4>
+                                <p>Photographer: 田中 健太</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="beauty">
+                        <img src="/api/placeholder/300/300" alt="Beauty Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>Natural Beauty Portrait</h4>
+                                <p>Photographer: 佐藤 美香</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="lifestyle">
+                        <img src="/api/placeholder/300/500" alt="Lifestyle Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>Home & Living</h4>
+                                <p>Photographer: 鈴木 雅人</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="travel">
+                        <img src="/api/placeholder/300/350" alt="Travel Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>Cherry Blossom Journey</h4>
+                                <p>Photographer: 高橋 直樹</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="fashion">
+                        <img src="/api/placeholder/300/450" alt="Fashion Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>Street Style Collection</h4>
+                                <p>Photographer: 山田 隆二</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="lifestyle">
+                        <img src="/api/placeholder/300/300" alt="Lifestyle Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>Morning Routine</h4>
+                                <p>Photographer: 川田 恵子</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter-signup" class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Stay Inspired</h2>
+                        <p>最新のライフスタイル情報とインスピレーションを<br>あなたのメールボックスにお届けします</p>
+                        <div class="newsletter-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>週2回の厳選記事</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-gift"></i>
+                                <span>限定プレゼント情報</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-star"></i>
+                                <span>特別イベント優待</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsletter-form-container">
+                        <form class="newsletter-form">
+                            <div class="form-group">
+                                <input type="email" placeholder="メールアドレスを入力" required>
+                                <button type="submit">SUBSCRIBE</button>
+                            </div>
+                            <div class="form-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                    ファッション・美容情報を受け取る
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    限定イベント情報を受け取る
+                                </label>
+                            </div>
+                            <p class="privacy-note">
+                                登録により、<a href="#">プライバシーポリシー</a>に同意したものとみなされます。
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instagram-feed" class="instagram-section">
+            <div class="container">
+                <div class="instagram-header">
+                    <h2>Follow Us</h2>
+                    <p>@lifestyleplus でインスピレーションをシェア</p>
+                    <a href="#" class="instagram-link">
+                        <i class="fab fa-instagram"></i>
+                        Follow on Instagram
+                    </a>
+                </div>
+                
+                <div class="instagram-grid">
+                    <div class="instagram-item">
+                        <img src="/api/placeholder/250/250" alt="Instagram Post">
+                        <div class="instagram-overlay">
+                            <div class="instagram-stats">
+                                <span><i class="fas fa-heart"></i> 1.2k</span>
+                                <span><i class="fas fa-comment"></i> 89</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instagram-item">
+                        <img src="/api/placeholder/250/250" alt="Instagram Post">
+                        <div class="instagram-overlay">
+                            <div class="instagram-stats">
+                                <span><i class="fas fa-heart"></i> 856</span>
+                                <span><i class="fas fa-comment"></i> 42</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instagram-item">
+                        <img src="/api/placeholder/250/250" alt="Instagram Post">
+                        <div class="instagram-overlay">
+                            <div class="instagram-stats">
+                                <span><i class="fas fa-heart"></i> 2.1k</span>
+                                <span><i class="fas fa-comment"></i> 156</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instagram-item">
+                        <img src="/api/placeholder/250/250" alt="Instagram Post">
+                        <div class="instagram-overlay">
+                            <div class="instagram-stats">
+                                <span><i class="fas fa-heart"></i> 934</span>
+                                <span><i class="fas fa-comment"></i> 73</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instagram-item">
+                        <img src="/api/placeholder/250/250" alt="Instagram Post">
+                        <div class="instagram-overlay">
+                            <div class="instagram-stats">
+                                <span><i class="fas fa-heart"></i> 1.8k</span>
+                                <span><i class="fas fa-comment"></i> 92</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instagram-item">
+                        <img src="/api/placeholder/250/250" alt="Instagram Post">
+                        <div class="instagram-overlay">
+                            <div class="instagram-stats">
+                                <span><i class="fas fa-heart"></i> 674</span>
+                                <span><i class="fas fa-comment"></i> 28</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>LIFESTYLE PLUS</h3>
+                    <p>あなたの毎日をもっと素敵にするライフスタイルマガジン</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="#fashion">Fashion</a></li>
+                            <li><a href="#beauty">Beauty</a></li>
+                            <li><a href="#lifestyle">Lifestyle</a></li>
+                            <li><a href="#travel">Travel</a></li>
+                            <li><a href="#food">Food & Drink</a></li>
+                            <li><a href="#wellness">Wellness</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Magazine</h4>
+                        <ul>
+                            <li><a href="#">最新号</a></li>
+                            <li><a href="#">バックナンバー</a></li>
+                            <li><a href="#">定期購読</a></li>
+                            <li><a href="#">デジタル版</a></li>
+                            <li><a href="#">読者プレゼント</a></li>
+                            <li><a href="#">読者投稿</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="#">編集部について</a></li>
+                            <li><a href="#">ライター募集</a></li>
+                            <li><a href="#">広告掲載</a></li>
+                            <li><a href="#">お問い合わせ</a></li>
+                            <li><a href="#">プレスリリース</a></li>
+                            <li><a href="#">採用情報</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">ヘルプセンター</a></li>
+                            <li><a href="#">利用規約</a></li>
+                            <li><a href="#">プライバシーポリシー</a></li>
+                            <li><a href="#">Cookie設定</a></li>
+                            <li><a href="#">アクセシビリティ</a></li>
+                            <li><a href="#">サイトマップ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2024 Lifestyle Plus Magazine. All rights reserved.</p>
+                </div>
+                <div class="footer-links-bottom">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+`,
+    css: `
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --accent-color: #f39c12;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --text-muted: #95a5a6;
+    --background-light: #fafafa;
+    --background-white: #ffffff;
+    --background-cream: #fdf6f0;
+    --border-color: #ecf0f1;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Noto Sans JP', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--background-white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--background-white);
+    box-shadow: var(--shadow-light);
+}
+
+.header-top {
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 0;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.header-utils {
+    display: flex;
+    gap: 20px;
+}
+
+.header-utils a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+}
+
+.header-utils a:hover {
+    color: var(--secondary-color);
+}
+
+.nav {
+    padding: 20px 0;
+    position: relative;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    text-align: center;
+}
+
+.nav-brand h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.brand-plus {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-left: 5px;
+}
+
+.tagline {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    transition: var(--transition);
+    border-bottom: 2px solid transparent;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--background-white);
+    min-width: 180px;
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    padding: 15px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+    transition: var(--transition);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 20px;
+    border-bottom: none;
+    font-size: 0.85rem;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.dropdown-menu a:hover {
+    background: var(--background-light);
+    color: var(--secondary-color);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-toggle {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-toggle:hover {
+    color: var(--secondary-color);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: var(--text-dark);
+    transition: var(--transition);
+}
+
+.search-overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--background-white);
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.search-container {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 50px 0 0 50px;
+    outline: none;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.search-input:focus {
+    border-color: var(--secondary-color);
+}
+
+.search-btn {
+    padding: 15px 20px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.search-btn:hover {
+    background: #c0392b;
+}
+
+.search-close {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-close:hover {
+    color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero {
+    padding: 60px 0;
+    background: var(--background-cream);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
+
+.featured-article {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    height: 600px;
+}
+
+.article-image {
+    position: relative;
+    height: 100%;
+}
+
+.featured-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 40px;
+}
+
+.article-category {
+    background: var(--secondary-color);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.article-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.article-excerpt {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.publish-date {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.read-more-btn {
+    background: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.read-more-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Trending Articles */
+.trending-articles {
+    background: var(--background-white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow-light);
+    height: fit-content;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: var(--secondary-color);
+}
+
+.trending-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.trending-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.trending-item:last-child {
+    border-bottom: none;
+}
+
+.trending-item:hover {
+    transform: translateY(-2px);
+}
+
+.trending-image {
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.trending-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trending-content {
+    flex: 1;
+}
+
+.trending-category {
+    font-size: 0.7rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.trending-content h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 5px 0 8px;
+    color: var(--text-dark);
+}
+
+.trending-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Latest Articles Section */
+.latest-articles {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+}
+
+.category-filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-light);
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    border-color: var(--secondary-color);
+    background: var(--secondary-color);
+    color: white;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.article-card {
+    background: var(--background-white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.card-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.article-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.article-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.read-link {
+    background: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.read-link:hover {
+    background: #c0392b;
+}
+
+.card-content {
+    padding: 30px;
+}
+
+.card-category {
+    font-size: 0.75rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.card-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.card-excerpt {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.author-mini img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-mini span {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.card-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.load-more-container {
+    text-align: center;
+}
+
+.load-more-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.load-more-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Featured Collection Section */
+.featured-collection {
+    padding: 80px 0;
+    background: var(--background-light);
+}
+
+.collection-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.collection-header h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.collection-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.collection-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
+
+.main-feature {
+    background: var(--background-white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.feature-image {
+    height: 350px;
+    overflow: hidden;
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feature-text {
+    padding: 40px;
+}
+
+.feature-label {
+    background: var(--accent-color);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.feature-text h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.feature-description {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.feature-stats {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.feature-btn {
+    background: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.feature-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+.sub-features {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sub-feature-item {
+    background: var(--background-white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.sub-feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.sub-feature-image {
+    height: 150px;
+    overflow: hidden;
+}
+
+.sub-feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sub-feature-content {
+    padding: 20px;
+}
+
+.sub-feature-category {
+    font-size: 0.7rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sub-feature-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 8px 0 10px;
+    color: var(--text-dark);
+}
+
+.sub-feature-content p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* Photo Gallery Section */
+.photo-gallery {
+    padding: 80px 0;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.gallery-header h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.gallery-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.gallery-filter {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-light);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.gallery-filter.active,
+.gallery-filter:hover {
+    border-color: var(--accent-color);
+    background: var(--accent-color);
+    color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    grid-auto-rows: 200px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.gallery-item:nth-child(3n+1) {
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(5n+2) {
+    grid-row: span 2;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+}
+
+.overlay-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.overlay-content p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.view-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.view-btn:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    padding: 80px 0;
+    background: var(--background-cream);
+}
+
+.newsletter-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.newsletter-text h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.newsletter-text p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.newsletter-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.benefit-item i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.benefit-item span {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.newsletter-form-container {
+    background: var(--background-white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.newsletter-form .form-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 50px 0 0 50px;
+    outline: none;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.newsletter-form input:focus {
+    border-color: var(--secondary-color);
+}
+
+.newsletter-form button {
+    padding: 15px 25px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+    background: #c0392b;
+}
+
+.form-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 3px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.privacy-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.privacy-note a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.privacy-note a:hover {
+    text-decoration: underline;
+}
+
+/* Instagram Section */
+.instagram-section {
+    padding: 80px 0;
+    background: var(--background-light);
+}
+
+.instagram-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.instagram-header h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.instagram-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.instagram-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.instagram-item {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.instagram-item:hover {
+    transform: scale(1.05);
+}
+
+.instagram-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instagram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.instagram-item:hover .instagram-overlay {
+    opacity: 1;
+}
+
+.instagram-stats {
+    display: flex;
+    gap: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+.instagram-stats span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Footer */
+.footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    margin-bottom: 25px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 1.3rem;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.footer-social a:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-column h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.footer-column a:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.footer-links-bottom {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links-bottom a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links-bottom a:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 120px);
+        background: var(--background-white);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 30px;
+        transition: left 0.3s ease;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: var(--background-light);
+        margin-top: 10px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .featured-article {
+        height: 500px;
+    }
+
+    .article-title {
+        font-size: 1.8rem;
+    }
+
+    .collection-content {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .category-filters,
+    .gallery-filters {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .feature-stats {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 480px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2,
+    .gallery-header h2,
+    .newsletter-text h2 {
+        font-size: 2rem;
+    }
+
+    .nav-brand h1 {
+        font-size: 2rem;
+    }
+
+    .newsletter-form .form-group {
+        flex-direction: column;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        border-radius: 25px;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+`,
+    js: `
+document.addEventListener('DOMContentLoaded', function() {
+    // ハンバーガーメニューの制御
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // メニューリンクをクリックしたときにメニューを閉じる
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    }
+
+    // 検索オーバーレイの制御
+    const searchToggle = document.querySelector('.search-toggle');
+    const searchOverlay = document.querySelector('.search-overlay');
+    const searchClose = document.querySelector('.search-close');
+    const searchInput = document.querySelector('.search-input');
+
+    if (searchToggle && searchOverlay) {
+        searchToggle.addEventListener('click', function() {
+            searchOverlay.classList.add('active');
+            setTimeout(() => {
+                searchInput.focus();
+            }, 300);
+        });
+    }
+
+    if (searchClose) {
+        searchClose.addEventListener('click', function() {
+            searchOverlay.classList.remove('active');
+        });
+    }
+
+    // 検索機能
+    const searchBtn = document.querySelector('.search-btn');
+
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', function() {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm) {
+                performSearch(searchTerm);
+            }
+        });
+
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.trim();
+                if (searchTerm) {
+                    performSearch(searchTerm);
+                }
+            }
+        });
+    }
+
+    function performSearch(term) {
+        console.log('検索キーワード:', term);
+        // 実際の検索処理をシミュレート
+        searchOverlay.classList.remove('active');
+        alert('「' + term + '」の検索結果を表示しています...');
+        searchInput.value = '';
+    }
+
+    // スムーズスクロール
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // ヘッダーのスクロール効果
+    const header = document.querySelector('.header');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+        } else {
+            header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
+        }
+
+        // ナビゲーションの現在位置をハイライト
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollTop >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+
+        lastScrollTop = scrollTop;
+    });
+
+    // 記事カテゴリフィルター
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const articleCards = document.querySelectorAll('.article-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const targetCategory = this.getAttribute('data-category');
+            
+            // アクティブなボタンを切り替え
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // 記事カードをフィルタリング
+            articleCards.forEach(card => {
+                if (targetCategory === 'all' || card.getAttribute('data-category') === targetCategory) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // ギャラリーフィルター
+    const galleryFilters = document.querySelectorAll('.gallery-filter');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    galleryFilters.forEach(filter => {
+        filter.addEventListener('click', function() {
+            const targetCategory = this.getAttribute('data-filter');
+            
+            // アクティブなフィルターを切り替え
+            galleryFilters.forEach(f => f.classList.remove('active'));
+            this.classList.add('active');
+            
+            // ギャラリーアイテムをフィルタリング
+            galleryItems.forEach(item => {
+                if (targetCategory === 'all' || item.getAttribute('data-category') === targetCategory) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 100);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // ギャラリーアイテムのモーダル表示
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const img = this.querySelector('img');
+            const title = this.querySelector('h4').textContent;
+            const photographer = this.querySelector('p').textContent;
+            
+            // モーダルウィンドウを作成（実際のプロジェクトではライブラリを使用）
+            showImageModal(img.src, title, photographer);
+        });
+    });
+
+    function showImageModal(imageSrc, title, photographer) {
+        // 簡易モーダル実装
+        const modal = document.createElement('div');
+        modal.className = 'image-modal';
+        modal.innerHTML = \`
+            <div class="modal-backdrop">
+                <div class="modal-content">
+                    <button class="modal-close">&times;</button>
+                    <img src="\${imageSrc}" alt="\${title}">
+                    <div class="modal-info">
+                        <h4>\${title}</h4>
+                        <p>\${photographer}</p>
+                    </div>
+                </div>
+            </div>
+        \`;
+        
+        // モーダル用のスタイルを追加
+        const modalStyle = document.createElement('style');
+        modalStyle.textContent = \`
+            .image-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 2000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .modal-backdrop {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+            .modal-content {
+                position: relative;
+                max-width: 90vw;
+                max-height: 90vh;
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+            }
+            .modal-content img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+            .modal-close {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                border: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                font-size: 1.5rem;
+                cursor: pointer;
+                z-index: 1;
+            }
+            .modal-info {
+                padding: 20px;
+                text-align: center;
+            }
+            .modal-info h4 {
+                margin-bottom: 5px;
+                color: var(--text-dark);
+            }
+            .modal-info p {
+                color: var(--text-light);
+                font-size: 0.9rem;
+            }
+        \`;
+        
+        document.head.appendChild(modalStyle);
+        document.body.appendChild(modal);
+        
+        // モーダルを閉じる処理
+        const closeModal = () => {
+            document.body.removeChild(modal);
+            document.head.removeChild(modalStyle);
+        };
+        
+        modal.querySelector('.modal-close').addEventListener('click', closeModal);
+        modal.querySelector('.modal-backdrop').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // ESCキーでモーダルを閉じる
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                document.removeEventListener('keydown', handleEscape);
+            }
+        };
+        document.addEventListener('keydown', handleEscape);
+    }
+
+    // もっと見るボタン
+    const loadMoreBtn = document.querySelector('.load-more-btn');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            const originalText = this.textContent;
+            this.textContent = 'LOADING...';
+            this.disabled = true;
+            
+            // 追加記事の読み込みをシミュレート
+            setTimeout(() => {
+                // 実際のプロジェクトでは、APIから追加の記事データを取得
+                console.log('追加の記事を読み込みました');
+                this.textContent = originalText;
+                this.disabled = false;
+                
+                // 新しい記事カードを追加する処理をここに実装
+                addMoreArticles();
+            }, 2000);
+        });
+    }
+
+    function addMoreArticles() {
+        // 実際のプロジェクトでは、APIから取得したデータで記事カードを動的に生成
+        const articlesGrid = document.querySelector('.articles-grid');
+        const newArticleCount = 3;
+        
+        for (let i = 0; i < newArticleCount; i++) {
+            const newArticle = createArticleCard({
+                category: 'LIFESTYLE',
+                title: '新しく追加された記事のタイトル',
+                excerpt: '新しく追加された記事の抜粋文です。記事の内容を簡潔に説明しています。',
+                author: '新人ライター',
+                date: 'March 16',
+                image: '/api/placeholder/350/250'
+            });
+            
+            articlesGrid.appendChild(newArticle);
+        }
+    }
+
+    function createArticleCard(data) {
+        const article = document.createElement('article');
+        article.className = 'article-card fade-in';
+        article.setAttribute('data-category', data.category.toLowerCase());
+        
+        article.innerHTML = \`
+            <div class="card-image">
+                <img src="\${data.image}" alt="Article Image">
+                <div class="image-overlay">
+                    <a href="#" class="read-link">READ ARTICLE</a>
+                </div>
+            </div>
+            <div class="card-content">
+                <span class="card-category">\${data.category}</span>
+                <h3>\${data.title}</h3>
+                <p class="card-excerpt">\${data.excerpt}</p>
+                <div class="card-meta">
+                    <div class="author-mini">
+                        <img src="/api/placeholder/30/30" alt="Author">
+                        <span>\${data.author}</span>
+                    </div>
+                    <span class="card-date">\${data.date}</span>
+                </div>
+            </div>
+        \`;
+        
+        // アニメーションを適用
+        setTimeout(() => {
+            article.classList.add('visible');
+        }, 100);
+        
+        return article;
+    }
+
+    // ニュースレター登録処理
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const emailInput = this.querySelector('input[type="email"]');
+            const email = emailInput.value.trim();
+            const checkboxes = this.querySelectorAll('input[type="checkbox"]:checked');
+            
+            if (email) {
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = 'SUBSCRIBING...';
+                submitBtn.disabled = true;
+                
+                // 実際の登録処理をシミュレート
+                setTimeout(() => {
+                    alert('ニュースレターの登録が完了しました！素敵なコンテンツをお届けします。');
+                    emailInput.value = '';
+                    checkboxes.forEach(cb => cb.checked = false);
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            }
+        });
+    }
+
+    // スクロールアニメーション
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // アニメーション対象要素の監視
+    document.querySelectorAll('.article-card, .trending-item, .sub-feature-item, .gallery-item, .instagram-item').forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+
+    // パララックス効果
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const heroImage = document.querySelector('.featured-img');
+        
+        if (heroImage) {
+            const speed = scrolled * 0.3;
+            heroImage.style.transform = \`translateY(\${speed}px)\`;
+        }
+    });
+
+    // インスタグラムフィードの動的読み込み（実際のプロジェクトでAPI連携）
+    function loadInstagramFeed() {
+        // Instagram Graph APIやInstagram Basic Display APIと連携
+        // ここでは静的データのシミュレーション
+        const instagramData = [
+            { likes: 1200, comments: 89, image: '/api/placeholder/250/250' },
+            { likes: 856, comments: 42, image: '/api/placeholder/250/250' },
+            { likes: 2100, comments: 156, image: '/api/placeholder/250/250' },
+            { likes: 934, comments: 73, image: '/api/placeholder/250/250' },
+            { likes: 1800, comments: 92, image: '/api/placeholder/250/250' },
+            { likes: 674, comments: 28, image: '/api/placeholder/250/250' }
+        ];
+        
+        console.log('Instagram feed data loaded:', instagramData);
+    }
+
+    loadInstagramFeed();
+
+    // ページ読み込み完了時の初期化
+    window.addEventListener('load', function() {
+        // 記事カードのスタッガードアニメーション
+        const articleCards = document.querySelectorAll('.article-card');
+        articleCards.forEach((card, index) => {
+            card.style.animationDelay = \`\${index * 0.1}s\`;
+        });
+        
+        // 初期表示での要素のフェードイン
+        const elementsToAnimate = document.querySelectorAll('.fade-in');
+        elementsToAnimate.forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.add('visible');
+            }, index * 100);
+        });
+    });
+
+    // リサイズ時の処理
+    window.addEventListener('resize', function() {
+        // モバイル表示時の調整
+        if (window.innerWidth <= 768) {
+            articleCards.forEach(card => {
+                card.style.display = 'block';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            });
+            
+            galleryItems.forEach(item => {
+                item.style.display = 'block';
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1)';
+            });
+        }
+    });
+
+    // ソーシャルシェア機能
+    function shareArticle(title, url) {
+        if (navigator.share) {
+            navigator.share({
+                title: title,
+                url: url
+            }).catch(console.error);
+        } else {
+            // フォールバック: クリップボードにコピー
+            navigator.clipboard.writeText(\`\${title} - \${url}\`).then(() => {
+                alert('記事のURLをクリップボードにコピーしました');
+            }).catch(() => {
+                alert('シェア機能が利用できません');
+            });
+        }
+    }
+
+    // 記事の読み込み時間追跡
+    function trackReadingTime() {
+        const articles = document.querySelectorAll('.article-card');
+        articles.forEach(article => {
+            let startTime = null;
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !startTime) {
+                        startTime = Date.now();
+                    } else if (!entry.isIntersecting && startTime) {
+                        const readTime = Date.now() - startTime;
+                        console.log(\`記事閲覧時間: \${readTime}ms\`);
+                        startTime = null;
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(article);
+        });
+    }
+
+    trackReadingTime();
+
+    console.log('Lifestyle Plus magazine template loaded successfully!');
+});
+
+// ユーティリティ関数
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
+
+function truncateText(text, maxLength) {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength) + '...';
+}
+
+function generateArticleSlug(title) {
+    return title.toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .trim();
+}
+`
+  }
+};

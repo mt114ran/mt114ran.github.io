@@ -35,7 +35,12 @@ export const TEMPLATE_CATEGORIES = {
   RETAIL: '小売店',
   RESTAURANT: 'レストラン',
   SERVICE: 'サービス業',
-  PORTFOLIO: 'ポートフォリオ'
+  PORTFOLIO: 'ポートフォリオ',
+  HOTEL: 'ホテル・宿泊',
+  IT: 'IT・テクノロジー',
+  MEDICAL: '医療・ヘルスケア',
+  EVENT: 'イベント・エンタメ',
+  MEDIA: 'メディア・出版'
 } as const
 
 export type TemplateCategory = typeof TEMPLATE_CATEGORIES[keyof typeof TEMPLATE_CATEGORIES]
