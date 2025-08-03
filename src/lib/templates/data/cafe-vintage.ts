@@ -28,7 +28,12 @@ export const cafeVintageTemplate: WebTemplate = {
                 <h1 class="logo">Vintage Coffee House</h1>
                 <p class="tagline">~ Since 1970 ~</p>
             </div>
-            <nav class="navigation">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="navigation" id="navigation">
                 <a href="#story">Story</a>
                 <a href="#menu">Menu</a>
                 <a href="#gallery">Gallery</a>
@@ -38,6 +43,7 @@ export const cafeVintageTemplate: WebTemplate = {
 
         <main class="main-content">
             <section class="hero">
+                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1920&h=600&fit=crop" alt="カフェ内観" style="position:absolute;width:100%;height:100%;object-fit:cover;">
                 <div class="hero-overlay">
                     <h2>昔ながらの珈琲店</h2>
                     <p>一杯一杯、心を込めて</p>
@@ -162,9 +168,12 @@ body {
 .header {
     background-color: #5d4037;
     color: #f5f2e8;
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
@@ -198,6 +207,38 @@ body {
 .navigation a:hover {
     border-color: #f5f2e8;
     background-color: rgba(245, 242, 232, 0.1);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    padding: 5px;
+    z-index: 101;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #f5f2e8;
+    transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .hero {
@@ -348,13 +389,51 @@ section {
 }
 
 @media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+        position: relative;
+    }
+    
+    .header-content {
+        margin-bottom: 0;
+    }
+    
     .logo {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    
+    .tagline {
+        font-size: 0.9rem;
+    }
+    
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .navigation {
-        flex-wrap: wrap;
-        gap: 1rem;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #5d4037;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        flex-direction: column;
+    }
+    
+    .navigation.active {
+        display: flex;
+    }
+    
+    .navigation a {
+        padding: 0.8rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(245, 242, 232, 0.2);
     }
     
     .hero-overlay h2 {
@@ -363,9 +442,68 @@ section {
     
     .menu-board {
         padding: 1rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .menu-column h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .menu-item {
+        flex-direction: row;
+        align-items: center;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        border-bottom: none;
+    }
+    
+    .menu-item span:first-child {
+        flex: 1;
+        margin-right: 1rem;
+    }
+    
+    .menu-item .price {
+        background: #5d4037;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        white-space: nowrap;
+        min-width: 60px;
+        text-align: center;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-content {
+        grid-template-columns: 1fr;
     }
 }`,
-    js: `// スムーズスクロール実装
+    js: `// ハンバーガーメニュー
+const hamburger = document.getElementById('hamburger');
+const navigation = document.getElementById('navigation');
+
+if (hamburger && navigation) {
+    hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navigation.classList.toggle('active');
+    });
+    
+    // メニューリンクをクリックしたら閉じる
+    const navLinks = navigation.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navigation.classList.remove('active');
+        });
+    });
+}
+
+// スムーズスクロール実装
 document.querySelectorAll('.navigation a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();

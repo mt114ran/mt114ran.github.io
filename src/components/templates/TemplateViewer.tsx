@@ -16,6 +16,9 @@ export default function TemplateViewer({ template }: TemplateViewerProps) {
 
   // プレビュー用のHTMLを生成
   const getPreviewHtml = () => {
+    // bodyタグ内のコンテンツを抽出
+    const bodyContent = template.code.html.match(/<body[^>]*>([\s\S]*)<\/body>/)?.[1] || template.code.html
+    
     return `
       <!DOCTYPE html>
       <html lang="ja">
@@ -25,8 +28,13 @@ export default function TemplateViewer({ template }: TemplateViewerProps) {
         <style>${template.code.css}</style>
       </head>
       <body>
-        ${template.code.html.match(/<body[^>]*>([\s\S]*)<\/body>/)?.[1] || template.code.html}
-        ${template.code.js ? `<script>${template.code.js}</script>` : ''}
+        ${bodyContent}
+        ${template.code.js ? `<script>
+          // すべてのイベントリスナーをDOMContentLoaded後に登録
+          (function() {
+            ${template.code.js}
+          })();
+        </script>` : ''}
       </body>
       </html>
     `
@@ -124,6 +132,7 @@ export default function TemplateViewer({ template }: TemplateViewerProps) {
                   deviceMode === 'desktop' ? 'h-[700px]' : 'h-[700px] max-w-[375px] mx-auto'
                 }`}
                 title="Template Preview"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-modals"
               />
             </div>
           </div>

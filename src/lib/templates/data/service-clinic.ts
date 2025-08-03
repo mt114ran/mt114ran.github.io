@@ -38,7 +38,12 @@ export const serviceClinicTemplate: WebTemplate = {
                         <h1>さくら内科クリニック</h1>
                         <p class="tagline">地域に根ざした医療を</p>
                     </div>
-                    <nav class="main-nav">
+                    <button class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <nav class="main-nav" id="main-nav">
                         <ul>
                             <li><a href="#about">当院について</a></li>
                             <li><a href="#services">診療案内</a></li>
@@ -53,6 +58,7 @@ export const serviceClinicTemplate: WebTemplate = {
     </header>
 
     <section class="hero">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&h=600&fit=crop" alt="クリニック外観" style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0.3;">
         <div class="hero-content">
             <h2>患者様一人ひとりに寄り添う医療を提供します</h2>
             <div class="hero-buttons">
@@ -672,15 +678,75 @@ section {
     opacity: 0.7;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
 @media (max-width: 768px) {
+    .header-main {
+        padding: 10px 0;
+    }
+    
     .header-content {
-        flex-direction: column;
-        gap: 20px;
+        position: relative;
+        padding: 10px 20px;
+    }
+    
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+    
+    .main-nav.active {
+        display: block;
     }
     
     .main-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
     }
     
     .hero-buttons {
@@ -699,7 +765,27 @@ section {
         grid-template-columns: 1fr;
     }
 }`,
-    js: `// オンライン予約
+    js: `// ハンバーガーメニュー
+const hamburger = document.getElementById('hamburger');
+const mainNav = document.getElementById('main-nav');
+
+if (hamburger && mainNav) {
+    hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mainNav.classList.toggle('active');
+    });
+    
+    // メニューリンクをクリックしたら閉じる
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mainNav.classList.remove('active');
+        });
+    });
+}
+
+// オンライン予約
 document.querySelectorAll('.btn-primary').forEach(button => {
     button.addEventListener('click', function() {
         alert('オンライン予約システムへ遷移します（実装予定）');
@@ -724,7 +810,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
-            });
+    });
         }
     });
 });

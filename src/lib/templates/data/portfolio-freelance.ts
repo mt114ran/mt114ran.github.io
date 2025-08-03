@@ -99,6 +99,7 @@ export const portfolioFreelanceTemplate: WebTemplate = {
             <div class="work-grid">
                 <div class="work-item" data-category="web">
                     <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop" alt="Webプロジェクト">
                         <div class="work-overlay">
                             <h3>E-commerce Platform</h3>
                             <p>Modern online shopping experience</p>
@@ -718,6 +719,18 @@ section {
 }
 
 @media (max-width: 768px) {
+    .header,
+    .header-main {
+        padding: 10px 0;
+    }
+    
+    .header-inner,
+    .header-container {
+        gap: 10px;
+        padding: 10px 20px;
+    }
+    
+    
     .hero-title .name {
         font-size: 2.5rem;
     }

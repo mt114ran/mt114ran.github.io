@@ -49,6 +49,9 @@ export const retailFashionTemplate: WebTemplate = {
     </header>
 
     <section class="hero-section">
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1920&h=800&fit=crop" alt="Fashion Collection">
+        </div>
         <div class="hero-content">
             <h2>2025 Spring Collection</h2>
             <p>新作コレクション入荷</p>
@@ -63,7 +66,7 @@ export const retailFashionTemplate: WebTemplate = {
                 <div class="product-card">
                     <div class="product-image">
                         <span class="badge new">NEW</span>
-                        <div class="product-placeholder">商品画像</div>
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=500&fit=crop" alt="デザイナーTシャツ">
                     </div>
                     <div class="product-info">
                         <h3>デザイナーTシャツ</h3>
@@ -74,7 +77,7 @@ export const retailFashionTemplate: WebTemplate = {
                 <div class="product-card">
                     <div class="product-image">
                         <span class="badge new">NEW</span>
-                        <div class="product-placeholder">商品画像</div>
+                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=500&fit=crop" alt="スリムフィットデニム">
                     </div>
                     <div class="product-info">
                         <h3>スリムフィットデニム</h3>
@@ -85,7 +88,7 @@ export const retailFashionTemplate: WebTemplate = {
                 <div class="product-card">
                     <div class="product-image">
                         <span class="badge sale">SALE</span>
-                        <div class="product-placeholder">商品画像</div>
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=500&fit=crop" alt="カジュアルジャケット">
                     </div>
                     <div class="product-info">
                         <h3>カジュアルジャケット</h3>
@@ -98,7 +101,7 @@ export const retailFashionTemplate: WebTemplate = {
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <div class="product-placeholder">商品画像</div>
+                        <img src="https://images.unsplash.com/photo-1572804013427-4d7ca7268217?w=400&h=500&fit=crop" alt="ワンピース">
                     </div>
                     <div class="product-info">
                         <h3>ワンピース</h3>
@@ -275,12 +278,34 @@ button {
 
 .hero-section {
     height: 500px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content h2 {
@@ -341,13 +366,15 @@ button {
     margin-bottom: 15px;
 }
 
-.product-placeholder {
+.product-image img {
+    width: 100%;
     height: 350px;
-    background: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #999;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
 }
 
 .badge {
@@ -490,18 +517,44 @@ button {
 }
 
 @media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+    
     .main-nav {
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    
+    .main-nav a {
+        font-size: 12px;
+        padding: 0 10px;
     }
     
     .hero-content h2 {
-        font-size: 32px;
+        font-size: 28px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
     }
     
     .products-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 }`,
     js: `// カート機能のシミュレーション
