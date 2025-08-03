@@ -1,9 +1,13 @@
 import { WebTemplate } from './types'
 import { cafeModernTemplate } from './data/cafe-modern'
 import { cafeVintageTemplate } from './data/cafe-vintage'
+import { cafeMinimalTemplate } from './data/cafe-minimal'
 import { retailFashionTemplate } from './data/retail-fashion'
+import { retailGeneralTemplate } from './data/retail-general'
 import { restaurantJapaneseTemplate } from './data/restaurant-japanese'
+import { restaurantWesternTemplate } from './data/restaurant-western'
 import { serviceClinicTemplate } from './data/service-clinic'
+import { serviceBeautyTemplate } from './data/service-beauty'
 import { portfolioFreelanceTemplate } from './data/portfolio-freelance'
 
 /**
@@ -12,9 +16,13 @@ import { portfolioFreelanceTemplate } from './data/portfolio-freelance'
 export const templates: WebTemplate[] = [
   cafeModernTemplate,
   cafeVintageTemplate,
+  cafeMinimalTemplate,
   retailFashionTemplate,
+  retailGeneralTemplate,
   restaurantJapaneseTemplate,
+  restaurantWesternTemplate,
   serviceClinicTemplate,
+  serviceBeautyTemplate,
   portfolioFreelanceTemplate
 ]
 

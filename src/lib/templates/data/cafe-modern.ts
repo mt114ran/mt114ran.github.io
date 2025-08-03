@@ -37,6 +37,9 @@ export const cafeModernTemplate: WebTemplate = {
     </header>
 
     <section class="hero">
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&h=1080&fit=crop" alt="カフェの雰囲気">
+        </div>
         <div class="hero-content">
             <h1 class="hero-title">Modern Cafe</h1>
             <p class="hero-subtitle">こだわりのコーヒーと心地よい空間</p>
@@ -49,14 +52,17 @@ export const cafeModernTemplate: WebTemplate = {
             <h2 class="section-title">私たちのこだわり</h2>
             <div class="about-grid">
                 <div class="about-item">
+                    <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&h=300&fit=crop" alt="コーヒー豆">
                     <h3>厳選されたコーヒー豆</h3>
                     <p>世界各地から厳選した最高品質のコーヒー豆を使用しています。</p>
                 </div>
                 <div class="about-item">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&h=300&fit=crop" alt="カフェ内装">
                     <h3>心地よい空間</h3>
                     <p>ゆったりとした時間を過ごせる、こだわりの空間設計。</p>
                 </div>
                 <div class="about-item">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" alt="季節のメニュー">
                     <h3>季節のメニュー</h3>
                     <p>旬の食材を使った、季節限定メニューをご用意しています。</p>
                 </div>
@@ -97,6 +103,15 @@ export const cafeModernTemplate: WebTemplate = {
                 <p>〒150-0001 東京都渋谷区神宮前1-2-3</p>
                 <p>営業時間: 8:00 - 21:00（L.O. 20:30）</p>
                 <p>定休日: 毎週水曜日</p>
+            </div>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/5qap5aO4i9A" 
+                    title="Lofi hip hop radio" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </section>
@@ -165,12 +180,34 @@ body {
 
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-title {
@@ -233,11 +270,17 @@ body {
 
 .about-item {
     text-align: center;
-    padding: 2rem;
     background: white;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.about-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .about-item:hover {
@@ -246,7 +289,12 @@ body {
 
 .about-item h3 {
     color: #8b7355;
-    margin-bottom: 1rem;
+    margin: 1.5rem 0 1rem;
+    padding: 0 2rem;
+}
+
+.about-item p {
+    padding: 0 2rem 2rem;
 }
 
 .menu-grid {
@@ -301,10 +349,42 @@ body {
     }
 }
 
+.video-container {
+    margin-top: 2rem;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 @media (max-width: 768px) {
     .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
         flex-direction: column;
-        gap: 1rem;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        padding: 2rem 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
     }
     
     .hero-title {
@@ -313,6 +393,14 @@ body {
     
     .hero-subtitle {
         font-size: 1.2rem;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
     }
 }`,
     js: `// スムーズスクロール
