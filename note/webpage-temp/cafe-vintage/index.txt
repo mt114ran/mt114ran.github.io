@@ -8,14 +8,15 @@ c:I[9665,[],"ViewportBoundary"]
 e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/css/49e53022a7b53d46.css","style"]
-0:{"P":null,"b":"fBuHId9Dw5TtWFUMBP-Je","p":"","c":["","note","webpage-temp","cafe-vintage",""],"i":false,"f":[[["",{"children":["note",{"children":["webpage-temp",{"children":[["id","cafe-vintage","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/49e53022a7b53d46.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["note",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["webpage-temp",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["id","cafe-vintage","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","Jm8UjceMFsqTEvC8kLTe-",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+:HL["/_next/static/css/4a151d0310e5f5b1.css","style"]
+0:{"P":null,"b":"fjyPqXR1LFAJ3vP01kGy6","p":"","c":["","note","webpage-temp","cafe-vintage",""],"i":false,"f":[[["",{"children":["note",{"children":["webpage-temp",{"children":[["id","cafe-vintage","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/4a151d0310e5f5b1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["note",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["webpage-temp",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["id","cafe-vintage","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","HyW1dOzR66K3Zcp1we4DH",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
-12:I[6874,["874","static/chunks/874-7c785913e0ea474a.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-d8ed4ae6509ba7cd.js"],""]
-13:I[9320,["874","static/chunks/874-7c785913e0ea474a.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-d8ed4ae6509ba7cd.js"],"default"]
+12:I[6874,["874","static/chunks/874-acbedc3444a59791.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-78f6da3fdd9ae78d.js"],""]
+13:I[8863,["874","static/chunks/874-acbedc3444a59791.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-78f6da3fdd9ae78d.js"],"default"]
+14:I[9320,["874","static/chunks/874-acbedc3444a59791.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-78f6da3fdd9ae78d.js"],"default"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
-14:T14e4,<!DOCTYPE html>
+15:T1662,<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -29,7 +30,12 @@ f:"$Sreact.suspense"
                 <h1 class="logo">Vintage Coffee House</h1>
                 <p class="tagline">~ Since 1970 ~</p>
             </div>
-            <nav class="navigation">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="navigation" id="navigation">
                 <a href="#story">Story</a>
                 <a href="#menu">Menu</a>
                 <a href="#gallery">Gallery</a>
@@ -39,6 +45,7 @@ f:"$Sreact.suspense"
 
         <main class="main-content">
             <section class="hero">
+                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1920&h=600&fit=crop" alt="カフェ内観" style="position:absolute;width:100%;height:100%;object-fit:cover;">
                 <div class="hero-overlay">
                     <h2>昔ながらの珈琲店</h2>
                     <p>一杯一杯、心を込めて</p>
@@ -139,7 +146,7 @@ f:"$Sreact.suspense"
         </footer>
     </div>
 </body>
-</html>15:T10c1,@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+</html>16:T19a8,@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -162,9 +169,12 @@ body {
 .header {
     background-color: #5d4037;
     color: #f5f2e8;
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
@@ -198,6 +208,38 @@ body {
 .navigation a:hover {
     border-color: #f5f2e8;
     background-color: rgba(245, 242, 232, 0.1);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    padding: 5px;
+    z-index: 101;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #f5f2e8;
+    transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .hero {
@@ -348,13 +390,55 @@ section {
 }
 
 @media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header-content {
+        margin-bottom: 0;
+        flex: 1;
+        padding-right: 50px;
+    }
+    
     .logo {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+    
+    .tagline {
+        font-size: 0.8rem;
+    }
+    
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 15px;
+        top: 1rem;
     }
     
     .navigation {
-        flex-wrap: wrap;
-        gap: 1rem;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #5d4037;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        flex-direction: column;
+    }
+    
+    .navigation.active {
+        display: flex;
+    }
+    
+    .navigation a {
+        padding: 0.8rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(245, 242, 232, 0.2);
     }
     
     .hero-overlay h2 {
@@ -363,8 +447,92 @@ section {
     
     .menu-board {
         padding: 1rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
-}4:["$","div",null,{"className":"min-h-screen bg-gray-900 text-gray-100","children":["$","div",null,{"className":"max-w-7xl mx-auto py-10 px-4","children":[["$","nav",null,{"className":"mb-6 flex gap-4","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"ホーム"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","$L12",null,{"href":"/note/webpage-temp","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"テンプレート一覧"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","span",null,{"className":"text-gray-400","children":"カフェ - ヴィンテージ"}]]}],["$","div",null,{"className":"mb-8","children":[["$","div",null,{"className":"flex items-center gap-4 mb-4","children":[["$","h1",null,{"className":"text-3xl font-bold","children":"カフェ - ヴィンテージ"}],["$","span",null,{"className":"px-3 py-1 bg-blue-600 text-white rounded text-sm","children":"カフェ"}]]}],["$","p",null,{"className":"text-gray-300 text-lg mb-4","children":"温かみのあるヴィンテージスタイルのカフェWebサイトテンプレート"}],["$","div",null,{"className":"flex flex-wrap gap-2 mb-4","children":[["$","span","0",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","レトロなデザイン"]}],["$","span","1",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","温かみのある配色"]}],["$","span","2",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","ギャラリー機能"]}],["$","span","3",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","SNSリンク"]}]]}],["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span","0",{"className":"text-sm text-gray-500","children":["#","カフェ"]}],["$","span","1",{"className":"text-sm text-gray-500","children":["#","ヴィンテージ"]}],["$","span","2",{"className":"text-sm text-gray-500","children":["#","レトロ"]}],["$","span","3",{"className":"text-sm text-gray-500","children":["#","クラシック"]}]]}]]}],["$","$L13",null,{"template":{"id":"cafe-vintage","title":"カフェ - ヴィンテージ","category":"カフェ","description":"温かみのあるヴィンテージスタイルのカフェWebサイトテンプレート","thumbnail":"/template-images/cafe-vintage.jpg","features":["レトロなデザイン","温かみのある配色","ギャラリー機能","SNSリンク"],"tags":["カフェ","ヴィンテージ","レトロ","クラシック"],"code":{"html":"$14","css":"$15","js":"// スムーズスクロール実装\ndocument.querySelectorAll('.navigation a').forEach(anchor => {\n    anchor.addEventListener('click', function (e) {\n        e.preventDefault();\n        const targetId = this.getAttribute('href');\n        const targetSection = document.querySelector(targetId);\n        \n        if (targetSection) {\n            targetSection.scrollIntoView({\n                behavior: 'smooth',\n                block: 'start'\n            });\n        }\n    });\n});\n\n// ギャラリーアイテムのホバーエフェクト\ndocument.querySelectorAll('.gallery-item').forEach(item => {\n    item.addEventListener('mouseenter', function() {\n        this.style.cursor = 'pointer';\n    });\n    \n    item.addEventListener('click', function() {\n        alert('ギャラリー画像を拡大表示（実装予定）');\n    });\n});"}}}],["$","div",null,{"className":"mt-12 bg-gray-800 rounded-lg p-6","children":[["$","h2",null,{"className":"text-xl font-bold mb-4","children":"使用方法"}],["$","ol",null,{"className":"space-y-3 text-gray-300","children":[["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"1."}],["$","span",null,{"children":"上のタブからHTML、CSS、JavaScriptのコードをそれぞれコピーします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"2."}],["$","span",null,{"children":"新しいHTMLファイルを作成し、HTMLコードを貼り付けます。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"3."}],["$","span",null,{"children":"CSSコードを<style>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"4."}],["$","span",null,{"children":"JavaScriptコードを<script>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"5."}],["$","span",null,{"children":"必要に応じて、テキストや画像、色などをカスタマイズしてご使用ください。"}]]}]]}]]}],["$","div",null,{"className":"mt-8 bg-yellow-900/30 border border-yellow-600 rounded-lg p-6","children":[["$","h3",null,{"className":"text-yellow-400 font-bold mb-2","children":"注意事項"}],["$","ul",null,{"className":"space-y-2 text-gray-300 text-sm","children":[["$","li",null,{"children":"• このテンプレートは学習・参考用として提供されています。"}],["$","li",null,{"children":"• 実際のプロジェクトで使用する際は、セキュリティやパフォーマンスの最適化を行ってください。"}],["$","li",null,{"children":"• 画像やアイコンは実際のものに置き換えてご使用ください。"}],["$","li",null,{"children":"• レスポンシブ対応していますが、実機でのテストを推奨します。"}]]}]]}],["$","div",null,{"className":"mt-8 text-center","children":["$","$L12",null,{"href":"/note/webpage-temp","className":"inline-block px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors","children":"テンプレート一覧へ戻る"}]}]]}]}]
+    
+    .menu-column h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .menu-item {
+        flex-direction: row;
+        align-items: center;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        border-bottom: none;
+    }
+    
+    .menu-item span:first-child {
+        flex: 1;
+        margin-right: 1rem;
+    }
+    
+    .menu-item .price {
+        background: #5d4037;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        white-space: nowrap;
+        min-width: 60px;
+        text-align: center;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-content {
+        grid-template-columns: 1fr;
+    }
+}17:T5d4,// ハンバーガーメニュー
+const hamburger = document.getElementById('hamburger');
+const navigation = document.getElementById('navigation');
+
+if (hamburger && navigation) {
+    hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navigation.classList.toggle('active');
+    });
+    
+    // メニューリンクをクリックしたら閉じる
+    const navLinks = navigation.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navigation.classList.remove('active');
+        });
+    });
+}
+
+// スムーズスクロール実装
+document.querySelectorAll('.navigation a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// ギャラリーアイテムのホバーエフェクト
+document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        this.style.cursor = 'pointer';
+    });
+    
+    item.addEventListener('click', function() {
+        alert('ギャラリー画像を拡大表示（実装予定）');
+    });
+});4:["$","div",null,{"className":"min-h-screen bg-gray-900 text-gray-100","children":["$","div",null,{"className":"max-w-7xl mx-auto py-10 px-4","children":[["$","nav",null,{"className":"mb-6 flex gap-4","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"ホーム"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","$L12",null,{"href":"/note/webpage-temp","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"テンプレート一覧"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","span",null,{"className":"text-gray-400","children":"カフェ - ヴィンテージ"}]]}],["$","div",null,{"className":"mb-8","children":[["$","div",null,{"className":"flex items-center gap-4 mb-4","children":[["$","h1",null,{"className":"text-3xl font-bold","children":"カフェ - ヴィンテージ"}],["$","span",null,{"className":"px-3 py-1 bg-blue-600 text-white rounded text-sm","children":"カフェ"}]]}],["$","p",null,{"className":"text-gray-300 text-lg mb-4","children":"温かみのあるヴィンテージスタイルのカフェWebサイトテンプレート"}],["$","div",null,{"className":"flex flex-wrap gap-2 mb-4","children":[["$","span","0",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","レトロなデザイン"]}],["$","span","1",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","温かみのある配色"]}],["$","span","2",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","ギャラリー機能"]}],["$","span","3",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","SNSリンク"]}]]}],["$","div",null,{"className":"flex flex-wrap gap-2 mb-6","children":[["$","span","0",{"className":"text-sm text-gray-500","children":["#","カフェ"]}],["$","span","1",{"className":"text-sm text-gray-500","children":["#","ヴィンテージ"]}],["$","span","2",{"className":"text-sm text-gray-500","children":["#","レトロ"]}],["$","span","3",{"className":"text-sm text-gray-500","children":["#","クラシック"]}]]}],["$","$L13",null,{"templateId":"cafe-vintage"}]]}],["$","$L14",null,{"template":{"id":"cafe-vintage","title":"カフェ - ヴィンテージ","category":"カフェ","description":"温かみのあるヴィンテージスタイルのカフェWebサイトテンプレート","thumbnail":"/template-images/cafe-vintage.jpg","features":["レトロなデザイン","温かみのある配色","ギャラリー機能","SNSリンク"],"tags":["カフェ","ヴィンテージ","レトロ","クラシック"],"code":{"html":"$15","css":"$16","js":"$17"}}}],["$","div",null,{"className":"mt-12 bg-gray-800 rounded-lg p-6","children":[["$","h2",null,{"className":"text-xl font-bold mb-4","children":"使用方法"}],["$","ol",null,{"className":"space-y-3 text-gray-300","children":[["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"1."}],["$","span",null,{"children":"上のタブからHTML、CSS、JavaScriptのコードをそれぞれコピーします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"2."}],["$","span",null,{"children":"新しいHTMLファイルを作成し、HTMLコードを貼り付けます。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"3."}],["$","span",null,{"children":"CSSコードを<style>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"4."}],["$","span",null,{"children":"JavaScriptコードを<script>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"5."}],["$","span",null,{"children":"必要に応じて、テキストや画像、色などをカスタマイズしてご使用ください。"}]]}]]}],["$","div",null,{"className":"mt-6 p-4 bg-blue-900/30 border border-blue-600 rounded","children":[["$","p",null,{"className":"text-blue-400 mb-2","children":"📚 初めての方へ"}],["$","p",null,{"className":"text-gray-300 text-sm","children":["HTMLやCSSが初めての方は、",["$","$L12",null,{"href":"/note/webpage-temp/guide","className":"text-blue-400 hover:text-blue-300 underline","children":"初心者向けWeb制作学習ガイド"}],"をご覧ください。実際に手を動かしながら学べる詳しい手順を解説しています。"]}]]}]]}],["$","div",null,{"className":"mt-8 bg-yellow-900/30 border border-yellow-600 rounded-lg p-6","children":[["$","h3",null,{"className":"text-yellow-400 font-bold mb-2","children":"注意事項"}],["$","ul",null,{"className":"space-y-2 text-gray-300 text-sm","children":[["$","li",null,{"children":"• このテンプレートは学習・参考用として提供されています。"}],["$","li",null,{"children":"• 実際のプロジェクトで使用する際は、セキュリティやパフォーマンスの最適化を行ってください。"}],["$","li",null,{"children":"• 画像やアイコンは実際のものに置き換えてご使用ください。"}],["$","li",null,{"children":"• レスポンシブ対応していますが、実機でのテストを推奨します。"}]]}]]}],["$","div",null,{"className":"mt-8 text-center","children":["$","$L12",null,{"href":"/note/webpage-temp","className":"inline-block px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors","children":"テンプレート一覧へ戻る"}]}]]}]}]
 9:null
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null

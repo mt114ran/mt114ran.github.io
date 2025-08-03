@@ -1,0 +1,770 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/4a151d0310e5f5b1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;小売店 - 雑貨&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Helvetica Neue&#x27;, &#x27;Yu Gothic&#x27;, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header-top {
+    background: #f8f8f8;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.header-main {
+    background: white;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #d4a574;
+}
+
+.header-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.header-actions button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.header-actions button:hover {
+    transform: scale(1.1);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+.slide {
+    position: relative;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.slide-content h2 {
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.slide-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background: white;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-primary:hover {
+    background: #333;
+    color: white;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+/* Products */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    position: relative;
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #d4a574;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.wishlist-add {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.wishlist-add:hover {
+    background: #ffe0e0;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 18px;
+    color: #d4a574;
+}
+
+/* Categories */
+.categories {
+    background: #f8f8f8;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.category-item {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    text-decoration: none;
+}
+
+.category-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: background 0.3s;
+}
+
+.category-item:hover .category-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.category-item:hover img {
+    transform: scale(1.1);
+}
+
+.category-overlay h3 {
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+/* Instagram */
+.instagram-handle {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.instagram-item {
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.instagram-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.instagram-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Blog */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.blog-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 30px;
+}
+
+.blog-content time {
+    color: #999;
+    font-size: 14px;
+}
+
+.blog-content h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.blog-content p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    color: #d4a574;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* About */
+.about {
+    background: #f8f8f8;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.about-video iframe {
+    width: 100%;
+    height: 315px;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 15px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+}
+
+.newsletter-form button {
+    padding: 10px 20px;
+    background: #d4a574;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #555;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    
+    .nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .slide-content h2 {
+        font-size: 32px;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;header-top&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;p class=&quot;header-message&quot;&gt;3,000円以上で送料無料 ｜ ギフトラッピング承ります&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;header-main&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;header-content&quot;&gt;
+                    &lt;h1 class=&quot;logo&quot;&gt;ZAKKA STORE&lt;/h1&gt;
+                    &lt;nav class=&quot;nav&quot;&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#new&quot;&gt;New Items&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#category&quot;&gt;Category&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#blog&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/nav&gt;
+                    &lt;div class=&quot;header-actions&quot;&gt;
+                        &lt;button class=&quot;search-btn&quot;&gt;🔍&lt;/button&gt;
+                        &lt;button class=&quot;wishlist-btn&quot;&gt;♡&lt;/button&gt;
+                        &lt;button class=&quot;cart-btn&quot;&gt;🛒&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-slider&quot;&gt;
+            &lt;div class=&quot;slide active&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1920&amp;h=600&amp;fit=crop&quot; alt=&quot;雑貨コレクション&quot;&gt;
+                &lt;div class=&quot;slide-content&quot;&gt;
+                    &lt;h2&gt;Spring Collection 2025&lt;/h2&gt;
+                    &lt;p&gt;新生活を彩る春の新作が入荷しました&lt;/p&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;btn-primary&quot;&gt;コレクションを見る&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;new&quot; class=&quot;new-items&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;New Items&lt;/h2&gt;
+            &lt;div class=&quot;product-grid&quot;&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;北欧風花瓶&quot;&gt;
+                        &lt;span class=&quot;badge&quot;&gt;NEW&lt;/span&gt;
+                        &lt;button class=&quot;wishlist-add&quot;&gt;♡&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;北欧風フラワーベース&lt;/h3&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥3,200&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1523251343397-9225e4cb6319?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;アロマキャンドル&quot;&gt;
+                        &lt;span class=&quot;badge&quot;&gt;NEW&lt;/span&gt;
+                        &lt;button class=&quot;wishlist-add&quot;&gt;♡&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;オーガニックアロマキャンドル&lt;/h3&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥2,800&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;木製トレイ&quot;&gt;
+                        &lt;span class=&quot;badge&quot;&gt;NEW&lt;/span&gt;
+                        &lt;button class=&quot;wishlist-add&quot;&gt;♡&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;天然木トレイ&lt;/h3&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥4,500&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1522444690501-325c900eedf0?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;クッションカバー&quot;&gt;
+                        &lt;button class=&quot;wishlist-add&quot;&gt;♡&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;リネンクッションカバー&lt;/h3&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥2,200&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;category&quot; class=&quot;categories&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Category&lt;/h2&gt;
+            &lt;div class=&quot;category-grid&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;キッチン&quot;&gt;
+                    &lt;div class=&quot;category-overlay&quot;&gt;
+                        &lt;h3&gt;Kitchen&lt;/h3&gt;
+                        &lt;p&gt;キッチン雑貨&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;リビング&quot;&gt;
+                    &lt;div class=&quot;category-overlay&quot;&gt;
+                        &lt;h3&gt;Living&lt;/h3&gt;
+                        &lt;p&gt;リビング雑貨&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;バス&quot;&gt;
+                    &lt;div class=&quot;category-overlay&quot;&gt;
+                        &lt;h3&gt;Bath&lt;/h3&gt;
+                        &lt;p&gt;バス・トイレタリー&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;ステーショナリー&quot;&gt;
+                    &lt;div class=&quot;category-overlay&quot;&gt;
+                        &lt;h3&gt;Stationery&lt;/h3&gt;
+                        &lt;p&gt;文房具&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;instagram&quot; class=&quot;instagram-feed&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Instagram&lt;/h2&gt;
+            &lt;p class=&quot;instagram-handle&quot;&gt;@zakka_store&lt;/p&gt;
+            &lt;div class=&quot;instagram-grid&quot;&gt;
+                &lt;div class=&quot;instagram-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram1&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;instagram-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1556228841-a3c527ebefe5?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram2&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;instagram-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram3&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;instagram-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram4&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;instagram-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1556228852-80b6bb058128?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram5&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;instagram-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram6&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;blog&quot; class=&quot;blog&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Blog&lt;/h2&gt;
+            &lt;div class=&quot;blog-grid&quot;&gt;
+                &lt;article class=&quot;blog-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1511401139252-f158d3209c17?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;ブログ1&quot;&gt;
+                    &lt;div class=&quot;blog-content&quot;&gt;
+                        &lt;time&gt;2025.08.01&lt;/time&gt;
+                        &lt;h3&gt;北欧インテリアの作り方&lt;/h3&gt;
+                        &lt;p&gt;シンプルで温かみのある北欧スタイルのお部屋作りのコツをご紹介します。&lt;/p&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;read-more&quot;&gt;続きを読む →&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+                &lt;article class=&quot;blog-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1520981825232-ece5fae45120?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;ブログ2&quot;&gt;
+                    &lt;div class=&quot;blog-content&quot;&gt;
+                        &lt;time&gt;2025.07.28&lt;/time&gt;
+                        &lt;h3&gt;ギフトラッピングのアイデア&lt;/h3&gt;
+                        &lt;p&gt;大切な人への贈り物を特別にする、おしゃれなラッピング方法をご紹介。&lt;/p&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;read-more&quot;&gt;続きを読む →&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;About Us&lt;/h2&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;h3&gt;暮らしを彩る雑貨たち&lt;/h3&gt;
+                    &lt;p&gt;ZAKKA STOREは、毎日の暮らしをもっと楽しく、もっと心地よくする雑貨を世界中からセレクトしています。&lt;/p&gt;
+                    &lt;p&gt;北欧、フランス、日本...様々な国の素敵なアイテムを取り揃え、お客様の理想のライフスタイルづくりをお手伝いします。&lt;/p&gt;
+                    &lt;p&gt;実店舗では、季節ごとのディスプレイやワークショップも開催しています。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-video&quot;&gt;
+                    &lt;iframe 
+                        width=&quot;560&quot; 
+                        height=&quot;315&quot; 
+                        src=&quot;https://www.youtube.com/embed/MLpWrANjFbI&quot; 
+                        title=&quot;Store Introduction&quot; 
+                        frameborder=&quot;0&quot; 
+                        allowfullscreen&gt;
+                    &lt;/iframe&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;ZAKKA STORE&lt;/h3&gt;
+                    &lt;p&gt;〒150-0001 東京都渋谷区神宮前3-15-8&lt;/p&gt;
+                    &lt;p&gt;TEL: 03-1234-5678&lt;/p&gt;
+                    &lt;p&gt;営業時間: 11:00-20:00&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;Follow Us&lt;/h3&gt;
+                    &lt;div class=&quot;social-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Pinterest&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;Newsletter&lt;/h3&gt;
+                    &lt;p&gt;新商品やセール情報をお届けします&lt;/p&gt;
+                    &lt;form class=&quot;newsletter-form&quot;&gt;
+                        &lt;input type=&quot;email&quot; placeholder=&quot;メールアドレス&quot;&gt;
+                        &lt;button type=&quot;submit&quot;&gt;登録&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;copyright&quot;&gt;&amp;copy; 2025 ZAKKA STORE. All rights reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // お気に入り機能
+let wishlist = [];
+
+document.querySelectorAll(&#x27;.wishlist-add&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        if (this.textContent === &#x27;♡&#x27;) {
+            this.textContent = &#x27;♥&#x27;;
+            this.style.color = &#x27;red&#x27;;
+            wishlist.push(this.closest(&#x27;.product-card&#x27;));
+        } else {
+            this.textContent = &#x27;♡&#x27;;
+            this.style.color = &#x27;black&#x27;;
+        }
+        updateWishlistCount();
+    });
+});
+
+function updateWishlistCount() {
+    const count = document.querySelectorAll(&#x27;.wishlist-add&#x27;).length;
+    console.log(`Wishlist items: ${wishlist.length}`);
+}
+
+// 検索機能
+document.querySelector(&#x27;.search-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    const searchTerm = prompt(&#x27;商品を検索:&#x27;);
+    if (searchTerm) {
+        alert(`&quot;${searchTerm}&quot; の検索結果を表示`);
+    }
+});
+
+// カート機能
+document.querySelector(&#x27;.cart-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;カートページへ移動&#x27;);
+});
+
+// ニュースレター
+document.querySelector(&#x27;.newsletter-form&#x27;).addEventListener(&#x27;submit&#x27;, function(e) {
+    e.preventDefault();
+    const email = this.querySelector(&#x27;input&#x27;).value;
+    if (email) {
+        alert(`${email} を登録しました`);
+        this.querySelector(&#x27;input&#x27;).value = &#x27;&#x27;;
+    }
+});
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header-main&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+    });
+        }
+    });
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="小売店 - 雑貨" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[5420,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/4a151d0310e5f5b1.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"fjyPqXR1LFAJ3vP01kGy6\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"retail-general\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"retail-general\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/4a151d0310e5f5b1.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"retail-general\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"retail-general\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"51M1u57BUMRKIw3Z1OA9S\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"retail-general\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/4a151d0310e5f5b1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;レストラン - 和食&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&#x27;https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&amp;display=swap&#x27;);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Noto Serif JP&#x27;, serif;
+    color: #333;
+    background: #fafafa;
+    line-height: 1.8;
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-main {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.logo-sub {
+    font-size: 0.8rem;
+    margin-top: -0.3rem;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+    font-size: 1rem;
+}
+
+.nav-list a:hover {
+    color: #8b4513;
+}
+
+.reserve-btn {
+    background: #8b4513;
+    color: white !important;
+    padding: 0.5rem 1.5rem;
+    border-radius: 3px;
+}
+
+.reserve-btn:hover {
+    background: #a0522d !important;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url(&#x27;data:image/svg+xml,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 1440 320&quot;&gt;&lt;path fill=&quot;%23f3f4f5&quot; fill-opacity=&quot;1&quot; d=&quot;M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,138.7C672,128,768,128,864,138.7C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L0,320Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&#x27;);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.hero-title span {
+    display: block;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Sections */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.title-ja {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.title-en {
+    display: block;
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 2px;
+}
+
+/* Concept */
+.concept {
+    background: white;
+}
+
+.concept-content {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.concept-content p {
+    margin-bottom: 0.5rem;
+}
+
+/* Menu */
+.menu {
+    background: #f8f8f8;
+}
+
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.menu-item {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item.special {
+    border: 2px solid #8b4513;
+}
+
+.menu-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #8b4513;
+}
+
+.menu-desc {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.menu-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.seasonal-menu {
+    background: white;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.seasonal-menu h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+
+.seasonal-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.seasonal-item {
+    text-align: center;
+}
+
+.season {
+    display: inline-block;
+    background: #8b4513;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Space */
+.space {
+    background: white;
+}
+
+.space-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.space-item {
+    text-align: center;
+}
+
+.space-image {
+    height: 200px;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    color: #666;
+}
+
+.space-item h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* Access */
+.access {
+    background: #f8f8f8;
+}
+
+.access-info {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.access-info dl {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1rem;
+}
+
+.access-info dt {
+    font-weight: bold;
+    color: #8b4513;
+}
+
+/* Reserve */
+.reserve {
+    background: white;
+    padding: 5rem 0;
+}
+
+.reserve-content {
+    text-align: center;
+}
+
+.reserve-content p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.reserve-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    font-family: &#x27;Noto Serif JP&#x27;, serif;
+}
+
+.btn-primary {
+    background: #8b4513;
+    color: white;
+}
+
+.btn-secondary {
+    background: white;
+    color: #8b4513;
+    border: 2px solid #8b4513;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: scale(1.05);
+}
+
+.btn-secondary span {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+/* Footer */
+.footer {
+    background: #2c2c2c;
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .title-ja {
+        font-size: 2rem;
+    }
+    
+    .menu-list {
+        grid-template-columns: 1fr;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;header class=&quot;header&quot;&gt;
+            &lt;div class=&quot;header-inner&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;span class=&quot;logo-main&quot;&gt;和楽&lt;/span&gt;
+                    &lt;span class=&quot;logo-sub&quot;&gt;わらく&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;nav class=&quot;nav&quot;&gt;
+                    &lt;ul class=&quot;nav-list&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;#concept&quot;&gt;想い&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;お献立&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#space&quot;&gt;空間&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#access&quot;&gt;交通&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#reserve&quot; class=&quot;reserve-btn&quot;&gt;ご予約&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+        &lt;/header&gt;
+
+        &lt;main&gt;
+            &lt;section class=&quot;hero&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1579027989536-b7b1f875659b?w=1920&amp;h=800&amp;fit=crop&quot; alt=&quot;和食料理&quot; style=&quot;position:absolute;width:100%;height:100%;object-fit:cover;opacity:0.6;&quot;&gt;
+                &lt;div class=&quot;hero-content&quot;&gt;
+                    &lt;h1 class=&quot;hero-title&quot;&gt;
+                        &lt;span&gt;四季を味わう&lt;/span&gt;
+                        &lt;span&gt;日本料理&lt;/span&gt;
+                    &lt;/h1&gt;
+                    &lt;p class=&quot;hero-subtitle&quot;&gt;旬の食材と匠の技が織りなす至福のひととき&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;concept&quot; class=&quot;concept&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;
+                        &lt;span class=&quot;title-ja&quot;&gt;想い&lt;/span&gt;
+                        &lt;span class=&quot;title-en&quot;&gt;Concept&lt;/span&gt;
+                    &lt;/h2&gt;
+                    &lt;div class=&quot;concept-content&quot;&gt;
+                        &lt;p&gt;日本の四季が育む豊かな食材。&lt;/p&gt;
+                        &lt;p&gt;その一つ一つと真摯に向き合い、&lt;/p&gt;
+                        &lt;p&gt;素材の持つ本来の味わいを&lt;/p&gt;
+                        &lt;p&gt;最大限に引き出すことを心がけております。&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;menu&quot; class=&quot;menu&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;
+                        &lt;span class=&quot;title-ja&quot;&gt;お献立&lt;/span&gt;
+                        &lt;span class=&quot;title-en&quot;&gt;Menu&lt;/span&gt;
+                    &lt;/h2&gt;
+                    &lt;div class=&quot;menu-list&quot;&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;h3&gt;昼懐石&lt;/h3&gt;
+                            &lt;p class=&quot;menu-desc&quot;&gt;季節の食材を使った昼の懐石料理&lt;/p&gt;
+                            &lt;p class=&quot;menu-price&quot;&gt;5,500円〜&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;h3&gt;夜懐石&lt;/h3&gt;
+                            &lt;p class=&quot;menu-desc&quot;&gt;料理長おまかせの本格懐石&lt;/p&gt;
+                            &lt;p class=&quot;menu-price&quot;&gt;8,800円〜&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item special&quot;&gt;
+                            &lt;h3&gt;特別懐石&lt;/h3&gt;
+                            &lt;p class=&quot;menu-desc&quot;&gt;特別な日のための贅沢なコース&lt;/p&gt;
+                            &lt;p class=&quot;menu-price&quot;&gt;15,000円〜&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;seasonal-menu&quot;&gt;
+                        &lt;h3&gt;季節のお料理&lt;/h3&gt;
+                        &lt;div class=&quot;seasonal-items&quot;&gt;
+                            &lt;div class=&quot;seasonal-item&quot;&gt;
+                                &lt;span class=&quot;season&quot;&gt;春&lt;/span&gt;
+                                &lt;p&gt;桜鯛、筍、山菜&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;seasonal-item&quot;&gt;
+                                &lt;span class=&quot;season&quot;&gt;夏&lt;/span&gt;
+                                &lt;p&gt;鮎、鱧、賀茂茄子&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;seasonal-item&quot;&gt;
+                                &lt;span class=&quot;season&quot;&gt;秋&lt;/span&gt;
+                                &lt;p&gt;松茸、秋刀魚、栗&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;seasonal-item&quot;&gt;
+                                &lt;span class=&quot;season&quot;&gt;冬&lt;/span&gt;
+                                &lt;p&gt;ふぐ、蟹、大根&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;space&quot; class=&quot;space&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;
+                        &lt;span class=&quot;title-ja&quot;&gt;空間&lt;/span&gt;
+                        &lt;span class=&quot;title-en&quot;&gt;Space&lt;/span&gt;
+                    &lt;/h2&gt;
+                    &lt;div class=&quot;space-grid&quot;&gt;
+                        &lt;div class=&quot;space-item&quot;&gt;
+                            &lt;div class=&quot;space-image&quot;&gt;カウンター席&lt;/div&gt;
+                            &lt;h3&gt;カウンター席&lt;/h3&gt;
+                            &lt;p&gt;料理人の技を間近でご覧いただけます&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;space-item&quot;&gt;
+                            &lt;div class=&quot;space-image&quot;&gt;個室&lt;/div&gt;
+                            &lt;h3&gt;個室&lt;/h3&gt;
+                            &lt;p&gt;大切な方とのお時間をゆったりと&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;space-item&quot;&gt;
+                            &lt;div class=&quot;space-image&quot;&gt;座敷&lt;/div&gt;
+                            &lt;h3&gt;座敷&lt;/h3&gt;
+                            &lt;p&gt;庭園を眺めながらの特別なひととき&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;access&quot; class=&quot;access&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;
+                        &lt;span class=&quot;title-ja&quot;&gt;交通&lt;/span&gt;
+                        &lt;span class=&quot;title-en&quot;&gt;Access&lt;/span&gt;
+                    &lt;/h2&gt;
+                    &lt;div class=&quot;access-content&quot;&gt;
+                        &lt;div class=&quot;access-info&quot;&gt;
+                            &lt;dl&gt;
+                                &lt;dt&gt;住所&lt;/dt&gt;
+                                &lt;dd&gt;〒604-0000 京都市中京区烏丸通&lt;/dd&gt;
+                                &lt;dt&gt;電話&lt;/dt&gt;
+                                &lt;dd&gt;075-000-0000&lt;/dd&gt;
+                                &lt;dt&gt;営業時間&lt;/dt&gt;
+                                &lt;dd&gt;
+                                    昼 11:30〜14:30（L.O. 13:30）&lt;br&gt;
+                                    夜 17:30〜22:00（L.O. 20:30）
+                                &lt;/dd&gt;
+                                &lt;dt&gt;定休日&lt;/dt&gt;
+                                &lt;dd&gt;月曜日（祝日の場合は翌日）&lt;/dd&gt;
+                            &lt;/dl&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;reserve&quot; class=&quot;reserve&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;
+                        &lt;span class=&quot;title-ja&quot;&gt;ご予約&lt;/span&gt;
+                        &lt;span class=&quot;title-en&quot;&gt;Reservation&lt;/span&gt;
+                    &lt;/h2&gt;
+                    &lt;div class=&quot;reserve-content&quot;&gt;
+                        &lt;p&gt;お電話またはオンラインにてご予約を承っております&lt;/p&gt;
+                        &lt;div class=&quot;reserve-buttons&quot;&gt;
+                            &lt;button class=&quot;btn-primary&quot;&gt;オンライン予約&lt;/button&gt;
+                            &lt;a href=&quot;tel:075-000-0000&quot; class=&quot;btn-secondary&quot;&gt;
+                                電話予約&lt;br&gt;
+                                &lt;span&gt;075-000-0000&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+
+        &lt;footer class=&quot;footer&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;p class=&quot;footer-logo&quot;&gt;和楽&lt;/p&gt;
+                &lt;p class=&quot;copyright&quot;&gt;© 2025 和楽 All Rights Reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+
+
+&lt;script&gt;
+    // スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+    });
+        }
+    });
+});
+
+// 予約ボタン
+document.querySelector(&#x27;.btn-primary&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;オンライン予約システムへ遷移します（実装予定）&#x27;);
+});
+
+// スクロール時のヘッダー処理
+let lastScroll = 0;
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const header = document.querySelector(&#x27;.header&#x27;);
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll &gt; 100) {
+        header.style.background = &#x27;rgba(255, 255, 255, 0.98)&#x27;;
+    } else {
+        header.style.background = &#x27;rgba(255, 255, 255, 0.95)&#x27;;
+    }
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="レストラン - 和食" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[5420,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/4a151d0310e5f5b1.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"fjyPqXR1LFAJ3vP01kGy6\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"restaurant-japanese\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"restaurant-japanese\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/4a151d0310e5f5b1.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"restaurant-japanese\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"restaurant-japanese\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"sfQGys6ATdwy3EWyNUNfZ\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"restaurant-japanese\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

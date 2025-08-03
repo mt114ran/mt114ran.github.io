@@ -1,0 +1,946 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/4a151d0310e5f5b1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;サービス業 - 美容室&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Helvetica Neue&#x27;, &#x27;Noto Sans JP&#x27;, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-main {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #d4a574;
+}
+
+.logo-sub {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #666;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #d4a574;
+}
+
+.booking-btn {
+    background: #d4a574;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: transform 0.3s;
+}
+
+.booking-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #d4a574;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #b8935f;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: #d4a574;
+}
+
+/* Concept */
+.concept {
+    background: #f8f8f8;
+}
+
+.concept-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.concept-text h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #d4a574;
+}
+
+.concept-text p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.concept-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Menu */
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.tab-btn {
+    padding: 10px 30px;
+    background: transparent;
+    border: 2px solid #d4a574;
+    color: #d4a574;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #d4a574;
+    color: white;
+}
+
+.menu-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.menu-item {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.menu-header h3 {
+    font-size: 20px;
+}
+
+.price {
+    font-size: 22px;
+    color: #d4a574;
+    font-weight: bold;
+}
+
+/* Style Gallery */
+.style-gallery {
+    background: #f8f8f8;
+}
+
+.style-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background: white;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #d4a574;
+    color: white;
+    border-color: #d4a574;
+}
+
+.style-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.style-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.style-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.style-item:hover img {
+    transform: scale(1.1);
+}
+
+.style-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.style-item:hover .style-overlay {
+    transform: translateY(0);
+}
+
+/* Staff */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.staff-card {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+}
+
+.staff-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.staff-card h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.staff-role {
+    color: #d4a574;
+    margin-bottom: 15px;
+}
+
+.staff-message {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.staff-sns a {
+    color: #d4a574;
+    text-decoration: none;
+}
+
+/* Instagram */
+.instagram {
+    background: #f8f8f8;
+}
+
+.instagram-id {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.instagram-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.instagram-feed img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.instagram-feed img:hover {
+    opacity: 0.8;
+}
+
+/* Access */
+.access-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.access-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.access-info th {
+    text-align: left;
+    padding: 15px;
+    background: #f8f8f8;
+    width: 100px;
+}
+
+.access-info td {
+    padding: 15px;
+}
+
+.access-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.access-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Booking */
+.booking {
+    background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
+    color: white;
+}
+
+.booking .section-title {
+    color: white;
+}
+
+.booking .section-title::after {
+    background: white;
+}
+
+.booking-content {
+    text-align: center;
+}
+
+.booking-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.booking-button {
+    padding: 15px 50px;
+    background: white;
+    color: #d4a574;
+    border: none;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.booking-button:hover {
+    transform: scale(1.05);
+}
+
+.booking-note {
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.footer-logo span {
+    display: block;
+    letter-spacing: 2px;
+}
+
+.footer-links,
+.footer-social {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-links a,
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    color: #d4a574;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #555;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+    
+    .nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    
+    .concept-content,
+    .access-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .style-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;header-inner&quot;&gt;
+            &lt;div class=&quot;logo&quot;&gt;
+                &lt;span class=&quot;logo-main&quot;&gt;LUMINOUS&lt;/span&gt;
+                &lt;span class=&quot;logo-sub&quot;&gt;HAIR STUDIO&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;nav class=&quot;nav&quot;&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=&quot;#concept&quot;&gt;Concept&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;Menu&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#style&quot;&gt;Style&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#staff&quot;&gt;Staff&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#access&quot;&gt;Access&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+            &lt;a href=&quot;#booking&quot; class=&quot;booking-btn&quot;&gt;ご予約&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-slider&quot;&gt;
+            &lt;div class=&quot;slide active&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1920&amp;h=1080&amp;fit=crop&quot; alt=&quot;サロン内観&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h1&gt;あなたの魅力を&lt;br&gt;最大限に引き出す&lt;/h1&gt;
+            &lt;p&gt;一人ひとりの個性に合わせたスタイル提案&lt;/p&gt;
+            &lt;a href=&quot;#booking&quot; class=&quot;cta-button&quot;&gt;今すぐ予約する&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;concept&quot; class=&quot;concept&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Concept&lt;/h2&gt;
+            &lt;div class=&quot;concept-content&quot;&gt;
+                &lt;div class=&quot;concept-text&quot;&gt;
+                    &lt;h3&gt;髪から始まる、新しい自分&lt;/h3&gt;
+                    &lt;p&gt;HAIR STUDIO LUMINOUSは、お客様一人ひとりの魅力を最大限に引き出すことを目指しています。&lt;/p&gt;
+                    &lt;p&gt;最新のトレンドと確かな技術で、あなただけのスタイルをご提案。&lt;/p&gt;
+                    &lt;p&gt;リラックスできる空間で、特別な時間をお過ごしください。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;concept-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1633681926035-ec1ac984418a?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;サロンコンセプト&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;menu&quot; class=&quot;menu&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Menu &amp; Price&lt;/h2&gt;
+            &lt;div class=&quot;menu-tabs&quot;&gt;
+                &lt;button class=&quot;tab-btn active&quot; data-tab=&quot;cut&quot;&gt;カット&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-tab=&quot;color&quot;&gt;カラー&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-tab=&quot;perm&quot;&gt;パーマ&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-tab=&quot;treatment&quot;&gt;トリートメント&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;menu-content&quot;&gt;
+                &lt;div class=&quot;tab-content active&quot; id=&quot;cut&quot;&gt;
+                    &lt;div class=&quot;menu-item&quot;&gt;
+                        &lt;div class=&quot;menu-header&quot;&gt;
+                            &lt;h3&gt;カット&lt;/h3&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥5,500&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p&gt;シャンプー・ブロー込み&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item&quot;&gt;
+                        &lt;div class=&quot;menu-header&quot;&gt;
+                            &lt;h3&gt;学生カット&lt;/h3&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥4,400&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p&gt;中高生限定（要学生証）&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item&quot;&gt;
+                        &lt;div class=&quot;menu-header&quot;&gt;
+                            &lt;h3&gt;前髪カット&lt;/h3&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥1,100&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p&gt;前髪のみのカット&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;tab-content&quot; id=&quot;color&quot;&gt;
+                    &lt;div class=&quot;menu-item&quot;&gt;
+                        &lt;div class=&quot;menu-header&quot;&gt;
+                            &lt;h3&gt;リタッチカラー&lt;/h3&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥6,600&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p&gt;根元のみ（〜3cm）&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item&quot;&gt;
+                        &lt;div class=&quot;menu-header&quot;&gt;
+                            &lt;h3&gt;フルカラー&lt;/h3&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥8,800&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p&gt;全体カラー&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item&quot;&gt;
+                        &lt;div class=&quot;menu-header&quot;&gt;
+                            &lt;h3&gt;ハイライト・ローライト&lt;/h3&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥11,000〜&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p&gt;立体感のあるカラーデザイン&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;style&quot; class=&quot;style-gallery&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Style Gallery&lt;/h2&gt;
+            &lt;div class=&quot;style-filters&quot;&gt;
+                &lt;button class=&quot;filter-btn active&quot; data-filter=&quot;all&quot;&gt;All&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-filter=&quot;short&quot;&gt;Short&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-filter=&quot;medium&quot;&gt;Medium&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-filter=&quot;long&quot;&gt;Long&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-filter=&quot;color&quot;&gt;Color&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;style-grid&quot;&gt;
+                &lt;div class=&quot;style-item&quot; data-category=&quot;short&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1596728325488-58c87691e9af?w=400&amp;h=500&amp;fit=crop&quot; alt=&quot;ショートスタイル&quot;&gt;
+                    &lt;div class=&quot;style-overlay&quot;&gt;
+                        &lt;h3&gt;ナチュラルショート&lt;/h3&gt;
+                        &lt;p&gt;担当: Yuki&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;style-item&quot; data-category=&quot;medium&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=400&amp;h=500&amp;fit=crop&quot; alt=&quot;ミディアムスタイル&quot;&gt;
+                    &lt;div class=&quot;style-overlay&quot;&gt;
+                        &lt;h3&gt;エアリーボブ&lt;/h3&gt;
+                        &lt;p&gt;担当: Mika&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;style-item&quot; data-category=&quot;long&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=400&amp;h=500&amp;fit=crop&quot; alt=&quot;ロングスタイル&quot;&gt;
+                    &lt;div class=&quot;style-overlay&quot;&gt;
+                        &lt;h3&gt;ナチュラルウェーブ&lt;/h3&gt;
+                        &lt;p&gt;担当: Ken&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;style-item&quot; data-category=&quot;color&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1617695743585-0e5578e72a62?w=400&amp;h=500&amp;fit=crop&quot; alt=&quot;カラースタイル&quot;&gt;
+                    &lt;div class=&quot;style-overlay&quot;&gt;
+                        &lt;h3&gt;グラデーションカラー&lt;/h3&gt;
+                        &lt;p&gt;担当: Saki&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;style-item&quot; data-category=&quot;short&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1615460489547-a534e20c9db1?w=400&amp;h=500&amp;fit=crop&quot; alt=&quot;ショートスタイル2&quot;&gt;
+                    &lt;div class=&quot;style-overlay&quot;&gt;
+                        &lt;h3&gt;クールショート&lt;/h3&gt;
+                        &lt;p&gt;担当: Tomo&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;style-item&quot; data-category=&quot;medium&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=400&amp;h=500&amp;fit=crop&quot; alt=&quot;ミディアムスタイル2&quot;&gt;
+                    &lt;div class=&quot;style-overlay&quot;&gt;
+                        &lt;h3&gt;フェミニンミディ&lt;/h3&gt;
+                        &lt;p&gt;担当: Aya&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;staff&quot; class=&quot;staff&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Our Staff&lt;/h2&gt;
+            &lt;div class=&quot;staff-grid&quot;&gt;
+                &lt;div class=&quot;staff-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;スタイリスト1&quot;&gt;
+                    &lt;h3&gt;佐藤 ゆき&lt;/h3&gt;
+                    &lt;p class=&quot;staff-role&quot;&gt;Top Stylist&lt;/p&gt;
+                    &lt;p class=&quot;staff-message&quot;&gt;ナチュラルで扱いやすいスタイルが得意です。&lt;/p&gt;
+                    &lt;div class=&quot;staff-sns&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;staff-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;スタイリスト2&quot;&gt;
+                    &lt;h3&gt;田中 みか&lt;/h3&gt;
+                    &lt;p class=&quot;staff-role&quot;&gt;Stylist&lt;/p&gt;
+                    &lt;p class=&quot;staff-message&quot;&gt;トレンドを取り入れたスタイル提案が得意です。&lt;/p&gt;
+                    &lt;div class=&quot;staff-sns&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;staff-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1559599101-f09722fb4948?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;スタイリスト3&quot;&gt;
+                    &lt;h3&gt;山田 けん&lt;/h3&gt;
+                    &lt;p class=&quot;staff-role&quot;&gt;Director&lt;/p&gt;
+                    &lt;p class=&quot;staff-message&quot;&gt;お客様の魅力を最大限に引き出します。&lt;/p&gt;
+                    &lt;div class=&quot;staff-sns&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;instagram&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Instagram&lt;/h2&gt;
+            &lt;p class=&quot;instagram-id&quot;&gt;@luminous_hair&lt;/p&gt;
+            &lt;div class=&quot;instagram-feed&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram1&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1620331317131-c7c2c7a37a01?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram2&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram3&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1625948515291-69613efd103f?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram4&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;access&quot; class=&quot;access&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Access&lt;/h2&gt;
+            &lt;div class=&quot;access-content&quot;&gt;
+                &lt;div class=&quot;access-info&quot;&gt;
+                    &lt;table&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;住所&lt;/th&gt;
+                            &lt;td&gt;〒150-0041 東京都渋谷区神南1-15-3&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;電話&lt;/th&gt;
+                            &lt;td&gt;03-6789-0123&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;営業時間&lt;/th&gt;
+                            &lt;td&gt;
+                                平日: 10:00-20:00&lt;br&gt;
+                                土日祝: 9:00-19:00
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;定休日&lt;/th&gt;
+                            &lt;td&gt;毎週火曜日、第1・第3月曜日&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;アクセス&lt;/th&gt;
+                            &lt;td&gt;JR渋谷駅ハチ公口より徒歩5分&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;access-video&quot;&gt;
+                    &lt;iframe 
+                        src=&quot;https://www.youtube.com/embed/HJm9TxGJz-Y&quot; 
+                        title=&quot;Salon Tour&quot; 
+                        frameborder=&quot;0&quot; 
+                        allowfullscreen&gt;
+                    &lt;/iframe&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;booking&quot; class=&quot;booking&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Online Booking&lt;/h2&gt;
+            &lt;div class=&quot;booking-content&quot;&gt;
+                &lt;p&gt;24時間いつでもオンラインでご予約いただけます&lt;/p&gt;
+                &lt;button class=&quot;booking-button&quot;&gt;予約画面へ進む&lt;/button&gt;
+                &lt;p class=&quot;booking-note&quot;&gt;
+                    ※初めてご利用の方は、お電話でのご予約をおすすめしています&lt;br&gt;
+                    TEL: 03-6789-0123
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-logo&quot;&gt;
+                    &lt;span&gt;LUMINOUS&lt;/span&gt;
+                    &lt;span&gt;HAIR STUDIO&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-links&quot;&gt;
+                    &lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;
+                    &lt;a href=&quot;#&quot;&gt;採用情報&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-social&quot;&gt;
+                    &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+                    &lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;
+                    &lt;a href=&quot;#&quot;&gt;LINE&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;copyright&quot;&gt;&amp;copy; 2025 HAIR STUDIO LUMINOUS. All rights reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // タブ切り替え
+const tabBtns = document.querySelectorAll(&#x27;.tab-btn&#x27;);
+const tabContents = document.querySelectorAll(&#x27;.tab-content&#x27;);
+
+tabBtns.forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, () =&gt; {
+        const tab = btn.dataset.tab;
+        
+        // タブボタンのアクティブ状態を切り替え
+        tabBtns.forEach(b =&gt; b.classList.remove(&#x27;active&#x27;));
+        btn.classList.add(&#x27;active&#x27;);
+        
+        // タブコンテンツの表示を切り替え
+        tabContents.forEach(content =&gt; {
+            content.classList.remove(&#x27;active&#x27;);
+            if (content.id === tab) {
+                content.classList.add(&#x27;active&#x27;);
+            }
+        });
+    });
+});
+
+// スタイルギャラリーのフィルター
+const filterBtns = document.querySelectorAll(&#x27;.filter-btn&#x27;);
+const styleItems = document.querySelectorAll(&#x27;.style-item&#x27;);
+
+filterBtns.forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, () =&gt; {
+        const filter = btn.dataset.filter;
+        
+        // ボタンのアクティブ状態を切り替え
+        filterBtns.forEach(b =&gt; b.classList.remove(&#x27;active&#x27;));
+        btn.classList.add(&#x27;active&#x27;);
+        
+        // アイテムの表示を切り替え
+        styleItems.forEach(item =&gt; {
+            if (filter === &#x27;all&#x27; || item.dataset.category === filter) {
+                item.style.display = &#x27;block&#x27;;
+            } else {
+                item.style.display = &#x27;none&#x27;;
+            }
+        });
+    });
+});
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+    });
+        }
+    });
+});
+
+// 予約ボタン
+document.querySelector(&#x27;.booking-button&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
+    alert(&#x27;予約システムへ移動します（実装予定）&#x27;);
+});
+
+// ヘッダー背景の変更
+window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+    const header = document.querySelector(&#x27;.header&#x27;);
+    if (window.scrollY &gt; 100) {
+        header.style.background = &#x27;rgba(255, 255, 255, 1)&#x27;;
+    } else {
+        header.style.background = &#x27;rgba(255, 255, 255, 0.98)&#x27;;
+    }
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="サービス業 - 美容室" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[5420,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/4a151d0310e5f5b1.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"fjyPqXR1LFAJ3vP01kGy6\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"service-beauty\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"service-beauty\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/4a151d0310e5f5b1.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"service-beauty\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"service-beauty\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"RAYjmS-0tsT3aOnWoL-_l\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"service-beauty\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

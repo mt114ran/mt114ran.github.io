@@ -1,0 +1,783 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/4a151d0310e5f5b1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;レストラン - 洋食&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Georgia&#x27;, &#x27;Noto Serif JP&#x27;, serif;
+    color: #333;
+    line-height: 1.8;
+    background: #faf9f7;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 20px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 300;
+    color: #8b7355;
+}
+
+.navigation ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #8b7355;
+}
+
+.reservation-link {
+    background: #8b7355;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 2px;
+}
+
+.reservation-link:hover {
+    background: #6d5a44;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-size: 72px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.hero-description {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 300;
+    color: #8b7355;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-title::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: #8b7355;
+}
+
+/* Concept */
+.concept {
+    background: white;
+}
+
+.concept-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.concept-image img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.concept-text h3 {
+    font-size: 28px;
+    color: #8b7355;
+    margin-bottom: 30px;
+}
+
+.concept-text p {
+    margin-bottom: 20px;
+    line-height: 2;
+}
+
+/* Menu */
+.menu-intro {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 18px;
+    color: #666;
+}
+
+.course-list {
+    display: grid;
+    gap: 60px;
+}
+
+.course-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 40px;
+    background: white;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+}
+
+.course-item.special {
+    background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+    border: 2px solid #8b7355;
+}
+
+.course-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.course-details h3 {
+    font-size: 28px;
+    color: #8b7355;
+    margin-bottom: 10px;
+}
+
+.course-price {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.course-menu {
+    list-style: none;
+    line-height: 2;
+}
+
+.course-menu li::before {
+    content: &quot;・&quot;;
+    margin-right: 10px;
+    color: #8b7355;
+}
+
+.course-description {
+    line-height: 1.8;
+}
+
+/* Chef */
+.chef {
+    background: white;
+}
+
+.chef-profile {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.chef-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.chef-info h3 {
+    font-size: 32px;
+    color: #8b7355;
+    margin-bottom: 10px;
+}
+
+.chef-title {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.chef-bio p {
+    margin-bottom: 15px;
+}
+
+.chef-awards {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.chef-awards h4 {
+    font-size: 20px;
+    color: #8b7355;
+    margin-bottom: 20px;
+}
+
+.chef-awards ul {
+    list-style: none;
+}
+
+.chef-awards li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.chef-awards li::before {
+    content: &quot;★&quot;;
+    position: absolute;
+    left: 0;
+    color: #8b7355;
+}
+
+/* Gallery */
+.gallery {
+    padding: 0;
+}
+
+.gallery .section-title {
+    padding: 100px 0 60px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+
+.gallery-item {
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Video Section */
+.video-section {
+    background: white;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Info */
+.info-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.info-details h3 {
+    font-size: 24px;
+    color: #8b7355;
+    margin: 30px 0 15px;
+}
+
+.info-details h3:first-child {
+    margin-top: 0;
+}
+
+.info-details p {
+    margin-bottom: 10px;
+}
+
+.info-map img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Reservation */
+.reservation {
+    background: linear-gradient(135deg, #8b7355 0%, #6d5a44 100%);
+    color: white;
+}
+
+.reservation .section-title {
+    color: white;
+}
+
+.reservation .section-title::after {
+    background: white;
+}
+
+.reservation-content {
+    text-align: center;
+}
+
+.reservation-content &gt; p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.reservation-buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.btn-phone, .btn-online {
+    padding: 20px 40px;
+    font-size: 16px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.btn-phone:hover, .btn-online:hover {
+    background: white;
+    color: #8b7355;
+}
+
+.btn-phone span {
+    display: block;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.reservation-note {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+    background: #2c2c2c;
+    color: white;
+    padding: 50px 0 20px;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    margin-bottom: 30px;
+    color: #999;
+}
+
+.social-links {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #8b7355;
+}
+
+.copyright {
+    padding-top: 30px;
+    border-top: 1px solid #444;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navigation ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-title {
+        font-size: 48px;
+    }
+    
+    .concept-content,
+    .course-item,
+    .chef-profile,
+    .info-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .reservation-buttons {
+        flex-direction: column;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;header-inner&quot;&gt;
+            &lt;h1 class=&quot;logo&quot;&gt;Le Jardin&lt;/h1&gt;
+            &lt;nav class=&quot;navigation&quot;&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#concept&quot;&gt;Concept&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;Menu&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#chef&quot;&gt;Chef&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#info&quot;&gt;Info&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#reservation&quot; class=&quot;reservation-link&quot;&gt;Reservation&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-image&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&amp;h=1080&amp;fit=crop&quot; alt=&quot;Restaurant Interior&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h2 class=&quot;hero-title&quot;&gt;Le Jardin&lt;/h2&gt;
+            &lt;p class=&quot;hero-subtitle&quot;&gt;A Symphony of Flavors&lt;/p&gt;
+            &lt;p class=&quot;hero-description&quot;&gt;フランス料理の伝統と革新が融合する、特別な食体験&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;concept&quot; class=&quot;concept&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Our Concept&lt;/h2&gt;
+            &lt;div class=&quot;concept-content&quot;&gt;
+                &lt;div class=&quot;concept-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&amp;h=800&amp;fit=crop&quot; alt=&quot;Chef at work&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;concept-text&quot;&gt;
+                    &lt;h3&gt;季節の恵みを、芸術へ&lt;/h3&gt;
+                    &lt;p&gt;Le Jardinでは、厳選された季節の食材を使い、フランス料理の伝統技法に現代的なエッセンスを加えた料理をご提供しています。&lt;/p&gt;
+                    &lt;p&gt;ソムリエが厳選したワインとのマリアージュで、忘れられない食体験をお約束します。&lt;/p&gt;
+                    &lt;p&gt;落ち着いた空間で、大切な方との特別な時間をお過ごしください。&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;menu&quot; class=&quot;menu&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Course Menu&lt;/h2&gt;
+            &lt;div class=&quot;menu-intro&quot;&gt;
+                &lt;p&gt;旬の食材を使用したコース料理をご用意しております&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;course-list&quot;&gt;
+                &lt;div class=&quot;course-item&quot;&gt;
+                    &lt;div class=&quot;course-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1544025162-d76694265947?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Lunch Course&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;course-details&quot;&gt;
+                        &lt;h3&gt;Lunch Course&lt;/h3&gt;
+                        &lt;p class=&quot;course-price&quot;&gt;¥5,500〜&lt;/p&gt;
+                        &lt;ul class=&quot;course-menu&quot;&gt;
+                            &lt;li&gt;アミューズ&lt;/li&gt;
+                            &lt;li&gt;前菜&lt;/li&gt;
+                            &lt;li&gt;スープ&lt;/li&gt;
+                            &lt;li&gt;魚料理または肉料理&lt;/li&gt;
+                            &lt;li&gt;デザート&lt;/li&gt;
+                            &lt;li&gt;コーヒー・小菓子&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;course-item&quot;&gt;
+                    &lt;div class=&quot;course-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1533777857889-4be0c31b4d9?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Dinner Course&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;course-details&quot;&gt;
+                        &lt;h3&gt;Dinner Course&lt;/h3&gt;
+                        &lt;p class=&quot;course-price&quot;&gt;¥12,000〜&lt;/p&gt;
+                        &lt;ul class=&quot;course-menu&quot;&gt;
+                            &lt;li&gt;アミューズ&lt;/li&gt;
+                            &lt;li&gt;前菜2品&lt;/li&gt;
+                            &lt;li&gt;スープ&lt;/li&gt;
+                            &lt;li&gt;魚料理&lt;/li&gt;
+                            &lt;li&gt;肉料理&lt;/li&gt;
+                            &lt;li&gt;チーズ&lt;/li&gt;
+                            &lt;li&gt;デザート&lt;/li&gt;
+                            &lt;li&gt;コーヒー・小菓子&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;course-item special&quot;&gt;
+                    &lt;div class=&quot;course-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Chef&#x27;s Special&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;course-details&quot;&gt;
+                        &lt;h3&gt;Chef&#x27;s Special&lt;/h3&gt;
+                        &lt;p class=&quot;course-price&quot;&gt;¥20,000〜&lt;/p&gt;
+                        &lt;p class=&quot;course-description&quot;&gt;シェフおまかせの特別コース。その日最高の食材を使用した、贅沢な食体験をお楽しみください。&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;chef&quot; class=&quot;chef&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Executive Chef&lt;/h2&gt;
+            &lt;div class=&quot;chef-profile&quot;&gt;
+                &lt;div class=&quot;chef-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=600&amp;h=800&amp;fit=crop&quot; alt=&quot;Executive Chef&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;chef-info&quot;&gt;
+                    &lt;h3&gt;山田 太郎&lt;/h3&gt;
+                    &lt;p class=&quot;chef-title&quot;&gt;Executive Chef / Owner&lt;/p&gt;
+                    &lt;div class=&quot;chef-bio&quot;&gt;
+                        &lt;p&gt;1975年東京生まれ。都内有名ホテルで修行後、25歳で渡仏。&lt;/p&gt;
+                        &lt;p&gt;パリの三つ星レストランで5年間研鑽を積み、2008年に帰国。&lt;/p&gt;
+                        &lt;p&gt;2010年、Le Jardinをオープン。伝統的なフランス料理に日本の四季を取り入れた独創的な料理で、多くの美食家を魅了している。&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;chef-awards&quot;&gt;
+                        &lt;h4&gt;受賞歴&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;2015年 ミシュラン一つ星獲得&lt;/li&gt;
+                            &lt;li&gt;2018年 ミシュラン二つ星獲得&lt;/li&gt;
+                            &lt;li&gt;2020年 料理マスターズ受賞&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;gallery&quot;&gt;
+        &lt;h2 class=&quot;section-title&quot;&gt;Gallery&lt;/h2&gt;
+        &lt;div class=&quot;gallery-grid&quot;&gt;
+            &lt;div class=&quot;gallery-item&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=600&amp;h=600&amp;fit=crop&quot; alt=&quot;Dish 1&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;gallery-item&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&amp;h=600&amp;fit=crop&quot; alt=&quot;Dish 2&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;gallery-item&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&amp;h=600&amp;fit=crop&quot; alt=&quot;Interior&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;gallery-item&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&amp;h=600&amp;fit=crop&quot; alt=&quot;Dish 3&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;video-section&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Experience Le Jardin&lt;/h2&gt;
+            &lt;div class=&quot;video-wrapper&quot;&gt;
+                &lt;iframe 
+                    src=&quot;https://www.youtube.com/embed/OOcP6vGdUZo&quot; 
+                    title=&quot;Restaurant Experience&quot; 
+                    frameborder=&quot;0&quot; 
+                    allowfullscreen&gt;
+                &lt;/iframe&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;info&quot; class=&quot;info&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Information&lt;/h2&gt;
+            &lt;div class=&quot;info-content&quot;&gt;
+                &lt;div class=&quot;info-details&quot;&gt;
+                    &lt;h3&gt;営業時間&lt;/h3&gt;
+                    &lt;p&gt;Lunch: 12:00 - 14:30 (L.O. 13:30)&lt;/p&gt;
+                    &lt;p&gt;Dinner: 18:00 - 22:00 (L.O. 20:30)&lt;/p&gt;
+                    &lt;p&gt;定休日: 月曜日、第1・第3火曜日&lt;/p&gt;
+                    
+                    &lt;h3&gt;アクセス&lt;/h3&gt;
+                    &lt;p&gt;〒106-0032&lt;/p&gt;
+                    &lt;p&gt;東京都港区六本木7-14-23&lt;/p&gt;
+                    &lt;p&gt;セントラルビル 2F&lt;/p&gt;
+                    &lt;p&gt;六本木駅より徒歩3分&lt;/p&gt;
+                    
+                    &lt;h3&gt;お問い合わせ&lt;/h3&gt;
+                    &lt;p&gt;TEL: 03-5678-9012&lt;/p&gt;
+                    &lt;p&gt;Email: info@lejardin.jp&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;info-map&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1524634126442-357e0eac3c14?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Restaurant exterior&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;reservation&quot; class=&quot;reservation&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Reservation&lt;/h2&gt;
+            &lt;div class=&quot;reservation-content&quot;&gt;
+                &lt;p&gt;ご予約は、お電話またはオンラインにて承っております&lt;/p&gt;
+                &lt;div class=&quot;reservation-buttons&quot;&gt;
+                    &lt;a href=&quot;tel:03-5678-9012&quot; class=&quot;btn-phone&quot;&gt;
+                        お電話で予約&lt;br&gt;
+                        &lt;span&gt;03-5678-9012&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;button class=&quot;btn-online&quot;&gt;オンライン予約&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;p class=&quot;reservation-note&quot;&gt;※ご予約は2ヶ月前から承っております&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;footer-content&quot;&gt;
+            &lt;h3&gt;Le Jardin&lt;/h3&gt;
+            &lt;p&gt;Fine Dining Restaurant&lt;/p&gt;
+            &lt;div class=&quot;social-links&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;
+                &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+                &lt;a href=&quot;#&quot;&gt;Twitter&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;p class=&quot;copyright&quot;&gt;&amp;copy; 2025 Le Jardin. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+    });
+        }
+    });
+});
+
+// 予約ボタン
+document.querySelector(&#x27;.btn-online&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;オンライン予約システムへ移動します（実装予定）&#x27;);
+});
+
+// ヘッダー透明度変更
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const header = document.querySelector(&#x27;.header&#x27;);
+    if (window.scrollY &gt; 100) {
+        header.style.background = &#x27;rgba(255, 255, 255, 1)&#x27;;
+    } else {
+        header.style.background = &#x27;rgba(255, 255, 255, 0.95)&#x27;;
+    }
+});
+
+// ギャラリー画像のライトボックス風効果
+document.querySelectorAll(&#x27;.gallery-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;click&#x27;, function() {
+        const img = this.querySelector(&#x27;img&#x27;);
+        alert(`画像を拡大表示: ${img.alt}`);
+    });
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="レストラン - 洋食" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[5420,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/4a151d0310e5f5b1.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"fjyPqXR1LFAJ3vP01kGy6\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"restaurant-western\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"restaurant-western\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/4a151d0310e5f5b1.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"restaurant-western\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"restaurant-western\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"gbuvr8OmjPtZrwTqYHAnc\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"restaurant-western\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

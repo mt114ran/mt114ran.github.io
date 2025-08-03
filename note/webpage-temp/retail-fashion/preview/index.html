@@ -1,0 +1,587 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/4a151d0310e5f5b1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;小売店 - ファッション&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Helvetica Neue&#x27;, Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.announcement-bar {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.header {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-left, .header-right {
+    display: flex;
+    gap: 15px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.cart-btn {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+    background: #f8f8f8;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #666;
+}
+
+.hero-section {
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.shop-now-btn {
+    background: white;
+    color: #333;
+    padding: 15px 40px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.shop-now-btn:hover {
+    transform: scale(1.05);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.products-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    position: relative;
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: white;
+    z-index: 1;
+}
+
+.badge.new {
+    background: #4CAF50;
+}
+
+.badge.sale {
+    background: #ff4444;
+}
+
+.product-info {
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 10px;
+}
+
+.add-to-cart {
+    background: #000;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #333;
+}
+
+.features-section {
+    background: #f8f8f8;
+    padding: 60px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+}
+
+.about-section {
+    padding: 80px 0;
+}
+
+.about-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer {
+    background: #222;
+    color: #fff;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+    
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    
+    .main-nav a {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+    
+    .hero-content h2 {
+        font-size: 28px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;div class=&quot;announcement-bar&quot;&gt;
+        &lt;p&gt;期間限定セール開催中！全品20%OFF&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;header-container&quot;&gt;
+            &lt;div class=&quot;header-left&quot;&gt;
+                &lt;button class=&quot;menu-toggle&quot;&gt;☰&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;logo&quot;&gt;
+                &lt;h1&gt;STYLE BOUTIQUE&lt;/h1&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;header-right&quot;&gt;
+                &lt;button class=&quot;search-btn&quot;&gt;🔍&lt;/button&gt;
+                &lt;button class=&quot;cart-btn&quot;&gt;🛒 &lt;span class=&quot;cart-count&quot;&gt;0&lt;/span&gt;&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;nav class=&quot;main-nav&quot;&gt;
+            &lt;a href=&quot;#new&quot;&gt;NEW ARRIVAL&lt;/a&gt;
+            &lt;a href=&quot;#women&quot;&gt;WOMEN&lt;/a&gt;
+            &lt;a href=&quot;#men&quot;&gt;MEN&lt;/a&gt;
+            &lt;a href=&quot;#sale&quot;&gt;SALE&lt;/a&gt;
+            &lt;a href=&quot;#about&quot;&gt;ABOUT&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero-section&quot;&gt;
+        &lt;div class=&quot;hero-image&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1920&amp;h=800&amp;fit=crop&quot; alt=&quot;Fashion Collection&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h2&gt;2025 Spring Collection&lt;/h2&gt;
+            &lt;p&gt;新作コレクション入荷&lt;/p&gt;
+            &lt;button class=&quot;shop-now-btn&quot;&gt;Shop Now&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;new&quot; class=&quot;products-section&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;New Arrivals&lt;/h2&gt;
+            &lt;div class=&quot;products-grid&quot;&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;span class=&quot;badge new&quot;&gt;NEW&lt;/span&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&amp;h=500&amp;fit=crop&quot; alt=&quot;デザイナーTシャツ&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;デザイナーTシャツ&lt;/h3&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥4,500&lt;/p&gt;
+                        &lt;button class=&quot;add-to-cart&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;span class=&quot;badge new&quot;&gt;NEW&lt;/span&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&amp;h=500&amp;fit=crop&quot; alt=&quot;スリムフィットデニム&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;スリムフィットデニム&lt;/h3&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥8,900&lt;/p&gt;
+                        &lt;button class=&quot;add-to-cart&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;span class=&quot;badge sale&quot;&gt;SALE&lt;/span&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&amp;h=500&amp;fit=crop&quot; alt=&quot;カジュアルジャケット&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;カジュアルジャケット&lt;/h3&gt;
+                        &lt;p class=&quot;price&quot;&gt;
+                            &lt;span class=&quot;original-price&quot;&gt;¥12,000&lt;/span&gt;
+                            ¥9,600
+                        &lt;/p&gt;
+                        &lt;button class=&quot;add-to-cart&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1572804013427-4d7ca7268217?w=400&amp;h=500&amp;fit=crop&quot; alt=&quot;ワンピース&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;ワンピース&lt;/h3&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥7,200&lt;/p&gt;
+                        &lt;button class=&quot;add-to-cart&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;features-section&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;features-grid&quot;&gt;
+                &lt;div class=&quot;feature&quot;&gt;
+                    &lt;div class=&quot;feature-icon&quot;&gt;✓&lt;/div&gt;
+                    &lt;h3&gt;品質保証&lt;/h3&gt;
+                    &lt;p&gt;厳選された素材のみ使用&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;feature&quot;&gt;
+                    &lt;div class=&quot;feature-icon&quot;&gt;🚚&lt;/div&gt;
+                    &lt;h3&gt;送料無料&lt;/h3&gt;
+                    &lt;p&gt;5,000円以上のご購入で&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;feature&quot;&gt;
+                    &lt;div class=&quot;feature-icon&quot;&gt;↩&lt;/div&gt;
+                    &lt;h3&gt;返品可能&lt;/h3&gt;
+                    &lt;p&gt;30日間返品保証&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;feature&quot;&gt;
+                    &lt;div class=&quot;feature-icon&quot;&gt;💳&lt;/div&gt;
+                    &lt;h3&gt;安全な決済&lt;/h3&gt;
+                    &lt;p&gt;SSL暗号化通信&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about-section&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;About Us&lt;/h2&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;p&gt;STYLE BOUTIQUEは、最新のトレンドを取り入れた高品質なファッションアイテムを提供しています。&lt;/p&gt;
+                &lt;p&gt;お客様一人ひとりのスタイルを大切にし、自信を持って着られる服をお届けします。&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;footer-content&quot;&gt;
+            &lt;div class=&quot;footer-section&quot;&gt;
+                &lt;h3&gt;カスタマーサービス&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;サイズガイド&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;配送について&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;返品・交換&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-section&quot;&gt;
+                &lt;h3&gt;会社情報&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;会社概要&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;採用情報&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プレスリリース&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-section&quot;&gt;
+                &lt;h3&gt;フォローする&lt;/h3&gt;
+                &lt;div class=&quot;social-links&quot;&gt;
+                    &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+                    &lt;a href=&quot;#&quot;&gt;Twitter&lt;/a&gt;
+                    &lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;footer-bottom&quot;&gt;
+            &lt;p&gt;&amp;copy; 2025 STYLE BOUTIQUE. All rights reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // カート機能のシミュレーション
+let cartCount = 0;
+
+document.querySelectorAll(&#x27;.add-to-cart&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        cartCount++;
+        document.querySelector(&#x27;.cart-count&#x27;).textContent = cartCount;
+        
+        // アニメーション効果
+        this.textContent = &#x27;追加しました！&#x27;;
+        this.style.background = &#x27;#4CAF50&#x27;;
+        
+        setTimeout(() =&gt; {
+            this.textContent = &#x27;カートに追加&#x27;;
+            this.style.background = &#x27;#000&#x27;;
+        }, 1500);
+    });
+});
+
+// メニュートグル
+document.querySelector(&#x27;.menu-toggle&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;モバイルメニュー表示（実装予定）&#x27;);
+});
+
+// 検索機能
+document.querySelector(&#x27;.search-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    const searchTerm = prompt(&#x27;検索キーワードを入力:&#x27;);
+    if (searchTerm) {
+        alert(`&quot;${searchTerm}&quot; を検索中...`);
+    }
+});
+
+// カートボタン
+document.querySelector(&#x27;.cart-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(`カート内のアイテム数: ${cartCount}`);
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="小売店 - ファッション" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[5420,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/4a151d0310e5f5b1.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"fjyPqXR1LFAJ3vP01kGy6\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"retail-fashion\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"retail-fashion\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/4a151d0310e5f5b1.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"retail-fashion\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"retail-fashion\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"PrAalquSp2BzRM5FhXGXK\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"retail-fashion\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

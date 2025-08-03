@@ -1,0 +1,824 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/4a151d0310e5f5b1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;サービス業 - クリニック&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#x27;Noto Sans JP&#x27;, sans-serif;
+    color: #333;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header-top {
+    background: #f0f8ff;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.header-info {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.header-main {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo h1 {
+    color: #2c5282;
+    font-size: 24px;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #2c5282;
+}
+
+.nav-reserve a {
+    background: #48bb78;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.nav-reserve a:hover {
+    background: #38a169;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #48bb78 100%);
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: white;
+    color: #2c5282;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-2px);
+}
+
+/* Notice */
+.notice {
+    background: #f8f9fa;
+    padding: 40px 0;
+}
+
+.notice-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.notice-box h3 {
+    color: #2c5282;
+    margin-bottom: 20px;
+}
+
+.notice-list {
+    list-style: none;
+}
+
+.notice-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notice-list .date {
+    color: #666;
+    font-size: 14px;
+}
+
+.notice-list .category {
+    background: #2c5282;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    color: #2c5282;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #48bb78;
+}
+
+/* About */
+.about {
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text h3 {
+    color: #2c5282;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.about-features {
+    display: grid;
+    gap: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #f0f8ff;
+    border-radius: 10px;
+}
+
+.feature-icon {
+    font-size: 36px;
+}
+
+.feature h4 {
+    color: #2c5282;
+    margin-bottom: 5px;
+}
+
+/* Services */
+.services {
+    background: #f8f9fa;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    color: #2c5282;
+    margin-bottom: 15px;
+}
+
+/* Doctors */
+.doctors {
+    background: white;
+}
+
+.doctors-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.doctor-card {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    background: #f0f8ff;
+    border-radius: 10px;
+}
+
+.doctor-image {
+    width: 150px;
+    height: 150px;
+    background: #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.doctor-info h3 {
+    color: #2c5282;
+    margin-bottom: 5px;
+}
+
+.qualification {
+    color: #48bb78;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Access */
+.access {
+    background: #f8f9fa;
+}
+
+.access-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.access-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.access-info th {
+    text-align: left;
+    padding: 15px;
+    background: #2c5282;
+    color: white;
+    width: 120px;
+}
+
+.access-info td {
+    padding: 15px;
+    background: white;
+}
+
+.map-placeholder {
+    height: 400px;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+/* Reserve */
+.reserve {
+    background: white;
+}
+
+.reserve-content {
+    text-align: center;
+}
+
+.reserve-content &gt; p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.reserve-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reserve-option {
+    padding: 40px;
+    background: #f0f8ff;
+    border-radius: 10px;
+}
+
+.reserve-option h3 {
+    color: #2c5282;
+    margin-bottom: 10px;
+}
+
+.reserve-option p {
+    margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+    background: #2c5282;
+    color: white;
+    padding: 40px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.footer-info h3 {
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    opacity: 0.7;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+@media (max-width: 768px) {
+    .header-main {
+        padding: 10px 0;
+    }
+
+    .header-content {
+        position: relative;
+        padding: 10px 20px;
+    }
+
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .access-content {
+        grid-template-columns: 1fr;
+    }
+
+    .doctors-list {
+        grid-template-columns: 1fr;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;header-top&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;header-info&quot;&gt;
+                    &lt;span&gt;📞 03-1234-5678&lt;/span&gt;
+                    &lt;span&gt;診療時間: 平日 9:00-18:00 / 土曜 9:00-13:00&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;header-main&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;header-content&quot;&gt;
+                    &lt;div class=&quot;logo&quot;&gt;
+                        &lt;h1&gt;さくら内科クリニック&lt;/h1&gt;
+                        &lt;p class=&quot;tagline&quot;&gt;地域に根ざした医療を&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;button class=&quot;hamburger&quot; id=&quot;hamburger&quot;&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;nav class=&quot;main-nav&quot; id=&quot;main-nav&quot;&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;当院について&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;診療案内&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#doctors&quot;&gt;医師紹介&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#access&quot;&gt;アクセス&lt;/a&gt;&lt;/li&gt;
+                            &lt;li class=&quot;nav-reserve&quot;&gt;&lt;a href=&quot;#reserve&quot;&gt;予約&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/nav&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;img src=&quot;https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&amp;h=600&amp;fit=crop&quot; alt=&quot;クリニック外観&quot; style=&quot;position:absolute;width:100%;height:100%;object-fit:cover;opacity:0.3;&quot;&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h2&gt;患者様一人ひとりに寄り添う医療を提供します&lt;/h2&gt;
+            &lt;div class=&quot;hero-buttons&quot;&gt;
+                &lt;button class=&quot;btn-primary&quot;&gt;オンライン予約&lt;/button&gt;
+                &lt;button class=&quot;btn-secondary&quot;&gt;お問い合わせ&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;notice&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;notice-box&quot;&gt;
+                &lt;h3&gt;お知らせ&lt;/h3&gt;
+                &lt;ul class=&quot;notice-list&quot;&gt;
+                    &lt;li&gt;
+                        &lt;span class=&quot;date&quot;&gt;2025.08.01&lt;/span&gt;
+                        &lt;span class=&quot;category&quot;&gt;診療&lt;/span&gt;
+                        &lt;span class=&quot;text&quot;&gt;お盆期間の診療について&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;span class=&quot;date&quot;&gt;2025.07.15&lt;/span&gt;
+                        &lt;span class=&quot;category&quot;&gt;検査&lt;/span&gt;
+                        &lt;span class=&quot;text&quot;&gt;健康診断の予約受付開始&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;span class=&quot;date&quot;&gt;2025.07.01&lt;/span&gt;
+                        &lt;span class=&quot;category&quot;&gt;重要&lt;/span&gt;
+                        &lt;span class=&quot;text&quot;&gt;新型コロナワクチン接種について&lt;/span&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;当院について&lt;/h2&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;h3&gt;地域の皆様の健康を守ります&lt;/h3&gt;
+                    &lt;p&gt;さくら内科クリニックは、2010年の開院以来、地域の皆様の健康維持・増進のお手伝いをさせていただいております。&lt;/p&gt;
+                    &lt;p&gt;一般内科診療を中心に、生活習慣病の管理、健康診断、予防接種など、幅広い医療サービスを提供しています。&lt;/p&gt;
+                    &lt;p&gt;患者様一人ひとりの症状やお悩みに真摯に向き合い、最適な治療をご提案いたします。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-features&quot;&gt;
+                    &lt;div class=&quot;feature&quot;&gt;
+                        &lt;div class=&quot;feature-icon&quot;&gt;🏥&lt;/div&gt;
+                        &lt;h4&gt;充実の設備&lt;/h4&gt;
+                        &lt;p&gt;最新の医療機器を導入&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;feature&quot;&gt;
+                        &lt;div class=&quot;feature-icon&quot;&gt;👨‍⚕️&lt;/div&gt;
+                        &lt;h4&gt;経験豊富な医師&lt;/h4&gt;
+                        &lt;p&gt;専門医による診療&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;feature&quot;&gt;
+                        &lt;div class=&quot;feature-icon&quot;&gt;🕐&lt;/div&gt;
+                        &lt;h4&gt;予約優先制&lt;/h4&gt;
+                        &lt;p&gt;待ち時間を短縮&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;services&quot; class=&quot;services&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;診療案内&lt;/h2&gt;
+            &lt;div class=&quot;services-grid&quot;&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;h3&gt;一般内科&lt;/h3&gt;
+                    &lt;p&gt;風邪、インフルエンザ、腹痛、頭痛など、日常的な体調不良の診療を行います。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;h3&gt;生活習慣病&lt;/h3&gt;
+                    &lt;p&gt;高血圧、糖尿病、脂質異常症などの診断・治療・管理を行います。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;h3&gt;健康診断&lt;/h3&gt;
+                    &lt;p&gt;定期健康診断、雇用時健診、特定健診などに対応しています。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;h3&gt;予防接種&lt;/h3&gt;
+                    &lt;p&gt;インフルエンザ、肺炎球菌など各種予防接種を実施しています。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;h3&gt;在宅医療&lt;/h3&gt;
+                    &lt;p&gt;通院が困難な方への訪問診療も行っております。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;h3&gt;健康相談&lt;/h3&gt;
+                    &lt;p&gt;健康に関する不安やお悩みについてご相談ください。&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;doctors&quot; class=&quot;doctors&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;医師紹介&lt;/h2&gt;
+            &lt;div class=&quot;doctors-list&quot;&gt;
+                &lt;div class=&quot;doctor-card&quot;&gt;
+                    &lt;div class=&quot;doctor-image&quot;&gt;院長写真&lt;/div&gt;
+                    &lt;div class=&quot;doctor-info&quot;&gt;
+                        &lt;h3&gt;院長 佐藤 太郎&lt;/h3&gt;
+                        &lt;p class=&quot;qualification&quot;&gt;日本内科学会認定内科医&lt;/p&gt;
+                        &lt;p class=&quot;message&quot;&gt;患者様の立場に立った、温かい医療を心がけています。どんな小さな不調でもお気軽にご相談ください。&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;doctor-card&quot;&gt;
+                    &lt;div class=&quot;doctor-image&quot;&gt;副院長写真&lt;/div&gt;
+                    &lt;div class=&quot;doctor-info&quot;&gt;
+                        &lt;h3&gt;副院長 田中 花子&lt;/h3&gt;
+                        &lt;p class=&quot;qualification&quot;&gt;日本糖尿病学会専門医&lt;/p&gt;
+                        &lt;p class=&quot;message&quot;&gt;生活習慣病の予防と治療に力を入れています。一緒に健康な生活を目指しましょう。&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;access&quot; class=&quot;access&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;アクセス&lt;/h2&gt;
+            &lt;div class=&quot;access-content&quot;&gt;
+                &lt;div class=&quot;access-info&quot;&gt;
+                    &lt;table&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;住所&lt;/th&gt;
+                            &lt;td&gt;〒150-0001 東京都渋谷区神宮前1-2-3 メディカルビル2F&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;電話&lt;/th&gt;
+                            &lt;td&gt;03-1234-5678&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;診療時間&lt;/th&gt;
+                            &lt;td&gt;
+                                平日: 9:00-12:30 / 14:30-18:00&lt;br&gt;
+                                土曜: 9:00-13:00
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;休診日&lt;/th&gt;
+                            &lt;td&gt;日曜・祝日・土曜午後&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;アクセス&lt;/th&gt;
+                            &lt;td&gt;JR山手線「原宿駅」徒歩5分&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;access-map&quot;&gt;
+                    &lt;div class=&quot;map-placeholder&quot;&gt;地図&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;reserve&quot; class=&quot;reserve&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;ご予約&lt;/h2&gt;
+            &lt;div class=&quot;reserve-content&quot;&gt;
+                &lt;p&gt;オンラインまたはお電話でご予約を承っております&lt;/p&gt;
+                &lt;div class=&quot;reserve-options&quot;&gt;
+                    &lt;div class=&quot;reserve-option&quot;&gt;
+                        &lt;h3&gt;オンライン予約&lt;/h3&gt;
+                        &lt;p&gt;24時間いつでも予約可能&lt;/p&gt;
+                        &lt;button class=&quot;btn-primary&quot;&gt;予約する&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;reserve-option&quot;&gt;
+                        &lt;h3&gt;電話予約&lt;/h3&gt;
+                        &lt;p&gt;診療時間内にお電話ください&lt;/p&gt;
+                        &lt;a href=&quot;tel:03-1234-5678&quot; class=&quot;btn-secondary&quot;&gt;03-1234-5678&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-info&quot;&gt;
+                    &lt;h3&gt;さくら内科クリニック&lt;/h3&gt;
+                    &lt;p&gt;〒150-0001 東京都渋谷区神宮前1-2-3&lt;/p&gt;
+                    &lt;p&gt;TEL: 03-1234-5678&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-links&quot;&gt;
+                    &lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;
+                    &lt;a href=&quot;#&quot;&gt;サイトマップ&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;copyright&quot;&gt;© 2025 さくら内科クリニック All Rights Reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // ハンバーガーメニュー
+const hamburger = document.getElementById(&#x27;hamburger&#x27;);
+const mainNav = document.getElementById(&#x27;main-nav&#x27;);
+
+if (hamburger &amp;&amp; mainNav) {
+    hamburger.addEventListener(&#x27;click&#x27;, function() {
+        this.classList.toggle(&#x27;active&#x27;);
+        mainNav.classList.toggle(&#x27;active&#x27;);
+    });
+
+    // メニューリンクをクリックしたら閉じる
+    const navLinks = mainNav.querySelectorAll(&#x27;a&#x27;);
+    navLinks.forEach(link =&gt; {
+        link.addEventListener(&#x27;click&#x27;, () =&gt; {
+            hamburger.classList.remove(&#x27;active&#x27;);
+            mainNav.classList.remove(&#x27;active&#x27;);
+        });
+    });
+}
+
+// オンライン予約
+document.querySelectorAll(&#x27;.btn-primary&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        alert(&#x27;オンライン予約システムへ遷移します（実装予定）&#x27;);
+    });
+});
+
+// お問い合わせ
+document.querySelector(&#x27;.btn-secondary&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    if (!this.href) {
+        alert(&#x27;お問い合わせフォームへ遷移します（実装予定）&#x27;);
+    }
+});
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header-main&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+    });
+        }
+    });
+});
+
+// お知らせのクリック処理
+document.querySelectorAll(&#x27;.notice-list li&#x27;).forEach(item =&gt; {
+    item.style.cursor = &#x27;pointer&#x27;;
+    item.addEventListener(&#x27;click&#x27;, function() {
+        const text = this.querySelector(&#x27;.text&#x27;).textContent;
+        alert(`お知らせ詳細: ${text}`);
+    });
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="サービス業 - クリニック" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[5420,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/4a151d0310e5f5b1.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"fjyPqXR1LFAJ3vP01kGy6\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"service-clinic\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"service-clinic\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/4a151d0310e5f5b1.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"service-clinic\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"service-clinic\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"WyjHpPxstka1QbXdrHN4x\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"service-clinic\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

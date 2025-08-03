@@ -1,0 +1,1021 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/4a151d0310e5f5b1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;不動産&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Noto Sans JP&#x27;, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header-top {
+    background: #f8f9fa;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.header-top .container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.header-main {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-main .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 32px;
+}
+
+.logo h1 {
+    color: #2c5282;
+    font-size: 24px;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #2c5282;
+}
+
+.contact-btn {
+    background: #2c5282;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-btn:hover {
+    background: #2a5298;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.hero-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+}
+
+/* Search Section */
+.search-section {
+    background: #f8f9fa;
+    padding: 40px 0;
+    margin-top: -80px;
+    position: relative;
+    z-index: 10;
+}
+
+.search-box {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.search-box h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.search-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 30px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    background: #2c5282;
+    color: white;
+    border-color: #2c5282;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.search-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.search-input {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-button {
+    background: #f59e0b;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-button:hover {
+    background: #d97706;
+}
+
+/* Featured Properties */
+.featured {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #2c5282;
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.property-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+}
+
+.property-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ef4444;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.property-badge.popular {
+    background: #f59e0b;
+}
+
+.property-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vr-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.property-info {
+    padding: 20px;
+}
+
+.property-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.property-price {
+    font-size: 24px;
+    color: #2c5282;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.property-details {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.property-location {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.property-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.feature-tag {
+    background: #e0f2fe;
+    color: #0284c7;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.more-properties {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.more-btn {
+    background: white;
+    color: #2c5282;
+    padding: 12px 40px;
+    border: 2px solid #2c5282;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.more-btn:hover {
+    background: #2c5282;
+    color: white;
+}
+
+/* Services */
+.services {
+    background: #f8f9fa;
+    padding: 80px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #2c5282;
+}
+
+/* Stats */
+.stats {
+    background: linear-gradient(135deg, #2c5282 0%, #2a5298 100%);
+    color: white;
+    padding: 60px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 18px;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 80px 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.stars {
+    color: #fbbf24;
+    margin-bottom: 15px;
+}
+
+.testimonial-card p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-author strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.testimonial-author span {
+    color: #666;
+    font-size: 14px;
+}
+
+/* CTA */
+.cta {
+    background: #f8f9fa;
+    padding: 80px 0;
+}
+
+.cta-content {
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #2c5282;
+}
+
+.cta-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-btn {
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cta-btn.primary {
+    background: #2c5282;
+    color: white;
+}
+
+.cta-btn.secondary {
+    background: white;
+    color: #2c5282;
+    border: 2px solid #2c5282;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background: #1e293b;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    color: #60a5fa;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #334155;
+    color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-main .container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    
+    .nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .hero-content h2 {
+        font-size: 32px;
+    }
+    
+    .search-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .property-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;header-top&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;span&gt;📞 0120-XXX-XXX&lt;/span&gt;
+                &lt;span&gt;営業時間: 10:00-19:00&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;header-main&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;span class=&quot;logo-icon&quot;&gt;🏠&lt;/span&gt;
+                    &lt;h1&gt;DREAM HOME&lt;/h1&gt;
+                &lt;/div&gt;
+                &lt;nav class=&quot;nav&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#search&quot;&gt;物件検索&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#featured&quot;&gt;おすすめ物件&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#service&quot;&gt;サービス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;会社情報&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+                &lt;button class=&quot;contact-btn&quot;&gt;無料相談&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-image&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&amp;h=600&amp;fit=crop&quot; alt=&quot;モダンな住宅&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h2&gt;理想の住まいが、&lt;br&gt;きっと見つかる。&lt;/h2&gt;
+            &lt;p&gt;豊富な物件情報と確かなサポートで、あなたの新生活を応援します&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;search&quot; class=&quot;search-section&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;search-box&quot;&gt;
+                &lt;h3&gt;物件を検索&lt;/h3&gt;
+                &lt;div class=&quot;search-tabs&quot;&gt;
+                    &lt;button class=&quot;tab-btn active&quot; data-type=&quot;rent&quot;&gt;賃貸&lt;/button&gt;
+                    &lt;button class=&quot;tab-btn&quot; data-type=&quot;buy&quot;&gt;売買&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;form class=&quot;search-form&quot;&gt;
+                    &lt;div class=&quot;search-row&quot;&gt;
+                        &lt;select class=&quot;search-input&quot;&gt;
+                            &lt;option&gt;エリアを選択&lt;/option&gt;
+                            &lt;option&gt;東京23区&lt;/option&gt;
+                            &lt;option&gt;横浜市&lt;/option&gt;
+                            &lt;option&gt;さいたま市&lt;/option&gt;
+                            &lt;option&gt;千葉市&lt;/option&gt;
+                        &lt;/select&gt;
+                        &lt;select class=&quot;search-input&quot;&gt;
+                            &lt;option&gt;物件種別&lt;/option&gt;
+                            &lt;option&gt;マンション&lt;/option&gt;
+                            &lt;option&gt;アパート&lt;/option&gt;
+                            &lt;option&gt;一戸建て&lt;/option&gt;
+                            &lt;option&gt;土地&lt;/option&gt;
+                        &lt;/select&gt;
+                        &lt;select class=&quot;search-input&quot;&gt;
+                            &lt;option&gt;価格帯&lt;/option&gt;
+                            &lt;option&gt;〜5万円&lt;/option&gt;
+                            &lt;option&gt;5〜10万円&lt;/option&gt;
+                            &lt;option&gt;10〜15万円&lt;/option&gt;
+                            &lt;option&gt;15万円〜&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;search-row&quot;&gt;
+                        &lt;select class=&quot;search-input&quot;&gt;
+                            &lt;option&gt;間取り&lt;/option&gt;
+                            &lt;option&gt;ワンルーム&lt;/option&gt;
+                            &lt;option&gt;1K/1DK&lt;/option&gt;
+                            &lt;option&gt;1LDK/2K&lt;/option&gt;
+                            &lt;option&gt;2LDK/3K&lt;/option&gt;
+                            &lt;option&gt;3LDK以上&lt;/option&gt;
+                        &lt;/select&gt;
+                        &lt;input type=&quot;text&quot; class=&quot;search-input&quot; placeholder=&quot;駅名・路線名&quot;&gt;
+                        &lt;button type=&quot;submit&quot; class=&quot;search-button&quot;&gt;検索する&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;featured&quot; class=&quot;featured&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;おすすめ物件&lt;/h2&gt;
+            &lt;div class=&quot;property-grid&quot;&gt;
+                &lt;div class=&quot;property-card&quot;&gt;
+                    &lt;div class=&quot;property-badge&quot;&gt;新着&lt;/div&gt;
+                    &lt;div class=&quot;property-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;物件1&quot;&gt;
+                        &lt;button class=&quot;vr-btn&quot;&gt;360° VR内覧&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;property-info&quot;&gt;
+                        &lt;h3&gt;タワーマンション渋谷&lt;/h3&gt;
+                        &lt;p class=&quot;property-price&quot;&gt;¥180,000/月&lt;/p&gt;
+                        &lt;div class=&quot;property-details&quot;&gt;
+                            &lt;span&gt;2LDK&lt;/span&gt;
+                            &lt;span&gt;65.5㎡&lt;/span&gt;
+                            &lt;span&gt;15階&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;property-location&quot;&gt;渋谷駅 徒歩5分&lt;/p&gt;
+                        &lt;div class=&quot;property-features&quot;&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;ペット可&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;オートロック&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;駐車場有&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;property-card&quot;&gt;
+                    &lt;div class=&quot;property-badge popular&quot;&gt;人気&lt;/div&gt;
+                    &lt;div class=&quot;property-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;物件2&quot;&gt;
+                        &lt;button class=&quot;vr-btn&quot;&gt;360° VR内覧&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;property-info&quot;&gt;
+                        &lt;h3&gt;デザイナーズアパート&lt;/h3&gt;
+                        &lt;p class=&quot;property-price&quot;&gt;¥95,000/月&lt;/p&gt;
+                        &lt;div class=&quot;property-details&quot;&gt;
+                            &lt;span&gt;1LDK&lt;/span&gt;
+                            &lt;span&gt;42.3㎡&lt;/span&gt;
+                            &lt;span&gt;3階&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;property-location&quot;&gt;恵比寿駅 徒歩8分&lt;/p&gt;
+                        &lt;div class=&quot;property-features&quot;&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;新築&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;バルコニー&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;property-card&quot;&gt;
+                    &lt;div class=&quot;property-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;物件3&quot;&gt;
+                        &lt;button class=&quot;vr-btn&quot;&gt;360° VR内覧&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;property-info&quot;&gt;
+                        &lt;h3&gt;ファミリー向け一戸建て&lt;/h3&gt;
+                        &lt;p class=&quot;property-price&quot;&gt;¥4,500万円&lt;/p&gt;
+                        &lt;div class=&quot;property-details&quot;&gt;
+                            &lt;span&gt;4LDK&lt;/span&gt;
+                            &lt;span&gt;120.8㎡&lt;/span&gt;
+                            &lt;span&gt;土地180㎡&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;property-location&quot;&gt;世田谷区 成城&lt;/p&gt;
+                        &lt;div class=&quot;property-features&quot;&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;庭付き&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;駐車場2台&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;太陽光発電&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;property-card&quot;&gt;
+                    &lt;div class=&quot;property-badge&quot;&gt;値下げ&lt;/div&gt;
+                    &lt;div class=&quot;property-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;物件4&quot;&gt;
+                        &lt;button class=&quot;vr-btn&quot;&gt;360° VR内覧&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;property-info&quot;&gt;
+                        &lt;h3&gt;リノベーションマンション&lt;/h3&gt;
+                        &lt;p class=&quot;property-price&quot;&gt;
+                            &lt;span class=&quot;old-price&quot;&gt;¥125,000&lt;/span&gt;
+                            ¥110,000/月
+                        &lt;/p&gt;
+                        &lt;div class=&quot;property-details&quot;&gt;
+                            &lt;span&gt;1LDK&lt;/span&gt;
+                            &lt;span&gt;55.2㎡&lt;/span&gt;
+                            &lt;span&gt;8階&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;property-location&quot;&gt;品川駅 徒歩10分&lt;/p&gt;
+                        &lt;div class=&quot;property-features&quot;&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;リノベ済&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;南向き&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;more-properties&quot;&gt;
+                &lt;button class=&quot;more-btn&quot;&gt;もっと見る&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;service&quot; class=&quot;services&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;私たちのサービス&lt;/h2&gt;
+            &lt;div class=&quot;services-grid&quot;&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🔍&lt;/div&gt;
+                    &lt;h3&gt;物件検索サポート&lt;/h3&gt;
+                    &lt;p&gt;お客様のご要望に合った物件を専門スタッフが丁寧にお探しします&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🏠&lt;/div&gt;
+                    &lt;h3&gt;VR内覧サービス&lt;/h3&gt;
+                    &lt;p&gt;自宅にいながら360度VRで物件を内覧できます&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;📋&lt;/div&gt;
+                    &lt;h3&gt;契約手続きサポート&lt;/h3&gt;
+                    &lt;p&gt;複雑な契約手続きも専門スタッフが丁寧にサポート&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🚚&lt;/div&gt;
+                    &lt;h3&gt;引越しサポート&lt;/h3&gt;
+                    &lt;p&gt;提携引越し業者の紹介で、スムーズな新生活をお手伝い&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;stats&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;stats-grid&quot;&gt;
+                &lt;div class=&quot;stat-item&quot;&gt;
+                    &lt;span class=&quot;stat-number&quot;&gt;15,000+&lt;/span&gt;
+                    &lt;span class=&quot;stat-label&quot;&gt;取扱物件数&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;stat-item&quot;&gt;
+                    &lt;span class=&quot;stat-number&quot;&gt;98%&lt;/span&gt;
+                    &lt;span class=&quot;stat-label&quot;&gt;顧客満足度&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;stat-item&quot;&gt;
+                    &lt;span class=&quot;stat-number&quot;&gt;25年&lt;/span&gt;
+                    &lt;span class=&quot;stat-label&quot;&gt;営業実績&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;stat-item&quot;&gt;
+                    &lt;span class=&quot;stat-number&quot;&gt;50店舗&lt;/span&gt;
+                    &lt;span class=&quot;stat-label&quot;&gt;全国展開&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;testimonials&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;お客様の声&lt;/h2&gt;
+            &lt;div class=&quot;testimonials-grid&quot;&gt;
+                &lt;div class=&quot;testimonial-card&quot;&gt;
+                    &lt;div class=&quot;stars&quot;&gt;⭐⭐⭐⭐⭐&lt;/div&gt;
+                    &lt;p&gt;初めての一人暮らしで不安でしたが、スタッフの方が親身になって物件を探してくださいました。理想の部屋が見つかって本当に感謝しています。&lt;/p&gt;
+                    &lt;div class=&quot;testimonial-author&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&amp;h=50&amp;fit=crop&quot; alt=&quot;顧客1&quot;&gt;
+                        &lt;div&gt;
+                            &lt;strong&gt;田中 美咲様&lt;/strong&gt;
+                            &lt;span&gt;20代 会社員&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;testimonial-card&quot;&gt;
+                    &lt;div class=&quot;stars&quot;&gt;⭐⭐⭐⭐⭐&lt;/div&gt;
+                    &lt;p&gt;VR内覧サービスのおかげで、遠方からでも物件を詳しく確認できました。実際に見た時も想像通りで安心しました。&lt;/p&gt;
+                    &lt;div class=&quot;testimonial-author&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&amp;h=50&amp;fit=crop&quot; alt=&quot;顧客2&quot;&gt;
+                        &lt;div&gt;
+                            &lt;strong&gt;佐藤 健太様&lt;/strong&gt;
+                            &lt;span&gt;30代 エンジニア&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;testimonial-card&quot;&gt;
+                    &lt;div class=&quot;stars&quot;&gt;⭐⭐⭐⭐⭐&lt;/div&gt;
+                    &lt;p&gt;家族4人での引越しでしたが、子供の学校や通勤を考慮した最適な物件を提案していただきました。&lt;/p&gt;
+                    &lt;div class=&quot;testimonial-author&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&amp;h=50&amp;fit=crop&quot; alt=&quot;顧客3&quot;&gt;
+                        &lt;div&gt;
+                            &lt;strong&gt;山田 太郎様&lt;/strong&gt;
+                            &lt;span&gt;40代 会社経営&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;cta&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;cta-content&quot;&gt;
+                &lt;h2&gt;理想の住まい探しを始めましょう&lt;/h2&gt;
+                &lt;p&gt;経験豊富なスタッフが、あなたの新生活をサポートします&lt;/p&gt;
+                &lt;div class=&quot;cta-buttons&quot;&gt;
+                    &lt;button class=&quot;cta-btn primary&quot;&gt;無料相談を予約&lt;/button&gt;
+                    &lt;button class=&quot;cta-btn secondary&quot;&gt;資料請求&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;DREAM HOME&lt;/h3&gt;
+                    &lt;p&gt;理想の住まいを見つける&lt;/p&gt;
+                    &lt;p&gt;宅地建物取引業免許番号&lt;br&gt;東京都知事(5)第XXXXX号&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;サービス&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;賃貸物件&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;売買物件&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;不動産投資&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;法人向けサービス&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;会社情報&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;会社概要&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;採用情報&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;店舗一覧&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;お問い合わせ&lt;/h3&gt;
+                    &lt;p&gt;📞 0120-XXX-XXX&lt;/p&gt;
+                    &lt;p&gt;📧 info@dreamhome.jp&lt;/p&gt;
+                    &lt;p&gt;営業時間: 10:00-19:00&lt;br&gt;定休日: 水曜日&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;copyright&quot;&gt;&amp;copy; 2025 DREAM HOME. All rights reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // タブ切り替え
+document.querySelectorAll(&#x27;.tab-btn&#x27;).forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, function() {
+        document.querySelectorAll(&#x27;.tab-btn&#x27;).forEach(b =&gt; b.classList.remove(&#x27;active&#x27;));
+        this.classList.add(&#x27;active&#x27;);
+        
+        const type = this.dataset.type;
+        // タブに応じて検索フォームの内容を変更する処理
+        console.log(`切り替え: ${type}`);
+    });
+});
+
+// VR内覧ボタン
+document.querySelectorAll(&#x27;.vr-btn&#x27;).forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        alert(&#x27;VR内覧機能を起動します（デモ）&#x27;);
+    });
+});
+
+// 検索フォーム
+document.querySelector(&#x27;.search-form&#x27;).addEventListener(&#x27;submit&#x27;, function(e) {
+    e.preventDefault();
+    alert(&#x27;検索を実行します&#x27;);
+});
+
+// もっと見るボタン
+document.querySelector(&#x27;.more-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;さらに物件を読み込みます&#x27;);
+});
+
+// 無料相談ボタン
+document.querySelectorAll(&#x27;.cta-btn&#x27;).forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, function() {
+        const action = this.textContent;
+        alert(`${action}ページへ移動します`);
+    });
+});
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header-main&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+    });
+        }
+    });
+});
+
+// スクロールアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -50px 0px&#x27;
+};
+
+const observer = new IntersectionObserver((entries) =&gt; {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = &#x27;1&#x27;;
+            entry.target.style.transform = &#x27;translateY(0)&#x27;;
+        }
+    });
+}, observerOptions);
+
+// アニメーション対象要素
+document.querySelectorAll(&#x27;.property-card, .service-card, .testimonial-card&#x27;).forEach(el =&gt; {
+    el.style.opacity = &#x27;0&#x27;;
+    el.style.transform = &#x27;translateY(20px)&#x27;;
+    el.style.transition = &#x27;opacity 0.5s, transform 0.5s&#x27;;
+    observer.observe(el);
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="不動産" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[5420,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-6955ecff5534e01f.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/4a151d0310e5f5b1.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"fjyPqXR1LFAJ3vP01kGy6\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"real-estate\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"real-estate\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/4a151d0310e5f5b1.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"real-estate\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"real-estate\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"kyMXjwMqJ7Esn-iRN-qnT\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"real-estate\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>
