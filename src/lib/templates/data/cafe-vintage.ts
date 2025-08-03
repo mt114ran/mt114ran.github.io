@@ -348,6 +348,18 @@ section {
 }
 
 @media (max-width: 768px) {
+    .header,
+    .header-main {
+        padding: 10px 0;
+    }
+    
+    .header-inner,
+    .header-container {
+        gap: 10px;
+        padding: 10px 20px;
+    }
+    
+    
     .logo {
         font-size: 2rem;
     }

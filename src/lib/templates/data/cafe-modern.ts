@@ -414,7 +414,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
-            });
+    });
         }
     });
 });

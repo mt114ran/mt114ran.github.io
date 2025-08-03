@@ -946,7 +946,8 @@ td.weight {
 @media (max-width: 768px) {
     .header .container {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
+        padding: 10px 0;
     }
     
     .nav ul {
@@ -1033,7 +1034,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
-            });
+    });
         }
     });
 });
