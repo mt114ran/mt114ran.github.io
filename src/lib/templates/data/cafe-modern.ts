@@ -23,9 +23,14 @@ export const cafeModernTemplate: WebTemplate = {
 </head>
 <body>
     <header class="header">
-        <nav class="navbar">
+        <nav class="navbar" id="navbar">
             <div class="nav-container">
                 <div class="nav-logo">Modern Cafe</div>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <ul class="nav-menu">
                     <li><a href="#about">About</a></li>
                     <li><a href="#menu">Menu</a></li>
