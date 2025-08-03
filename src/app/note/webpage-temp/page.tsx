@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { getAllTemplates } from '@/lib/templates'
-import TemplateCarousel from '@/components/templates/TemplateCarousel'
+import TemplateCard from '@/components/templates/TemplateCard'
 import { TEMPLATE_CATEGORIES } from '@/lib/templates/types'
 
 export default function WebPageTemplatesPage() {
@@ -67,15 +67,20 @@ export default function WebPageTemplatesPage() {
           </div>
         </div>
 
-        {/* カテゴリー別カルーセル表示 */}
+        {/* カテゴリー別グリッド表示 */}
         <div className="space-y-12">
           {templatesByCategory.map(({ category, templates: categoryTemplates }) => (
             categoryTemplates.length > 0 && (
-              <TemplateCarousel 
-                key={category}
-                category={category} 
-                templates={categoryTemplates} 
-              />
+              <div key={category}>
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                  {category}
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {categoryTemplates.map((template) => (
+                    <TemplateCard key={template.id} template={template} />
+                  ))}
+                </div>
+              </div>
             )
           ))}
         </div>

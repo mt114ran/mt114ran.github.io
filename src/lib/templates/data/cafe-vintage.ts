@@ -375,6 +375,45 @@ section {
     
     .menu-board {
         padding: 1rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .menu-column h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .menu-item {
+        flex-direction: row;
+        align-items: center;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        border-bottom: none;
+    }
+    
+    .menu-item span:first-child {
+        flex: 1;
+        margin-right: 1rem;
+    }
+    
+    .menu-item .price {
+        background: #5d4037;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        white-space: nowrap;
+        min-width: 60px;
+        text-align: center;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-content {
+        grid-template-columns: 1fr;
     }
 }`,
     js: `// スムーズスクロール実装
