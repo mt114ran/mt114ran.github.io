@@ -1,41 +1,67 @@
-# /note/webpage-temp 実装タスクリスト
+# テンプレート拡充タスクリスト
 
-## Phase 1: 基盤構築
-- [ ] /note/webpage-temp ルートディレクトリの作成
-- [ ] テンプレートデータ管理システムの構築（lib/templates/）
-- [ ] TypeScript型定義の作成
+## フェーズ1: 新規ブランチ作成と準備
+- [ ] feature/expand-templates-to-50ブランチを作成
+- [ ] 作業計画の最終確認
 
-## Phase 2: データ作成
-- [ ] テンプレートデータ構造の実装
-- [ ] カフェモダンテンプレートの作成
-- [ ] カフェヴィンテージテンプレートの作成
-- [ ] カフェミニマルテンプレートの作成
-- [ ] 小売店ファッションテンプレートの作成
-- [ ] 小売店雑貨テンプレートの作成
-- [ ] レストラン和食テンプレートの作成
-- [ ] レストラン洋食テンプレートの作成
-- [ ] サービス業美容室テンプレートの作成
-- [ ] サービス業クリニックテンプレートの作成
-- [ ] ポートフォリオフリーランステンプレートの作成
+## フェーズ2: カフェカテゴリ追加（7個）
+- [ ] cafe-natural.ts - ナチュラルテイストのカフェ
+- [ ] cafe-industrial.ts - インダストリアルデザインのカフェ
+- [ ] cafe-japanese.ts - 和風カフェ
+- [ ] cafe-luxury.ts - 高級カフェ
+- [ ] cafe-coworking.ts - コワーキングカフェ
+- [ ] cafe-bookshop.ts - ブックカフェ
+- [ ] cafe-organic.ts - オーガニックカフェ
 
-## Phase 3: UIコンポーネント
-- [ ] TemplateCardコンポーネントの実装
-- [ ] TemplateViewerコンポーネントの実装
-- [ ] グリッドレイアウトの実装
-- [ ] レスポンシブデザインの適用
+## フェーズ3: 小売店カテゴリ追加（8個）
+- [ ] retail-bookstore.ts - 書店
+- [ ] retail-boutique.ts - ブティック
+- [ ] retail-electronics.ts - 家電量販店
+- [ ] retail-jewelry.ts - ジュエリーショップ
+- [ ] retail-sports.ts - スポーツ用品店
+- [ ] retail-home.ts - ホームセンター
+- [ ] retail-bakery.ts - ベーカリー
+- [ ] retail-flower.ts - フラワーショップ
 
-## Phase 4: ページ実装
-- [ ] /note/webpage-temp/page.tsx（一覧ページ）の実装
-- [ ] /note/webpage-temp/[id]/page.tsx（詳細ページ）の実装
-- [ ] 静的生成パラメータの設定
+## フェーズ4: レストランカテゴリ追加（8個）
+- [ ] restaurant-italian.ts - イタリアンレストラン
+- [ ] restaurant-chinese.ts - 中華レストラン
+- [ ] restaurant-french.ts - フレンチレストラン
+- [ ] restaurant-sushi.ts - 寿司店
+- [ ] restaurant-ramen.ts - ラーメン店
+- [ ] restaurant-bbq.ts - 焼肉店
+- [ ] restaurant-vegetarian.ts - ベジタリアンレストラン
+- [ ] restaurant-fastfood.ts - ファストフード店
 
-## Phase 5: インタラクション
-- [ ] コード表示/非表示トグル機能
-- [ ] プレビューモード切替（PC/モバイル）
-- [ ] コピー機能の実装
+## フェーズ5: サービス業カテゴリ追加（5個）
+- [ ] service-dental.ts - 歯科医院
+- [ ] service-law.ts - 法律事務所
+- [ ] service-accounting.ts - 会計事務所
+- [ ] service-insurance.ts - 保険代理店
+- [ ] service-cleaning.ts - クリーニング店
 
-## Phase 6: 統合
-- [ ] 個人作業用記事へのリンク追加
-- [ ] ナビゲーション更新
-- [ ] テスト実装
-- [ ] パフォーマンス最適化
+## フェーズ6: ポートフォリオカテゴリ追加（9個）
+- [ ] portfolio-designer.ts - デザイナーポートフォリオ
+- [ ] portfolio-photographer.ts - フォトグラファーポートフォリオ
+- [ ] portfolio-developer.ts - 開発者ポートフォリオ
+- [ ] portfolio-artist.ts - アーティストポートフォリオ
+- [ ] portfolio-architect.ts - 建築家ポートフォリオ
+- [ ] portfolio-writer.ts - ライターポートフォリオ
+- [ ] portfolio-musician.ts - ミュージシャンポートフォリオ
+- [ ] portfolio-agency.ts - エージェンシーポートフォリオ
+- [ ] portfolio-consultant.ts - コンサルタントポートフォリオ
+
+## フェーズ7: インデックスファイル更新
+- [ ] src/lib/templates/index.tsに新規テンプレートをインポート
+- [ ] templates配列に新規テンプレートを追加
+
+## フェーズ8: テスト&検証
+- [ ] ビルドエラーのチェック
+- [ ] TypeScriptの型チェック
+- [ ] UIでの表示確認
+- [ ] レスポンシブデザインの確認
+
+## フェーズ9: PR作成
+- [ ] コミットメッセージの作成
+- [ ] PRの作成
+- [ ] スクリーンショットの追加
