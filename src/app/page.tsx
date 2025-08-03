@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import { getSortedPostsData } from '@/lib/posts'
 import HomeTabs from '@/components/HomeTabs'
