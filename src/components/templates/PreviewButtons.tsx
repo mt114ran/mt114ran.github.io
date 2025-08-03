@@ -9,7 +9,7 @@ interface PreviewButtonsProps {
 export default function PreviewButtons({ templateId }: PreviewButtonsProps) {
   const handlePreviewClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
-    window.open(`/note/webpage-temp/${templateId}/preview`, '_blank')
+    window.open(`/note/webpage-temp/${templateId}/preview`, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -17,6 +17,8 @@ export default function PreviewButtons({ templateId }: PreviewButtonsProps) {
       <a
         href={`/note/webpage-temp/${templateId}/preview`}
         onClick={handlePreviewClick}
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors cursor-pointer"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
