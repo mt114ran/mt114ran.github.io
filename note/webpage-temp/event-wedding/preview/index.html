@@ -1,0 +1,2137 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;結婚式・ウェディング&lt;/title&gt;
+    &lt;style&gt;
+        
+:root {
+    --primary-color: #d4a574;
+    --secondary-color: #8b7d6b;
+    --accent-color: #e8c4a0;
+    --text-dark: #2c2c2c;
+    --text-light: #666;
+    --background-light: #faf9f7;
+    --background-white: #ffffff;
+    --border-color: #e5e5e5;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --gradient-gold: linear-gradient(135deg, #d4a574 0%, #e8c4a0 100%);
+    --gradient-overlay: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Noto Sans JP&#x27;, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.nav-brand .brand-text {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: italic;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 400;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu a::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #f8f4f0 0%, #e8d5c4 50%, #d4a574 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease-in-out infinite;
+}
+
+.hero-background::before {
+    content: &#x27;&#x27;;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(212, 165, 116, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(232, 196, 160, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(139, 125, 107, 0.2) 0%, transparent 50%);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title .accent {
+    color: var(--primary-color);
+    position: relative;
+}
+
+.hero-title .accent::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-gold);
+    border-radius: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: var(--gradient-gold);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(212, 165, 116, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 50px;
+    background: var(--primary-color);
+    border-radius: 1px;
+}
+
+.scroll-indicator span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(20px); }
+}
+
+/* Section Styles */
+section {
+    padding: 100px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-header h2 {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.section-header h2::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--gradient-gold);
+    border-radius: 2px;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* About Section */
+.about {
+    background: var(--background-light);
+}
+
+.venues {
+    display: grid;
+    gap: 40px;
+}
+
+.venue-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    min-height: 400px;
+}
+
+.venue-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.venue-card:nth-child(even) {
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.venue-card:nth-child(even) .venue-image {
+    order: 2;
+}
+
+.venue-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.venue-placeholder {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.venue-placeholder.chapel {
+    background: linear-gradient(135deg, #e8d5c4 0%, #d4a574 100%);
+}
+
+.venue-placeholder.garden {
+    background: linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
+}
+
+.venue-placeholder.banquet {
+    background: linear-gradient(135deg, #e1bee7 0%, #ba68c8 100%);
+}
+
+.venue-placeholder::before {
+    content: &#x27;&#x27;;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+.venue-info {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.venue-info h3 {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.venue-info p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.venue-features {
+    list-style: none;
+}
+
+.venue-features li {
+    padding: 8px 0;
+    color: var(--text-light);
+    position: relative;
+    padding-left: 25px;
+}
+
+.venue-features li::before {
+    content: &#x27;✓&#x27;;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Plans Section */
+.plans {
+    background: var(--background-white);
+}
+
+.plan-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.plan-tab {
+    padding: 15px 30px;
+    border: 2px solid var(--border-color);
+    background: transparent;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.plan-tab.active,
+.plan-tab:hover {
+    border-color: var(--primary-color);
+    background: var(--gradient-gold);
+    color: white;
+}
+
+.plan-content {
+    position: relative;
+}
+
+.plan-details {
+    display: none;
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: var(--shadow-light);
+}
+
+.plan-details.active {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.plan-header h3 {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.plan-price .price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.plan-price .guests {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-left: 10px;
+}
+
+.plan-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.feature-group h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.feature-group ul {
+    list-style: none;
+}
+
+.feature-group li {
+    padding: 10px 0;
+    color: var(--text-light);
+    position: relative;
+    padding-left: 25px;
+}
+
+.feature-group li::before {
+    content: &#x27;✓&#x27;;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.plan-cta {
+    text-align: center;
+    margin-top: 60px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gallery Section */
+.gallery {
+    background: var(--background-light);
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border: 2px solid var(--border-color);
+    background: white;
+    border-radius: 25px;
+    font-size: 1rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gallery-image.ceremony-1 {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+}
+
+.gallery-image.ceremony-2 {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+}
+
+.gallery-image.reception-1 {
+    background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+}
+
+.gallery-image.reception-2 {
+    background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+}
+
+.gallery-image.garden-1 {
+    background: linear-gradient(135deg, #55a3ff 0%, #003d82 100%);
+}
+
+.gallery-image.garden-2 {
+    background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+}
+
+.gallery-image.details-1 {
+    background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+}
+
+.gallery-image.details-2 {
+    background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--gradient-overlay);
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: var(--background-white);
+}
+
+.testimonial-slider {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-track {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.testimonial-item {
+    display: none;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+}
+
+.testimonial-item.active {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+.testimonial-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 400px;
+}
+
+.testimonial-image {
+    position: relative;
+}
+
+.testimonial-image.couple-1 {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+}
+
+.testimonial-image.couple-2 {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+}
+
+.testimonial-image.couple-3 {
+    background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+}
+
+.testimonial-text {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimonial-text blockquote {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    font-style: italic;
+    position: relative;
+}
+
+.testimonial-text blockquote::before {
+    content: &#x27;&quot;&#x27;;
+    font-size: 4rem;
+    color: var(--accent-color);
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-family: &#x27;Crimson Text&#x27;, serif;
+}
+
+.testimonial-author h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.testimonial-author p {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.testimonial-rating span {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.testimonial-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-prev,
+.testimonial-next {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    border-radius: 50%;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.testimonial-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--primary-color);
+}
+
+/* Fair Section */
+.fair {
+    background: var(--background-light);
+}
+
+.fair-events {
+    display: grid;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.fair-item {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow-light);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 30px;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.fair-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.fair-date {
+    text-align: center;
+    padding: 20px;
+    background: var(--gradient-gold);
+    border-radius: 15px;
+    color: white;
+    min-width: 80px;
+}
+
+.fair-date .month {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.fair-date .day {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.fair-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.fair-info p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.fair-details {
+    display: flex;
+    gap: 20px;
+}
+
+.fair-details .time,
+.fair-details .price {
+    background: var(--background-light);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Contact Section */
+.contact {
+    background: var(--background-white);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.phone {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    background: var(--background-light);
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.checkbox-label input[type=&quot;checkbox&quot;] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label input[type=&quot;checkbox&quot;]:checked + .checkmark {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-label input[type=&quot;checkbox&quot;]:checked + .checkmark::after {
+    content: &#x27;✓&#x27;;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.footer-brand p {
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 50px;
+        transition: left 0.3s ease;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 20px 0;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .venue-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .venue-card:nth-child(even) {
+        grid-template-columns: 1fr;
+    }
+
+    .venue-card:nth-child(even) .venue-image {
+        order: 0;
+    }
+
+    .plan-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-features {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .fair-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact-form {
+        padding: 30px 20px;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;nav class=&quot;nav&quot;&gt;
+            &lt;div class=&quot;nav-brand&quot;&gt;
+                &lt;span class=&quot;brand-text&quot;&gt;Belle Mariage&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;ul class=&quot;nav-menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;会場紹介&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#plans&quot;&gt;プラン&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#gallery&quot;&gt;ギャラリー&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#testimonials&quot;&gt;お客様の声&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#fair&quot;&gt;ブライダルフェア&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class=&quot;hamburger&quot;&gt;
+                &lt;span&gt;&lt;/span&gt;
+                &lt;span&gt;&lt;/span&gt;
+                &lt;span&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+            &lt;div class=&quot;hero-background&quot;&gt;
+                &lt;div class=&quot;hero-overlay&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;hero-content&quot;&gt;
+                &lt;h1 class=&quot;hero-title&quot;&gt;あなたの特別な一日を&lt;br&gt;&lt;span class=&quot;accent&quot;&gt;永遠の記憶&lt;/span&gt;に&lt;/h1&gt;
+                &lt;p class=&quot;hero-subtitle&quot;&gt;Belle Mariageが叶える、心に残るウェディング&lt;/p&gt;
+                &lt;div class=&quot;hero-buttons&quot;&gt;
+                    &lt;a href=&quot;#contact&quot; class=&quot;btn btn-primary&quot;&gt;見学予約&lt;/a&gt;
+                    &lt;a href=&quot;#plans&quot; class=&quot;btn btn-outline&quot;&gt;プラン詳細&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;scroll-indicator&quot;&gt;
+                &lt;span&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;section-header&quot;&gt;
+                    &lt;h2&gt;会場紹介&lt;/h2&gt;
+                    &lt;p&gt;愛を誓う特別な場所として、心に残る空間をご用意いたします&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;venues&quot;&gt;
+                    &lt;div class=&quot;venue-card&quot;&gt;
+                        &lt;div class=&quot;venue-image&quot;&gt;
+                            &lt;div class=&quot;venue-placeholder chapel&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;venue-info&quot;&gt;
+                            &lt;h3&gt;チャペル&lt;/h3&gt;
+                            &lt;p&gt;自然光が差し込む神聖な空間で、永遠の愛を誓います。バージンロードを歩く瞬間は、一生の宝物となるでしょう。&lt;/p&gt;
+                            &lt;ul class=&quot;venue-features&quot;&gt;
+                                &lt;li&gt;収容人数: 80名&lt;/li&gt;
+                                &lt;li&gt;天然大理石のバージンロード&lt;/li&gt;
+                                &lt;li&gt;ステンドグラス装飾&lt;/li&gt;
+                                &lt;li&gt;オルガン演奏対応&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;venue-card&quot;&gt;
+                        &lt;div class=&quot;venue-image&quot;&gt;
+                            &lt;div class=&quot;venue-placeholder garden&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;venue-info&quot;&gt;
+                            &lt;h3&gt;ガーデン&lt;/h3&gt;
+                            &lt;p&gt;四季折々の美しい自然に囲まれたガーデンウェディング。開放感あふれる空間で、アットホームな式を挙げられます。&lt;/p&gt;
+                            &lt;ul class=&quot;venue-features&quot;&gt;
+                                &lt;li&gt;収容人数: 120名&lt;/li&gt;
+                                &lt;li&gt;季節の花々で彩られた会場&lt;/li&gt;
+                                &lt;li&gt;屋外人前式対応&lt;/li&gt;
+                                &lt;li&gt;ナイトウェディング可能&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;venue-card&quot;&gt;
+                        &lt;div class=&quot;venue-image&quot;&gt;
+                            &lt;div class=&quot;venue-placeholder banquet&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;venue-info&quot;&gt;
+                            &lt;h3&gt;バンケットホール&lt;/h3&gt;
+                            &lt;p&gt;上品で洗練されたバンケットホール。大切なゲストをおもてなしする、特別な披露宴会場です。&lt;/p&gt;
+                            &lt;ul class=&quot;venue-features&quot;&gt;
+                                &lt;li&gt;収容人数: 150名&lt;/li&gt;
+                                &lt;li&gt;高級感あふれる内装&lt;/li&gt;
+                                &lt;li&gt;最新音響・映像設備&lt;/li&gt;
+                                &lt;li&gt;専属シェフによる料理&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;plans&quot; class=&quot;plans&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;section-header&quot;&gt;
+                    &lt;h2&gt;ウェディングプラン&lt;/h2&gt;
+                    &lt;p&gt;お二人の理想に合わせた、多彩なプランをご用意しています&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;plan-tabs&quot;&gt;
+                    &lt;button class=&quot;plan-tab active&quot; data-plan=&quot;basic&quot;&gt;ベーシック&lt;/button&gt;
+                    &lt;button class=&quot;plan-tab&quot; data-plan=&quot;premium&quot;&gt;プレミアム&lt;/button&gt;
+                    &lt;button class=&quot;plan-tab&quot; data-plan=&quot;luxury&quot;&gt;ラグジュアリー&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;plan-content&quot;&gt;
+                    &lt;div class=&quot;plan-details active&quot; data-plan=&quot;basic&quot;&gt;
+                        &lt;div class=&quot;plan-header&quot;&gt;
+                            &lt;h3&gt;ベーシックプラン&lt;/h3&gt;
+                            &lt;div class=&quot;plan-price&quot;&gt;
+                                &lt;span class=&quot;price&quot;&gt;¥980,000&lt;/span&gt;
+                                &lt;span class=&quot;guests&quot;&gt;（60名様）&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;plan-features&quot;&gt;
+                            &lt;div class=&quot;feature-group&quot;&gt;
+                                &lt;h4&gt;式場・設備&lt;/h4&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;チャペル挙式&lt;/li&gt;
+                                    &lt;li&gt;バンケットホール披露宴&lt;/li&gt;
+                                    &lt;li&gt;ブライズルーム使用&lt;/li&gt;
+                                    &lt;li&gt;音響・映像設備&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;feature-group&quot;&gt;
+                                &lt;h4&gt;料理・ドリンク&lt;/h4&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;フレンチコース料理&lt;/li&gt;
+                                    &lt;li&gt;ウェディングケーキ&lt;/li&gt;
+                                    &lt;li&gt;フリードリンク（3時間）&lt;/li&gt;
+                                    &lt;li&gt;乾杯用シャンパン&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;feature-group&quot;&gt;
+                                &lt;h4&gt;装花・装飾&lt;/h4&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;ブライダルブーケ&lt;/li&gt;
+                                    &lt;li&gt;会場装花（基本）&lt;/li&gt;
+                                    &lt;li&gt;キャンドルサービス&lt;/li&gt;
+                                    &lt;li&gt;テーブルクロス・ナプキン&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;plan-details&quot; data-plan=&quot;premium&quot;&gt;
+                        &lt;div class=&quot;plan-header&quot;&gt;
+                            &lt;h3&gt;プレミアムプラン&lt;/h3&gt;
+                            &lt;div class=&quot;plan-price&quot;&gt;
+                                &lt;span class=&quot;price&quot;&gt;¥1,480,000&lt;/span&gt;
+                                &lt;span class=&quot;guests&quot;&gt;（80名様）&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;plan-features&quot;&gt;
+                            &lt;div class=&quot;feature-group&quot;&gt;
+                                &lt;h4&gt;式場・設備&lt;/h4&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;チャペル挙式＋ガーデン演出&lt;/li&gt;
+                                    &lt;li&gt;バンケットホール披露宴&lt;/li&gt;
+                                    &lt;li&gt;ブライズルーム・親族控室使用&lt;/li&gt;
+                                    &lt;li&gt;最新音響・映像設備&lt;/li&gt;
+                                    &lt;li&gt;プロフィールムービー上映&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;feature-group&quot;&gt;
+                                &lt;h4&gt;料理・ドリンク&lt;/h4&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;特選フレンチコース料理&lt;/li&gt;
+                                    &lt;li&gt;3段ウェディングケーキ&lt;/li&gt;
+                                    &lt;li&gt;プレミアムフリードリンク（3時間）&lt;/li&gt;
+                                    &lt;li&gt;乾杯用プレミアムシャンパン&lt;/li&gt;
+                                    &lt;li&gt;デザートビュッフェ&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;feature-group&quot;&gt;
+                                &lt;h4&gt;装花・装飾&lt;/h4&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;ブライダルブーケ＋ブートニア&lt;/li&gt;
+                                    &lt;li&gt;会場装花（グレードアップ）&lt;/li&gt;
+                                    &lt;li&gt;キャンドルサービス&lt;/li&gt;
+                                    &lt;li&gt;高級リネン使用&lt;/li&gt;
+                                    &lt;li&gt;フラワーシャワー&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;plan-details&quot; data-plan=&quot;luxury&quot;&gt;
+                        &lt;div class=&quot;plan-header&quot;&gt;
+                            &lt;h3&gt;ラグジュアリープラン&lt;/h3&gt;
+                            &lt;div class=&quot;plan-price&quot;&gt;
+                                &lt;span class=&quot;price&quot;&gt;¥2,280,000&lt;/span&gt;
+                                &lt;span class=&quot;guests&quot;&gt;（100名様）&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;plan-features&quot;&gt;
+                            &lt;div class=&quot;feature-group&quot;&gt;
+                                &lt;h4&gt;式場・設備&lt;/h4&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;全会場貸切&lt;/li&gt;
+                                    &lt;li&gt;チャペル＋ガーデン＋バンケット&lt;/li&gt;
+                                    &lt;li&gt;専用ブライズルーム・親族控室&lt;/li&gt;
+                                    &lt;li&gt;最新音響・映像・照明設備&lt;/li&gt;
+                                    &lt;li&gt;オリジナルムービー制作&lt;/li&gt;
+                                    &lt;li&gt;生演奏（ピアノ・ヴァイオリン）&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;feature-group&quot;&gt;
+                                &lt;h4&gt;料理・ドリンク&lt;/h4&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;シェフ特製オリジナルコース&lt;/li&gt;
+                                    &lt;li&gt;オーダーメイドウェディングケーキ&lt;/li&gt;
+                                    &lt;li&gt;プレミアムフリードリンク（4時間）&lt;/li&gt;
+                                    &lt;li&gt;ヴィンテージシャンパン乾杯&lt;/li&gt;
+                                    &lt;li&gt;デザートビュッフェ＋夜食&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;feature-group&quot;&gt;
+                                &lt;h4&gt;装花・装飾&lt;/h4&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;オーダーメイドブーケ一式&lt;/li&gt;
+                                    &lt;li&gt;会場装花（最高グレード）&lt;/li&gt;
+                                    &lt;li&gt;キャンドル演出&lt;/li&gt;
+                                    &lt;li&gt;最高級リネン使用&lt;/li&gt;
+                                    &lt;li&gt;フラワーシャワー＋バルーンリリース&lt;/li&gt;
+                                    &lt;li&gt;ナイトイルミネーション&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;plan-cta&quot;&gt;
+                    &lt;a href=&quot;#contact&quot; class=&quot;btn btn-primary&quot;&gt;詳細見積もり依頼&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;gallery&quot; class=&quot;gallery&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;section-header&quot;&gt;
+                    &lt;h2&gt;ギャラリー&lt;/h2&gt;
+                    &lt;p&gt;実際の結婚式の美しい瞬間をご覧ください&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-filters&quot;&gt;
+                    &lt;button class=&quot;filter-btn active&quot; data-filter=&quot;all&quot;&gt;すべて&lt;/button&gt;
+                    &lt;button class=&quot;filter-btn&quot; data-filter=&quot;ceremony&quot;&gt;挙式&lt;/button&gt;
+                    &lt;button class=&quot;filter-btn&quot; data-filter=&quot;reception&quot;&gt;披露宴&lt;/button&gt;
+                    &lt;button class=&quot;filter-btn&quot; data-filter=&quot;garden&quot;&gt;ガーデン&lt;/button&gt;
+                    &lt;button class=&quot;filter-btn&quot; data-filter=&quot;details&quot;&gt;装飾・料理&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-grid&quot;&gt;
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;ceremony&quot;&gt;
+                        &lt;div class=&quot;gallery-image ceremony-1&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;h4&gt;チャペル挙式&lt;/h4&gt;
+                            &lt;p&gt;神聖な誓いの瞬間&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;reception&quot;&gt;
+                        &lt;div class=&quot;gallery-image reception-1&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;h4&gt;披露宴&lt;/h4&gt;
+                            &lt;p&gt;感動の入場シーン&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;garden&quot;&gt;
+                        &lt;div class=&quot;gallery-image garden-1&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;h4&gt;ガーデンウェディング&lt;/h4&gt;
+                            &lt;p&gt;自然に囲まれた幸せ&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;details&quot;&gt;
+                        &lt;div class=&quot;gallery-image details-1&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;h4&gt;会場装飾&lt;/h4&gt;
+                            &lt;p&gt;上質な空間演出&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;ceremony&quot;&gt;
+                        &lt;div class=&quot;gallery-image ceremony-2&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;h4&gt;指輪交換&lt;/h4&gt;
+                            &lt;p&gt;永遠の約束&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;reception&quot;&gt;
+                        &lt;div class=&quot;gallery-image reception-2&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;h4&gt;ケーキカット&lt;/h4&gt;
+                            &lt;p&gt;甘い瞬間&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;garden&quot;&gt;
+                        &lt;div class=&quot;gallery-image garden-2&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;h4&gt;フラワーシャワー&lt;/h4&gt;
+                            &lt;p&gt;祝福の瞬間&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;details&quot;&gt;
+                        &lt;div class=&quot;gallery-image details-2&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;h4&gt;テーブルコーディネート&lt;/h4&gt;
+                            &lt;p&gt;美しいおもてなし&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;testimonials&quot; class=&quot;testimonials&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;section-header&quot;&gt;
+                    &lt;h2&gt;お客様の声&lt;/h2&gt;
+                    &lt;p&gt;Belle Mariageで結婚式を挙げられたお客様からのメッセージ&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;testimonial-slider&quot;&gt;
+                    &lt;div class=&quot;testimonial-track&quot;&gt;
+                        &lt;div class=&quot;testimonial-item active&quot;&gt;
+                            &lt;div class=&quot;testimonial-content&quot;&gt;
+                                &lt;div class=&quot;testimonial-image couple-1&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;testimonial-text&quot;&gt;
+                                    &lt;blockquote&gt;
+                                        「スタッフの皆さんが本当に親身になって相談に乗ってくださり、理想以上の結婚式を挙げることができました。ゲストの皆さんからも『素敵な式だった』とたくさんお声をいただき、選んで良かったと心から思います。」
+                                    &lt;/blockquote&gt;
+                                    &lt;div class=&quot;testimonial-author&quot;&gt;
+                                        &lt;h4&gt;田中様ご夫妻&lt;/h4&gt;
+                                        &lt;p&gt;2023年10月挙式&lt;/p&gt;
+                                        &lt;div class=&quot;testimonial-rating&quot;&gt;
+                                            &lt;span&gt;★★★★★&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;testimonial-item&quot;&gt;
+                            &lt;div class=&quot;testimonial-content&quot;&gt;
+                                &lt;div class=&quot;testimonial-image couple-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;testimonial-text&quot;&gt;
+                                    &lt;blockquote&gt;
+                                        「ガーデンウェディングに憧れていた私たちの夢を叶えてくださいました。お料理も本当に美味しく、ゲストの皆さんにも大好評でした。一生の思い出になる素晴らしい一日でした。」
+                                    &lt;/blockquote&gt;
+                                    &lt;div class=&quot;testimonial-author&quot;&gt;
+                                        &lt;h4&gt;佐藤様ご夫妻&lt;/h4&gt;
+                                        &lt;p&gt;2023年9月挙式&lt;/p&gt;
+                                        &lt;div class=&quot;testimonial-rating&quot;&gt;
+                                            &lt;span&gt;★★★★★&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;testimonial-item&quot;&gt;
+                            &lt;div class=&quot;testimonial-content&quot;&gt;
+                                &lt;div class=&quot;testimonial-image couple-3&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;testimonial-text&quot;&gt;
+                                    &lt;blockquote&gt;
+                                        「プランニングから当日まで、本当にきめ細やかなサポートをいただきました。特にチャペルでの挙式は神聖で感動的で、両親も涙を流して喜んでくれました。ありがとうございました。」
+                                    &lt;/blockquote&gt;
+                                    &lt;div class=&quot;testimonial-author&quot;&gt;
+                                        &lt;h4&gt;山田様ご夫妻&lt;/h4&gt;
+                                        &lt;p&gt;2023年11月挙式&lt;/p&gt;
+                                        &lt;div class=&quot;testimonial-rating&quot;&gt;
+                                            &lt;span&gt;★★★★★&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;testimonial-nav&quot;&gt;
+                        &lt;button class=&quot;testimonial-prev&quot;&gt;&amp;lt;&lt;/button&gt;
+                        &lt;div class=&quot;testimonial-dots&quot;&gt;
+                            &lt;span class=&quot;dot active&quot; data-slide=&quot;0&quot;&gt;&lt;/span&gt;
+                            &lt;span class=&quot;dot&quot; data-slide=&quot;1&quot;&gt;&lt;/span&gt;
+                            &lt;span class=&quot;dot&quot; data-slide=&quot;2&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;button class=&quot;testimonial-next&quot;&gt;&amp;gt;&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;fair&quot; class=&quot;fair&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;section-header&quot;&gt;
+                    &lt;h2&gt;ブライダルフェア&lt;/h2&gt;
+                    &lt;p&gt;実際の会場をご見学いただき、お二人の理想をお聞かせください&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;fair-events&quot;&gt;
+                    &lt;div class=&quot;fair-item&quot;&gt;
+                        &lt;div class=&quot;fair-date&quot;&gt;
+                            &lt;span class=&quot;month&quot;&gt;DEC&lt;/span&gt;
+                            &lt;span class=&quot;day&quot;&gt;15&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;fair-info&quot;&gt;
+                            &lt;h3&gt;チャペル見学＆試食会&lt;/h3&gt;
+                            &lt;p&gt;神聖なチャペルをご見学いただき、シェフ特製のお料理を試食していただきます。&lt;/p&gt;
+                            &lt;div class=&quot;fair-details&quot;&gt;
+                                &lt;span class=&quot;time&quot;&gt;10:00-15:00&lt;/span&gt;
+                                &lt;span class=&quot;price&quot;&gt;無料&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;fair-cta&quot;&gt;
+                            &lt;a href=&quot;#contact&quot; class=&quot;btn btn-outline&quot;&gt;予約する&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;fair-item&quot;&gt;
+                        &lt;div class=&quot;fair-date&quot;&gt;
+                            &lt;span class=&quot;month&quot;&gt;DEC&lt;/span&gt;
+                            &lt;span class=&quot;day&quot;&gt;22&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;fair-info&quot;&gt;
+                            &lt;h3&gt;ガーデンウェディング相談会&lt;/h3&gt;
+                            &lt;p&gt;四季の美しさを楽しめるガーデンウェディングの魅力をご紹介します。&lt;/p&gt;
+                            &lt;div class=&quot;fair-details&quot;&gt;
+                                &lt;span class=&quot;time&quot;&gt;13:00-17:00&lt;/span&gt;
+                                &lt;span class=&quot;price&quot;&gt;無料&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;fair-cta&quot;&gt;
+                            &lt;a href=&quot;#contact&quot; class=&quot;btn btn-outline&quot;&gt;予約する&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;fair-item&quot;&gt;
+                        &lt;div class=&quot;fair-date&quot;&gt;
+                            &lt;span class=&quot;month&quot;&gt;JAN&lt;/span&gt;
+                            &lt;span class=&quot;day&quot;&gt;12&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;fair-info&quot;&gt;
+                            &lt;h3&gt;新春特別相談会&lt;/h3&gt;
+                            &lt;p&gt;新年のお祝いを込めて、特別プランのご案内をいたします。&lt;/p&gt;
+                            &lt;div class=&quot;fair-details&quot;&gt;
+                                &lt;span class=&quot;time&quot;&gt;10:00-18:00&lt;/span&gt;
+                                &lt;span class=&quot;price&quot;&gt;無料&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;fair-cta&quot;&gt;
+                            &lt;a href=&quot;#contact&quot; class=&quot;btn btn-outline&quot;&gt;予約する&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;section-header&quot;&gt;
+                    &lt;h2&gt;お問い合わせ&lt;/h2&gt;
+                    &lt;p&gt;お二人の特別な一日のため、まずはお気軽にご相談ください&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;contact-content&quot;&gt;
+                    &lt;div class=&quot;contact-info&quot;&gt;
+                        &lt;div class=&quot;contact-item&quot;&gt;
+                            &lt;h3&gt;お電話でのお問い合わせ&lt;/h3&gt;
+                            &lt;p class=&quot;phone&quot;&gt;0120-123-456&lt;/p&gt;
+                            &lt;p&gt;営業時間: 9:00-19:00（年中無休）&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;contact-item&quot;&gt;
+                            &lt;h3&gt;所在地&lt;/h3&gt;
+                            &lt;p&gt;〒100-0001&lt;br&gt;
+                            東京都千代田区千代田1-1-1&lt;br&gt;
+                            Belle Mariage Tokyo&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;contact-item&quot;&gt;
+                            &lt;h3&gt;アクセス&lt;/h3&gt;
+                            &lt;p&gt;JR東京駅より徒歩5分&lt;br&gt;
+                            地下鉄大手町駅より徒歩3分&lt;br&gt;
+                            駐車場完備（50台）&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;form class=&quot;contact-form&quot;&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label for=&quot;name&quot;&gt;お名前&lt;/label&gt;
+                            &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label for=&quot;partner&quot;&gt;お相手様のお名前&lt;/label&gt;
+                            &lt;input type=&quot;text&quot; id=&quot;partner&quot; name=&quot;partner&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-row&quot;&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label for=&quot;email&quot;&gt;メールアドレス&lt;/label&gt;
+                                &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label for=&quot;phone&quot;&gt;電話番号&lt;/label&gt;
+                                &lt;input type=&quot;tel&quot; id=&quot;phone&quot; name=&quot;phone&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-row&quot;&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label for=&quot;date&quot;&gt;ご希望挙式日&lt;/label&gt;
+                                &lt;input type=&quot;date&quot; id=&quot;date&quot; name=&quot;date&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label for=&quot;guests&quot;&gt;ご招待予定人数&lt;/label&gt;
+                                &lt;select id=&quot;guests&quot; name=&quot;guests&quot;&gt;
+                                    &lt;option value=&quot;&quot;&gt;選択してください&lt;/option&gt;
+                                    &lt;option value=&quot;30&quot;&gt;30名以下&lt;/option&gt;
+                                    &lt;option value=&quot;50&quot;&gt;31-50名&lt;/option&gt;
+                                    &lt;option value=&quot;80&quot;&gt;51-80名&lt;/option&gt;
+                                    &lt;option value=&quot;100&quot;&gt;81-100名&lt;/option&gt;
+                                    &lt;option value=&quot;100+&quot;&gt;100名以上&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group checkbox-group&quot;&gt;
+                            &lt;label class=&quot;checkbox-label&quot;&gt;
+                                &lt;input type=&quot;checkbox&quot; name=&quot;interests&quot; value=&quot;chapel&quot;&gt;
+                                &lt;span class=&quot;checkmark&quot;&gt;&lt;/span&gt;
+                                チャペルウェディング
+                            &lt;/label&gt;
+                            &lt;label class=&quot;checkbox-label&quot;&gt;
+                                &lt;input type=&quot;checkbox&quot; name=&quot;interests&quot; value=&quot;garden&quot;&gt;
+                                &lt;span class=&quot;checkmark&quot;&gt;&lt;/span&gt;
+                                ガーデンウェディング
+                            &lt;/label&gt;
+                            &lt;label class=&quot;checkbox-label&quot;&gt;
+                                &lt;input type=&quot;checkbox&quot; name=&quot;interests&quot; value=&quot;reception&quot;&gt;
+                                &lt;span class=&quot;checkmark&quot;&gt;&lt;/span&gt;
+                                披露宴のみ
+                            &lt;/label&gt;
+                            &lt;label class=&quot;checkbox-label&quot;&gt;
+                                &lt;input type=&quot;checkbox&quot; name=&quot;interests&quot; value=&quot;fair&quot;&gt;
+                                &lt;span class=&quot;checkmark&quot;&gt;&lt;/span&gt;
+                                ブライダルフェア参加希望
+                            &lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label for=&quot;message&quot;&gt;ご質問・ご要望&lt;/label&gt;
+                            &lt;textarea id=&quot;message&quot; name=&quot;message&quot; rows=&quot;5&quot; placeholder=&quot;ご不明な点やご要望がございましたら、お気軽にお書きください。&quot;&gt;&lt;/textarea&gt;
+                        &lt;/div&gt;
+                        &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;お問い合わせ送信&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-brand&quot;&gt;
+                    &lt;h3&gt;Belle Mariage&lt;/h3&gt;
+                    &lt;p&gt;あなたの特別な一日を、永遠の記憶に&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-links&quot;&gt;
+                    &lt;div class=&quot;footer-column&quot;&gt;
+                        &lt;h4&gt;サービス&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;会場紹介&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#plans&quot;&gt;ウェディングプラン&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#gallery&quot;&gt;ギャラリー&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#fair&quot;&gt;ブライダルフェア&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;footer-column&quot;&gt;
+                        &lt;h4&gt;サポート&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;よくある質問&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;アクセス&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;資料請求&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;footer-column&quot;&gt;
+                        &lt;h4&gt;お問い合わせ&lt;/h4&gt;
+                        &lt;p&gt;0120-123-456&lt;/p&gt;
+                        &lt;p&gt;9:00-19:00（年中無休）&lt;/p&gt;
+                        &lt;p&gt;info@belle-mariage.jp&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p&gt;&amp;copy; 2024 Belle Mariage. All rights reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+
+&lt;script&gt;
+    
+document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() {
+    // ハンバーガーメニューの制御
+    const hamburger = document.querySelector(&#x27;.hamburger&#x27;);
+    const navMenu = document.querySelector(&#x27;.nav-menu&#x27;);
+
+    if (hamburger &amp;&amp; navMenu) {
+        hamburger.addEventListener(&#x27;click&#x27;, function() {
+            navMenu.classList.toggle(&#x27;active&#x27;);
+            hamburger.classList.toggle(&#x27;active&#x27;);
+        });
+
+        // メニューリンクをクリックしたときにメニューを閉じる
+        const navLinks = document.querySelectorAll(&#x27;.nav-menu a&#x27;);
+        navLinks.forEach(link =&gt; {
+            link.addEventListener(&#x27;click&#x27;, function() {
+                navMenu.classList.remove(&#x27;active&#x27;);
+                hamburger.classList.remove(&#x27;active&#x27;);
+            });
+        });
+    }
+
+    // スムーズスクロール
+    document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+        anchor.addEventListener(&#x27;click&#x27;, function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+            if (target) {
+                const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: &#x27;smooth&#x27;
+                });
+            }
+        });
+    });
+
+    // ヘッダーのスクロール効果
+    const header = document.querySelector(&#x27;.header&#x27;);
+    let lastScrollTop = 0;
+
+    window.addEventListener(&#x27;scroll&#x27;, function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop &gt; 100) {
+            header.style.background = &#x27;rgba(255, 255, 255, 0.98)&#x27;;
+            header.style.boxShadow = &#x27;0 2px 20px rgba(0, 0, 0, 0.1)&#x27;;
+        } else {
+            header.style.background = &#x27;rgba(255, 255, 255, 0.95)&#x27;;
+            header.style.boxShadow = &#x27;none&#x27;;
+        }
+
+        lastScrollTop = scrollTop;
+    });
+
+    // プランタブの切り替え
+    const planTabs = document.querySelectorAll(&#x27;.plan-tab&#x27;);
+    const planDetails = document.querySelectorAll(&#x27;.plan-details&#x27;);
+
+    planTabs.forEach(tab =&gt; {
+        tab.addEventListener(&#x27;click&#x27;, function() {
+            const targetPlan = this.getAttribute(&#x27;data-plan&#x27;);
+            
+            // アクティブなタブを切り替え
+            planTabs.forEach(t =&gt; t.classList.remove(&#x27;active&#x27;));
+            this.classList.add(&#x27;active&#x27;);
+            
+            // プラン詳細を切り替え
+            planDetails.forEach(detail =&gt; {
+                detail.classList.remove(&#x27;active&#x27;);
+                if (detail.getAttribute(&#x27;data-plan&#x27;) === targetPlan) {
+                    detail.classList.add(&#x27;active&#x27;);
+                }
+            });
+        });
+    });
+
+    // ギャラリーフィルター
+    const filterBtns = document.querySelectorAll(&#x27;.filter-btn&#x27;);
+    const galleryItems = document.querySelectorAll(&#x27;.gallery-item&#x27;);
+
+    filterBtns.forEach(btn =&gt; {
+        btn.addEventListener(&#x27;click&#x27;, function() {
+            const filter = this.getAttribute(&#x27;data-filter&#x27;);
+            
+            // アクティブなボタンを切り替え
+            filterBtns.forEach(b =&gt; b.classList.remove(&#x27;active&#x27;));
+            this.classList.add(&#x27;active&#x27;);
+            
+            // ギャラリーアイテムをフィルタリング
+            galleryItems.forEach(item =&gt; {
+                if (filter === &#x27;all&#x27; || item.getAttribute(&#x27;data-category&#x27;) === filter) {
+                    item.style.display = &#x27;block&#x27;;
+                    setTimeout(() =&gt; {
+                        item.style.opacity = &#x27;1&#x27;;
+                        item.style.transform = &#x27;translateY(0)&#x27;;
+                    }, 100);
+                } else {
+                    item.style.opacity = &#x27;0&#x27;;
+                    item.style.transform = &#x27;translateY(20px)&#x27;;
+                    setTimeout(() =&gt; {
+                        item.style.display = &#x27;none&#x27;;
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // お客様の声スライダー
+    const testimonialItems = document.querySelectorAll(&#x27;.testimonial-item&#x27;);
+    const testimonialPrev = document.querySelector(&#x27;.testimonial-prev&#x27;);
+    const testimonialNext = document.querySelector(&#x27;.testimonial-next&#x27;);
+    const testimonialDots = document.querySelectorAll(&#x27;.dot&#x27;);
+    let currentTestimonial = 0;
+
+    function showTestimonial(index) {
+        testimonialItems.forEach((item, i) =&gt; {
+            item.classList.remove(&#x27;active&#x27;);
+            if (i === index) {
+                item.classList.add(&#x27;active&#x27;);
+            }
+        });
+
+        testimonialDots.forEach((dot, i) =&gt; {
+            dot.classList.remove(&#x27;active&#x27;);
+            if (i === index) {
+                dot.classList.add(&#x27;active&#x27;);
+            }
+        });
+    }
+
+    if (testimonialNext) {
+        testimonialNext.addEventListener(&#x27;click&#x27;, function() {
+            currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+            showTestimonial(currentTestimonial);
+        });
+    }
+
+    if (testimonialPrev) {
+        testimonialPrev.addEventListener(&#x27;click&#x27;, function() {
+            currentTestimonial = (currentTestimonial - 1 + testimonialItems.length) % testimonialItems.length;
+            showTestimonial(currentTestimonial);
+        });
+    }
+
+    testimonialDots.forEach((dot, index) =&gt; {
+        dot.addEventListener(&#x27;click&#x27;, function() {
+            currentTestimonial = index;
+            showTestimonial(currentTestimonial);
+        });
+    });
+
+    // 自動スライド
+    setInterval(function() {
+        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+        showTestimonial(currentTestimonial);
+    }, 8000);
+
+    // フォーム送信処理
+    const contactForm = document.querySelector(&#x27;.contact-form&#x27;);
+    if (contactForm) {
+        contactForm.addEventListener(&#x27;submit&#x27;, function(e) {
+            e.preventDefault();
+            
+            // フォームデータの収集
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // 送信ボタンを無効化
+            const submitBtn = this.querySelector(&#x27;button[type=&quot;submit&quot;]&#x27;);
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = &#x27;送信中...&#x27;;
+            submitBtn.disabled = true;
+            
+            // 実際の送信処理をシミュレート
+            setTimeout(() =&gt; {
+                alert(&#x27;お問い合わせありがとうございます。2営業日以内にご返信いたします。&#x27;);
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+    }
+
+    // スクロールアニメーション
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: &#x27;0px 0px -50px 0px&#x27;
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry =&gt; {
+            if (entry.isIntersecting) {
+                entry.target.classList.add(&#x27;visible&#x27;);
+            }
+        });
+    }, observerOptions);
+
+    // アニメーション対象要素の監視
+    document.querySelectorAll(&#x27;.venue-card, .plan-details, .gallery-item, .testimonial-item, .fair-item&#x27;).forEach(el =&gt; {
+        el.classList.add(&#x27;fade-in&#x27;);
+        observer.observe(el);
+    });
+
+    // パララックス効果
+    window.addEventListener(&#x27;scroll&#x27;, function() {
+        const scrolled = window.pageYOffset;
+        const heroBackground = document.querySelector(&#x27;.hero-background&#x27;);
+        
+        if (heroBackground) {
+            const speed = scrolled * 0.5;
+            heroBackground.style.transform = `translateY(${speed}px)`;
+        }
+    });
+
+    // カウントアップアニメーション（数字がある場合）
+    function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+        
+        function updateCounter() {
+            start += increment;
+            if (start &lt; target) {
+                element.textContent = Math.ceil(start).toLocaleString();
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target.toLocaleString();
+            }
+        }
+        
+        updateCounter();
+    }
+
+    // ページ読み込み完了時の初期化
+    window.addEventListener(&#x27;load&#x27;, function() {
+        // ローディング完了時のフェードイン効果
+        document.body.style.opacity = &#x27;1&#x27;;
+        
+        // 統計数字のカウントアップ（もしあれば）
+        const counters = document.querySelectorAll(&#x27;.counter&#x27;);
+        counters.forEach(counter =&gt; {
+            const target = parseInt(counter.getAttribute(&#x27;data-target&#x27;));
+            if (target) {
+                animateCounter(counter, target);
+            }
+        });
+    });
+
+    // リサイズ時の処理
+    window.addEventListener(&#x27;resize&#x27;, function() {
+        // ギャラリーアイテムの再配置
+        const galleryGrid = document.querySelector(&#x27;.gallery-grid&#x27;);
+        if (galleryGrid) {
+            // モバイル表示時の調整
+            if (window.innerWidth &lt;= 768) {
+                galleryItems.forEach(item =&gt; {
+                    item.style.display = &#x27;block&#x27;;
+                    item.style.opacity = &#x27;1&#x27;;
+                    item.style.transform = &#x27;translateY(0)&#x27;;
+                });
+            }
+        }
+    });
+
+    // タッチイベントの処理（モバイル対応）
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener(&#x27;touchstart&#x27;, function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener(&#x27;touchend&#x27;, function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) &gt; swipeThreshold) {
+            if (diff &gt; 0) {
+                // 左スワイプ - 次のテスティモニアル
+                if (testimonialNext) {
+                    testimonialNext.click();
+                }
+            } else {
+                // 右スワイプ - 前のテスティモニアル
+                if (testimonialPrev) {
+                    testimonialPrev.click();
+                }
+            }
+        }
+    }
+
+    // クリックリップル効果
+    function createRipple(event) {
+        const button = event.currentTarget;
+        const circle = document.createElement(&#x27;span&#x27;);
+        const diameter = Math.max(button.clientWidth, button.clientHeight);
+        const radius = diameter / 2;
+
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+        circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+        circle.classList.add(&#x27;ripple&#x27;);
+
+        const ripple = button.getElementsByClassName(&#x27;ripple&#x27;)[0];
+        if (ripple) {
+            ripple.remove();
+        }
+
+        button.appendChild(circle);
+    }
+
+    // ボタンにリップル効果を追加
+    document.querySelectorAll(&#x27;.btn, .plan-tab, .filter-btn&#x27;).forEach(btn =&gt; {
+        btn.addEventListener(&#x27;click&#x27;, createRipple);
+    });
+
+    console.log(&#x27;Belle Mariage wedding template loaded successfully!&#x27;);
+});
+
+// CSS for ripple effect
+const rippleStyle = document.createElement(&#x27;style&#x27;);
+rippleStyle.textContent = `
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+    }
+
+    @keyframes ripple {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(rippleStyle);
+
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="結婚式・ウェディング" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"event-wedding\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"event-wedding\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"event-wedding\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"event-wedding\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"wJlzjxFgEulEXqFSjNU8l\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"event-wedding\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

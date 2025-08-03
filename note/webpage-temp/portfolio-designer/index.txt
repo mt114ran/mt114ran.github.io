@@ -1,0 +1,636 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/8d311e01b6f6fa19.css","style"]
+0:{"P":null,"b":"tbF4ekhpLvjG8yl9Cjqn0","p":"","c":["","note","webpage-temp","portfolio-designer",""],"i":false,"f":[[["",{"children":["note",{"children":["webpage-temp",{"children":[["id","portfolio-designer","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/8d311e01b6f6fa19.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["note",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["webpage-temp",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["id","portfolio-designer","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","8ftd-wR_F3v1i52jCdVci",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+12:I[6874,["874","static/chunks/874-acbedc3444a59791.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-78f6da3fdd9ae78d.js"],""]
+13:I[8863,["874","static/chunks/874-acbedc3444a59791.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-78f6da3fdd9ae78d.js"],"default"]
+14:I[9320,["874","static/chunks/874-acbedc3444a59791.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-78f6da3fdd9ae78d.js"],"default"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+15:T22e6,<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer Portfolio - Creative Works</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <span>DESIGNER</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Creative Designer</h1>
+            <p class="hero-subtitle">UI/UX & Visual Design</p>
+            <a href="#works" class="hero-button">View Works</a>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <section id="works" class="works">
+        <div class="container">
+            <h2 class="section-title">Selected Works</h2>
+            <div class="works-grid">
+                <div class="work-item" data-category="ui">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop" alt="UI Design">
+                    <div class="work-overlay">
+                        <h3>モバイルアプリUI</h3>
+                        <p>UI/UX Design</p>
+                    </div>
+                </div>
+                <div class="work-item" data-category="branding">
+                    <img src="https://images.unsplash.com/photo-1524634126442-357e0eac3c14?w=800&h=600&fit=crop" alt="Branding">
+                    <div class="work-overlay">
+                        <h3>ブランディング</h3>
+                        <p>Brand Identity</p>
+                    </div>
+                </div>
+                <div class="work-item" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop" alt="Web Design">
+                    <div class="work-overlay">
+                        <h3>Webサイトデザイン</h3>
+                        <p>Web Design</p>
+                    </div>
+                </div>
+                <div class="work-item" data-category="graphic">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Graphic Design">
+                    <div class="work-overlay">
+                        <h3>グラフィックデザイン</h3>
+                        <p>Graphic Design</p>
+                    </div>
+                </div>
+                <div class="work-item" data-category="ui">
+                    <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=800&h=600&fit=crop" alt="Dashboard">
+                    <div class="work-overlay">
+                        <h3>ダッシュボードUI</h3>
+                        <p>Dashboard Design</p>
+                    </div>
+                </div>
+                <div class="work-item" data-category="branding">
+                    <img src="https://images.unsplash.com/photo-1524678516592-a0906da30b3a?w=800&h=600&fit=crop" alt="Logo Design">
+                    <div class="work-overlay">
+                        <h3>ロゴデザイン</h3>
+                        <p>Logo Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop" alt="Designer">
+                </div>
+                <div class="about-text">
+                    <h3>クリエイティブデザイナー</h3>
+                    <p>10年以上のデザイン経験を持つクリエイティブデザイナーです。UI/UXデザイン、ブランディング、グラフィックデザインを専門としています。</p>
+                    <p>ユーザー中心のデザインアプローチで、美しく機能的なデザインソリューションを提供します。</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Clients</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Awards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Design Skills</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span>UI/UX Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Visual Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Branding</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="tool-grid">
+                        <div class="tool-item">Figma</div>
+                        <div class="tool-item">Sketch</div>
+                        <div class="tool-item">Adobe XD</div>
+                        <div class="tool-item">Photoshop</div>
+                        <div class="tool-item">Illustrator</div>
+                        <div class="tool-item">After Effects</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p class="contact-text">新しいプロジェクトやコラボレーションのご相談はお気軽にどうぞ</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="お名前" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="メールアドレス" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="メッセージ" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">送信する</button>
+                </form>
+                <div class="contact-info">
+                    <a href="mailto:designer@example.com">designer@example.com</a>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="Behance">Behance</a>
+                        <a href="#" aria-label="Dribbble">Dribbble</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Designer Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>16:T1a42,* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #6366f1;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    opacity: 0.1;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: transform 0.3s;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Works */
+.works {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.work-item:hover {
+    transform: translateY(-10px);
+}
+
+.work-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.work-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.work-item:hover .work-overlay {
+    transform: translateY(0);
+}
+
+.work-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* About */
+.about {
+    padding: 100px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about-text p {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.about-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #6366f1;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Skills */
+.skills {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-item span {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.skill-bar {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 4px;
+    animation: skillLoad 1s ease-out;
+}
+
+@keyframes skillLoad {
+    from { width: 0; }
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.tool-item {
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+    color: #666;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Contact */
+.contact {
+    padding: 100px 0;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-text {
+    text-align: center;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.contact-form {
+    margin-bottom: 3rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-info a {
+    color: #6366f1;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 0;
+    background: #333;
+    color: white;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}4:["$","div",null,{"className":"min-h-screen bg-gray-900 text-gray-100","children":["$","div",null,{"className":"max-w-7xl mx-auto py-10 px-4","children":[["$","nav",null,{"className":"mb-6 flex gap-4","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"ホーム"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","$L12",null,{"href":"/note/webpage-temp","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"テンプレート一覧"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","span",null,{"className":"text-gray-400","children":"ポートフォリオ - デザイナー"}]]}],["$","div",null,{"className":"mb-8","children":[["$","div",null,{"className":"flex items-center gap-4 mb-4","children":[["$","h1",null,{"className":"text-3xl font-bold","children":"ポートフォリオ - デザイナー"}],["$","span",null,{"className":"px-3 py-1 bg-blue-600 text-white rounded text-sm","children":"ポートフォリオ"}]]}],["$","p",null,{"className":"text-gray-300 text-lg mb-4","children":"クリエイティブなデザイナー向けポートフォリオサイト"}],["$","div",null,{"className":"flex flex-wrap gap-2 mb-4","children":[["$","span","0",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","グリッドギャラリー"]}],["$","span","1",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","プロジェクト詳細"]}],["$","span","2",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","スキルセット表示"]}],["$","span","3",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","コンタクトフォーム"]}]]}],["$","div",null,{"className":"flex flex-wrap gap-2 mb-6","children":[["$","span","0",{"className":"text-sm text-gray-500","children":["#","ポートフォリオ"]}],["$","span","1",{"className":"text-sm text-gray-500","children":["#","デザイナー"]}],["$","span","2",{"className":"text-sm text-gray-500","children":["#","クリエイティブ"]}],["$","span","3",{"className":"text-sm text-gray-500","children":["#","ギャラリー"]}]]}],["$","$L13",null,{"templateId":"portfolio-designer"}]]}],["$","$L14",null,{"template":{"id":"portfolio-designer","title":"ポートフォリオ - デザイナー","category":"ポートフォリオ","description":"クリエイティブなデザイナー向けポートフォリオサイト","thumbnail":"/template-images/portfolio-designer.jpg","features":["グリッドギャラリー","プロジェクト詳細","スキルセット表示","コンタクトフォーム"],"tags":["ポートフォリオ","デザイナー","クリエイティブ","ギャラリー"],"code":{"html":"$15","css":"$16","js":"// メニュートグル\ndocument.getElementById('menuToggle').addEventListener('click', function() {\n    document.getElementById('navMenu').classList.toggle('active');\n});\n\n// スムーススクロール\ndocument.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {\n    anchor.addEventListener('click', function (e) {\n        e.preventDefault();\n        const target = document.querySelector(this.getAttribute('href'));\n        if (target) {\n            target.scrollIntoView({\n                behavior: 'smooth',\n                block: 'start'\n            });\n            document.getElementById('navMenu').classList.remove('active');\n        }\n    });\n});\n\n// フォーム送信\ndocument.querySelector('.contact-form').addEventListener('submit', function(e) {\n    e.preventDefault();\n    alert('お問い合わせありがとうございます。後日ご連絡させていただきます。');\n    this.reset();\n});"}}}],["$","div",null,{"className":"mt-12 bg-gray-800 rounded-lg p-6","children":[["$","h2",null,{"className":"text-xl font-bold mb-4","children":"使用方法"}],["$","ol",null,{"className":"space-y-3 text-gray-300","children":[["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"1."}],["$","span",null,{"children":"上のタブからHTML、CSS、JavaScriptのコードをそれぞれコピーします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"2."}],["$","span",null,{"children":"新しいHTMLファイルを作成し、HTMLコードを貼り付けます。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"3."}],["$","span",null,{"children":"CSSコードを<style>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"4."}],["$","span",null,{"children":"JavaScriptコードを<script>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"5."}],["$","span",null,{"children":"必要に応じて、テキストや画像、色などをカスタマイズしてご使用ください。"}]]}]]}],["$","div",null,{"className":"mt-6 p-4 bg-blue-900/30 border border-blue-600 rounded","children":[["$","p",null,{"className":"text-blue-400 mb-2","children":"📚 初めての方へ"}],["$","p",null,{"className":"text-gray-300 text-sm","children":["HTMLやCSSが初めての方は、",["$","$L12",null,{"href":"/note/webpage-temp/guide","className":"text-blue-400 hover:text-blue-300 underline","children":"初心者向けWeb制作学習ガイド"}],"をご覧ください。実際に手を動かしながら学べる詳しい手順を解説しています。"]}]]}]]}],["$","div",null,{"className":"mt-8 bg-yellow-900/30 border border-yellow-600 rounded-lg p-6","children":[["$","h3",null,{"className":"text-yellow-400 font-bold mb-2","children":"注意事項"}],["$","ul",null,{"className":"space-y-2 text-gray-300 text-sm","children":[["$","li",null,{"children":"• このテンプレートは学習・参考用として提供されています。"}],["$","li",null,{"children":"• 実際のプロジェクトで使用する際は、セキュリティやパフォーマンスの最適化を行ってください。"}],["$","li",null,{"children":"• 画像やアイコンは実際のものに置き換えてご使用ください。"}],["$","li",null,{"children":"• レスポンシブ対応していますが、実機でのテストを推奨します。"}]]}]]}],["$","div",null,{"className":"mt-8 text-center","children":["$","$L12",null,{"href":"/note/webpage-temp","className":"inline-block px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors","children":"テンプレート一覧へ戻る"}]}]]}]}]
+9:null
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}

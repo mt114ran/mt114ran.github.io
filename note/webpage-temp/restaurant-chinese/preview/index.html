@@ -1,0 +1,1270 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;中華レストラン&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&#x27;https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&amp;family=Crimson+Text:wght@400;600&amp;display=swap&#x27;);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Noto Serif JP&#x27;, serif;
+    color: #2c2c2c;
+    background: #fdf9f5;
+    line-height: 1.7;
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: rgba(139, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    color: #ffd700;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo-reading {
+    font-size: 0.9rem;
+    color: #ffd700;
+    opacity: 0.8;
+    display: block;
+    text-align: center;
+    margin-top: -0.5rem;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #ffd700;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-list a:hover {
+    color: #fff;
+}
+
+.nav-list a::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: #ffd700;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.reserve-btn {
+    background: #ffd700;
+    color: #8b0000 !important;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 700;
+}
+
+.reserve-btn:hover {
+    background: #fff !important;
+    transform: scale(1.05);
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    color: #ffd700;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.hero-ornament {
+    font-size: 2rem;
+    color: #ffd700;
+    opacity: 0.8;
+}
+
+/* Common Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #8b0000;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.title-ornament {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #8b0000, #ffd700, #8b0000);
+    margin-bottom: 2rem;
+}
+
+.title-ornament.center {
+    margin: 0 auto 2rem;
+}
+
+/* About */
+.about {
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-intro {
+    font-size: 1.2rem;
+    color: #8b0000;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.about-description p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.about-features {
+    display: grid;
+    gap: 2rem;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 2rem;
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+    font-size: 1.3rem;
+    color: #8b0000;
+    margin-bottom: 0.5rem;
+}
+
+/* Menu */
+.menu {
+    background: #f8f5f0;
+}
+
+.menu-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    background: white;
+    border: 2px solid #8b0000;
+    color: #8b0000;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s;
+    font-family: &#x27;Noto Serif JP&#x27;, serif;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #8b0000;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item.featured {
+    border: 3px solid #ffd700;
+}
+
+.menu-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.menu-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.menu-item:hover .menu-image img {
+    transform: scale(1.1);
+}
+
+.menu-info {
+    padding: 1.5rem;
+}
+
+.menu-info h3 {
+    font-size: 1.3rem;
+    color: #8b0000;
+    margin-bottom: 0.5rem;
+}
+
+.menu-info p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #8b0000;
+}
+
+/* Course Menu */
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.course-item {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.course-item.recommended {
+    border: 3px solid #ffd700;
+}
+
+.recommend-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: #ffd700;
+    color: #8b0000;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.course-item h3 {
+    font-size: 1.8rem;
+    color: #8b0000;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.course-price {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #8b0000;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.course-menu {
+    list-style: none;
+}
+
+.course-menu li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.course-menu li::before {
+    content: &#x27;◇&#x27;;
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+}
+
+.course-menu li:last-child {
+    border-bottom: none;
+}
+
+/* Rooms */
+.rooms {
+    background: white;
+}
+
+.rooms-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.room-item {
+    background: #f8f5f0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.room-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.room-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room-info {
+    padding: 2rem;
+}
+
+.room-info h3 {
+    font-size: 1.5rem;
+    color: #8b0000;
+    margin-bottom: 0.5rem;
+}
+
+.room-capacity {
+    color: #ffd700;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    background: #8b0000;
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+}
+
+.room-info p {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.room-charge {
+    color: #8b0000;
+    font-weight: 700;
+}
+
+/* Banquet */
+.banquet {
+    background: #f8f5f0;
+}
+
+.banquet-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.banquet-info h3 {
+    font-size: 1.8rem;
+    color: #8b0000;
+    margin-bottom: 2rem;
+}
+
+.banquet-list {
+    list-style: none;
+    margin-bottom: 3rem;
+}
+
+.banquet-list li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.banquet-list li::before {
+    content: &#x27;🏮&#x27;;
+    position: absolute;
+    left: 0;
+}
+
+.banquet-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.feature {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #ffd700;
+}
+
+.feature h4 {
+    color: #8b0000;
+    margin-bottom: 0.5rem;
+}
+
+.banquet-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Access */
+.access {
+    background: white;
+}
+
+.access-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.info-group {
+    margin-bottom: 3rem;
+}
+
+.info-group h3 {
+    font-size: 1.5rem;
+    color: #8b0000;
+    margin-bottom: 1rem;
+}
+
+.info-group dl {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.info-group dt {
+    font-weight: 700;
+    color: #8b0000;
+}
+
+.info-group dd {
+    color: #444;
+}
+
+.info-group ul {
+    list-style: none;
+}
+
+.info-group li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.info-group li::before {
+    content: &#x27;▶&#x27;;
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+}
+
+.access-map img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Reserve */
+.reserve {
+    background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+    color: white;
+}
+
+.reserve .section-title {
+    color: white;
+}
+
+.reserve .title-ornament {
+    background: linear-gradient(90deg, #ffd700, #fff, #ffd700);
+}
+
+.reserve-content {
+    text-align: center;
+}
+
+.reserve-content &gt; p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.reserve-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.btn-phone, .btn-online {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    border: 2px solid #ffd700;
+    border-radius: 25px;
+    background: transparent;
+    color: #ffd700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: &#x27;Noto Serif JP&#x27;, serif;
+    font-weight: 600;
+}
+
+.btn-phone:hover, .btn-online:hover {
+    background: #ffd700;
+    color: #8b0000;
+}
+
+.btn-phone span {
+    display: block;
+    font-size: 1.3rem;
+    margin-top: 0.3rem;
+}
+
+.reserve-notes {
+    margin-top: 2rem;
+}
+
+.reserve-notes p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+    background: #2c2017;
+    color: #ccc;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.footer-info h3 {
+    font-size: 2rem;
+    color: #ffd700;
+    margin-bottom: 1rem;
+}
+
+.footer-info p {
+    margin-bottom: 0.3rem;
+}
+
+.footer-hours h4 {
+    color: #ffd700;
+    margin-bottom: 1rem;
+}
+
+.footer-hours p {
+    margin-bottom: 0.3rem;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .about-content,
+    .banquet-content,
+    .access-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .menu-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .reserve-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;header class=&quot;header&quot;&gt;
+            &lt;div class=&quot;header-inner&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;h1&gt;翡翠楼&lt;/h1&gt;
+                    &lt;span class=&quot;logo-reading&quot;&gt;ひすいろう&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;nav class=&quot;nav&quot;&gt;
+                    &lt;ul class=&quot;nav-list&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;当店について&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;お料理&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#rooms&quot;&gt;個室案内&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#banquet&quot;&gt;宴会&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#access&quot;&gt;アクセス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#reserve&quot; class=&quot;reserve-btn&quot;&gt;ご予約&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+        &lt;/header&gt;
+
+        &lt;main&gt;
+            &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+                &lt;div class=&quot;hero-bg&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1526735392772-4be4b5b3b01b?w=1920&amp;h=800&amp;fit=crop&quot; alt=&quot;Chinese restaurant&quot; class=&quot;hero-image&quot;&gt;
+                    &lt;div class=&quot;hero-overlay&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;hero-content&quot;&gt;
+                    &lt;h2 class=&quot;hero-title&quot;&gt;翡翠楼&lt;/h2&gt;
+                    &lt;p class=&quot;hero-subtitle&quot;&gt;本格四川料理から上海料理まで&lt;/p&gt;
+                    &lt;p class=&quot;hero-description&quot;&gt;代々受け継がれる伝統の味をお楽しみください&lt;/p&gt;
+                    &lt;div class=&quot;hero-ornament&quot;&gt;◇◆◇&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;about-content&quot;&gt;
+                        &lt;div class=&quot;about-text&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;当店について&lt;/h2&gt;
+                            &lt;div class=&quot;title-ornament&quot;&gt;&lt;/div&gt;
+                            &lt;p class=&quot;about-intro&quot;&gt;創業1985年、本格中華料理一筋&lt;/p&gt;
+                            &lt;div class=&quot;about-description&quot;&gt;
+                                &lt;p&gt;翡翠楼は、中国各地の伝統的な調理法を受け継ぎながら、日本人の味覚に合わせて仕上げた本格中華料理をご提供しております。&lt;/p&gt;
+                                &lt;p&gt;四川料理の辛味、広東料理の繊細さ、上海料理の濃厚な味わいを、熟練の料理人が一品一品丹精込めて調理いたします。&lt;/p&gt;
+                                &lt;p&gt;ご家族でのお食事から、大切なご接待、慶事まで、様々なシーンでご利用いただけるよう、個室も多数ご用意しております。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;about-features&quot;&gt;
+                            &lt;div class=&quot;feature-item&quot;&gt;
+                                &lt;div class=&quot;feature-icon&quot;&gt;🍜&lt;/div&gt;
+                                &lt;h3&gt;本格調理&lt;/h3&gt;
+                                &lt;p&gt;中国各地の伝統的な調理法で作る本格的な味わい&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;feature-item&quot;&gt;
+                                &lt;div class=&quot;feature-icon&quot;&gt;🏮&lt;/div&gt;
+                                &lt;h3&gt;個室完備&lt;/h3&gt;
+                                &lt;p&gt;2名様から50名様まで対応可能な個室をご用意&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;feature-item&quot;&gt;
+                                &lt;div class=&quot;feature-icon&quot;&gt;🎉&lt;/div&gt;
+                                &lt;h3&gt;宴会プラン&lt;/h3&gt;
+                                &lt;p&gt;歓送迎会、忘年会などの宴会プランも充実&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;menu&quot; class=&quot;menu&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title center&quot;&gt;お料理&lt;/h2&gt;
+                    &lt;div class=&quot;title-ornament center&quot;&gt;&lt;/div&gt;
+                    &lt;p class=&quot;menu-subtitle&quot;&gt;厳選食材を使用した本格中華料理&lt;/p&gt;
+                    
+                    &lt;div class=&quot;menu-tabs&quot;&gt;
+                        &lt;button class=&quot;tab-btn active&quot; data-tab=&quot;dim-sum&quot;&gt;点心&lt;/button&gt;
+                        &lt;button class=&quot;tab-btn&quot; data-tab=&quot;stir-fry&quot;&gt;炒め物&lt;/button&gt;
+                        &lt;button class=&quot;tab-btn&quot; data-tab=&quot;soup&quot;&gt;スープ&lt;/button&gt;
+                        &lt;button class=&quot;tab-btn&quot; data-tab=&quot;course&quot;&gt;コース&lt;/button&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;menu-content&quot;&gt;
+                        &lt;div class=&quot;tab-content active&quot; id=&quot;dim-sum&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;menu-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1563245372-f21724e3856d?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;小籠包&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;menu-info&quot;&gt;
+                                        &lt;h3&gt;小籠包（8個）&lt;/h3&gt;
+                                        &lt;p&gt;上海風蒸し小籠包。肉汁たっぷりの定番人気&lt;/p&gt;
+                                        &lt;span class=&quot;price&quot;&gt;¥1,200&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;menu-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;餃子&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;menu-info&quot;&gt;
+                                        &lt;h3&gt;焼き餃子（6個）&lt;/h3&gt;
+                                        &lt;p&gt;パリッと焼き上げた自家製餃子&lt;/p&gt;
+                                        &lt;span class=&quot;price&quot;&gt;¥800&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;menu-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1496905583330-eb54c7e5915a?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;シュウマイ&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;menu-info&quot;&gt;
+                                        &lt;h3&gt;シュウマイ（6個）&lt;/h3&gt;
+                                        &lt;p&gt;ジューシーな豚肉と海老のシュウマイ&lt;/p&gt;
+                                        &lt;span class=&quot;price&quot;&gt;¥900&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;menu-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1562967914-608f82629710?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;春巻き&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;menu-info&quot;&gt;
+                                        &lt;h3&gt;春巻き（4本）&lt;/h3&gt;
+                                        &lt;p&gt;サクサクの皮に包まれた野菜たっぷり春巻き&lt;/p&gt;
+                                        &lt;span class=&quot;price&quot;&gt;¥700&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;tab-content&quot; id=&quot;stir-fry&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item featured&quot;&gt;
+                                    &lt;div class=&quot;menu-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;エビチリ&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;menu-info&quot;&gt;
+                                        &lt;h3&gt;エビのチリソース炒め&lt;/h3&gt;
+                                        &lt;p&gt;プリプリ海老の四川風チリソース炒め&lt;/p&gt;
+                                        &lt;span class=&quot;price&quot;&gt;¥2,200&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;menu-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1559847844-5315695dadae?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;酢豚&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;menu-info&quot;&gt;
+                                        &lt;h3&gt;酢豚&lt;/h3&gt;
+                                        &lt;p&gt;定番人気の甘酸っぱい酢豚&lt;/p&gt;
+                                        &lt;span class=&quot;price&quot;&gt;¥1,800&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;menu-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;麻婆豆腐&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;menu-info&quot;&gt;
+                                        &lt;h3&gt;麻婆豆腐&lt;/h3&gt;
+                                        &lt;p&gt;本格四川風の辛味と痺れが効いた麻婆豆腐&lt;/p&gt;
+                                        &lt;span class=&quot;price&quot;&gt;¥1,600&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;menu-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;青椒肉絲&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;menu-info&quot;&gt;
+                                        &lt;h3&gt;青椒肉絲&lt;/h3&gt;
+                                        &lt;p&gt;ピーマンと豚肉の細切り炒め&lt;/p&gt;
+                                        &lt;span class=&quot;price&quot;&gt;¥1,500&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;tab-content&quot; id=&quot;soup&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;menu-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;フカヒレスープ&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;menu-info&quot;&gt;
+                                        &lt;h3&gt;フカヒレスープ&lt;/h3&gt;
+                                        &lt;p&gt;高級食材フカヒレの贅沢スープ&lt;/p&gt;
+                                        &lt;span class=&quot;price&quot;&gt;¥3,800&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;menu-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;コーンスープ&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;menu-info&quot;&gt;
+                                        &lt;h3&gt;蟹肉入りコーンスープ&lt;/h3&gt;
+                                        &lt;p&gt;まろやかなコーンと蟹肉の優しいスープ&lt;/p&gt;
+                                        &lt;span class=&quot;price&quot;&gt;¥1,200&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;menu-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;酸辣湯&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;menu-info&quot;&gt;
+                                        &lt;h3&gt;酸辣湯&lt;/h3&gt;
+                                        &lt;p&gt;酸味と辛味のバランスが絶妙なスープ&lt;/p&gt;
+                                        &lt;span class=&quot;price&quot;&gt;¥900&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;menu-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1559847844-d721426d6edc?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;ワンタンスープ&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;menu-info&quot;&gt;
+                                        &lt;h3&gt;ワンタンスープ&lt;/h3&gt;
+                                        &lt;p&gt;つるんとした食感のワンタン入りスープ&lt;/p&gt;
+                                        &lt;span class=&quot;price&quot;&gt;¥1,000&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;tab-content&quot; id=&quot;course&quot;&gt;
+                            &lt;div class=&quot;course-list&quot;&gt;
+                                &lt;div class=&quot;course-item&quot;&gt;
+                                    &lt;h3&gt;翡翠コース&lt;/h3&gt;
+                                    &lt;p class=&quot;course-price&quot;&gt;¥3,500（税込）&lt;/p&gt;
+                                    &lt;ul class=&quot;course-menu&quot;&gt;
+                                        &lt;li&gt;前菜三種盛り&lt;/li&gt;
+                                        &lt;li&gt;小籠包&lt;/li&gt;
+                                        &lt;li&gt;エビチリ&lt;/li&gt;
+                                        &lt;li&gt;酢豚&lt;/li&gt;
+                                        &lt;li&gt;チャーハン&lt;/li&gt;
+                                        &lt;li&gt;デザート&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;course-item recommended&quot;&gt;
+                                    &lt;div class=&quot;recommend-badge&quot;&gt;おすすめ&lt;/div&gt;
+                                    &lt;h3&gt;特選コース&lt;/h3&gt;
+                                    &lt;p class=&quot;course-price&quot;&gt;¥5,800（税込）&lt;/p&gt;
+                                    &lt;ul class=&quot;course-menu&quot;&gt;
+                                        &lt;li&gt;前菜五種盛り&lt;/li&gt;
+                                        &lt;li&gt;フカヒレスープ&lt;/li&gt;
+                                        &lt;li&gt;北京ダック&lt;/li&gt;
+                                        &lt;li&gt;エビチリ&lt;/li&gt;
+                                        &lt;li&gt;麻婆豆腐&lt;/li&gt;
+                                        &lt;li&gt;炒飯&lt;/li&gt;
+                                        &lt;li&gt;杏仁豆腐&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;course-item&quot;&gt;
+                                    &lt;h3&gt;宴会コース&lt;/h3&gt;
+                                    &lt;p class=&quot;course-price&quot;&gt;¥8,000（税込）&lt;/p&gt;
+                                    &lt;ul class=&quot;course-menu&quot;&gt;
+                                        &lt;li&gt;季節の前菜盛り合わせ&lt;/li&gt;
+                                        &lt;li&gt;フカヒレの姿煮&lt;/li&gt;
+                                        &lt;li&gt;北京ダック&lt;/li&gt;
+                                        &lt;li&gt;大海老のチリソース&lt;/li&gt;
+                                        &lt;li&gt;上海蟹の紹興酒蒸し&lt;/li&gt;
+                                        &lt;li&gt;牛肉の黒胡椒炒め&lt;/li&gt;
+                                        &lt;li&gt;特製チャーハン&lt;/li&gt;
+                                        &lt;li&gt;季節のデザート&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;rooms&quot; class=&quot;rooms&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title center&quot;&gt;個室案内&lt;/h2&gt;
+                    &lt;div class=&quot;title-ornament center&quot;&gt;&lt;/div&gt;
+                    &lt;p class=&quot;rooms-subtitle&quot;&gt;大切なお時間を特別な空間で&lt;/p&gt;
+                    
+                    &lt;div class=&quot;rooms-grid&quot;&gt;
+                        &lt;div class=&quot;room-item&quot;&gt;
+                            &lt;div class=&quot;room-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;小個室&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;room-info&quot;&gt;
+                                &lt;h3&gt;小個室「蘭」&lt;/h3&gt;
+                                &lt;p class=&quot;room-capacity&quot;&gt;2〜4名様&lt;/p&gt;
+                                &lt;p&gt;ご夫婦やカップルでのお食事に最適な落ち着いた個室です。&lt;/p&gt;
+                                &lt;span class=&quot;room-charge&quot;&gt;個室料: ¥3,000&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;room-item&quot;&gt;
+                            &lt;div class=&quot;room-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;中個室&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;room-info&quot;&gt;
+                                &lt;h3&gt;中個室「竹」&lt;/h3&gt;
+                                &lt;p class=&quot;room-capacity&quot;&gt;6〜8名様&lt;/p&gt;
+                                &lt;p&gt;ご家族でのお祝いやご接待にご利用いただけます。&lt;/p&gt;
+                                &lt;span class=&quot;room-charge&quot;&gt;個室料: ¥5,000&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;room-item&quot;&gt;
+                            &lt;div class=&quot;room-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;大個室&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;room-info&quot;&gt;
+                                &lt;h3&gt;大個室「梅」&lt;/h3&gt;
+                                &lt;p class=&quot;room-capacity&quot;&gt;10〜20名様&lt;/p&gt;
+                                &lt;p&gt;歓送迎会や忘年会などの宴会に最適な広々とした個室です。&lt;/p&gt;
+                                &lt;span class=&quot;room-charge&quot;&gt;個室料: ¥10,000&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;banquet&quot; class=&quot;banquet&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title center&quot;&gt;宴会プラン&lt;/h2&gt;
+                    &lt;div class=&quot;title-ornament center&quot;&gt;&lt;/div&gt;
+                    
+                    &lt;div class=&quot;banquet-content&quot;&gt;
+                        &lt;div class=&quot;banquet-info&quot;&gt;
+                            &lt;h3&gt;各種ご宴会承ります&lt;/h3&gt;
+                            &lt;ul class=&quot;banquet-list&quot;&gt;
+                                &lt;li&gt;歓送迎会&lt;/li&gt;
+                                &lt;li&gt;忘年会・新年会&lt;/li&gt;
+                                &lt;li&gt;結婚式二次会&lt;/li&gt;
+                                &lt;li&gt;法事・法要&lt;/li&gt;
+                                &lt;li&gt;同窓会&lt;/li&gt;
+                                &lt;li&gt;企業パーティー&lt;/li&gt;
+                            &lt;/ul&gt;
+                            &lt;div class=&quot;banquet-features&quot;&gt;
+                                &lt;div class=&quot;feature&quot;&gt;
+                                    &lt;h4&gt;飲み放題プラン&lt;/h4&gt;
+                                    &lt;p&gt;2時間 ¥2,000〜&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;feature&quot;&gt;
+                                    &lt;h4&gt;送迎サービス&lt;/h4&gt;
+                                    &lt;p&gt;最寄り駅まで無料送迎&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;banquet-image&quot;&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;宴会場&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;access&quot; class=&quot;access&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title center&quot;&gt;アクセス&lt;/h2&gt;
+                    &lt;div class=&quot;title-ornament center&quot;&gt;&lt;/div&gt;
+                    
+                    &lt;div class=&quot;access-content&quot;&gt;
+                        &lt;div class=&quot;access-info&quot;&gt;
+                            &lt;div class=&quot;info-group&quot;&gt;
+                                &lt;h3&gt;店舗情報&lt;/h3&gt;
+                                &lt;dl&gt;
+                                    &lt;dt&gt;住所&lt;/dt&gt;
+                                    &lt;dd&gt;〒100-0005 東京都千代田区丸の内1-1-1&lt;br&gt;丸の内ビル3F&lt;/dd&gt;
+                                    &lt;dt&gt;電話&lt;/dt&gt;
+                                    &lt;dd&gt;03-1234-5678&lt;/dd&gt;
+                                    &lt;dt&gt;営業時間&lt;/dt&gt;
+                                    &lt;dd&gt;
+                                        ランチ: 11:30〜15:00（L.O. 14:30）&lt;br&gt;
+                                        ディナー: 17:00〜22:30（L.O. 21:30）
+                                    &lt;/dd&gt;
+                                    &lt;dt&gt;定休日&lt;/dt&gt;
+                                    &lt;dd&gt;日曜日・祝日&lt;/dd&gt;
+                                &lt;/dl&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;info-group&quot;&gt;
+                                &lt;h3&gt;アクセス&lt;/h3&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;JR東京駅 徒歩3分&lt;/li&gt;
+                                    &lt;li&gt;地下鉄丸ノ内線東京駅 徒歩1分&lt;/li&gt;
+                                    &lt;li&gt;地下鉄東西線大手町駅 徒歩5分&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;access-map&quot;&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1524634126442-357e0eac3c14?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;店舗外観&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;reserve&quot; class=&quot;reserve&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title center&quot;&gt;ご予約&lt;/h2&gt;
+                    &lt;div class=&quot;title-ornament center&quot;&gt;&lt;/div&gt;
+                    
+                    &lt;div class=&quot;reserve-content&quot;&gt;
+                        &lt;p&gt;お電話またはオンラインでご予約を承っております&lt;/p&gt;
+                        &lt;div class=&quot;reserve-buttons&quot;&gt;
+                            &lt;a href=&quot;tel:03-1234-5678&quot; class=&quot;btn-phone&quot;&gt;
+                                お電話でのご予約&lt;br&gt;
+                                &lt;span&gt;03-1234-5678&lt;/span&gt;
+                            &lt;/a&gt;
+                            &lt;button class=&quot;btn-online&quot;&gt;オンライン予約&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;reserve-notes&quot;&gt;
+                            &lt;p&gt;※個室ご利用の場合は、別途個室料を申し受けます&lt;/p&gt;
+                            &lt;p&gt;※ご予約は2日前までにお願いいたします&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+
+        &lt;footer class=&quot;footer&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-info&quot;&gt;
+                    &lt;h3&gt;翡翠楼&lt;/h3&gt;
+                    &lt;p&gt;〒100-0005 東京都千代田区丸の内1-1-1 丸の内ビル3F&lt;/p&gt;
+                    &lt;p&gt;TEL: 03-1234-5678&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-hours&quot;&gt;
+                    &lt;h4&gt;営業時間&lt;/h4&gt;
+                    &lt;p&gt;ランチ: 11:30〜15:00&lt;/p&gt;
+                    &lt;p&gt;ディナー: 17:00〜22:30&lt;/p&gt;
+                    &lt;p&gt;定休日: 日曜日・祝日&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;copyright&quot;&gt;© 2025 翡翠楼. All rights reserved.&lt;/p&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+
+
+&lt;script&gt;
+    // タブ機能
+document.querySelectorAll(&#x27;.tab-btn&#x27;).forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, function() {
+        // アクティブなタブを削除
+        document.querySelectorAll(&#x27;.tab-btn&#x27;).forEach(b =&gt; b.classList.remove(&#x27;active&#x27;));
+        document.querySelectorAll(&#x27;.tab-content&#x27;).forEach(c =&gt; c.classList.remove(&#x27;active&#x27;));
+        
+        // 新しいアクティブタブを設定
+        this.classList.add(&#x27;active&#x27;);
+        const tabId = this.getAttribute(&#x27;data-tab&#x27;);
+        document.getElementById(tabId).classList.add(&#x27;active&#x27;);
+    });
+});
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// 予約ボタン
+document.querySelector(&#x27;.btn-online&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;オンライン予約システムへ移動します（実装予定）&#x27;);
+});
+
+// ヘッダーのスクロール効果
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const header = document.querySelector(&#x27;.header&#x27;);
+    if (window.scrollY &gt; 100) {
+        header.style.background = &#x27;rgba(139, 0, 0, 0.98)&#x27;;
+    } else {
+        header.style.background = &#x27;rgba(139, 0, 0, 0.95)&#x27;;
+    }
+});
+
+// メニューアイテムのアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -50px 0px&#x27;
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = &#x27;1&#x27;;
+            entry.target.style.transform = &#x27;translateY(0)&#x27;;
+        }
+    });
+}, observerOptions);
+
+// メニューアイテムにアニメーション追加
+document.querySelectorAll(&#x27;.menu-item, .room-item, .course-item&#x27;).forEach(item =&gt; {
+    item.style.opacity = &#x27;0&#x27;;
+    item.style.transform = &#x27;translateY(30px)&#x27;;
+    item.style.transition = &#x27;all 0.6s ease&#x27;;
+    observer.observe(item);
+});
+
+// 個室アイテムのホバー効果
+document.querySelectorAll(&#x27;.room-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.transform = &#x27;scale(1.02)&#x27;;
+        this.style.transition = &#x27;transform 0.3s ease&#x27;;
+    });
+    
+    item.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.transform = &#x27;scale(1)&#x27;;
+    });
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="中華レストラン" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"restaurant-chinese\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"restaurant-chinese\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"restaurant-chinese\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"restaurant-chinese\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"bWcktleSrC5Jn3tFUdaGw\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"restaurant-chinese\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

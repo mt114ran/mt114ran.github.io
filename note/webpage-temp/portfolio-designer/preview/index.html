@@ -1,0 +1,648 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ポートフォリオ - デザイナー&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #6366f1;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    opacity: 0.1;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: transform 0.3s;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Works */
+.works {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.work-item:hover {
+    transform: translateY(-10px);
+}
+
+.work-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.work-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.work-item:hover .work-overlay {
+    transform: translateY(0);
+}
+
+.work-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* About */
+.about {
+    padding: 100px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about-text p {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.about-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #6366f1;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Skills */
+.skills {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-item span {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.skill-bar {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 4px;
+    animation: skillLoad 1s ease-out;
+}
+
+@keyframes skillLoad {
+    from { width: 0; }
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.tool-item {
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+    color: #666;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Contact */
+.contact {
+    padding: 100px 0;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-text {
+    text-align: center;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.contact-form {
+    margin-bottom: 3rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-info a {
+    color: #6366f1;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 0;
+    background: #333;
+    color: white;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;nav class=&quot;nav&quot;&gt;
+            &lt;div class=&quot;nav-container&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;span&gt;DESIGNER&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;button class=&quot;menu-toggle&quot; id=&quot;menuToggle&quot;&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;ul class=&quot;nav-menu&quot; id=&quot;navMenu&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#works&quot;&gt;Works&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#skills&quot;&gt;Skills&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h1 class=&quot;hero-title&quot;&gt;Creative Designer&lt;/h1&gt;
+            &lt;p class=&quot;hero-subtitle&quot;&gt;UI/UX &amp; Visual Design&lt;/p&gt;
+            &lt;a href=&quot;#works&quot; class=&quot;hero-button&quot;&gt;View Works&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-bg&quot;&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;works&quot; class=&quot;works&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Selected Works&lt;/h2&gt;
+            &lt;div class=&quot;works-grid&quot;&gt;
+                &lt;div class=&quot;work-item&quot; data-category=&quot;ui&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;UI Design&quot;&gt;
+                    &lt;div class=&quot;work-overlay&quot;&gt;
+                        &lt;h3&gt;モバイルアプリUI&lt;/h3&gt;
+                        &lt;p&gt;UI/UX Design&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;work-item&quot; data-category=&quot;branding&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1524634126442-357e0eac3c14?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;Branding&quot;&gt;
+                    &lt;div class=&quot;work-overlay&quot;&gt;
+                        &lt;h3&gt;ブランディング&lt;/h3&gt;
+                        &lt;p&gt;Brand Identity&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;work-item&quot; data-category=&quot;web&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;Web Design&quot;&gt;
+                    &lt;div class=&quot;work-overlay&quot;&gt;
+                        &lt;h3&gt;Webサイトデザイン&lt;/h3&gt;
+                        &lt;p&gt;Web Design&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;work-item&quot; data-category=&quot;graphic&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;Graphic Design&quot;&gt;
+                    &lt;div class=&quot;work-overlay&quot;&gt;
+                        &lt;h3&gt;グラフィックデザイン&lt;/h3&gt;
+                        &lt;p&gt;Graphic Design&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;work-item&quot; data-category=&quot;ui&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;Dashboard&quot;&gt;
+                    &lt;div class=&quot;work-overlay&quot;&gt;
+                        &lt;h3&gt;ダッシュボードUI&lt;/h3&gt;
+                        &lt;p&gt;Dashboard Design&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;work-item&quot; data-category=&quot;branding&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1524678516592-a0906da30b3a?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;Logo Design&quot;&gt;
+                    &lt;div class=&quot;work-overlay&quot;&gt;
+                        &lt;h3&gt;ロゴデザイン&lt;/h3&gt;
+                        &lt;p&gt;Logo Design&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;About Me&lt;/h2&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&amp;h=600&amp;fit=crop&quot; alt=&quot;Designer&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;h3&gt;クリエイティブデザイナー&lt;/h3&gt;
+                    &lt;p&gt;10年以上のデザイン経験を持つクリエイティブデザイナーです。UI/UXデザイン、ブランディング、グラフィックデザインを専門としています。&lt;/p&gt;
+                    &lt;p&gt;ユーザー中心のデザインアプローチで、美しく機能的なデザインソリューションを提供します。&lt;/p&gt;
+                    &lt;div class=&quot;about-stats&quot;&gt;
+                        &lt;div class=&quot;stat&quot;&gt;
+                            &lt;span class=&quot;stat-number&quot;&gt;100+&lt;/span&gt;
+                            &lt;span class=&quot;stat-label&quot;&gt;Projects&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;stat&quot;&gt;
+                            &lt;span class=&quot;stat-number&quot;&gt;50+&lt;/span&gt;
+                            &lt;span class=&quot;stat-label&quot;&gt;Clients&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;stat&quot;&gt;
+                            &lt;span class=&quot;stat-number&quot;&gt;10+&lt;/span&gt;
+                            &lt;span class=&quot;stat-label&quot;&gt;Awards&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;skills&quot; class=&quot;skills&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Skills &amp; Tools&lt;/h2&gt;
+            &lt;div class=&quot;skills-grid&quot;&gt;
+                &lt;div class=&quot;skill-category&quot;&gt;
+                    &lt;h3&gt;Design Skills&lt;/h3&gt;
+                    &lt;div class=&quot;skill-list&quot;&gt;
+                        &lt;div class=&quot;skill-item&quot;&gt;
+                            &lt;span&gt;UI/UX Design&lt;/span&gt;
+                            &lt;div class=&quot;skill-bar&quot;&gt;
+                                &lt;div class=&quot;skill-progress&quot; style=&quot;width: 90%&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;skill-item&quot;&gt;
+                            &lt;span&gt;Visual Design&lt;/span&gt;
+                            &lt;div class=&quot;skill-bar&quot;&gt;
+                                &lt;div class=&quot;skill-progress&quot; style=&quot;width: 95%&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;skill-item&quot;&gt;
+                            &lt;span&gt;Branding&lt;/span&gt;
+                            &lt;div class=&quot;skill-bar&quot;&gt;
+                                &lt;div class=&quot;skill-progress&quot; style=&quot;width: 85%&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;skill-category&quot;&gt;
+                    &lt;h3&gt;Tools&lt;/h3&gt;
+                    &lt;div class=&quot;tool-grid&quot;&gt;
+                        &lt;div class=&quot;tool-item&quot;&gt;Figma&lt;/div&gt;
+                        &lt;div class=&quot;tool-item&quot;&gt;Sketch&lt;/div&gt;
+                        &lt;div class=&quot;tool-item&quot;&gt;Adobe XD&lt;/div&gt;
+                        &lt;div class=&quot;tool-item&quot;&gt;Photoshop&lt;/div&gt;
+                        &lt;div class=&quot;tool-item&quot;&gt;Illustrator&lt;/div&gt;
+                        &lt;div class=&quot;tool-item&quot;&gt;After Effects&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Get In Touch&lt;/h2&gt;
+            &lt;div class=&quot;contact-content&quot;&gt;
+                &lt;p class=&quot;contact-text&quot;&gt;新しいプロジェクトやコラボレーションのご相談はお気軽にどうぞ&lt;/p&gt;
+                &lt;form class=&quot;contact-form&quot;&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;input type=&quot;text&quot; placeholder=&quot;お名前&quot; required&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;input type=&quot;email&quot; placeholder=&quot;メールアドレス&quot; required&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;textarea placeholder=&quot;メッセージ&quot; rows=&quot;5&quot; required&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;submit-btn&quot;&gt;送信する&lt;/button&gt;
+                &lt;/form&gt;
+                &lt;div class=&quot;contact-info&quot;&gt;
+                    &lt;a href=&quot;mailto:designer@example.com&quot;&gt;designer@example.com&lt;/a&gt;
+                    &lt;div class=&quot;social-links&quot;&gt;
+                        &lt;a href=&quot;#&quot; aria-label=&quot;Twitter&quot;&gt;Twitter&lt;/a&gt;
+                        &lt;a href=&quot;#&quot; aria-label=&quot;Instagram&quot;&gt;Instagram&lt;/a&gt;
+                        &lt;a href=&quot;#&quot; aria-label=&quot;Behance&quot;&gt;Behance&lt;/a&gt;
+                        &lt;a href=&quot;#&quot; aria-label=&quot;Dribbble&quot;&gt;Dribbble&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;p&gt;&amp;copy; 2024 Designer Portfolio. All rights reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // メニュートグル
+document.getElementById(&#x27;menuToggle&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    document.getElementById(&#x27;navMenu&#x27;).classList.toggle(&#x27;active&#x27;);
+});
+
+// スムーススクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            target.scrollIntoView({
+                behavior: &#x27;smooth&#x27;,
+                block: &#x27;start&#x27;
+            });
+            document.getElementById(&#x27;navMenu&#x27;).classList.remove(&#x27;active&#x27;);
+        }
+    });
+});
+
+// フォーム送信
+document.querySelector(&#x27;.contact-form&#x27;).addEventListener(&#x27;submit&#x27;, function(e) {
+    e.preventDefault();
+    alert(&#x27;お問い合わせありがとうございます。後日ご連絡させていただきます。&#x27;);
+    this.reset();
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="ポートフォリオ - デザイナー" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"portfolio-designer\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"portfolio-designer\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"portfolio-designer\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"portfolio-designer\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"gBtTHhWYLKpI3ZfhHa7e7\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"portfolio-designer\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

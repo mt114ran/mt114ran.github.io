@@ -1,0 +1,2069 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/8d311e01b6f6fa19.css","style"]
+0:{"P":null,"b":"tbF4ekhpLvjG8yl9Cjqn0","p":"","c":["","note","webpage-temp","service-insurance",""],"i":false,"f":[[["",{"children":["note",{"children":["webpage-temp",{"children":[["id","service-insurance","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/8d311e01b6f6fa19.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["note",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["webpage-temp",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["id","service-insurance","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","sBLrHqwwAym-Qa6t963kp",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+12:I[6874,["874","static/chunks/874-acbedc3444a59791.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-78f6da3fdd9ae78d.js"],""]
+13:I[8863,["874","static/chunks/874-acbedc3444a59791.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-78f6da3fdd9ae78d.js"],"default"]
+14:I[9320,["874","static/chunks/874-acbedc3444a59791.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-78f6da3fdd9ae78d.js"],"default"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+15:Ta697,<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あんしん保険プラザ - 一生涯のパートナー</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-info">
+                    <span>📞 相談無料</span>
+                    <span>03-4567-8901</span>
+                    <span>平日 9:00-19:00 / 土日 10:00-17:00</span>
+                    <span>オンライン相談対応</span>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>🛡️ あんしん保険プラザ</h1>
+                        <p class="tagline">一生涯のパートナー</p>
+                    </div>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="#about">当社について</a></li>
+                            <li><a href="#products">保険商品</a></li>
+                            <li><a href="#services">サービス</a></li>
+                            <li><a href="#testimonials">お客様の声</a></li>
+                            <li><a href="#staff">スタッフ</a></li>
+                            <li><a href="#access">アクセス</a></li>
+                            <li class="nav-consultation"><a href="#consultation">無料相談</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&h=800&fit=crop" alt="保険相談">
+        </div>
+        <div class="hero-content">
+            <h2>あなたと家族の未来を守る</h2>
+            <p>ライフステージに応じた最適な保険プランをご提案いたします</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">無料相談予約</button>
+                <button class="btn-secondary">保険を探す</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">5,000</span>
+                    <span class="stat-label">ご契約件数</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">お客様満足度</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">年の実績</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">選ばれる理由</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>オーダーメイド設計</h3>
+                    <p>お客様一人ひとりのライフスタイルに合わせた最適な保険プランを設計いたします</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>豊富な商品ラインナップ</h3>
+                    <p>複数の保険会社と提携し、幅広い商品からベストな選択肢をご提案</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>アフターフォロー充実</h3>
+                    <p>ご契約後も定期的な見直しや各種手続きサポートで安心をお届け</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>オンライン対応</h3>
+                    <p>お忙しい方にはオンライン相談や各種手続きのデジタル化で便利にご利用いただけます</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">当社について</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>お客様の安心を第一に</h3>
+                    <p>あんしん保険プラザは、2008年の設立以来、お客様の「もしも」に備える保険のプロフェッショナルとして、多くのお客様にご愛顧いただいております。</p>
+                    <p>「保険は安心を買うもの」という理念のもと、お客様のライフステージの変化に合わせて、最適な保険プランをご提案し続けています。</p>
+                    <p>経験豊富なコンサルタントが、複雑な保険商品を分かりやすくご説明し、お客様が納得いくまでサポートいたします。</p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <div class="value-icon">💙</div>
+                            <h4>信頼関係重視</h4>
+                            <p>長期的な信頼関係を築きます</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">📋</div>
+                            <h4>分かりやすい説明</h4>
+                            <p>専門用語を使わず丁寧に説明</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🔄</div>
+                            <h4>定期的な見直し</h4>
+                            <p>ライフステージに応じた見直し</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop" alt="保険相談風景">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">取扱保険商品</h2>
+            <div class="products-tabs">
+                <button class="tab-btn active" data-tab="life">生命保険</button>
+                <button class="tab-btn" data-tab="medical">医療保険</button>
+                <button class="tab-btn" data-tab="auto">自動車保険</button>
+                <button class="tab-btn" data-tab="fire">火災保険</button>
+                <button class="tab-btn" data-tab="travel">旅行保険</button>
+            </div>
+            <div class="products-content">
+                <div class="tab-content active" id="life">
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-icon">👨‍👩‍👧‍👦</div>
+                            <h4>定期保険</h4>
+                            <p>一定期間の死亡保障で、お手頃な保険料で大きな保障を確保できます</p>
+                            <ul class="product-features">
+                                <li>保険料が安い</li>
+                                <li>高額保障可能</li>
+                                <li>更新型・全期型選択可</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">🏠</div>
+                            <h4>終身保険</h4>
+                            <p>一生涯の死亡保障と貯蓄機能を兼ね備えた保険です</p>
+                            <ul class="product-features">
+                                <li>一生涯保障</li>
+                                <li>解約返戻金あり</li>
+                                <li>相続対策に有効</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">📈</div>
+                            <h4>養老保険</h4>
+                            <p>満期時の生存給付金と死亡保障を両立した貯蓄型保険です</p>
+                            <ul class="product-features">
+                                <li>満期保険金あり</li>
+                                <li>死亡保障も確保</li>
+                                <li>計画的な資産形成</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">👶</div>
+                            <h4>学資保険</h4>
+                            <p>お子様の教育資金を計画的に準備する保険です</p>
+                            <ul class="product-features">
+                                <li>教育資金の準備</li>
+                                <li>保険料払込免除特約</li>
+                                <li>祝金の受取選択可</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="medical">
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-icon">🏥</div>
+                            <h4>医療保険</h4>
+                            <p>入院・手術費用をカバーする基本的な医療保険です</p>
+                            <ul class="product-features">
+                                <li>入院日額保障</li>
+                                <li>手術給付金</li>
+                                <li>通院保障あり</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">🎗️</div>
+                            <h4>がん保険</h4>
+                            <p>がんに特化した保障で、治療費や収入減少をサポートします</p>
+                            <ul class="product-features">
+                                <li>がん診断給付金</li>
+                                <li>抗がん剤治療保障</li>
+                                <li>先進医療保障</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">🧠</div>
+                            <h4>三大疾病保険</h4>
+                            <p>がん・心疾患・脳血管疾患の保障に特化した保険です</p>
+                            <ul class="product-features">
+                                <li>三大疾病診断給付</li>
+                                <li>治療費サポート</li>
+                                <li>収入減少対策</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">🦽</div>
+                            <h4>介護保険</h4>
+                            <p>将来の介護リスクに備える保険です</p>
+                            <ul class="product-features">
+                                <li>要介護状態の保障</li>
+                                <li>介護一時金</li>
+                                <li>年金形式の給付</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="auto">
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-icon">🚗</div>
+                            <h4>自動車保険</h4>
+                            <p>自動車事故による損害を幅広くカバーする保険です</p>
+                            <ul class="product-features">
+                                <li>対人・対物賠償</li>
+                                <li>車両保険</li>
+                                <li>人身傷害保険</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">🏍️</div>
+                            <h4>バイク保険</h4>
+                            <p>バイク・原付の事故に対する保障です</p>
+                            <ul class="product-features">
+                                <li>対人・対物賠償</li>
+                                <li>搭乗者傷害</li>
+                                <li>盗難保障</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">🚛</div>
+                            <h4>事業用自動車保険</h4>
+                            <p>営業車・トラックなど事業用車両の保険です</p>
+                            <ul class="product-features">
+                                <li>業務中の事故保障</li>
+                                <li>積載貨物保険</li>
+                                <li>代車費用保障</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">🛣️</div>
+                            <h4>ドライバー保険</h4>
+                            <p>他人の車を運転する際の保険です</p>
+                            <ul class="product-features">
+                                <li>他車運転保障</li>
+                                <li>対人・対物賠償</li>
+                                <li>搭乗者傷害</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="fire">
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-icon">🏠</div>
+                            <h4>住宅火災保険</h4>
+                            <p>火災・落雷・風災などから住宅を守る保険です</p>
+                            <ul class="product-features">
+                                <li>火災・落雷保障</li>
+                                <li>風災・雹災保障</li>
+                                <li>家財保険セット可</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">🌊</div>
+                            <h4>住宅総合保険</h4>
+                            <p>火災保険に水災・盗難なども含む総合的な保険です</p>
+                            <ul class="product-features">
+                                <li>水災保障</li>
+                                <li>盗難保障</li>
+                                <li>破損・汚損保障</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">🏢</div>
+                            <h4>店舗・事務所保険</h4>
+                            <p>事業用建物・設備の火災保険です</p>
+                            <ul class="product-features">
+                                <li>営業継続費用</li>
+                                <li>什器・備品保障</li>
+                                <li>賠償责任保険</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">🌀</div>
+                            <h4>地震保険</h4>
+                            <p>地震・噴火・津波による損害を補償する保険です</p>
+                            <ul class="product-features">
+                                <li>地震による倒壊</li>
+                                <li>津波による流失</li>
+                                <li>地震火災</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="travel">
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-icon">✈️</div>
+                            <h4>海外旅行保険</h4>
+                            <p>海外旅行中の病気・ケガ・事故に対する保険です</p>
+                            <ul class="product-features">
+                                <li>治療費用保障</li>
+                                <li>救援者費用</li>
+                                <li>携行品損害</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">🗾</div>
+                            <h4>国内旅行保険</h4>
+                            <p>国内旅行中の事故によるケガを保障する保険です</p>
+                            <ul class="product-features">
+                                <li>死亡・後遺障害</li>
+                                <li>入院・手術保障</li>
+                                <li>救援者費用</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">🎿</div>
+                            <h4>レジャー保険</h4>
+                            <p>スポーツ・レジャー中の事故を保障する保険です</p>
+                            <ul class="product-features">
+                                <li>スポーツ事故保障</li>
+                                <li>レジャー施設での事故</li>
+                                <li>第三者への賠償</li>
+                            </ul>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-icon">🎫</div>
+                            <h4>イベント保険</h4>
+                            <p>各種イベント・行事での事故を保障する保険です</p>
+                            <ul class="product-features">
+                                <li>参加者の傷害</li>
+                                <li>主催者賠償責任</li>
+                                <li>イベント中止保険</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">サービス内容</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>ライフプラン相談</h3>
+                    <p>将来のライフイベントを見据えた総合的な保険プランをご提案いたします</p>
+                    <ul class="service-features">
+                        <li>結婚・出産・住宅購入時の見直し</li>
+                        <li>教育資金・老後資金の準備</li>
+                        <li>相続・事業承継対策</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>保険診断・見直し</h3>
+                    <p>現在ご加入の保険を診断し、より適切なプランをご提案いたします</p>
+                    <ul class="service-features">
+                        <li>保険証券の内容確認</li>
+                        <li>保障内容の適正性チェック</li>
+                        <li>保険料削減提案</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>保険料シミュレーション</h3>
+                    <p>お客様の条件に応じた保険料を事前にシミュレーションいたします</p>
+                    <ul class="service-features">
+                        <li>複数社での比較見積</li>
+                        <li>保障内容別の料金比較</li>
+                        <li>年齢・性別による試算</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📞</div>
+                    <h3>アフターサービス</h3>
+                    <p>ご契約後も継続的にサポートし、安心をお届けいたします</p>
+                    <ul class="service-features">
+                        <li>保険金・給付金請求サポート</li>
+                        <li>定期的な保険見直し提案</li>
+                        <li>各種変更手続き代行</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>法人向けサービス</h3>
+                    <p>企業の事業リスクに応じた法人保険をご提案いたします</p>
+                    <ul class="service-features">
+                        <li>役員・従業員の福利厚生</li>
+                        <li>事業保障・債務返済資金</li>
+                        <li>退職金準備・事業承継</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>オンラインサービス</h3>
+                    <p>お忙しい方向けにオンラインでのサービスも充実しています</p>
+                    <ul class="service-features">
+                        <li>オンライン相談・面談</li>
+                        <li>Web申込み手続き</li>
+                        <li>デジタル証券発行</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">お客様の声</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">「結婚を機に保険を見直したいと相談しました。複雑な保険商品を分かりやすく説明していただき、私たちに最適なプランを提案してくれました。」</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">田中様ご夫妻</span>
+                        <span class="author-age">（30代）</span>
+                    </div>
+                    <div class="testimonial-product">生命保険・医療保険ご契約</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">「子供の教育資金準備のため学資保険を検討していました。複数の商品を比較検討していただき、返戻率の高い商品を選ぶことができました。」</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">佐藤様</span>
+                        <span class="author-age">（40代）</span>
+                    </div>
+                    <div class="testimonial-product">学資保険ご契約</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">「自動車保険の更新時期に相談しました。同じ保障内容で保険料を大幅に削減でき、浮いた分で医療保険にも加入できました。」</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">山田様</span>
+                        <span class="author-age">（50代）</span>
+                    </div>
+                    <div class="testimonial-product">自動車保険・医療保険ご契約</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">「住宅購入時の火災保険で相談しました。地震保険の必要性から補償内容まで詳しく説明していただき、安心して契約できました。」</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">鈴木様</span>
+                        <span class="author-age">（30代）</span>
+                    </div>
+                    <div class="testimonial-product">火災保険・地震保険ご契約</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">「会社の福利厚生として団体保険を検討していました。従業員のニーズに合った商品を提案していただき、加入率も向上しました。」</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">A社人事部様</span>
+                        <span class="author-age">（法人）</span>
+                    </div>
+                    <div class="testimonial-product">団体保険ご契約</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">「がんになった時の給付金請求で大変お世話になりました。迅速な対応で精神的な負担が軽減され、治療に専念することができました。」</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">高橋様</span>
+                        <span class="author-age">（60代）</span>
+                    </div>
+                    <div class="testimonial-product">がん保険給付金請求</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="staff" class="staff">
+        <div class="container">
+            <h2 class="section-title">スタッフ紹介</h2>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop" alt="代表">
+                    <div class="staff-info">
+                        <h3>代表 青木 誠</h3>
+                        <p class="staff-qualification">生命保険協会認定FP・損害保険募集人資格</p>
+                        <div class="staff-specialties">
+                            <span>ライフプラン</span>
+                            <span>相続対策</span>
+                            <span>法人保険</span>
+                        </div>
+                        <p class="staff-message">お客様の人生の重要な節目で最適な保険をご提案し、長期的なパートナーとしてサポートいたします。</p>
+                        <div class="staff-experience">
+                            <h4>経験・実績</h4>
+                            <ul>
+                                <li>保険業界歴20年</li>
+                                <li>年間相談件数300件以上</li>
+                                <li>MDRT成績資格会員</li>
+                                <li>保険金支払実績1億円以上</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="staff-card">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616c33495e4?w=400&h=400&fit=crop" alt="保険コンサルタント">
+                    <div class="staff-info">
+                        <h3>保険コンサルタント 松本 美香</h3>
+                        <p class="staff-qualification">AFP認定・損害保険プランナー</p>
+                        <div class="staff-specialties">
+                            <span>医療保険</span>
+                            <span>女性保険</span>
+                            <span>学資保険</span>
+                        </div>
+                        <p class="staff-message">特に女性やファミリー層のお客様から信頼をいただいております。お気軽にご相談ください。</p>
+                        <div class="staff-experience">
+                            <h4>経験・実績</h4>
+                            <ul>
+                                <li>保険業界歴12年</li>
+                                <li>女性向け保険相談実績豊富</li>
+                                <li>子育て経験を活かした提案</li>
+                                <li>お客様満足度98%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="staff-card">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" alt="保険アドバイザー">
+                    <div class="staff-info">
+                        <h3>保険アドバイザー 田村 健太</h3>
+                        <p class="staff-qualification">2級FP技能士・自動車保険専門資格</p>
+                        <div class="staff-specialties">
+                            <span>自動車保険</span>
+                            <span>火災保険</span>
+                            <span>旅行保険</span>
+                        </div>
+                        <p class="staff-message">損害保険を中心に、実生活に密着した保険商品のエキスパートとしてサポートいたします。</p>
+                        <div class="staff-experience">
+                            <h4>経験・実績</h4>
+                            <ul>
+                                <li>保険業界歴8年</li>
+                                <li>自動車保険年間契約500件</li>
+                                <li>事故対応サポート経験豊富</li>
+                                <li>損害査定士資格取得</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="simulator">
+        <div class="container">
+            <h2 class="section-title">保険料シミュレーション</h2>
+            <div class="simulator-content">
+                <div class="simulator-intro">
+                    <h3>あなたにぴったりの保険料をシミュレーション</h3>
+                    <p>簡単な項目を入力するだけで、おおよその保険料を確認できます</p>
+                </div>
+                <div class="simulator-form">
+                    <div class="form-group">
+                        <label>年齢</label>
+                        <select id="age">
+                            <option value="">選択してください</option>
+                            <option value="20">20代</option>
+                            <option value="30">30代</option>
+                            <option value="40">40代</option>
+                            <option value="50">50代</option>
+                            <option value="60">60代以上</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>性別</label>
+                        <select id="gender">
+                            <option value="">選択してください</option>
+                            <option value="male">男性</option>
+                            <option value="female">女性</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>保険種類</label>
+                        <select id="insurance-type">
+                            <option value="">選択してください</option>
+                            <option value="life">生命保険</option>
+                            <option value="medical">医療保険</option>
+                            <option value="auto">自動車保険</option>
+                            <option value="fire">火災保険</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>希望保障額</label>
+                        <select id="coverage">
+                            <option value="">選択してください</option>
+                            <option value="1000">1,000万円</option>
+                            <option value="2000">2,000万円</option>
+                            <option value="3000">3,000万円</option>
+                            <option value="5000">5,000万円</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary" id="simulate-btn">シミュレーション実行</button>
+                </div>
+                <div class="simulator-result" id="simulator-result" style="display: none;">
+                    <h4>シミュレーション結果</h4>
+                    <div class="result-item">
+                        <span class="result-label">月額保険料（概算）</span>
+                        <span class="result-value" id="monthly-premium">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">年間保険料（概算）</span>
+                        <span class="result-value" id="annual-premium">-</span>
+                    </div>
+                    <p class="result-note">※上記は概算です。正確な保険料は無料相談でお確かめください。</p>
+                    <button class="btn-secondary">詳細相談を申し込む</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="access" class="access">
+        <div class="container">
+            <h2 class="section-title">アクセス</h2>
+            <div class="access-content">
+                <div class="access-info">
+                    <table>
+                        <tr>
+                            <th>店舗名</th>
+                            <td>あんしん保険プラザ</td>
+                        </tr>
+                        <tr>
+                            <th>住所</th>
+                            <td>〒104-0061 東京都中央区銀座4-5-6 インシュアランスビル3F</td>
+                        </tr>
+                        <tr>
+                            <th>電話</th>
+                            <td>03-4567-8901</td>
+                        </tr>
+                        <tr>
+                            <th>営業時間</th>
+                            <td>
+                                平日: 9:00-19:00<br>
+                                土日: 10:00-17:00
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>定休日</th>
+                            <td>祝日・年末年始</td>
+                        </tr>
+                        <tr>
+                            <th>アクセス</th>
+                            <td>
+                                JR「有楽町駅」徒歩5分<br>
+                                地下鉄「銀座駅」徒歩3分
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>駐車場</th>
+                            <td>提携駐車場あり（1時間無料）</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="access-map">
+                    <div class="map-placeholder">🗺️ Google Map</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="consultation" class="consultation">
+        <div class="container">
+            <h2 class="section-title">無料相談のご予約</h2>
+            <div class="consultation-content">
+                <div class="consultation-intro">
+                    <h3>保険のお悩みを無料で解決</h3>
+                    <p>経験豊富なコンサルタントが、お客様の状況に応じた最適な保険プランをご提案いたします。</p>
+                    <p>相談は完全無料、しつこい営業は一切いたしません。</p>
+                </div>
+                <div class="consultation-methods">
+                    <div class="method-card">
+                        <div class="method-icon">🏢</div>
+                        <h4>店舗でのご相談</h4>
+                        <p>落ち着いた環境でじっくりご相談</p>
+                        <ul>
+                            <li>資料を見ながら詳細説明</li>
+                            <li>キッズスペース完備</li>
+                            <li>土日も営業</li>
+                        </ul>
+                        <button class="btn-primary">来店予約</button>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-icon">🏠</div>
+                        <h4>ご自宅での相談</h4>
+                        <p>ご自宅でリラックスしてご相談</p>
+                        <ul>
+                            <li>お客様のご都合に合わせて訪問</li>
+                            <li>ご家族全員でご相談可能</li>
+                            <li>夜間・休日対応可</li>
+                        </ul>
+                        <button class="btn-primary">訪問予約</button>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-icon">💻</div>
+                        <h4>オンライン相談</h4>
+                        <p>お忙しい方にはオンラインで</p>
+                        <ul>
+                            <li>Zoom・Teams対応</li>
+                            <li>画面共有で資料説明</li>
+                            <li>全国どこからでも</li>
+                        </ul>
+                        <button class="btn-primary">オンライン予約</button>
+                    </div>
+                </div>
+                <div class="consultation-contact">
+                    <h4>お電話でのご予約・お問い合わせ</h4>
+                    <div class="contact-info">
+                        <a href="tel:03-4567-8901" class="phone-number">📞 03-4567-8901</a>
+                        <p class="contact-hours">受付時間: 平日 9:00-19:00 / 土日 10:00-17:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>🛡️ あんしん保険プラザ</h3>
+                    <p>〒104-0061 東京都中央区銀座4-5-6 インシュアランスビル3F</p>
+                    <p>TEL: 03-4567-8901</p>
+                    <p>営業時間: 平日 9:00-19:00 / 土日 10:00-17:00</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>保険商品</h4>
+                        <ul>
+                            <li><a href="#products">生命保険</a></li>
+                            <li><a href="#products">医療保険</a></li>
+                            <li><a href="#products">自動車保険</a></li>
+                            <li><a href="#products">火災保険</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>サービス</h4>
+                        <ul>
+                            <li><a href="#services">ライフプラン相談</a></li>
+                            <li><a href="#services">保険見直し</a></li>
+                            <li><a href="#services">法人向けサービス</a></li>
+                            <li><a href="#consultation">無料相談</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>会社情報</h4>
+                        <ul>
+                            <li><a href="#about">会社概要</a></li>
+                            <li><a href="#staff">スタッフ紹介</a></li>
+                            <li><a href="#">プライバシーポリシー</a></li>
+                            <li><a href="#">勧誘方針</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">© 2025 あんしん保険プラザ All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>16:T4058,* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP', sans-serif;
+    color: #333;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header-top {
+    background: linear-gradient(135deg, #1565c0 0%, #2196f3 100%);
+    padding: 8px 0;
+    font-size: 13px;
+    color: white;
+}
+
+.header-info {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
+}
+
+.header-main {
+    background: white;
+    box-shadow: 0 2px 15px rgba(21, 101, 192, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo h1 {
+    color: #1565c0;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #ff9800;
+    margin-top: 5px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #1565c0;
+}
+
+.nav-consultation a {
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.nav-consultation a:hover {
+    background: linear-gradient(135deg, #f57c00 0%, #ef6c00 100%);
+    transform: translateY(-2px);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(21, 101, 192, 0.8) 0%, rgba(255, 152, 0, 0.6) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 18px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #f57c00 0%, #ef6c00 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.5);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff9800;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: white;
+}
+
+/* Features */
+.features {
+    background: #e3f2fd;
+    padding: 80px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(21, 101, 192, 0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(21, 101, 192, 0.2);
+}
+
+.feature-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    color: #1565c0;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    color: #1565c0;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #1565c0, #ff9800);
+    border-radius: 2px;
+}
+
+/* About */
+.about {
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text h3 {
+    color: #1565c0;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.about-values {
+    display: grid;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.value-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: #e3f2fd;
+    border-radius: 15px;
+}
+
+.value-icon {
+    font-size: 32px;
+}
+
+.value-item h4 {
+    color: #1565c0;
+    margin-bottom: 5px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(21, 101, 192, 0.2);
+}
+
+/* Products */
+.products {
+    background: #e3f2fd;
+}
+
+.products-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 15px 30px;
+    background: white;
+    border: 2px solid #1565c0;
+    color: #1565c0;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #1565c0;
+    color: white;
+}
+
+.products-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 15px rgba(21, 101, 192, 0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.product-card h4 {
+    color: #1565c0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.product-card p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.product-features {
+    list-style: none;
+}
+
+.product-features li {
+    padding: 5px 0;
+    color: #555;
+    font-size: 13px;
+}
+
+.product-features li:before {
+    content: "✓";
+    color: #4caf50;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Services */
+.services {
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: #e3f2fd;
+    padding: 40px 30px;
+    border-radius: 20px;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #1565c0;
+    box-shadow: 0 15px 40px rgba(21, 101, 192, 0.15);
+}
+
+.service-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: #1565c0;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.service-card > p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.service-features {
+    list-style: none;
+}
+
+.service-features li {
+    padding: 8px 0;
+    border-bottom: 1px solid #bbdefb;
+    color: #555;
+}
+
+.service-features li:before {
+    content: "▶";
+    color: #ff9800;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Testimonials */
+.testimonials {
+    background: #e3f2fd;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(21, 101, 192, 0.1);
+    transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-rating {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.author-name {
+    font-weight: bold;
+    color: #1565c0;
+}
+
+.author-age {
+    color: #666;
+}
+
+.testimonial-product {
+    font-size: 12px;
+    color: #ff9800;
+    font-weight: 500;
+}
+
+/* Staff */
+.staff {
+    background: white;
+}
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.staff-card {
+    background: #e3f2fd;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 20px rgba(21, 101, 192, 0.1);
+}
+
+.staff-card:hover {
+    transform: translateY(-5px);
+}
+
+.staff-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.staff-info {
+    padding: 30px;
+}
+
+.staff-info h3 {
+    color: #1565c0;
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+.staff-qualification {
+    color: #ff9800;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.staff-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.staff-specialties span {
+    background: #bbdefb;
+    color: #1565c0;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.staff-message {
+    margin-bottom: 25px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.staff-experience h4 {
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+.staff-experience ul {
+    list-style: none;
+}
+
+.staff-experience li {
+    padding: 5px 0;
+    color: #666;
+}
+
+.staff-experience li:before {
+    content: "•";
+    color: #ff9800;
+    margin-right: 10px;
+}
+
+/* Simulator */
+.simulator {
+    background: #e3f2fd;
+}
+
+.simulator-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.simulator-intro h3 {
+    color: #1565c0;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.simulator-form {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    box-shadow: 0 4px 20px rgba(21, 101, 192, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #1565c0;
+    font-weight: 500;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #bbdefb;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #1565c0;
+}
+
+#simulate-btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.simulator-result {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(21, 101, 192, 0.1);
+}
+
+.simulator-result h4 {
+    color: #1565c0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.result-label {
+    font-weight: 500;
+}
+
+.result-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.result-note {
+    text-align: center;
+    margin: 20px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Access */
+.access {
+    background: white;
+}
+
+.access-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.access-info table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #e3f2fd;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(21, 101, 192, 0.1);
+}
+
+.access-info th {
+    text-align: left;
+    padding: 20px;
+    background: #1565c0;
+    color: white;
+    width: 120px;
+    font-weight: 600;
+}
+
+.access-info td {
+    padding: 20px;
+    border-bottom: 1px solid #bbdefb;
+}
+
+.access-info tr:last-child td {
+    border-bottom: none;
+}
+
+.access-map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e3f2fd;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(21, 101, 192, 0.1);
+}
+
+.map-placeholder {
+    font-size: 60px;
+    color: #1565c0;
+}
+
+/* Consultation */
+.consultation {
+    background: #e3f2fd;
+}
+
+.consultation-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.consultation-intro h3 {
+    color: #1565c0;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.consultation-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.method-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 20px rgba(21, 101, 192, 0.1);
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+}
+
+.method-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.method-card h4 {
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+.method-card p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.method-card ul {
+    list-style: none;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.method-card li {
+    padding: 5px 0;
+    color: #555;
+}
+
+.method-card li:before {
+    content: "✓";
+    color: #4caf50;
+    margin-right: 8px;
+}
+
+.consultation-contact {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(21, 101, 192, 0.1);
+}
+
+.consultation-contact h4 {
+    color: #1565c0;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.phone-number {
+    display: inline-block;
+    font-size: 28px;
+    color: #ff9800;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-hours {
+    color: #666;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #1565c0 0%, #2196f3 100%);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-info h3 {
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-section h4 {
+    margin-bottom: 20px;
+    color: #ff9800;
+    font-size: 18px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ff9800;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    color: #90caf9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-info {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        font-size: 12px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .hero-content h2 {
+        font-size: 32px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .products-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .access-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .consultation-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+}17:T209e,// タブ切り替え機能
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        
+        // タブボタンのアクティブ状態を切り替え
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // タブコンテンツの表示を切り替え
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+            if (content.id === tab) {
+                content.classList.add('active');
+            }
+        });
+    });
+});
+
+// 相談予約ボタンのクリック処理
+document.querySelectorAll('.btn-primary').forEach(button => {
+    if (button.textContent.includes('03-4567-8901')) return;
+    
+    button.addEventListener('click', function() {
+        const btnText = button.textContent;
+        if (btnText.includes('無料相談予約') || btnText.includes('来店予約') || 
+            btnText.includes('訪問予約') || btnText.includes('オンライン予約')) {
+            alert('無料相談のご予約を承ります。お電話またはWebフォームからお申し込みください。');
+        } else if (btnText.includes('シミュレーション実行')) {
+            handleSimulation();
+        }
+    });
+});
+
+// その他のボタンのクリック処理
+document.querySelectorAll('.btn-secondary').forEach(button => {
+    button.addEventListener('click', function(e) {
+        if (button.textContent === '保険を探す') {
+            e.preventDefault();
+            document.getElementById('products').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        } else if (button.textContent === '詳細相談を申し込む') {
+            alert('詳細な保険相談のお申し込みフォームへ移動します（実装予定）');
+        }
+    });
+});
+
+// 保険料シミュレーション機能
+function handleSimulation() {
+    const age = document.getElementById('age').value;
+    const gender = document.getElementById('gender').value;
+    const insuranceType = document.getElementById('insurance-type').value;
+    const coverage = document.getElementById('coverage').value;
+    
+    if (!age || !gender || !insuranceType || !coverage) {
+        alert('すべての項目を選択してください');
+        return;
+    }
+    
+    // 簡易的な保険料計算（実際のシステムでは複雑な計算が必要）
+    let baseRate = 1000;
+    
+    // 年齢による係数
+    const ageMultiplier = {
+        '20': 0.8,
+        '30': 1.0,
+        '40': 1.3,
+        '50': 1.8,
+        '60': 2.5
+    };
+    
+    // 性別による係数
+    const genderMultiplier = {
+        'male': 1.1,
+        'female': 0.9
+    };
+    
+    // 保険種類による係数
+    const typeMultiplier = {
+        'life': 1.0,
+        'medical': 0.7,
+        'auto': 1.2,
+        'fire': 0.5
+    };
+    
+    // 保障額による係数
+    const coverageMultiplier = {
+        '1000': 1.0,
+        '2000': 1.8,
+        '3000': 2.5,
+        '5000': 4.0
+    };
+    
+    const monthlyPremium = Math.round(
+        baseRate * 
+        ageMultiplier[age] * 
+        genderMultiplier[gender] * 
+        typeMultiplier[insuranceType] * 
+        coverageMultiplier[coverage]
+    );
+    
+    const annualPremium = monthlyPremium * 12;
+    
+    // 結果を表示
+    document.getElementById('monthly-premium').textContent = `¥${monthlyPremium.toLocaleString()}`;
+    document.getElementById('annual-premium').textContent = `¥${annualPremium.toLocaleString()}`;
+    document.getElementById('simulator-result').style.display = 'block';
+    
+    // 結果セクションまでスクロール
+    document.getElementById('simulator-result').scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'center'
+    });
+}
+
+// スムーズスクロール
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerHeight = document.querySelector('.header-main').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// 電話番号のクリック処理
+document.querySelectorAll('a[href^="tel:"]').forEach(tel => {
+    tel.addEventListener('click', function(e) {
+        if (!tel.href.includes('tel:')) return;
+        
+        // デスクトップの場合はアラートを表示
+        if (!/Mobi|Android/i.test(navigator.userAgent)) {
+            e.preventDefault();
+            alert('お電話でのお問い合わせ: ' + this.textContent.replace('📞 ', ''));
+        }
+    });
+});
+
+// 商品カードのクリック処理
+document.querySelectorAll('.product-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function() {
+        const title = this.querySelector('h4').textContent;
+        const description = this.querySelector('p').textContent;
+        const features = Array.from(this.querySelectorAll('.product-features li')).map(li => li.textContent).join('\n• ');
+        alert(`${title}の詳細
+
+${description}
+
+特徴:
+• ${features}
+
+詳細についてはお気軽にご相談ください。`);
+    });
+});
+
+// お客様の声カードのクリック処理
+document.querySelectorAll('.testimonial-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function() {
+        const text = this.querySelector('.testimonial-text').textContent;
+        const author = this.querySelector('.author-name').textContent;
+        const product = this.querySelector('.testimonial-product').textContent;
+        alert(`お客様の声
+
+${text}
+
+${author}様 - ${product}`);
+    });
+});
+
+// ページ読み込み時のアニメーション
+window.addEventListener('load', function() {
+    const hero = document.querySelector('.hero-content');
+    if (hero) {
+        hero.style.opacity = '0';
+        hero.style.transform = 'translateY(50px)';
+        hero.style.transition = 'all 1.2s ease';
+        
+        setTimeout(() => {
+            hero.style.opacity = '1';
+            hero.style.transform = 'translateY(0)';
+        }, 300);
+    }
+    
+    // 統計データのカウントアップアニメーション
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers.forEach(stat => {
+        const finalValue = parseInt(stat.textContent.replace(/[^d]/g, ''));
+        let currentValue = 0;
+        const increment = finalValue / 60;
+        
+        const timer = setInterval(() => {
+            currentValue += increment;
+            if (currentValue >= finalValue) {
+                stat.textContent = stat.textContent; // 元の値（%記号等を保持）
+                clearInterval(timer);
+            } else {
+                stat.textContent = Math.floor(currentValue);
+            }
+        }, 25);
+    });
+});
+
+// スクロールでヘッダーの背景を変更
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header-main');
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.backdropFilter = 'blur(10px)';
+    } else {
+        header.style.background = 'white';
+        header.style.backdropFilter = 'none';
+    }
+});
+
+// 特徴カードのホバー効果
+document.querySelectorAll('.feature-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+    });
+});
+
+// サービスカードのホバー効果
+document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+    });
+});4:["$","div",null,{"className":"min-h-screen bg-gray-900 text-gray-100","children":["$","div",null,{"className":"max-w-7xl mx-auto py-10 px-4","children":[["$","nav",null,{"className":"mb-6 flex gap-4","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"ホーム"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","$L12",null,{"href":"/note/webpage-temp","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"テンプレート一覧"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","span",null,{"className":"text-gray-400","children":"サービス業 - 保険代理店"}]]}],["$","div",null,{"className":"mb-8","children":[["$","div",null,{"className":"flex items-center gap-4 mb-4","children":[["$","h1",null,{"className":"text-3xl font-bold","children":"サービス業 - 保険代理店"}],["$","span",null,{"className":"px-3 py-1 bg-blue-600 text-white rounded text-sm","children":"サービス業"}]]}],["$","p",null,{"className":"text-gray-300 text-lg mb-4","children":"安心感と信頼性を重視した保険代理店向けWebサイトテンプレート"}],["$","div",null,{"className":"flex flex-wrap gap-2 mb-4","children":[["$","span","0",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","保険商品紹介"]}],["$","span","1",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","ライフプラン相談"]}],["$","span","2",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","保険料シミュレーション"]}],["$","span","3",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","お客様の声"]}]]}],["$","div",null,{"className":"flex flex-wrap gap-2 mb-6","children":[["$","span","0",{"className":"text-sm text-gray-500","children":["#","サービス業"]}],["$","span","1",{"className":"text-sm text-gray-500","children":["#","保険代理店"]}],["$","span","2",{"className":"text-sm text-gray-500","children":["#","生命保険"]}],["$","span","3",{"className":"text-sm text-gray-500","children":["#","損害保険"]}]]}],["$","$L13",null,{"templateId":"service-insurance"}]]}],["$","$L14",null,{"template":{"id":"service-insurance","title":"サービス業 - 保険代理店","category":"サービス業","description":"安心感と信頼性を重視した保険代理店向けWebサイトテンプレート","thumbnail":"/template-images/service-insurance.jpg","features":["保険商品紹介","ライフプラン相談","保険料シミュレーション","お客様の声"],"tags":["サービス業","保険代理店","生命保険","損害保険"],"code":{"html":"$15","css":"$16","js":"$17"}}}],["$","div",null,{"className":"mt-12 bg-gray-800 rounded-lg p-6","children":[["$","h2",null,{"className":"text-xl font-bold mb-4","children":"使用方法"}],["$","ol",null,{"className":"space-y-3 text-gray-300","children":[["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"1."}],["$","span",null,{"children":"上のタブからHTML、CSS、JavaScriptのコードをそれぞれコピーします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"2."}],["$","span",null,{"children":"新しいHTMLファイルを作成し、HTMLコードを貼り付けます。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"3."}],["$","span",null,{"children":"CSSコードを<style>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"4."}],["$","span",null,{"children":"JavaScriptコードを<script>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"5."}],["$","span",null,{"children":"必要に応じて、テキストや画像、色などをカスタマイズしてご使用ください。"}]]}]]}],["$","div",null,{"className":"mt-6 p-4 bg-blue-900/30 border border-blue-600 rounded","children":[["$","p",null,{"className":"text-blue-400 mb-2","children":"📚 初めての方へ"}],["$","p",null,{"className":"text-gray-300 text-sm","children":["HTMLやCSSが初めての方は、",["$","$L12",null,{"href":"/note/webpage-temp/guide","className":"text-blue-400 hover:text-blue-300 underline","children":"初心者向けWeb制作学習ガイド"}],"をご覧ください。実際に手を動かしながら学べる詳しい手順を解説しています。"]}]]}]]}],["$","div",null,{"className":"mt-8 bg-yellow-900/30 border border-yellow-600 rounded-lg p-6","children":[["$","h3",null,{"className":"text-yellow-400 font-bold mb-2","children":"注意事項"}],["$","ul",null,{"className":"space-y-2 text-gray-300 text-sm","children":[["$","li",null,{"children":"• このテンプレートは学習・参考用として提供されています。"}],["$","li",null,{"children":"• 実際のプロジェクトで使用する際は、セキュリティやパフォーマンスの最適化を行ってください。"}],["$","li",null,{"children":"• 画像やアイコンは実際のものに置き換えてご使用ください。"}],["$","li",null,{"children":"• レスポンシブ対応していますが、実機でのテストを推奨します。"}]]}]]}],["$","div",null,{"className":"mt-8 text-center","children":["$","$L12",null,{"href":"/note/webpage-temp","className":"inline-block px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors","children":"テンプレート一覧へ戻る"}]}]]}]}]
+9:null
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}

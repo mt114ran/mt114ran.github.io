@@ -1,0 +1,674 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;カフェ - インダストリアル&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Arial&#x27;, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: #1a1a1a;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.logo-sub {
+    color: #666;
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    margin-top: 2px;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.nav-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.nav-list a {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: #fff;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.2);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: 10px;
+    line-height: 0.9;
+}
+
+.hero-tagline {
+    margin-top: 1rem;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    color: #999;
+}
+
+/* About */
+.about {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+}
+
+.lead {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(50%);
+}
+
+/* Menu */
+.menu {
+    padding: 100px 0;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.menu .section-title {
+    color: #fff;
+    text-align: center;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.menu-category {
+    color: #999;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #333;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.item-name {
+    color: #ccc;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+.item-price {
+    color: #999;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+/* Gallery */
+.gallery {
+    padding: 100px 0;
+    background-color: #f5f5f5;
+}
+
+.gallery .section-title {
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.gallery-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Contact */
+.contact {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.contact .section-title {
+    text-align: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item h3 {
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.info-item p {
+    color: #666;
+    line-height: 1.8;
+}
+
+.map-placeholder {
+    background-color: #1a1a1a;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-placeholder span {
+    color: #333;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+}
+
+/* Footer */
+.footer {
+    background-color: #0a0a0a;
+    color: #666;
+    padding: 50px 0 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #999;
+}
+
+.footer-social {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-social a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #999;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #1a1a1a;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        padding: 2rem 0;
+        border-top: 1px solid #333;
+    }
+    
+    .nav-list.active {
+        display: flex;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-item.large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;header-container&quot;&gt;
+            &lt;div class=&quot;logo&quot;&gt;
+                &lt;span class=&quot;logo-text&quot;&gt;INDUSTRIAL&lt;/span&gt;
+                &lt;span class=&quot;logo-sub&quot;&gt;CAFE&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;nav class=&quot;nav&quot;&gt;
+                &lt;button class=&quot;nav-toggle&quot; id=&quot;navToggle&quot;&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;ul class=&quot;nav-list&quot; id=&quot;navList&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;ABOUT&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;MENU&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#gallery&quot;&gt;GALLERY&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;CONTACT&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-bg&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1920&amp;h=1080&amp;fit=crop&quot; alt=&quot;Industrial Cafe Interior&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h1 class=&quot;hero-title&quot;&gt;
+                &lt;span&gt;INDUSTRIAL&lt;/span&gt;
+                &lt;span&gt;CAFE&lt;/span&gt;
+            &lt;/h1&gt;
+            &lt;p class=&quot;hero-tagline&quot;&gt;URBAN COFFEE EXPERIENCE&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;about-grid&quot;&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;ABOUT US&lt;/h2&gt;
+                    &lt;p class=&quot;lead&quot;&gt;無骨さと洗練が共存する空間&lt;/p&gt;
+                    &lt;p&gt;コンクリート打ちっぱなしの壁、剥き出しの配管、アイアンの家具。インダストリアルな空間で味わう、こだわりのスペシャルティコーヒー。&lt;/p&gt;
+                    &lt;p&gt;都会の喧騒から少し離れた、大人のためのサードプレイス。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;Coffee preparation&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;menu&quot; class=&quot;menu&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;MENU&lt;/h2&gt;
+            &lt;div class=&quot;menu-grid&quot;&gt;
+                &lt;div class=&quot;menu-column&quot;&gt;
+                    &lt;h3 class=&quot;menu-category&quot;&gt;COFFEE&lt;/h3&gt;
+                    &lt;div class=&quot;menu-list&quot;&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;ESPRESSO&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥400&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;AMERICANO&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥450&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;LATTE&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥550&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;CAPPUCCINO&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥550&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;COLD BREW&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥500&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;menu-column&quot;&gt;
+                    &lt;h3 class=&quot;menu-category&quot;&gt;SPECIALTY&lt;/h3&gt;
+                    &lt;div class=&quot;menu-list&quot;&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;V60 POUR OVER&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥700&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;AEROPRESS&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥750&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;SYPHON&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥800&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;FRENCH PRESS&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥650&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;CHEMEX&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥750&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;menu-column&quot;&gt;
+                    &lt;h3 class=&quot;menu-category&quot;&gt;FOOD&lt;/h3&gt;
+                    &lt;div class=&quot;menu-list&quot;&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;CROISSANT&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥380&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;BAGEL SANDWICH&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥780&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;EGGS BENEDICT&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥1,200&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;FRENCH TOAST&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥980&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-name&quot;&gt;CHEESE CAKE&lt;/div&gt;
+                            &lt;div class=&quot;item-price&quot;&gt;¥580&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;gallery&quot; class=&quot;gallery&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;GALLERY&lt;/h2&gt;
+            &lt;div class=&quot;gallery-grid&quot;&gt;
+                &lt;div class=&quot;gallery-item large&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;Interior 1&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;Coffee&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1511081692775-05d0f180a065?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;Brewing&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1498804103079-a6351b050096?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;Coffee beans&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;Interior 2&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;CONTACT&lt;/h2&gt;
+            &lt;div class=&quot;contact-grid&quot;&gt;
+                &lt;div class=&quot;contact-info&quot;&gt;
+                    &lt;div class=&quot;info-item&quot;&gt;
+                        &lt;h3&gt;ADDRESS&lt;/h3&gt;
+                        &lt;p&gt;〒150-0001&lt;br&gt;
+                        東京都渋谷区神宮前5-10-1&lt;br&gt;
+                        GYRE B1F&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;info-item&quot;&gt;
+                        &lt;h3&gt;HOURS&lt;/h3&gt;
+                        &lt;p&gt;MON-FRI: 7:00 - 22:00&lt;br&gt;
+                        SAT-SUN: 8:00 - 23:00&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;info-item&quot;&gt;
+                        &lt;h3&gt;CONTACT&lt;/h3&gt;
+                        &lt;p&gt;TEL: 03-1234-5678&lt;br&gt;
+                        MAIL: info@industrial-cafe.jp&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;contact-map&quot;&gt;
+                    &lt;div class=&quot;map-placeholder&quot;&gt;
+                        &lt;span&gt;MAP&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-logo&quot;&gt;
+                    &lt;span&gt;INDUSTRIAL CAFE&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-social&quot;&gt;
+                    &lt;a href=&quot;#&quot; aria-label=&quot;Instagram&quot;&gt;INSTAGRAM&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; aria-label=&quot;Facebook&quot;&gt;FACEBOOK&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; aria-label=&quot;Twitter&quot;&gt;TWITTER&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p&gt;&amp;copy; 2024 INDUSTRIAL CAFE. ALL RIGHTS RESERVED.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // モバイルナビゲーション
+document.getElementById(&#x27;navToggle&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    document.getElementById(&#x27;navList&#x27;).classList.toggle(&#x27;active&#x27;);
+});
+
+// スムーススクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerOffset = 70;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+            
+            // モバイルメニューを閉じる
+            document.getElementById(&#x27;navList&#x27;).classList.remove(&#x27;active&#x27;);
+        }
+    });
+});
+
+// パララックス効果
+window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+    const scrolled = window.pageYOffset;
+    const parallax = document.querySelector(&#x27;.hero-bg&#x27;);
+    if (parallax) {
+        parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="カフェ - インダストリアル" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"cafe-industrial\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"cafe-industrial\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"cafe-industrial\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"cafe-industrial\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"3BRRhsO7fAOeDW3gfwPjw\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"cafe-industrial\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

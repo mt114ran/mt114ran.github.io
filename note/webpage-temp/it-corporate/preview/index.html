@@ -1,0 +1,1816 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;IT企業 - コーポレート&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&#x27;https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500;700&amp;display=swap&#x27;);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Noto Sans JP&#x27;, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo h1 {
+    font-family: &#x27;Roboto&#x27;, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2563eb;
+    margin: 0;
+    line-height: 1;
+}
+
+.company-name {
+    font-size: 12px;
+    color: #666;
+    display: block;
+    margin-top: 2px;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s;
+    padding: 10px 0;
+}
+
+.main-nav a:hover {
+    color: #2563eb;
+}
+
+/* Dropdown Menu */
+.nav-item {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #666;
+    border-radius: 0;
+}
+
+.dropdown-menu a:hover {
+    background: #f8f9fa;
+    color: #2563eb;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.8), rgba(59, 130, 246, 0.6));
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: #f59e0b;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #d97706;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    padding: 15px 30px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #2563eb;
+}
+
+/* Company Overview */
+.company-overview {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.overview-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.overview-text h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #1f2937;
+}
+
+.overview-text p {
+    font-size: 18px;
+    color: #6b7280;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.company-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2563eb;
+    display: block;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+.overview-visual img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #1f2937;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 60px;
+    font-size: 18px;
+}
+
+/* Services */
+.services {
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 30px;
+    transition: all 0.3s;
+}
+
+.service-card:hover {
+    border-color: #2563eb;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.service-card p {
+    color: #6b7280;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.service-features li {
+    padding: 5px 0;
+    color: #6b7280;
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-features li:before {
+    content: &quot;✓&quot;;
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: 600;
+}
+
+.service-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.service-link:hover {
+    color: #1d4ed8;
+}
+
+/* News */
+.news {
+    background: #f8f9fa;
+}
+
+.news-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+}
+
+.news-item {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.news-date {
+    font-size: 14px;
+    color: #6b7280;
+    margin-right: 15px;
+}
+
+.news-category {
+    background: #dbeafe;
+    color: #2563eb;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.news-item h3 {
+    margin: 15px 0 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.news-item h3 a {
+    color: #1f2937;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.news-item h3 a:hover {
+    color: #2563eb;
+}
+
+.news-item p {
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+/* News Sidebar */
+.news-sidebar {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    height: fit-content;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.sidebar-section {
+    margin-bottom: 40px;
+}
+
+.sidebar-section:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1f2937;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 10px;
+}
+
+.category-list,
+.archive-list,
+.related-links {
+    list-style: none;
+}
+
+.category-list li,
+.archive-list li,
+.related-links li {
+    margin-bottom: 10px;
+}
+
+.category-list a,
+.archive-list a,
+.related-links a {
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-list a:hover,
+.archive-list a:hover,
+.related-links a:hover {
+    color: #2563eb;
+}
+
+.category-list span,
+.archive-list span {
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+.news-actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* IR */
+.ir {
+    background: white;
+}
+
+.ir-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.highlight-item {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+
+.highlight-item h3 {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 15px;
+}
+
+.highlight-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.highlight-change {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.highlight-change.positive {
+    color: #10b981;
+}
+
+.highlight-change.negative {
+    color: #ef4444;
+}
+
+.highlight-item p {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.ir-documents h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #1f2937;
+}
+
+.document-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.document-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.document-icon {
+    font-size: 24px;
+    min-width: 40px;
+}
+
+.document-info {
+    flex: 1;
+}
+
+.document-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1f2937;
+}
+
+.document-info p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.download-btn {
+    background: #2563eb;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Careers */
+.careers {
+    background: #f8f9fa;
+}
+
+.careers-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.careers-intro h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1f2937;
+}
+
+.careers-intro p {
+    font-size: 18px;
+    color: #6b7280;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.career-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.benefit-icon {
+    font-size: 24px;
+    min-width: 30px;
+    margin-top: 5px;
+}
+
+.benefit-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1f2937;
+}
+
+.benefit-item p {
+    color: #6b7280;
+}
+
+.job-openings h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #1f2937;
+}
+
+.job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.job-item {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.job-item h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1f2937;
+}
+
+.job-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.job-type,
+.job-location {
+    background: #dbeafe;
+    color: #2563eb;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.job-item p {
+    color: #6b7280;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.job-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.job-link:hover {
+    color: #1d4ed8;
+}
+
+.careers-actions {
+    display: flex;
+    gap: 20px;
+}
+
+/* Contact */
+.contact {
+    background: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-method {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.method-icon {
+    font-size: 28px;
+    min-width: 50px;
+    color: #2563eb;
+}
+
+.method-details h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1f2937;
+}
+
+.phone-number {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 5px;
+}
+
+.business-hours {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.method-details p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.contact-form {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #1f2937;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-privacy {
+    margin-bottom: 30px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.checkbox-label input[type=&quot;checkbox&quot;] {
+    width: auto;
+    margin: 0;
+}
+
+.checkbox-label a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.checkbox-label a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background: #1f2937;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2563eb;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-section p {
+    color: #9ca3af;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #2563eb;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    background: #374151;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.social-links a:hover {
+    background: #2563eb;
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid #374151;
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.legal-links {
+    display: flex;
+    gap: 20px;
+}
+
+.legal-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.legal-links a:hover {
+    color: #2563eb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 0;
+    }
+    
+    .main-nav ul li {
+        border-bottom: 1px solid #f0f0f0;
+        width: 100%;
+    }
+    
+    .main-nav a {
+        padding: 15px 0;
+        display: block;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: #f8f9fa;
+        margin-top: 10px;
+    }
+    
+    .hero-content h2 {
+        font-size: 32px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .overview-content,
+    .careers-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .company-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .news-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .ir-highlights {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-legal {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;header-content&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;h1&gt;DSC&lt;/h1&gt;
+                    &lt;span class=&quot;company-name&quot;&gt;Digital Solutions Corp&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;button class=&quot;hamburger&quot; id=&quot;hamburger&quot;&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;nav class=&quot;main-nav&quot; id=&quot;main-nav&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li class=&quot;nav-item dropdown&quot;&gt;
+                            &lt;a href=&quot;#about&quot;&gt;企業情報&lt;/a&gt;
+                            &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                                &lt;li&gt;&lt;a href=&quot;#company&quot;&gt;会社概要&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#history&quot;&gt;沿革&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#philosophy&quot;&gt;企業理念&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;nav-item dropdown&quot;&gt;
+                            &lt;a href=&quot;#services&quot;&gt;事業・サービス&lt;/a&gt;
+                            &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                                &lt;li&gt;&lt;a href=&quot;#consulting&quot;&gt;ITコンサルティング&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#development&quot;&gt;システム開発&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#cloud&quot;&gt;クラウドサービス&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#news&quot;&gt;ニュース&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#ir&quot;&gt;IR情報&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#careers&quot;&gt;採用情報&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-slider&quot;&gt;
+            &lt;div class=&quot;hero-slide active&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&amp;h=800&amp;fit=crop&quot; alt=&quot;オフィス&quot;&gt;
+                &lt;div class=&quot;hero-overlay&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;hero-content&quot;&gt;
+                        &lt;h2&gt;デジタル技術で&lt;br&gt;社会課題を解決する&lt;/h2&gt;
+                        &lt;p&gt;40年の実績と信頼。最先端のIT技術で、お客様のビジネス変革をサポートします。&lt;/p&gt;
+                        &lt;div class=&quot;hero-buttons&quot;&gt;
+                            &lt;a href=&quot;#services&quot; class=&quot;btn-primary&quot;&gt;サービス一覧&lt;/a&gt;
+                            &lt;a href=&quot;#contact&quot; class=&quot;btn-outline&quot;&gt;お問い合わせ&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;company-overview&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;overview-content&quot;&gt;
+                &lt;div class=&quot;overview-text&quot;&gt;
+                    &lt;h2&gt;信頼と革新の40年&lt;/h2&gt;
+                    &lt;p&gt;1984年の創業以来、Digital Solutions Corpは日本のIT業界をリードし続けています。大手企業から官公庁まで、幅広いお客様のデジタル変革を支援し、持続可能な社会の実現に貢献しています。&lt;/p&gt;
+                    &lt;div class=&quot;company-stats&quot;&gt;
+                        &lt;div class=&quot;stat&quot;&gt;
+                            &lt;div class=&quot;stat-number&quot;&gt;2,500+&lt;/div&gt;
+                            &lt;div class=&quot;stat-label&quot;&gt;導入実績&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;stat&quot;&gt;
+                            &lt;div class=&quot;stat-number&quot;&gt;8,000+&lt;/div&gt;
+                            &lt;div class=&quot;stat-label&quot;&gt;従業員数&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;stat&quot;&gt;
+                            &lt;div class=&quot;stat-number&quot;&gt;40&lt;/div&gt;
+                            &lt;div class=&quot;stat-label&quot;&gt;事業年数&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;stat&quot;&gt;
+                            &lt;div class=&quot;stat-number&quot;&gt;15&lt;/div&gt;
+                            &lt;div class=&quot;stat-label&quot;&gt;国・地域&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;overview-visual&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;チームワーク&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;services&quot; class=&quot;services&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;事業・サービス&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;お客様のあらゆるニーズにお応えする包括的なITソリューション&lt;/p&gt;
+            
+            &lt;div class=&quot;services-grid&quot;&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=100&amp;h=100&amp;fit=crop&quot; alt=&quot;コンサルティング&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;ITコンサルティング&lt;/h3&gt;
+                    &lt;p&gt;戦略立案から実行支援まで、お客様のビジネス変革を総合的にサポートします。&lt;/p&gt;
+                    &lt;ul class=&quot;service-features&quot;&gt;
+                        &lt;li&gt;デジタル戦略策定&lt;/li&gt;
+                        &lt;li&gt;業務プロセス改革&lt;/li&gt;
+                        &lt;li&gt;IT投資最適化&lt;/li&gt;
+                        &lt;li&gt;リスク管理&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;service-link&quot;&gt;詳細を見る →&lt;/a&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=100&amp;h=100&amp;fit=crop&quot; alt=&quot;システム開発&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;システム開発&lt;/h3&gt;
+                    &lt;p&gt;基幹系から情報系まで、あらゆるシステムの設計・開発・運用を行います。&lt;/p&gt;
+                    &lt;ul class=&quot;service-features&quot;&gt;
+                        &lt;li&gt;Webアプリケーション&lt;/li&gt;
+                        &lt;li&gt;モバイルアプリ&lt;/li&gt;
+                        &lt;li&gt;基幹システム&lt;/li&gt;
+                        &lt;li&gt;データベース設計&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;service-link&quot;&gt;詳細を見る →&lt;/a&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=100&amp;h=100&amp;fit=crop&quot; alt=&quot;クラウド&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;クラウドサービス&lt;/h3&gt;
+                    &lt;p&gt;AWS、Azure、Google Cloudを活用したクラウドインフラの構築・移行を支援します。&lt;/p&gt;
+                    &lt;ul class=&quot;service-features&quot;&gt;
+                        &lt;li&gt;クラウド移行&lt;/li&gt;
+                        &lt;li&gt;インフラ設計&lt;/li&gt;
+                        &lt;li&gt;セキュリティ対策&lt;/li&gt;
+                        &lt;li&gt;運用自動化&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;service-link&quot;&gt;詳細を見る →&lt;/a&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=100&amp;h=100&amp;fit=crop&quot; alt=&quot;AI・データ分析&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;AI・データ分析&lt;/h3&gt;
+                    &lt;p&gt;機械学習とビッグデータ技術で、データから価値を創出します。&lt;/p&gt;
+                    &lt;ul class=&quot;service-features&quot;&gt;
+                        &lt;li&gt;機械学習モデル構築&lt;/li&gt;
+                        &lt;li&gt;データ可視化&lt;/li&gt;
+                        &lt;li&gt;予測分析&lt;/li&gt;
+                        &lt;li&gt;自然言語処理&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;service-link&quot;&gt;詳細を見る →&lt;/a&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=100&amp;h=100&amp;fit=crop&quot; alt=&quot;セキュリティ&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;サイバーセキュリティ&lt;/h3&gt;
+                    &lt;p&gt;包括的なセキュリティソリューションで、企業の重要な資産を守ります。&lt;/p&gt;
+                    &lt;ul class=&quot;service-features&quot;&gt;
+                        &lt;li&gt;脆弱性診断&lt;/li&gt;
+                        &lt;li&gt;SOC運用&lt;/li&gt;
+                        &lt;li&gt;インシデント対応&lt;/li&gt;
+                        &lt;li&gt;教育研修&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;service-link&quot;&gt;詳細を見る →&lt;/a&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1551434678-e076c223a692?w=100&amp;h=100&amp;fit=crop&quot; alt=&quot;保守運用&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;保守・運用&lt;/h3&gt;
+                    &lt;p&gt;24時間365日のシステム監視により、安定稼働をお約束します。&lt;/p&gt;
+                    &lt;ul class=&quot;service-features&quot;&gt;
+                        &lt;li&gt;24/7監視&lt;/li&gt;
+                        &lt;li&gt;障害対応&lt;/li&gt;
+                        &lt;li&gt;性能改善&lt;/li&gt;
+                        &lt;li&gt;バックアップ&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;service-link&quot;&gt;詳細を見る →&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;news&quot; class=&quot;news&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;ニュース&lt;/h2&gt;
+            &lt;div class=&quot;news-content&quot;&gt;
+                &lt;div class=&quot;news-list&quot;&gt;
+                    &lt;article class=&quot;news-item&quot;&gt;
+                        &lt;time class=&quot;news-date&quot;&gt;2025.01.15&lt;/time&gt;
+                        &lt;span class=&quot;news-category&quot;&gt;プレスリリース&lt;/span&gt;
+                        &lt;h3&gt;&lt;a href=&quot;#&quot;&gt;新データセンター開設について&lt;/a&gt;&lt;/h3&gt;
+                        &lt;p&gt;関西地区における事業拡大に伴い、大阪に新データセンターを開設いたします。&lt;/p&gt;
+                    &lt;/article&gt;
+                    
+                    &lt;article class=&quot;news-item&quot;&gt;
+                        &lt;time class=&quot;news-date&quot;&gt;2025.01.08&lt;/time&gt;
+                        &lt;span class=&quot;news-category&quot;&gt;サービス&lt;/span&gt;
+                        &lt;h3&gt;&lt;a href=&quot;#&quot;&gt;AIチャットボットサービス正式リリース&lt;/a&gt;&lt;/h3&gt;
+                        &lt;p&gt;自然言語処理技術を活用したエンタープライズ向けチャットボットサービスの提供を開始しました。&lt;/p&gt;
+                    &lt;/article&gt;
+                    
+                    &lt;article class=&quot;news-item&quot;&gt;
+                        &lt;time class=&quot;news-date&quot;&gt;2024.12.25&lt;/time&gt;
+                        &lt;span class=&quot;news-category&quot;&gt;受賞&lt;/span&gt;
+                        &lt;h3&gt;&lt;a href=&quot;#&quot;&gt;「DX推進企業大賞」を受賞&lt;/a&gt;&lt;/h3&gt;
+                        &lt;p&gt;当社のデジタル変革への取り組みが評価され、経済産業省主催の「DX推進企業大賞」を受賞いたしました。&lt;/p&gt;
+                    &lt;/article&gt;
+                    
+                    &lt;article class=&quot;news-item&quot;&gt;
+                        &lt;time class=&quot;news-date&quot;&gt;2024.12.20&lt;/time&gt;
+                        &lt;span class=&quot;news-category&quot;&gt;イベント&lt;/span&gt;
+                        &lt;h3&gt;&lt;a href=&quot;#&quot;&gt;年末年始休業のお知らせ&lt;/a&gt;&lt;/h3&gt;
+                        &lt;p&gt;誠に勝手ながら、12月29日（金）から1月3日（水）まで年末年始休業とさせていただきます。&lt;/p&gt;
+                    &lt;/article&gt;
+                    
+                    &lt;article class=&quot;news-item&quot;&gt;
+                        &lt;time class=&quot;news-date&quot;&gt;2024.12.15&lt;/time&gt;
+                        &lt;span class=&quot;news-category&quot;&gt;採用&lt;/span&gt;
+                        &lt;h3&gt;&lt;a href=&quot;#&quot;&gt;2025年度新卒採用開始&lt;/a&gt;&lt;/h3&gt;
+                        &lt;p&gt;2025年度新卒採用のエントリー受付を開始いたします。皆様のご応募をお待ちしております。&lt;/p&gt;
+                    &lt;/article&gt;
+                &lt;/div&gt;
+                
+                &lt;aside class=&quot;news-sidebar&quot;&gt;
+                    &lt;div class=&quot;sidebar-section&quot;&gt;
+                        &lt;h3&gt;カテゴリー&lt;/h3&gt;
+                        &lt;ul class=&quot;category-list&quot;&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;すべて &lt;span&gt;(25)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プレスリリース &lt;span&gt;(8)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;サービス &lt;span&gt;(6)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;受賞 &lt;span&gt;(4)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;イベント &lt;span&gt;(4)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;採用 &lt;span&gt;(3)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;sidebar-section&quot;&gt;
+                        &lt;h3&gt;月別アーカイブ&lt;/h3&gt;
+                        &lt;ul class=&quot;archive-list&quot;&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2025年1月 &lt;span&gt;(2)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2024年12月 &lt;span&gt;(4)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2024年11月 &lt;span&gt;(3)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2024年10月 &lt;span&gt;(5)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;sidebar-section&quot;&gt;
+                        &lt;h3&gt;関連リンク&lt;/h3&gt;
+                        &lt;ul class=&quot;related-links&quot;&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;IR情報&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;採用情報&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;サステナビリティ&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/aside&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;news-actions&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;btn-outline&quot;&gt;ニュース一覧を見る&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;ir&quot; class=&quot;ir&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;IR情報&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;投資家の皆様へ&lt;/p&gt;
+            
+            &lt;div class=&quot;ir-content&quot;&gt;
+                &lt;div class=&quot;ir-highlights&quot;&gt;
+                    &lt;div class=&quot;highlight-item&quot;&gt;
+                        &lt;h3&gt;売上高&lt;/h3&gt;
+                        &lt;div class=&quot;highlight-value&quot;&gt;1,250億円&lt;/div&gt;
+                        &lt;div class=&quot;highlight-change positive&quot;&gt;+12.5%&lt;/div&gt;
+                        &lt;p&gt;前年同期比&lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;highlight-item&quot;&gt;
+                        &lt;h3&gt;営業利益&lt;/h3&gt;
+                        &lt;div class=&quot;highlight-value&quot;&gt;180億円&lt;/div&gt;
+                        &lt;div class=&quot;highlight-change positive&quot;&gt;+8.3%&lt;/div&gt;
+                        &lt;p&gt;前年同期比&lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;highlight-item&quot;&gt;
+                        &lt;h3&gt;株価&lt;/h3&gt;
+                        &lt;div class=&quot;highlight-value&quot;&gt;3,850円&lt;/div&gt;
+                        &lt;div class=&quot;highlight-change negative&quot;&gt;-2.1%&lt;/div&gt;
+                        &lt;p&gt;前日比&lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;highlight-item&quot;&gt;
+                        &lt;h3&gt;配当&lt;/h3&gt;
+                        &lt;div class=&quot;highlight-value&quot;&gt;95円&lt;/div&gt;
+                        &lt;div class=&quot;highlight-change positive&quot;&gt;+5円&lt;/div&gt;
+                        &lt;p&gt;1株当たり年間&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;ir-documents&quot;&gt;
+                    &lt;h3&gt;IR資料&lt;/h3&gt;
+                    &lt;div class=&quot;document-list&quot;&gt;
+                        &lt;div class=&quot;document-item&quot;&gt;
+                            &lt;div class=&quot;document-icon&quot;&gt;📊&lt;/div&gt;
+                            &lt;div class=&quot;document-info&quot;&gt;
+                                &lt;h4&gt;2024年度 第3四半期決算説明資料&lt;/h4&gt;
+                                &lt;p&gt;2024年12月15日&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;download-btn&quot;&gt;PDF&lt;/a&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;document-item&quot;&gt;
+                            &lt;div class=&quot;document-icon&quot;&gt;📈&lt;/div&gt;
+                            &lt;div class=&quot;document-info&quot;&gt;
+                                &lt;h4&gt;中期経営計画（2024-2026）&lt;/h4&gt;
+                                &lt;p&gt;2024年11月20日&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;download-btn&quot;&gt;PDF&lt;/a&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;document-item&quot;&gt;
+                            &lt;div class=&quot;document-icon&quot;&gt;📋&lt;/div&gt;
+                            &lt;div class=&quot;document-info&quot;&gt;
+                                &lt;h4&gt;有価証券報告書&lt;/h4&gt;
+                                &lt;p&gt;2024年6月30日&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;download-btn&quot;&gt;PDF&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;careers&quot; class=&quot;careers&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;採用情報&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;共に未来を創る仲間を募集しています&lt;/p&gt;
+            
+            &lt;div class=&quot;careers-content&quot;&gt;
+                &lt;div class=&quot;careers-intro&quot;&gt;
+                    &lt;h3&gt;DSCで働く意味&lt;/h3&gt;
+                    &lt;p&gt;最先端の技術と豊富な経験を活かし、社会課題の解決に挑戦する。そんな環境で、あなたの可能性を最大限に発揮してみませんか。&lt;/p&gt;
+                    
+                    &lt;div class=&quot;career-benefits&quot;&gt;
+                        &lt;div class=&quot;benefit-item&quot;&gt;
+                            &lt;div class=&quot;benefit-icon&quot;&gt;🚀&lt;/div&gt;
+                            &lt;h4&gt;成長機会&lt;/h4&gt;
+                            &lt;p&gt;最新技術に触れ、スキルアップできる環境&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;benefit-item&quot;&gt;
+                            &lt;div class=&quot;benefit-icon&quot;&gt;🏢&lt;/div&gt;
+                            &lt;h4&gt;働きやすさ&lt;/h4&gt;
+                            &lt;p&gt;フレックス制度・リモートワーク完備&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;benefit-item&quot;&gt;
+                            &lt;div class=&quot;benefit-icon&quot;&gt;💰&lt;/div&gt;
+                            &lt;h4&gt;待遇&lt;/h4&gt;
+                            &lt;p&gt;業界トップクラスの給与・福利厚生&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;job-openings&quot;&gt;
+                    &lt;h3&gt;募集職種&lt;/h3&gt;
+                    &lt;div class=&quot;job-list&quot;&gt;
+                        &lt;div class=&quot;job-item&quot;&gt;
+                            &lt;h4&gt;システムエンジニア&lt;/h4&gt;
+                            &lt;div class=&quot;job-meta&quot;&gt;
+                                &lt;span class=&quot;job-type&quot;&gt;正社員&lt;/span&gt;
+                                &lt;span class=&quot;job-location&quot;&gt;東京・大阪&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;p&gt;大規模システムの設計・開発・運用に携わっていただきます。&lt;/p&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;job-link&quot;&gt;詳細を見る →&lt;/a&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;job-item&quot;&gt;
+                            &lt;h4&gt;データサイエンティスト&lt;/h4&gt;
+                            &lt;div class=&quot;job-meta&quot;&gt;
+                                &lt;span class=&quot;job-type&quot;&gt;正社員&lt;/span&gt;
+                                &lt;span class=&quot;job-location&quot;&gt;東京&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;p&gt;AI・機械学習を活用したデータ分析・予測モデル構築を担当していただきます。&lt;/p&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;job-link&quot;&gt;詳細を見る →&lt;/a&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;job-item&quot;&gt;
+                            &lt;h4&gt;ITコンサルタント&lt;/h4&gt;
+                            &lt;div class=&quot;job-meta&quot;&gt;
+                                &lt;span class=&quot;job-type&quot;&gt;正社員&lt;/span&gt;
+                                &lt;span class=&quot;job-location&quot;&gt;東京・名古屋・大阪&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;p&gt;お客様のDX推進をリードするコンサルタントとして活躍していただきます。&lt;/p&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;job-link&quot;&gt;詳細を見る →&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;careers-actions&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;btn-primary&quot;&gt;採用サイトへ&lt;/a&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;btn-outline&quot;&gt;エントリー&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;お問い合わせ&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;お気軽にご相談ください&lt;/p&gt;
+            
+            &lt;div class=&quot;contact-content&quot;&gt;
+                &lt;div class=&quot;contact-info&quot;&gt;
+                    &lt;div class=&quot;contact-methods&quot;&gt;
+                        &lt;div class=&quot;contact-method&quot;&gt;
+                            &lt;div class=&quot;method-icon&quot;&gt;📞&lt;/div&gt;
+                            &lt;div class=&quot;method-details&quot;&gt;
+                                &lt;h3&gt;お電話でのお問い合わせ&lt;/h3&gt;
+                                &lt;p class=&quot;phone-number&quot;&gt;03-1234-5678&lt;/p&gt;
+                                &lt;p class=&quot;business-hours&quot;&gt;平日 9:00～18:00&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;contact-method&quot;&gt;
+                            &lt;div class=&quot;method-icon&quot;&gt;📧&lt;/div&gt;
+                            &lt;div class=&quot;method-details&quot;&gt;
+                                &lt;h3&gt;メールでのお問い合わせ&lt;/h3&gt;
+                                &lt;p&gt;info@digitalsolutions.co.jp&lt;/p&gt;
+                                &lt;p&gt;24時間受付（回答は営業時間内）&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;contact-method&quot;&gt;
+                            &lt;div class=&quot;method-icon&quot;&gt;📍&lt;/div&gt;
+                            &lt;div class=&quot;method-details&quot;&gt;
+                                &lt;h3&gt;本社アクセス&lt;/h3&gt;
+                                &lt;p&gt;〒100-0001&lt;br&gt;東京都千代田区千代田1-1-1&lt;br&gt;DSCビル&lt;/p&gt;
+                                &lt;p&gt;JR東京駅より徒歩5分&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;contact-form&quot;&gt;
+                    &lt;h3&gt;お問い合わせフォーム&lt;/h3&gt;
+                    &lt;form&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label for=&quot;inquiry-type&quot;&gt;お問い合わせ種別&lt;/label&gt;
+                            &lt;select id=&quot;inquiry-type&quot; required&gt;
+                                &lt;option value=&quot;&quot;&gt;選択してください&lt;/option&gt;
+                                &lt;option value=&quot;service&quot;&gt;サービスについて&lt;/option&gt;
+                                &lt;option value=&quot;partnership&quot;&gt;パートナーシップ&lt;/option&gt;
+                                &lt;option value=&quot;recruit&quot;&gt;採用について&lt;/option&gt;
+                                &lt;option value=&quot;ir&quot;&gt;IR・投資家情報&lt;/option&gt;
+                                &lt;option value=&quot;media&quot;&gt;取材・広報&lt;/option&gt;
+                                &lt;option value=&quot;other&quot;&gt;その他&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;form-row&quot;&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label for=&quot;name&quot;&gt;お名前&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; id=&quot;name&quot; required&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label for=&quot;email&quot;&gt;メールアドレス&lt;/label&gt;
+                                &lt;input type=&quot;email&quot; id=&quot;email&quot; required&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;form-row&quot;&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label for=&quot;company&quot;&gt;会社名&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; id=&quot;company&quot; required&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label for=&quot;phone&quot;&gt;電話番号&lt;/label&gt;
+                                &lt;input type=&quot;tel&quot; id=&quot;phone&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label for=&quot;message&quot;&gt;お問い合わせ内容&lt;/label&gt;
+                            &lt;textarea id=&quot;message&quot; rows=&quot;6&quot; required&gt;&lt;/textarea&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;form-privacy&quot;&gt;
+                            &lt;label class=&quot;checkbox-label&quot;&gt;
+                                &lt;input type=&quot;checkbox&quot; required&gt;
+                                &lt;span class=&quot;checkmark&quot;&gt;&lt;/span&gt;
+                                &lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;に同意する
+                            &lt;/label&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;button type=&quot;submit&quot; class=&quot;btn-primary&quot;&gt;送信する&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;Digital Solutions Corp&lt;/h3&gt;
+                    &lt;p&gt;デジタル技術で社会課題を解決し、持続可能な未来を創造します。&lt;/p&gt;
+                    &lt;div class=&quot;social-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;LinkedIn&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Twitter&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;YouTube&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h4&gt;企業情報&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;会社概要&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;沿革&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;企業理念&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;役員紹介&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;グループ企業&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h4&gt;事業・サービス&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ITコンサルティング&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;システム開発&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;クラウドサービス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;AI・データ分析&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;サイバーセキュリティ&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h4&gt;サポート&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ニュース&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;IR情報&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;採用情報&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;サイトマップ&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;div class=&quot;footer-legal&quot;&gt;
+                    &lt;p&gt;&amp;copy; 2025 Digital Solutions Corp. All rights reserved.&lt;/p&gt;
+                    &lt;div class=&quot;legal-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;利用規約&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;サイトポリシー&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // ハンバーガーメニュー
+const hamburger = document.getElementById(&#x27;hamburger&#x27;);
+const mainNav = document.getElementById(&#x27;main-nav&#x27;);
+
+if (hamburger &amp;&amp; mainNav) {
+    hamburger.addEventListener(&#x27;click&#x27;, function() {
+        this.classList.toggle(&#x27;active&#x27;);
+        mainNav.classList.toggle(&#x27;active&#x27;);
+    });
+    
+    // メニューリンクをクリックしたら閉じる
+    const navLinks = mainNav.querySelectorAll(&#x27;a&#x27;);
+    navLinks.forEach(link =&gt; {
+        link.addEventListener(&#x27;click&#x27;, () =&gt; {
+            hamburger.classList.remove(&#x27;active&#x27;);
+            mainNav.classList.remove(&#x27;active&#x27;);
+        });
+    });
+}
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// フォーム送信
+document.querySelector(&#x27;.contact-form form&#x27;)?.addEventListener(&#x27;submit&#x27;, function(e) {
+    e.preventDefault();
+    alert(&#x27;お問い合わせを送信しました。担当者よりご連絡いたします。&#x27;);
+});
+
+// サービスリンク
+document.querySelectorAll(&#x27;.service-link&#x27;).forEach(link =&gt; {
+    link.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        alert(&#x27;サービス詳細ページへ遷移します（実装予定）&#x27;);
+    });
+});
+
+// ニュースリンク
+document.querySelectorAll(&#x27;.news-item h3 a&#x27;).forEach(link =&gt; {
+    link.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        alert(&#x27;ニュース詳細ページへ遷移します（実装予定）&#x27;);
+    });
+});
+
+// ダウンロードボタン
+document.querySelectorAll(&#x27;.download-btn&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        alert(&#x27;PDFファイルをダウンロードします（実装予定）&#x27;);
+    });
+});
+
+// 採用リンク
+document.querySelectorAll(&#x27;.job-link&#x27;).forEach(link =&gt; {
+    link.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        alert(&#x27;求人詳細ページへ遷移します（実装予定）&#x27;);
+    });
+});
+
+// カテゴリ・アーカイブリンク
+document.querySelectorAll(&#x27;.category-list a, .archive-list a&#x27;).forEach(link =&gt; {
+    link.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        alert(&#x27;フィルタリング機能（実装予定）&#x27;);
+    });
+});
+
+// スクロールアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -50px 0px&#x27;
+};
+
+const observer = new IntersectionObserver((entries) =&gt; {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = &#x27;1&#x27;;
+            entry.target.style.transform = &#x27;translateY(0)&#x27;;
+        }
+    });
+}, observerOptions);
+
+// アニメーション対象要素を観察
+window.addEventListener(&#x27;load&#x27;, () =&gt; {
+    const animateElements = document.querySelectorAll(&#x27;.service-card, .news-item, .highlight-item, .document-item&#x27;);
+    animateElements.forEach(el =&gt; {
+        el.style.opacity = &#x27;0&#x27;;
+        el.style.transform = &#x27;translateY(20px)&#x27;;
+        el.style.transition = &#x27;all 0.6s ease&#x27;;
+        observer.observe(el);
+    });
+});
+
+// 数字カウントアニメーション
+function animateValue(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) =&gt; {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        element.textContent = value.toLocaleString() + (element.dataset.suffix || &#x27;&#x27;);
+        if (progress &lt; 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// 統計数字のアニメーション
+const statObserver = new IntersectionObserver((entries) =&gt; {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            const statNumber = entry.target.querySelector(&#x27;.stat-number&#x27;);
+            if (statNumber &amp;&amp; !statNumber.classList.contains(&#x27;animated&#x27;)) {
+                const text = statNumber.textContent;
+                const number = parseInt(text.replace(/[^0-9]/g, &#x27;&#x27;));
+                if (!isNaN(number)) {
+                    statNumber.dataset.suffix = text.replace(/[0-9,]/g, &#x27;&#x27;);
+                    statNumber.textContent = &#x27;0&#x27;;
+                    animateValue(statNumber, 0, number, 2000);
+                    statNumber.classList.add(&#x27;animated&#x27;);
+                }
+            }
+        }
+    });
+}, { threshold: 0.5 });
+
+// 統計要素を観察
+document.querySelectorAll(&#x27;.stat, .highlight-item&#x27;).forEach(stat =&gt; {
+    statObserver.observe(stat);
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="IT企業 - コーポレート" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"it-corporate\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"it-corporate\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"it-corporate\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"it-corporate\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"ACzZB0KgdX0vZfva6Ymba\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"it-corporate\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

@@ -1,0 +1,1245 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ポートフォリオ - 開発者&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;JetBrains Mono&#x27;, &#x27;Fira Code&#x27;, &#x27;Monaco&#x27;, &#x27;Cascadia Code&#x27;, monospace;
+    line-height: 1.6;
+    color: #e0e6ed;
+    background: #0f1419;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 20, 25, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid #1e2328;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff6b35;
+}
+
+.logo-bracket {
+    color: #39bae6;
+}
+
+.logo-text {
+    color: #fff;
+    margin: 0 0.2rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #e0e6ed;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #ff6b35;
+}
+
+/* Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    background: linear-gradient(135deg, #0f1419 0%, #1e2328 100%);
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.terminal {
+    background: #1e2328;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    border: 1px solid #39bae6;
+}
+
+.terminal-header {
+    background: #2d3748;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.terminal-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.control.red { background: #ff5f56; }
+.control.yellow { background: #ffbd2e; }
+.control.green { background: #27ca3f; }
+
+.terminal-title {
+    font-size: 0.8rem;
+    color: #a0aec0;
+}
+
+.terminal-body {
+    padding: 1.5rem;
+    font-family: &#x27;JetBrains Mono&#x27;, monospace;
+}
+
+.terminal-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.prompt {
+    color: #39bae6;
+    margin-right: 0.5rem;
+}
+
+.command {
+    color: #fff;
+}
+
+.cursor::after {
+    content: &#x27;|&#x27;;
+    color: #39bae6;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.terminal-output {
+    margin: 0.5rem 0 1rem 1.5rem;
+    color: #68d391;
+}
+
+.typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #39bae6;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #39bae6; }
+}
+
+.hero-text {
+    text-align: left;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #a0aec0;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn-primary, .btn-outline {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    border-radius: 6px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #39bae6;
+    border: 2px solid #39bae6;
+    border-radius: 6px;
+}
+
+.btn-outline:hover {
+    background: #39bae6;
+    color: #0f1419;
+}
+
+.btn-primary.large, .btn-outline.large {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 6rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    color: #39bae6;
+    position: relative;
+}
+
+/* About */
+.about {
+    background: #1e2328;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.code-block {
+    background: #0f1419;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid #39bae6;
+}
+
+.code-header {
+    background: #2d3748;
+    padding: 0.8rem 1rem;
+    color: #a0aec0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #39bae6;
+}
+
+.code-content {
+    padding: 1.5rem;
+    font-family: &#x27;JetBrains Mono&#x27;, monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    background: #0f1419;
+    color: #e0e6ed;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #a0aec0;
+    line-height: 1.8;
+}
+
+.about-stats {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: #0f1419;
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #39bae6;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff6b35;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+/* Projects */
+.projects {
+    background: #0f1419;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #1e2328;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #2d3748;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-card.featured {
+    border: 2px solid #ff6b35;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #2d3748;
+}
+
+.project-type {
+    font-size: 0.8rem;
+    color: #39bae6;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.project-link {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    background: #1e2328;
+    border-radius: 4px;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #ff6b35;
+}
+
+.project-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 20, 25, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.view-demo {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.view-demo:hover {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.project-description {
+    color: #a0aec0;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    padding: 0.3rem 0.8rem;
+    background: #39bae6;
+    color: #0f1419;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Skills */
+.skills {
+    background: #1e2328;
+}
+
+.skills-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.skills-category h3 {
+    font-size: 1.3rem;
+    color: #39bae6;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.skills-category h3::before {
+    content: &#x27;▶&#x27;;
+    position: absolute;
+    left: 0;
+    color: #ff6b35;
+}
+
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.skill-name {
+    font-weight: 500;
+    color: #fff;
+}
+
+.skill-level {
+    font-size: 0.9rem;
+    color: #39bae6;
+}
+
+.skill-bar {
+    height: 8px;
+    background: #2d3748;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    border-radius: 10px;
+    transition: width 1.5s ease;
+}
+
+/* Contact */
+.contact {
+    background: #0f1419;
+}
+
+.contact-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-text p {
+    font-size: 1.2rem;
+    color: #a0aec0;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.contact-card {
+    background: #1e2328;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #2d3748;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    border-color: #39bae6;
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-label {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-card a {
+    color: #39bae6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-card a:hover {
+    color: #ff6b35;
+}
+
+.contact-cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+/* Footer */
+.footer {
+    background: #000;
+    color: #a0aec0;
+    padding: 2rem 0;
+    border-top: 1px solid #1e2328;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: #39bae6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;nav class=&quot;navbar&quot;&gt;
+        &lt;div class=&quot;nav-container&quot;&gt;
+            &lt;div class=&quot;logo&quot;&gt;
+                &lt;span class=&quot;logo-bracket&quot;&gt;&amp;lt;&lt;/span&gt;
+                &lt;span class=&quot;logo-text&quot;&gt;HT&lt;/span&gt;
+                &lt;span class=&quot;logo-bracket&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;ul class=&quot;nav-menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;.home()&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;.about()&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#projects&quot;&gt;.projects()&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#skills&quot;&gt;.skills()&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;.contact()&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;div class=&quot;terminal&quot;&gt;
+                &lt;div class=&quot;terminal-header&quot;&gt;
+                    &lt;div class=&quot;terminal-controls&quot;&gt;
+                        &lt;span class=&quot;control red&quot;&gt;&lt;/span&gt;
+                        &lt;span class=&quot;control yellow&quot;&gt;&lt;/span&gt;
+                        &lt;span class=&quot;control green&quot;&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;terminal-title&quot;&gt;terminal&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;terminal-body&quot;&gt;
+                    &lt;div class=&quot;terminal-line&quot;&gt;
+                        &lt;span class=&quot;prompt&quot;&gt;$&lt;/span&gt;
+                        &lt;span class=&quot;command&quot;&gt;whoami&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;terminal-output&quot;&gt;
+                        &lt;div class=&quot;typing-effect&quot;&gt;Hiroshi Tanaka - Full Stack Developer&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;terminal-line&quot;&gt;
+                        &lt;span class=&quot;prompt&quot;&gt;$&lt;/span&gt;
+                        &lt;span class=&quot;command&quot;&gt;cat skills.txt&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;terminal-output&quot;&gt;
+                        &lt;div class=&quot;typing-effect&quot;&gt;JavaScript, React, Node.js, Python, Go&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;terminal-line&quot;&gt;
+                        &lt;span class=&quot;prompt&quot;&gt;$&lt;/span&gt;
+                        &lt;span class=&quot;command cursor&quot;&gt;./build_awesome_things&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;hero-text&quot;&gt;
+                &lt;h1 class=&quot;hero-title&quot;&gt;コードで世界を変える&lt;/h1&gt;
+                &lt;p class=&quot;hero-subtitle&quot;&gt;フルスタック開発者として、アイデアを現実にするソリューションを提供します&lt;/p&gt;
+                &lt;div class=&quot;hero-cta&quot;&gt;
+                    &lt;button class=&quot;btn-primary&quot;&gt;プロジェクトを見る&lt;/button&gt;
+                    &lt;button class=&quot;btn-outline&quot;&gt;GitHub&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;// About Me&lt;/h2&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;div class=&quot;code-block&quot;&gt;
+                        &lt;div class=&quot;code-header&quot;&gt;developer.js&lt;/div&gt;
+                        &lt;pre class=&quot;code-content&quot;&gt;&lt;code&gt;class Developer {
+  constructor() {
+    this.name = &quot;Hiroshi Tanaka&quot;;
+    this.location = &quot;Tokyo, Japan&quot;;
+    this.experience = &quot;7+ years&quot;;
+    this.passion = &quot;Clean code &amp; UX&quot;;
+  }
+  
+  getSkills() {
+    return {
+      frontend: [&quot;React&quot;, &quot;Vue&quot;, &quot;TypeScript&quot;],
+      backend: [&quot;Node.js&quot;, &quot;Python&quot;, &quot;Go&quot;],
+      database: [&quot;PostgreSQL&quot;, &quot;MongoDB&quot;],
+      cloud: [&quot;AWS&quot;, &quot;Docker&quot;, &quot;Kubernetes&quot;]
+    };
+  }
+  
+  getCurrentFocus() {
+    return &quot;Building scalable web applications&quot;;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+                    &lt;/div&gt;
+                    &lt;p&gt;フルスタック開発者として7年以上の経験を持ち、スタートアップから大企業まで様々な規模のプロジェクトに携わってきました。&lt;/p&gt;
+                    &lt;p&gt;クリーンなコードとユーザー体験を重視し、技術的な課題を創造的に解決することを得意としています。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-stats&quot;&gt;
+                    &lt;div class=&quot;stat-card&quot;&gt;
+                        &lt;div class=&quot;stat-icon&quot;&gt;🚀&lt;/div&gt;
+                        &lt;div class=&quot;stat-number&quot;&gt;50+&lt;/div&gt;
+                        &lt;div class=&quot;stat-label&quot;&gt;完成プロジェクト&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;stat-card&quot;&gt;
+                        &lt;div class=&quot;stat-icon&quot;&gt;⭐&lt;/div&gt;
+                        &lt;div class=&quot;stat-number&quot;&gt;1.2k&lt;/div&gt;
+                        &lt;div class=&quot;stat-label&quot;&gt;GitHub Stars&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;stat-card&quot;&gt;
+                        &lt;div class=&quot;stat-icon&quot;&gt;👥&lt;/div&gt;
+                        &lt;div class=&quot;stat-number&quot;&gt;30+&lt;/div&gt;
+                        &lt;div class=&quot;stat-label&quot;&gt;満足クライアント&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;projects&quot; class=&quot;projects&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;// Featured Projects&lt;/h2&gt;
+            &lt;div class=&quot;projects-grid&quot;&gt;
+                &lt;div class=&quot;project-card featured&quot;&gt;
+                    &lt;div class=&quot;project-header&quot;&gt;
+                        &lt;div class=&quot;project-type&quot;&gt;Full Stack&lt;/div&gt;
+                        &lt;div class=&quot;project-links&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;project-link&quot;&gt;🔗 Live&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;project-link&quot;&gt;📁 Code&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;project-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Eコマースプラットフォーム&quot;&gt;
+                        &lt;div class=&quot;project-overlay&quot;&gt;
+                            &lt;button class=&quot;view-demo&quot;&gt;デモを見る&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;project-content&quot;&gt;
+                        &lt;h3 class=&quot;project-title&quot;&gt;Eコマースプラットフォーム&lt;/h3&gt;
+                        &lt;p class=&quot;project-description&quot;&gt;React + Node.js + PostgreSQLで構築した高性能なEコマースシステム。決済処理、在庫管理、分析機能を統合。&lt;/p&gt;
+                        &lt;div class=&quot;tech-stack&quot;&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;React&lt;/span&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;Node.js&lt;/span&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;PostgreSQL&lt;/span&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;Stripe&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;project-card&quot;&gt;
+                    &lt;div class=&quot;project-header&quot;&gt;
+                        &lt;div class=&quot;project-type&quot;&gt;Frontend&lt;/div&gt;
+                        &lt;div class=&quot;project-links&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;project-link&quot;&gt;🔗 Live&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;project-link&quot;&gt;📁 Code&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;project-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;データ可視化ダッシュボード&quot;&gt;
+                        &lt;div class=&quot;project-overlay&quot;&gt;
+                            &lt;button class=&quot;view-demo&quot;&gt;デモを見る&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;project-content&quot;&gt;
+                        &lt;h3 class=&quot;project-title&quot;&gt;データ可視化ダッシュボード&lt;/h3&gt;
+                        &lt;p class=&quot;project-description&quot;&gt;Vue.js + D3.jsを使用したリアルタイムデータ可視化システム。インタラクティブなチャートとフィルタリング機能。&lt;/p&gt;
+                        &lt;div class=&quot;tech-stack&quot;&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;Vue.js&lt;/span&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;D3.js&lt;/span&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;WebSocket&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;project-card&quot;&gt;
+                    &lt;div class=&quot;project-header&quot;&gt;
+                        &lt;div class=&quot;project-type&quot;&gt;Backend&lt;/div&gt;
+                        &lt;div class=&quot;project-links&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;project-link&quot;&gt;📁 Code&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;project-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;マイクロサービスAPI&quot;&gt;
+                        &lt;div class=&quot;project-overlay&quot;&gt;
+                            &lt;button class=&quot;view-demo&quot;&gt;詳細を見る&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;project-content&quot;&gt;
+                        &lt;h3 class=&quot;project-title&quot;&gt;マイクロサービスAPI&lt;/h3&gt;
+                        &lt;p class=&quot;project-description&quot;&gt;Go言語で構築したスケーラブルなマイクロサービスアーキテクチャ。Docker + Kubernetesでクラウドデプロイ。&lt;/p&gt;
+                        &lt;div class=&quot;tech-stack&quot;&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;Go&lt;/span&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;Docker&lt;/span&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;Kubernetes&lt;/span&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;gRPC&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;project-card&quot;&gt;
+                    &lt;div class=&quot;project-header&quot;&gt;
+                        &lt;div class=&quot;project-type&quot;&gt;Mobile&lt;/div&gt;
+                        &lt;div class=&quot;project-links&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;project-link&quot;&gt;🔗 Live&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;project-link&quot;&gt;📁 Code&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;project-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;ReactNativeアプリ&quot;&gt;
+                        &lt;div class=&quot;project-overlay&quot;&gt;
+                            &lt;button class=&quot;view-demo&quot;&gt;デモを見る&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;project-content&quot;&gt;
+                        &lt;h3 class=&quot;project-title&quot;&gt;タスク管理モバイルアプリ&lt;/h3&gt;
+                        &lt;p class=&quot;project-description&quot;&gt;React Nativeで開発したクロスプラットフォームアプリ。オフライン対応とリアルタイム同期機能。&lt;/p&gt;
+                        &lt;div class=&quot;tech-stack&quot;&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;React Native&lt;/span&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;Redux&lt;/span&gt;
+                            &lt;span class=&quot;tech-tag&quot;&gt;Firebase&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;skills&quot; class=&quot;skills&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;// Technical Skills&lt;/h2&gt;
+            &lt;div class=&quot;skills-content&quot;&gt;
+                &lt;div class=&quot;skills-category&quot;&gt;
+                    &lt;h3&gt;Frontend Development&lt;/h3&gt;
+                    &lt;div class=&quot;skill-list&quot;&gt;
+                        &lt;div class=&quot;skill-item&quot;&gt;
+                            &lt;div class=&quot;skill-info&quot;&gt;
+                                &lt;span class=&quot;skill-name&quot;&gt;JavaScript / TypeScript&lt;/span&gt;
+                                &lt;span class=&quot;skill-level&quot;&gt;95%&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;skill-bar&quot;&gt;
+                                &lt;div class=&quot;skill-progress&quot; style=&quot;width: 95%&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;skill-item&quot;&gt;
+                            &lt;div class=&quot;skill-info&quot;&gt;
+                                &lt;span class=&quot;skill-name&quot;&gt;React / Next.js&lt;/span&gt;
+                                &lt;span class=&quot;skill-level&quot;&gt;90%&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;skill-bar&quot;&gt;
+                                &lt;div class=&quot;skill-progress&quot; style=&quot;width: 90%&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;skill-item&quot;&gt;
+                            &lt;div class=&quot;skill-info&quot;&gt;
+                                &lt;span class=&quot;skill-name&quot;&gt;Vue.js / Nuxt.js&lt;/span&gt;
+                                &lt;span class=&quot;skill-level&quot;&gt;85%&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;skill-bar&quot;&gt;
+                                &lt;div class=&quot;skill-progress&quot; style=&quot;width: 85%&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;skills-category&quot;&gt;
+                    &lt;h3&gt;Backend Development&lt;/h3&gt;
+                    &lt;div class=&quot;skill-list&quot;&gt;
+                        &lt;div class=&quot;skill-item&quot;&gt;
+                            &lt;div class=&quot;skill-info&quot;&gt;
+                                &lt;span class=&quot;skill-name&quot;&gt;Node.js / Express&lt;/span&gt;
+                                &lt;span class=&quot;skill-level&quot;&gt;90%&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;skill-bar&quot;&gt;
+                                &lt;div class=&quot;skill-progress&quot; style=&quot;width: 90%&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;skill-item&quot;&gt;
+                            &lt;div class=&quot;skill-info&quot;&gt;
+                                &lt;span class=&quot;skill-name&quot;&gt;Python / Django&lt;/span&gt;
+                                &lt;span class=&quot;skill-level&quot;&gt;80%&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;skill-bar&quot;&gt;
+                                &lt;div class=&quot;skill-progress&quot; style=&quot;width: 80%&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;skill-item&quot;&gt;
+                            &lt;div class=&quot;skill-info&quot;&gt;
+                                &lt;span class=&quot;skill-name&quot;&gt;Go / Gin&lt;/span&gt;
+                                &lt;span class=&quot;skill-level&quot;&gt;75%&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;skill-bar&quot;&gt;
+                                &lt;div class=&quot;skill-progress&quot; style=&quot;width: 75%&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;skills-category&quot;&gt;
+                    &lt;h3&gt;Database &amp; DevOps&lt;/h3&gt;
+                    &lt;div class=&quot;skill-list&quot;&gt;
+                        &lt;div class=&quot;skill-item&quot;&gt;
+                            &lt;div class=&quot;skill-info&quot;&gt;
+                                &lt;span class=&quot;skill-name&quot;&gt;PostgreSQL / MongoDB&lt;/span&gt;
+                                &lt;span class=&quot;skill-level&quot;&gt;85%&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;skill-bar&quot;&gt;
+                                &lt;div class=&quot;skill-progress&quot; style=&quot;width: 85%&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;skill-item&quot;&gt;
+                            &lt;div class=&quot;skill-info&quot;&gt;
+                                &lt;span class=&quot;skill-name&quot;&gt;AWS / Docker&lt;/span&gt;
+                                &lt;span class=&quot;skill-level&quot;&gt;80%&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;skill-bar&quot;&gt;
+                                &lt;div class=&quot;skill-progress&quot; style=&quot;width: 80%&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;skill-item&quot;&gt;
+                            &lt;div class=&quot;skill-info&quot;&gt;
+                                &lt;span class=&quot;skill-name&quot;&gt;CI/CD / Testing&lt;/span&gt;
+                                &lt;span class=&quot;skill-level&quot;&gt;75%&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;skill-bar&quot;&gt;
+                                &lt;div class=&quot;skill-progress&quot; style=&quot;width: 75%&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;// Let&#x27;s Build Something&lt;/h2&gt;
+            &lt;div class=&quot;contact-content&quot;&gt;
+                &lt;div class=&quot;contact-text&quot;&gt;
+                    &lt;p&gt;新しいプロジェクトの相談や技術的な課題の解決について、お気軽にお問い合わせください。&lt;/p&gt;
+                    &lt;p&gt;一緒に素晴らしいプロダクトを作りましょう。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;contact-info&quot;&gt;
+                    &lt;div class=&quot;contact-card&quot;&gt;
+                        &lt;div class=&quot;contact-icon&quot;&gt;📧&lt;/div&gt;
+                        &lt;div class=&quot;contact-details&quot;&gt;
+                            &lt;span class=&quot;contact-label&quot;&gt;Email&lt;/span&gt;
+                            &lt;a href=&quot;mailto:hiroshi@example.com&quot;&gt;hiroshi@example.com&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;contact-card&quot;&gt;
+                        &lt;div class=&quot;contact-icon&quot;&gt;🐙&lt;/div&gt;
+                        &lt;div class=&quot;contact-details&quot;&gt;
+                            &lt;span class=&quot;contact-label&quot;&gt;GitHub&lt;/span&gt;
+                            &lt;a href=&quot;#&quot;&gt;github.com/hiroshi-dev&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;contact-card&quot;&gt;
+                        &lt;div class=&quot;contact-icon&quot;&gt;💼&lt;/div&gt;
+                        &lt;div class=&quot;contact-details&quot;&gt;
+                            &lt;span class=&quot;contact-label&quot;&gt;LinkedIn&lt;/span&gt;
+                            &lt;a href=&quot;#&quot;&gt;linkedin.com/in/hiroshi-tanaka&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;contact-card&quot;&gt;
+                        &lt;div class=&quot;contact-icon&quot;&gt;🐦&lt;/div&gt;
+                        &lt;div class=&quot;contact-details&quot;&gt;
+                            &lt;span class=&quot;contact-label&quot;&gt;Twitter&lt;/span&gt;
+                            &lt;a href=&quot;#&quot;&gt;@hiroshi_dev&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;contact-cta&quot;&gt;
+                    &lt;button class=&quot;btn-primary large&quot;&gt;プロジェクトを始める&lt;/button&gt;
+                    &lt;button class=&quot;btn-outline large&quot;&gt;履歴書をダウンロード&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;p&gt;&amp;copy; 2025 Hiroshi Tanaka. Built with ❤️ and lots of ☕&lt;/p&gt;
+                &lt;div class=&quot;footer-links&quot;&gt;
+                    &lt;a href=&quot;#&quot;&gt;Privacy Policy&lt;/a&gt;
+                    &lt;a href=&quot;#&quot;&gt;Terms of Service&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // タイピングエフェクトの制御
+const typingElements = document.querySelectorAll(&#x27;.typing-effect&#x27;);
+let typingComplete = false;
+
+function startTypingAnimation() {
+    if (typingComplete) return;
+    
+    typingElements.forEach((element, index) =&gt; {
+        const text = element.textContent;
+        element.textContent = &#x27;&#x27;;
+        element.style.width = &#x27;0&#x27;;
+        
+        setTimeout(() =&gt; {
+            let i = 0;
+            const typeTimer = setInterval(() =&gt; {
+                if (i &lt; text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typeTimer);
+                    if (index === typingElements.length - 1) {
+                        typingComplete = true;
+                    }
+                }
+            }, 50);
+        }, index * 2000);
+    });
+}
+
+// ページ読み込み時にタイピングアニメーション開始
+window.addEventListener(&#x27;load&#x27;, () =&gt; {
+    setTimeout(startTypingAnimation, 1000);
+});
+
+// プロジェクトデモ表示
+document.querySelectorAll(&#x27;.view-demo&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const projectTitle = this.closest(&#x27;.project-card&#x27;).querySelector(&#x27;.project-title&#x27;).textContent;
+        alert(`${projectTitle}のデモページへ遷移（実装予定）`);
+    });
+});
+
+// プロジェクトリンククリック
+document.querySelectorAll(&#x27;.project-link&#x27;).forEach(link =&gt; {
+    link.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        const linkType = this.textContent.includes(&#x27;Live&#x27;) ? &#x27;ライブデモ&#x27; : &#x27;ソースコード&#x27;;
+        alert(`${linkType}へ遷移（実装予定）`);
+    });
+});
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.navbar&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// CTAボタンの動作
+document.querySelectorAll(&#x27;.btn-primary&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        if (this.textContent.includes(&#x27;プロジェクト&#x27;)) {
+            if (document.querySelector(&#x27;#projects&#x27;)) {
+                document.querySelector(&#x27;#projects&#x27;).scrollIntoView({ behavior: &#x27;smooth&#x27; });
+            } else {
+                alert(&#x27;お問い合わせフォームへ遷移（実装予定）&#x27;);
+            }
+        } else {
+            alert(&#x27;お問い合わせフォームへ遷移（実装予定）&#x27;);
+        }
+    });
+});
+
+document.querySelectorAll(&#x27;.btn-outline&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        if (this.textContent.includes(&#x27;GitHub&#x27;)) {
+            alert(&#x27;GitHubプロフィールへ遷移（実装予定）&#x27;);
+        } else if (this.textContent.includes(&#x27;履歴書&#x27;)) {
+            alert(&#x27;履歴書PDFをダウンロード（実装予定）&#x27;);
+        } else {
+            document.querySelector(&#x27;#contact&#x27;).scrollIntoView({ behavior: &#x27;smooth&#x27; });
+        }
+    });
+});
+
+// スキルバーアニメーション
+const observerOptions = {
+    threshold: 0.3
+};
+
+const skillsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            const progressBars = entry.target.querySelectorAll(&#x27;.skill-progress&#x27;);
+            progressBars.forEach((bar, index) =&gt; {
+                setTimeout(() =&gt; {
+                    const width = bar.style.width;
+                    bar.style.width = &#x27;0&#x27;;
+                    setTimeout(() =&gt; {
+                        bar.style.width = width;
+                    }, 100);
+                }, index * 200);
+            });
+        }
+    });
+}, observerOptions);
+
+const skillsSection = document.querySelector(&#x27;.skills&#x27;);
+if (skillsSection) {
+    skillsObserver.observe(skillsSection);
+}
+
+// ナビゲーションの背景変更
+window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+    const navbar = document.querySelector(&#x27;.navbar&#x27;);
+    if (window.scrollY &gt; 100) {
+        navbar.style.background = &#x27;rgba(15, 20, 25, 0.98)&#x27;;
+        navbar.style.borderBottom = &#x27;1px solid #39bae6&#x27;;
+    } else {
+        navbar.style.background = &#x27;rgba(15, 20, 25, 0.95)&#x27;;
+        navbar.style.borderBottom = &#x27;1px solid #1e2328&#x27;;
+    }
+});
+
+// コードハイライト効果（簡易版）
+const codeContent = document.querySelector(&#x27;.code-content code&#x27;);
+if (codeContent) {
+    const originalText = codeContent.textContent;
+    
+    // 簡単なシンタックスハイライト
+    const highlightedText = originalText
+        .replace(/(class|constructor|this|return|const|let|var)/g, &#x27;&lt;span style=&quot;color: #ff6b35;&quot;&gt;$1&lt;/span&gt;&#x27;)
+        .replace(/(name|location|experience|passion|frontend|backend|database|cloud)/g, &#x27;&lt;span style=&quot;color: #68d391;&quot;&gt;$1&lt;/span&gt;&#x27;)
+        .replace(/(&quot;.*?&quot;)/g, &#x27;&lt;span style=&quot;color: #ffd700;&quot;&gt;$1&lt;/span&gt;&#x27;)
+        .replace(/(//.*)/g, &#x27;&lt;span style=&quot;color: #a0aec0;&quot;&gt;$1&lt;/span&gt;&#x27;);
+    
+    codeContent.innerHTML = highlightedText;
+}
+
+// ターミナルカーソルの点滅制御
+const cursorElement = document.querySelector(&#x27;.cursor&#x27;);
+if (cursorElement) {
+    // 初期状態では点滅を停止
+    setTimeout(() =&gt; {
+        cursorElement.style.animation = &#x27;none&#x27;;
+        cursorElement.style.borderRight = &#x27;none&#x27;;
+    }, 5000);
+}
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="ポートフォリオ - 開発者" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"portfolio-developer\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"portfolio-developer\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"portfolio-developer\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"portfolio-developer\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"7mExaifWiuayGOFjd7J_R\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"portfolio-developer\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

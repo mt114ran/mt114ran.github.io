@@ -1,0 +1,835 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/8d311e01b6f6fa19.css","style"]
+0:{"P":null,"b":"tbF4ekhpLvjG8yl9Cjqn0","p":"","c":["","note","webpage-temp","portfolio-writer",""],"i":false,"f":[[["",{"children":["note",{"children":["webpage-temp",{"children":[["id","portfolio-writer","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/8d311e01b6f6fa19.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["note",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["webpage-temp",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["id","portfolio-writer","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","QsjJMK4GaMg84LmHjKJZE",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+12:I[6874,["874","static/chunks/874-acbedc3444a59791.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-78f6da3fdd9ae78d.js"],""]
+13:I[8863,["874","static/chunks/874-acbedc3444a59791.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-78f6da3fdd9ae78d.js"],"default"]
+14:I[9320,["874","static/chunks/874-acbedc3444a59791.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-78f6da3fdd9ae78d.js"],"default"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+15:T2f70,<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writer Portfolio - Professional Writing</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">Writer's Portfolio</div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Professional Writer</h1>
+            <p class="hero-subtitle">言葉で価値を創造するライター</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">執筆記事</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">クライアント</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">年の経験</span>
+                </div>
+            </div>
+            <a href="#works" class="hero-button">作品を見る</a>
+        </div>
+    </section>
+
+    <section id="works" class="works">
+        <div class="container">
+            <h2 class="section-title">Featured Works</h2>
+            <div class="works-filter">
+                <button class="filter-btn active" data-category="all">すべて</button>
+                <button class="filter-btn" data-category="article">記事</button>
+                <button class="filter-btn" data-category="copy">コピー</button>
+                <button class="filter-btn" data-category="column">コラム</button>
+            </div>
+            <div class="works-grid">
+                <article class="work-item" data-category="article">
+                    <div class="work-content">
+                        <span class="work-category">Tech Article</span>
+                        <h3>「AI時代のライティング術」</h3>
+                        <p>技術系メディアに寄稿したAIとライティングの関係性について論じた記事です。</p>
+                        <div class="work-meta">
+                            <span class="work-date">2024.03.15</span>
+                            <span class="work-client">Tech Magazine</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="work-item" data-category="copy">
+                    <div class="work-content">
+                        <span class="work-category">Copy Writing</span>
+                        <h3>「新しい働き方」キャンペーン</h3>
+                        <p>企業のリモートワーク推進キャンペーンのコピーライティングを担当しました。</p>
+                        <div class="work-meta">
+                            <span class="work-date">2024.02.20</span>
+                            <span class="work-client">Corporate Inc.</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="work-item" data-category="column">
+                    <div class="work-content">
+                        <span class="work-category">Column</span>
+                        <h3>「デジタル時代の読書習慣」</h3>
+                        <p>読書とテクノロジーの関係について考察したコラム記事です。</p>
+                        <div class="work-meta">
+                            <span class="work-date">2024.01.10</span>
+                            <span class="work-client">Literary Review</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="work-item" data-category="article">
+                    <div class="work-content">
+                        <span class="work-category">Feature Article</span>
+                        <h3>「持続可能なビジネスモデル」</h3>
+                        <p>ESGとビジネスの関係性について深く掘り下げた特集記事です。</p>
+                        <div class="work-meta">
+                            <span class="work-date">2023.12.05</span>
+                            <span class="work-client">Business Today</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">📝</div>
+                    <h3>記事執筆</h3>
+                    <p>SEO対策を考慮したWeb記事から、雑誌記事まで幅広く対応します。</p>
+                    <ul class="service-features">
+                        <li>Web記事</li>
+                        <li>雑誌記事</li>
+                        <li>ブログ記事</li>
+                        <li>プレスリリース</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">💡</div>
+                    <h3>コピーライティング</h3>
+                    <p>商品・サービスの魅力を最大限に引き出すコピーを制作します。</p>
+                    <ul class="service-features">
+                        <li>キャッチコピー</li>
+                        <li>広告コピー</li>
+                        <li>セールスコピー</li>
+                        <li>ブランディング文章</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">✏️</div>
+                    <h3>編集・校正</h3>
+                    <p>文章の品質向上から構成改善まで、総合的な編集サービスを提供します。</p>
+                    <ul class="service-features">
+                        <li>文章校正</li>
+                        <li>構成見直し</li>
+                        <li>リライト</li>
+                        <li>編集コンサル</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616c64c8d05?w=600&h=600&fit=crop" alt="Writer">
+                </div>
+                <div class="about-text">
+                    <h3>田中 文子</h3>
+                    <p class="about-role">フリーランスライター・編集者</p>
+                    <p>大学卒業後、出版社での編集経験を経てフリーランスライターとして独立。テクノロジー、ビジネス、ライフスタイルなど幅広い分野で執筆活動を行っています。</p>
+                    <p>「読者の心に響く文章」をモットーに、クライアントの想いを言葉で表現することを得意としています。</p>
+                    
+                    <div class="credentials">
+                        <h4>資格・経歴</h4>
+                        <ul>
+                            <li>日本語検定1級</li>
+                            <li>校正技能検定中級</li>
+                            <li>出版社編集部勤務（3年）</li>
+                            <li>フリーランス歴（5年）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Latest Blog</h2>
+            <div class="blog-grid">
+                <article class="blog-item">
+                    <div class="blog-date">2024.03.20</div>
+                    <h3>効果的な文章構成のコツ</h3>
+                    <p>読みやすい文章を書くための構成テクニックについて解説します。</p>
+                    <a href="#" class="blog-link">続きを読む</a>
+                </article>
+                <article class="blog-item">
+                    <div class="blog-date">2024.03.15</div>
+                    <h3>SEOライティングの基本</h3>
+                    <p>検索エンジンに評価されるWebライティングの基本をお伝えします。</p>
+                    <a href="#" class="blog-link">続きを読む</a>
+                </article>
+                <article class="blog-item">
+                    <div class="blog-date">2024.03.10</div>
+                    <h3>フリーランスライターの働き方</h3>
+                    <p>独立して5年の経験から学んだフリーランスライターの働き方をシェアします。</p>
+                    <a href="#" class="blog-link">続きを読む</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <p class="contact-text">執筆のご依頼・ご相談はお気軽にお問い合わせください</p>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="お名前" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="メールアドレス" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">ご依頼内容を選択</option>
+                            <option value="article">記事執筆</option>
+                            <option value="copy">コピーライティング</option>
+                            <option value="edit">編集・校正</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="詳しい内容をお聞かせください" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">送信する</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <strong>Email</strong>
+                        <p>writer@example.com</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Response Time</strong>
+                        <p>24時間以内に返信</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Writer's Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>16:T1f8b,* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.7;
+    color: #333;
+    background: #fefefe;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(254, 254, 254, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #2c3e50;
+    font-style: italic;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 1px;
+    background: #333;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-menu a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #c0392b;
+}
+
+/* Hero */
+.hero {
+    padding: 120px 0 80px;
+    text-align: center;
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-family: 'Georgia', serif;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #c0392b;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #c0392b;
+    color: white;
+    text-decoration: none;
+    border-radius: 0;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+}
+
+.hero-button:hover {
+    background: #a93226;
+}
+
+/* Works */
+.works {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+    font-weight: 300;
+    font-family: 'Georgia', serif;
+}
+
+.works-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    border: 1px solid #ddd;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #c0392b;
+    color: white;
+    border-color: #c0392b;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.work-item {
+    background: white;
+    padding: 2rem;
+    border: 1px solid #e8e8e8;
+    transition: box-shadow 0.3s;
+}
+
+.work-item:hover {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.work-category {
+    display: inline-block;
+    background: #f8f9fa;
+    color: #666;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.work-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-weight: 400;
+}
+
+.work-item p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.work-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Services */
+.services {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.service-item {
+    background: white;
+    padding: 2.5rem;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-weight: 400;
+}
+
+.service-item p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+}
+
+.service-features li {
+    padding: 0.3rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* About */
+.about {
+    padding: 80px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 50%;
+    max-width: 300px;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 400;
+}
+
+.about-role {
+    color: #c0392b;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.credentials {
+    margin-top: 2rem;
+}
+
+.credentials h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.credentials ul {
+    list-style: none;
+    padding: 0;
+}
+
+.credentials li {
+    padding: 0.5rem 0;
+    color: #666;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Blog */
+.blog {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.blog-item {
+    background: white;
+    padding: 2rem;
+    border: 1px solid #e8e8e8;
+}
+
+.blog-date {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.blog-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-weight: 400;
+}
+
+.blog-item p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.blog-link {
+    color: #c0392b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.blog-link:hover {
+    text-decoration: underline;
+}
+
+/* Contact */
+.contact {
+    padding: 80px 0;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-text {
+    text-align: center;
+    color: #666;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.contact-form {
+    margin-bottom: 3rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: #c0392b;
+    color: white;
+    border: none;
+    border-radius: 0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background: #a93226;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    text-align: center;
+}
+
+.info-item strong {
+    display: block;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.info-item p {
+    color: #666;
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 0;
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .works-grid,
+    .services-grid,
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+}17:T657,// メニュートグル
+document.getElementById('menuToggle').addEventListener('click', function() {
+    document.getElementById('navMenu').classList.toggle('active');
+});
+
+// スムーススクロール
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            document.getElementById('navMenu').classList.remove('active');
+        }
+    });
+});
+
+// 作品フィルター
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        // アクティブクラス切り替え
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        const category = this.dataset.category;
+        const workItems = document.querySelectorAll('.work-item');
+        
+        workItems.forEach(item => {
+            if (category === 'all' || item.dataset.category === category) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
+// フォーム送信
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('お問い合わせありがとうございます。24時間以内にご返信いたします。');
+    this.reset();
+});4:["$","div",null,{"className":"min-h-screen bg-gray-900 text-gray-100","children":["$","div",null,{"className":"max-w-7xl mx-auto py-10 px-4","children":[["$","nav",null,{"className":"mb-6 flex gap-4","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"ホーム"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","$L12",null,{"href":"/note/webpage-temp","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"テンプレート一覧"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","span",null,{"className":"text-gray-400","children":"ポートフォリオ - ライター"}]]}],["$","div",null,{"className":"mb-8","children":[["$","div",null,{"className":"flex items-center gap-4 mb-4","children":[["$","h1",null,{"className":"text-3xl font-bold","children":"ポートフォリオ - ライター"}],["$","span",null,{"className":"px-3 py-1 bg-blue-600 text-white rounded text-sm","children":"ポートフォリオ"}]]}],["$","p",null,{"className":"text-gray-300 text-lg mb-4","children":"ライター・編集者・コピーライター向けポートフォリオサイト"}],["$","div",null,{"className":"flex flex-wrap gap-2 mb-4","children":[["$","span","0",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","執筆記事一覧"]}],["$","span","1",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","プロフィール紹介"]}],["$","span","2",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","実績・経歴"]}],["$","span","3",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","ブログ機能"]}]]}],["$","div",null,{"className":"flex flex-wrap gap-2 mb-6","children":[["$","span","0",{"className":"text-sm text-gray-500","children":["#","ポートフォリオ"]}],["$","span","1",{"className":"text-sm text-gray-500","children":["#","ライター"]}],["$","span","2",{"className":"text-sm text-gray-500","children":["#","編集者"]}],["$","span","3",{"className":"text-sm text-gray-500","children":["#","コピーライター"]}]]}],["$","$L13",null,{"templateId":"portfolio-writer"}]]}],["$","$L14",null,{"template":{"id":"portfolio-writer","title":"ポートフォリオ - ライター","category":"ポートフォリオ","description":"ライター・編集者・コピーライター向けポートフォリオサイト","thumbnail":"/template-images/portfolio-writer.jpg","features":["執筆記事一覧","プロフィール紹介","実績・経歴","ブログ機能"],"tags":["ポートフォリオ","ライター","編集者","コピーライター"],"code":{"html":"$15","css":"$16","js":"$17"}}}],["$","div",null,{"className":"mt-12 bg-gray-800 rounded-lg p-6","children":[["$","h2",null,{"className":"text-xl font-bold mb-4","children":"使用方法"}],["$","ol",null,{"className":"space-y-3 text-gray-300","children":[["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"1."}],["$","span",null,{"children":"上のタブからHTML、CSS、JavaScriptのコードをそれぞれコピーします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"2."}],["$","span",null,{"children":"新しいHTMLファイルを作成し、HTMLコードを貼り付けます。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"3."}],["$","span",null,{"children":"CSSコードを<style>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"4."}],["$","span",null,{"children":"JavaScriptコードを<script>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"5."}],["$","span",null,{"children":"必要に応じて、テキストや画像、色などをカスタマイズしてご使用ください。"}]]}]]}],["$","div",null,{"className":"mt-6 p-4 bg-blue-900/30 border border-blue-600 rounded","children":[["$","p",null,{"className":"text-blue-400 mb-2","children":"📚 初めての方へ"}],["$","p",null,{"className":"text-gray-300 text-sm","children":["HTMLやCSSが初めての方は、",["$","$L12",null,{"href":"/note/webpage-temp/guide","className":"text-blue-400 hover:text-blue-300 underline","children":"初心者向けWeb制作学習ガイド"}],"をご覧ください。実際に手を動かしながら学べる詳しい手順を解説しています。"]}]]}]]}],["$","div",null,{"className":"mt-8 bg-yellow-900/30 border border-yellow-600 rounded-lg p-6","children":[["$","h3",null,{"className":"text-yellow-400 font-bold mb-2","children":"注意事項"}],["$","ul",null,{"className":"space-y-2 text-gray-300 text-sm","children":[["$","li",null,{"children":"• このテンプレートは学習・参考用として提供されています。"}],["$","li",null,{"children":"• 実際のプロジェクトで使用する際は、セキュリティやパフォーマンスの最適化を行ってください。"}],["$","li",null,{"children":"• 画像やアイコンは実際のものに置き換えてご使用ください。"}],["$","li",null,{"children":"• レスポンシブ対応していますが、実機でのテストを推奨します。"}]]}]]}],["$","div",null,{"className":"mt-8 text-center","children":["$","$L12",null,{"href":"/note/webpage-temp","className":"inline-block px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors","children":"テンプレート一覧へ戻る"}]}]]}]}]
+9:null
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}

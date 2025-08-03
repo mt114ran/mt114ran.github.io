@@ -1,0 +1,1143 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ポートフォリオ - ミュージシャン&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #0a0a0a;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #ff6b6b;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-menu a:hover {
+    color: #ff6b6b;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+    opacity: 0.1;
+    animation: colorShift 10s ease-in-out infinite;
+}
+
+@keyframes colorShift {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+}
+
+.hero-content {
+    z-index: 1;
+    margin-bottom: 3rem;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 3px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    letter-spacing: 2px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.hero-button {
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.hero-button.primary {
+    background: #ff6b6b;
+    color: white;
+}
+
+.hero-button.secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+}
+
+.hero-player {
+    background: rgba(0,0,0,0.8);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid #333;
+    max-width: 400px;
+    width: 100%;
+}
+
+.player-info {
+    margin-bottom: 1rem;
+}
+
+.now-playing {
+    font-size: 0.8rem;
+    color: #ff6b6b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.track-title {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #ff6b6b;
+    width: 35%;
+    transition: width 0.3s;
+}
+
+.time {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* Music */
+.music {
+    padding: 100px 0;
+    background: #111;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.music-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    background: transparent;
+    color: #999;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #ff6b6b;
+    color: white;
+    border-color: #ff6b6b;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.album-item {
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.album-item:hover {
+    transform: translateY(-5px);
+}
+
+.album-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.album-info {
+    padding: 1.5rem;
+}
+
+.album-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.album-info p {
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.album-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.listen-btn,
+.buy-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.listen-btn {
+    background: #ff6b6b;
+    color: white;
+}
+
+.buy-btn {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.singles-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.single-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #1a1a1a;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.single-artwork img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+.single-info {
+    flex: 1;
+}
+
+.single-info h4 {
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.single-info p {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.play-single {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.video-item {
+    position: relative;
+}
+
+.video-thumbnail {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 107, 107, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.video-item h4 {
+    margin-top: 1rem;
+    color: #fff;
+}
+
+/* Live */
+.live {
+    padding: 100px 0;
+    background: #0a0a0a;
+}
+
+.live-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.live-item {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    background: #1a1a1a;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid #ff6b6b;
+}
+
+.live-date {
+    text-align: center;
+    margin-right: 2rem;
+}
+
+.live-date .month {
+    display: block;
+    color: #ff6b6b;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.live-date .day {
+    display: block;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.live-info {
+    flex: 1;
+}
+
+.live-info h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.venue {
+    color: #ff6b6b;
+    margin-bottom: 0.3rem;
+}
+
+.time {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.live-actions {
+    margin-left: 2rem;
+}
+
+.ticket-btn {
+    padding: 0.8rem 1.5rem;
+    background: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+.status.sold-out {
+    padding: 0.8rem 1.5rem;
+    background: #666;
+    color: white;
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+/* About */
+.about {
+    padding: 100px 0;
+    background: #111;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.about-genre {
+    color: #ff6b6b;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.about-text p {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.discography-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff6b6b;
+}
+
+.stat-label {
+    color: #999;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* News */
+.news {
+    padding: 100px 0;
+    background: #0a0a0a;
+}
+
+.news-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-item {
+    padding: 2rem;
+    background: #1a1a1a;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid #ff6b6b;
+}
+
+.news-date {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.news-item h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.news-item p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Contact */
+.contact {
+    padding: 100px 0;
+    background: #111;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-section h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.info-section p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    color: #ff6b6b;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ff6b6b;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.social-link:hover {
+    background: #ff6b6b;
+    color: white;
+}
+
+.newsletter {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.newsletter h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.newsletter p {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletter-form input {
+    padding: 1rem;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.newsletter-form button {
+    padding: 1rem;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 0;
+    background: #0a0a0a;
+    border-top: 1px solid #333;
+    text-align: center;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #0a0a0a;
+        flex-direction: column;
+        padding: 1rem 0;
+        border-top: 1px solid #333;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .albums-grid,
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .live-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .live-date {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .live-actions {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;nav class=&quot;nav&quot;&gt;
+            &lt;div class=&quot;nav-container&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;MUSICIAN&lt;/div&gt;
+                &lt;button class=&quot;menu-toggle&quot; id=&quot;menuToggle&quot;&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;ul class=&quot;nav-menu&quot; id=&quot;navMenu&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#music&quot;&gt;Music&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#live&quot;&gt;Live&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#news&quot;&gt;News&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-bg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h1 class=&quot;hero-title&quot;&gt;ARTIST NAME&lt;/h1&gt;
+            &lt;p class=&quot;hero-subtitle&quot;&gt;Official Website&lt;/p&gt;
+            &lt;div class=&quot;hero-actions&quot;&gt;
+                &lt;a href=&quot;#music&quot; class=&quot;hero-button primary&quot;&gt;Latest Album&lt;/a&gt;
+                &lt;a href=&quot;#live&quot; class=&quot;hero-button secondary&quot;&gt;Live Schedule&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-player&quot;&gt;
+            &lt;div class=&quot;player-info&quot;&gt;
+                &lt;span class=&quot;now-playing&quot;&gt;Now Playing&lt;/span&gt;
+                &lt;h3 class=&quot;track-title&quot;&gt;New Single - &quot;Music Title&quot;&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;player-controls&quot;&gt;
+                &lt;button class=&quot;play-btn&quot; id=&quot;playBtn&quot;&gt;▶&lt;/button&gt;
+                &lt;div class=&quot;progress-bar&quot;&gt;
+                    &lt;div class=&quot;progress&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;time&quot;&gt;0:00 / 3:45&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;music&quot; class=&quot;music&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Music&lt;/h2&gt;
+            &lt;div class=&quot;music-tabs&quot;&gt;
+                &lt;button class=&quot;tab-btn active&quot; data-tab=&quot;albums&quot;&gt;Albums&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-tab=&quot;singles&quot;&gt;Singles&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-tab=&quot;videos&quot;&gt;Music Videos&lt;/button&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;tab-content active&quot; id=&quot;albums&quot;&gt;
+                &lt;div class=&quot;albums-grid&quot;&gt;
+                    &lt;div class=&quot;album-item&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;Album Cover&quot;&gt;
+                        &lt;div class=&quot;album-info&quot;&gt;
+                            &lt;h3&gt;Latest Album&lt;/h3&gt;
+                            &lt;p&gt;2024年リリース&lt;/p&gt;
+                            &lt;div class=&quot;album-actions&quot;&gt;
+                                &lt;button class=&quot;listen-btn&quot;&gt;試聴&lt;/button&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;buy-btn&quot;&gt;購入&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;album-item&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;Album Cover&quot;&gt;
+                        &lt;div class=&quot;album-info&quot;&gt;
+                            &lt;h3&gt;Second Album&lt;/h3&gt;
+                            &lt;p&gt;2023年リリース&lt;/p&gt;
+                            &lt;div class=&quot;album-actions&quot;&gt;
+                                &lt;button class=&quot;listen-btn&quot;&gt;試聴&lt;/button&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;buy-btn&quot;&gt;購入&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;album-item&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;Album Cover&quot;&gt;
+                        &lt;div class=&quot;album-info&quot;&gt;
+                            &lt;h3&gt;Debut Album&lt;/h3&gt;
+                            &lt;p&gt;2022年リリース&lt;/p&gt;
+                            &lt;div class=&quot;album-actions&quot;&gt;
+                                &lt;button class=&quot;listen-btn&quot;&gt;試聴&lt;/button&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;buy-btn&quot;&gt;購入&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;tab-content&quot; id=&quot;singles&quot;&gt;
+                &lt;div class=&quot;singles-list&quot;&gt;
+                    &lt;div class=&quot;single-item&quot;&gt;
+                        &lt;div class=&quot;single-artwork&quot;&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=100&amp;h=100&amp;fit=crop&quot; alt=&quot;Single&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;single-info&quot;&gt;
+                            &lt;h4&gt;New Single Title&lt;/h4&gt;
+                            &lt;p&gt;2024.03.15 Release&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;button class=&quot;play-single&quot;&gt;▶&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;single-item&quot;&gt;
+                        &lt;div class=&quot;single-artwork&quot;&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=100&amp;h=100&amp;fit=crop&quot; alt=&quot;Single&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;single-info&quot;&gt;
+                            &lt;h4&gt;Previous Single&lt;/h4&gt;
+                            &lt;p&gt;2024.01.20 Release&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;button class=&quot;play-single&quot;&gt;▶&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;tab-content&quot; id=&quot;videos&quot;&gt;
+                &lt;div class=&quot;videos-grid&quot;&gt;
+                    &lt;div class=&quot;video-item&quot;&gt;
+                        &lt;div class=&quot;video-thumbnail&quot;&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;Music Video&quot;&gt;
+                            &lt;div class=&quot;play-overlay&quot;&gt;▶&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;h4&gt;Music Video Title&lt;/h4&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;video-item&quot;&gt;
+                        &lt;div class=&quot;video-thumbnail&quot;&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;Music Video&quot;&gt;
+                            &lt;div class=&quot;play-overlay&quot;&gt;▶&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;h4&gt;Live Performance&lt;/h4&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;live&quot; class=&quot;live&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Live Schedule&lt;/h2&gt;
+            &lt;div class=&quot;live-list&quot;&gt;
+                &lt;div class=&quot;live-item&quot;&gt;
+                    &lt;div class=&quot;live-date&quot;&gt;
+                        &lt;span class=&quot;month&quot;&gt;APR&lt;/span&gt;
+                        &lt;span class=&quot;day&quot;&gt;15&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;live-info&quot;&gt;
+                        &lt;h3&gt;Spring Tour 2024&lt;/h3&gt;
+                        &lt;p class=&quot;venue&quot;&gt;東京・Zepp Tokyo&lt;/p&gt;
+                        &lt;p class=&quot;time&quot;&gt;開場 18:00 / 開演 19:00&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;live-actions&quot;&gt;
+                        &lt;span class=&quot;status sold-out&quot;&gt;SOLD OUT&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;live-item&quot;&gt;
+                    &lt;div class=&quot;live-date&quot;&gt;
+                        &lt;span class=&quot;month&quot;&gt;MAY&lt;/span&gt;
+                        &lt;span class=&quot;day&quot;&gt;20&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;live-info&quot;&gt;
+                        &lt;h3&gt;Acoustic Live&lt;/h3&gt;
+                        &lt;p class=&quot;venue&quot;&gt;大阪・Billboard Live OSAKA&lt;/p&gt;
+                        &lt;p class=&quot;time&quot;&gt;開場 18:30 / 開演 19:30&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;live-actions&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;ticket-btn&quot;&gt;チケット&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;live-item&quot;&gt;
+                    &lt;div class=&quot;live-date&quot;&gt;
+                        &lt;span class=&quot;month&quot;&gt;JUN&lt;/span&gt;
+                        &lt;span class=&quot;day&quot;&gt;10&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;live-info&quot;&gt;
+                        &lt;h3&gt;Summer Festival&lt;/h3&gt;
+                        &lt;p class=&quot;venue&quot;&gt;千葉・幕張メッセ&lt;/p&gt;
+                        &lt;p class=&quot;time&quot;&gt;開場 11:00 / 開演 12:00&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;live-actions&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;ticket-btn&quot;&gt;チケット&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;About&lt;/h2&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&amp;h=600&amp;fit=crop&quot; alt=&quot;Artist&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;h3&gt;ARTIST NAME&lt;/h3&gt;
+                    &lt;p class=&quot;about-genre&quot;&gt;Singer-Songwriter / Pop Rock&lt;/p&gt;
+                    &lt;p&gt;2020年にデビューし、独自の楽曲制作と心に響く歌詞で多くのファンを魅了しているアーティストです。&lt;/p&gt;
+                    &lt;p&gt;ギターとピアノを中心とした楽曲制作を行い、ライブでは観客との一体感を大切にしたパフォーマンスを展開しています。&lt;/p&gt;
+                    
+                    &lt;div class=&quot;discography-stats&quot;&gt;
+                        &lt;div class=&quot;stat&quot;&gt;
+                            &lt;span class=&quot;stat-number&quot;&gt;3&lt;/span&gt;
+                            &lt;span class=&quot;stat-label&quot;&gt;Albums&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;stat&quot;&gt;
+                            &lt;span class=&quot;stat-number&quot;&gt;15&lt;/span&gt;
+                            &lt;span class=&quot;stat-label&quot;&gt;Singles&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;stat&quot;&gt;
+                            &lt;span class=&quot;stat-number&quot;&gt;50+&lt;/span&gt;
+                            &lt;span class=&quot;stat-label&quot;&gt;Live Shows&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;news&quot; class=&quot;news&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;News&lt;/h2&gt;
+            &lt;div class=&quot;news-list&quot;&gt;
+                &lt;article class=&quot;news-item&quot;&gt;
+                    &lt;div class=&quot;news-date&quot;&gt;2024.03.20&lt;/div&gt;
+                    &lt;h3&gt;新シングル「Song Title」リリース決定&lt;/h3&gt;
+                    &lt;p&gt;4月15日に新シングルをリリースすることが決定いたしました。詳細は後日発表いたします。&lt;/p&gt;
+                &lt;/article&gt;
+                &lt;article class=&quot;news-item&quot;&gt;
+                    &lt;div class=&quot;news-date&quot;&gt;2024.03.15&lt;/div&gt;
+                    &lt;h3&gt;春のツアー追加公演決定&lt;/h3&gt;
+                    &lt;p&gt;好評につき、春のツアーの追加公演が決定いたしました。チケット販売は3月25日開始予定です。&lt;/p&gt;
+                &lt;/article&gt;
+                &lt;article class=&quot;news-item&quot;&gt;
+                    &lt;div class=&quot;news-date&quot;&gt;2024.03.10&lt;/div&gt;
+                    &lt;h3&gt;ラジオ出演のお知らせ&lt;/h3&gt;
+                    &lt;p&gt;3月18日（月）22:00〜FM局「Music Station」に出演いたします。新曲について語る予定です。&lt;/p&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Contact&lt;/h2&gt;
+            &lt;div class=&quot;contact-content&quot;&gt;
+                &lt;div class=&quot;contact-info&quot;&gt;
+                    &lt;div class=&quot;info-section&quot;&gt;
+                        &lt;h3&gt;ファンレター・プレゼント&lt;/h3&gt;
+                        &lt;p&gt;〒000-0000&lt;br&gt;東京都○○区○○1-2-3&lt;br&gt;○○ビル5F&lt;br&gt;ARTIST NAME ファンレター係&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;info-section&quot;&gt;
+                        &lt;h3&gt;お仕事のご依頼&lt;/h3&gt;
+                        &lt;p&gt;Email: management@artist.com&lt;br&gt;Tel: 03-0000-0000&lt;br&gt;担当: マネージメント事務所&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;info-section&quot;&gt;
+                        &lt;h3&gt;公式SNS&lt;/h3&gt;
+                        &lt;div class=&quot;social-links&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Twitter&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Instagram&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;YouTube&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Spotify&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;newsletter&quot;&gt;
+                    &lt;h3&gt;Newsletter&lt;/h3&gt;
+                    &lt;p&gt;最新情報をお届けします&lt;/p&gt;
+                    &lt;form class=&quot;newsletter-form&quot;&gt;
+                        &lt;input type=&quot;email&quot; placeholder=&quot;メールアドレス&quot; required&gt;
+                        &lt;button type=&quot;submit&quot;&gt;登録&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;p&gt;&amp;copy; 2024 ARTIST NAME. All rights reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // メニュートグル
+document.getElementById(&#x27;menuToggle&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    document.getElementById(&#x27;navMenu&#x27;).classList.toggle(&#x27;active&#x27;);
+});
+
+// スムーススクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            target.scrollIntoView({
+                behavior: &#x27;smooth&#x27;,
+                block: &#x27;start&#x27;
+            });
+            document.getElementById(&#x27;navMenu&#x27;).classList.remove(&#x27;active&#x27;);
+        }
+    });
+});
+
+// 音楽タブ切り替え
+document.querySelectorAll(&#x27;.tab-btn&#x27;).forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, function() {
+        // アクティブクラス切り替え
+        document.querySelectorAll(&#x27;.tab-btn&#x27;).forEach(b =&gt; b.classList.remove(&#x27;active&#x27;));
+        this.classList.add(&#x27;active&#x27;);
+        
+        // タブコンテンツ切り替え
+        const tabId = this.dataset.tab;
+        document.querySelectorAll(&#x27;.tab-content&#x27;).forEach(content =&gt; {
+            content.classList.remove(&#x27;active&#x27;);
+        });
+        document.getElementById(tabId).classList.add(&#x27;active&#x27;);
+    });
+});
+
+// プレイヤー機能（簡易版）
+let isPlaying = false;
+const playBtn = document.getElementById(&#x27;playBtn&#x27;);
+const progress = document.querySelector(&#x27;.progress&#x27;);
+
+playBtn.addEventListener(&#x27;click&#x27;, function() {
+    isPlaying = !isPlaying;
+    this.textContent = isPlaying ? &#x27;⏸&#x27; : &#x27;▶&#x27;;
+    
+    if (isPlaying) {
+        // プログレスバーアニメーション（デモ用）
+        let width = 35;
+        const interval = setInterval(() =&gt; {
+            if (!isPlaying || width &gt;= 100) {
+                clearInterval(interval);
+                if (width &gt;= 100) {
+                    playBtn.textContent = &#x27;▶&#x27;;
+                    isPlaying = false;
+                    progress.style.width = &#x27;0%&#x27;;
+                }
+                return;
+            }
+            width += 0.5;
+            progress.style.width = width + &#x27;%&#x27;;
+        }, 100);
+    }
+});
+
+// シングル再生ボタン
+document.querySelectorAll(&#x27;.play-single&#x27;).forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, function() {
+        alert(&#x27;楽曲再生機能はデモ版です&#x27;);
+    });
+});
+
+// アルバム試聴ボタン
+document.querySelectorAll(&#x27;.listen-btn&#x27;).forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, function() {
+        alert(&#x27;試聴機能はデモ版です&#x27;);
+    });
+});
+
+// ニュースレター登録
+document.querySelector(&#x27;.newsletter-form&#x27;).addEventListener(&#x27;submit&#x27;, function(e) {
+    e.preventDefault();
+    alert(&#x27;ニュースレターにご登録ありがとうございます！&#x27;);
+    this.reset();
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="ポートフォリオ - ミュージシャン" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"portfolio-musician\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"portfolio-musician\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"portfolio-musician\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"portfolio-musician\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"qbio1PItefpznUsLyk6mK\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"portfolio-musician\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

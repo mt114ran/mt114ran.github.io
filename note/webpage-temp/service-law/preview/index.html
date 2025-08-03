@@ -1,0 +1,1670 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;サービス業 - 法律事務所&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#x27;Noto Sans JP&#x27;, sans-serif;
+    color: #333;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header-top {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    padding: 8px 0;
+    font-size: 13px;
+    color: white;
+}
+
+.header-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+.header-main {
+    background: white;
+    box-shadow: 0 2px 15px rgba(26, 35, 126, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo h1 {
+    color: #1a237e;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #c7a96b;
+    margin-top: 5px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #1a237e;
+}
+
+.nav-consultation a {
+    background: linear-gradient(135deg, #c7a96b 0%, #b8935f 100%);
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.nav-consultation a:hover {
+    background: linear-gradient(135deg, #b8935f 0%, #a08249 100%);
+    transform: translateY(-2px);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+}
+
+.hero::before {
+    content: &#x27;&#x27;;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.8) 0%, rgba(199, 169, 107, 0.6) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 18px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #c7a96b 0%, #b8935f 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(199, 169, 107, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #b8935f 0%, #a08249 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(199, 169, 107, 0.5);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.feature-icon {
+    font-size: 24px;
+}
+
+/* Urgent Contact */
+.urgent-contact {
+    background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
+    padding: 25px 0;
+    color: white;
+}
+
+.urgent-box {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.urgent-icon {
+    font-size: 40px;
+}
+
+.urgent-content h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.urgent-tel {
+    display: inline-block;
+    background: white;
+    color: #d32f2f;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    color: #1a237e;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #1a237e, #c7a96b);
+    border-radius: 2px;
+}
+
+/* About */
+.about {
+    background: #f8f9fc;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-text h3 {
+    color: #1a237e;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.about-values {
+    display: grid;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.value-item {
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    border-left: 4px solid #c7a96b;
+}
+
+.value-item h4 {
+    color: #1a237e;
+    margin-bottom: 8px;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(26, 35, 126, 0.1);
+}
+
+.stat-number {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    color: #c7a96b;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Services */
+.services {
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: #f8f9fc;
+    padding: 40px 30px;
+    border-radius: 20px;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #1a237e;
+    box-shadow: 0 15px 40px rgba(26, 35, 126, 0.15);
+}
+
+.service-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: #1a237e;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.service-card &gt; p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.service-details {
+    list-style: none;
+}
+
+.service-details li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: #555;
+}
+
+.service-details li:before {
+    content: &quot;✓&quot;;
+    color: #c7a96b;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Cases */
+.cases {
+    background: #f8f9fc;
+}
+
+.cases-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 15px 30px;
+    background: white;
+    border: 2px solid #1a237e;
+    color: #1a237e;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #1a237e;
+    color: white;
+}
+
+.cases-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.case-item {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 20px rgba(26, 35, 126, 0.1);
+}
+
+.case-item h4 {
+    color: #1a237e;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.case-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.case-type {
+    background: #1a237e;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.case-amount {
+    background: #c7a96b;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+/* Lawyers */
+.lawyers {
+    background: white;
+}
+
+.lawyers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.lawyer-card {
+    background: #f8f9fc;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.lawyer-card:hover {
+    transform: translateY(-5px);
+}
+
+.lawyer-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.lawyer-info {
+    padding: 30px;
+}
+
+.lawyer-info h3 {
+    color: #1a237e;
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+.lawyer-qualification {
+    color: #c7a96b;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.specialties span {
+    background: #e3f2fd;
+    color: #1a237e;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.lawyer-message {
+    margin-bottom: 25px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.lawyer-career h4 {
+    color: #1a237e;
+    margin-bottom: 10px;
+}
+
+.lawyer-career ul {
+    list-style: none;
+}
+
+.lawyer-career li {
+    padding: 5px 0;
+    color: #666;
+}
+
+.lawyer-career li:before {
+    content: &quot;•&quot;;
+    color: #c7a96b;
+    margin-right: 10px;
+}
+
+/* Fees */
+.fees {
+    background: #f8f9fc;
+}
+
+.fees-intro {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fees-intro p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.fees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.fee-category {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(26, 35, 126, 0.1);
+}
+
+.fee-category h3 {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    color: white;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.fee-table {
+    padding: 20px;
+}
+
+.fee-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.fee-row:last-child {
+    border-bottom: none;
+}
+
+.fee-item {
+    font-weight: 500;
+}
+
+.fee-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #c7a96b;
+}
+
+/* Access */
+.access {
+    background: white;
+}
+
+.access-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.access-info table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f8f9fc;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(26, 35, 126, 0.1);
+}
+
+.access-info th {
+    text-align: left;
+    padding: 20px;
+    background: #1a237e;
+    color: white;
+    width: 120px;
+    font-weight: 600;
+}
+
+.access-info td {
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.access-info tr:last-child td {
+    border-bottom: none;
+}
+
+.access-map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fc;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(26, 35, 126, 0.1);
+}
+
+.map-placeholder {
+    font-size: 60px;
+    color: #1a237e;
+}
+
+/* Consultation */
+.consultation {
+    background: linear-gradient(135deg, #f8f9fc 0%, #e8eaf6 100%);
+}
+
+.consultation-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.consultation-intro h3 {
+    color: #1a237e;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.consultation-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.method-card {
+    text-align: center;
+    padding: 40px 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(26, 35, 126, 0.1);
+    transition: transform 0.3s;
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+}
+
+.method-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.method-card h4 {
+    color: #1a237e;
+    margin-bottom: 10px;
+}
+
+.method-card p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.consultation-flow {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.consultation-flow h4 {
+    text-align: center;
+    color: #1a237e;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.flow-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.step {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(26, 35, 126, 0.1);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #c7a96b 0%, #b8935f 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.step h5 {
+    color: #1a237e;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-info h3 {
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-section h4 {
+    margin-bottom: 20px;
+    color: #c7a96b;
+    font-size: 18px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #c7a96b;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    color: #9fa8da;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-info {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        font-size: 12px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .hero-content h2 {
+        font-size: 32px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .urgent-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cases-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .lawyers-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .fees-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .access-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .consultation-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .flow-steps {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;header-top&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;header-info&quot;&gt;
+                    &lt;span&gt;📞 初回相談無料&lt;/span&gt;
+                    &lt;span&gt;03-6789-0123&lt;/span&gt;
+                    &lt;span&gt;平日 9:00-20:00 / 土曜 10:00-18:00&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;header-main&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;header-content&quot;&gt;
+                    &lt;div class=&quot;logo&quot;&gt;
+                        &lt;h1&gt;⚖️ 東京中央法律事務所&lt;/h1&gt;
+                        &lt;p class=&quot;tagline&quot;&gt;あなたの権利を守ります&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;nav class=&quot;main-nav&quot;&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;事務所について&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;取扱業務&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#cases&quot;&gt;解決事例&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#lawyers&quot;&gt;弁護士紹介&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#fees&quot;&gt;費用&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#access&quot;&gt;アクセス&lt;/a&gt;&lt;/li&gt;
+                            &lt;li class=&quot;nav-consultation&quot;&gt;&lt;a href=&quot;#consultation&quot;&gt;法律相談&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/nav&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-background&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&amp;h=800&amp;fit=crop&quot; alt=&quot;法律事務所&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h2&gt;法的トラブルの解決をサポート&lt;/h2&gt;
+            &lt;p&gt;豊富な経験と専門知識で、お客様の権利と利益を最大限に保護いたします&lt;/p&gt;
+            &lt;div class=&quot;hero-buttons&quot;&gt;
+                &lt;button class=&quot;btn-primary&quot;&gt;無料相談予約&lt;/button&gt;
+                &lt;button class=&quot;btn-secondary&quot;&gt;取扱業務を見る&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;hero-features&quot;&gt;
+                &lt;div class=&quot;feature-item&quot;&gt;
+                    &lt;span class=&quot;feature-icon&quot;&gt;🆓&lt;/span&gt;
+                    &lt;span&gt;初回相談無料&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;feature-item&quot;&gt;
+                    &lt;span class=&quot;feature-icon&quot;&gt;📱&lt;/span&gt;
+                    &lt;span&gt;オンライン相談対応&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;feature-item&quot;&gt;
+                    &lt;span class=&quot;feature-icon&quot;&gt;⏰&lt;/span&gt;
+                    &lt;span&gt;夜間・土日相談可&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;urgent-contact&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;urgent-box&quot;&gt;
+                &lt;div class=&quot;urgent-icon&quot;&gt;🚨&lt;/div&gt;
+                &lt;div class=&quot;urgent-content&quot;&gt;
+                    &lt;h3&gt;緊急のご相談・お急ぎの案件&lt;/h3&gt;
+                    &lt;p&gt;刑事事件・逮捕案件・緊急差し止めなど、お急ぎの案件は24時間対応いたします&lt;/p&gt;
+                    &lt;a href=&quot;tel:03-6789-0123&quot; class=&quot;urgent-tel&quot;&gt;緊急相談ダイヤル: 03-6789-0123&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;事務所について&lt;/h2&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;h3&gt;信頼と実績の法律サービス&lt;/h3&gt;
+                    &lt;p&gt;東京中央法律事務所は、2010年の設立以来、企業法務から個人の権利保護まで、幅広い法的サービスを提供してまいりました。&lt;/p&gt;
+                    &lt;p&gt;「依頼者第一主義」を基本理念とし、お客様の立場に立った最善の解決策をご提案いたします。&lt;/p&gt;
+                    &lt;p&gt;複雑な法的問題も、分かりやすい説明と丁寧なサポートで、安心してお任せいただけます。&lt;/p&gt;
+                    &lt;div class=&quot;about-values&quot;&gt;
+                        &lt;div class=&quot;value-item&quot;&gt;
+                            &lt;h4&gt;迅速対応&lt;/h4&gt;
+                            &lt;p&gt;お急ぎの案件にも素早く対応&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;value-item&quot;&gt;
+                            &lt;h4&gt;明朗会計&lt;/h4&gt;
+                            &lt;p&gt;費用は事前に明確にご提示&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;value-item&quot;&gt;
+                            &lt;h4&gt;守秘徹底&lt;/h4&gt;
+                            &lt;p&gt;お客様の秘密を厳格に管理&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-stats&quot;&gt;
+                    &lt;div class=&quot;stat-item&quot;&gt;
+                        &lt;div class=&quot;stat-number&quot;&gt;1,200&lt;/div&gt;
+                        &lt;div class=&quot;stat-label&quot;&gt;年間相談件数&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;stat-item&quot;&gt;
+                        &lt;div class=&quot;stat-number&quot;&gt;98%&lt;/div&gt;
+                        &lt;div class=&quot;stat-label&quot;&gt;解決率&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;stat-item&quot;&gt;
+                        &lt;div class=&quot;stat-number&quot;&gt;13&lt;/div&gt;
+                        &lt;div class=&quot;stat-label&quot;&gt;年の実績&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;stat-item&quot;&gt;
+                        &lt;div class=&quot;stat-number&quot;&gt;5&lt;/div&gt;
+                        &lt;div class=&quot;stat-label&quot;&gt;専門弁護士数&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;services&quot; class=&quot;services&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;取扱業務&lt;/h2&gt;
+            &lt;div class=&quot;services-grid&quot;&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;⚖️&lt;/div&gt;
+                    &lt;h3&gt;民事訴訟&lt;/h3&gt;
+                    &lt;p&gt;契約紛争、損害賠償請求、不動産トラブルなど、民事に関する訴訟案件を取り扱います。&lt;/p&gt;
+                    &lt;ul class=&quot;service-details&quot;&gt;
+                        &lt;li&gt;契約書作成・チェック&lt;/li&gt;
+                        &lt;li&gt;債権回収&lt;/li&gt;
+                        &lt;li&gt;不動産取引トラブル&lt;/li&gt;
+                        &lt;li&gt;損害賠償請求&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🏢&lt;/div&gt;
+                    &lt;h3&gt;企業法務&lt;/h3&gt;
+                    &lt;p&gt;企業経営に関する法的サポートを提供。コンプライアンス体制の構築もお任せください。&lt;/p&gt;
+                    &lt;ul class=&quot;service-details&quot;&gt;
+                        &lt;li&gt;契約書作成・レビュー&lt;/li&gt;
+                        &lt;li&gt;労働問題対応&lt;/li&gt;
+                        &lt;li&gt;M&amp;A・事業承継&lt;/li&gt;
+                        &lt;li&gt;コンプライアンス&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;👥&lt;/div&gt;
+                    &lt;h3&gt;離婚・家事事件&lt;/h3&gt;
+                    &lt;p&gt;離婚問題、親権、養育費など、家庭内の法的問題を専門的にサポートします。&lt;/p&gt;
+                    &lt;ul class=&quot;service-details&quot;&gt;
+                        &lt;li&gt;離婚協議・調停&lt;/li&gt;
+                        &lt;li&gt;親権・面会交流&lt;/li&gt;
+                        &lt;li&gt;養育費・財産分与&lt;/li&gt;
+                        &lt;li&gt;DV・モラハラ対応&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🔒&lt;/div&gt;
+                    &lt;h3&gt;刑事事件&lt;/h3&gt;
+                    &lt;p&gt;刑事事件の弁護、被害者支援など、刑事法分野の専門的なサービスを提供します。&lt;/p&gt;
+                    &lt;ul class=&quot;service-details&quot;&gt;
+                        &lt;li&gt;刑事弁護&lt;/li&gt;
+                        &lt;li&gt;被害者支援&lt;/li&gt;
+                        &lt;li&gt;少年事件&lt;/li&gt;
+                        &lt;li&gt;告訴・告発手続き&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;💰&lt;/div&gt;
+                    &lt;h3&gt;破産・債務整理&lt;/h3&gt;
+                    &lt;p&gt;個人・法人の破産、民事再生、任意整理など、債務問題の解決をサポートします。&lt;/p&gt;
+                    &lt;ul class=&quot;service-details&quot;&gt;
+                        &lt;li&gt;自己破産&lt;/li&gt;
+                        &lt;li&gt;個人再生&lt;/li&gt;
+                        &lt;li&gt;任意整理&lt;/li&gt;
+                        &lt;li&gt;法人破産・再生&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🏠&lt;/div&gt;
+                    &lt;h3&gt;不動産法務&lt;/h3&gt;
+                    &lt;p&gt;不動産売買、賃貸借契約、建築紛争など、不動産に関する法的問題を解決します。&lt;/p&gt;
+                    &lt;ul class=&quot;service-details&quot;&gt;
+                        &lt;li&gt;売買契約書作成&lt;/li&gt;
+                        &lt;li&gt;賃貸借トラブル&lt;/li&gt;
+                        &lt;li&gt;建築紛争&lt;/li&gt;
+                        &lt;li&gt;境界確定&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;cases&quot; class=&quot;cases&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;解決事例&lt;/h2&gt;
+            &lt;div class=&quot;cases-tabs&quot;&gt;
+                &lt;button class=&quot;tab-btn active&quot; data-tab=&quot;civil&quot;&gt;民事事件&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-tab=&quot;corporate&quot;&gt;企業法務&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-tab=&quot;family&quot;&gt;家事事件&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-tab=&quot;criminal&quot;&gt;刑事事件&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;cases-content&quot;&gt;
+                &lt;div class=&quot;tab-content active&quot; id=&quot;civil&quot;&gt;
+                    &lt;div class=&quot;case-item&quot;&gt;
+                        &lt;h4&gt;契約違反による損害賠償請求事件&lt;/h4&gt;
+                        &lt;div class=&quot;case-details&quot;&gt;
+                            &lt;div class=&quot;case-info&quot;&gt;
+                                &lt;span class=&quot;case-type&quot;&gt;民事訴訟&lt;/span&gt;
+                                &lt;span class=&quot;case-amount&quot;&gt;請求額: 2,000万円&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;p&gt;建設工事の契約違反により発生した損害について、適切な証拠収集と法的論理構成により、依頼者の請求を全面的に認める判決を獲得。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;case-item&quot;&gt;
+                        &lt;h4&gt;不動産売買契約の解除・原状回復請求&lt;/h4&gt;
+                        &lt;div class=&quot;case-details&quot;&gt;
+                            &lt;div class=&quot;case-info&quot;&gt;
+                                &lt;span class=&quot;case-type&quot;&gt;民事調停&lt;/span&gt;
+                                &lt;span class=&quot;case-amount&quot;&gt;解決額: 1,500万円&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;p&gt;欠陥住宅の売買契約について、調停による早期解決を実現。全額返金と慰謝料の支払いを獲得。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;tab-content&quot; id=&quot;corporate&quot;&gt;
+                    &lt;div class=&quot;case-item&quot;&gt;
+                        &lt;h4&gt;労働紛争の解決&lt;/h4&gt;
+                        &lt;div class=&quot;case-details&quot;&gt;
+                            &lt;div class=&quot;case-info&quot;&gt;
+                                &lt;span class=&quot;case-type&quot;&gt;労働審判&lt;/span&gt;
+                                &lt;span class=&quot;case-amount&quot;&gt;解決額: 800万円&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;p&gt;不当解雇された従業員からの未払い賃金・慰謝料請求について、労働審判による迅速な解決を実現。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;case-item&quot;&gt;
+                        &lt;h4&gt;企業のM&amp;A取引サポート&lt;/h4&gt;
+                        &lt;div class=&quot;case-details&quot;&gt;
+                            &lt;div class=&quot;case-info&quot;&gt;
+                                &lt;span class=&quot;case-type&quot;&gt;企業買収&lt;/span&gt;
+                                &lt;span class=&quot;case-amount&quot;&gt;取引額: 5億円&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;p&gt;中小企業の買収案件において、デューデリジェンスから契約書作成まで包括的にサポート。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;tab-content&quot; id=&quot;family&quot;&gt;
+                    &lt;div class=&quot;case-item&quot;&gt;
+                        &lt;h4&gt;離婚調停での財産分与&lt;/h4&gt;
+                        &lt;div class=&quot;case-details&quot;&gt;
+                            &lt;div class=&quot;case-info&quot;&gt;
+                                &lt;span class=&quot;case-type&quot;&gt;家事調停&lt;/span&gt;
+                                &lt;span class=&quot;case-amount&quot;&gt;分与額: 3,000万円&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;p&gt;高額な財産を有する夫婦の離婚事件において、適正な財産評価により依頼者に有利な分与を実現。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;tab-content&quot; id=&quot;criminal&quot;&gt;
+                    &lt;div class=&quot;case-item&quot;&gt;
+                        &lt;h4&gt;詐欺罪での無罪判決獲得&lt;/h4&gt;
+                        &lt;div class=&quot;case-details&quot;&gt;
+                            &lt;div class=&quot;case-info&quot;&gt;
+                                &lt;span class=&quot;case-type&quot;&gt;刑事弁護&lt;/span&gt;
+                                &lt;span class=&quot;case-amount&quot;&gt;結果: 無罪&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;p&gt;複雑な経済事件における詐欺罪の起訴について、綿密な事実調査と法的論証により無罪判決を獲得。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;lawyers&quot; class=&quot;lawyers&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;弁護士紹介&lt;/h2&gt;
+            &lt;div class=&quot;lawyers-grid&quot;&gt;
+                &lt;div class=&quot;lawyer-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;代表弁護士&quot;&gt;
+                    &lt;div class=&quot;lawyer-info&quot;&gt;
+                        &lt;h3&gt;代表弁護士 鈴木 一郎&lt;/h3&gt;
+                        &lt;p class=&quot;lawyer-qualification&quot;&gt;弁護士登録: 第12345号&lt;/p&gt;
+                        &lt;div class=&quot;specialties&quot;&gt;
+                            &lt;span&gt;民事訴訟&lt;/span&gt;
+                            &lt;span&gt;企業法務&lt;/span&gt;
+                            &lt;span&gt;不動産法務&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;lawyer-message&quot;&gt;20年以上の豊富な経験で、お客様の法的問題を根本から解決いたします。&lt;/p&gt;
+                        &lt;div class=&quot;lawyer-career&quot;&gt;
+                            &lt;h4&gt;経歴・資格&lt;/h4&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;東京大学法学部卒業&lt;/li&gt;
+                                &lt;li&gt;司法試験合格（平成15年）&lt;/li&gt;
+                                &lt;li&gt;第二東京弁護士会所属&lt;/li&gt;
+                                &lt;li&gt;民事調停委員（東京地裁）&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;lawyer-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1494790108755-2616c33495e4?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;弁護士&quot;&gt;
+                    &lt;div class=&quot;lawyer-info&quot;&gt;
+                        &lt;h3&gt;弁護士 田中 花子&lt;/h3&gt;
+                        &lt;p class=&quot;lawyer-qualification&quot;&gt;弁護士登録: 第67890号&lt;/p&gt;
+                        &lt;div class=&quot;specialties&quot;&gt;
+                            &lt;span&gt;家事事件&lt;/span&gt;
+                            &lt;span&gt;刑事事件&lt;/span&gt;
+                            &lt;span&gt;労働問題&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;lawyer-message&quot;&gt;家庭問題や刑事事件など、デリケートな案件を丁寧にサポートします。&lt;/p&gt;
+                        &lt;div class=&quot;lawyer-career&quot;&gt;
+                            &lt;h4&gt;経歴・資格&lt;/h4&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;早稲田大学法学部卒業&lt;/li&gt;
+                                &lt;li&gt;司法試験合格（平成20年）&lt;/li&gt;
+                                &lt;li&gt;第一東京弁護士会所属&lt;/li&gt;
+                                &lt;li&gt;家事調停委員（東京家裁）&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;lawyer-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;弁護士&quot;&gt;
+                    &lt;div class=&quot;lawyer-info&quot;&gt;
+                        &lt;h3&gt;弁護士 佐藤 次郎&lt;/h3&gt;
+                        &lt;p class=&quot;lawyer-qualification&quot;&gt;弁護士登録: 第24680号&lt;/p&gt;
+                        &lt;div class=&quot;specialties&quot;&gt;
+                            &lt;span&gt;破産・再生&lt;/span&gt;
+                            &lt;span&gt;債務整理&lt;/span&gt;
+                            &lt;span&gt;企業法務&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;lawyer-message&quot;&gt;債務問題や企業再生の専門家として、最適な解決策をご提案します。&lt;/p&gt;
+                        &lt;div class=&quot;lawyer-career&quot;&gt;
+                            &lt;h4&gt;経歴・資格&lt;/h4&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;慶応義塾大学法学部卒業&lt;/li&gt;
+                                &lt;li&gt;司法試験合格（平成25年）&lt;/li&gt;
+                                &lt;li&gt;東京弁護士会所属&lt;/li&gt;
+                                &lt;li&gt;事業再生実務家協会会員&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;fees&quot; class=&quot;fees&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;弁護士費用&lt;/h2&gt;
+            &lt;div class=&quot;fees-intro&quot;&gt;
+                &lt;p&gt;料金体系を明確にし、安心してご依頼いただけるよう心がけています。&lt;/p&gt;
+                &lt;p&gt;※表示価格は全て税込み価格です。事案の難易度により変動する場合があります。&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;fees-grid&quot;&gt;
+                &lt;div class=&quot;fee-category&quot;&gt;
+                    &lt;h3&gt;相談料&lt;/h3&gt;
+                    &lt;div class=&quot;fee-table&quot;&gt;
+                        &lt;div class=&quot;fee-row&quot;&gt;
+                            &lt;span class=&quot;fee-item&quot;&gt;初回相談（60分）&lt;/span&gt;
+                            &lt;span class=&quot;fee-price&quot;&gt;無料&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;fee-row&quot;&gt;
+                            &lt;span class=&quot;fee-item&quot;&gt;継続相談（30分）&lt;/span&gt;
+                            &lt;span class=&quot;fee-price&quot;&gt;¥11,000&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;fee-category&quot;&gt;
+                    &lt;h3&gt;民事事件&lt;/h3&gt;
+                    &lt;div class=&quot;fee-table&quot;&gt;
+                        &lt;div class=&quot;fee-row&quot;&gt;
+                            &lt;span class=&quot;fee-item&quot;&gt;着手金&lt;/span&gt;
+                            &lt;span class=&quot;fee-price&quot;&gt;¥330,000〜&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;fee-row&quot;&gt;
+                            &lt;span class=&quot;fee-item&quot;&gt;報酬金&lt;/span&gt;
+                            &lt;span class=&quot;fee-price&quot;&gt;回収額の16.5%&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;fee-category&quot;&gt;
+                    &lt;h3&gt;家事事件&lt;/h3&gt;
+                    &lt;div class=&quot;fee-table&quot;&gt;
+                        &lt;div class=&quot;fee-row&quot;&gt;
+                            &lt;span class=&quot;fee-item&quot;&gt;離婚調停&lt;/span&gt;
+                            &lt;span class=&quot;fee-price&quot;&gt;¥550,000&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;fee-row&quot;&gt;
+                            &lt;span class=&quot;fee-item&quot;&gt;離婚訴訟&lt;/span&gt;
+                            &lt;span class=&quot;fee-price&quot;&gt;¥770,000&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;fee-category&quot;&gt;
+                    &lt;h3&gt;刑事事件&lt;/h3&gt;
+                    &lt;div class=&quot;fee-table&quot;&gt;
+                        &lt;div class=&quot;fee-row&quot;&gt;
+                            &lt;span class=&quot;fee-item&quot;&gt;接見（1回）&lt;/span&gt;
+                            &lt;span class=&quot;fee-price&quot;&gt;¥55,000&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;fee-row&quot;&gt;
+                            &lt;span class=&quot;fee-item&quot;&gt;刑事弁護&lt;/span&gt;
+                            &lt;span class=&quot;fee-price&quot;&gt;¥880,000〜&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;fee-category&quot;&gt;
+                    &lt;h3&gt;債務整理&lt;/h3&gt;
+                    &lt;div class=&quot;fee-table&quot;&gt;
+                        &lt;div class=&quot;fee-row&quot;&gt;
+                            &lt;span class=&quot;fee-item&quot;&gt;任意整理（1社）&lt;/span&gt;
+                            &lt;span class=&quot;fee-price&quot;&gt;¥44,000&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;fee-row&quot;&gt;
+                            &lt;span class=&quot;fee-item&quot;&gt;自己破産&lt;/span&gt;
+                            &lt;span class=&quot;fee-price&quot;&gt;¥440,000〜&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;fee-category&quot;&gt;
+                    &lt;h3&gt;企業法務&lt;/h3&gt;
+                    &lt;div class=&quot;fee-table&quot;&gt;
+                        &lt;div class=&quot;fee-row&quot;&gt;
+                            &lt;span class=&quot;fee-item&quot;&gt;契約書作成&lt;/span&gt;
+                            &lt;span class=&quot;fee-price&quot;&gt;¥110,000〜&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;fee-row&quot;&gt;
+                            &lt;span class=&quot;fee-item&quot;&gt;顧問契約（月額）&lt;/span&gt;
+                            &lt;span class=&quot;fee-price&quot;&gt;¥110,000〜&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;access&quot; class=&quot;access&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;アクセス&lt;/h2&gt;
+            &lt;div class=&quot;access-content&quot;&gt;
+                &lt;div class=&quot;access-info&quot;&gt;
+                    &lt;table&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;事務所名&lt;/th&gt;
+                            &lt;td&gt;東京中央法律事務所&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;住所&lt;/th&gt;
+                            &lt;td&gt;〒100-0001 東京都千代田区千代田1-2-3 リーガルビル8F&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;電話&lt;/th&gt;
+                            &lt;td&gt;03-6789-0123&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;受付時間&lt;/th&gt;
+                            &lt;td&gt;
+                                平日: 9:00-20:00&lt;br&gt;
+                                土曜: 10:00-18:00
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;定休日&lt;/th&gt;
+                            &lt;td&gt;日曜・祝日（緊急時は対応）&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;アクセス&lt;/th&gt;
+                            &lt;td&gt;
+                                JR「東京駅」徒歩5分&lt;br&gt;
+                                地下鉄「大手町駅」徒歩3分
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;access-map&quot;&gt;
+                    &lt;div class=&quot;map-placeholder&quot;&gt;🗺️ Google Map&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;consultation&quot; class=&quot;consultation&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;法律相談のご予約&lt;/h2&gt;
+            &lt;div class=&quot;consultation-content&quot;&gt;
+                &lt;div class=&quot;consultation-intro&quot;&gt;
+                    &lt;h3&gt;初回相談無料&lt;/h3&gt;
+                    &lt;p&gt;法的トラブルでお困りの方は、まずはお気軽にご相談ください。&lt;/p&gt;
+                    &lt;p&gt;初回60分のご相談は無料で承っております。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;consultation-methods&quot;&gt;
+                    &lt;div class=&quot;method-card&quot;&gt;
+                        &lt;div class=&quot;method-icon&quot;&gt;📞&lt;/div&gt;
+                        &lt;h4&gt;お電話でのご予約&lt;/h4&gt;
+                        &lt;p&gt;平日・土曜の受付時間内&lt;/p&gt;
+                        &lt;a href=&quot;tel:03-6789-0123&quot; class=&quot;btn-primary&quot;&gt;03-6789-0123&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;method-card&quot;&gt;
+                        &lt;div class=&quot;method-icon&quot;&gt;💻&lt;/div&gt;
+                        &lt;h4&gt;オンライン予約&lt;/h4&gt;
+                        &lt;p&gt;24時間いつでも予約可能&lt;/p&gt;
+                        &lt;button class=&quot;btn-secondary&quot;&gt;予約フォームへ&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;method-card&quot;&gt;
+                        &lt;div class=&quot;method-icon&quot;&gt;📧&lt;/div&gt;
+                        &lt;h4&gt;メール相談&lt;/h4&gt;
+                        &lt;p&gt;簡単な質問はメールでも&lt;/p&gt;
+                        &lt;button class=&quot;btn-secondary&quot;&gt;メール送信&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;consultation-flow&quot;&gt;
+                    &lt;h4&gt;相談の流れ&lt;/h4&gt;
+                    &lt;div class=&quot;flow-steps&quot;&gt;
+                        &lt;div class=&quot;step&quot;&gt;
+                            &lt;div class=&quot;step-number&quot;&gt;1&lt;/div&gt;
+                            &lt;h5&gt;ご予約&lt;/h5&gt;
+                            &lt;p&gt;お電話またはWebで予約&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;step&quot;&gt;
+                            &lt;div class=&quot;step-number&quot;&gt;2&lt;/div&gt;
+                            &lt;h5&gt;ご来所&lt;/h5&gt;
+                            &lt;p&gt;事務所にてお話をお聞きします&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;step&quot;&gt;
+                            &lt;div class=&quot;step-number&quot;&gt;3&lt;/div&gt;
+                            &lt;h5&gt;方針決定&lt;/h5&gt;
+                            &lt;p&gt;最適な解決策をご提案&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;step&quot;&gt;
+                            &lt;div class=&quot;step-number&quot;&gt;4&lt;/div&gt;
+                            &lt;h5&gt;契約・着手&lt;/h5&gt;
+                            &lt;p&gt;委任契約後、手続き開始&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-info&quot;&gt;
+                    &lt;h3&gt;⚖️ 東京中央法律事務所&lt;/h3&gt;
+                    &lt;p&gt;〒100-0001 東京都千代田区千代田1-2-3 リーガルビル8F&lt;/p&gt;
+                    &lt;p&gt;TEL: 03-6789-0123&lt;/p&gt;
+                    &lt;p&gt;受付時間: 平日 9:00-20:00 / 土曜 10:00-18:00&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-links&quot;&gt;
+                    &lt;div class=&quot;footer-section&quot;&gt;
+                        &lt;h4&gt;取扱業務&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;民事訴訟&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;企業法務&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;家事事件&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;刑事事件&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;footer-section&quot;&gt;
+                        &lt;h4&gt;事務所情報&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;事務所概要&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#lawyers&quot;&gt;弁護士紹介&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#fees&quot;&gt;費用について&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;copyright&quot;&gt;© 2025 東京中央法律事務所 All Rights Reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // タブ切り替え機能
+const tabBtns = document.querySelectorAll(&#x27;.tab-btn&#x27;);
+const tabContents = document.querySelectorAll(&#x27;.tab-content&#x27;);
+
+tabBtns.forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, () =&gt; {
+        const tab = btn.dataset.tab;
+        
+        // タブボタンのアクティブ状態を切り替え
+        tabBtns.forEach(b =&gt; b.classList.remove(&#x27;active&#x27;));
+        btn.classList.add(&#x27;active&#x27;);
+        
+        // タブコンテンツの表示を切り替え
+        tabContents.forEach(content =&gt; {
+            content.classList.remove(&#x27;active&#x27;);
+            if (content.id === tab) {
+                content.classList.add(&#x27;active&#x27;);
+            }
+        });
+    });
+});
+
+// 相談予約ボタンのクリック処理
+document.querySelectorAll(&#x27;.btn-primary&#x27;).forEach(button =&gt; {
+    if (button.textContent.includes(&#x27;03-6789-0123&#x27;)) return;
+    
+    button.addEventListener(&#x27;click&#x27;, function() {
+        if (button.textContent.includes(&#x27;無料相談予約&#x27;) || button.textContent.includes(&#x27;初回相談無料&#x27;)) {
+            alert(&#x27;法律相談の予約を承ります。お電話またはWebフォームからお申し込みください。&#x27;);
+        }
+    });
+});
+
+// その他のボタンのクリック処理
+document.querySelectorAll(&#x27;.btn-secondary&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function(e) {
+        if (button.textContent === &#x27;取扱業務を見る&#x27;) {
+            e.preventDefault();
+            document.getElementById(&#x27;services&#x27;).scrollIntoView({ 
+                behavior: &#x27;smooth&#x27;,
+                block: &#x27;start&#x27;
+            });
+        } else if (button.textContent === &#x27;予約フォームへ&#x27;) {
+            alert(&#x27;オンライン予約フォームへ移動します（実装予定）&#x27;);
+        } else if (button.textContent === &#x27;メール送信&#x27;) {
+            alert(&#x27;メール相談フォームへ移動します（実装予定）&#x27;);
+        }
+    });
+});
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header-main&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// 電話番号のクリック処理
+document.querySelectorAll(&#x27;a[href^=&quot;tel:&quot;]&#x27;).forEach(tel =&gt; {
+    tel.addEventListener(&#x27;click&#x27;, function(e) {
+        if (!tel.href.includes(&#x27;tel:&#x27;)) return;
+        
+        // デスクトップの場合はアラートを表示
+        if (!/Mobi|Android/i.test(navigator.userAgent)) {
+            e.preventDefault();
+            alert(&#x27;お電話でのご相談: &#x27; + this.textContent);
+        }
+    });
+});
+
+// サービスカードのホバー効果
+document.querySelectorAll(&#x27;.service-card&#x27;).forEach(card =&gt; {
+    card.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.transform = &#x27;translateY(-10px) scale(1.02)&#x27;;
+    });
+    
+    card.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.transform = &#x27;&#x27;;
+    });
+});
+
+// 料金表の行にホバー効果
+document.querySelectorAll(&#x27;.fee-row&#x27;).forEach(row =&gt; {
+    row.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.backgroundColor = &#x27;#f5f5f5&#x27;;
+    });
+    
+    row.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.backgroundColor = &#x27;&#x27;;
+    });
+});
+
+// 事例カードのクリック処理
+document.querySelectorAll(&#x27;.case-item&#x27;).forEach(item =&gt; {
+    item.style.cursor = &#x27;pointer&#x27;;
+    item.addEventListener(&#x27;click&#x27;, function() {
+        const title = this.querySelector(&#x27;h4&#x27;).textContent;
+        alert(`解決事例の詳細: ${title}
+
+詳細な内容については、直接お問い合わせください。`);
+    });
+});
+
+// ページ読み込み時のアニメーション
+window.addEventListener(&#x27;load&#x27;, function() {
+    const hero = document.querySelector(&#x27;.hero-content&#x27;);
+    if (hero) {
+        hero.style.opacity = &#x27;0&#x27;;
+        hero.style.transform = &#x27;translateY(50px)&#x27;;
+        hero.style.transition = &#x27;all 1.2s ease&#x27;;
+        
+        setTimeout(() =&gt; {
+            hero.style.opacity = &#x27;1&#x27;;
+            hero.style.transform = &#x27;translateY(0)&#x27;;
+        }, 300);
+    }
+    
+    // 統計データのカウントアップアニメーション
+    const statNumbers = document.querySelectorAll(&#x27;.stat-number&#x27;);
+    statNumbers.forEach(stat =&gt; {
+        const finalValue = parseInt(stat.textContent.replace(/[^d]/g, &#x27;&#x27;));
+        let currentValue = 0;
+        const increment = finalValue / 50;
+        
+        const timer = setInterval(() =&gt; {
+            currentValue += increment;
+            if (currentValue &gt;= finalValue) {
+                stat.textContent = stat.textContent; // 元の値（%記号等を保持）
+                clearInterval(timer);
+            } else {
+                stat.textContent = Math.floor(currentValue);
+            }
+        }, 30);
+    });
+});
+
+// 緊急相談ボックスの点滅効果
+setInterval(() =&gt; {
+    const urgentIcon = document.querySelector(&#x27;.urgent-icon&#x27;);
+    if (urgentIcon) {
+        urgentIcon.style.opacity = urgentIcon.style.opacity === &#x27;0.5&#x27; ? &#x27;1&#x27; : &#x27;0.5&#x27;;
+    }
+}, 1000);
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="サービス業 - 法律事務所" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"service-law\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"service-law\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"service-law\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"service-law\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"uZPVON3D52gO77TLhc_Hq\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"service-law\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

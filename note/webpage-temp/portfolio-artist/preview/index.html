@@ -1,0 +1,1400 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ポートフォリオ - アーティスト&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Inter&#x27;, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #2d3748;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-art {
+    font-size: 1.5rem;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(180deg); }
+}
+
+.logo-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #e53e3e, #9f7aea, #38b2ac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #e53e3e, #9f7aea);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.nav-menu a:hover {
+    color: #e53e3e;
+}
+
+/* Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: radial-gradient(circle at 30% 20%, #fbb6ce 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, #b794f6 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, #4fd1c7 0%, transparent 50%),
+                linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.color-splash {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
+}
+
+.splash-1 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #e53e3e, #fc8181);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.splash-2 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #9f7aea, #b794f6);
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.splash-3 {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, #38b2ac, #4fd1c7);
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+.splash-4 {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #ed8936, #f6ad55);
+    top: 30%;
+    right: 30%;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.6;
+    }
+    50% { 
+        transform: translateY(-30px) rotate(180deg);
+        opacity: 0.8;
+    }
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.title-word {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, #e53e3e, #9f7aea, #38b2ac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShine 3s ease-in-out infinite;
+}
+
+@keyframes textShine {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #718096;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-outline {
+    padding: 1.2rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #e53e3e, #9f7aea);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(229, 62, 62, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #e53e3e;
+    border: 2px solid #e53e3e;
+}
+
+.btn-outline:hover {
+    background: #e53e3e;
+    color: white;
+}
+
+.btn-primary.large, .btn-outline.large {
+    padding: 1.3rem 3rem;
+    font-size: 1.1rem;
+}
+
+.scroll-art {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: #718096;
+}
+
+.brush-stroke {
+    width: 3px;
+    height: 40px;
+    background: linear-gradient(to bottom, #e53e3e, #9f7aea, #38b2ac);
+    border-radius: 2px;
+    animation: brushMove 2s ease-in-out infinite;
+}
+
+@keyframes brushMove {
+    0%, 100% { height: 40px; opacity: 0.7; }
+    50% { height: 60px; opacity: 1; }
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 6rem 0;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #e53e3e, #9f7aea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.section-title::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #e53e3e, #9f7aea);
+    border-radius: 2px;
+}
+
+/* About */
+.about {
+    background: #f7fafc;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.image-frame {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    border: 3px solid #e53e3e;
+    border-radius: 25px;
+    z-index: 1;
+}
+
+.paint-drops {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+}
+
+.drop {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50% 50% 50% 0;
+    animation: drip 3s ease-in-out infinite;
+}
+
+.drop-1 {
+    background: #e53e3e;
+    top: 0;
+    left: 0;
+    animation-delay: 0s;
+}
+
+.drop-2 {
+    background: #9f7aea;
+    top: 30px;
+    left: 20px;
+    animation-delay: 1s;
+}
+
+.drop-3 {
+    background: #38b2ac;
+    top: 60px;
+    left: -10px;
+    animation-delay: 2s;
+}
+
+@keyframes drip {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(10px) scale(1.1); }
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #4a5568;
+    line-height: 1.8;
+}
+
+.artist-info {
+    margin-top: 3rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.info-icon {
+    font-size: 2rem;
+    min-width: 60px;
+    text-align: center;
+}
+
+.info-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.info-content p {
+    color: #718096;
+    margin: 0;
+}
+
+/* Gallery */
+.gallery {
+    background: white;
+    padding: 6rem 0;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.filter-btn {
+    padding: 0.8rem 1.5rem;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: #4a5568;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: linear-gradient(135deg, #e53e3e, #9f7aea);
+    border-color: transparent;
+    color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 300px);
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.artwork-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.artwork-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.artwork-item.featured {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.artwork-item.wide {
+    grid-column: span 2;
+}
+
+.artwork-item.tall {
+    grid-row: span 2;
+}
+
+.artwork-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.artwork-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.artwork-item:hover .artwork-image img {
+    transform: scale(1.1);
+}
+
+.artwork-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(229, 62, 62, 0.9), rgba(159, 122, 234, 0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.artwork-item:hover .artwork-overlay {
+    opacity: 1;
+}
+
+.artwork-info {
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.artwork-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.artwork-info p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.view-artwork {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: white;
+    color: #e53e3e;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-artwork:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Exhibitions */
+.exhibitions {
+    background: #f7fafc;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: &#x27;&#x27;;
+    position: absolute;
+    left: 100px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #e53e3e, #9f7aea, #38b2ac);
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-year {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #e53e3e, #9f7aea);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-right: 2rem;
+    box-shadow: 0 5px 15px rgba(229, 62, 62, 0.3);
+}
+
+.timeline-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.timeline-content p {
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+}
+
+/* Contact */
+.contact {
+    background: linear-gradient(135deg, #e53e3e 0%, #9f7aea 50%, #38b2ac 100%);
+    color: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.contact-art {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.palette {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.color-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.color-1 { background: #e53e3e; }
+.color-2 { background: #9f7aea; }
+.color-3 { background: #38b2ac; }
+.color-4 { background: #ed8936; }
+.color-5 { background: #48bb78; }
+
+.brush {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 40px;
+    height: 8px;
+    background: #8b4513;
+    border-radius: 20px;
+    transform: rotate(45deg);
+}
+
+.brush::before {
+    content: &#x27;&#x27;;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 15px;
+    height: 18px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.contact .section-title {
+    color: white;
+    text-align: left;
+}
+
+.contact .section-title::after {
+    background: white;
+}
+
+.contact-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 0.3rem;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.contact-cta {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* Footer */
+.footer {
+    background: #1a202c;
+    color: #a0aec0;
+    padding: 2rem 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    padding: 0.5rem 1rem;
+    background: #2d3748;
+    color: #e2e8f0;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #e53e3e, #9f7aea);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+    
+    .artwork-item.featured,
+    .artwork-item.wide,
+    .artwork-item.tall {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+    
+    .timeline::before {
+        left: 40px;
+    }
+    
+    .timeline-year {
+        width: 60px;
+        height: 60px;
+        font-size: 0.9rem;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;nav class=&quot;navbar&quot;&gt;
+        &lt;div class=&quot;nav-container&quot;&gt;
+            &lt;div class=&quot;logo&quot;&gt;
+                &lt;span class=&quot;logo-art&quot;&gt;✨&lt;/span&gt;
+                &lt;span class=&quot;logo-text&quot;&gt;MAI SUZUKI&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;ul class=&quot;nav-menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#gallery&quot;&gt;Gallery&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#exhibitions&quot;&gt;Exhibitions&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-bg&quot;&gt;
+            &lt;div class=&quot;color-splash splash-1&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;color-splash splash-2&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;color-splash splash-3&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;color-splash splash-4&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h1 class=&quot;hero-title&quot;&gt;
+                &lt;span class=&quot;title-word&quot; data-text=&quot;CREATE&quot;&gt;CREATE&lt;/span&gt;
+                &lt;span class=&quot;title-word&quot; data-text=&quot;INSPIRE&quot;&gt;INSPIRE&lt;/span&gt;
+                &lt;span class=&quot;title-word&quot; data-text=&quot;TRANSFORM&quot;&gt;TRANSFORM&lt;/span&gt;
+            &lt;/h1&gt;
+            &lt;p class=&quot;hero-subtitle&quot;&gt;色彩と形で感情を表現するビジュアルアーティスト&lt;/p&gt;
+            &lt;div class=&quot;hero-cta&quot;&gt;
+                &lt;button class=&quot;btn-primary&quot;&gt;作品を見る&lt;/button&gt;
+                &lt;button class=&quot;btn-outline&quot;&gt;アーティストについて&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;scroll-art&quot;&gt;
+            &lt;div class=&quot;brush-stroke&quot;&gt;&lt;/div&gt;
+            &lt;span&gt;Scroll to Explore&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1494790108755-2616c830e91c?w=500&amp;h=600&amp;fit=crop&quot; alt=&quot;アーティスト鈴木舞&quot;&gt;
+                    &lt;div class=&quot;image-frame&quot;&gt;&lt;/div&gt;
+                    &lt;div class=&quot;paint-drops&quot;&gt;
+                        &lt;div class=&quot;drop drop-1&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;drop drop-2&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;drop drop-3&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;About the Artist&lt;/h2&gt;
+                    &lt;p&gt;現代アートとデジタルメディアを融合させた作品を制作するビジュアルアーティストです。&lt;/p&gt;
+                    &lt;p&gt;色彩の持つ感情的な力と、抽象的な形の美しさを通じて、観る人の心に深く響く作品作りを心がけています。&lt;/p&gt;
+                    &lt;p&gt;自然からインスピレーションを得て、現代社会における人間の感情や体験を表現しています。&lt;/p&gt;
+                    
+                    &lt;div class=&quot;artist-info&quot;&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;div class=&quot;info-icon&quot;&gt;🎨&lt;/div&gt;
+                            &lt;div class=&quot;info-content&quot;&gt;
+                                &lt;h4&gt;専門分野&lt;/h4&gt;
+                                &lt;p&gt;抽象画、デジタルアート、インスタレーション&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;div class=&quot;info-icon&quot;&gt;🏆&lt;/div&gt;
+                            &lt;div class=&quot;info-content&quot;&gt;
+                                &lt;h4&gt;受賞歴&lt;/h4&gt;
+                                &lt;p&gt;東京現代アート大賞 2023、新進アーティスト賞 2022&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;div class=&quot;info-icon&quot;&gt;🌍&lt;/div&gt;
+                            &lt;div class=&quot;info-content&quot;&gt;
+                                &lt;h4&gt;展示歴&lt;/h4&gt;
+                                &lt;p&gt;東京、大阪、ニューヨーク、パリで個展・グループ展&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;gallery&quot; class=&quot;gallery&quot;&gt;
+        &lt;div class=&quot;gallery-header&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Art Gallery&lt;/h2&gt;
+            &lt;div class=&quot;gallery-filters&quot;&gt;
+                &lt;button class=&quot;filter-btn active&quot; data-filter=&quot;all&quot;&gt;All Works&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-filter=&quot;abstract&quot;&gt;Abstract&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-filter=&quot;digital&quot;&gt;Digital&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-filter=&quot;installation&quot;&gt;Installation&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-filter=&quot;mixed&quot;&gt;Mixed Media&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;gallery-grid&quot;&gt;
+            &lt;div class=&quot;artwork-item featured&quot; data-category=&quot;abstract&quot;&gt;
+                &lt;div class=&quot;artwork-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&amp;h=800&amp;fit=crop&quot; alt=&quot;抽象画作品1&quot;&gt;
+                    &lt;div class=&quot;artwork-overlay&quot;&gt;
+                        &lt;div class=&quot;artwork-info&quot;&gt;
+                            &lt;h3&gt;Emotional Spectrum&lt;/h3&gt;
+                            &lt;p&gt;Canvas, Acrylic&lt;/p&gt;
+                            &lt;p&gt;120 × 90 cm&lt;/p&gt;
+                            &lt;button class=&quot;view-artwork&quot;&gt;詳細を見る&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;artwork-item&quot; data-category=&quot;digital&quot;&gt;
+                &lt;div class=&quot;artwork-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;デジタルアート作品1&quot;&gt;
+                    &lt;div class=&quot;artwork-overlay&quot;&gt;
+                        &lt;div class=&quot;artwork-info&quot;&gt;
+                            &lt;h3&gt;Digital Dreams&lt;/h3&gt;
+                            &lt;p&gt;Digital Print&lt;/p&gt;
+                            &lt;p&gt;70 × 50 cm&lt;/p&gt;
+                            &lt;button class=&quot;view-artwork&quot;&gt;詳細を見る&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;artwork-item wide&quot; data-category=&quot;installation&quot;&gt;
+                &lt;div class=&quot;artwork-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&amp;h=400&amp;fit=crop&quot; alt=&quot;インスタレーション作品1&quot;&gt;
+                    &lt;div class=&quot;artwork-overlay&quot;&gt;
+                        &lt;div class=&quot;artwork-info&quot;&gt;
+                            &lt;h3&gt;Space &amp; Light&lt;/h3&gt;
+                            &lt;p&gt;Mixed Media Installation&lt;/p&gt;
+                            &lt;p&gt;300 × 200 × 150 cm&lt;/p&gt;
+                            &lt;button class=&quot;view-artwork&quot;&gt;詳細を見る&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;artwork-item&quot; data-category=&quot;abstract&quot;&gt;
+                &lt;div class=&quot;artwork-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1578662015358-e6eadc46e398?w=600&amp;h=800&amp;fit=crop&quot; alt=&quot;抽象画作品2&quot;&gt;
+                    &lt;div class=&quot;artwork-overlay&quot;&gt;
+                        &lt;div class=&quot;artwork-info&quot;&gt;
+                            &lt;h3&gt;Nature&#x27;s Rhythm&lt;/h3&gt;
+                            &lt;p&gt;Canvas, Oil&lt;/p&gt;
+                            &lt;p&gt;100 × 80 cm&lt;/p&gt;
+                            &lt;button class=&quot;view-artwork&quot;&gt;詳細を見る&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;artwork-item tall&quot; data-category=&quot;mixed&quot;&gt;
+                &lt;div class=&quot;artwork-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&amp;h=900&amp;fit=crop&quot; alt=&quot;ミクストメディア作品1&quot;&gt;
+                    &lt;div class=&quot;artwork-overlay&quot;&gt;
+                        &lt;div class=&quot;artwork-info&quot;&gt;
+                            &lt;h3&gt;Urban Essence&lt;/h3&gt;
+                            &lt;p&gt;Mixed Media&lt;/p&gt;
+                            &lt;p&gt;80 × 120 cm&lt;/p&gt;
+                            &lt;button class=&quot;view-artwork&quot;&gt;詳細を見る&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;artwork-item&quot; data-category=&quot;digital&quot;&gt;
+                &lt;div class=&quot;artwork-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;デジタルアート作品2&quot;&gt;
+                    &lt;div class=&quot;artwork-overlay&quot;&gt;
+                        &lt;div class=&quot;artwork-info&quot;&gt;
+                            &lt;h3&gt;Cyber Garden&lt;/h3&gt;
+                            &lt;p&gt;Digital Art&lt;/p&gt;
+                            &lt;p&gt;60 × 40 cm&lt;/p&gt;
+                            &lt;button class=&quot;view-artwork&quot;&gt;詳細を見る&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;artwork-item&quot; data-category=&quot;abstract&quot;&gt;
+                &lt;div class=&quot;artwork-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&amp;h=600&amp;fit=crop&quot; alt=&quot;抽象画作品3&quot;&gt;
+                    &lt;div class=&quot;artwork-overlay&quot;&gt;
+                        &lt;div class=&quot;artwork-info&quot;&gt;
+                            &lt;h3&gt;Color Symphony&lt;/h3&gt;
+                            &lt;p&gt;Canvas, Acrylic&lt;/p&gt;
+                            &lt;p&gt;90 × 90 cm&lt;/p&gt;
+                            &lt;button class=&quot;view-artwork&quot;&gt;詳細を見る&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;artwork-item&quot; data-category=&quot;mixed&quot;&gt;
+                &lt;div class=&quot;artwork-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1578662015358-e6eadc46e398?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;ミクストメディア作品2&quot;&gt;
+                    &lt;div class=&quot;artwork-overlay&quot;&gt;
+                        &lt;div class=&quot;artwork-info&quot;&gt;
+                            &lt;h3&gt;Textured Reality&lt;/h3&gt;
+                            &lt;p&gt;Mixed Media&lt;/p&gt;
+                            &lt;p&gt;70 × 50 cm&lt;/p&gt;
+                            &lt;button class=&quot;view-artwork&quot;&gt;詳細を見る&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;exhibitions&quot; class=&quot;exhibitions&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Exhibitions &amp; Events&lt;/h2&gt;
+            &lt;div class=&quot;timeline&quot;&gt;
+                &lt;div class=&quot;timeline-item&quot;&gt;
+                    &lt;div class=&quot;timeline-year&quot;&gt;2025&lt;/div&gt;
+                    &lt;div class=&quot;timeline-content&quot;&gt;
+                        &lt;h3&gt;個展「Inner Landscapes」&lt;/h3&gt;
+                        &lt;p&gt;東京現代美術館 | 2025年4月15日 - 6月30日&lt;/p&gt;
+                        &lt;p&gt;最新作品25点を展示予定&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;timeline-item&quot;&gt;
+                    &lt;div class=&quot;timeline-year&quot;&gt;2024&lt;/div&gt;
+                    &lt;div class=&quot;timeline-content&quot;&gt;
+                        &lt;h3&gt;グループ展「New Visions」&lt;/h3&gt;
+                        &lt;p&gt;表参道ギャラリー | 2024年11月1日 - 12月15日&lt;/p&gt;
+                        &lt;p&gt;新進アーティスト5名による合同展&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;timeline-item&quot;&gt;
+                    &lt;div class=&quot;timeline-year&quot;&gt;2024&lt;/div&gt;
+                    &lt;div class=&quot;timeline-content&quot;&gt;
+                        &lt;h3&gt;個展「Color Emotions」&lt;/h3&gt;
+                        &lt;p&gt;大阪アートスペース | 2024年7月10日 - 8月25日&lt;/p&gt;
+                        &lt;p&gt;色彩心理学をテーマにした作品シリーズ&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;timeline-item&quot;&gt;
+                    &lt;div class=&quot;timeline-year&quot;&gt;2023&lt;/div&gt;
+                    &lt;div class=&quot;timeline-content&quot;&gt;
+                        &lt;h3&gt;国際現代アート展&lt;/h3&gt;
+                        &lt;p&gt;ニューヨーク現代美術館 | 2023年10月5日 - 12月31日&lt;/p&gt;
+                        &lt;p&gt;日本代表アーティストとして参加&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;contact-content&quot;&gt;
+                &lt;div class=&quot;contact-art&quot;&gt;
+                    &lt;div class=&quot;palette&quot;&gt;
+                        &lt;div class=&quot;color-dot color-1&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;color-dot color-2&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;color-dot color-3&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;color-dot color-4&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;color-dot color-5&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;brush&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;contact-text&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;Let&#x27;s Create Together&lt;/h2&gt;
+                    &lt;p&gt;アート作品の購入、コミッションワーク、展示のご相談など、お気軽にお問い合わせください。&lt;/p&gt;
+                    &lt;p&gt;あなたの空間に特別な芸術作品をお届けします。&lt;/p&gt;
+                    
+                    &lt;div class=&quot;contact-info&quot;&gt;
+                        &lt;div class=&quot;contact-item&quot;&gt;
+                            &lt;div class=&quot;contact-icon&quot;&gt;📧&lt;/div&gt;
+                            &lt;div class=&quot;contact-details&quot;&gt;
+                                &lt;span class=&quot;contact-label&quot;&gt;Email&lt;/span&gt;
+                                &lt;a href=&quot;mailto:mai@example.com&quot;&gt;mai@example.com&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;contact-item&quot;&gt;
+                            &lt;div class=&quot;contact-icon&quot;&gt;📱&lt;/div&gt;
+                            &lt;div class=&quot;contact-details&quot;&gt;
+                                &lt;span class=&quot;contact-label&quot;&gt;Phone&lt;/span&gt;
+                                &lt;a href=&quot;tel:+81901234567&quot;&gt;090-1234-5678&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;contact-item&quot;&gt;
+                            &lt;div class=&quot;contact-icon&quot;&gt;🏛️&lt;/div&gt;
+                            &lt;div class=&quot;contact-details&quot;&gt;
+                                &lt;span class=&quot;contact-label&quot;&gt;Studio&lt;/span&gt;
+                                &lt;span&gt;東京都渋谷区恵比寿&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;contact-item&quot;&gt;
+                            &lt;div class=&quot;contact-icon&quot;&gt;📷&lt;/div&gt;
+                            &lt;div class=&quot;contact-details&quot;&gt;
+                                &lt;span class=&quot;contact-label&quot;&gt;Instagram&lt;/span&gt;
+                                &lt;a href=&quot;#&quot;&gt;@mai_visual_art&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;contact-cta&quot;&gt;
+                        &lt;button class=&quot;btn-primary large&quot;&gt;作品を購入する&lt;/button&gt;
+                        &lt;button class=&quot;btn-outline large&quot;&gt;コミッション依頼&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;p&gt;&amp;copy; 2025 Mai Suzuki Visual Art. All artworks are protected by copyright.&lt;/p&gt;
+                &lt;div class=&quot;social-links&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Instagram&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Behance&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Twitter&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // アートワークフィルター機能
+const filterButtons = document.querySelectorAll(&#x27;.filter-btn&#x27;);
+const artworkItems = document.querySelectorAll(&#x27;.artwork-item&#x27;);
+
+filterButtons.forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        // アクティブクラスの切り替え
+        filterButtons.forEach(btn =&gt; btn.classList.remove(&#x27;active&#x27;));
+        this.classList.add(&#x27;active&#x27;);
+        
+        const filter = this.dataset.filter;
+        
+        artworkItems.forEach((item, index) =&gt; {
+            if (filter === &#x27;all&#x27;) {
+                item.style.display = &#x27;block&#x27;;
+                setTimeout(() =&gt; {
+                    item.style.opacity = &#x27;1&#x27;;
+                    item.style.transform = &#x27;scale(1)&#x27;;
+                }, index * 100);
+            } else {
+                if (item.dataset.category === filter) {
+                    item.style.display = &#x27;block&#x27;;
+                    setTimeout(() =&gt; {
+                        item.style.opacity = &#x27;1&#x27;;
+                        item.style.transform = &#x27;scale(1)&#x27;;
+                    }, index * 100);
+                } else {
+                    item.style.opacity = &#x27;0&#x27;;
+                    item.style.transform = &#x27;scale(0.8)&#x27;;
+                    setTimeout(() =&gt; {
+                        item.style.display = &#x27;none&#x27;;
+                    }, 300);
+                }
+            }
+        });
+    });
+});
+
+// アートワーク詳細表示
+document.querySelectorAll(&#x27;.view-artwork&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function(e) {
+        e.stopPropagation();
+        const artworkTitle = this.closest(&#x27;.artwork-info&#x27;).querySelector(&#x27;h3&#x27;).textContent;
+        alert(`「${artworkTitle}」の詳細ページへ遷移（実装予定）`);
+    });
+});
+
+// アートワークアイテムクリック
+artworkItems.forEach(item =&gt; {
+    item.addEventListener(&#x27;click&#x27;, function() {
+        const artworkTitle = this.querySelector(&#x27;.artwork-info h3&#x27;).textContent;
+        alert(`「${artworkTitle}」の詳細ページへ遷移（実装予定）`);
+    });
+});
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.navbar&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// CTAボタンの動作
+document.querySelectorAll(&#x27;.btn-primary&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        if (this.textContent.includes(&#x27;作品を見る&#x27;)) {
+            document.querySelector(&#x27;#gallery&#x27;).scrollIntoView({ behavior: &#x27;smooth&#x27; });
+        } else if (this.textContent.includes(&#x27;購入&#x27;)) {
+            alert(&#x27;作品購入ページへ遷移（実装予定）&#x27;);
+        } else {
+            alert(&#x27;お問い合わせフォームへ遷移（実装予定）&#x27;);
+        }
+    });
+});
+
+document.querySelectorAll(&#x27;.btn-outline&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        if (this.textContent.includes(&#x27;アーティスト&#x27;)) {
+            document.querySelector(&#x27;#about&#x27;).scrollIntoView({ behavior: &#x27;smooth&#x27; });
+        } else if (this.textContent.includes(&#x27;コミッション&#x27;)) {
+            alert(&#x27;コミッション依頼フォームへ遷移（実装予定）&#x27;);
+        }
+    });
+});
+
+// タイトルワードのアニメーション効果
+const titleWords = document.querySelectorAll(&#x27;.title-word&#x27;);
+titleWords.forEach((word, index) =&gt; {
+    word.style.animationDelay = `${index * 0.5}s`;
+    
+    // ホバー効果
+    word.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.transform = &#x27;scale(1.1) rotate(2deg)&#x27;;
+        this.style.transition = &#x27;transform 0.3s ease&#x27;;
+    });
+    
+    word.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.transform = &#x27;scale(1) rotate(0deg)&#x27;;
+    });
+});
+
+// スクロール時のパララックス効果
+window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+    const scrolled = window.pageYOffset;
+    const navbar = document.querySelector(&#x27;.navbar&#x27;);
+    const colorSplashes = document.querySelectorAll(&#x27;.color-splash&#x27;);
+    
+    // ナビゲーションの背景変更
+    if (scrolled &gt; 100) {
+        navbar.style.background = &#x27;rgba(255, 255, 255, 0.98)&#x27;;
+        navbar.style.boxShadow = &#x27;0 2px 20px rgba(0, 0, 0, 0.15)&#x27;;
+    } else {
+        navbar.style.background = &#x27;rgba(255, 255, 255, 0.95)&#x27;;
+        navbar.style.boxShadow = &#x27;0 2px 20px rgba(0, 0, 0, 0.1)&#x27;;
+    }
+    
+    // カラースプラッシュのパララックス
+    colorSplashes.forEach((splash, index) =&gt; {
+        const speed = 0.1 + (index * 0.05);
+        splash.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+    });
+});
+
+// インターセクションオブザーバーでアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -50px 0px&#x27;
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = &#x27;1&#x27;;
+            entry.target.style.transform = &#x27;translateY(0)&#x27;;
+            
+            // タイムラインアイテムの順次表示
+            if (entry.target.classList.contains(&#x27;timeline-item&#x27;)) {
+                const timelineItems = document.querySelectorAll(&#x27;.timeline-item&#x27;);
+                timelineItems.forEach((item, index) =&gt; {
+                    setTimeout(() =&gt; {
+                        item.style.opacity = &#x27;1&#x27;;
+                        item.style.transform = &#x27;translateX(0)&#x27;;
+                    }, index * 200);
+                });
+            }
+        }
+    });
+}, observerOptions);
+
+// 各セクションを監視
+document.querySelectorAll(&#x27;.about-content, .timeline-item, .contact-content&#x27;).forEach(el =&gt; {
+    el.style.opacity = &#x27;0&#x27;;
+    el.style.transform = &#x27;translateY(30px)&#x27;;
+    el.style.transition = &#x27;all 0.6s ease&#x27;;
+    observer.observe(el);
+});
+
+// タイムラインアイテムの初期設定
+document.querySelectorAll(&#x27;.timeline-item&#x27;).forEach(item =&gt; {
+    item.style.transform = &#x27;translateX(-50px)&#x27;;
+    item.style.transition = &#x27;all 0.6s ease&#x27;;
+});
+
+// カラーパレットの相互作用
+const colorDots = document.querySelectorAll(&#x27;.color-dot&#x27;);
+colorDots.forEach(dot =&gt; {
+    dot.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.transform = &#x27;scale(1.2)&#x27;;
+        this.style.boxShadow = &#x27;0 5px 20px rgba(0, 0, 0, 0.4)&#x27;;
+    });
+    
+    dot.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.transform = &#x27;scale(1)&#x27;;
+        this.style.boxShadow = &#x27;0 3px 10px rgba(0, 0, 0, 0.3)&#x27;;
+    });
+});
+
+// ページ読み込み時のアニメーション
+window.addEventListener(&#x27;load&#x27;, () =&gt; {
+    // ヒーローセクションのフェードイン
+    const heroContent = document.querySelector(&#x27;.hero-content&#x27;);
+    heroContent.style.opacity = &#x27;0&#x27;;
+    heroContent.style.transform = &#x27;translateY(50px)&#x27;;
+    heroContent.style.transition = &#x27;all 1s ease&#x27;;
+    
+    setTimeout(() =&gt; {
+        heroContent.style.opacity = &#x27;1&#x27;;
+        heroContent.style.transform = &#x27;translateY(0)&#x27;;
+    }, 500);
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="ポートフォリオ - アーティスト" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"portfolio-artist\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"portfolio-artist\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"portfolio-artist\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"portfolio-artist\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"0UEaopBeOQA_yyJCfJfBz\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"portfolio-artist\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

@@ -1,0 +1,1714 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;寿司店&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&#x27;https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&amp;family=Zen+Kaku+Gothic+New:wght@300;400;500&amp;display=swap&#x27;);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Noto Serif JP&#x27;, serif;
+    color: #2c2c2c;
+    background: #faf9f7;
+    line-height: 1.8;
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: rgba(250, 249, 247, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(44, 44, 44, 0.1);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    color: #2c2c2c;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.logo-reading {
+    font-size: 0.8rem;
+    color: #8b7355;
+    display: block;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #2c2c2c;
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-list a::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -3px;
+    left: 50%;
+    background: #8b7355;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-list a:hover {
+    color: #8b7355;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.reserve-btn {
+    background: #2c2c2c;
+    color: white !important;
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.reserve-btn:hover {
+    background: #8b7355 !important;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hero-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(44, 44, 44, 0.6) 0%, rgba(139, 115, 85, 0.4) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.ornament-line {
+    width: 60px;
+    height: 1px;
+    background: white;
+    opacity: 0.7;
+}
+
+.ornament-diamond {
+    color: white;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* Common Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #2c2c2c;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.title-underline {
+    width: 60px;
+    height: 2px;
+    background: #8b7355;
+    margin-bottom: 2rem;
+}
+
+.title-underline.center {
+    margin: 0 auto 2rem;
+}
+
+/* Concept */
+.concept {
+    background: white;
+}
+
+.concept-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.concept-lead {
+    font-size: 1.3rem;
+    color: #8b7355;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.concept-body p {
+    margin-bottom: 1.8rem;
+    font-size: 1.1rem;
+}
+
+.concept-visual {
+    position: relative;
+}
+
+.visual-main img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.visual-accent {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: white;
+    padding: 2rem;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.zen-circle {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #8b7355;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+}
+
+.zen-text {
+    font-size: 0.9rem;
+    color: #2c2c2c;
+    font-weight: 500;
+}
+
+/* Omakase */
+.omakase {
+    background: #f8f7f5;
+}
+
+.omakase-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+.omakase-courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.course-item {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.course-item:hover {
+    transform: translateY(-5px);
+}
+
+.course-item.featured {
+    border: 2px solid #8b7355;
+}
+
+.course-item.premium {
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    color: white;
+}
+
+.featured-label,
+.premium-label {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: #8b7355;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.premium-label {
+    background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+    color: #2c2c2c;
+}
+
+.course-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.course-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.course-time {
+    color: #8b7355;
+    font-size: 0.9rem;
+}
+
+.course-price {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #8b7355;
+    margin-bottom: 1.5rem;
+}
+
+.premium .course-price {
+    color: #d4af37;
+}
+
+.course-description {
+    margin-bottom: 2rem;
+    color: #666;
+    text-align: center;
+}
+
+.premium .course-description {
+    color: #ccc;
+}
+
+.course-flow {
+    display: grid;
+    gap: 1rem;
+}
+
+.flow-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.premium .flow-item {
+    border-bottom-color: #444;
+}
+
+.flow-number {
+    background: #8b7355;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.premium .flow-number {
+    background: #d4af37;
+    color: #2c2c2c;
+}
+
+.premium-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.feature-tag {
+    background: #d4af37;
+    color: #2c2c2c;
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Craftsman */
+.craftsman {
+    background: white;
+}
+
+.craftsman-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.profile-image {
+    position: relative;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.profile-frame {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: 15px;
+    bottom: 15px;
+    border: 3px solid #8b7355;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.craftsman-name {
+    font-size: 2rem;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.craftsman-title {
+    color: #8b7355;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.craftsman-bio p {
+    margin-bottom: 1.8rem;
+    font-size: 1.1rem;
+}
+
+.craftsman-philosophy {
+    background: #f8f7f5;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #8b7355;
+    margin: 2rem 0;
+}
+
+.craftsman-philosophy blockquote p {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 0;
+}
+
+.craftsman-skills h4 {
+    font-size: 1.3rem;
+    color: #2c2c2c;
+    margin-bottom: 1.5rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f7f5;
+    border-radius: 8px;
+}
+
+.skill-icon {
+    font-size: 1.5rem;
+}
+
+.skill-name {
+    font-weight: 500;
+    color: #2c2c2c;
+}
+
+/* Ingredients */
+.ingredients {
+    background: #f8f7f5;
+}
+
+.ingredients-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+.ingredients-showcase {
+    display: grid;
+    gap: 4rem;
+}
+
+.ingredient-category h3 {
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.ingredient-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.ingredient-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.ingredient-item:hover {
+    transform: translateY(-5px);
+}
+
+.ingredient-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.ingredient-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ingredient-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.ingredient-info h4 {
+    font-size: 1.3rem;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.ingredient-info p {
+    color: #8b7355;
+    margin-bottom: 0.5rem;
+}
+
+.ingredient-season {
+    background: #8b7355;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.rice-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.rice-info h4,
+.seasoning-info h4 {
+    font-size: 1.3rem;
+    color: #2c2c2c;
+    margin-bottom: 1rem;
+}
+
+.rice-info p {
+    line-height: 1.8;
+}
+
+.seasoning-info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.seasoning-info li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.seasoning-info li::before {
+    content: &#x27;・&#x27;;
+    position: absolute;
+    left: 0;
+    color: #8b7355;
+}
+
+.seasoning-info li:last-child {
+    border-bottom: none;
+}
+
+/* Counter */
+.counter {
+    background: white;
+}
+
+.counter-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.counter-lead {
+    font-size: 1.3rem;
+    color: #8b7355;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.counter-description p {
+    margin-bottom: 1.8rem;
+    font-size: 1.1rem;
+}
+
+.counter-features {
+    margin-top: 3rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f7f5;
+    border-radius: 8px;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
+
+.feature-text h4 {
+    font-size: 1.2rem;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.feature-text p {
+    color: #666;
+}
+
+.counter-visual {
+    position: relative;
+}
+
+.counter-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.seating-chart {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-top: 2rem;
+}
+
+.seating-chart h4 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c2c2c;
+}
+
+.seats {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    background: #8b7355;
+    color: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.seat:hover {
+    background: #2c2c2c;
+    transform: scale(1.1);
+}
+
+.seating-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Info */
+.info {
+    background: #f8f7f5;
+}
+
+.info-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.info-section {
+    margin-bottom: 3rem;
+}
+
+.info-section h3 {
+    font-size: 1.5rem;
+    color: #2c2c2c;
+    margin-bottom: 1.5rem;
+}
+
+.hours-table {
+    display: grid;
+    gap: 1rem;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 4px solid #8b7355;
+}
+
+.hours-label {
+    font-weight: 500;
+    color: #2c2c2c;
+}
+
+.hours-time {
+    color: #666;
+}
+
+.address-info .address {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.access-methods p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.contact-info .phone {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #8b7355;
+    margin-bottom: 1rem;
+}
+
+.contact-info .note {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.storefront-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.info-notes {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #8b7355;
+}
+
+.info-notes h4 {
+    margin-bottom: 1rem;
+    color: #2c2c2c;
+}
+
+.info-notes ul {
+    list-style: none;
+}
+
+.info-notes li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.info-notes li::before {
+    content: &#x27;•&#x27;;
+    position: absolute;
+    left: 0;
+    color: #8b7355;
+}
+
+.info-notes li:last-child {
+    border-bottom: none;
+}
+
+/* Reserve */
+.reserve {
+    background: white;
+}
+
+.reserve-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.reservation-info {
+    margin-bottom: 4rem;
+}
+
+.reservation-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background: #f8f7f5;
+    padding: 3rem;
+    border-radius: 8px;
+    border: 2px solid #8b7355;
+}
+
+.phone-icon {
+    font-size: 3rem;
+}
+
+.phone-details h3 {
+    font-size: 1.5rem;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.phone-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #8b7355;
+    margin-bottom: 0.5rem;
+}
+
+.phone-hours {
+    color: #666;
+}
+
+.reservation-rules {
+    margin-bottom: 4rem;
+}
+
+.reservation-rules h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    margin-bottom: 2rem;
+}
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.rule-item {
+    background: #f8f7f5;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border-top: 4px solid #8b7355;
+}
+
+.rule-item h4 {
+    font-size: 1.2rem;
+    color: #2c2c2c;
+    margin-bottom: 1rem;
+}
+
+.rule-item p {
+    color: #666;
+}
+
+.reservation-calendar {
+    text-align: center;
+}
+
+.reservation-calendar h3 {
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    margin-bottom: 1rem;
+}
+
+.calendar-note {
+    font-size: 1.2rem;
+    color: #8b7355;
+    margin-bottom: 2rem;
+}
+
+.calendar-info {
+    background: #f8f7f5;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #8b7355;
+}
+
+/* Footer */
+.footer {
+    background: #2c2c2c;
+    color: #ccc;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.footer-main h3 {
+    font-size: 2rem;
+    color: #8b7355;
+    margin-bottom: 0.3rem;
+}
+
+.footer-main &gt; p {
+    color: #8b7355;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-contact p {
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.footer-hours h4 {
+    color: #8b7355;
+    margin-bottom: 1rem;
+}
+
+.footer-hours p {
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.copyright {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .concept-content,
+    .craftsman-content,
+    .counter-content,
+    .info-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .omakase-courses {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .rice-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .rules-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;header class=&quot;header&quot;&gt;
+            &lt;div class=&quot;header-inner&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;h1&gt;鮨 雅&lt;/h1&gt;
+                    &lt;span class=&quot;logo-reading&quot;&gt;すし みやび&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;nav class=&quot;nav&quot;&gt;
+                    &lt;ul class=&quot;nav-list&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#concept&quot;&gt;想い&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#omakase&quot;&gt;おまかせ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#craftsman&quot;&gt;職人&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#ingredients&quot;&gt;食材&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#counter&quot;&gt;カウンター&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#info&quot;&gt;店舗情報&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#reserve&quot; class=&quot;reserve-btn&quot;&gt;ご予約&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+        &lt;/header&gt;
+
+        &lt;main&gt;
+            &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+                &lt;div class=&quot;hero-container&quot;&gt;
+                    &lt;div class=&quot;hero-image-wrapper&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=1920&amp;h=800&amp;fit=crop&quot; alt=&quot;Sushi counter&quot; class=&quot;hero-image&quot;&gt;
+                        &lt;div class=&quot;hero-overlay&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;hero-content&quot;&gt;
+                        &lt;div class=&quot;hero-text&quot;&gt;
+                            &lt;h2 class=&quot;hero-title&quot;&gt;鮨 雅&lt;/h2&gt;
+                            &lt;p class=&quot;hero-subtitle&quot;&gt;江戸前の伝統を現代に継ぐ&lt;/p&gt;
+                            &lt;div class=&quot;hero-ornament&quot;&gt;
+                                &lt;span class=&quot;ornament-line&quot;&gt;&lt;/span&gt;
+                                &lt;span class=&quot;ornament-diamond&quot;&gt;◆&lt;/span&gt;
+                                &lt;span class=&quot;ornament-line&quot;&gt;&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;p class=&quot;hero-description&quot;&gt;職人の技と心が生み出す、究極の一貫&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;concept&quot; class=&quot;concept&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;concept-content&quot;&gt;
+                        &lt;div class=&quot;concept-text&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;職人の想い&lt;/h2&gt;
+                            &lt;div class=&quot;title-underline&quot;&gt;&lt;/div&gt;
+                            &lt;p class=&quot;concept-lead&quot;&gt;一期一会の心で、至高の一貫を&lt;/p&gt;
+                            &lt;div class=&quot;concept-body&quot;&gt;
+                                &lt;p&gt;江戸前寿司の伝統を受け継ぎ、築地で培った目利きと技術で、最高の魚と米が織りなす調和を追求しています。&lt;/p&gt;
+                                &lt;p&gt;一貫一貫に込める想い、お客様との対話を大切にしながら、その日その時の最高の寿司をお届けいたします。&lt;/p&gt;
+                                &lt;p&gt;カウンター越しに感じる職人の息遣い、シャリの温もり、ネタの鮮度。すべてが融合した瞬間の美味しさを、心ゆくまでお楽しみください。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;concept-visual&quot;&gt;
+                            &lt;div class=&quot;visual-main&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Sushi chef at work&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;visual-accent&quot;&gt;
+                                &lt;div class=&quot;zen-circle&quot;&gt;&lt;/div&gt;
+                                &lt;p class=&quot;zen-text&quot;&gt;一期一会&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;omakase&quot; class=&quot;omakase&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title center&quot;&gt;おまかせコース&lt;/h2&gt;
+                    &lt;div class=&quot;title-underline center&quot;&gt;&lt;/div&gt;
+                    &lt;p class=&quot;omakase-intro&quot;&gt;その日の最高の食材で組み立てる珠玉のコース&lt;/p&gt;
+                    
+                    &lt;div class=&quot;omakase-courses&quot;&gt;
+                        &lt;div class=&quot;course-item&quot;&gt;
+                            &lt;div class=&quot;course-header&quot;&gt;
+                                &lt;h3&gt;昼のおまかせ&lt;/h3&gt;
+                                &lt;div class=&quot;course-time&quot;&gt;11:30〜14:00&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;course-price&quot;&gt;¥12,000&lt;/div&gt;
+                            &lt;div class=&quot;course-description&quot;&gt;
+                                &lt;p&gt;厳選したネタ10貫と季節の椀物、デザートをお楽しみいただけるランチコースです。&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;course-flow&quot;&gt;
+                                &lt;div class=&quot;flow-item&quot;&gt;
+                                    &lt;span class=&quot;flow-number&quot;&gt;1&lt;/span&gt;
+                                    &lt;span class=&quot;flow-text&quot;&gt;季節の先付け&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flow-item&quot;&gt;
+                                    &lt;span class=&quot;flow-number&quot;&gt;2&lt;/span&gt;
+                                    &lt;span class=&quot;flow-text&quot;&gt;握り10貫&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flow-item&quot;&gt;
+                                    &lt;span class=&quot;flow-number&quot;&gt;3&lt;/span&gt;
+                                    &lt;span class=&quot;flow-text&quot;&gt;お椀&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flow-item&quot;&gt;
+                                    &lt;span class=&quot;flow-number&quot;&gt;4&lt;/span&gt;
+                                    &lt;span class=&quot;flow-text&quot;&gt;デザート&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;course-item featured&quot;&gt;
+                            &lt;div class=&quot;featured-label&quot;&gt;おすすめ&lt;/div&gt;
+                            &lt;div class=&quot;course-header&quot;&gt;
+                                &lt;h3&gt;夜のおまかせ&lt;/h3&gt;
+                                &lt;div class=&quot;course-time&quot;&gt;18:00〜22:00&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;course-price&quot;&gt;¥18,000&lt;/div&gt;
+                            &lt;div class=&quot;course-description&quot;&gt;
+                                &lt;p&gt;季節の珍味から始まり、選りすぐりのネタ15貫をお楽しみいただける本格コースです。&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;course-flow&quot;&gt;
+                                &lt;div class=&quot;flow-item&quot;&gt;
+                                    &lt;span class=&quot;flow-number&quot;&gt;1&lt;/span&gt;
+                                    &lt;span class=&quot;flow-text&quot;&gt;季節の珍味&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flow-item&quot;&gt;
+                                    &lt;span class=&quot;flow-number&quot;&gt;2&lt;/span&gt;
+                                    &lt;span class=&quot;flow-text&quot;&gt;刺身&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flow-item&quot;&gt;
+                                    &lt;span class=&quot;flow-number&quot;&gt;3&lt;/span&gt;
+                                    &lt;span class=&quot;flow-text&quot;&gt;握り15貫&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flow-item&quot;&gt;
+                                    &lt;span class=&quot;flow-number&quot;&gt;4&lt;/span&gt;
+                                    &lt;span class=&quot;flow-text&quot;&gt;お椀・甘味&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;course-item premium&quot;&gt;
+                            &lt;div class=&quot;premium-label&quot;&gt;特別コース&lt;/div&gt;
+                            &lt;div class=&quot;course-header&quot;&gt;
+                                &lt;h3&gt;特選おまかせ&lt;/h3&gt;
+                                &lt;div class=&quot;course-time&quot;&gt;完全予約制&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;course-price&quot;&gt;¥25,000&lt;/div&gt;
+                            &lt;div class=&quot;course-description&quot;&gt;
+                                &lt;p&gt;最高級の食材のみを使用した特別なコース。大間のマグロ、北海道のウニなど、厳選されたネタをご堪能ください。&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;premium-features&quot;&gt;
+                                &lt;span class=&quot;feature-tag&quot;&gt;大間本マグロ&lt;/span&gt;
+                                &lt;span class=&quot;feature-tag&quot;&gt;北海道産ウニ&lt;/span&gt;
+                                &lt;span class=&quot;feature-tag&quot;&gt;天然車海老&lt;/span&gt;
+                                &lt;span class=&quot;feature-tag&quot;&gt;のどぐろ&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;craftsman&quot; class=&quot;craftsman&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;craftsman-content&quot;&gt;
+                        &lt;div class=&quot;craftsman-profile&quot;&gt;
+                            &lt;div class=&quot;profile-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=600&amp;h=800&amp;fit=crop&quot; alt=&quot;Sushi master&quot;&gt;
+                                &lt;div class=&quot;profile-frame&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;craftsman-info&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;大将&lt;/h2&gt;
+                            &lt;div class=&quot;title-underline&quot;&gt;&lt;/div&gt;
+                            &lt;h3 class=&quot;craftsman-name&quot;&gt;田中 雅人&lt;/h3&gt;
+                            &lt;p class=&quot;craftsman-title&quot;&gt;店主・寿司職人&lt;/p&gt;
+                            
+                            &lt;div class=&quot;craftsman-bio&quot;&gt;
+                                &lt;p&gt;銀座の老舗寿司店で15年の修行を積み、築地市場での仲買人経験も持つ。&lt;/p&gt;
+                                &lt;p&gt;「寿司は技術だけでなく、心で握るもの」という信念のもと、一貫一貫に魂を込めて握り続けています。&lt;/p&gt;
+                                &lt;p&gt;お客様との対話を大切にし、その方の好みに合わせた最高の一貫をお届けすることが使命だと考えています。&lt;/p&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;craftsman-philosophy&quot;&gt;
+                                &lt;blockquote&gt;
+                                    &lt;p&gt;「寿司は生きもの。その日の魚の状態、気温、湿度、すべてを考慮して握らなければならない。そして何より、お客様の笑顔が一番の調味料です。」&lt;/p&gt;
+                                &lt;/blockquote&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;craftsman-skills&quot;&gt;
+                                &lt;h4&gt;職人の技&lt;/h4&gt;
+                                &lt;div class=&quot;skills-grid&quot;&gt;
+                                    &lt;div class=&quot;skill-item&quot;&gt;
+                                        &lt;span class=&quot;skill-icon&quot;&gt;🐟&lt;/span&gt;
+                                        &lt;span class=&quot;skill-name&quot;&gt;目利き&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;skill-item&quot;&gt;
+                                        &lt;span class=&quot;skill-icon&quot;&gt;🍚&lt;/span&gt;
+                                        &lt;span class=&quot;skill-name&quot;&gt;シャリ&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;skill-item&quot;&gt;
+                                        &lt;span class=&quot;skill-icon&quot;&gt;🔪&lt;/span&gt;
+                                        &lt;span class=&quot;skill-name&quot;&gt;包丁さばき&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;skill-item&quot;&gt;
+                                        &lt;span class=&quot;skill-icon&quot;&gt;👥&lt;/span&gt;
+                                        &lt;span class=&quot;skill-name&quot;&gt;おもてなし&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;ingredients&quot; class=&quot;ingredients&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title center&quot;&gt;厳選食材&lt;/h2&gt;
+                    &lt;div class=&quot;title-underline center&quot;&gt;&lt;/div&gt;
+                    &lt;p class=&quot;ingredients-intro&quot;&gt;全国各地から取り寄せる最高の食材&lt;/p&gt;
+                    
+                    &lt;div class=&quot;ingredients-showcase&quot;&gt;
+                        &lt;div class=&quot;ingredient-category&quot;&gt;
+                            &lt;h3&gt;魚介類&lt;/h3&gt;
+                            &lt;div class=&quot;ingredient-grid&quot;&gt;
+                                &lt;div class=&quot;ingredient-item&quot;&gt;
+                                    &lt;div class=&quot;ingredient-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;マグロ&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;ingredient-info&quot;&gt;
+                                        &lt;h4&gt;本マグロ&lt;/h4&gt;
+                                        &lt;p&gt;大間・戸井産&lt;/p&gt;
+                                        &lt;span class=&quot;ingredient-season&quot;&gt;12月〜3月&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;ingredient-item&quot;&gt;
+                                    &lt;div class=&quot;ingredient-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;ウニ&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;ingredient-info&quot;&gt;
+                                        &lt;h4&gt;ウニ&lt;/h4&gt;
+                                        &lt;p&gt;利尻・礼文産&lt;/p&gt;
+                                        &lt;span class=&quot;ingredient-season&quot;&gt;6月〜8月&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;ingredient-item&quot;&gt;
+                                    &lt;div class=&quot;ingredient-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1565299507177-b0ac66763f30?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;車海老&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;ingredient-info&quot;&gt;
+                                        &lt;h4&gt;車海老&lt;/h4&gt;
+                                        &lt;p&gt;愛知・三河湾産&lt;/p&gt;
+                                        &lt;span class=&quot;ingredient-season&quot;&gt;通年&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;ingredient-category&quot;&gt;
+                            &lt;h3&gt;米・調味料&lt;/h3&gt;
+                            &lt;div class=&quot;rice-section&quot;&gt;
+                                &lt;div class=&quot;rice-info&quot;&gt;
+                                    &lt;h4&gt;シャリ&lt;/h4&gt;
+                                    &lt;p&gt;新潟県産コシヒカリを使用し、赤酢と白酢をブレンドした特製シャリ。人肌の温度を保ち、口の中でほどける絶妙な食感に仕上げています。&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;seasoning-info&quot;&gt;
+                                    &lt;h4&gt;調味料&lt;/h4&gt;
+                                    &lt;ul&gt;
+                                        &lt;li&gt;赤酢（京都・村山造酢）&lt;/li&gt;
+                                        &lt;li&gt;塩（沖縄・宮古島の雪塩）&lt;/li&gt;
+                                        &lt;li&gt;醤油（千葉・キッコーマン特選）&lt;/li&gt;
+                                        &lt;li&gt;わさび（静岡・伊豆産本わさび）&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;counter&quot; class=&quot;counter&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;counter-content&quot;&gt;
+                        &lt;div class=&quot;counter-info&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;カウンター席&lt;/h2&gt;
+                            &lt;div class=&quot;title-underline&quot;&gt;&lt;/div&gt;
+                            &lt;p class=&quot;counter-lead&quot;&gt;職人との会話を楽しむ特等席&lt;/p&gt;
+                            &lt;div class=&quot;counter-description&quot;&gt;
+                                &lt;p&gt;檜のカウンターに8席のみ。職人の手技を間近で見ながら、できたての寿司をお楽しみいただけます。&lt;/p&gt;
+                                &lt;p&gt;お客様一人ひとりの好みに合わせて握る、まさに「おまかせ」の醍醐味を味わえる空間です。&lt;/p&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;counter-features&quot;&gt;
+                                &lt;div class=&quot;feature-item&quot;&gt;
+                                    &lt;div class=&quot;feature-icon&quot;&gt;🪑&lt;/div&gt;
+                                    &lt;div class=&quot;feature-text&quot;&gt;
+                                        &lt;h4&gt;カウンター8席&lt;/h4&gt;
+                                        &lt;p&gt;一枚板の檜カウンター&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;feature-item&quot;&gt;
+                                    &lt;div class=&quot;feature-icon&quot;&gt;❄️&lt;/div&gt;
+                                    &lt;div class=&quot;feature-text&quot;&gt;
+                                        &lt;h4&gt;ネタケース&lt;/h4&gt;
+                                        &lt;p&gt;その日の厳選ネタを展示&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;feature-item&quot;&gt;
+                                    &lt;div class=&quot;feature-icon&quot;&gt;🗣️&lt;/div&gt;
+                                    &lt;div class=&quot;feature-text&quot;&gt;
+                                        &lt;h4&gt;職人との対話&lt;/h4&gt;
+                                        &lt;p&gt;寿司談義をお楽しみください&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;counter-visual&quot;&gt;
+                            &lt;div class=&quot;counter-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;Sushi counter&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;seating-chart&quot;&gt;
+                                &lt;h4&gt;お席のご案内&lt;/h4&gt;
+                                &lt;div class=&quot;seats&quot;&gt;
+                                    &lt;div class=&quot;seat&quot; data-seat=&quot;1&quot;&gt;1&lt;/div&gt;
+                                    &lt;div class=&quot;seat&quot; data-seat=&quot;2&quot;&gt;2&lt;/div&gt;
+                                    &lt;div class=&quot;seat&quot; data-seat=&quot;3&quot;&gt;3&lt;/div&gt;
+                                    &lt;div class=&quot;seat&quot; data-seat=&quot;4&quot;&gt;4&lt;/div&gt;
+                                    &lt;div class=&quot;seat&quot; data-seat=&quot;5&quot;&gt;5&lt;/div&gt;
+                                    &lt;div class=&quot;seat&quot; data-seat=&quot;6&quot;&gt;6&lt;/div&gt;
+                                    &lt;div class=&quot;seat&quot; data-seat=&quot;7&quot;&gt;7&lt;/div&gt;
+                                    &lt;div class=&quot;seat&quot; data-seat=&quot;8&quot;&gt;8&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;p class=&quot;seating-note&quot;&gt;※席のご指定は承っておりません&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;info&quot; class=&quot;info&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;info-content&quot;&gt;
+                        &lt;div class=&quot;info-details&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;店舗情報&lt;/h2&gt;
+                            &lt;div class=&quot;title-underline&quot;&gt;&lt;/div&gt;
+                            
+                            &lt;div class=&quot;info-section&quot;&gt;
+                                &lt;h3&gt;営業時間&lt;/h3&gt;
+                                &lt;div class=&quot;hours-table&quot;&gt;
+                                    &lt;div class=&quot;hours-row&quot;&gt;
+                                        &lt;span class=&quot;hours-label&quot;&gt;昼&lt;/span&gt;
+                                        &lt;span class=&quot;hours-time&quot;&gt;11:30〜14:00（最終入店 13:00）&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;hours-row&quot;&gt;
+                                        &lt;span class=&quot;hours-label&quot;&gt;夜&lt;/span&gt;
+                                        &lt;span class=&quot;hours-time&quot;&gt;18:00〜22:00（最終入店 20:00）&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;hours-row&quot;&gt;
+                                        &lt;span class=&quot;hours-label&quot;&gt;定休日&lt;/span&gt;
+                                        &lt;span class=&quot;hours-time&quot;&gt;日曜日・祝日&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;info-section&quot;&gt;
+                                &lt;h3&gt;アクセス&lt;/h3&gt;
+                                &lt;div class=&quot;address-info&quot;&gt;
+                                    &lt;p class=&quot;address&quot;&gt;〒104-0061&lt;br&gt;東京都中央区銀座8-10-2&lt;br&gt;銀座八丁目ビル B1F&lt;/p&gt;
+                                    &lt;div class=&quot;access-methods&quot;&gt;
+                                        &lt;p&gt;・JR新橋駅 徒歩5分&lt;/p&gt;
+                                        &lt;p&gt;・地下鉄銀座駅 徒歩3分&lt;/p&gt;
+                                        &lt;p&gt;・地下鉄新橋駅 徒歩2分&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;info-section&quot;&gt;
+                                &lt;h3&gt;お問い合わせ&lt;/h3&gt;
+                                &lt;div class=&quot;contact-info&quot;&gt;
+                                    &lt;p class=&quot;phone&quot;&gt;TEL: 03-3571-2345&lt;/p&gt;
+                                    &lt;p class=&quot;note&quot;&gt;※ご予約・お問い合わせは電話のみ承っております&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;info-visual&quot;&gt;
+                            &lt;div class=&quot;storefront-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;店舗外観&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;info-notes&quot;&gt;
+                                &lt;h4&gt;ご利用にあたって&lt;/h4&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;完全予約制となっております&lt;/li&gt;
+                                    &lt;li&gt;お子様のご入店はご遠慮いただいております&lt;/li&gt;
+                                    &lt;li&gt;香水の使用はお控えください&lt;/li&gt;
+                                    &lt;li&gt;お支払いは現金のみとなります&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;reserve&quot; class=&quot;reserve&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;reserve-content&quot;&gt;
+                        &lt;h2 class=&quot;section-title center&quot;&gt;ご予約&lt;/h2&gt;
+                        &lt;div class=&quot;title-underline center&quot;&gt;&lt;/div&gt;
+                        &lt;p class=&quot;reserve-intro&quot;&gt;完全予約制となっております&lt;/p&gt;
+                        
+                        &lt;div class=&quot;reservation-info&quot;&gt;
+                            &lt;div class=&quot;reservation-phone&quot;&gt;
+                                &lt;div class=&quot;phone-icon&quot;&gt;📞&lt;/div&gt;
+                                &lt;div class=&quot;phone-details&quot;&gt;
+                                    &lt;h3&gt;お電話でのご予約&lt;/h3&gt;
+                                    &lt;p class=&quot;phone-number&quot;&gt;03-3571-2345&lt;/p&gt;
+                                    &lt;p class=&quot;phone-hours&quot;&gt;受付時間: 10:00〜17:00（定休日除く）&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;reservation-rules&quot;&gt;
+                            &lt;h3&gt;ご予約について&lt;/h3&gt;
+                            &lt;div class=&quot;rules-grid&quot;&gt;
+                                &lt;div class=&quot;rule-item&quot;&gt;
+                                    &lt;h4&gt;予約受付&lt;/h4&gt;
+                                    &lt;p&gt;1ヶ月前の同日より承ります&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;rule-item&quot;&gt;
+                                    &lt;h4&gt;キャンセル&lt;/h4&gt;
+                                    &lt;p&gt;前日17時までにご連絡ください&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;rule-item&quot;&gt;
+                                    &lt;h4&gt;遅刻&lt;/h4&gt;
+                                    &lt;p&gt;15分以上の遅刻は自動キャンセルとなります&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;rule-item&quot;&gt;
+                                    &lt;h4&gt;人数変更&lt;/h4&gt;
+                                    &lt;p&gt;当日の人数変更はお受けできません&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;reservation-calendar&quot;&gt;
+                            &lt;h3&gt;営業カレンダー&lt;/h3&gt;
+                            &lt;p class=&quot;calendar-note&quot;&gt;定休日: 日曜日・祝日&lt;/p&gt;
+                            &lt;div class=&quot;calendar-info&quot;&gt;
+                                &lt;p&gt;詳しい営業日程については、お電話でお問い合わせください。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+
+        &lt;footer class=&quot;footer&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-main&quot;&gt;
+                    &lt;h3&gt;鮨 雅&lt;/h3&gt;
+                    &lt;p&gt;すし みやび&lt;/p&gt;
+                    &lt;div class=&quot;footer-contact&quot;&gt;
+                        &lt;p&gt;〒104-0061 東京都中央区銀座8-10-2 銀座八丁目ビル B1F&lt;/p&gt;
+                        &lt;p&gt;TEL: 03-3571-2345&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-hours&quot;&gt;
+                    &lt;h4&gt;営業時間&lt;/h4&gt;
+                    &lt;p&gt;昼: 11:30〜14:00&lt;/p&gt;
+                    &lt;p&gt;夜: 18:00〜22:00&lt;/p&gt;
+                    &lt;p&gt;定休日: 日曜日・祝日&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p class=&quot;copyright&quot;&gt;© 2025 鮨雅. All rights reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+
+
+&lt;script&gt;
+    // スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// ヘッダーのスクロール効果
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const header = document.querySelector(&#x27;.header&#x27;);
+    if (window.scrollY &gt; 100) {
+        header.style.background = &#x27;rgba(250, 249, 247, 0.98)&#x27;;
+        header.style.borderBottomColor = &#x27;rgba(44, 44, 44, 0.15)&#x27;;
+    } else {
+        header.style.background = &#x27;rgba(250, 249, 247, 0.95)&#x27;;
+        header.style.borderBottomColor = &#x27;rgba(44, 44, 44, 0.1)&#x27;;
+    }
+});
+
+// コースアイテムのアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -50px 0px&#x27;
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = &#x27;1&#x27;;
+            entry.target.style.transform = &#x27;translateY(0)&#x27;;
+        }
+    });
+}, observerOptions);
+
+// アニメーション対象要素の初期化
+document.querySelectorAll(&#x27;.course-item, .ingredient-item&#x27;).forEach(item =&gt; {
+    item.style.opacity = &#x27;0&#x27;;
+    item.style.transform = &#x27;translateY(30px)&#x27;;
+    item.style.transition = &#x27;all 0.6s ease&#x27;;
+    observer.observe(item);
+});
+
+// カウンター席のインタラクション
+document.querySelectorAll(&#x27;.seat&#x27;).forEach(seat =&gt; {
+    seat.addEventListener(&#x27;click&#x27;, function() {
+        const seatNumber = this.getAttribute(&#x27;data-seat&#x27;);
+        // 全ての席をリセット
+        document.querySelectorAll(&#x27;.seat&#x27;).forEach(s =&gt; {
+            s.style.background = &#x27;#8b7355&#x27;;
+            s.textContent = s.getAttribute(&#x27;data-seat&#x27;);
+        });
+        
+        // 選択された席を強調
+        this.style.background = &#x27;#2c2c2c&#x27;;
+        this.textContent = &#x27;選択&#x27;;
+        
+        // 簡単なフィードバック
+        setTimeout(() =&gt; {
+            this.style.background = &#x27;#8b7355&#x27;;
+            this.textContent = seatNumber;
+        }, 2000);
+    });
+});
+
+// 食材アイテムのホバー効果
+document.querySelectorAll(&#x27;.ingredient-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;mouseenter&#x27;, function() {
+        const img = this.querySelector(&#x27;.ingredient-image img&#x27;);
+        img.style.transform = &#x27;scale(1.1)&#x27;;
+        img.style.transition = &#x27;transform 0.3s ease&#x27;;
+    });
+    
+    item.addEventListener(&#x27;mouseleave&#x27;, function() {
+        const img = this.querySelector(&#x27;.ingredient-image img&#x27;);
+        img.style.transform = &#x27;scale(1)&#x27;;
+    });
+});
+
+// 職人のスキルアイテムのアニメーション
+document.querySelectorAll(&#x27;.skill-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.transform = &#x27;translateX(10px)&#x27;;
+        this.style.background = &#x27;#fff&#x27;;
+        this.style.boxShadow = &#x27;0 5px 15px rgba(0, 0, 0, 0.1)&#x27;;
+        this.style.transition = &#x27;all 0.3s ease&#x27;;
+    });
+    
+    item.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.transform = &#x27;translateX(0)&#x27;;
+        this.style.background = &#x27;#f8f7f5&#x27;;
+        this.style.boxShadow = &#x27;none&#x27;;
+    });
+});
+
+// 営業時間の行のインタラクション
+document.querySelectorAll(&#x27;.hours-row&#x27;).forEach(row =&gt; {
+    row.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.borderLeftWidth = &#x27;8px&#x27;;
+        this.style.transform = &#x27;translateX(5px)&#x27;;
+        this.style.transition = &#x27;all 0.3s ease&#x27;;
+    });
+    
+    row.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.borderLeftWidth = &#x27;4px&#x27;;
+        this.style.transform = &#x27;translateX(0)&#x27;;
+    });
+});
+
+// 電話番号のクリック効果
+document.querySelector(&#x27;.reservation-phone&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    this.style.transform = &#x27;scale(1.02)&#x27;;
+    this.style.boxShadow = &#x27;0 10px 30px rgba(139, 115, 85, 0.2)&#x27;;
+    this.style.transition = &#x27;all 0.3s ease&#x27;;
+    
+    setTimeout(() =&gt; {
+        this.style.transform = &#x27;scale(1)&#x27;;
+        this.style.boxShadow = &#x27;none&#x27;;
+    }, 200);
+});
+
+// パララックス効果（軽微）
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll(&#x27;.hero-image&#x27;);
+    
+    parallaxElements.forEach(element =&gt; {
+        const speed = 0.3;
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+});
+
+// 禅円のアニメーション
+const zenCircle = document.querySelector(&#x27;.zen-circle&#x27;);
+if (zenCircle) {
+    setInterval(() =&gt; {
+        zenCircle.style.transform = &#x27;rotate(360deg)&#x27;;
+        zenCircle.style.transition = &#x27;transform 2s ease-in-out&#x27;;
+        
+        setTimeout(() =&gt; {
+            zenCircle.style.transform = &#x27;rotate(0deg)&#x27;;
+            zenCircle.style.transition = &#x27;none&#x27;;
+        }, 2000);
+    }, 5000);
+}
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="寿司店" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"restaurant-sushi\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"restaurant-sushi\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"restaurant-sushi\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"restaurant-sushi\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"8HVFUUTiXMytwiNI2SThh\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"restaurant-sushi\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

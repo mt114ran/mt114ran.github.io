@@ -1,0 +1,1464 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;小売店 - ジュエリーショップ&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Times New Roman&#x27;, &#x27;Yu Mincho&#x27;, serif;
+    color: #2c2c2c;
+    line-height: 1.6;
+    background: #fefefe;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: #8b4513;
+    text-shadow: 0 1px 3px rgba(139, 69, 19, 0.3);
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #2c2c2c;
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav a:hover {
+    color: #8b4513;
+}
+
+.nav a::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #8b4513;
+    transition: width 0.3s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.wishlist-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #2c2c2c;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.wishlist-btn:hover {
+    color: #8b4513;
+}
+
+.wishlist-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #8b4513;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.appointment-btn {
+    background: linear-gradient(45deg, #8b4513, #a0522d);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 3px 10px rgba(139, 69, 19, 0.3);
+}
+
+.appointment-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+}
+
+.hero-text h2 {
+    font-size: 64px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 22px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.btn-luxury {
+    display: inline-block;
+    padding: 18px 40px;
+    background: linear-gradient(45deg, #8b4513, #a0522d);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(139, 69, 19, 0.4);
+    cursor: pointer;
+}
+
+.btn-luxury:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.5);
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #2c2c2c;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section-title::after {
+    content: &#x27;&#x27;;
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(45deg, #8b4513, #a0522d);
+    margin: 20px auto;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 60px;
+    font-weight: 300;
+}
+
+/* Luxury Promise */
+.luxury-promise {
+    background: linear-gradient(135deg, #f8f5f0 0%, #f5f0e8 100%);
+}
+
+.promise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.promise-item {
+    text-align: center;
+    padding: 40px 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.1);
+    transition: transform 0.3s;
+}
+
+.promise-item:hover {
+    transform: translateY(-10px);
+}
+
+.promise-icon {
+    font-size: 48px;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.promise-item h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #8b4513;
+    font-weight: 400;
+}
+
+.promise-item p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Collections */
+.collections {
+    background: white;
+}
+
+.collection-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: none;
+    border: 2px solid #e0e0e0;
+    padding: 12px 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: #666;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    border-color: #8b4513;
+    color: #8b4513;
+    background: rgba(139, 69, 19, 0.05);
+}
+
+.jewelry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.jewelry-item {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.jewelry-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.jewelry-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.jewelry-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.jewelry-item:hover .jewelry-image img {
+    transform: scale(1.1);
+}
+
+.jewelry-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.jewelry-item:hover .jewelry-overlay {
+    opacity: 1;
+}
+
+.quick-view {
+    background: white;
+    color: #2c2c2c;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-wishlist {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-wishlist.active {
+    background: white;
+    color: #ff4757;
+}
+
+.jewelry-info {
+    padding: 30px;
+}
+
+.jewelry-info h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #2c2c2c;
+    font-weight: 400;
+}
+
+.jewelry-type {
+    color: #8b4513;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.specifications {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.specifications span {
+    background: #f8f5f0;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    color: #8b4513;
+}
+
+.price {
+    font-size: 24px;
+    color: #8b4513;
+    font-weight: 400;
+}
+
+/* Diamonds */
+.diamonds {
+    background: linear-gradient(135deg, #f8f5f0 0%, #f5f0e8 100%);
+}
+
+.diamonds-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.diamonds-text h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #2c2c2c;
+    font-weight: 300;
+}
+
+.diamonds-text &gt; p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.four-c {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.c-item h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #8b4513;
+}
+
+.c-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+.diamonds-visual img {
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Custom Order */
+.custom-order {
+    background: white;
+}
+
+.custom-process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.process-step {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #8b4513, #a0522d);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+.process-step h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #2c2c2c;
+}
+
+.process-step p {
+    color: #666;
+    line-height: 1.7;
+}
+
+.custom-examples h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #8b4513;
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.example-item {
+    text-align: center;
+    background: #f8f5f0;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.example-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.example-item h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #8b4513;
+}
+
+.example-item p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Services */
+.services {
+    background: linear-gradient(135deg, #f8f5f0 0%, #f5f0e8 100%);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #8b4513;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.service-card ul {
+    text-align: left;
+    list-style: none;
+    color: #666;
+}
+
+.service-card ul li {
+    margin-bottom: 8px;
+    padding-left: 10px;
+}
+
+/* Testimonials */
+.testimonials {
+    background: white;
+    text-align: center;
+}
+
+.testimonial-item {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.testimonial-item p {
+    font-size: 20px;
+    font-style: italic;
+    color: #2c2c2c;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.customer-info {
+    color: #8b4513;
+    font-size: 16px;
+}
+
+.customer-name {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Atelier */
+.atelier {
+    background: linear-gradient(135deg, #f8f5f0 0%, #f5f0e8 100%);
+}
+
+.atelier-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.atelier-text h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #2c2c2c;
+    font-weight: 300;
+}
+
+.atelier-text p {
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.atelier-info {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.atelier-info h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #8b4513;
+}
+
+.atelier-info p {
+    margin-bottom: 10px;
+}
+
+.gallery-main img {
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.gallery-thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery-thumbs img {
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery-thumbs img:hover {
+    transform: scale(1.05);
+}
+
+/* Appointment Form */
+.appointment-form {
+    background: white;
+}
+
+.reservation-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #2c2c2c;
+    font-weight: 300;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8b4513;
+}
+
+/* Footer */
+.footer {
+    background: #2c2c2c;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    color: #8b4513;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #8b4513;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #444;
+    color: #999;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-text h2 {
+        font-size: 40px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .diamonds-content,
+    .atelier-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .collection-tabs {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .tab-btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;header-content&quot;&gt;
+                &lt;h1 class=&quot;logo&quot;&gt;BRILLIANCE&lt;/h1&gt;
+                &lt;nav class=&quot;nav&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#collections&quot;&gt;コレクション&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#diamonds&quot;&gt;ダイヤモンド&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#custom&quot;&gt;オーダーメイド&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;サービス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#atelier&quot;&gt;アトリエ&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+                &lt;div class=&quot;header-actions&quot;&gt;
+                    &lt;button class=&quot;wishlist-btn&quot;&gt;♡ &lt;span class=&quot;wishlist-count&quot;&gt;0&lt;/span&gt;&lt;/button&gt;
+                    &lt;button class=&quot;appointment-btn&quot;&gt;来店予約&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;div class=&quot;hero-text&quot;&gt;
+                &lt;h2&gt;永遠の輝きを&lt;br&gt;あなたに&lt;/h2&gt;
+                &lt;p&gt;熟練の職人が手がける唯一無二のジュエリー&lt;/p&gt;
+                &lt;a href=&quot;#collections&quot; class=&quot;btn-luxury&quot;&gt;コレクションを見る&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-bg&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1920&amp;h=800&amp;fit=crop&amp;q=80&quot; alt=&quot;ダイヤモンドリング&quot;&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;luxury-promise&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;promise-grid&quot;&gt;
+                &lt;div class=&quot;promise-item&quot;&gt;
+                    &lt;div class=&quot;promise-icon&quot;&gt;💎&lt;/div&gt;
+                    &lt;h3&gt;最高品質の宝石&lt;/h3&gt;
+                    &lt;p&gt;世界各地から厳選した最高級の宝石のみを使用&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;promise-item&quot;&gt;
+                    &lt;div class=&quot;promise-icon&quot;&gt;👑&lt;/div&gt;
+                    &lt;h3&gt;熟練の職人技&lt;/h3&gt;
+                    &lt;p&gt;100年以上の伝統を受け継ぐ職人による手作り&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;promise-item&quot;&gt;
+                    &lt;div class=&quot;promise-icon&quot;&gt;🛡️&lt;/div&gt;
+                    &lt;h3&gt;永久保証&lt;/h3&gt;
+                    &lt;p&gt;生涯にわたるメンテナンスとアフターサービス&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;promise-item&quot;&gt;
+                    &lt;div class=&quot;promise-icon&quot;&gt;✨&lt;/div&gt;
+                    &lt;h3&gt;オリジナルデザイン&lt;/h3&gt;
+                    &lt;p&gt;お客様だけの特別なジュエリーをお作りします&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;collections&quot; class=&quot;collections&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;コレクション&lt;/h2&gt;
+            &lt;div class=&quot;collection-tabs&quot;&gt;
+                &lt;button class=&quot;tab-btn active&quot; data-collection=&quot;all&quot;&gt;すべて&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-collection=&quot;rings&quot;&gt;リング&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-collection=&quot;necklaces&quot;&gt;ネックレス&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-collection=&quot;earrings&quot;&gt;イヤリング&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-collection=&quot;bracelets&quot;&gt;ブレスレット&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;jewelry-grid&quot;&gt;
+                &lt;div class=&quot;jewelry-item&quot; data-collection=&quot;rings&quot;&gt;
+                    &lt;div class=&quot;jewelry-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;ダイヤモンドエンゲージリング&quot;&gt;
+                        &lt;div class=&quot;jewelry-overlay&quot;&gt;
+                            &lt;button class=&quot;quick-view&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-wishlist&quot; data-item=&quot;engagement-ring&quot;&gt;♡&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;jewelry-info&quot;&gt;
+                        &lt;h3&gt;エタニティエンゲージリング&lt;/h3&gt;
+                        &lt;p class=&quot;jewelry-type&quot;&gt;婚約指輪&lt;/p&gt;
+                        &lt;div class=&quot;specifications&quot;&gt;
+                            &lt;span&gt;プラチナ950&lt;/span&gt;
+                            &lt;span&gt;0.5ct ダイヤモンド&lt;/span&gt;
+                            &lt;span&gt;VS1 / F&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥580,000&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;jewelry-item&quot; data-collection=&quot;necklaces&quot;&gt;
+                    &lt;div class=&quot;jewelry-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=400&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;パールネックレス&quot;&gt;
+                        &lt;div class=&quot;jewelry-overlay&quot;&gt;
+                            &lt;button class=&quot;quick-view&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-wishlist&quot; data-item=&quot;pearl-necklace&quot;&gt;♡&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;jewelry-info&quot;&gt;
+                        &lt;h3&gt;南洋パールネックレス&lt;/h3&gt;
+                        &lt;p class=&quot;jewelry-type&quot;&gt;ネックレス&lt;/p&gt;
+                        &lt;div class=&quot;specifications&quot;&gt;
+                            &lt;span&gt;K18イエローゴールド&lt;/span&gt;
+                            &lt;span&gt;南洋パール 8-10mm&lt;/span&gt;
+                            &lt;span&gt;45cm&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥320,000&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;jewelry-item&quot; data-collection=&quot;earrings&quot;&gt;
+                    &lt;div class=&quot;jewelry-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1630019852942-f89202989a59?w=400&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;ダイヤモンドイヤリング&quot;&gt;
+                        &lt;div class=&quot;jewelry-overlay&quot;&gt;
+                            &lt;button class=&quot;quick-view&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-wishlist&quot; data-item=&quot;diamond-earrings&quot;&gt;♡&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;jewelry-info&quot;&gt;
+                        &lt;h3&gt;ダイヤモンドスタッドピアス&lt;/h3&gt;
+                        &lt;p class=&quot;jewelry-type&quot;&gt;ピアス&lt;/p&gt;
+                        &lt;div class=&quot;specifications&quot;&gt;
+                            &lt;span&gt;プラチナ950&lt;/span&gt;
+                            &lt;span&gt;0.3ct×2 ダイヤモンド&lt;/span&gt;
+                            &lt;span&gt;VVS2 / E&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥180,000&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;jewelry-item&quot; data-collection=&quot;bracelets&quot;&gt;
+                    &lt;div class=&quot;jewelry-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;テニスブレスレット&quot;&gt;
+                        &lt;div class=&quot;jewelry-overlay&quot;&gt;
+                            &lt;button class=&quot;quick-view&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-wishlist&quot; data-item=&quot;tennis-bracelet&quot;&gt;♡&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;jewelry-info&quot;&gt;
+                        &lt;h3&gt;ダイヤモンドテニスブレスレット&lt;/h3&gt;
+                        &lt;p class=&quot;jewelry-type&quot;&gt;ブレスレット&lt;/p&gt;
+                        &lt;div class=&quot;specifications&quot;&gt;
+                            &lt;span&gt;プラチナ950&lt;/span&gt;
+                            &lt;span&gt;2.0ct ダイヤモンド&lt;/span&gt;
+                            &lt;span&gt;17cm&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥850,000&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;jewelry-item&quot; data-collection=&quot;rings&quot;&gt;
+                    &lt;div class=&quot;jewelry-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;マリッジリング&quot;&gt;
+                        &lt;div class=&quot;jewelry-overlay&quot;&gt;
+                            &lt;button class=&quot;quick-view&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-wishlist&quot; data-item=&quot;wedding-rings&quot;&gt;♡&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;jewelry-info&quot;&gt;
+                        &lt;h3&gt;クラシックマリッジリング&lt;/h3&gt;
+                        &lt;p class=&quot;jewelry-type&quot;&gt;結婚指輪（ペア）&lt;/p&gt;
+                        &lt;div class=&quot;specifications&quot;&gt;
+                            &lt;span&gt;プラチナ950&lt;/span&gt;
+                            &lt;span&gt;0.1ct ダイヤモンド&lt;/span&gt;
+                            &lt;span&gt;幅3.0mm&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥240,000&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;jewelry-item&quot; data-collection=&quot;necklaces&quot;&gt;
+                    &lt;div class=&quot;jewelry-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1589674781759-c21c37956a44?w=400&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;エメラルドネックレス&quot;&gt;
+                        &lt;div class=&quot;jewelry-overlay&quot;&gt;
+                            &lt;button class=&quot;quick-view&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-wishlist&quot; data-item=&quot;emerald-necklace&quot;&gt;♡&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;jewelry-info&quot;&gt;
+                        &lt;h3&gt;コロンビア産エメラルドペンダント&lt;/h3&gt;
+                        &lt;p class=&quot;jewelry-type&quot;&gt;ペンダント&lt;/p&gt;
+                        &lt;div class=&quot;specifications&quot;&gt;
+                            &lt;span&gt;プラチナ950&lt;/span&gt;
+                            &lt;span&gt;2.5ct エメラルド&lt;/span&gt;
+                            &lt;span&gt;0.2ct ダイヤモンド&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥1,200,000&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;diamonds&quot; class=&quot;diamonds&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;diamonds-content&quot;&gt;
+                &lt;div class=&quot;diamonds-text&quot;&gt;
+                    &lt;h2&gt;ダイヤモンドへのこだわり&lt;/h2&gt;
+                    &lt;p&gt;BRILLIANCEでは、4Cの基準を満たした最高品質のダイヤモンドのみを厳選しています。&lt;/p&gt;
+                    &lt;div class=&quot;four-c&quot;&gt;
+                        &lt;div class=&quot;c-item&quot;&gt;
+                            &lt;h3&gt;Carat（カラット）&lt;/h3&gt;
+                            &lt;p&gt;ダイヤモンドの重量を表す単位&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;c-item&quot;&gt;
+                            &lt;h3&gt;Color（カラー）&lt;/h3&gt;
+                            &lt;p&gt;無色透明に近いほど価値が高い&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;c-item&quot;&gt;
+                            &lt;h3&gt;Clarity（クラリティ）&lt;/h3&gt;
+                            &lt;p&gt;内包物の少なさを表す品質&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;c-item&quot;&gt;
+                            &lt;h3&gt;Cut（カット）&lt;/h3&gt;
+                            &lt;p&gt;輝きを最大限に引き出すカット技術&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;btn-luxury&quot;&gt;ダイヤモンドを選ぶ&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;diamonds-visual&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;ダイヤモンド鑑定&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;custom&quot; class=&quot;custom-order&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;オーダーメイドジュエリー&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;あなただけの特別なジュエリーをお作りします&lt;/p&gt;
+            &lt;div class=&quot;custom-process&quot;&gt;
+                &lt;div class=&quot;process-step&quot;&gt;
+                    &lt;div class=&quot;step-number&quot;&gt;1&lt;/div&gt;
+                    &lt;h3&gt;コンサルテーション&lt;/h3&gt;
+                    &lt;p&gt;ご希望やご予算をお聞かせください&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;process-step&quot;&gt;
+                    &lt;div class=&quot;step-number&quot;&gt;2&lt;/div&gt;
+                    &lt;h3&gt;デザイン提案&lt;/h3&gt;
+                    &lt;p&gt;専門デザイナーがご提案いたします&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;process-step&quot;&gt;
+                    &lt;div class=&quot;step-number&quot;&gt;3&lt;/div&gt;
+                    &lt;h3&gt;制作&lt;/h3&gt;
+                    &lt;p&gt;熟練職人が丁寧にお作りいたします&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;process-step&quot;&gt;
+                    &lt;div class=&quot;step-number&quot;&gt;4&lt;/div&gt;
+                    &lt;h3&gt;完成・お渡し&lt;/h3&gt;
+                    &lt;p&gt;世界に一つだけのジュエリーが完成&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;custom-examples&quot;&gt;
+                &lt;h3&gt;オーダーメイド作品例&lt;/h3&gt;
+                &lt;div class=&quot;examples-grid&quot;&gt;
+                    &lt;div class=&quot;example-item&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=300&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;カスタムリング1&quot;&gt;
+                        &lt;h4&gt;婚約指輪&lt;/h4&gt;
+                        &lt;p&gt;お客様のご希望に合わせたオリジナルデザイン&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;example-item&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=300&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;カスタムネックレス&quot;&gt;
+                        &lt;h4&gt;記念日ネックレス&lt;/h4&gt;
+                        &lt;p&gt;特別な日を記念したペンダント&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;example-item&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1630019852942-f89202989a59?w=300&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;カスタムピアス&quot;&gt;
+                        &lt;h4&gt;バースストーンピアス&lt;/h4&gt;
+                        &lt;p&gt;誕生石を使用したオリジナルピアス&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;services&quot; class=&quot;services&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;充実のサービス&lt;/h2&gt;
+            &lt;div class=&quot;services-grid&quot;&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🔧&lt;/div&gt;
+                    &lt;h3&gt;メンテナンス・修理&lt;/h3&gt;
+                    &lt;p&gt;ジュエリーの輝きを保つための定期メンテナンスや修理を承ります。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;・クリーニングサービス&lt;/li&gt;
+                        &lt;li&gt;・サイズ直し&lt;/li&gt;
+                        &lt;li&gt;・石留め直し&lt;/li&gt;
+                        &lt;li&gt;・新品仕上げ&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;📜&lt;/div&gt;
+                    &lt;h3&gt;鑑定・査定&lt;/h3&gt;
+                    &lt;p&gt;専門の鑑定士による正確な鑑定と査定を行います。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;・ダイヤモンド鑑定&lt;/li&gt;
+                        &lt;li&gt;・カラーストーン鑑別&lt;/li&gt;
+                        &lt;li&gt;・真珠鑑別&lt;/li&gt;
+                        &lt;li&gt;・価値査定&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🎁&lt;/div&gt;
+                    &lt;h3&gt;ギフトサービス&lt;/h3&gt;
+                    &lt;p&gt;大切な方への贈り物を美しく演出いたします。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;・高級ギフトボックス&lt;/li&gt;
+                        &lt;li&gt;・刻印サービス&lt;/li&gt;
+                        &lt;li&gt;・メッセージカード&lt;/li&gt;
+                        &lt;li&gt;・配送サービス&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;testimonials&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;お客様の声&lt;/h2&gt;
+            &lt;div class=&quot;testimonial-slider&quot;&gt;
+                &lt;div class=&quot;testimonial-item active&quot;&gt;
+                    &lt;p&gt;&quot;婚約指輪をオーダーメイドでお願いしました。細かな要望まで聞いていただき、想像以上に美しい指輪が完成しました。一生の宝物です。&quot;&lt;/p&gt;
+                    &lt;div class=&quot;customer-info&quot;&gt;
+                        &lt;span class=&quot;customer-name&quot;&gt;M様&lt;/span&gt;
+                        &lt;span class=&quot;customer-age&quot;&gt;（20代女性）&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;atelier&quot; class=&quot;atelier&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;atelier-content&quot;&gt;
+                &lt;div class=&quot;atelier-text&quot;&gt;
+                    &lt;h2&gt;アトリエのご案内&lt;/h2&gt;
+                    &lt;p&gt;落ち着いた空間で、ゆっくりとジュエリーをご覧いただけます。&lt;/p&gt;
+                    &lt;p&gt;経験豊富なジュエリーコンサルタントが、お客様のご要望に合わせて最適なジュエリーをご提案いたします。&lt;/p&gt;
+                    &lt;div class=&quot;atelier-info&quot;&gt;
+                        &lt;h3&gt;アトリエ情報&lt;/h3&gt;
+                        &lt;p&gt;📍 〒104-0061 東京都中央区銀座4-5-11&lt;/p&gt;
+                        &lt;p&gt;📞 TEL: 03-3456-7890&lt;/p&gt;
+                        &lt;p&gt;🕐 営業時間: 11:00-19:00（水曜定休）&lt;/p&gt;
+                        &lt;p&gt;🅿️ お車でお越しの方は提携パーキングをご利用ください&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;btn-luxury appointment-trigger&quot;&gt;来店予約をする&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;atelier-gallery&quot;&gt;
+                    &lt;div class=&quot;gallery-main&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;アトリエ内観&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;gallery-thumbs&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1445205170230-053b83016050?w=200&amp;h=150&amp;fit=crop&amp;q=80&quot; alt=&quot;アトリエ内観2&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=200&amp;h=150&amp;fit=crop&amp;q=80&quot; alt=&quot;アトリエ内観3&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=200&amp;h=150&amp;fit=crop&amp;q=80&quot; alt=&quot;アトリエ内観4&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;appointment-form&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;来店予約&lt;/h2&gt;
+            &lt;form class=&quot;reservation-form&quot;&gt;
+                &lt;div class=&quot;form-row&quot;&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;お名前&lt;/label&gt;
+                        &lt;input type=&quot;text&quot; required&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;お電話番号&lt;/label&gt;
+                        &lt;input type=&quot;tel&quot; required&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form-row&quot;&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;メールアドレス&lt;/label&gt;
+                        &lt;input type=&quot;email&quot; required&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;ご希望カテゴリー&lt;/label&gt;
+                        &lt;select required&gt;
+                            &lt;option value=&quot;&quot;&gt;選択してください&lt;/option&gt;
+                            &lt;option value=&quot;engagement&quot;&gt;婚約指輪&lt;/option&gt;
+                            &lt;option value=&quot;wedding&quot;&gt;結婚指輪&lt;/option&gt;
+                            &lt;option value=&quot;necklace&quot;&gt;ネックレス&lt;/option&gt;
+                            &lt;option value=&quot;custom&quot;&gt;オーダーメイド&lt;/option&gt;
+                            &lt;option value=&quot;other&quot;&gt;その他&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form-row&quot;&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;ご希望日時（第一希望）&lt;/label&gt;
+                        &lt;input type=&quot;datetime-local&quot; required&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;ご希望日時（第二希望）&lt;/label&gt;
+                        &lt;input type=&quot;datetime-local&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form-group&quot;&gt;
+                    &lt;label&gt;ご要望・ご質問&lt;/label&gt;
+                    &lt;textarea rows=&quot;4&quot; placeholder=&quot;ご予算、デザインのご希望、その他ご質問がございましたらお聞かせください&quot;&gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+                &lt;button type=&quot;submit&quot; class=&quot;btn-luxury&quot;&gt;予約を申し込む&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;BRILLIANCE JEWELRY&lt;/h3&gt;
+                    &lt;p&gt;永遠の輝きをあなたに&lt;/p&gt;
+                    &lt;div class=&quot;social-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Pinterest&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;ジュエリー&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;婚約指輪&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;結婚指輪&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ネックレス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ピアス・イヤリング&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ブレスレット&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;サービス&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;オーダーメイド&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;メンテナンス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;鑑定・査定&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ギフトサービス&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;お問い合わせ&lt;/h3&gt;
+                    &lt;p&gt;📞 03-3456-7890&lt;/p&gt;
+                    &lt;p&gt;✉️ info@brilliance-jewelry.com&lt;/p&gt;
+                    &lt;p&gt;営業時間: 11:00-19:00（水曜定休）&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;copyright&quot;&gt;&amp;copy; 2025 BRILLIANCE JEWELRY. All rights reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // Collection filter functionality
+document.querySelectorAll(&#x27;.tab-btn&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const collection = this.dataset.collection;
+        
+        // Update active tab
+        document.querySelectorAll(&#x27;.tab-btn&#x27;).forEach(btn =&gt; btn.classList.remove(&#x27;active&#x27;));
+        this.classList.add(&#x27;active&#x27;);
+        
+        // Filter jewelry items
+        document.querySelectorAll(&#x27;.jewelry-item&#x27;).forEach(item =&gt; {
+            if (collection === &#x27;all&#x27; || item.dataset.collection === collection) {
+                item.style.display = &#x27;block&#x27;;
+            } else {
+                item.style.display = &#x27;none&#x27;;
+            }
+        });
+    });
+});
+
+// Wishlist functionality
+let wishlistItems = [];
+
+document.querySelectorAll(&#x27;.add-wishlist&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const itemId = this.dataset.item;
+        
+        if (wishlistItems.includes(itemId)) {
+            // Remove from wishlist
+            wishlistItems = wishlistItems.filter(id =&gt; id !== itemId);
+            this.classList.remove(&#x27;active&#x27;);
+            this.textContent = &#x27;♡&#x27;;
+        } else {
+            // Add to wishlist
+            wishlistItems.push(itemId);
+            this.classList.add(&#x27;active&#x27;);
+            this.textContent = &#x27;♥&#x27;;
+        }
+        
+        updateWishlistCount();
+    });
+});
+
+function updateWishlistCount() {
+    const countElement = document.querySelector(&#x27;.wishlist-count&#x27;);
+    countElement.textContent = wishlistItems.length;
+    
+    if (wishlistItems.length &gt; 0) {
+        countElement.style.display = &#x27;inline-flex&#x27;;
+    } else {
+        countElement.style.display = &#x27;none&#x27;;
+    }
+}
+
+// Wishlist button click
+document.querySelector(&#x27;.wishlist-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    if (wishlistItems.length &gt; 0) {
+        alert(`お気に入りリスト（${wishlistItems.length}点）\n\n${wishlistItems.join(&#x27;\n&#x27;)}`);
+    } else {
+        alert(&#x27;お気に入りリストは空です&#x27;);
+    }
+});
+
+// Quick view functionality
+document.querySelectorAll(&#x27;.quick-view&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const item = this.closest(&#x27;.jewelry-item&#x27;);
+        const title = item.querySelector(&#x27;h3&#x27;).textContent;
+        const type = item.querySelector(&#x27;.jewelry-type&#x27;).textContent;
+        const price = item.querySelector(&#x27;.price&#x27;).textContent;
+        
+        alert(`${title}\n${type}\n${price}\n\n詳細ページに移動します`);
+    });
+});
+
+// Appointment booking
+document.querySelectorAll(&#x27;.appointment-btn, .appointment-trigger&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        document.querySelector(&#x27;.appointment-form&#x27;).scrollIntoView({
+            behavior: &#x27;smooth&#x27;
+        });
+    });
+});
+
+// Reservation form submission
+document.querySelector(&#x27;.reservation-form&#x27;).addEventListener(&#x27;submit&#x27;, function(e) {
+    e.preventDefault();
+    
+    const name = this.querySelector(&#x27;input[type=&quot;text&quot;]&#x27;).value;
+    const phone = this.querySelector(&#x27;input[type=&quot;tel&quot;]&#x27;).value;
+    const email = this.querySelector(&#x27;input[type=&quot;email&quot;]&#x27;).value;
+    const category = this.querySelector(&#x27;select&#x27;).value;
+    const datetime1 = this.querySelector(&#x27;input[type=&quot;datetime-local&quot;]&#x27;).value;
+    
+    if (name &amp;&amp; phone &amp;&amp; email &amp;&amp; category &amp;&amp; datetime1) {
+        alert(`${name}様\n\nご予約を承りました。\n\nカテゴリー: ${category}\n希望日時: ${datetime1}\n\n確認のお電話をいたします。`);
+        this.reset();
+    }
+});
+
+// Gallery thumbnail click
+document.querySelectorAll(&#x27;.gallery-thumbs img&#x27;).forEach((thumb, index) =&gt; {
+    thumb.addEventListener(&#x27;click&#x27;, function() {
+        const mainImage = document.querySelector(&#x27;.gallery-main img&#x27;);
+        const tempSrc = mainImage.src;
+        mainImage.src = this.src;
+        this.src = tempSrc;
+    });
+});
+
+// Smooth scrolling for navigation
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// Header scroll effect
+let lastScrollY = window.scrollY;
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const header = document.querySelector(&#x27;.header&#x27;);
+    if (window.scrollY &gt; 100) {
+        if (window.scrollY &gt; lastScrollY) {
+            header.style.transform = &#x27;translateY(-100%)&#x27;;
+        } else {
+            header.style.transform = &#x27;translateY(0)&#x27;;
+        }
+    }
+    lastScrollY = window.scrollY;
+});
+
+// Initialize
+updateWishlistCount();
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="小売店 - ジュエリーショップ" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"retail-jewelry\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"retail-jewelry\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"retail-jewelry\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"retail-jewelry\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"3WTyG1dHsgjv5XLRF2VAm\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"retail-jewelry\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

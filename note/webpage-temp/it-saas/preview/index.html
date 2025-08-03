@@ -1,0 +1,2060 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;SaaS プラットフォーム&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&#x27;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap&#x27;);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Inter&#x27;, sans-serif;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(30, 41, 59, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #3b82f6;
+    margin: 0;
+}
+
+.tagline {
+    font-size: 11px;
+    color: #64748b;
+    display: block;
+    margin-top: 2px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #3b82f6;
+}
+
+.btn-login {
+    color: #3b82f6 !important;
+    font-weight: 600;
+}
+
+.btn-signup {
+    background: #3b82f6;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-signup:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 3px;
+    padding: 8px;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: #475569;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+/* Hero */
+.hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: &#x27;&#x27;;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(&#x27;data:image/svg+xml,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;&gt;&lt;defs&gt;&lt;pattern id=&quot;grid&quot; width=&quot;10&quot; height=&quot;10&quot; patternUnits=&quot;userSpaceOnUse&quot;&gt;&lt;path d=&quot;M 10 0 L 0 0 0 10&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;1&quot;/&gt;&lt;/pattern&gt;&lt;/defs&gt;&lt;rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23grid)&quot;/&gt;&lt;/svg&gt;&#x27;);
+    opacity: 0.3;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.highlight {
+    background: linear-gradient(45deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    background: #f59e0b;
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: #d97706;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 16px 32px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-features {
+    display: flex;
+    gap: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+}
+
+.feature-item .icon {
+    color: #10b981;
+    font-weight: bold;
+}
+
+/* Hero Visual */
+.hero-visual {
+    position: relative;
+}
+
+.dashboard-preview {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.floating-stats {
+    position: absolute;
+    top: 20px;
+    right: -50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: float 6s ease-in-out infinite;
+}
+
+.stat-card:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.stat-card:nth-child(3) {
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.stat-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3b82f6;
+    display: block;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* Trusted By */
+.trusted-by {
+    padding: 60px 0;
+    background: #f8fafc;
+    text-align: center;
+}
+
+.trusted-text {
+    color: #64748b;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.logo-item {
+    color: #94a3b8;
+    font-size: 18px;
+    font-weight: 600;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.logo-item:hover {
+    opacity: 1;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #1e293b;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 60px;
+    font-size: 18px;
+}
+
+/* Features */
+.features {
+    background: white;
+}
+
+.features-showcase {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+    background: #f1f5f9;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.tab-button {
+    background: transparent;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-button.active {
+    background: white;
+    color: #3b82f6;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tab-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.tab-text h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+.tab-text p {
+    color: #64748b;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.feature-list {
+    list-style: none;
+}
+
+.feature-list li {
+    padding: 8px 0;
+    color: #64748b;
+    position: relative;
+    padding-left: 25px;
+}
+
+.feature-list li:before {
+    content: &quot;✓&quot;;
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: 600;
+}
+
+/* Pricing */
+.pricing {
+    background: #f8fafc;
+}
+
+.pricing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.toggle-label {
+    color: #64748b;
+    font-weight: 500;
+}
+
+.discount {
+    background: #dcfce7;
+    color: #16a34a;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: &quot;&quot;;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #3b82f6;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.pricing-card {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.pricing-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+}
+
+.pricing-card.featured {
+    border-color: #3b82f6;
+    transform: scale(1.05);
+}
+
+.plan-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3b82f6;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.plan-header h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1e293b;
+}
+
+.plan-header p {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.currency {
+    font-size: 18px;
+    color: #64748b;
+}
+
+.amount {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.amount.hidden {
+    display: none;
+}
+
+.period {
+    font-size: 16px;
+    color: #64748b;
+    margin-left: 5px;
+}
+
+.plan-features ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.plan-features li {
+    padding: 8px 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.plan-button {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+}
+
+.btn-outline:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+/* FAQ */
+.pricing-faq {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pricing-faq h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #1e293b;
+}
+
+.faq-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: #f8fafc;
+}
+
+.faq-question h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.faq-toggle {
+    font-size: 24px;
+    color: #64748b;
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 20px 20px;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-answer p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Customers */
+.customers {
+    background: white;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.testimonial-card {
+    background: #f8fafc;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.testimonial-rating {
+    margin-bottom: 20px;
+}
+
+.testimonial-content p {
+    color: #1e293b;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+.author-info p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* Case Studies */
+.case-studies h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 50px;
+    color: #1e293b;
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.case-study-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.case-study-card:hover {
+    transform: translateY(-5px);
+}
+
+.case-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.case-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.case-content {
+    padding: 30px;
+}
+
+.case-content h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.case-metric {
+    color: #10b981;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.case-content p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.case-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.case-link:hover {
+    color: #2563eb;
+}
+
+/* API */
+.api {
+    background: #f8fafc;
+}
+
+.api-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.api-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.api-feature {
+    text-align: center;
+}
+
+.api-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.api-feature h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.api-feature p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Code Example */
+.code-example {
+    background: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #334155;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.code-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.code-tab {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.code-tab.active {
+    background: #1e293b;
+    color: white;
+}
+
+.code-content {
+    position: relative;
+}
+
+.code-block {
+    display: none;
+    font-family: &#x27;JetBrains Mono&#x27;, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #e2e8f0;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.code-block.active {
+    display: block;
+}
+
+.code-block pre {
+    margin: 0;
+}
+
+/* API Resources */
+.api-resources h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #1e293b;
+}
+
+.resource-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.resource-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.resource-link:hover {
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+}
+
+.resource-icon {
+    font-size: 24px;
+    min-width: 30px;
+}
+
+.resource-link h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+.resource-link p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* CTA */
+.cta {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.cta-content h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.btn-primary.large,
+.btn-secondary.large {
+    padding: 18px 36px;
+    font-size: 18px;
+}
+
+.cta-note {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+    background: #1e293b;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #3b82f6;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-section p {
+    color: #94a3b8;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #3b82f6;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    background: #334155;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.social-links a:hover {
+    background: #3b82f6;
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid #334155;
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.legal-links {
+    display: flex;
+    gap: 20px;
+}
+
+.legal-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.legal-links a:hover {
+    color: #3b82f6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .hero-text h2 {
+        font-size: 36px;
+    }
+    
+    .hero-features {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .floating-stats {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    
+    .tab-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .pricing-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card.featured {
+        transform: none;
+    }
+    
+    .testimonials,
+    .case-study-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .api-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .api-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-legal {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;header-content&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;h1&gt;CloudFlow&lt;/h1&gt;
+                    &lt;span class=&quot;tagline&quot;&gt;Workflow Automation&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;button class=&quot;hamburger&quot; id=&quot;hamburger&quot;&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;nav class=&quot;main-nav&quot; id=&quot;main-nav&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#features&quot;&gt;機能&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#pricing&quot;&gt;料金&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#customers&quot;&gt;導入事例&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#api&quot;&gt;API&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#support&quot;&gt;サポート&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;nav-item&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;btn-login&quot;&gt;ログイン&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;nav-item&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;btn-signup&quot;&gt;無料で始める&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;hero-content&quot;&gt;
+                &lt;div class=&quot;hero-text&quot;&gt;
+                    &lt;h2&gt;ワークフローを&lt;span class=&quot;highlight&quot;&gt;自動化&lt;/span&gt;して&lt;br&gt;生産性を10倍に&lt;/h2&gt;
+                    &lt;p&gt;CloudFlowは、ノーコードでワークフローを構築できる次世代プラットフォーム。複雑な業務プロセスを視覚的に設計し、AIの力で自動化を実現します。&lt;/p&gt;
+                    &lt;div class=&quot;hero-buttons&quot;&gt;
+                        &lt;button class=&quot;btn-primary&quot; id=&quot;start-trial&quot;&gt;14日間無料トライアル&lt;/button&gt;
+                        &lt;button class=&quot;btn-secondary&quot; id=&quot;watch-demo&quot;&gt;デモを見る ▶&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;hero-features&quot;&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;span class=&quot;icon&quot;&gt;✓&lt;/span&gt;
+                            &lt;span&gt;クレジットカード不要&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;span class=&quot;icon&quot;&gt;✓&lt;/span&gt;
+                            &lt;span&gt;即座にセットアップ&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;span class=&quot;icon&quot;&gt;✓&lt;/span&gt;
+                            &lt;span&gt;24/7サポート&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;hero-visual&quot;&gt;
+                    &lt;div class=&quot;dashboard-preview&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;ダッシュボード&quot;&gt;
+                        &lt;div class=&quot;floating-stats&quot;&gt;
+                            &lt;div class=&quot;stat-card&quot;&gt;
+                                &lt;div class=&quot;stat-icon&quot;&gt;📊&lt;/div&gt;
+                                &lt;div class=&quot;stat-value&quot;&gt;2,340&lt;/div&gt;
+                                &lt;div class=&quot;stat-label&quot;&gt;自動化済みタスク&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;stat-card&quot;&gt;
+                                &lt;div class=&quot;stat-icon&quot;&gt;⚡&lt;/div&gt;
+                                &lt;div class=&quot;stat-value&quot;&gt;85%&lt;/div&gt;
+                                &lt;div class=&quot;stat-label&quot;&gt;時間短縮&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;stat-card&quot;&gt;
+                                &lt;div class=&quot;stat-icon&quot;&gt;🚀&lt;/div&gt;
+                                &lt;div class=&quot;stat-value&quot;&gt;50+&lt;/div&gt;
+                                &lt;div class=&quot;stat-label&quot;&gt;アプリ連携&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;trusted-by&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;p class=&quot;trusted-text&quot;&gt;世界中の10,000以上の企業に信頼されています&lt;/p&gt;
+            &lt;div class=&quot;logos-container&quot;&gt;
+                &lt;div class=&quot;logo-item&quot;&gt;Microsoft&lt;/div&gt;
+                &lt;div class=&quot;logo-item&quot;&gt;Google&lt;/div&gt;
+                &lt;div class=&quot;logo-item&quot;&gt;Salesforce&lt;/div&gt;
+                &lt;div class=&quot;logo-item&quot;&gt;Shopify&lt;/div&gt;
+                &lt;div class=&quot;logo-item&quot;&gt;Stripe&lt;/div&gt;
+                &lt;div class=&quot;logo-item&quot;&gt;Zoom&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;features&quot; class=&quot;features&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;なぜCloudFlowが選ばれるのか&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;ビジネスの成長を加速させる強力な機能&lt;/p&gt;
+            
+            &lt;div class=&quot;features-showcase&quot;&gt;
+                &lt;div class=&quot;feature-main&quot;&gt;
+                    &lt;div class=&quot;feature-tabs&quot;&gt;
+                        &lt;button class=&quot;tab-button active&quot; data-tab=&quot;visual&quot;&gt;ビジュアルエディタ&lt;/button&gt;
+                        &lt;button class=&quot;tab-button&quot; data-tab=&quot;ai&quot;&gt;AI アシスタント&lt;/button&gt;
+                        &lt;button class=&quot;tab-button&quot; data-tab=&quot;integrations&quot;&gt;アプリ連携&lt;/button&gt;
+                        &lt;button class=&quot;tab-button&quot; data-tab=&quot;analytics&quot;&gt;分析・レポート&lt;/button&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;tab-content active&quot; id=&quot;tab-visual&quot;&gt;
+                        &lt;div class=&quot;tab-layout&quot;&gt;
+                            &lt;div class=&quot;tab-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;ビジュアルエディタ&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;tab-text&quot;&gt;
+                                &lt;h3&gt;直感的なビジュアルエディタ&lt;/h3&gt;
+                                &lt;p&gt;ドラッグ&amp;ドロップで簡単にワークフローを構築。プログラミング知識は一切不要です。&lt;/p&gt;
+                                &lt;ul class=&quot;feature-list&quot;&gt;
+                                    &lt;li&gt;ノーコード設計&lt;/li&gt;
+                                    &lt;li&gt;リアルタイムプレビュー&lt;/li&gt;
+                                    &lt;li&gt;テンプレートライブラリ&lt;/li&gt;
+                                    &lt;li&gt;バージョン管理&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;tab-content&quot; id=&quot;tab-ai&quot;&gt;
+                        &lt;div class=&quot;tab-layout&quot;&gt;
+                            &lt;div class=&quot;tab-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;AI アシスタント&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;tab-text&quot;&gt;
+                                &lt;h3&gt;AI搭載の自動化エンジン&lt;/h3&gt;
+                                &lt;p&gt;機械学習により、ワークフローを自動で最適化。効率性を継続的に向上させます。&lt;/p&gt;
+                                &lt;ul class=&quot;feature-list&quot;&gt;
+                                    &lt;li&gt;自動最適化&lt;/li&gt;
+                                    &lt;li&gt;異常検知&lt;/li&gt;
+                                    &lt;li&gt;予測分析&lt;/li&gt;
+                                    &lt;li&gt;自然言語処理&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;tab-content&quot; id=&quot;tab-integrations&quot;&gt;
+                        &lt;div class=&quot;tab-layout&quot;&gt;
+                            &lt;div class=&quot;tab-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;アプリ連携&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;tab-text&quot;&gt;
+                                &lt;h3&gt;500以上のアプリと連携&lt;/h3&gt;
+                                &lt;p&gt;Slack、Salesforce、Google Workspace など、普段使っているツールと簡単に連携できます。&lt;/p&gt;
+                                &lt;ul class=&quot;feature-list&quot;&gt;
+                                    &lt;li&gt;API自動検出&lt;/li&gt;
+                                    &lt;li&gt;リアルタイム同期&lt;/li&gt;
+                                    &lt;li&gt;カスタム連携&lt;/li&gt;
+                                    &lt;li&gt;Webhook対応&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;tab-content&quot; id=&quot;tab-analytics&quot;&gt;
+                        &lt;div class=&quot;tab-layout&quot;&gt;
+                            &lt;div class=&quot;tab-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;分析・レポート&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;tab-text&quot;&gt;
+                                &lt;h3&gt;詳細な分析とレポート&lt;/h3&gt;
+                                &lt;p&gt;ワークフローのパフォーマンスを可視化。データドリブンな改善を実現します。&lt;/p&gt;
+                                &lt;ul class=&quot;feature-list&quot;&gt;
+                                    &lt;li&gt;リアルタイム監視&lt;/li&gt;
+                                    &lt;li&gt;カスタムダッシュボード&lt;/li&gt;
+                                    &lt;li&gt;自動レポート&lt;/li&gt;
+                                    &lt;li&gt;アラート設定&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;pricing&quot; class=&quot;pricing&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;シンプルで透明な料金体系&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;あなたのニーズに合ったプランを選択してください&lt;/p&gt;
+            
+            &lt;div class=&quot;pricing-toggle&quot;&gt;
+                &lt;span class=&quot;toggle-label&quot;&gt;月払い&lt;/span&gt;
+                &lt;label class=&quot;toggle-switch&quot;&gt;
+                    &lt;input type=&quot;checkbox&quot; id=&quot;annual-toggle&quot;&gt;
+                    &lt;span class=&quot;slider&quot;&gt;&lt;/span&gt;
+                &lt;/label&gt;
+                &lt;span class=&quot;toggle-label&quot;&gt;年払い &lt;span class=&quot;discount&quot;&gt;20% OFF&lt;/span&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;pricing-cards&quot;&gt;
+                &lt;div class=&quot;pricing-card&quot;&gt;
+                    &lt;div class=&quot;plan-header&quot;&gt;
+                        &lt;h3&gt;Starter&lt;/h3&gt;
+                        &lt;p&gt;個人・小規模チーム向け&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;plan-price&quot;&gt;
+                        &lt;span class=&quot;currency&quot;&gt;¥&lt;/span&gt;
+                        &lt;span class=&quot;amount monthly&quot;&gt;980&lt;/span&gt;
+                        &lt;span class=&quot;amount annual hidden&quot;&gt;784&lt;/span&gt;
+                        &lt;span class=&quot;period&quot;&gt;/月&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;plan-features&quot;&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;✓ 月間実行数: 1,000回&lt;/li&gt;
+                            &lt;li&gt;✓ 基本的なアプリ連携&lt;/li&gt;
+                            &lt;li&gt;✓ メールサポート&lt;/li&gt;
+                            &lt;li&gt;✓ ダッシュボード&lt;/li&gt;
+                            &lt;li&gt;✗ AI機能&lt;/li&gt;
+                            &lt;li&gt;✗ カスタム連携&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;button class=&quot;plan-button btn-outline&quot;&gt;始める&lt;/button&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;pricing-card featured&quot;&gt;
+                    &lt;div class=&quot;plan-badge&quot;&gt;人気No.1&lt;/div&gt;
+                    &lt;div class=&quot;plan-header&quot;&gt;
+                        &lt;h3&gt;Professional&lt;/h3&gt;
+                        &lt;p&gt;成長企業向け&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;plan-price&quot;&gt;
+                        &lt;span class=&quot;currency&quot;&gt;¥&lt;/span&gt;
+                        &lt;span class=&quot;amount monthly&quot;&gt;2,980&lt;/span&gt;
+                        &lt;span class=&quot;amount annual hidden&quot;&gt;2,384&lt;/span&gt;
+                        &lt;span class=&quot;period&quot;&gt;/月&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;plan-features&quot;&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;✓ 月間実行数: 10,000回&lt;/li&gt;
+                            &lt;li&gt;✓ 全アプリ連携&lt;/li&gt;
+                            &lt;li&gt;✓ チャットサポート&lt;/li&gt;
+                            &lt;li&gt;✓ 高度なダッシュボード&lt;/li&gt;
+                            &lt;li&gt;✓ AI機能&lt;/li&gt;
+                            &lt;li&gt;✓ API アクセス&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;button class=&quot;plan-button btn-primary&quot;&gt;始める&lt;/button&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;pricing-card&quot;&gt;
+                    &lt;div class=&quot;plan-header&quot;&gt;
+                        &lt;h3&gt;Enterprise&lt;/h3&gt;
+                        &lt;p&gt;大企業向け&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;plan-price&quot;&gt;
+                        &lt;span class=&quot;currency&quot;&gt;¥&lt;/span&gt;
+                        &lt;span class=&quot;amount monthly&quot;&gt;9,800&lt;/span&gt;
+                        &lt;span class=&quot;amount annual hidden&quot;&gt;7,840&lt;/span&gt;
+                        &lt;span class=&quot;period&quot;&gt;/月&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;plan-features&quot;&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;✓ 無制限実行&lt;/li&gt;
+                            &lt;li&gt;✓ カスタム連携&lt;/li&gt;
+                            &lt;li&gt;✓ 専任サポート&lt;/li&gt;
+                            &lt;li&gt;✓ カスタムダッシュボード&lt;/li&gt;
+                            &lt;li&gt;✓ 高度なAI機能&lt;/li&gt;
+                            &lt;li&gt;✓ SSO・SAML対応&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;button class=&quot;plan-button btn-outline&quot;&gt;お問い合わせ&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;pricing-faq&quot;&gt;
+                &lt;h3&gt;よくある質問&lt;/h3&gt;
+                &lt;div class=&quot;faq-items&quot;&gt;
+                    &lt;div class=&quot;faq-item&quot;&gt;
+                        &lt;div class=&quot;faq-question&quot;&gt;
+                            &lt;h4&gt;プランはいつでも変更できますか？&lt;/h4&gt;
+                            &lt;span class=&quot;faq-toggle&quot;&gt;+&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;faq-answer&quot;&gt;
+                            &lt;p&gt;はい、いつでもプランの変更が可能です。アップグレードは即座に反映され、ダウングレードは次の請求サイクルから適用されます。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;faq-item&quot;&gt;
+                        &lt;div class=&quot;faq-question&quot;&gt;
+                            &lt;h4&gt;無料トライアル期間中にキャンセルできますか？&lt;/h4&gt;
+                            &lt;span class=&quot;faq-toggle&quot;&gt;+&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;faq-answer&quot;&gt;
+                            &lt;p&gt;14日間の無料トライアル期間中は、いつでもキャンセルできます。課金は一切発生しません。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;faq-item&quot;&gt;
+                        &lt;div class=&quot;faq-question&quot;&gt;
+                            &lt;h4&gt;どのような支払い方法に対応していますか？&lt;/h4&gt;
+                            &lt;span class=&quot;faq-toggle&quot;&gt;+&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;faq-answer&quot;&gt;
+                            &lt;p&gt;クレジットカード（Visa、MasterCard、American Express）、PayPal、銀行振込に対応しています。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;customers&quot; class=&quot;customers&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;お客様の声&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;CloudFlowで成果を上げているお客様の事例&lt;/p&gt;
+            
+            &lt;div class=&quot;testimonials&quot;&gt;
+                &lt;div class=&quot;testimonial-card&quot;&gt;
+                    &lt;div class=&quot;testimonial-content&quot;&gt;
+                        &lt;div class=&quot;testimonial-rating&quot;&gt;
+                            &lt;span&gt;⭐⭐⭐⭐⭐&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p&gt;&quot;CloudFlowを導入してから、手動だった承認プロセスが完全に自動化され、処理時間が80%短縮されました。チーム全体の生産性が劇的に向上しています。&quot;&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;testimonial-author&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&amp;h=80&amp;fit=crop&amp;crop=face&quot; alt=&quot;田中様&quot;&gt;
+                        &lt;div class=&quot;author-info&quot;&gt;
+                            &lt;h4&gt;田中 健一 様&lt;/h4&gt;
+                            &lt;p&gt;株式会社テックソリューション&lt;br&gt;CTO&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;testimonial-card&quot;&gt;
+                    &lt;div class=&quot;testimonial-content&quot;&gt;
+                        &lt;div class=&quot;testimonial-rating&quot;&gt;
+                            &lt;span&gt;⭐⭐⭐⭐⭐&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p&gt;&quot;カスタマーサポートの対応が素晴らしく、導入もスムーズでした。直感的なUIで誰でも簡単にワークフローが作れるのが気に入っています。&quot;&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;testimonial-author&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1494790108755-2616b612b890?w=80&amp;h=80&amp;fit=crop&amp;crop=face&quot; alt=&quot;佐藤様&quot;&gt;
+                        &lt;div class=&quot;author-info&quot;&gt;
+                            &lt;h4&gt;佐藤 美咲 様&lt;/h4&gt;
+                            &lt;p&gt;グローバル商事株式会社&lt;br&gt;業務改革部長&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;testimonial-card&quot;&gt;
+                    &lt;div class=&quot;testimonial-content&quot;&gt;
+                        &lt;div class=&quot;testimonial-rating&quot;&gt;
+                            &lt;span&gt;⭐⭐⭐⭐⭐&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p&gt;&quot;AI機能により、予想していなかった業務効率化のアイデアを得ることができました。ROIは3ヶ月で回収できました。&quot;&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;testimonial-author&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&amp;h=80&amp;fit=crop&amp;crop=face&quot; alt=&quot;山田様&quot;&gt;
+                        &lt;div class=&quot;author-info&quot;&gt;
+                            &lt;h4&gt;山田 雄介 様&lt;/h4&gt;
+                            &lt;p&gt;イノベーション株式会社&lt;br&gt;代表取締役&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;case-studies&quot;&gt;
+                &lt;h3&gt;詳細な導入事例&lt;/h3&gt;
+                &lt;div class=&quot;case-study-grid&quot;&gt;
+                    &lt;div class=&quot;case-study-card&quot;&gt;
+                        &lt;div class=&quot;case-image&quot;&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&amp;h=250&amp;fit=crop&quot; alt=&quot;製造業事例&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;case-content&quot;&gt;
+                            &lt;h4&gt;製造業A社様&lt;/h4&gt;
+                            &lt;p class=&quot;case-metric&quot;&gt;処理時間 &lt;strong&gt;75%短縮&lt;/strong&gt;&lt;/p&gt;
+                            &lt;p&gt;品質管理プロセスの自動化により、検査時間を大幅に短縮。不良品の早期発見も実現。&lt;/p&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;case-link&quot;&gt;事例を読む →&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;case-study-card&quot;&gt;
+                        &lt;div class=&quot;case-image&quot;&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&amp;h=250&amp;fit=crop&quot; alt=&quot;金融業事例&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;case-content&quot;&gt;
+                            &lt;h4&gt;金融業B社様&lt;/h4&gt;
+                            &lt;p class=&quot;case-metric&quot;&gt;コスト削減 &lt;strong&gt;60%&lt;/strong&gt;&lt;/p&gt;
+                            &lt;p&gt;与信審査プロセスの自動化により、審査時間の短縮とヒューマンエラーの削減を実現。&lt;/p&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;case-link&quot;&gt;事例を読む →&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;case-study-card&quot;&gt;
+                        &lt;div class=&quot;case-image&quot;&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&amp;h=250&amp;fit=crop&quot; alt=&quot;EC事例&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;case-content&quot;&gt;
+                            &lt;h4&gt;EC事業C社様&lt;/h4&gt;
+                            &lt;p class=&quot;case-metric&quot;&gt;売上向上 &lt;strong&gt;40%&lt;/strong&gt;&lt;/p&gt;
+                            &lt;p&gt;在庫管理と顧客対応の自動化により、運営効率を大幅に改善し売上増加を達成。&lt;/p&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;case-link&quot;&gt;事例を読む →&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;api&quot; class=&quot;api&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;開発者向けAPI&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;柔軟で強力なAPIでシステム連携を実現&lt;/p&gt;
+            
+            &lt;div class=&quot;api-content&quot;&gt;
+                &lt;div class=&quot;api-info&quot;&gt;
+                    &lt;div class=&quot;api-features&quot;&gt;
+                        &lt;div class=&quot;api-feature&quot;&gt;
+                            &lt;div class=&quot;api-icon&quot;&gt;🚀&lt;/div&gt;
+                            &lt;h3&gt;RESTful API&lt;/h3&gt;
+                            &lt;p&gt;直感的でシンプルなREST APIにより、簡単にシステム連携が可能です。&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;api-feature&quot;&gt;
+                            &lt;div class=&quot;api-icon&quot;&gt;🔒&lt;/div&gt;
+                            &lt;h3&gt;セキュア認証&lt;/h3&gt;
+                            &lt;p&gt;OAuth 2.0とAPI キーによる安全な認証システムを提供しています。&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;api-feature&quot;&gt;
+                            &lt;div class=&quot;api-icon&quot;&gt;📚&lt;/div&gt;
+                            &lt;h3&gt;豊富なドキュメント&lt;/h3&gt;
+                            &lt;p&gt;詳細なドキュメントとコード例で、迅速な開発をサポートします。&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;api-feature&quot;&gt;
+                            &lt;div class=&quot;api-icon&quot;&gt;⚡&lt;/div&gt;
+                            &lt;h3&gt;リアルタイム&lt;/h3&gt;
+                            &lt;p&gt;WebhookとWebSocketによるリアルタイム通知で即座に反応します。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;api-demo&quot;&gt;
+                    &lt;div class=&quot;code-example&quot;&gt;
+                        &lt;div class=&quot;code-header&quot;&gt;
+                            &lt;span&gt;API 例&lt;/span&gt;
+                            &lt;div class=&quot;code-tabs&quot;&gt;
+                                &lt;button class=&quot;code-tab active&quot; data-lang=&quot;curl&quot;&gt;cURL&lt;/button&gt;
+                                &lt;button class=&quot;code-tab&quot; data-lang=&quot;js&quot;&gt;JavaScript&lt;/button&gt;
+                                &lt;button class=&quot;code-tab&quot; data-lang=&quot;python&quot;&gt;Python&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;code-content&quot;&gt;
+                            &lt;div class=&quot;code-block active&quot; id=&quot;curl-code&quot;&gt;
+&lt;pre&gt;&lt;code&gt;# ワークフロー実行
+curl -X POST https://api.cloudflow.com/v1/workflows/execute \
+  -H &quot;Authorization: Bearer YOUR_API_KEY&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#x27;{
+    &quot;workflow_id&quot;: &quot;wf_12345&quot;,
+    &quot;input_data&quot;: {
+      &quot;user_email&quot;: &quot;user@example.com&quot;,
+      &quot;order_id&quot;: &quot;12345&quot;
+    }
+  }&#x27;&lt;/code&gt;&lt;/pre&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;code-block&quot; id=&quot;js-code&quot;&gt;
+&lt;pre&gt;&lt;code&gt;// ワークフロー実行
+const response = await fetch(&#x27;https://api.cloudflow.com/v1/workflows/execute&#x27;, {
+  method: &#x27;POST&#x27;,
+  headers: {
+    &#x27;Authorization&#x27;: &#x27;Bearer YOUR_API_KEY&#x27;,
+    &#x27;Content-Type&#x27;: &#x27;application/json&#x27;
+  },
+  body: JSON.stringify({
+    workflow_id: &#x27;wf_12345&#x27;,
+    input_data: {
+      user_email: &#x27;user@example.com&#x27;,
+      order_id: &#x27;12345&#x27;
+    }
+  })
+});
+
+const result = await response.json();&lt;/code&gt;&lt;/pre&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;code-block&quot; id=&quot;python-code&quot;&gt;
+&lt;pre&gt;&lt;code&gt;# ワークフロー実行
+import requests
+
+response = requests.post(
+    &#x27;https://api.cloudflow.com/v1/workflows/execute&#x27;,
+    headers={
+        &#x27;Authorization&#x27;: &#x27;Bearer YOUR_API_KEY&#x27;,
+        &#x27;Content-Type&#x27;: &#x27;application/json&#x27;
+    },
+    json={
+        &#x27;workflow_id&#x27;: &#x27;wf_12345&#x27;,
+        &#x27;input_data&#x27;: {
+            &#x27;user_email&#x27;: &#x27;user@example.com&#x27;,
+            &#x27;order_id&#x27;: &#x27;12345&#x27;
+        }
+    }
+)
+
+result = response.json()&lt;/code&gt;&lt;/pre&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;api-resources&quot;&gt;
+                        &lt;h3&gt;開発者リソース&lt;/h3&gt;
+                        &lt;div class=&quot;resource-links&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;resource-link&quot;&gt;
+                                &lt;div class=&quot;resource-icon&quot;&gt;📖&lt;/div&gt;
+                                &lt;div&gt;
+                                    &lt;h4&gt;API ドキュメント&lt;/h4&gt;
+                                    &lt;p&gt;詳細な API リファレンス&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;resource-link&quot;&gt;
+                                &lt;div class=&quot;resource-icon&quot;&gt;🛠️&lt;/div&gt;
+                                &lt;div&gt;
+                                    &lt;h4&gt;SDK ダウンロード&lt;/h4&gt;
+                                    &lt;p&gt;各言語のSDK提供&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;resource-link&quot;&gt;
+                                &lt;div class=&quot;resource-icon&quot;&gt;💬&lt;/div&gt;
+                                &lt;div&gt;
+                                    &lt;h4&gt;開発者コミュニティ&lt;/h4&gt;
+                                    &lt;p&gt;質問・情報交換の場&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;cta&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;cta-content&quot;&gt;
+                &lt;h2&gt;今すぐ始めて、生産性を10倍に&lt;/h2&gt;
+                &lt;p&gt;14日間の無料トライアルで、CloudFlowの威力を体験してください。&lt;/p&gt;
+                &lt;div class=&quot;cta-buttons&quot;&gt;
+                    &lt;button class=&quot;btn-primary large&quot;&gt;無料トライアル開始&lt;/button&gt;
+                    &lt;button class=&quot;btn-secondary large&quot;&gt;デモを予約&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;p class=&quot;cta-note&quot;&gt;クレジットカード不要 • 即座にセットアップ • いつでもキャンセル可能&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;CloudFlow&lt;/h3&gt;
+                    &lt;p&gt;次世代のワークフロー自動化プラットフォーム&lt;/p&gt;
+                    &lt;div class=&quot;social-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;Twitter&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;LinkedIn&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;GitHub&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;YouTube&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h4&gt;プロダクト&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;機能&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;料金&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;API&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;セキュリティ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;アップデート&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h4&gt;ソリューション&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;マーケティング&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;セールス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;カスタマーサポート&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;人事・総務&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;IT・開発&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h4&gt;リソース&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ドキュメント&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ブログ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;事例&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ウェビナー&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ヘルプセンター&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h4&gt;会社情報&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;会社概要&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;採用&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;パートナー&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プレス&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;div class=&quot;footer-legal&quot;&gt;
+                    &lt;p&gt;&amp;copy; 2025 CloudFlow Inc. All rights reserved.&lt;/p&gt;
+                    &lt;div class=&quot;legal-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;利用規約&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;SLA&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // ハンバーガーメニュー
+const hamburger = document.getElementById(&#x27;hamburger&#x27;);
+const mainNav = document.getElementById(&#x27;main-nav&#x27;);
+
+if (hamburger &amp;&amp; mainNav) {
+    hamburger.addEventListener(&#x27;click&#x27;, function() {
+        this.classList.toggle(&#x27;active&#x27;);
+        mainNav.classList.toggle(&#x27;active&#x27;);
+    });
+    
+    // メニューリンクをクリックしたら閉じる
+    const navLinks = mainNav.querySelectorAll(&#x27;a&#x27;);
+    navLinks.forEach(link =&gt; {
+        link.addEventListener(&#x27;click&#x27;, () =&gt; {
+            hamburger.classList.remove(&#x27;active&#x27;);
+            mainNav.classList.remove(&#x27;active&#x27;);
+        });
+    });
+}
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// 機能タブ切り替え
+const tabButtons = document.querySelectorAll(&#x27;.tab-button&#x27;);
+const tabContents = document.querySelectorAll(&#x27;.tab-content&#x27;);
+
+tabButtons.forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const tabId = this.getAttribute(&#x27;data-tab&#x27;);
+        
+        // アクティブなタブボタンとコンテンツをリセット
+        tabButtons.forEach(btn =&gt; btn.classList.remove(&#x27;active&#x27;));
+        tabContents.forEach(content =&gt; content.classList.remove(&#x27;active&#x27;));
+        
+        // 新しいタブをアクティブに
+        this.classList.add(&#x27;active&#x27;);
+        document.getElementById(&#x27;tab-&#x27; + tabId).classList.add(&#x27;active&#x27;);
+    });
+});
+
+// 料金プラン年払い切り替え
+const annualToggle = document.getElementById(&#x27;annual-toggle&#x27;);
+const monthlyAmounts = document.querySelectorAll(&#x27;.amount.monthly&#x27;);
+const annualAmounts = document.querySelectorAll(&#x27;.amount.annual&#x27;);
+
+if (annualToggle) {
+    annualToggle.addEventListener(&#x27;change&#x27;, function() {
+        if (this.checked) {
+            monthlyAmounts.forEach(amount =&gt; amount.classList.add(&#x27;hidden&#x27;));
+            annualAmounts.forEach(amount =&gt; amount.classList.remove(&#x27;hidden&#x27;));
+        } else {
+            monthlyAmounts.forEach(amount =&gt; amount.classList.remove(&#x27;hidden&#x27;));
+            annualAmounts.forEach(amount =&gt; amount.classList.add(&#x27;hidden&#x27;));
+        }
+    });
+}
+
+// FAQ アコーディオン
+const faqItems = document.querySelectorAll(&#x27;.faq-item&#x27;);
+
+faqItems.forEach(item =&gt; {
+    const question = item.querySelector(&#x27;.faq-question&#x27;);
+    
+    question.addEventListener(&#x27;click&#x27;, function() {
+        const isActive = item.classList.contains(&#x27;active&#x27;);
+        
+        // 他のFAQを閉じる
+        faqItems.forEach(faq =&gt; faq.classList.remove(&#x27;active&#x27;));
+        
+        // クリックされたFAQを開く/閉じる
+        if (!isActive) {
+            item.classList.add(&#x27;active&#x27;);
+        }
+    });
+});
+
+// コードタブ切り替え
+const codeTabButtons = document.querySelectorAll(&#x27;.code-tab&#x27;);
+const codeBlocks = document.querySelectorAll(&#x27;.code-block&#x27;);
+
+codeTabButtons.forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const lang = this.getAttribute(&#x27;data-lang&#x27;);
+        
+        // アクティブなタブとコードブロックをリセット
+        codeTabButtons.forEach(btn =&gt; btn.classList.remove(&#x27;active&#x27;));
+        codeBlocks.forEach(block =&gt; block.classList.remove(&#x27;active&#x27;));
+        
+        // 新しいタブとコードブロックをアクティブに
+        this.classList.add(&#x27;active&#x27;);
+        document.getElementById(lang + &#x27;-code&#x27;).classList.add(&#x27;active&#x27;);
+    });
+});
+
+// CTAボタン
+document.getElementById(&#x27;start-trial&#x27;)?.addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;無料トライアル登録ページへ遷移します（実装予定）&#x27;);
+});
+
+document.getElementById(&#x27;watch-demo&#x27;)?.addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;デモビデオを再生します（実装予定）&#x27;);
+});
+
+// プランボタン
+document.querySelectorAll(&#x27;.plan-button&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const text = this.textContent;
+        if (text.includes(&#x27;始める&#x27;)) {
+            alert(&#x27;プラン登録ページへ遷移します（実装予定）&#x27;);
+        } else if (text.includes(&#x27;お問い合わせ&#x27;)) {
+            alert(&#x27;お問い合わせフォームへ遷移します（実装予定）&#x27;);
+        }
+    });
+});
+
+// ケーススタディリンク
+document.querySelectorAll(&#x27;.case-link&#x27;).forEach(link =&gt; {
+    link.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        alert(&#x27;事例詳細ページへ遷移します（実装予定）&#x27;);
+    });
+});
+
+// リソースリンク
+document.querySelectorAll(&#x27;.resource-link&#x27;).forEach(link =&gt; {
+    link.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        const title = this.querySelector(&#x27;h4&#x27;).textContent;
+        alert(title + &#x27;ページへ遷移します（実装予定）&#x27;);
+    });
+});
+
+// スクロールアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -50px 0px&#x27;
+};
+
+const observer = new IntersectionObserver((entries) =&gt; {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = &#x27;1&#x27;;
+            entry.target.style.transform = &#x27;translateY(0)&#x27;;
+        }
+    });
+}, observerOptions);
+
+// アニメーション対象要素を観察
+window.addEventListener(&#x27;load&#x27;, () =&gt; {
+    const animateElements = document.querySelectorAll(&#x27;.testimonial-card, .case-study-card, .pricing-card&#x27;);
+    animateElements.forEach(el =&gt; {
+        el.style.opacity = &#x27;0&#x27;;
+        el.style.transform = &#x27;translateY(30px)&#x27;;
+        el.style.transition = &#x27;all 0.6s ease&#x27;;
+        observer.observe(el);
+    });
+});
+
+// ロゴホバーエフェクト
+document.querySelectorAll(&#x27;.logo-item&#x27;).forEach(logo =&gt; {
+    logo.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.transform = &#x27;scale(1.1)&#x27;;
+    });
+    
+    logo.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.transform = &#x27;scale(1)&#x27;;
+    });
+});
+
+// 統計カードのカウントアニメーション
+function animateNumber(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    
+    const timer = setInterval(() =&gt; {
+        start += increment;
+        if (start &gt;= target) {
+            element.textContent = target.toLocaleString();
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(start).toLocaleString();
+        }
+    }, 16);
+}
+
+// 統計カードが表示されたときのアニメーション
+const statsObserver = new IntersectionObserver((entries) =&gt; {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            const valueElement = entry.target.querySelector(&#x27;.stat-value&#x27;);
+            if (valueElement &amp;&amp; !valueElement.classList.contains(&#x27;animated&#x27;)) {
+                const value = parseInt(valueElement.textContent.replace(/[^0-9]/g, &#x27;&#x27;));
+                if (!isNaN(value)) {
+                    valueElement.textContent = &#x27;0&#x27;;
+                    animateNumber(valueElement, value);
+                    valueElement.classList.add(&#x27;animated&#x27;);
+                }
+            }
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll(&#x27;.stat-card&#x27;).forEach(card =&gt; {
+    statsObserver.observe(card);
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="SaaS プラットフォーム" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"it-saas\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"it-saas\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"it-saas\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"it-saas\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"PcyVDmHHtAGCYdkMqaj2V\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"it-saas\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

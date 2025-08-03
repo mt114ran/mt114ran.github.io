@@ -1,0 +1,1403 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;フレンチレストラン&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&#x27;https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&amp;family=Cormorant+Garamond:wght@300;400;500&amp;family=Noto+Sans+JP:wght@300;400;500&amp;display=swap&#x27;);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Noto Sans JP&#x27;, sans-serif;
+    color: #2c2c2c;
+    background: #fdfcfb;
+    line-height: 1.7;
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 2.8rem;
+    color: #d4af37;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.logo-subtitle {
+    font-family: &#x27;Cormorant Garamond&#x27;, serif;
+    font-size: 0.9rem;
+    color: #8b7355;
+    font-style: italic;
+    display: block;
+    text-align: center;
+    margin-top: -0.3rem;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #2c2c2c;
+    font-weight: 400;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-list a::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -3px;
+    left: 50%;
+    background: #d4af37;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-list a:hover {
+    color: #d4af37;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.reservation-btn {
+    background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+    color: #2c2c2c !important;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.reservation-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero-title {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 5.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #d4af37;
+    letter-spacing: -2px;
+}
+
+.hero-tagline {
+    font-family: &#x27;Cormorant Garamond&#x27;, serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    opacity: 0.95;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.hero-cta {
+    background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+    color: #2c2c2c;
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: &#x27;Noto Sans JP&#x27;, sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+
+.hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+}
+
+/* Common Styles */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 6rem 0;
+}
+
+.section-title {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 3rem;
+    color: #2c2c2c;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.section-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, #d4af37, #f4e4bc, #d4af37);
+    margin-bottom: 2rem;
+}
+
+.section-divider.center {
+    margin: 0 auto 2rem;
+}
+
+/* Philosophy */
+.philosophy {
+    background: white;
+}
+
+.philosophy-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.philosophy-lead {
+    font-size: 1.4rem;
+    color: #d4af37;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.philosophy-body p {
+    margin-bottom: 1.8rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.philosophy-image {
+    position: relative;
+}
+
+.philosophy-image img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-frame {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: 20px;
+    bottom: 20px;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+/* Menu */
+.menu {
+    background: #faf9f7;
+}
+
+.menu-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+.menu-collection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+}
+
+.menu-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.menu-card.featured {
+    border: 2px solid #d4af37;
+    transform: scale(1.02);
+}
+
+.featured-badge {
+    position: absolute;
+    top: -15px;
+    right: 30px;
+    background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+    color: #2c2c2c;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.menu-header h3 {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 2rem;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.menu-subtitle {
+    color: #d4af37;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu-price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #d4af37;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.menu-description {
+    margin-bottom: 2rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+.menu-items {
+    list-style: none;
+}
+
+.menu-items li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.menu-items li::before {
+    content: &#x27;✦&#x27;;
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-size: 0.8rem;
+}
+
+.menu-items li:last-child {
+    border-bottom: none;
+}
+
+/* Wine */
+.wine {
+    background: white;
+}
+
+.wine-content {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.wine-lead {
+    font-size: 1.4rem;
+    color: #d4af37;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.wine-description p {
+    margin-bottom: 1.8rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.wine-categories {
+    display: grid;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.wine-category {
+    background: #faf9f7;
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid #d4af37;
+}
+
+.wine-category h4 {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 1.3rem;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.wine-category p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.wine-cellar {
+    position: relative;
+}
+
+.wine-cellar img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.wine-stats {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #d4af37;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* Chef */
+.chef {
+    background: #faf9f7;
+}
+
+.chef-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.chef-image-container {
+    position: relative;
+}
+
+.chef-image-container img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.chef-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 3rem 2rem 2rem;
+    border-radius: 0 0 10px 10px;
+    color: white;
+}
+
+.chef-quote {
+    font-family: &#x27;Cormorant Garamond&#x27;, serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.chef-name {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+}
+
+.chef-title {
+    color: #8b7355;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.chef-bio p {
+    margin-bottom: 1.8rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.chef-achievements {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #d4af37;
+    margin-top: 3rem;
+}
+
+.chef-achievements h4 {
+    font-size: 1.3rem;
+    color: #2c2c2c;
+    margin-bottom: 1.5rem;
+}
+
+.chef-achievements ul {
+    list-style: none;
+}
+
+.chef-achievements li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.chef-achievements li::before {
+    content: &#x27;🌟&#x27;;
+    position: absolute;
+    left: 0;
+}
+
+.chef-achievements li:last-child {
+    border-bottom: none;
+}
+
+/* Salon */
+.salon {
+    background: white;
+}
+
+.salon-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+.salon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 3rem;
+}
+
+.salon-item {
+    background: #faf9f7;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.salon-item:hover {
+    transform: translateY(-5px);
+}
+
+.salon-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.salon-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.salon-item:hover .salon-image img {
+    transform: scale(1.05);
+}
+
+.salon-info {
+    padding: 2.5rem;
+}
+
+.salon-info h3 {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.salon-capacity {
+    color: #d4af37;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.salon-info p {
+    margin-bottom: 1.5rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+.salon-features span {
+    color: #2c2c2c;
+    font-weight: 600;
+}
+
+/* Contact */
+.contact {
+    background: #faf9f7;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.info-block {
+    margin-bottom: 3rem;
+}
+
+.info-block h3 {
+    font-size: 1.4rem;
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.hours-info p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.hours-info strong {
+    color: #2c2c2c;
+}
+
+.address-info p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.contact-visual {
+    position: relative;
+}
+
+.restaurant-image {
+    position: relative;
+}
+
+.restaurant-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.location-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #d4af37;
+}
+
+.badge-text {
+    display: block;
+    font-weight: 600;
+    color: #2c2c2c;
+}
+
+.badge-subtitle {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.2rem;
+}
+
+/* Reservation */
+.reservation {
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    color: white;
+}
+
+.reservation .section-title {
+    color: white;
+}
+
+.reservation .section-divider {
+    background: linear-gradient(90deg, #d4af37, #f4e4bc, #d4af37);
+}
+
+.reservation-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.reservation-options {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.reservation-btn {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.reservation-btn:hover {
+    background: rgba(212, 175, 55, 0.2);
+    transform: translateY(-5px);
+}
+
+.btn-icon {
+    font-size: 2rem;
+}
+
+.btn-label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.btn-number,
+.btn-subtitle {
+    display: block;
+    font-size: 1.3rem;
+    color: #d4af37;
+    font-weight: 600;
+}
+
+.reservation-notes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.note-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 3px solid #d4af37;
+}
+
+.note-item h4 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.note-item ul {
+    list-style: none;
+}
+
+.note-item li {
+    padding: 0.3rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.note-item li::before {
+    content: &#x27;•&#x27;;
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    color: #ccc;
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand h3 {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand &gt; p:first-of-type {
+    font-style: italic;
+    color: #d4af37;
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand p,
+.footer-hours p,
+.footer-contact p {
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.footer-hours h4,
+.footer-contact h4 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.copyright {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .philosophy-content,
+    .wine-content,
+    .chef-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .menu-collection {
+        grid-template-columns: 1fr;
+    }
+    
+    .salon-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reservation-options {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .reservation-notes {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;header class=&quot;header&quot;&gt;
+            &lt;div class=&quot;header-inner&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;h1&gt;L&#x27;Étoile&lt;/h1&gt;
+                    &lt;span class=&quot;logo-subtitle&quot;&gt;Restaurant Français&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;nav class=&quot;nav&quot;&gt;
+                    &lt;ul class=&quot;nav-list&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#philosophy&quot;&gt;Philosophy&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;Menu&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#wine&quot;&gt;Vins&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#chef&quot;&gt;Chef&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#salon&quot;&gt;Salon Privé&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#reservation&quot; class=&quot;reservation-btn&quot;&gt;Réservation&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+        &lt;/header&gt;
+
+        &lt;main&gt;
+            &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+                &lt;div class=&quot;hero-background&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&amp;h=800&amp;fit=crop&quot; alt=&quot;Elegant French restaurant&quot; class=&quot;hero-image&quot;&gt;
+                    &lt;div class=&quot;hero-gradient&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;hero-content&quot;&gt;
+                    &lt;div class=&quot;hero-text&quot;&gt;
+                        &lt;h2 class=&quot;hero-title&quot;&gt;L&#x27;Étoile&lt;/h2&gt;
+                        &lt;p class=&quot;hero-tagline&quot;&gt;Une expérience culinaire d&#x27;exception&lt;/p&gt;
+                        &lt;p class=&quot;hero-description&quot;&gt;フランス料理の真髄を極めた、洗練された美食体験&lt;/p&gt;
+                        &lt;button class=&quot;hero-cta&quot;&gt;Menu découverte&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;philosophy&quot; class=&quot;philosophy&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;philosophy-content&quot;&gt;
+                        &lt;div class=&quot;philosophy-text&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;Notre Philosophie&lt;/h2&gt;
+                            &lt;div class=&quot;section-divider&quot;&gt;&lt;/div&gt;
+                            &lt;p class=&quot;philosophy-lead&quot;&gt;伝統と革新が織りなすフランス料理&lt;/p&gt;
+                            &lt;div class=&quot;philosophy-body&quot;&gt;
+                                &lt;p&gt;L&#x27;Étoileでは、フランス料理の伝統的な技法を大切にしながら、現代的な感性と日本の四季の美しさを融合させた独自の料理をご提供しています。&lt;/p&gt;
+                                &lt;p&gt;厳選された食材、熟練の技術、そして心のこもったサービスで、お客様に忘れられない美食体験をお届けいたします。&lt;/p&gt;
+                                &lt;p&gt;ソムリエが厳選したワインとのマリアージュも含め、すべてが調和した完璧なひとときをお過ごしください。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;philosophy-image&quot;&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&amp;h=800&amp;fit=crop&quot; alt=&quot;French cooking art&quot;&gt;
+                            &lt;div class=&quot;image-frame&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;menu&quot; class=&quot;menu&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title center&quot;&gt;Nos Menus&lt;/h2&gt;
+                    &lt;div class=&quot;section-divider center&quot;&gt;&lt;/div&gt;
+                    &lt;p class=&quot;menu-intro&quot;&gt;季節の恵みを活かした珠玉のコース料理&lt;/p&gt;
+                    
+                    &lt;div class=&quot;menu-collection&quot;&gt;
+                        &lt;div class=&quot;menu-card&quot;&gt;
+                            &lt;div class=&quot;menu-header&quot;&gt;
+                                &lt;h3&gt;Menu Dégustation&lt;/h3&gt;
+                                &lt;p class=&quot;menu-subtitle&quot;&gt;テイスティングメニュー&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;menu-price&quot;&gt;¥15,000&lt;/div&gt;
+                            &lt;div class=&quot;menu-description&quot;&gt;
+                                &lt;p&gt;シェフが厳選した8品のコース。季節の食材を使用した創作フレンチをお楽しみください。&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;ul class=&quot;menu-items&quot;&gt;
+                                &lt;li&gt;Amuse-bouche&lt;/li&gt;
+                                &lt;li&gt;Entrée froide&lt;/li&gt;
+                                &lt;li&gt;Potage&lt;/li&gt;
+                                &lt;li&gt;Poisson&lt;/li&gt;
+                                &lt;li&gt;Viande&lt;/li&gt;
+                                &lt;li&gt;Fromage&lt;/li&gt;
+                                &lt;li&gt;Dessert&lt;/li&gt;
+                                &lt;li&gt;Mignardises&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-card featured&quot;&gt;
+                            &lt;div class=&quot;featured-badge&quot;&gt;Chef&#x27;s Special&lt;/div&gt;
+                            &lt;div class=&quot;menu-header&quot;&gt;
+                                &lt;h3&gt;Menu Saison&lt;/h3&gt;
+                                &lt;p class=&quot;menu-subtitle&quot;&gt;季節のスペシャルメニュー&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;menu-price&quot;&gt;¥22,000&lt;/div&gt;
+                            &lt;div class=&quot;menu-description&quot;&gt;
+                                &lt;p&gt;その時期の最高の食材のみを使用した特別コース。トリュフやフォアグラなどの高級食材をふんだんに使用。&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;ul class=&quot;menu-items&quot;&gt;
+                                &lt;li&gt;Caviar d&#x27;Aquitaine&lt;/li&gt;
+                                &lt;li&gt;Foie gras poêlé&lt;/li&gt;
+                                &lt;li&gt;Velouté aux truffes&lt;/li&gt;
+                                &lt;li&gt;Homard bleu&lt;/li&gt;
+                                &lt;li&gt;Pigeon de Bresse&lt;/li&gt;
+                                &lt;li&gt;Sélection de fromages&lt;/li&gt;
+                                &lt;li&gt;Soufflé au Grand Marnier&lt;/li&gt;
+                                &lt;li&gt;Café &amp; petits fours&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-card&quot;&gt;
+                            &lt;div class=&quot;menu-header&quot;&gt;
+                                &lt;h3&gt;Menu Déjeuner&lt;/h3&gt;
+                                &lt;p class=&quot;menu-subtitle&quot;&gt;ランチコース&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;menu-price&quot;&gt;¥8,500&lt;/div&gt;
+                            &lt;div class=&quot;menu-description&quot;&gt;
+                                &lt;p&gt;平日限定のランチコース。本格フレンチをカジュアルにお楽しみいただけます。&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;ul class=&quot;menu-items&quot;&gt;
+                                &lt;li&gt;Amuse-bouche&lt;/li&gt;
+                                &lt;li&gt;Entrée du jour&lt;/li&gt;
+                                &lt;li&gt;Plat principal&lt;/li&gt;
+                                &lt;li&gt;Dessert maison&lt;/li&gt;
+                                &lt;li&gt;Café&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;wine&quot; class=&quot;wine&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;wine-content&quot;&gt;
+                        &lt;div class=&quot;wine-text&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;Cave à Vins&lt;/h2&gt;
+                            &lt;div class=&quot;section-divider&quot;&gt;&lt;/div&gt;
+                            &lt;p class=&quot;wine-lead&quot;&gt;ソムリエが厳選したワインコレクション&lt;/p&gt;
+                            &lt;div class=&quot;wine-description&quot;&gt;
+                                &lt;p&gt;フランス各地の名門ワイナリーから厳選した500種類以上のワインをご用意。&lt;/p&gt;
+                                &lt;p&gt;シャンパーニュからボルドー、ブルゴーニュまで、幅広いセレクションからお料理に最適なワインをご提案いたします。&lt;/p&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;wine-categories&quot;&gt;
+                                &lt;div class=&quot;wine-category&quot;&gt;
+                                    &lt;h4&gt;Champagne&lt;/h4&gt;
+                                    &lt;p&gt;Dom Pérignon, Krug, Louis Roederer&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;wine-category&quot;&gt;
+                                    &lt;h4&gt;Bourgogne&lt;/h4&gt;
+                                    &lt;p&gt;Domaine de la Romanée-Conti, Leroy&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;wine-category&quot;&gt;
+                                    &lt;h4&gt;Bordeaux&lt;/h4&gt;
+                                    &lt;p&gt;Château Margaux, Pétrus, Le Pin&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;wine-cellar&quot;&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&amp;h=800&amp;fit=crop&quot; alt=&quot;Wine cellar&quot;&gt;
+                            &lt;div class=&quot;wine-stats&quot;&gt;
+                                &lt;div class=&quot;stat&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;500+&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;Références&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;stat&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;15&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;Régions&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;stat&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;50&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;Millésimes&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;chef&quot; class=&quot;chef&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;chef-content&quot;&gt;
+                        &lt;div class=&quot;chef-profile&quot;&gt;
+                            &lt;div class=&quot;chef-image-container&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=600&amp;h=800&amp;fit=crop&quot; alt=&quot;Chef Pierre Dubois&quot;&gt;
+                                &lt;div class=&quot;chef-overlay&quot;&gt;
+                                    &lt;div class=&quot;chef-quote&quot;&gt;
+                                        &quot;La cuisine, c&#x27;est l&#x27;âme qui se nourrit l&#x27;âme&quot;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;chef-info&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;Chef Exécutif&lt;/h2&gt;
+                            &lt;div class=&quot;section-divider&quot;&gt;&lt;/div&gt;
+                            &lt;h3 class=&quot;chef-name&quot;&gt;Pierre Dubois&lt;/h3&gt;
+                            &lt;p class=&quot;chef-title&quot;&gt;Chef Exécutif &amp; Propriétaire&lt;/p&gt;
+                            
+                            &lt;div class=&quot;chef-bio&quot;&gt;
+                                &lt;p&gt;リヨン出身。ポール・ボキューズ、ジョエル・ロブションの下で修行を積み、パリの三つ星レストラン「L&#x27;Ambroisie」で10年間副料理長を務める。&lt;/p&gt;
+                                &lt;p&gt;2018年に来日し、日本の食材と出会うことで新たなインスピレーションを得る。伝統的なフランス料理の技法に、日本の四季と食材の美しさを融合させた独自のスタイルを確立。&lt;/p&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;chef-achievements&quot;&gt;
+                                &lt;h4&gt;受賞歴&lt;/h4&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;ミシュラン二つ星（2020年〜現在）&lt;/li&gt;
+                                    &lt;li&gt;ゴー・エ・ミヨ 18/20点（2021年）&lt;/li&gt;
+                                    &lt;li&gt;料理マスターズ フレンチ部門 金賞（2022年）&lt;/li&gt;
+                                    &lt;li&gt;世界ベストレストラン50 アジア部門 15位（2023年）&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;salon&quot; class=&quot;salon&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title center&quot;&gt;Salon Privé&lt;/h2&gt;
+                    &lt;div class=&quot;section-divider center&quot;&gt;&lt;/div&gt;
+                    &lt;p class=&quot;salon-intro&quot;&gt;特別なひとときのためのプライベート空間&lt;/p&gt;
+                    
+                    &lt;div class=&quot;salon-grid&quot;&gt;
+                        &lt;div class=&quot;salon-item&quot;&gt;
+                            &lt;div class=&quot;salon-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Private dining room&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;salon-info&quot;&gt;
+                                &lt;h3&gt;Salon Rose&lt;/h3&gt;
+                                &lt;p class=&quot;salon-capacity&quot;&gt;2〜6名様&lt;/p&gt;
+                                &lt;p&gt;親密なお食事やビジネスディナーに最適な落ち着いた個室です。&lt;/p&gt;
+                                &lt;div class=&quot;salon-features&quot;&gt;
+                                    &lt;span&gt;個室使用料: ¥20,000&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;salon-item&quot;&gt;
+                            &lt;div class=&quot;salon-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Grand salon&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;salon-info&quot;&gt;
+                                &lt;h3&gt;Grand Salon&lt;/h3&gt;
+                                &lt;p class=&quot;salon-capacity&quot;&gt;8〜16名様&lt;/p&gt;
+                                &lt;p&gt;重要な接待や記念日のお祝いにふさわしい格調高い個室です。&lt;/p&gt;
+                                &lt;div class=&quot;salon-features&quot;&gt;
+                                    &lt;span&gt;個室使用料: ¥40,000&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;contact-content&quot;&gt;
+                        &lt;div class=&quot;contact-info&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;Information&lt;/h2&gt;
+                            &lt;div class=&quot;section-divider&quot;&gt;&lt;/div&gt;
+                            
+                            &lt;div class=&quot;info-block&quot;&gt;
+                                &lt;h3&gt;営業時間&lt;/h3&gt;
+                                &lt;div class=&quot;hours-info&quot;&gt;
+                                    &lt;p&gt;&lt;strong&gt;Déjeuner&lt;/strong&gt;&lt;br&gt;12:00 - 13:30（L.O.）&lt;/p&gt;
+                                    &lt;p&gt;&lt;strong&gt;Dîner&lt;/strong&gt;&lt;br&gt;18:00 - 21:00（L.O.）&lt;/p&gt;
+                                    &lt;p&gt;&lt;strong&gt;定休日&lt;/strong&gt;&lt;br&gt;月曜日・第一火曜日&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;info-block&quot;&gt;
+                                &lt;h3&gt;アクセス&lt;/h3&gt;
+                                &lt;div class=&quot;address-info&quot;&gt;
+                                    &lt;p&gt;〒107-0052&lt;br&gt;東京都港区赤坂9-7-1&lt;br&gt;ミッドタウン・タワー 37F&lt;/p&gt;
+                                    &lt;p&gt;地下鉄六本木駅直結&lt;br&gt;地下鉄乃木坂駅から徒歩3分&lt;/p&gt;
+                                    &lt;p&gt;TEL: 03-6234-5678&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;info-block&quot;&gt;
+                                &lt;h3&gt;ドレスコード&lt;/h3&gt;
+                                &lt;p&gt;スマートカジュアル&lt;br&gt;（ジャケット着用推奨）&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;contact-visual&quot;&gt;
+                            &lt;div class=&quot;restaurant-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Restaurant view&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;location-badge&quot;&gt;
+                                &lt;span class=&quot;badge-text&quot;&gt;37F Midtown Tower&lt;/span&gt;
+                                &lt;span class=&quot;badge-subtitle&quot;&gt;Tokyo Skyline View&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;reservation&quot; class=&quot;reservation&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;reservation-content&quot;&gt;
+                        &lt;h2 class=&quot;section-title center&quot;&gt;Réservation&lt;/h2&gt;
+                        &lt;div class=&quot;section-divider center&quot;&gt;&lt;/div&gt;
+                        &lt;p class=&quot;reservation-intro&quot;&gt;お電話またはオンラインでご予約を承っております&lt;/p&gt;
+                        
+                        &lt;div class=&quot;reservation-options&quot;&gt;
+                            &lt;a href=&quot;tel:03-6234-5678&quot; class=&quot;reservation-btn phone&quot;&gt;
+                                &lt;div class=&quot;btn-icon&quot;&gt;📞&lt;/div&gt;
+                                &lt;div class=&quot;btn-text&quot;&gt;
+                                    &lt;span class=&quot;btn-label&quot;&gt;お電話でのご予約&lt;/span&gt;
+                                    &lt;span class=&quot;btn-number&quot;&gt;03-6234-5678&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/a&gt;
+                            
+                            &lt;button class=&quot;reservation-btn online&quot;&gt;
+                                &lt;div class=&quot;btn-icon&quot;&gt;💻&lt;/div&gt;
+                                &lt;div class=&quot;btn-text&quot;&gt;
+                                    &lt;span class=&quot;btn-label&quot;&gt;オンライン予約&lt;/span&gt;
+                                    &lt;span class=&quot;btn-subtitle&quot;&gt;24時間受付&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;reservation-notes&quot;&gt;
+                            &lt;div class=&quot;note-item&quot;&gt;
+                                &lt;h4&gt;ご予約について&lt;/h4&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;ご予約は1ヶ月前から承っております&lt;/li&gt;
+                                    &lt;li&gt;キャンセルは前日までにお願いいたします&lt;/li&gt;
+                                    &lt;li&gt;お子様のご入店は12歳以上とさせていただいております&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;note-item&quot;&gt;
+                                &lt;h4&gt;アレルギー・食事制限&lt;/h4&gt;
+                                &lt;p&gt;アレルギーや食事制限がございましたら、ご予約時にお知らせください。可能な限り対応させていただきます。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+
+        &lt;footer class=&quot;footer&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-brand&quot;&gt;
+                    &lt;h3&gt;L&#x27;Étoile&lt;/h3&gt;
+                    &lt;p&gt;Restaurant Français&lt;/p&gt;
+                    &lt;p&gt;〒107-0052 東京都港区赤坂9-7-1&lt;br&gt;ミッドタウン・タワー 37F&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-hours&quot;&gt;
+                    &lt;h4&gt;Horaires&lt;/h4&gt;
+                    &lt;p&gt;Déjeuner: 12:00 - 13:30&lt;/p&gt;
+                    &lt;p&gt;Dîner: 18:00 - 21:00&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-contact&quot;&gt;
+                    &lt;h4&gt;Contact&lt;/h4&gt;
+                    &lt;p&gt;TEL: 03-6234-5678&lt;/p&gt;
+                    &lt;p&gt;Email: info@letoile-tokyo.com&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p class=&quot;copyright&quot;&gt;© 2025 L&#x27;Étoile. Tous droits réservés.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+
+
+&lt;script&gt;
+    // スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// ヒーローボタン
+document.querySelector(&#x27;.hero-cta&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    const menuSection = document.querySelector(&#x27;#menu&#x27;);
+    const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+    const targetPosition = menuSection.offsetTop - headerHeight;
+    window.scrollTo({
+        top: targetPosition,
+        behavior: &#x27;smooth&#x27;
+    });
+});
+
+// オンライン予約ボタン
+document.querySelector(&#x27;.reservation-btn.online&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;オンライン予約システムへ移動します（実装予定）&#x27;);
+});
+
+// ヘッダー背景の変更
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const header = document.querySelector(&#x27;.header&#x27;);
+    if (window.scrollY &gt; 100) {
+        header.style.background = &#x27;rgba(255, 255, 255, 0.98)&#x27;;
+        header.style.borderBottom = &#x27;1px solid rgba(212, 175, 55, 0.3)&#x27;;
+    } else {
+        header.style.background = &#x27;rgba(255, 255, 255, 0.95)&#x27;;
+        header.style.borderBottom = &#x27;1px solid rgba(212, 175, 55, 0.2)&#x27;;
+    }
+});
+
+// パララックス効果
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll(&#x27;.hero-image&#x27;);
+    
+    parallaxElements.forEach(element =&gt; {
+        const speed = 0.5;
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+});
+
+// メニューカードのアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -50px 0px&#x27;
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = &#x27;1&#x27;;
+            entry.target.style.transform = &#x27;translateY(0)&#x27;;
+        }
+    });
+}, observerOptions);
+
+// アニメーション対象要素の初期化
+document.querySelectorAll(&#x27;.menu-card, .salon-item, .wine-category&#x27;).forEach(item =&gt; {
+    item.style.opacity = &#x27;0&#x27;;
+    item.style.transform = &#x27;translateY(50px)&#x27;;
+    item.style.transition = &#x27;all 0.8s ease&#x27;;
+    observer.observe(item);
+});
+
+// メニューカードのホバー効果強化
+document.querySelectorAll(&#x27;.menu-card&#x27;).forEach(card =&gt; {
+    card.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.boxShadow = &#x27;0 25px 80px rgba(212, 175, 55, 0.2)&#x27;;
+    });
+    
+    card.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.boxShadow = &#x27;0 10px 40px rgba(0, 0, 0, 0.08)&#x27;;
+    });
+});
+
+// サロンアイテムの詳細表示
+document.querySelectorAll(&#x27;.salon-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;click&#x27;, function() {
+        const salonName = this.querySelector(&#x27;h3&#x27;).textContent;
+        alert(`${salonName}の詳細情報とご予約については、お電話でお問い合わせください。`);
+    });
+});
+
+// ワインカテゴリーのインタラクション
+document.querySelectorAll(&#x27;.wine-category&#x27;).forEach(category =&gt; {
+    category.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.transform = &#x27;translateX(10px)&#x27;;
+        this.style.borderLeftWidth = &#x27;6px&#x27;;
+        this.style.transition = &#x27;all 0.3s ease&#x27;;
+    });
+    
+    category.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.transform = &#x27;translateX(0)&#x27;;
+        this.style.borderLeftWidth = &#x27;4px&#x27;;
+    });
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="フレンチレストラン" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"restaurant-french\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"restaurant-french\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"restaurant-french\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"restaurant-french\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"rXeNfQVi7OKVmiTd3WlEn\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"restaurant-french\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

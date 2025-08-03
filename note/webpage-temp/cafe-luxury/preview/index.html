@@ -1,0 +1,1064 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;カフェ - 高級&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url(&#x27;https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;700&amp;family=Lato:wght@300;400;700&amp;display=swap&#x27;);
+
+body {
+    font-family: &#x27;Lato&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    line-height: 1.6;
+    color: #2c2c2c;
+    background-color: #fafafa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(40, 40, 40, 0.95));
+    backdrop-filter: blur(15px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+
+.navbar {
+    padding: 1.5rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #d4af37;
+    letter-spacing: 2px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background-color: #d4af37;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 300;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-menu a:hover {
+    color: #d4af37;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.hero-title {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    color: #d4af37;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.cta-button {
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #d4af37, #f4d03f);
+    color: #2c2c2c;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
+}
+
+/* Experience Section */
+.experience {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+}
+
+.section-title {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #2c2c2c;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section-title::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(135deg, #d4af37, #f4d03f);
+}
+
+.experience-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    margin-top: 6rem;
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.experience-item.reverse {
+    direction: rtl;
+}
+
+.experience-item.reverse &gt; * {
+    direction: ltr;
+}
+
+.experience-image {
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.experience-image:hover {
+    transform: scale(1.05);
+}
+
+.experience-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.experience-content h3 {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 2.2rem;
+    color: #2c2c2c;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.experience-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* Collection Section */
+.collection {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    color: white;
+}
+
+.collection .section-title {
+    color: #d4af37;
+}
+
+.collection-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.tab-button {
+    padding: 1rem 2rem;
+    background: transparent;
+    color: white;
+    border: 2px solid #d4af37;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.tab-button.active,
+.tab-button:hover {
+    background: linear-gradient(135deg, #d4af37, #f4d03f);
+    color: #2c2c2c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.collection-content {
+    display: none;
+}
+
+.collection-content.active {
+    display: block;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.menu-item-luxury {
+    background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+    position: relative;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.menu-item-luxury:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+.item-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: linear-gradient(135deg, #d4af37, #f4d03f);
+    color: #2c2c2c;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.menu-item-luxury h4 {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.menu-item-luxury p {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #d4af37;
+}
+
+/* Private Section */
+.private {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+}
+
+.private-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.service-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #d4af37;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.service-card h3 {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.service-card ul {
+    list-style: none;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.service-card li {
+    color: #666;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.service-card li::before {
+    content: &#x27;✓&#x27;;
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.service-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #d4af37;
+}
+
+/* Reservation Section */
+.reservation {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    color: white;
+}
+
+.reservation .section-title {
+    color: #d4af37;
+}
+
+.reservation-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    margin-top: 4rem;
+}
+
+.reservation-info h3 {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.info-label {
+    color: #d4af37;
+    font-weight: 500;
+}
+
+.info-value {
+    color: #ccc;
+}
+
+.reservation-form {
+    background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.reservation-form h4 {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 1.8rem;
+    color: #d4af37;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, #d4af37, #f4d03f);
+    color: #2c2c2c;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.footer-brand h3 {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.footer-brand p {
+    font-size: 1rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.footer-contact {
+    text-align: right;
+}
+
+.footer-contact p {
+    margin-bottom: 0.5rem;
+    color: #ccc;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, rgba(20, 20, 20, 0.98), rgba(40, 40, 40, 0.98));
+        flex-direction: column;
+        padding: 2rem 0;
+        backdrop-filter: blur(15px);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .experience-item {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .experience-item.reverse {
+        direction: ltr;
+    }
+    
+    .collection-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .reservation-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-contact {
+        text-align: center;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;nav class=&quot;navbar&quot;&gt;
+            &lt;div class=&quot;nav-container&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;span class=&quot;logo-text&quot;&gt;Café Prestige&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;button class=&quot;menu-toggle&quot; id=&quot;menuToggle&quot;&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;ul class=&quot;nav-menu&quot; id=&quot;navMenu&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#experience&quot;&gt;Experience&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#collection&quot;&gt;Collection&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#private&quot;&gt;Private&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#reservation&quot;&gt;Reservation&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-image&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1920&amp;h=1080&amp;fit=crop&quot; alt=&quot;高級カフェの内装&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-overlay&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h1 class=&quot;hero-title&quot;&gt;Café Prestige&lt;/h1&gt;
+            &lt;p class=&quot;hero-subtitle&quot;&gt;Ultimate Luxury Experience&lt;/p&gt;
+            &lt;p class=&quot;hero-description&quot;&gt;世界最高峰のコーヒーと至極のひととき&lt;/p&gt;
+            &lt;button class=&quot;cta-button&quot; onclick=&quot;scrollToReservation()&quot;&gt;ご予約はこちら&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;experience&quot; class=&quot;experience&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Prestige Experience&lt;/h2&gt;
+            &lt;div class=&quot;experience-grid&quot;&gt;
+                &lt;div class=&quot;experience-item&quot;&gt;
+                    &lt;div class=&quot;experience-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;世界最高級のコーヒー豆&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;experience-content&quot;&gt;
+                        &lt;h3&gt;世界最高級のコーヒー豆&lt;/h3&gt;
+                        &lt;p&gt;ジャマイカブルーマウンテン、ハワイコナ、パナマゲイシャなど、世界各地から厳選された希少なコーヒー豆のみを使用。一杯一杯が芸術作品です。&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;experience-item reverse&quot;&gt;
+                    &lt;div class=&quot;experience-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;プロフェッショナルバリスタ&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;experience-content&quot;&gt;
+                        &lt;h3&gt;マスターバリスタによる至高の一杯&lt;/h3&gt;
+                        &lt;p&gt;世界チャンピオンシップ受賞歴を持つマスターバリスタが、お客様一人ひとりのお好みに合わせて、完璧な一杯をお作りいたします。&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;experience-item&quot;&gt;
+                    &lt;div class=&quot;experience-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1522992319-0365e5f11656?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;洗練された空間&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;experience-content&quot;&gt;
+                        &lt;h3&gt;洗練されたプライベート空間&lt;/h3&gt;
+                        &lt;p&gt;イタリア製の家具とクリスタルシャンデリアに彩られた上質な空間。都市の喧騒を忘れ、静寂に包まれた特別なひとときをお過ごしください。&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;collection&quot; class=&quot;collection&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Premium Collection&lt;/h2&gt;
+            &lt;div class=&quot;collection-tabs&quot;&gt;
+                &lt;button class=&quot;tab-button active&quot; onclick=&quot;showTab(&#x27;coffee&#x27;)&quot;&gt;Premium Coffee&lt;/button&gt;
+                &lt;button class=&quot;tab-button&quot; onclick=&quot;showTab(&#x27;tea&#x27;)&quot;&gt;Exclusive Tea&lt;/button&gt;
+                &lt;button class=&quot;tab-button&quot; onclick=&quot;showTab(&#x27;dessert&#x27;)&quot;&gt;Artisan Dessert&lt;/button&gt;
+            &lt;/div&gt;
+            
+            &lt;div id=&quot;coffee&quot; class=&quot;collection-content active&quot;&gt;
+                &lt;div class=&quot;menu-grid&quot;&gt;
+                    &lt;div class=&quot;menu-item-luxury&quot;&gt;
+                        &lt;div class=&quot;item-badge&quot;&gt;限定&lt;/div&gt;
+                        &lt;h4&gt;ブルーマウンテン No.1&lt;/h4&gt;
+                        &lt;p&gt;ジャマイカの最高峰から採れる希少な豆&lt;/p&gt;
+                        &lt;span class=&quot;price&quot;&gt;¥3,800&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-luxury&quot;&gt;
+                        &lt;div class=&quot;item-badge&quot;&gt;人気&lt;/div&gt;
+                        &lt;h4&gt;パナマ ゲイシャ エスメラルダ&lt;/h4&gt;
+                        &lt;p&gt;世界最高品質を誇る幻のコーヒー&lt;/p&gt;
+                        &lt;span class=&quot;price&quot;&gt;¥4,200&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-luxury&quot;&gt;
+                        &lt;h4&gt;ハワイ コナ エキストラファンシー&lt;/h4&gt;
+                        &lt;p&gt;太平洋の楽園で育まれた極上の味わい&lt;/p&gt;
+                        &lt;span class=&quot;price&quot;&gt;¥3,200&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-luxury&quot;&gt;
+                        &lt;h4&gt;エチオピア イルガチェフェ G1&lt;/h4&gt;
+                        &lt;p&gt;コーヒー発祥の地から届く至高の風味&lt;/p&gt;
+                        &lt;span class=&quot;price&quot;&gt;¥2,800&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id=&quot;tea&quot; class=&quot;collection-content&quot;&gt;
+                &lt;div class=&quot;menu-grid&quot;&gt;
+                    &lt;div class=&quot;menu-item-luxury&quot;&gt;
+                        &lt;div class=&quot;item-badge&quot;&gt;希少&lt;/div&gt;
+                        &lt;h4&gt;ダージリン ファーストフラッシュ&lt;/h4&gt;
+                        &lt;p&gt;ヒマラヤの雲霧に育まれた極上の紅茶&lt;/p&gt;
+                        &lt;span class=&quot;price&quot;&gt;¥2,400&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-luxury&quot;&gt;
+                        &lt;h4&gt;ウーロン茶 大紅袍&lt;/h4&gt;
+                        &lt;p&gt;中国茶の王様と称される伝説の茶葉&lt;/p&gt;
+                        &lt;span class=&quot;price&quot;&gt;¥3,600&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-luxury&quot;&gt;
+                        &lt;h4&gt;プーアル茶 宮廷級&lt;/h4&gt;
+                        &lt;p&gt;100年の歴史を持つ熟成茶の最高峰&lt;/p&gt;
+                        &lt;span class=&quot;price&quot;&gt;¥2,800&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-luxury&quot;&gt;
+                        &lt;h4&gt;アッサム FTGFOP1&lt;/h4&gt;
+                        &lt;p&gt;インドが誇る最高級茶園の逸品&lt;/p&gt;
+                        &lt;span class=&quot;price&quot;&gt;¥2,200&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id=&quot;dessert&quot; class=&quot;collection-content&quot;&gt;
+                &lt;div class=&quot;menu-grid&quot;&gt;
+                    &lt;div class=&quot;menu-item-luxury&quot;&gt;
+                        &lt;div class=&quot;item-badge&quot;&gt;シェフ特製&lt;/div&gt;
+                        &lt;h4&gt;ヴァローナチョコレートケーキ&lt;/h4&gt;
+                        &lt;p&gt;フランス最高級チョコレートの芸術&lt;/p&gt;
+                        &lt;span class=&quot;price&quot;&gt;¥1,800&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-luxury&quot;&gt;
+                        &lt;h4&gt;マダガスカルバニラムース&lt;/h4&gt;
+                        &lt;p&gt;希少なバニラビーンズの贅沢な香り&lt;/p&gt;
+                        &lt;span class=&quot;price&quot;&gt;¥1,600&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-luxury&quot;&gt;
+                        &lt;h4&gt;季節のフルーツタルト&lt;/h4&gt;
+                        &lt;p&gt;厳選された旬の果実を使用&lt;/p&gt;
+                        &lt;span class=&quot;price&quot;&gt;¥1,400&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-luxury&quot;&gt;
+                        &lt;h4&gt;ティラミス クラシック&lt;/h4&gt;
+                        &lt;p&gt;イタリア伝統レシピの本格派&lt;/p&gt;
+                        &lt;span class=&quot;price&quot;&gt;¥1,200&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;private&quot; class=&quot;private&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Private Service&lt;/h2&gt;
+            &lt;div class=&quot;private-services&quot;&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;👑&lt;/div&gt;
+                    &lt;h3&gt;VIPルーム&lt;/h3&gt;
+                    &lt;p&gt;完全個室での極上のプライベート空間をご提供。重要な商談やプライベートなひとときに。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;完全個室（2-6名様）&lt;/li&gt;
+                        &lt;li&gt;専属スタッフサービス&lt;/li&gt;
+                        &lt;li&gt;特別メニュー対応&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;div class=&quot;service-price&quot;&gt;¥8,000～ / 時間&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🎭&lt;/div&gt;
+                    &lt;h3&gt;プライベートテイスティング&lt;/h3&gt;
+                    &lt;p&gt;世界各国の希少なコーヒーを専門スタッフの解説付きでお楽しみいただけます。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;希少豆5種類のテイスティング&lt;/li&gt;
+                        &lt;li&gt;専門家による解説&lt;/li&gt;
+                        &lt;li&gt;ペアリングスイーツ付き&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;div class=&quot;service-price&quot;&gt;¥12,000 / 人&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🎪&lt;/div&gt;
+                    &lt;h3&gt;イベント・パーティー&lt;/h3&gt;
+                    &lt;p&gt;特別な日のお祝いやビジネスイベントを、最高級の空間で演出いたします。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;貸切対応（20-50名様）&lt;/li&gt;
+                        &lt;li&gt;オリジナルメニュー作成&lt;/li&gt;
+                        &lt;li&gt;装飾・演出サービス&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;div class=&quot;service-price&quot;&gt;お見積もり&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;reservation&quot; class=&quot;reservation&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Reservation&lt;/h2&gt;
+            &lt;div class=&quot;reservation-content&quot;&gt;
+                &lt;div class=&quot;reservation-info&quot;&gt;
+                    &lt;h3&gt;Café Prestige&lt;/h3&gt;
+                    &lt;div class=&quot;info-grid&quot;&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;span class=&quot;info-label&quot;&gt;住所&lt;/span&gt;
+                            &lt;span class=&quot;info-value&quot;&gt;〒107-0052 東京都港区赤坂9-7-1 ミッドタウン・タワー 52F&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;span class=&quot;info-label&quot;&gt;電話&lt;/span&gt;
+                            &lt;span class=&quot;info-value&quot;&gt;03-6234-5678&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;span class=&quot;info-label&quot;&gt;営業時間&lt;/span&gt;
+                            &lt;span class=&quot;info-value&quot;&gt;10:00 - 22:00（L.O. 21:30）&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;span class=&quot;info-label&quot;&gt;定休日&lt;/span&gt;
+                            &lt;span class=&quot;info-value&quot;&gt;無休&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;span class=&quot;info-label&quot;&gt;ドレスコード&lt;/span&gt;
+                            &lt;span class=&quot;info-value&quot;&gt;スマートカジュアル&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;reservation-form&quot;&gt;
+                    &lt;h4&gt;ご予約フォーム&lt;/h4&gt;
+                    &lt;form&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;お名前&lt;/label&gt;
+                            &lt;input type=&quot;text&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;お電話番号&lt;/label&gt;
+                            &lt;input type=&quot;tel&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;ご希望日時&lt;/label&gt;
+                            &lt;input type=&quot;datetime-local&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;人数&lt;/label&gt;
+                            &lt;select required&gt;
+                                &lt;option value=&quot;&quot;&gt;選択してください&lt;/option&gt;
+                                &lt;option value=&quot;1&quot;&gt;1名様&lt;/option&gt;
+                                &lt;option value=&quot;2&quot;&gt;2名様&lt;/option&gt;
+                                &lt;option value=&quot;3&quot;&gt;3名様&lt;/option&gt;
+                                &lt;option value=&quot;4&quot;&gt;4名様&lt;/option&gt;
+                                &lt;option value=&quot;5+&quot;&gt;5名様以上&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;ご要望&lt;/label&gt;
+                            &lt;textarea placeholder=&quot;特別なご要望がございましたらお書きください&quot;&gt;&lt;/textarea&gt;
+                        &lt;/div&gt;
+                        &lt;button type=&quot;submit&quot; class=&quot;submit-button&quot;&gt;予約を送信&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-brand&quot;&gt;
+                    &lt;h3&gt;Café Prestige&lt;/h3&gt;
+                    &lt;p&gt;Ultimate Luxury Experience&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-contact&quot;&gt;
+                    &lt;p&gt;TEL: 03-6234-5678&lt;/p&gt;
+                    &lt;p&gt;EMAIL: info@cafe-prestige.jp&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p&gt;&amp;copy; 2025 Café Prestige. All Rights Reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // モバイルメニューのトグル
+document.getElementById(&#x27;menuToggle&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    document.getElementById(&#x27;navMenu&#x27;).classList.toggle(&#x27;active&#x27;);
+});
+
+// スムーススクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+            // モバイルメニューを閉じる
+            document.getElementById(&#x27;navMenu&#x27;).classList.remove(&#x27;active&#x27;);
+        }
+    });
+});
+
+// 予約セクションへのスクロール
+function scrollToReservation() {
+    const target = document.querySelector(&#x27;#reservation&#x27;);
+    if (target) {
+        const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+        const targetPosition = target.offsetTop - headerHeight;
+        window.scrollTo({
+            top: targetPosition,
+            behavior: &#x27;smooth&#x27;
+        });
+    }
+}
+
+// タブ切り替え機能
+function showTab(tabName) {
+    // すべてのタブコンテンツを非表示
+    document.querySelectorAll(&#x27;.collection-content&#x27;).forEach(content =&gt; {
+        content.classList.remove(&#x27;active&#x27;);
+    });
+    
+    // すべてのタブボタンからactiveクラスを削除
+    document.querySelectorAll(&#x27;.tab-button&#x27;).forEach(button =&gt; {
+        button.classList.remove(&#x27;active&#x27;);
+    });
+    
+    // 選択されたタブコンテンツを表示
+    document.getElementById(tabName).classList.add(&#x27;active&#x27;);
+    
+    // クリックされたタブボタンにactiveクラスを追加
+    event.target.classList.add(&#x27;active&#x27;);
+}
+
+// パララックス効果
+window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+    const scrolled = window.pageYOffset;
+    const parallax = document.querySelector(&#x27;.hero-image&#x27;);
+    const speed = 0.3;
+    
+    if (parallax) {
+        parallax.style.transform = `translateY(${scrolled * speed}px)`;
+    }
+    
+    // ヘッダーの背景透明度調整
+    const header = document.querySelector(&#x27;.header&#x27;);
+    if (scrolled &gt; 100) {
+        header.style.background = &#x27;linear-gradient(135deg, rgba(20, 20, 20, 0.98), rgba(40, 40, 40, 0.98))&#x27;;
+    } else {
+        header.style.background = &#x27;linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(40, 40, 40, 0.95))&#x27;;
+    }
+});
+
+// フォーム送信処理
+document.querySelector(&#x27;.reservation-form form&#x27;).addEventListener(&#x27;submit&#x27;, function(e) {
+    e.preventDefault();
+    alert(&#x27;ご予約を承りました。確認のお電話をいたします。&#x27;);
+});
+
+// メニューアイテムのホバーエフェクト
+document.querySelectorAll(&#x27;.menu-item-luxury&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.transform = &#x27;translateY(-10px) scale(1.02)&#x27;;
+    });
+    
+    item.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.transform = &#x27;translateY(0) scale(1)&#x27;;
+    });
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="カフェ - 高級" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"cafe-luxury\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"cafe-luxury\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"cafe-luxury\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"cafe-luxury\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"tjzIrwCRv4DS0mYiBP9E_\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"cafe-luxury\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

@@ -1,0 +1,754 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;カフェ - 和風&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url(&#x27;https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&amp;display=swap&#x27;);
+
+body {
+    font-family: &#x27;Noto Serif JP&#x27;, serif;
+    line-height: 1.8;
+    color: #2c2c2c;
+    background-color: #faf8f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: rgba(255, 248, 245, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #d4b896;
+}
+
+.navbar {
+    padding: 1.5rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #6b4423;
+    letter-spacing: 3px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background-color: #6b4423;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.nav-menu a {
+    color: #6b4423;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: color 0.3s;
+    letter-spacing: 1px;
+}
+
+.nav-menu a:hover {
+    color: #d4b896;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6) sepia(0.2);
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: 8px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.hero-ornament {
+    font-size: 3rem;
+    color: #d4b896;
+    opacity: 0.8;
+}
+
+/* About Section */
+.about {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #6b4423;
+    margin-bottom: 3rem;
+    letter-spacing: 5px;
+    position: relative;
+}
+
+.section-title::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background-color: #d4b896;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-text {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #555;
+}
+
+.about-principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.principle-item {
+    text-align: center;
+    background: linear-gradient(145deg, #faf8f5 0%, #f5f2ef 100%);
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(107, 68, 35, 0.1);
+    transition: transform 0.3s;
+}
+
+.principle-item:hover {
+    transform: translateY(-5px);
+}
+
+.principle-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #6b4423 0%, #8b5a3c 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.principle-item h3 {
+    color: #6b4423;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.principle-item p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Menu Section */
+.menu {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #faf8f5 0%, #f5f2ef 100%);
+}
+
+.menu-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.menu-category {
+    background: white;
+    padding: 3rem 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(107, 68, 35, 0.08);
+}
+
+.menu-category h3 {
+    color: #6b4423;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #d4b896;
+    font-weight: 500;
+    text-align: center;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    color: #2c2c2c;
+    font-size: 1.1rem;
+}
+
+.item-price {
+    color: #6b4423;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 15px;
+    height: 300px;
+    box-shadow: 0 15px 50px rgba(107, 68, 35, 0.15);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Access Section */
+.access {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #faf8f5 0%, #f5f2ef 100%);
+}
+
+.access-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.access-info {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(107, 68, 35, 0.08);
+}
+
+.access-info h3 {
+    color: #6b4423;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.access-info dl {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.5rem 2rem;
+    align-items: start;
+}
+
+.access-info dt {
+    color: #6b4423;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.access-info dd {
+    color: #555;
+    line-height: 1.6;
+}
+
+.access-note {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(107, 68, 35, 0.08);
+}
+
+.access-note h4 {
+    color: #6b4423;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.access-note ul {
+    list-style: none;
+    color: #555;
+}
+
+.access-note li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.access-note li::before {
+    content: &#x27;◆&#x27;;
+    position: absolute;
+    left: 0;
+    color: #d4b896;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #6b4423 0%, #5a3719 100%);
+    color: white;
+    padding: 50px 0 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    letter-spacing: 3px;
+}
+
+.footer-brand p {
+    font-size: 1rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.footer-ornament {
+    font-size: 3rem;
+    color: #d4b896;
+    opacity: 0.7;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 184, 150, 0.3);
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 248, 245, 0.98);
+        flex-direction: column;
+        padding: 2rem 0;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #d4b896;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+        letter-spacing: 4px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+    
+    .access-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .access-info dl {
+        grid-template-columns: 100px 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;nav class=&quot;navbar&quot;&gt;
+            &lt;div class=&quot;nav-container&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;span class=&quot;logo-text&quot;&gt;茶房 雅&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;button class=&quot;menu-toggle&quot; id=&quot;menuToggle&quot;&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;ul class=&quot;nav-menu&quot; id=&quot;navMenu&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;こだわり&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;お品書き&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#gallery&quot;&gt;店内&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#access&quot;&gt;ご案内&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-image&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&amp;h=1080&amp;fit=crop&quot; alt=&quot;和風カフェの空間&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h1 class=&quot;hero-title&quot;&gt;茶房 雅&lt;/h1&gt;
+            &lt;p class=&quot;hero-subtitle&quot;&gt;日本の心を味わう空間&lt;/p&gt;
+            &lt;div class=&quot;hero-ornament&quot;&gt;⌘&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;こだわり&lt;/h2&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;p&gt;日本古来より愛され続けてきた「茶の心」を現代に受け継ぐ空間です。厳選された宇治抹茶と、職人が丹精込めて作る和菓子をお楽しみください。静寂の中で過ごすひととき、心の安らぎを見つけてください。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-principles&quot;&gt;
+                    &lt;div class=&quot;principle-item&quot;&gt;
+                        &lt;div class=&quot;principle-icon&quot;&gt;茶&lt;/div&gt;
+                        &lt;h3&gt;本格抹茶&lt;/h3&gt;
+                        &lt;p&gt;京都宇治の老舗茶園から直接仕入れる最高級の抹茶を使用&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;principle-item&quot;&gt;
+                        &lt;div class=&quot;principle-icon&quot;&gt;菓&lt;/div&gt;
+                        &lt;h3&gt;伝統和菓子&lt;/h3&gt;
+                        &lt;p&gt;季節の移ろいを表現した、職人手作りの繊細な和菓子&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;principle-item&quot;&gt;
+                        &lt;div class=&quot;principle-icon&quot;&gt;心&lt;/div&gt;
+                        &lt;h3&gt;おもてなし&lt;/h3&gt;
+                        &lt;p&gt;日本古来のもてなしの心を大切に、一期一会の出会いを&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;menu&quot; class=&quot;menu&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;お品書き&lt;/h2&gt;
+            &lt;div class=&quot;menu-categories&quot;&gt;
+                &lt;div class=&quot;menu-category&quot;&gt;
+                    &lt;h3&gt;お茶&lt;/h3&gt;
+                    &lt;div class=&quot;menu-items&quot;&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;span class=&quot;item-name&quot;&gt;薄茶&lt;/span&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;八百円&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;span class=&quot;item-name&quot;&gt;濃茶&lt;/span&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;千二百円&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;span class=&quot;item-name&quot;&gt;玉露&lt;/span&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;千円&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;span class=&quot;item-name&quot;&gt;煎茶&lt;/span&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;六百円&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;span class=&quot;item-name&quot;&gt;ほうじ茶&lt;/span&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;五百円&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;menu-category&quot;&gt;
+                    &lt;h3&gt;和菓子&lt;/h3&gt;
+                    &lt;div class=&quot;menu-items&quot;&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;span class=&quot;item-name&quot;&gt;季節の上生菓子&lt;/span&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;四百円&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;span class=&quot;item-name&quot;&gt;どら焼き&lt;/span&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;三百円&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;span class=&quot;item-name&quot;&gt;みたらし団子&lt;/span&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;三百五十円&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;span class=&quot;item-name&quot;&gt;羊羹&lt;/span&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;四百五十円&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;menu-category&quot;&gt;
+                    &lt;h3&gt;お食事&lt;/h3&gt;
+                    &lt;div class=&quot;menu-items&quot;&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;span class=&quot;item-name&quot;&gt;茶粥御膳&lt;/span&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;千八百円&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;span class=&quot;item-name&quot;&gt;精進料理&lt;/span&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;二千五百円&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;span class=&quot;item-name&quot;&gt;季節の蕎麦&lt;/span&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;千二百円&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;gallery&quot; class=&quot;gallery&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;店内&lt;/h2&gt;
+            &lt;div class=&quot;gallery-grid&quot;&gt;
+                &lt;div class=&quot;gallery-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;茶室の様子&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1564890378037-0033e5e55e9e?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;抹茶と和菓子&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;日本庭園&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;access&quot; class=&quot;access&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;ご案内&lt;/h2&gt;
+            &lt;div class=&quot;access-content&quot;&gt;
+                &lt;div class=&quot;access-info&quot;&gt;
+                    &lt;h3&gt;茶房 雅&lt;/h3&gt;
+                    &lt;dl&gt;
+                        &lt;dt&gt;住所&lt;/dt&gt;
+                        &lt;dd&gt;〒605-0074 京都府京都市東山区祇園町南側570-6&lt;/dd&gt;
+                        &lt;dt&gt;電話&lt;/dt&gt;
+                        &lt;dd&gt;075-555-0123&lt;/dd&gt;
+                        &lt;dt&gt;営業時間&lt;/dt&gt;
+                        &lt;dd&gt;午前十時 - 午後六時（最終受付 午後五時半）&lt;/dd&gt;
+                        &lt;dt&gt;定休日&lt;/dt&gt;
+                        &lt;dd&gt;月曜日（祝日の場合は翌日）&lt;/dd&gt;
+                        &lt;dt&gt;席数&lt;/dt&gt;
+                        &lt;dd&gt;二十四席（個室三室あり）&lt;/dd&gt;
+                    &lt;/dl&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;access-note&quot;&gt;
+                    &lt;h4&gt;お知らせ&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;茶道体験（要予約）も承っております&lt;/li&gt;
+                        &lt;li&gt;個室のご利用は事前にご予約ください&lt;/li&gt;
+                        &lt;li&gt;季節により営業時間が変更になる場合があります&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-brand&quot;&gt;
+                    &lt;h3&gt;茶房 雅&lt;/h3&gt;
+                    &lt;p&gt;日本の心を味わう空間&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-ornament&quot;&gt;⌘&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p&gt;&amp;copy; 2025 茶房 雅. All rights reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // モバイルメニューのトグル
+document.getElementById(&#x27;menuToggle&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    document.getElementById(&#x27;navMenu&#x27;).classList.toggle(&#x27;active&#x27;);
+});
+
+// スムーススクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+            // モバイルメニューを閉じる
+            document.getElementById(&#x27;navMenu&#x27;).classList.remove(&#x27;active&#x27;);
+        }
+    });
+});
+
+// パララックス効果
+window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+    const scrolled = window.pageYOffset;
+    const parallax = document.querySelector(&#x27;.hero-image&#x27;);
+    const speed = 0.5;
+    
+    if (parallax) {
+        parallax.style.transform = `translateY(${scrolled * speed}px)`;
+    }
+});
+
+// ギャラリーアイテムのホバーエフェクト
+document.querySelectorAll(&#x27;.gallery-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.zIndex = &#x27;10&#x27;;
+    });
+    
+    item.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.zIndex = &#x27;1&#x27;;
+    });
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="カフェ - 和風" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"cafe-japanese\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"cafe-japanese\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"cafe-japanese\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"cafe-japanese\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"cYkXWpvteBhUBID2ZfpOR\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"cafe-japanese\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

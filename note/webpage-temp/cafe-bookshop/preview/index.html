@@ -1,0 +1,1497 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;カフェ - ブックカフェ&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url(&#x27;https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;family=Lora:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap&#x27;);
+
+body {
+    font-family: &#x27;Lora&#x27;, &#x27;Times New Roman&#x27;, serif;
+    line-height: 1.7;
+    color: #3a3a3a;
+    background-color: #faf8f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(250, 248, 244, 0.95);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+.navbar {
+    padding: 1.2rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo-icon {
+    font-size: 2rem;
+}
+
+.logo-text {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #8b4513;
+    letter-spacing: 1px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background-color: #8b4513;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-menu a {
+    color: #5d4e37;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu a:hover {
+    color: #8b4513;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 4.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.hero-quote {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-quote blockquote {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #f0f0f0;
+}
+
+.hero-quote cite {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* About Section */
+.about {
+    padding: 120px 0;
+    background: white;
+}
+
+.section-title {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #8b4513;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section-title::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #8b4513, #d2b48c);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-text h3 {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 2rem;
+    color: #8b4513;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #5d4e37;
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    background: linear-gradient(135deg, #f5f3f0, #ede8e0);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.stat-number {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #8b4513;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #5d4e37;
+    font-weight: 500;
+}
+
+/* Books Section */
+.books {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #faf8f4, #f5f3f0);
+}
+
+.book-categories {
+    margin-top: 4rem;
+}
+
+.category-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 0.8rem 1.5rem;
+    background: white;
+    color: #5d4e37;
+    border: 2px solid #d2b48c;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+    font-weight: 500;
+}
+
+.category-btn.active,
+.category-btn:hover {
+    background: #8b4513;
+    color: white;
+    border-color: #8b4513;
+    transform: translateY(-2px);
+}
+
+.books-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.book-section {
+    display: block;
+}
+
+.book-section.hidden {
+    display: none;
+}
+
+.book-section h3 {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 2rem;
+    color: #8b4513;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.book-item {
+    display: flex;
+    gap: 1.5rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.book-cover {
+    flex-shrink: 0;
+    width: 80px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-info h4 {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 1.3rem;
+    color: #8b4513;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.book-info p {
+    color: #5d4e37;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.book-count {
+    display: inline-block;
+    background: #8b4513;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Menu Section */
+.menu {
+    padding: 120px 0;
+    background: white;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.menu-category {
+    background: linear-gradient(135deg, #faf8f4, #f5f3f0);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.menu-category h3 {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 1.8rem;
+    color: #8b4513;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #d2b48c;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(210, 180, 140, 0.3);
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-name {
+    font-weight: 600;
+    color: #5d4e37;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.item-description {
+    font-size: 0.9rem;
+    color: #8b7355;
+    font-style: italic;
+}
+
+.item-price {
+    font-weight: 600;
+    color: #8b4513;
+    font-size: 1.1rem;
+    margin-left: 1rem;
+}
+
+/* Events Section */
+.events {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #faf8f4, #f5f3f0);
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.event-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+.event-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.05);
+}
+
+.event-content {
+    padding: 2rem;
+}
+
+.event-date {
+    background: #8b4513;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.event-content h3 {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 1.5rem;
+    color: #8b4513;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.event-content p {
+    color: #5d4e37;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #8b7355;
+}
+
+/* Contact Section */
+.contact {
+    padding: 120px 0;
+    background: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.contact-info h3 {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 2rem;
+    color: #8b4513;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+}
+
+.info-details strong {
+    color: #8b4513;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: 600;
+}
+
+.info-details p {
+    color: #5d4e37;
+    line-height: 1.6;
+}
+
+.store-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.store-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.store-features {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    padding: 2rem 1.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.feature-icon {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #5d4e37, #4a3c28);
+    color: #d2b48c;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand h3 {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-size: 1.8rem;
+    color: #d2b48c;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.footer-brand p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.footer-quote p {
+    font-family: &#x27;Crimson Text&#x27;, serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-quote cite {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.link-group h4 {
+    color: #d2b48c;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.link-group ul {
+    list-style: none;
+}
+
+.link-group li {
+    margin-bottom: 0.5rem;
+}
+
+.link-group a {
+    color: #a0956b;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link-group a:hover {
+    color: #d2b48c;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(210, 180, 140, 0.3);
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(250, 248, 244, 0.98);
+        flex-direction: column;
+        padding: 2rem 0;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .about-stats {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .book-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .book-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .category-nav {
+        gap: 0.5rem;
+    }
+    
+    .category-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;nav class=&quot;navbar&quot;&gt;
+            &lt;div class=&quot;nav-container&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;span class=&quot;logo-icon&quot;&gt;📚&lt;/span&gt;
+                    &lt;span class=&quot;logo-text&quot;&gt;Book Café Literati&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;button class=&quot;menu-toggle&quot; id=&quot;menuToggle&quot;&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;ul class=&quot;nav-menu&quot; id=&quot;navMenu&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#books&quot;&gt;Books&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;Menu&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#events&quot;&gt;Events&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-image&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&amp;h=1080&amp;fit=crop&quot; alt=&quot;ブックカフェの店内&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-overlay&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h1 class=&quot;hero-title&quot;&gt;Book Café Literati&lt;/h1&gt;
+            &lt;p class=&quot;hero-subtitle&quot;&gt;本と珈琲の香る空間&lt;/p&gt;
+            &lt;p class=&quot;hero-description&quot;&gt;静寂に包まれた読書の時間を、香り高いコーヒーとともに&lt;/p&gt;
+            &lt;div class=&quot;hero-quote&quot;&gt;
+                &lt;blockquote&gt;&quot;A room without books is like a body without a soul.&quot;&lt;/blockquote&gt;
+                &lt;cite&gt;- Cicero&lt;/cite&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;About Literati&lt;/h2&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;h3&gt;本との出会い、人との出会い&lt;/h3&gt;
+                    &lt;p&gt;Book Café Literatiは、本を愛するすべての人のための特別な空間です。厳選された書籍に囲まれながら、上質なコーヒーをお楽しみいただけます。静かな読書の時間から、本について語り合う活発な議論まで、様々な「読書体験」をご提供します。&lt;/p&gt;
+                    &lt;p&gt;蔵書数は常時2,000冊以上。文学、哲学、アート、ビジネス書まで幅広いジャンルを取り揃え、新しい本との出会いをお待ちしています。&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-stats&quot;&gt;
+                    &lt;div class=&quot;stat-item&quot;&gt;
+                        &lt;div class=&quot;stat-number&quot;&gt;2,000+&lt;/div&gt;
+                        &lt;div class=&quot;stat-label&quot;&gt;蔵書数&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;stat-item&quot;&gt;
+                        &lt;div class=&quot;stat-number&quot;&gt;50+&lt;/div&gt;
+                        &lt;div class=&quot;stat-label&quot;&gt;読書イベント/年&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;stat-item&quot;&gt;
+                        &lt;div class=&quot;stat-number&quot;&gt;5&lt;/div&gt;
+                        &lt;div class=&quot;stat-label&quot;&gt;読書エリア&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;books&quot; class=&quot;books&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Book Collection&lt;/h2&gt;
+            &lt;div class=&quot;book-categories&quot;&gt;
+                &lt;div class=&quot;category-nav&quot;&gt;
+                    &lt;button class=&quot;category-btn active&quot; onclick=&quot;showCategory(&#x27;all&#x27;)&quot;&gt;すべて&lt;/button&gt;
+                    &lt;button class=&quot;category-btn&quot; onclick=&quot;showCategory(&#x27;literature&#x27;)&quot;&gt;文学&lt;/button&gt;
+                    &lt;button class=&quot;category-btn&quot; onclick=&quot;showCategory(&#x27;philosophy&#x27;)&quot;&gt;哲学・思想&lt;/button&gt;
+                    &lt;button class=&quot;category-btn&quot; onclick=&quot;showCategory(&#x27;art&#x27;)&quot;&gt;アート・デザイン&lt;/button&gt;
+                    &lt;button class=&quot;category-btn&quot; onclick=&quot;showCategory(&#x27;business&#x27;)&quot;&gt;ビジネス&lt;/button&gt;
+                    &lt;button class=&quot;category-btn&quot; onclick=&quot;showCategory(&#x27;lifestyle&#x27;)&quot;&gt;ライフスタイル&lt;/button&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;books-grid&quot; id=&quot;booksGrid&quot;&gt;
+                    &lt;div class=&quot;book-section&quot; data-category=&quot;literature&quot;&gt;
+                        &lt;h3&gt;📖 文学&lt;/h3&gt;
+                        &lt;div class=&quot;book-list&quot;&gt;
+                            &lt;div class=&quot;book-item&quot;&gt;
+                                &lt;div class=&quot;book-cover&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=200&amp;h=300&amp;fit=crop&quot; alt=&quot;文学書&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;book-info&quot;&gt;
+                                    &lt;h4&gt;現代文学セレクション&lt;/h4&gt;
+                                    &lt;p&gt;国内外の現代文学作品を中心に、話題の新作から隠れた名作まで幅広く取り揃えています。&lt;/p&gt;
+                                    &lt;span class=&quot;book-count&quot;&gt;約400冊&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;book-item&quot;&gt;
+                                &lt;div class=&quot;book-cover&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&amp;h=300&amp;fit=crop&quot; alt=&quot;古典文学&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;book-info&quot;&gt;
+                                    &lt;h4&gt;古典文学コレクション&lt;/h4&gt;
+                                    &lt;p&gt;時代を超えて愛され続ける古典文学作品。美しい装丁の特別版も多数ご用意。&lt;/p&gt;
+                                    &lt;span class=&quot;book-count&quot;&gt;約200冊&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;book-section&quot; data-category=&quot;philosophy&quot;&gt;
+                        &lt;h3&gt;🤔 哲学・思想&lt;/h3&gt;
+                        &lt;div class=&quot;book-list&quot;&gt;
+                            &lt;div class=&quot;book-item&quot;&gt;
+                                &lt;div class=&quot;book-cover&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&amp;h=300&amp;fit=crop&quot; alt=&quot;哲学書&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;book-info&quot;&gt;
+                                    &lt;h4&gt;西洋哲学&lt;/h4&gt;
+                                    &lt;p&gt;古代ギリシャから現代まで、西洋哲学の系譜をたどる貴重なコレクション。&lt;/p&gt;
+                                    &lt;span class=&quot;book-count&quot;&gt;約300冊&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;book-item&quot;&gt;
+                                &lt;div class=&quot;book-cover&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1592496431122-2349e0fbc666?w=200&amp;h=300&amp;fit=crop&quot; alt=&quot;東洋思想&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;book-info&quot;&gt;
+                                    &lt;h4&gt;東洋思想&lt;/h4&gt;
+                                    &lt;p&gt;仏教、道教、儒教など、東洋の深い思想を学べる専門書を集めました。&lt;/p&gt;
+                                    &lt;span class=&quot;book-count&quot;&gt;約150冊&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;book-section&quot; data-category=&quot;art&quot;&gt;
+                        &lt;h3&gt;🎨 アート・デザイン&lt;/h3&gt;
+                        &lt;div class=&quot;book-list&quot;&gt;
+                            &lt;div class=&quot;book-item&quot;&gt;
+                                &lt;div class=&quot;book-cover&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1541963463532-d68292c34d19?w=200&amp;h=300&amp;fit=crop&quot; alt=&quot;アート書&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;book-info&quot;&gt;
+                                    &lt;h4&gt;美術・アート&lt;/h4&gt;
+                                    &lt;p&gt;絵画、彫刻、現代アートまで、視覚的に美しい大型本を中心としたコレクション。&lt;/p&gt;
+                                    &lt;span class=&quot;book-count&quot;&gt;約250冊&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;book-item&quot;&gt;
+                                &lt;div class=&quot;book-cover&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=200&amp;h=300&amp;fit=crop&quot; alt=&quot;デザイン書&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;book-info&quot;&gt;
+                                    &lt;h4&gt;デザイン・建築&lt;/h4&gt;
+                                    &lt;p&gt;グラフィックデザインから建築まで、創造性を刺激するデザイン関連書籍。&lt;/p&gt;
+                                    &lt;span class=&quot;book-count&quot;&gt;約200冊&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;book-section&quot; data-category=&quot;business&quot;&gt;
+                        &lt;h3&gt;💼 ビジネス&lt;/h3&gt;
+                        &lt;div class=&quot;book-list&quot;&gt;
+                            &lt;div class=&quot;book-item&quot;&gt;
+                                &lt;div class=&quot;book-cover&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&amp;h=300&amp;fit=crop&quot; alt=&quot;ビジネス書&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;book-info&quot;&gt;
+                                    &lt;h4&gt;経営・マネジメント&lt;/h4&gt;
+                                    &lt;p&gt;経営戦略、リーダーシップ、組織運営に関する実践的なビジネス書。&lt;/p&gt;
+                                    &lt;span class=&quot;book-count&quot;&gt;約300冊&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;book-item&quot;&gt;
+                                &lt;div class=&quot;book-cover&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1532012197267-da84d127e765?w=200&amp;h=300&amp;fit=crop&quot; alt=&quot;自己啓発書&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;book-info&quot;&gt;
+                                    &lt;h4&gt;自己啓発・スキルアップ&lt;/h4&gt;
+                                    &lt;p&gt;個人の成長とスキル向上を支援する、実用的な自己啓発書。&lt;/p&gt;
+                                    &lt;span class=&quot;book-count&quot;&gt;約200冊&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;book-section&quot; data-category=&quot;lifestyle&quot;&gt;
+                        &lt;h3&gt;🌿 ライフスタイル&lt;/h3&gt;
+                        &lt;div class=&quot;book-list&quot;&gt;
+                            &lt;div class=&quot;book-item&quot;&gt;
+                                &lt;div class=&quot;book-cover&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=200&amp;h=300&amp;fit=crop&quot; alt=&quot;料理本&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;book-info&quot;&gt;
+                                    &lt;h4&gt;料理・グルメ&lt;/h4&gt;
+                                    &lt;p&gt;世界各国の料理レシピから、食文化に関する読み物まで幅広くカバー。&lt;/p&gt;
+                                    &lt;span class=&quot;book-count&quot;&gt;約150冊&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;book-item&quot;&gt;
+                                &lt;div class=&quot;book-cover&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=200&amp;h=300&amp;fit=crop&quot; alt=&quot;旅行本&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;book-info&quot;&gt;
+                                    &lt;h4&gt;旅行・紀行&lt;/h4&gt;
+                                    &lt;p&gt;世界各地の旅行ガイドから、作家による紀行文まで旅心を刺激する本。&lt;/p&gt;
+                                    &lt;span class=&quot;book-count&quot;&gt;約200冊&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;menu&quot; class=&quot;menu&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Menu&lt;/h2&gt;
+            &lt;div class=&quot;menu-grid&quot;&gt;
+                &lt;div class=&quot;menu-category&quot;&gt;
+                    &lt;h3&gt;☕ Coffee &amp; Tea&lt;/h3&gt;
+                    &lt;div class=&quot;menu-items&quot;&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-info&quot;&gt;
+                                &lt;span class=&quot;item-name&quot;&gt;ドリップコーヒー&lt;/span&gt;
+                                &lt;span class=&quot;item-description&quot;&gt;厳選豆の深い味わい&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;¥480&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-info&quot;&gt;
+                                &lt;span class=&quot;item-name&quot;&gt;カフェラテ&lt;/span&gt;
+                                &lt;span class=&quot;item-description&quot;&gt;ミルクアートでお楽しみください&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;¥530&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-info&quot;&gt;
+                                &lt;span class=&quot;item-name&quot;&gt;読書ブレンド&lt;/span&gt;
+                                &lt;span class=&quot;item-description&quot;&gt;読書にぴったりの優しい味&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;¥550&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-info&quot;&gt;
+                                &lt;span class=&quot;item-name&quot;&gt;紅茶各種&lt;/span&gt;
+                                &lt;span class=&quot;item-description&quot;&gt;ダージリン、アールグレイ等&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;¥450&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-info&quot;&gt;
+                                &lt;span class=&quot;item-name&quot;&gt;ハーブティー&lt;/span&gt;
+                                &lt;span class=&quot;item-description&quot;&gt;季節のブレンド&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;¥500&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;menu-category&quot;&gt;
+                    &lt;h3&gt;🥪 Light Meals&lt;/h3&gt;
+                    &lt;div class=&quot;menu-items&quot;&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-info&quot;&gt;
+                                &lt;span class=&quot;item-name&quot;&gt;クロックムッシュ&lt;/span&gt;
+                                &lt;span class=&quot;item-description&quot;&gt;チーズとハムの定番サンド&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;¥680&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-info&quot;&gt;
+                                &lt;span class=&quot;item-name&quot;&gt;アボカドトースト&lt;/span&gt;
+                                &lt;span class=&quot;item-description&quot;&gt;栄養満点のヘルシーメニュー&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;¥750&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-info&quot;&gt;
+                                &lt;span class=&quot;item-name&quot;&gt;キッシュプレート&lt;/span&gt;
+                                &lt;span class=&quot;item-description&quot;&gt;季節野菜のキッシュ&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;¥890&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-info&quot;&gt;
+                                &lt;span class=&quot;item-name&quot;&gt;スープセット&lt;/span&gt;
+                                &lt;span class=&quot;item-description&quot;&gt;日替わりスープ＋パン&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;¥720&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;menu-category&quot;&gt;
+                    &lt;h3&gt;🍰 Sweets&lt;/h3&gt;
+                    &lt;div class=&quot;menu-items&quot;&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-info&quot;&gt;
+                                &lt;span class=&quot;item-name&quot;&gt;チーズケーキ&lt;/span&gt;
+                                &lt;span class=&quot;item-description&quot;&gt;濃厚なニューヨークスタイル&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;¥520&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-info&quot;&gt;
+                                &lt;span class=&quot;item-name&quot;&gt;ブラウニー&lt;/span&gt;
+                                &lt;span class=&quot;item-description&quot;&gt;ダークチョコレートの深い味&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;¥480&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-info&quot;&gt;
+                                &lt;span class=&quot;item-name&quot;&gt;季節のタルト&lt;/span&gt;
+                                &lt;span class=&quot;item-description&quot;&gt;旬のフルーツを使用&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;¥580&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-item&quot;&gt;
+                            &lt;div class=&quot;item-info&quot;&gt;
+                                &lt;span class=&quot;item-name&quot;&gt;スコーン&lt;/span&gt;
+                                &lt;span class=&quot;item-description&quot;&gt;ジャム＆クリーム付き&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;item-price&quot;&gt;¥450&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;events&quot; class=&quot;events&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Events &amp; Activities&lt;/h2&gt;
+            &lt;div class=&quot;events-grid&quot;&gt;
+                &lt;div class=&quot;event-card&quot;&gt;
+                    &lt;div class=&quot;event-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&amp;h=250&amp;fit=crop&quot; alt=&quot;読書会&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;event-content&quot;&gt;
+                        &lt;div class=&quot;event-date&quot;&gt;毎月第2土曜日&lt;/div&gt;
+                        &lt;h3&gt;月例読書会&lt;/h3&gt;
+                        &lt;p&gt;毎月テーマを決めて、参加者同士で本について語り合います。新しい本との出会いや、異なる視点での読書体験をお楽しみください。&lt;/p&gt;
+                        &lt;div class=&quot;event-details&quot;&gt;
+                            &lt;span&gt;参加費: ¥500（ドリンク付き）&lt;/span&gt;
+                            &lt;span&gt;定員: 15名&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;event-card&quot;&gt;
+                    &lt;div class=&quot;event-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&amp;h=250&amp;fit=crop&quot; alt=&quot;作家トークイベント&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;event-content&quot;&gt;
+                        &lt;div class=&quot;event-date&quot;&gt;不定期開催&lt;/div&gt;
+                        &lt;h3&gt;作家トークイベント&lt;/h3&gt;
+                        &lt;p&gt;著名な作家や専門家をお招きして、作品の背景や創作秘話をお聞きします。質疑応答の時間もあり、直接お話しできます。&lt;/p&gt;
+                        &lt;div class=&quot;event-details&quot;&gt;
+                            &lt;span&gt;参加費: ¥1,500（ドリンク付き）&lt;/span&gt;
+                            &lt;span&gt;定員: 40名&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;event-card&quot;&gt;
+                    &lt;div class=&quot;event-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&amp;h=250&amp;fit=crop&quot; alt=&quot;ブックレビューワークショップ&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;event-content&quot;&gt;
+                        &lt;div class=&quot;event-date&quot;&gt;毎月第4日曜日&lt;/div&gt;
+                        &lt;h3&gt;ブックレビューワークショップ&lt;/h3&gt;
+                        &lt;p&gt;読んだ本の感想を文章にまとめる技術を学びます。書評の書き方から、読書ノートの活用法まで幅広くカバーします。&lt;/p&gt;
+                        &lt;div class=&quot;event-details&quot;&gt;
+                            &lt;span&gt;参加費: ¥800（ドリンク付き）&lt;/span&gt;
+                            &lt;span&gt;定員: 12名&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;event-card&quot;&gt;
+                    &lt;div class=&quot;event-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&amp;h=250&amp;fit=crop&quot; alt=&quot;詩の朗読会&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;event-content&quot;&gt;
+                        &lt;div class=&quot;event-date&quot;&gt;隔月第1金曜日&lt;/div&gt;
+                        &lt;h3&gt;詩の朗読会&lt;/h3&gt;
+                        &lt;p&gt;詩を声に出して読む喜びを分かち合います。お気に入りの詩を持参して朗読したり、他の方の朗読を聞いたり、詩の世界に浸ります。&lt;/p&gt;
+                        &lt;div class=&quot;event-details&quot;&gt;
+                            &lt;span&gt;参加費: ¥600（ドリンク付き）&lt;/span&gt;
+                            &lt;span&gt;定員: 20名&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Visit Us&lt;/h2&gt;
+            &lt;div class=&quot;contact-content&quot;&gt;
+                &lt;div class=&quot;contact-info&quot;&gt;
+                    &lt;h3&gt;Book Café Literati&lt;/h3&gt;
+                    &lt;div class=&quot;info-grid&quot;&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;div class=&quot;info-icon&quot;&gt;📍&lt;/div&gt;
+                            &lt;div class=&quot;info-details&quot;&gt;
+                                &lt;strong&gt;住所&lt;/strong&gt;
+                                &lt;p&gt;〒150-0001 東京都渋谷区神宮前5-46-16&lt;br&gt;イルミナーレ表参道 2F&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;div class=&quot;info-icon&quot;&gt;📞&lt;/div&gt;
+                            &lt;div class=&quot;info-details&quot;&gt;
+                                &lt;strong&gt;電話番号&lt;/strong&gt;
+                                &lt;p&gt;03-5678-9012&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;div class=&quot;info-icon&quot;&gt;🕒&lt;/div&gt;
+                            &lt;div class=&quot;info-details&quot;&gt;
+                                &lt;strong&gt;営業時間&lt;/strong&gt;
+                                &lt;p&gt;平日: 10:00 - 22:00&lt;br&gt;土日祝: 9:00 - 23:00&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;div class=&quot;info-icon&quot;&gt;🚇&lt;/div&gt;
+                            &lt;div class=&quot;info-details&quot;&gt;
+                                &lt;strong&gt;アクセス&lt;/strong&gt;
+                                &lt;p&gt;表参道駅A2出口より徒歩3分&lt;br&gt;明治神宮前駅より徒歩5分&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;div class=&quot;info-icon&quot;&gt;📧&lt;/div&gt;
+                            &lt;div class=&quot;info-details&quot;&gt;
+                                &lt;strong&gt;メール&lt;/strong&gt;
+                                &lt;p&gt;info@literati-cafe.jp&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;div class=&quot;info-icon&quot;&gt;📝&lt;/div&gt;
+                            &lt;div class=&quot;info-details&quot;&gt;
+                                &lt;strong&gt;その他&lt;/strong&gt;
+                                &lt;p&gt;Wi-Fi完備・電源利用可&lt;br&gt;持ち込み読書歓迎&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;store-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;店内の様子&quot;&gt;
+                    &lt;div class=&quot;store-features&quot;&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;span class=&quot;feature-icon&quot;&gt;📶&lt;/span&gt;
+                            &lt;span&gt;Free Wi-Fi&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;span class=&quot;feature-icon&quot;&gt;🔌&lt;/span&gt;
+                            &lt;span&gt;電源利用可&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;span class=&quot;feature-icon&quot;&gt;🤫&lt;/span&gt;
+                            &lt;span&gt;静寂エリア&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;span class=&quot;feature-icon&quot;&gt;💺&lt;/span&gt;
+                            &lt;span&gt;ソファ席&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-brand&quot;&gt;
+                    &lt;h3&gt;Book Café Literati&lt;/h3&gt;
+                    &lt;p&gt;本と珈琲の香る空間&lt;/p&gt;
+                    &lt;div class=&quot;footer-quote&quot;&gt;
+                        &lt;p&gt;&quot;Books are a uniquely portable magic.&quot;&lt;/p&gt;
+                        &lt;cite&gt;- Stephen King&lt;/cite&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-links&quot;&gt;
+                    &lt;div class=&quot;link-group&quot;&gt;
+                        &lt;h4&gt;Menu&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#books&quot;&gt;Books&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;Café Menu&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#events&quot;&gt;Events&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;link-group&quot;&gt;
+                        &lt;h4&gt;Information&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;利用規約&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p&gt;&amp;copy; 2025 Book Café Literati. All rights reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // モバイルメニューのトグル
+document.getElementById(&#x27;menuToggle&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    document.getElementById(&#x27;navMenu&#x27;).classList.toggle(&#x27;active&#x27;);
+});
+
+// スムーススクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+            // モバイルメニューを閉じる
+            document.getElementById(&#x27;navMenu&#x27;).classList.remove(&#x27;active&#x27;);
+        }
+    });
+});
+
+// 書籍カテゴリー切り替え
+function showCategory(category) {
+    // すべてのカテゴリーボタンからactiveクラスを削除
+    document.querySelectorAll(&#x27;.category-btn&#x27;).forEach(btn =&gt; {
+        btn.classList.remove(&#x27;active&#x27;);
+    });
+    
+    // クリックされたボタンにactiveクラスを追加
+    event.target.classList.add(&#x27;active&#x27;);
+    
+    // すべてのセクションを表示/非表示
+    const sections = document.querySelectorAll(&#x27;.book-section&#x27;);
+    sections.forEach(section =&gt; {
+        if (category === &#x27;all&#x27;) {
+            section.classList.remove(&#x27;hidden&#x27;);
+        } else {
+            if (section.dataset.category === category) {
+                section.classList.remove(&#x27;hidden&#x27;);
+            } else {
+                section.classList.add(&#x27;hidden&#x27;);
+            }
+        }
+    });
+}
+
+// スクロール時のヘッダー効果
+let lastScroll = 0;
+window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+    const currentScroll = window.pageYOffset;
+    const header = document.querySelector(&#x27;.header&#x27;);
+    
+    if (currentScroll &gt; 100) {
+        header.style.background = &#x27;rgba(250, 248, 244, 0.98)&#x27;;
+        header.style.boxShadow = &#x27;0 4px 25px rgba(0,0,0,0.12)&#x27;;
+    } else {
+        header.style.background = &#x27;rgba(250, 248, 244, 0.95)&#x27;;
+        header.style.boxShadow = &#x27;0 2px 20px rgba(0,0,0,0.08)&#x27;;
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// 書籍アイテムのホバーエフェクト
+document.querySelectorAll(&#x27;.book-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.transform = &#x27;translateY(-8px) scale(1.02)&#x27;;
+    });
+    
+    item.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.transform = &#x27;translateY(0) scale(1)&#x27;;
+    });
+});
+
+// イベントカードのパララックス効果
+window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+    const eventCards = document.querySelectorAll(&#x27;.event-card&#x27;);
+    
+    eventCards.forEach((card, index) =&gt; {
+        const rect = card.getBoundingClientRect();
+        const speed = 0.05 * (index + 1);
+        
+        if (rect.top &lt; window.innerHeight &amp;&amp; rect.bottom &gt; 0) {
+            const yPos = -(window.pageYOffset * speed);
+            card.style.transform = `translateY(${yPos}px)`;
+        }
+    });
+});
+
+// 読書の名言をランダム表示
+const quotes = [
+    {
+        text: &quot;A room without books is like a body without a soul.&quot;,
+        author: &quot;Cicero&quot;
+    },
+    {
+        text: &quot;Books are a uniquely portable magic.&quot;,
+        author: &quot;Stephen King&quot;
+    },
+    {
+        text: &quot;The reading of all good books is like a conversation with the finest minds of past centuries.&quot;,
+        author: &quot;René Descartes&quot;
+    },
+    {
+        text: &quot;There is no friend as loyal as a book.&quot;,
+        author: &quot;Ernest Hemingway&quot;
+    },
+    {
+        text: &quot;Books fall open, you fall in.&quot;,
+        author: &quot;David T.W. McCord&quot;
+    }
+];
+
+function updateHeroQuote() {
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    const blockquote = document.querySelector(&#x27;.hero-quote blockquote&#x27;);
+    const cite = document.querySelector(&#x27;.hero-quote cite&#x27;);
+    
+    if (blockquote &amp;&amp; cite) {
+        blockquote.textContent = randomQuote.text;
+        cite.textContent = `- ${randomQuote.author}`;
+    }
+}
+
+// ページ読み込み時に名言を設定
+document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() {
+    updateHeroQuote();
+    
+    // 書籍統計のカウントアップアニメーション
+    const statNumbers = document.querySelectorAll(&#x27;.stat-number&#x27;);
+    
+    const observer = new IntersectionObserver((entries) =&gt; {
+        entries.forEach(entry =&gt; {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const finalNumber = parseInt(target.textContent);
+                let currentNumber = 0;
+                const increment = finalNumber / 50;
+                
+                const timer = setInterval(() =&gt; {
+                    currentNumber += increment;
+                    if (currentNumber &gt;= finalNumber) {
+                        target.textContent = finalNumber + (target.textContent.includes(&#x27;+&#x27;) ? &#x27;+&#x27; : &#x27;&#x27;);
+                        clearInterval(timer);
+                    } else {
+                        target.textContent = Math.floor(currentNumber) + (target.textContent.includes(&#x27;+&#x27;) ? &#x27;+&#x27; : &#x27;&#x27;);
+                    }
+                }, 40);
+                
+                observer.unobserve(target);
+            }
+        });
+    });
+    
+    statNumbers.forEach(num =&gt; observer.observe(num));
+});
+
+// メニューアイテムのアニメーション
+document.querySelectorAll(&#x27;.menu-item&#x27;).forEach((item, index) =&gt; {
+    item.style.animationDelay = `${index * 0.1}s`;
+    item.classList.add(&#x27;animate-in&#x27;);
+});
+
+// CSS keyframes for animation
+const style = document.createElement(&#x27;style&#x27;);
+style.textContent = `
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .animate-in {
+        animation: slideInUp 0.6s ease forwards;
+    }
+`;
+document.head.appendChild(style);
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="カフェ - ブックカフェ" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"cafe-bookshop\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"cafe-bookshop\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"cafe-bookshop\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"cafe-bookshop\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"hwcceH7466XEV93o-g8aO\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"cafe-bookshop\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

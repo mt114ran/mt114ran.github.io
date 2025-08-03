@@ -1,0 +1,1430 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ラーメン店&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&#x27;https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap&#x27;);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Noto Sans JP&#x27;, sans-serif;
+    color: #333;
+    background: #fafafa;
+    line-height: 1.6;
+}
+
+.page-wrapper {
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #d32f2f;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: &#x27;Zen Kaku Gothic New&#x27;, sans-serif;
+    font-size: 2.2rem;
+    color: #d32f2f;
+    font-weight: 700;
+}
+
+.logo-tagline {
+    font-size: 0.9rem;
+    color: #666;
+    display: block;
+    text-align: center;
+    font-weight: 500;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 50%;
+    background: #d32f2f;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-menu a:hover {
+    color: #d32f2f;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.news-link {
+    background: #ff5722;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.news-link:hover {
+    background: #f4511e !important;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(211, 47, 47, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero-title {
+    font-family: &#x27;Zen Kaku Gothic New&#x27;, sans-serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    opacity: 0.95;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.feature-tag {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.hero-cta {
+    background: #ff5722;
+    color: white;
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: &#x27;Noto Sans JP&#x27;, sans-serif;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 87, 34, 0.4);
+}
+
+.hero-cta:hover {
+    background: #f4511e;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(255, 87, 34, 0.5);
+}
+
+/* Common Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-family: &#x27;Zen Kaku Gothic New&#x27;, sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+/* Commitment */
+.commitment {
+    background: white;
+}
+
+.commitment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.commitment-item {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: #fafafa;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-top: 4px solid #d32f2f;
+}
+
+.commitment-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.commitment-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.commitment-item h3 {
+    font-size: 1.5rem;
+    color: #d32f2f;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.commitment-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.commitment-desc {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Menu */
+.menu {
+    background: #f5f5f5;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 1rem 2rem;
+    background: white;
+    border: 2px solid #d32f2f;
+    color: #d32f2f;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: &#x27;Noto Sans JP&#x27;, sans-serif;
+}
+
+.tab-button.active,
+.tab-button:hover {
+    background: #d32f2f;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+}
+
+.menu-category {
+    display: none;
+}
+
+.menu-category.active {
+    display: block;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.menu-grid.small {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.menu-item {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item.featured {
+    border: 3px solid #ff5722;
+}
+
+.menu-item.small {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.item-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff5722;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.item-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover .item-image img {
+    transform: scale(1.1);
+}
+
+.item-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.item-info h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.item-info p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.item-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.option {
+    font-size: 0.85rem;
+    color: #888;
+    background: #f5f5f5;
+    padding: 0.3rem 0.8rem;
+    border-radius: 10px;
+}
+
+.item-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #d32f2f;
+    text-align: right;
+}
+
+.small .item-price {
+    text-align: left;
+    margin-left: auto;
+    min-width: 80px;
+}
+
+/* Story */
+.story {
+    background: white;
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.story-lead {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #d32f2f;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.story-main p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.story-signature {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #f5f5f5;
+    border-radius: 10px;
+    border-left: 4px solid #d32f2f;
+}
+
+.signature-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.signature-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.visual-main img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.visual-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #d32f2f;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Shop Info */
+.shop-info {
+    background: #f5f5f5;
+}
+
+.shop-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.info-grid {
+    display: grid;
+    gap: 3rem;
+}
+
+.info-block h3 {
+    font-size: 1.4rem;
+    color: #d32f2f;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hours {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.hour-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.hour-item:last-child {
+    border-bottom: none;
+}
+
+.day {
+    font-weight: 600;
+    color: #333;
+}
+
+.time {
+    color: #666;
+}
+
+.address,
+.access,
+.contact {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.address p,
+.access p,
+.contact p {
+    margin-bottom: 0.5rem;
+}
+
+.tel {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #d32f2f;
+    margin-bottom: 1rem !important;
+}
+
+.shop-images {
+    display: grid;
+    gap: 1rem;
+}
+
+.shop-image {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.shop-image.main img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.shop-image.sub img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* News */
+.news {
+    background: white;
+}
+
+.news-list {
+    display: grid;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-item {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    background: #fafafa;
+    border-radius: 10px;
+    border-left: 4px solid #d32f2f;
+    transition: all 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.news-date {
+    color: #d32f2f;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+.news-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.news-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: #ccc;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.footer-main h3 {
+    font-family: &#x27;Zen Kaku Gothic New&#x27;, sans-serif;
+    font-size: 1.8rem;
+    color: #d32f2f;
+    margin-bottom: 0.5rem;
+}
+
+.footer-main &gt; p {
+    color: #d32f2f;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.footer-address p {
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.footer-hours h4 {
+    color: #d32f2f;
+    margin-bottom: 1rem;
+}
+
+.footer-hours p {
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.copyright {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .commitment-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .story-content,
+    .shop-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .story-signature {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .visual-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .news-item {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;div class=&quot;page-wrapper&quot;&gt;
+        &lt;header class=&quot;header&quot;&gt;
+            &lt;div class=&quot;header-container&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;h1&gt;麺屋 一心&lt;/h1&gt;
+                    &lt;span class=&quot;logo-tagline&quot;&gt;本格とんこつラーメン&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;nav class=&quot;nav&quot;&gt;
+                    &lt;ul class=&quot;nav-menu&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#commitment&quot;&gt;こだわり&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;メニュー&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#story&quot;&gt;店主の想い&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#shop&quot;&gt;店舗情報&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#news&quot; class=&quot;news-link&quot;&gt;お知らせ&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+        &lt;/header&gt;
+
+        &lt;main&gt;
+            &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+                &lt;div class=&quot;hero-visual&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1920&amp;h=800&amp;fit=crop&quot; alt=&quot;とんこつラーメン&quot; class=&quot;hero-image&quot;&gt;
+                    &lt;div class=&quot;hero-overlay&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;hero-content&quot;&gt;
+                    &lt;h2 class=&quot;hero-title&quot;&gt;麺屋 一心&lt;/h2&gt;
+                    &lt;p class=&quot;hero-subtitle&quot;&gt;魂を込めた一杯のラーメン&lt;/p&gt;
+                    &lt;div class=&quot;hero-features&quot;&gt;
+                        &lt;span class=&quot;feature-tag&quot;&gt;豚骨20時間煮込み&lt;/span&gt;
+                        &lt;span class=&quot;feature-tag&quot;&gt;自家製麺&lt;/span&gt;
+                        &lt;span class=&quot;feature-tag&quot;&gt;無添加スープ&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;button class=&quot;hero-cta&quot;&gt;メニューを見る&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;commitment&quot; class=&quot;commitment&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;こだわり&lt;/h2&gt;
+                    &lt;div class=&quot;section-subtitle&quot;&gt;一杯一杯に込める想いと技術&lt;/div&gt;
+                    
+                    &lt;div class=&quot;commitment-grid&quot;&gt;
+                        &lt;div class=&quot;commitment-item&quot;&gt;
+                            &lt;div class=&quot;commitment-icon&quot;&gt;🍜&lt;/div&gt;
+                            &lt;h3&gt;スープ&lt;/h3&gt;
+                            &lt;p class=&quot;commitment-title&quot;&gt;20時間煮込む豚骨スープ&lt;/p&gt;
+                            &lt;p class=&quot;commitment-desc&quot;&gt;厳選した豚骨を20時間以上じっくりと煮込み、コラーゲンたっぷりの濃厚で美味しいスープに仕上げます。化学調味料は一切使用せず、自然の旨味だけを引き出します。&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;commitment-item&quot;&gt;
+                            &lt;div class=&quot;commitment-icon&quot;&gt;🍝&lt;/div&gt;
+                            &lt;h3&gt;麺&lt;/h3&gt;
+                            &lt;p class=&quot;commitment-title&quot;&gt;毎日手打ちの自家製麺&lt;/p&gt;
+                            &lt;p class=&quot;commitment-desc&quot;&gt;国産小麦100%使用の自家製麺。毎朝店内で手打ちし、スープとの絡みを考えた最適な太さと硬さに仕上げています。もちもちとした食感をお楽しみください。&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;commitment-item&quot;&gt;
+                            &lt;div class=&quot;commitment-icon&quot;&gt;🥓&lt;/div&gt;
+                            &lt;h3&gt;チャーシュー&lt;/h3&gt;
+                            &lt;p class=&quot;commitment-title&quot;&gt;秘伝のタレで煮込む&lt;/p&gt;
+                            &lt;p class=&quot;commitment-desc&quot;&gt;厳選した豚バラ肉を秘伝のタレでじっくりと煮込みます。外はしっかり、中はとろける食感。口に入れた瞬間、肉の旨味が広がります。&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;commitment-item&quot;&gt;
+                            &lt;div class=&quot;commitment-icon&quot;&gt;🥬&lt;/div&gt;
+                            &lt;h3&gt;トッピング&lt;/h3&gt;
+                            &lt;p class=&quot;commitment-title&quot;&gt;新鮮な野菜とこだわり食材&lt;/p&gt;
+                            &lt;p class=&quot;commitment-desc&quot;&gt;地元農家から直送の新鮮野菜、半熟玉子、メンマなど、すべてのトッピングにこだわり抜いています。彩りと栄養バランスも考えた一杯です。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;menu&quot; class=&quot;menu&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;メニュー&lt;/h2&gt;
+                    &lt;div class=&quot;section-subtitle&quot;&gt;豊富なラインナップをご用意&lt;/div&gt;
+                    
+                    &lt;div class=&quot;menu-tabs&quot;&gt;
+                        &lt;button class=&quot;tab-button active&quot; data-category=&quot;ramen&quot;&gt;ラーメン&lt;/button&gt;
+                        &lt;button class=&quot;tab-button&quot; data-category=&quot;side&quot;&gt;サイドメニュー&lt;/button&gt;
+                        &lt;button class=&quot;tab-button&quot; data-category=&quot;drink&quot;&gt;ドリンク&lt;/button&gt;
+                        &lt;button class=&quot;tab-button&quot; data-category=&quot;set&quot;&gt;セットメニュー&lt;/button&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;menu-content&quot;&gt;
+                        &lt;div class=&quot;menu-category active&quot; id=&quot;ramen&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item featured&quot;&gt;
+                                    &lt;div class=&quot;item-badge&quot;&gt;人気No.1&lt;/div&gt;
+                                    &lt;div class=&quot;item-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;とんこつラーメン&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;とんこつラーメン&lt;/h3&gt;
+                                        &lt;p&gt;20時間煮込んだ濃厚豚骨スープと自家製麺の絶妙なハーモニー&lt;/p&gt;
+                                        &lt;div class=&quot;item-options&quot;&gt;
+                                            &lt;span class=&quot;option&quot;&gt;硬さ: 普通・硬め・やわらか&lt;/span&gt;
+                                            &lt;span class=&quot;option&quot;&gt;味: 普通・濃いめ・薄め&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥850&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1552611052-33e04de081de?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;チャーシューメン&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;チャーシューメン&lt;/h3&gt;
+                                        &lt;p&gt;秘伝のタレで煮込んだとろとろチャーシューがたっぷり&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥1,100&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1588788740158-18e9c5b5f6a5?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;味噌ラーメン&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;味噌ラーメン&lt;/h3&gt;
+                                        &lt;p&gt;信州味噌を使用したコクのある味噌スープ&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥900&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1617421753170-d9ff0d1a4fda?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;つけ麺&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;濃厚つけ麺&lt;/h3&gt;
+                                        &lt;p&gt;極太麺と濃厚スープの最強コンビ&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥980&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1506806732259-39c2d0268443?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;辛味噌ラーメン&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;辛味噌ラーメン&lt;/h3&gt;
+                                        &lt;p&gt;特製辛味噌で仕上げたピリ辛スープ&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥950&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;醤油ラーメン&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;醤油ラーメン&lt;/h3&gt;
+                                        &lt;p&gt;あっさりとした醤油ベースの伝統的な味&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥800&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-category&quot; id=&quot;side&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item small&quot;&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;餃子（5個）&lt;/h3&gt;
+                                        &lt;p&gt;パリッとした皮に肉汁たっぷり&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥400&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item small&quot;&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;チャーハン&lt;/h3&gt;
+                                        &lt;p&gt;パラパラに炒めた絶品チャーハン&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥650&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item small&quot;&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;唐揚げ（4個）&lt;/h3&gt;
+                                        &lt;p&gt;ジューシーで柔らかい鶏の唐揚げ&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥500&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item small&quot;&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;半熟煮玉子&lt;/h3&gt;
+                                        &lt;p&gt;秘伝のタレに漬け込んだ味玉&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥150&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item small&quot;&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;メンマ&lt;/h3&gt;
+                                        &lt;p&gt;コリコリ食感の自家製メンマ&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥200&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item small&quot;&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;のり&lt;/h3&gt;
+                                        &lt;p&gt;香り豊かな海苔（3枚）&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥100&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-category&quot; id=&quot;drink&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item small&quot;&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;生ビール&lt;/h3&gt;
+                                        &lt;p&gt;キンキンに冷えたビール&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥450&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item small&quot;&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;ウーロン茶&lt;/h3&gt;
+                                        &lt;p&gt;さっぱりとしたウーロン茶&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥250&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item small&quot;&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;コーラ&lt;/h3&gt;
+                                        &lt;p&gt;炭酸がシュワッと爽快&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥300&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item small&quot;&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;オレンジジュース&lt;/h3&gt;
+                                        &lt;p&gt;100%果汁のフレッシュジュース&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥350&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-category&quot; id=&quot;set&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;ラーメン＋餃子セット&lt;/h3&gt;
+                                        &lt;p&gt;お好みのラーメン＋餃子5個&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;+¥300&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;ラーメン＋チャーハンセット&lt;/h3&gt;
+                                        &lt;p&gt;お好みのラーメン＋チャーハン&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;+¥500&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-info&quot;&gt;
+                                        &lt;h3&gt;ラーメン＋餃子＋ライスセット&lt;/h3&gt;
+                                        &lt;p&gt;お好みのラーメン＋餃子5個＋ライス&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;+¥400&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;story&quot; class=&quot;story&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;story-content&quot;&gt;
+                        &lt;div class=&quot;story-text&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;店主の想い&lt;/h2&gt;
+                            &lt;div class=&quot;section-subtitle&quot;&gt;一杯のラーメンに込める魂&lt;/div&gt;
+                            
+                            &lt;div class=&quot;story-main&quot;&gt;
+                                &lt;p class=&quot;story-lead&quot;&gt;「お客様に本当に美味しいラーメンを食べてもらいたい」&lt;/p&gt;
+                                &lt;p&gt;そんな想いで始めた麺屋一心。修行時代から20年以上、ラーメン作りに情熱を注いできました。&lt;/p&gt;
+                                &lt;p&gt;毎朝4時から仕込みを始め、豚骨を20時間以上煮込み、麺を一本一本手で打つ。手間暇かけることで生まれる本物の味を、多くの方に知ってもらいたいのです。&lt;/p&gt;
+                                &lt;p&gt;化学調味料に頼らず、素材の持つ自然な旨味だけで勝負する。それが私のポリシーです。&lt;/p&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class=&quot;story-signature&quot;&gt;
+                                &lt;p class=&quot;signature-name&quot;&gt;店主 田中 一郎&lt;/p&gt;
+                                &lt;div class=&quot;signature-image&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=150&amp;h=150&amp;fit=crop&quot; alt=&quot;店主&quot;&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;story-visual&quot;&gt;
+                            &lt;div class=&quot;visual-main&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&amp;h=800&amp;fit=crop&quot; alt=&quot;ラーメン調理風景&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;visual-stats&quot;&gt;
+                                &lt;div class=&quot;stat-item&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;20+&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;年の経験&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;stat-item&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;20h&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;スープ煮込み時間&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;stat-item&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;100%&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;手作り&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;shop&quot; class=&quot;shop-info&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;shop-content&quot;&gt;
+                        &lt;div class=&quot;shop-details&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;店舗情報&lt;/h2&gt;
+                            &lt;div class=&quot;section-subtitle&quot;&gt;アクセス・営業時間&lt;/div&gt;
+                            
+                            &lt;div class=&quot;info-grid&quot;&gt;
+                                &lt;div class=&quot;info-block&quot;&gt;
+                                    &lt;h3&gt;営業時間&lt;/h3&gt;
+                                    &lt;div class=&quot;hours&quot;&gt;
+                                        &lt;div class=&quot;hour-item&quot;&gt;
+                                            &lt;span class=&quot;day&quot;&gt;平日&lt;/span&gt;
+                                            &lt;span class=&quot;time&quot;&gt;11:30〜15:00 / 18:00〜23:00&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;hour-item&quot;&gt;
+                                            &lt;span class=&quot;day&quot;&gt;土日祝&lt;/span&gt;
+                                            &lt;span class=&quot;time&quot;&gt;11:30〜23:00（通し営業）&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;hour-item&quot;&gt;
+                                            &lt;span class=&quot;day&quot;&gt;定休日&lt;/span&gt;
+                                            &lt;span class=&quot;time&quot;&gt;月曜日（祝日の場合は翌日）&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                
+                                &lt;div class=&quot;info-block&quot;&gt;
+                                    &lt;h3&gt;アクセス&lt;/h3&gt;
+                                    &lt;div class=&quot;address&quot;&gt;
+                                        &lt;p&gt;〒150-0002&lt;/p&gt;
+                                        &lt;p&gt;東京都渋谷区渋谷2-10-5&lt;/p&gt;
+                                        &lt;p&gt;渋谷センタービル1F&lt;/p&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;access&quot;&gt;
+                                        &lt;p&gt;JR渋谷駅 東口より徒歩3分&lt;/p&gt;
+                                        &lt;p&gt;地下鉄渋谷駅 C2出口より徒歩1分&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                
+                                &lt;div class=&quot;info-block&quot;&gt;
+                                    &lt;h3&gt;お問い合わせ&lt;/h3&gt;
+                                    &lt;div class=&quot;contact&quot;&gt;
+                                        &lt;p class=&quot;tel&quot;&gt;TEL: 03-1234-5678&lt;/p&gt;
+                                        &lt;p&gt;席数: カウンター8席、テーブル4席（計16席）&lt;/p&gt;
+                                        &lt;p&gt;駐車場: なし（近隣コインパーキングをご利用ください）&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;shop-visual&quot;&gt;
+                            &lt;div class=&quot;shop-images&quot;&gt;
+                                &lt;div class=&quot;shop-image main&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;店内の様子&quot;&gt;
+                                    &lt;div class=&quot;image-label&quot;&gt;店内の様子&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;shop-image sub&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1524634126442-357e0eac3c14?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;店舗外観&quot;&gt;
+                                    &lt;div class=&quot;image-label&quot;&gt;店舗外観&lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;news&quot; class=&quot;news&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;お知らせ&lt;/h2&gt;
+                    &lt;div class=&quot;section-subtitle&quot;&gt;最新情報をお届け&lt;/div&gt;
+                    
+                    &lt;div class=&quot;news-list&quot;&gt;
+                        &lt;div class=&quot;news-item&quot;&gt;
+                            &lt;div class=&quot;news-date&quot;&gt;2025.01.15&lt;/div&gt;
+                            &lt;div class=&quot;news-content&quot;&gt;
+                                &lt;h3&gt;新メニュー「濃厚海老つけ麺」登場！&lt;/h3&gt;
+                                &lt;p&gt;海老の旨味をぎゅっと凝縮した新しいつけ麺をご用意いたしました。期間限定での提供となります。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;news-item&quot;&gt;
+                            &lt;div class=&quot;news-date&quot;&gt;2025.01.08&lt;/div&gt;
+                            &lt;div class=&quot;news-content&quot;&gt;
+                                &lt;h3&gt;営業時間変更のお知らせ&lt;/h3&gt;
+                                &lt;p&gt;1月より土日祝日は通し営業を開始いたします。平日の営業時間に変更はございません。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;news-item&quot;&gt;
+                            &lt;div class=&quot;news-date&quot;&gt;2024.12.28&lt;/div&gt;
+                            &lt;div class=&quot;news-content&quot;&gt;
+                                &lt;h3&gt;年末年始の営業について&lt;/h3&gt;
+                                &lt;p&gt;12月31日〜1月3日は休業とさせていただきます。1月4日より通常営業いたします。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;news-item&quot;&gt;
+                            &lt;div class=&quot;news-date&quot;&gt;2024.12.20&lt;/div&gt;
+                            &lt;div class=&quot;news-content&quot;&gt;
+                                &lt;h3&gt;忘年会シーズンの混雑について&lt;/h3&gt;
+                                &lt;p&gt;12月は混雑が予想されます。お待ちいただく場合がございますが、ご了承ください。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+
+        &lt;footer class=&quot;footer&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-main&quot;&gt;
+                    &lt;h3&gt;麺屋 一心&lt;/h3&gt;
+                    &lt;p&gt;本格とんこつラーメン&lt;/p&gt;
+                    &lt;div class=&quot;footer-address&quot;&gt;
+                        &lt;p&gt;〒150-0002 東京都渋谷区渋谷2-10-5 渋谷センタービル1F&lt;/p&gt;
+                        &lt;p&gt;TEL: 03-1234-5678&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-hours&quot;&gt;
+                    &lt;h4&gt;営業時間&lt;/h4&gt;
+                    &lt;p&gt;平日: 11:30〜15:00 / 18:00〜23:00&lt;/p&gt;
+                    &lt;p&gt;土日祝: 11:30〜23:00&lt;/p&gt;
+                    &lt;p&gt;定休日: 月曜日&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p class=&quot;copyright&quot;&gt;© 2025 麺屋一心. All rights reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+
+
+&lt;script&gt;
+    // タブ機能
+document.querySelectorAll(&#x27;.tab-button&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        // すべてのタブボタンからactiveクラスを削除
+        document.querySelectorAll(&#x27;.tab-button&#x27;).forEach(btn =&gt; {
+            btn.classList.remove(&#x27;active&#x27;);
+        });
+        
+        // すべてのメニューカテゴリを非表示
+        document.querySelectorAll(&#x27;.menu-category&#x27;).forEach(category =&gt; {
+            category.classList.remove(&#x27;active&#x27;);
+        });
+        
+        // クリックされたタブボタンにactiveクラスを追加
+        this.classList.add(&#x27;active&#x27;);
+        
+        // 対応するカテゴリを表示
+        const categoryId = this.getAttribute(&#x27;data-category&#x27;);
+        document.getElementById(categoryId).classList.add(&#x27;active&#x27;);
+        
+        // 小さなメニューアイテム用のグリッドクラスを適用
+        const menuGrid = document.querySelector(`#${categoryId} .menu-grid`);
+        if (categoryId === &#x27;side&#x27; || categoryId === &#x27;drink&#x27;) {
+            menuGrid.classList.add(&#x27;small&#x27;);
+        } else {
+            menuGrid.classList.remove(&#x27;small&#x27;);
+        }
+    });
+});
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// ヒーローCTAボタン
+document.querySelector(&#x27;.hero-cta&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    const menuSection = document.querySelector(&#x27;#menu&#x27;);
+    const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+    const targetPosition = menuSection.offsetTop - headerHeight;
+    window.scrollTo({
+        top: targetPosition,
+        behavior: &#x27;smooth&#x27;
+    });
+});
+
+// ヘッダーのスクロール効果
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const header = document.querySelector(&#x27;.header&#x27;);
+    if (window.scrollY &gt; 100) {
+        header.style.background = &#x27;rgba(255, 255, 255, 0.98)&#x27;;
+        header.style.boxShadow = &#x27;0 2px 30px rgba(0, 0, 0, 0.15)&#x27;;
+    } else {
+        header.style.background = &#x27;rgba(255, 255, 255, 0.95)&#x27;;
+        header.style.boxShadow = &#x27;0 2px 20px rgba(0, 0, 0, 0.1)&#x27;;
+    }
+});
+
+// メニューアイテムのアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -50px 0px&#x27;
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = &#x27;1&#x27;;
+            entry.target.style.transform = &#x27;translateY(0)&#x27;;
+        }
+    });
+}, observerOptions);
+
+// アニメーション対象要素の初期化
+document.querySelectorAll(&#x27;.menu-item, .commitment-item, .news-item&#x27;).forEach(item =&gt; {
+    item.style.opacity = &#x27;0&#x27;;
+    item.style.transform = &#x27;translateY(30px)&#x27;;
+    item.style.transition = &#x27;all 0.6s ease&#x27;;
+    observer.observe(item);
+});
+
+// こだわりアイテムの特別なホバー効果
+document.querySelectorAll(&#x27;.commitment-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;mouseenter&#x27;, function() {
+        const icon = this.querySelector(&#x27;.commitment-icon&#x27;);
+        icon.style.transform = &#x27;scale(1.2) rotate(10deg)&#x27;;
+        icon.style.transition = &#x27;transform 0.3s ease&#x27;;
+    });
+    
+    item.addEventListener(&#x27;mouseleave&#x27;, function() {
+        const icon = this.querySelector(&#x27;.commitment-icon&#x27;);
+        icon.style.transform = &#x27;scale(1) rotate(0deg)&#x27;;
+    });
+});
+
+// ニュースアイテムのクリック効果
+document.querySelectorAll(&#x27;.news-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;click&#x27;, function() {
+        // 簡単なフィードバック
+        this.style.background = &#x27;#f0f8ff&#x27;;
+        this.style.borderLeftColor = &#x27;#ff5722&#x27;;
+        this.style.transition = &#x27;all 0.3s ease&#x27;;
+        
+        setTimeout(() =&gt; {
+            this.style.background = &#x27;#fafafa&#x27;;
+            this.style.borderLeftColor = &#x27;#d32f2f&#x27;;
+        }, 500);
+    });
+});
+
+// 統計数値のカウントアップアニメーション
+function animateStats() {
+    const statNumbers = document.querySelectorAll(&#x27;.stat-number&#x27;);
+    
+    statNumbers.forEach(stat =&gt; {
+        const text = stat.textContent;
+        const number = parseInt(text.replace(/[^0-9]/g, &#x27;&#x27;));
+        const suffix = text.replace(/[0-9]/g, &#x27;&#x27;);
+        
+        if (number &gt; 0) {
+            let current = 0;
+            const increment = number / 50;
+            const timer = setInterval(() =&gt; {
+                current += increment;
+                if (current &gt;= number) {
+                    stat.textContent = number + suffix;
+                    clearInterval(timer);
+                } else {
+                    stat.textContent = Math.floor(current) + suffix;
+                }
+            }, 30);
+        }
+    });
+}
+
+// 統計セクションが見えたときにアニメーション開始
+const statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            animateStats();
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const statsSection = document.querySelector(&#x27;.visual-stats&#x27;);
+if (statsSection) {
+    statsObserver.observe(statsSection);
+}
+
+// 店舗画像のライトボックス風効果
+document.querySelectorAll(&#x27;.shop-image img&#x27;).forEach(img =&gt; {
+    img.addEventListener(&#x27;click&#x27;, function() {
+        const label = this.parentElement.querySelector(&#x27;.image-label&#x27;).textContent;
+        alert(`${label}の詳細画像を表示します（実装予定）`);
+    });
+    
+    // カーソルポインターに変更
+    img.style.cursor = &#x27;pointer&#x27;;
+});
+
+// 電話番号のクリック時のフィードバック
+document.querySelector(&#x27;.tel&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    this.style.transform = &#x27;scale(1.05)&#x27;;
+    this.style.transition = &#x27;transform 0.2s ease&#x27;;
+    
+    setTimeout(() =&gt; {
+        this.style.transform = &#x27;scale(1)&#x27;;
+    }, 200);
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="ラーメン店" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"restaurant-ramen\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"restaurant-ramen\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"restaurant-ramen\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"restaurant-ramen\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"122ekY66V2yHUHImW_BxH\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"restaurant-ramen\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

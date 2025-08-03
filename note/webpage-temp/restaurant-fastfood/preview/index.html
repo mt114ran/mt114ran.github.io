@@ -1,0 +1,2285 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ファストフード店&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&#x27;https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;family=Fredoka+One:wght@400&amp;display=swap&#x27;);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Nunito&#x27;, sans-serif;
+    color: #2c3e50;
+    background: #fff;
+    line-height: 1.6;
+}
+
+.page-container {
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #e74c3c;
+}
+
+.header-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-burger {
+    font-size: 3rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.brand-info h1 {
+    font-family: &#x27;Fredoka One&#x27;, cursive;
+    font-size: 2.5rem;
+    color: #e74c3c;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.brand-tagline {
+    font-size: 0.9rem;
+    color: #f39c12;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-list a:hover {
+    color: #e74c3c;
+    transform: translateY(-2px);
+}
+
+.order-btn {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white !important;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); }
+    50% { box-shadow: 0 4px 25px rgba(231, 76, 60, 0.6); }
+    100% { box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); }
+}
+
+.order-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+}
+
+/* Hero */
+.hero {
+    margin-top: 80px;
+    position: relative;
+}
+
+.hero-slider {
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.8) 0%, rgba(192, 57, 43, 0.6) 100%);
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    max-width: 600px;
+    padding: 0 2rem;
+}
+
+.slide-title {
+    font-family: &#x27;Fredoka One&#x27;, cursive;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.slide-description {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+}
+
+.slide-price {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #f1c40f;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slide-cta {
+    background: #f1c40f;
+    color: #2c3e50;
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: &#x27;Nunito&#x27;, sans-serif;
+    font-weight: 800;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(241, 196, 15, 0.4);
+}
+
+.slide-cta:hover {
+    background: #f39c12;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(241, 196, 15, 0.5);
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    background: #ecf0f1;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.feature-card p {
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Common Styles */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-family: &#x27;Fredoka One&#x27;, cursive;
+    font-size: 3rem;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Menu */
+.menu {
+    background: #f8f9fa;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.menu-tab {
+    padding: 1rem 2rem;
+    background: white;
+    border: 3px solid #e74c3c;
+    color: #e74c3c;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: &#x27;Nunito&#x27;, sans-serif;
+}
+
+.menu-tab.active,
+.menu-tab:hover {
+    background: #e74c3c;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(231, 76, 60, 0.4);
+}
+
+.menu-category {
+    display: none;
+}
+
+.menu-category.active {
+    display: block;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.sets-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.menu-item {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item.popular,
+.menu-item.new {
+    border: 3px solid #f1c40f;
+}
+
+.item-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e74c3c;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.new-badge {
+    background: #27ae60;
+}
+
+.item-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover .item-image img {
+    transform: scale(1.1);
+}
+
+.item-details {
+    padding: 2rem;
+}
+
+.item-details h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #2c3e50;
+}
+
+.item-desc {
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.item-specs {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.calorie {
+    background: #3498db;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.spicy-level {
+    font-size: 1rem;
+}
+
+.size-options {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.size {
+    background: #ecf0f1;
+    color: #2c3e50;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.item-price {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+}
+
+.add-cart-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+    color: #2c3e50;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: &#x27;Nunito&#x27;, sans-serif;
+}
+
+.add-cart-btn:hover {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    transform: scale(1.02);
+}
+
+/* Set Menu */
+.set-item {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.set-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.set-item.popular {
+    border: 3px solid #f1c40f;
+}
+
+.set-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.set-header h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.savings {
+    background: #e74c3c;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.set-contents {
+    margin-bottom: 2rem;
+}
+
+.set-main,
+.set-side,
+.set-drink {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #ecf0f1;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.set-drink {
+    border-bottom: none;
+}
+
+.set-price {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #95a5a6;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.set-price-main {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #e74c3c;
+}
+
+/* Deals */
+.deals {
+    background: white;
+}
+
+.deals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.deal-card {
+    background: #f8f9fa;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.deal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.deal-card.hot {
+    border: 3px solid #e74c3c;
+}
+
+.deal-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #e74c3c;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.deal-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.deal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.deal-card:hover .deal-image img {
+    transform: scale(1.1);
+}
+
+.deal-content {
+    padding: 2rem;
+}
+
+.deal-content h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.deal-desc {
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.deal-period {
+    color: #e74c3c;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.deal-price {
+    font-size: 1.5rem;
+    color: #27ae60;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.deal-condition {
+    color: #95a5a6;
+    font-size: 0.9rem;
+}
+
+/* Delivery */
+.delivery {
+    background: #f8f9fa;
+}
+
+.delivery-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.delivery-lead {
+    font-size: 1.3rem;
+    color: #7f8c8d;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.delivery-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.option-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.option-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.option-card h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.option-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.option-features li {
+    padding: 0.5rem 0;
+    color: #7f8c8d;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.option-features li:last-child {
+    border-bottom: none;
+}
+
+.option-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: &#x27;Nunito&#x27;, sans-serif;
+}
+
+.delivery-btn {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+}
+
+.takeout-btn {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+    color: white;
+}
+
+.option-btn:hover {
+    transform: scale(1.05);
+}
+
+.mobile-app {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-app h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.mobile-app p {
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.app-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.app-btn {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid #2c3e50;
+    background: transparent;
+    color: #2c3e50;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: &#x27;Nunito&#x27;, sans-serif;
+}
+
+.app-btn:hover {
+    background: #2c3e50;
+    color: white;
+}
+
+.visual-main img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 25px;
+    margin-bottom: 2rem;
+}
+
+.delivery-stats {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #e74c3c;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-top: 0.3rem;
+}
+
+/* Stores */
+.stores {
+    background: white;
+}
+
+.store-finder {
+    margin-bottom: 3rem;
+}
+
+.finder-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.location-input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: 2px solid #ecf0f1;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-family: &#x27;Nunito&#x27;, sans-serif;
+}
+
+.location-input:focus {
+    outline: none;
+    border-color: #e74c3c;
+}
+
+.search-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: &#x27;Nunito&#x27;, sans-serif;
+}
+
+.search-btn:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+.stores-list {
+    display: grid;
+    gap: 2rem;
+}
+
+.store-card {
+    background: #f8f9fa;
+    border-radius: 25px;
+    padding: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.store-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.store-info {
+    flex: 1;
+}
+
+.store-card h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.store-address {
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+}
+
+.store-details {
+    margin-bottom: 2rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.detail-value {
+    color: #7f8c8d;
+}
+
+.store-services {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.service-tag {
+    background: #e74c3c;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.store-image {
+    flex-shrink: 0;
+    width: 200px;
+}
+
+.store-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Contact */
+.contact {
+    background: #f8f9fa;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.contact-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-card h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.contact-info {
+    margin-bottom: 2rem;
+}
+
+.phone-number {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #e74c3c;
+    margin-bottom: 0.5rem;
+}
+
+.phone-hours,
+.response-time,
+.chat-hours {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.email-address {
+    font-size: 1.2rem;
+    color: #3498db;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.chat-btn {
+    background: #27ae60;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: &#x27;Nunito&#x27;, sans-serif;
+}
+
+.chat-btn:hover {
+    background: #229954;
+    transform: scale(1.05);
+}
+
+.contact-card p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* Order Section */
+.order-section {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    text-align: center;
+}
+
+.order-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.order-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.order-buttons .order-btn {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 1.5rem 3rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: &#x27;Nunito&#x27;, sans-serif;
+}
+
+.order-buttons .order-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+    background: #2c3e50;
+    color: #bdc3c7;
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand {
+    max-width: 400px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo .logo-burger {
+    font-size: 2.5rem;
+}
+
+.footer-logo h3 {
+    font-family: &#x27;Fredoka One&#x27;, cursive;
+    font-size: 2rem;
+    color: #e74c3c;
+}
+
+.footer-logo span {
+    font-size: 0.8rem;
+    color: #f39c12;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-description {
+    line-height: 1.7;
+    color: #95a5a6;
+}
+
+.link-column h4 {
+    color: #e74c3c;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.link-column ul {
+    list-style: none;
+}
+
+.link-column li {
+    margin-bottom: 0.8rem;
+}
+
+.link-column a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-column a:hover {
+    color: #e74c3c;
+}
+
+.social-links {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.social-link {
+    color: #bdc3c7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #e74c3c;
+}
+
+.footer-bottom {
+    border-top: 1px solid #34495e;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-legal a {
+    color: #95a5a6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: #bdc3c7;
+}
+
+.copyright {
+    color: #95a5a6;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .slide-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+    
+    .menu-grid,
+    .sets-grid,
+    .deals-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .delivery-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .delivery-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .app-buttons {
+        flex-direction: column;
+    }
+    
+    .store-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .store-image {
+        width: 100%;
+    }
+    
+    .order-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .footer-legal {
+        justify-content: center;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;div class=&quot;page-container&quot;&gt;
+        &lt;header class=&quot;header&quot;&gt;
+            &lt;div class=&quot;header-wrapper&quot;&gt;
+                &lt;div class=&quot;brand&quot;&gt;
+                    &lt;div class=&quot;brand-logo&quot;&gt;
+                        &lt;div class=&quot;logo-burger&quot;&gt;🍔&lt;/div&gt;
+                        &lt;div class=&quot;brand-info&quot;&gt;
+                            &lt;h1&gt;Burger King&lt;/h1&gt;
+                            &lt;span class=&quot;brand-tagline&quot;&gt;Fast &amp; Delicious&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;nav class=&quot;navbar&quot;&gt;
+                    &lt;ul class=&quot;nav-list&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;メニュー&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#deals&quot;&gt;お得情報&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#delivery&quot;&gt;デリバリー&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#stores&quot;&gt;店舗&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#order&quot; class=&quot;order-btn&quot;&gt;今すぐ注文&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+        &lt;/header&gt;
+
+        &lt;main&gt;
+            &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+                &lt;div class=&quot;hero-slider&quot;&gt;
+                    &lt;div class=&quot;slide active&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=1920&amp;h=800&amp;fit=crop&quot; alt=&quot;ビッグバーガー&quot; class=&quot;slide-image&quot;&gt;
+                        &lt;div class=&quot;slide-overlay&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;slide-content&quot;&gt;
+                            &lt;h2 class=&quot;slide-title&quot;&gt;NEW! ビッグベーコンバーガー&lt;/h2&gt;
+                            &lt;p class=&quot;slide-description&quot;&gt;厚切りベーコンとジューシーパティの最強コンビ&lt;/p&gt;
+                            &lt;div class=&quot;slide-price&quot;&gt;¥690〜&lt;/div&gt;
+                            &lt;button class=&quot;slide-cta&quot;&gt;今すぐ注文&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;hero-features&quot;&gt;
+                    &lt;div class=&quot;feature-card&quot;&gt;
+                        &lt;div class=&quot;feature-icon&quot;&gt;🚚&lt;/div&gt;
+                        &lt;h3&gt;デリバリー&lt;/h3&gt;
+                        &lt;p&gt;30分以内にお届け&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;feature-card&quot;&gt;
+                        &lt;div class=&quot;feature-icon&quot;&gt;📱&lt;/div&gt;
+                        &lt;h3&gt;モバイルオーダー&lt;/h3&gt;
+                        &lt;p&gt;アプリで簡単注文&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;feature-card&quot;&gt;
+                        &lt;div class=&quot;feature-icon&quot;&gt;⏰&lt;/div&gt;
+                        &lt;h3&gt;24時間営業&lt;/h3&gt;
+                        &lt;p&gt;いつでもお待ちしています&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;menu&quot; class=&quot;menu&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;section-header&quot;&gt;
+                        &lt;h2 class=&quot;section-title&quot;&gt;メニュー&lt;/h2&gt;
+                        &lt;p class=&quot;section-subtitle&quot;&gt;こだわりの美味しさをお手頃価格で&lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;menu-tabs&quot;&gt;
+                        &lt;button class=&quot;menu-tab active&quot; data-category=&quot;burgers&quot;&gt;🍔 バーガー&lt;/button&gt;
+                        &lt;button class=&quot;menu-tab&quot; data-category=&quot;chicken&quot;&gt;🍗 チキン&lt;/button&gt;
+                        &lt;button class=&quot;menu-tab&quot; data-category=&quot;sides&quot;&gt;🍟 サイド&lt;/button&gt;
+                        &lt;button class=&quot;menu-tab&quot; data-category=&quot;drinks&quot;&gt;🥤 ドリンク&lt;/button&gt;
+                        &lt;button class=&quot;menu-tab&quot; data-category=&quot;desserts&quot;&gt;🍰 デザート&lt;/button&gt;
+                        &lt;button class=&quot;menu-tab&quot; data-category=&quot;sets&quot;&gt;📦 セット&lt;/button&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;menu-content&quot;&gt;
+                        &lt;div class=&quot;menu-category active&quot; id=&quot;burgers&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item popular&quot;&gt;
+                                    &lt;div class=&quot;item-badge&quot;&gt;人気No.1&lt;/div&gt;
+                                    &lt;div class=&quot;item-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;ビッグベーコンバーガー&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;ビッグベーコンバーガー&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;厚切りベーコン、ビーフパティ、レタス、トマト、オニオン&lt;/p&gt;
+                                        &lt;div class=&quot;item-specs&quot;&gt;
+                                            &lt;span class=&quot;calorie&quot;&gt;650kcal&lt;/span&gt;
+                                            &lt;span class=&quot;spicy-level&quot;&gt;🌶️&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥690&lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;クラシックバーガー&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;クラシックバーガー&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;シンプルで飽きのこない定番の味&lt;/p&gt;
+                                        &lt;div class=&quot;item-specs&quot;&gt;
+                                            &lt;span class=&quot;calorie&quot;&gt;480kcal&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥490&lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item new&quot;&gt;
+                                    &lt;div class=&quot;item-badge new-badge&quot;&gt;NEW&lt;/div&gt;
+                                    &lt;div class=&quot;item-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;スパイシーバーガー&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;スパイシーチーズバーガー&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;ピリ辛ソースとチーズの絶妙な組み合わせ&lt;/p&gt;
+                                        &lt;div class=&quot;item-specs&quot;&gt;
+                                            &lt;span class=&quot;calorie&quot;&gt;590kcal&lt;/span&gt;
+                                            &lt;span class=&quot;spicy-level&quot;&gt;🌶️🌶️🌶️&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥620&lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;ダブルチーズバーガー&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;ダブルチーズバーガー&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;ダブルパティとチーズでボリューム満点&lt;/p&gt;
+                                        &lt;div class=&quot;item-specs&quot;&gt;
+                                            &lt;span class=&quot;calorie&quot;&gt;780kcal&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥790&lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-category&quot; id=&quot;chicken&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;フライドチキン（2ピース）&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;サクサクの衣とジューシーなチキン&lt;/p&gt;
+                                        &lt;div class=&quot;item-specs&quot;&gt;
+                                            &lt;span class=&quot;calorie&quot;&gt;420kcal&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥590&lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;チキンナゲット（6個）&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;お子様にも大人気のナゲット&lt;/p&gt;
+                                        &lt;div class=&quot;item-specs&quot;&gt;
+                                            &lt;span class=&quot;calorie&quot;&gt;350kcal&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥390&lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;スパイシーウィング（4本）&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;ピリ辛ソースが効いた手羽先&lt;/p&gt;
+                                        &lt;div class=&quot;item-specs&quot;&gt;
+                                            &lt;span class=&quot;calorie&quot;&gt;480kcal&lt;/span&gt;
+                                            &lt;span class=&quot;spicy-level&quot;&gt;🌶️🌶️&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥490&lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-category&quot; id=&quot;sides&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;フレンチフライ&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;カリカリ食感の定番フライドポテト&lt;/p&gt;
+                                        &lt;div class=&quot;size-options&quot;&gt;
+                                            &lt;span class=&quot;size&quot;&gt;S ¥190&lt;/span&gt;
+                                            &lt;span class=&quot;size&quot;&gt;M ¥250&lt;/span&gt;
+                                            &lt;span class=&quot;size&quot;&gt;L ¥310&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;オニオンリング&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;サクサクの衣に包まれた甘いオニオン&lt;/p&gt;
+                                        &lt;div class=&quot;item-specs&quot;&gt;
+                                            &lt;span class=&quot;calorie&quot;&gt;290kcal&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥290&lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;コールスロー&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;さっぱりとしたキャベツサラダ&lt;/p&gt;
+                                        &lt;div class=&quot;item-specs&quot;&gt;
+                                            &lt;span class=&quot;calorie&quot;&gt;120kcal&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥190&lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-category&quot; id=&quot;drinks&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;コーラ&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;爽快な炭酸の効いたコーラ&lt;/p&gt;
+                                        &lt;div class=&quot;size-options&quot;&gt;
+                                            &lt;span class=&quot;size&quot;&gt;S ¥150&lt;/span&gt;
+                                            &lt;span class=&quot;size&quot;&gt;M ¥200&lt;/span&gt;
+                                            &lt;span class=&quot;size&quot;&gt;L ¥250&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;オレンジジュース&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;100%果汁のフレッシュジュース&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥250&lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;コーヒー&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;香り豊かなブレンドコーヒー&lt;/p&gt;
+                                        &lt;div class=&quot;size-options&quot;&gt;
+                                            &lt;span class=&quot;size&quot;&gt;S ¥180&lt;/span&gt;
+                                            &lt;span class=&quot;size&quot;&gt;M ¥220&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-category&quot; id=&quot;desserts&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;アップルパイ&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;サクサクのパイ生地と甘いりんご&lt;/p&gt;
+                                        &lt;div class=&quot;item-specs&quot;&gt;
+                                            &lt;span class=&quot;calorie&quot;&gt;280kcal&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥250&lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;ソフトクリーム&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;なめらかで濃厚なバニラソフト&lt;/p&gt;
+                                        &lt;div class=&quot;item-specs&quot;&gt;
+                                            &lt;span class=&quot;calorie&quot;&gt;190kcal&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥190&lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;チョコレートクッキー&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;チョコチップたっぷりのクッキー&lt;/p&gt;
+                                        &lt;div class=&quot;item-specs&quot;&gt;
+                                            &lt;span class=&quot;calorie&quot;&gt;320kcal&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥220&lt;/div&gt;
+                                        &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-category&quot; id=&quot;sets&quot;&gt;
+                            &lt;div class=&quot;menu-grid sets-grid&quot;&gt;
+                                &lt;div class=&quot;set-item&quot;&gt;
+                                    &lt;div class=&quot;set-header&quot;&gt;
+                                        &lt;h3&gt;ビッグベーコンセット&lt;/h3&gt;
+                                        &lt;div class=&quot;savings&quot;&gt;¥150お得！&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;set-contents&quot;&gt;
+                                        &lt;div class=&quot;set-main&quot;&gt;🍔 ビッグベーコンバーガー&lt;/div&gt;
+                                        &lt;div class=&quot;set-side&quot;&gt;🍟 フレンチフライ（M）&lt;/div&gt;
+                                        &lt;div class=&quot;set-drink&quot;&gt;🥤 ドリンク（M）&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;set-price&quot;&gt;
+                                        &lt;span class=&quot;original-price&quot;&gt;¥1,140&lt;/span&gt;
+                                        &lt;span class=&quot;set-price-main&quot;&gt;¥990&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;set-item popular&quot;&gt;
+                                    &lt;div class=&quot;item-badge&quot;&gt;人気&lt;/div&gt;
+                                    &lt;div class=&quot;set-header&quot;&gt;
+                                        &lt;h3&gt;クラシックセット&lt;/h3&gt;
+                                        &lt;div class=&quot;savings&quot;&gt;¥120お得！&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;set-contents&quot;&gt;
+                                        &lt;div class=&quot;set-main&quot;&gt;🍔 クラシックバーガー&lt;/div&gt;
+                                        &lt;div class=&quot;set-side&quot;&gt;🍟 フレンチフライ（M）&lt;/div&gt;
+                                        &lt;div class=&quot;set-drink&quot;&gt;🥤 ドリンク（M）&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;set-price&quot;&gt;
+                                        &lt;span class=&quot;original-price&quot;&gt;¥940&lt;/span&gt;
+                                        &lt;span class=&quot;set-price-main&quot;&gt;¥820&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;set-item&quot;&gt;
+                                    &lt;div class=&quot;set-header&quot;&gt;
+                                        &lt;h3&gt;チキンセット&lt;/h3&gt;
+                                        &lt;div class=&quot;savings&quot;&gt;¥140お得！&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;set-contents&quot;&gt;
+                                        &lt;div class=&quot;set-main&quot;&gt;🍗 フライドチキン（2ピース）&lt;/div&gt;
+                                        &lt;div class=&quot;set-side&quot;&gt;🍟 フレンチフライ（M）&lt;/div&gt;
+                                        &lt;div class=&quot;set-drink&quot;&gt;🥤 ドリンク（M）&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;set-price&quot;&gt;
+                                        &lt;span class=&quot;original-price&quot;&gt;¥1,040&lt;/span&gt;
+                                        &lt;span class=&quot;set-price-main&quot;&gt;¥900&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;button class=&quot;add-cart-btn&quot;&gt;カートに追加&lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;deals&quot; class=&quot;deals&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;section-header&quot;&gt;
+                        &lt;h2 class=&quot;section-title&quot;&gt;お得情報&lt;/h2&gt;
+                        &lt;p class=&quot;section-subtitle&quot;&gt;期間限定のスペシャルオファー&lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;deals-grid&quot;&gt;
+                        &lt;div class=&quot;deal-card hot&quot;&gt;
+                            &lt;div class=&quot;deal-badge&quot;&gt;HOT🔥&lt;/div&gt;
+                            &lt;div class=&quot;deal-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;半額キャンペーン&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;deal-content&quot;&gt;
+                                &lt;h3&gt;バーガー半額キャンペーン&lt;/h3&gt;
+                                &lt;p class=&quot;deal-desc&quot;&gt;平日15:00-17:00限定！すべてのバーガーが半額に&lt;/p&gt;
+                                &lt;div class=&quot;deal-period&quot;&gt;期間: 2月1日〜2月28日&lt;/div&gt;
+                                &lt;div class=&quot;deal-condition&quot;&gt;※テイクアウトのみ対象&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;deal-card&quot;&gt;
+                            &lt;div class=&quot;deal-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;学割&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;deal-content&quot;&gt;
+                                &lt;h3&gt;学生応援キャンペーン&lt;/h3&gt;
+                                &lt;p class=&quot;deal-desc&quot;&gt;学生証提示で全商品10%OFF&lt;/p&gt;
+                                &lt;div class=&quot;deal-period&quot;&gt;常時開催中&lt;/div&gt;
+                                &lt;div class=&quot;deal-condition&quot;&gt;※学生証の提示が必要&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;deal-card&quot;&gt;
+                            &lt;div class=&quot;deal-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1513104890138-7c749659a591?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;ファミリーパック&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;deal-content&quot;&gt;
+                                &lt;h3&gt;ファミリーパック&lt;/h3&gt;
+                                &lt;p class=&quot;deal-desc&quot;&gt;4人分のセットメニューが特別価格&lt;/p&gt;
+                                &lt;div class=&quot;deal-price&quot;&gt;¥2,980（通常¥3,500）&lt;/div&gt;
+                                &lt;div class=&quot;deal-condition&quot;&gt;※バーガー4個、ポテト4個、ドリンク4個&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;delivery&quot; class=&quot;delivery&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;delivery-content&quot;&gt;
+                        &lt;div class=&quot;delivery-info&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;デリバリー・テイクアウト&lt;/h2&gt;
+                            &lt;p class=&quot;delivery-lead&quot;&gt;お家でも、職場でも、美味しいハンバーガーをお楽しみください&lt;/p&gt;
+                            
+                            &lt;div class=&quot;delivery-options&quot;&gt;
+                                &lt;div class=&quot;option-card&quot;&gt;
+                                    &lt;div class=&quot;option-icon&quot;&gt;🚚&lt;/div&gt;
+                                    &lt;h3&gt;デリバリー&lt;/h3&gt;
+                                    &lt;ul class=&quot;option-features&quot;&gt;
+                                        &lt;li&gt;配達時間: 20-30分&lt;/li&gt;
+                                        &lt;li&gt;配達料: ¥300（¥1,500以上で無料）&lt;/li&gt;
+                                        &lt;li&gt;配達エリア: 店舗から3km圏内&lt;/li&gt;
+                                        &lt;li&gt;営業時間: 11:00-23:00&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                    &lt;button class=&quot;option-btn delivery-btn&quot;&gt;デリバリー注文&lt;/button&gt;
+                                &lt;/div&gt;
+                                
+                                &lt;div class=&quot;option-card&quot;&gt;
+                                    &lt;div class=&quot;option-icon&quot;&gt;🛍️&lt;/div&gt;
+                                    &lt;h3&gt;テイクアウト&lt;/h3&gt;
+                                    &lt;ul class=&quot;option-features&quot;&gt;
+                                        &lt;li&gt;待ち時間: 5-10分&lt;/li&gt;
+                                        &lt;li&gt;事前注文可能&lt;/li&gt;
+                                        &lt;li&gt;全店舗で対応&lt;/li&gt;
+                                        &lt;li&gt;営業時間: 6:00-24:00&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                    &lt;button class=&quot;option-btn takeout-btn&quot;&gt;テイクアウト注文&lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;mobile-app&quot;&gt;
+                                &lt;h3&gt;📱 モバイルアプリでもっと便利に&lt;/h3&gt;
+                                &lt;p&gt;アプリ限定のクーポンや事前注文機能をご利用いただけます。&lt;/p&gt;
+                                &lt;div class=&quot;app-buttons&quot;&gt;
+                                    &lt;button class=&quot;app-btn ios&quot;&gt;App Store&lt;/button&gt;
+                                    &lt;button class=&quot;app-btn android&quot;&gt;Google Play&lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;delivery-visual&quot;&gt;
+                            &lt;div class=&quot;visual-main&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1556909086-f18c79d4a7ea?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;デリバリー&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;delivery-stats&quot;&gt;
+                                &lt;div class=&quot;stat-box&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;20-30&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;分で配達&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;stat-box&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;24h&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;営業店舗あり&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;stat-box&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;95%&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;満足度&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;stores&quot; class=&quot;stores&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;section-header&quot;&gt;
+                        &lt;h2 class=&quot;section-title&quot;&gt;店舗案内&lt;/h2&gt;
+                        &lt;p class=&quot;section-subtitle&quot;&gt;お近くの店舗をお探しください&lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;store-finder&quot;&gt;
+                        &lt;div class=&quot;finder-controls&quot;&gt;
+                            &lt;input type=&quot;text&quot; class=&quot;location-input&quot; placeholder=&quot;地域名や駅名を入力&quot;&gt;
+                            &lt;button class=&quot;search-btn&quot;&gt;検索&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;stores-list&quot;&gt;
+                        &lt;div class=&quot;store-card&quot;&gt;
+                            &lt;div class=&quot;store-info&quot;&gt;
+                                &lt;h3&gt;渋谷センター街店&lt;/h3&gt;
+                                &lt;div class=&quot;store-address&quot;&gt;〒150-0043 東京都渋谷区道玄坂2-6-17&lt;/div&gt;
+                                &lt;div class=&quot;store-details&quot;&gt;
+                                    &lt;div class=&quot;detail-item&quot;&gt;
+                                        &lt;span class=&quot;detail-label&quot;&gt;営業時間&lt;/span&gt;
+                                        &lt;span class=&quot;detail-value&quot;&gt;24時間営業&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;detail-item&quot;&gt;
+                                        &lt;span class=&quot;detail-label&quot;&gt;電話&lt;/span&gt;
+                                        &lt;span class=&quot;detail-value&quot;&gt;03-1234-5678&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;detail-item&quot;&gt;
+                                        &lt;span class=&quot;detail-label&quot;&gt;アクセス&lt;/span&gt;
+                                        &lt;span class=&quot;detail-value&quot;&gt;JR渋谷駅 徒歩3分&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;store-services&quot;&gt;
+                                    &lt;span class=&quot;service-tag&quot;&gt;デリバリー&lt;/span&gt;
+                                    &lt;span class=&quot;service-tag&quot;&gt;24h営業&lt;/span&gt;
+                                    &lt;span class=&quot;service-tag&quot;&gt;WiFi&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;store-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;渋谷センター街店&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;store-card&quot;&gt;
+                            &lt;div class=&quot;store-info&quot;&gt;
+                                &lt;h3&gt;新宿南口店&lt;/h3&gt;
+                                &lt;div class=&quot;store-address&quot;&gt;〒160-0022 東京都新宿区新宿3-35-7&lt;/div&gt;
+                                &lt;div class=&quot;store-details&quot;&gt;
+                                    &lt;div class=&quot;detail-item&quot;&gt;
+                                        &lt;span class=&quot;detail-label&quot;&gt;営業時間&lt;/span&gt;
+                                        &lt;span class=&quot;detail-value&quot;&gt;6:00-24:00&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;detail-item&quot;&gt;
+                                        &lt;span class=&quot;detail-label&quot;&gt;電話&lt;/span&gt;
+                                        &lt;span class=&quot;detail-value&quot;&gt;03-2345-6789&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;detail-item&quot;&gt;
+                                        &lt;span class=&quot;detail-label&quot;&gt;アクセス&lt;/span&gt;
+                                        &lt;span class=&quot;detail-value&quot;&gt;JR新宿駅 南口徒歩1分&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;store-services&quot;&gt;
+                                    &lt;span class=&quot;service-tag&quot;&gt;デリバリー&lt;/span&gt;
+                                    &lt;span class=&quot;service-tag&quot;&gt;禁煙&lt;/span&gt;
+                                    &lt;span class=&quot;service-tag&quot;&gt;WiFi&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;store-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;新宿南口店&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;store-card&quot;&gt;
+                            &lt;div class=&quot;store-info&quot;&gt;
+                                &lt;h3&gt;池袋東口店&lt;/h3&gt;
+                                &lt;div class=&quot;store-address&quot;&gt;〒170-0013 東京都豊島区東池袋1-5-6&lt;/div&gt;
+                                &lt;div class=&quot;store-details&quot;&gt;
+                                    &lt;div class=&quot;detail-item&quot;&gt;
+                                        &lt;span class=&quot;detail-label&quot;&gt;営業時間&lt;/span&gt;
+                                        &lt;span class=&quot;detail-value&quot;&gt;7:00-23:00&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;detail-item&quot;&gt;
+                                        &lt;span class=&quot;detail-label&quot;&gt;電話&lt;/span&gt;
+                                        &lt;span class=&quot;detail-value&quot;&gt;03-3456-7890&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;detail-item&quot;&gt;
+                                        &lt;span class=&quot;detail-label&quot;&gt;アクセス&lt;/span&gt;
+                                        &lt;span class=&quot;detail-value&quot;&gt;JR池袋駅 東口徒歩2分&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;store-services&quot;&gt;
+                                    &lt;span class=&quot;service-tag&quot;&gt;テイクアウト&lt;/span&gt;
+                                    &lt;span class=&quot;service-tag&quot;&gt;禁煙&lt;/span&gt;
+                                    &lt;span class=&quot;service-tag&quot;&gt;キッズ席&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;store-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1524634126442-357e0eac3c14?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;池袋東口店&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;section-header&quot;&gt;
+                        &lt;h2 class=&quot;section-title&quot;&gt;お問い合わせ&lt;/h2&gt;
+                        &lt;p class=&quot;section-subtitle&quot;&gt;ご質問・ご要望はお気軽にお寄せください&lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;contact-methods&quot;&gt;
+                        &lt;div class=&quot;contact-card&quot;&gt;
+                            &lt;div class=&quot;contact-icon&quot;&gt;📞&lt;/div&gt;
+                            &lt;h3&gt;お電話でのお問い合わせ&lt;/h3&gt;
+                            &lt;div class=&quot;contact-info&quot;&gt;
+                                &lt;div class=&quot;phone-number&quot;&gt;0120-123-456&lt;/div&gt;
+                                &lt;div class=&quot;phone-hours&quot;&gt;受付時間: 9:00-18:00（年中無休）&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;p&gt;商品に関するご質問やご意見はお電話にてお受けしております。&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;contact-card&quot;&gt;
+                            &lt;div class=&quot;contact-icon&quot;&gt;✉️&lt;/div&gt;
+                            &lt;h3&gt;メールでのお問い合わせ&lt;/h3&gt;
+                            &lt;div class=&quot;contact-info&quot;&gt;
+                                &lt;div class=&quot;email-address&quot;&gt;info@burgerking.jp&lt;/div&gt;
+                                &lt;div class=&quot;response-time&quot;&gt;通常24時間以内に返信&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;p&gt;詳細なご質問やご要望はメールでもお受けしております。&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;contact-card&quot;&gt;
+                            &lt;div class=&quot;contact-icon&quot;&gt;💬&lt;/div&gt;
+                            &lt;h3&gt;チャットサポート&lt;/h3&gt;
+                            &lt;div class=&quot;contact-info&quot;&gt;
+                                &lt;div class=&quot;chat-hours&quot;&gt;対応時間: 10:00-22:00&lt;/div&gt;
+                                &lt;button class=&quot;chat-btn&quot;&gt;チャットを開始&lt;/button&gt;
+                            &lt;/div&gt;
+                            &lt;p&gt;リアルタイムでのサポートをご希望の方はチャットをご利用ください。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;order&quot; class=&quot;order-section&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;order-cta&quot;&gt;
+                        &lt;h2&gt;今すぐ注文して、美味しいハンバーガーをお楽しみください！&lt;/h2&gt;
+                        &lt;div class=&quot;order-buttons&quot;&gt;
+                            &lt;button class=&quot;order-btn delivery&quot;&gt;🚚 デリバリー注文&lt;/button&gt;
+                            &lt;button class=&quot;order-btn takeout&quot;&gt;🛍️ テイクアウト注文&lt;/button&gt;
+                            &lt;button class=&quot;order-btn app&quot;&gt;📱 アプリで注文&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+
+        &lt;footer class=&quot;footer&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-main&quot;&gt;
+                    &lt;div class=&quot;footer-brand&quot;&gt;
+                        &lt;div class=&quot;footer-logo&quot;&gt;
+                            &lt;div class=&quot;logo-burger&quot;&gt;🍔&lt;/div&gt;
+                            &lt;div class=&quot;brand-info&quot;&gt;
+                                &lt;h3&gt;Burger King&lt;/h3&gt;
+                                &lt;span&gt;Fast &amp; Delicious&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;footer-description&quot;&gt;
+                            1985年創業以来、本格的なハンバーガーをお手頃価格でお届けしています。
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;footer-links&quot;&gt;
+                        &lt;div class=&quot;link-column&quot;&gt;
+                            &lt;h4&gt;メニュー&lt;/h4&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;バーガー&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;チキン&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;サイド&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;セット&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;link-column&quot;&gt;
+                            &lt;h4&gt;サービス&lt;/h4&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href=&quot;#delivery&quot;&gt;デリバリー&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#delivery&quot;&gt;テイクアウト&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#deals&quot;&gt;お得情報&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#stores&quot;&gt;店舗検索&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;link-column&quot;&gt;
+                            &lt;h4&gt;会社情報&lt;/h4&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;企業情報&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;採用情報&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ニュース&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;link-column&quot;&gt;
+                            &lt;h4&gt;SNS&lt;/h4&gt;
+                            &lt;div class=&quot;social-links&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;social-link twitter&quot;&gt;Twitter&lt;/a&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;social-link instagram&quot;&gt;Instagram&lt;/a&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;social-link facebook&quot;&gt;Facebook&lt;/a&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;social-link youtube&quot;&gt;YouTube&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-bottom&quot;&gt;
+                    &lt;div class=&quot;footer-legal&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;利用規約&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;特定商取引法&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;p class=&quot;copyright&quot;&gt;© 2025 Burger King Japan. All rights reserved.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+
+
+&lt;script&gt;
+    // メニュータブ機能
+document.querySelectorAll(&#x27;.menu-tab&#x27;).forEach(tab =&gt; {
+    tab.addEventListener(&#x27;click&#x27;, function() {
+        // すべてのタブからactiveクラスを削除
+        document.querySelectorAll(&#x27;.menu-tab&#x27;).forEach(t =&gt; {
+            t.classList.remove(&#x27;active&#x27;);
+        });
+        
+        // すべてのメニューカテゴリを非表示
+        document.querySelectorAll(&#x27;.menu-category&#x27;).forEach(category =&gt; {
+            category.classList.remove(&#x27;active&#x27;);
+        });
+        
+        // クリックされたタブにactiveクラス追加
+        this.classList.add(&#x27;active&#x27;);
+        
+        // 対応するカテゴリを表示
+        const categoryId = this.getAttribute(&#x27;data-category&#x27;);
+        document.getElementById(categoryId).classList.add(&#x27;active&#x27;);
+    });
+});
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// ヒーロースライドCTA
+document.querySelector(&#x27;.slide-cta&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    document.querySelector(&#x27;#order&#x27;).scrollIntoView({
+        behavior: &#x27;smooth&#x27;,
+        block: &#x27;start&#x27;
+    });
+});
+
+// 注文ボタンのイベント
+document.querySelectorAll(&#x27;.order-btn&#x27;).forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, function() {
+        const btnText = this.textContent;
+        alert(`${btnText}システムへ移動します（実装予定）`);
+    });
+});
+
+// カートに追加ボタン
+document.querySelectorAll(&#x27;.add-cart-btn&#x27;).forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, function() {
+        const itemName = this.closest(&#x27;.menu-item, .set-item&#x27;).querySelector(&#x27;h3&#x27;).textContent;
+        
+        // ボタンアニメーション
+        this.style.background = &#x27;#27ae60&#x27;;
+        this.textContent = &#x27;追加しました！&#x27;;
+        this.style.transform = &#x27;scale(1.05)&#x27;;
+        
+        setTimeout(() =&gt; {
+            this.style.background = &#x27;&#x27;;
+            this.textContent = &#x27;カートに追加&#x27;;
+            this.style.transform = &#x27;&#x27;;
+        }, 1500);
+    });
+});
+
+// ヘッダーのスクロール効果
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const header = document.querySelector(&#x27;.header&#x27;);
+    if (window.scrollY &gt; 100) {
+        header.style.background = &#x27;rgba(255, 255, 255, 0.98)&#x27;;
+        header.style.boxShadow = &#x27;0 2px 30px rgba(0, 0, 0, 0.15)&#x27;;
+    } else {
+        header.style.background = &#x27;#fff&#x27;;
+        header.style.boxShadow = &#x27;0 2px 20px rgba(0, 0, 0, 0.1)&#x27;;
+    }
+});
+
+// デリバリー・テイクアウトボタン
+document.querySelectorAll(&#x27;.option-btn&#x27;).forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, function() {
+        const optionType = this.classList.contains(&#x27;delivery-btn&#x27;) ? &#x27;デリバリー&#x27; : &#x27;テイクアウト&#x27;;
+        alert(`${optionType}注文システムへ移動します（実装予定）`);
+    });
+});
+
+// アプリダウンロードボタン
+document.querySelectorAll(&#x27;.app-btn&#x27;).forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, function() {
+        const platform = this.classList.contains(&#x27;ios&#x27;) ? &#x27;App Store&#x27; : &#x27;Google Play&#x27;;
+        alert(`${platform}へ移動します（実装予定）`);
+    });
+});
+
+// 店舗検索
+document.querySelector(&#x27;.search-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    const location = document.querySelector(&#x27;.location-input&#x27;).value;
+    if (location.trim()) {
+        alert(`&quot;${location}&quot;周辺の店舗を検索します（実装予定）`);
+    } else {
+        alert(&#x27;地域名や駅名を入力してください&#x27;);
+    }
+});
+
+// 店舗検索のエンターキー対応
+document.querySelector(&#x27;.location-input&#x27;).addEventListener(&#x27;keypress&#x27;, function(e) {
+    if (e.key === &#x27;Enter&#x27;) {
+        document.querySelector(&#x27;.search-btn&#x27;).click();
+    }
+});
+
+// チャットボタン
+document.querySelector(&#x27;.chat-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;チャットサポートを開始します（実装予定）&#x27;);
+});
+
+// 要素のアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -50px 0px&#x27;
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = &#x27;1&#x27;;
+            entry.target.style.transform = &#x27;translateY(0)&#x27;;
+        }
+    });
+}, observerOptions);
+
+// アニメーション対象要素の初期化
+document.querySelectorAll(&#x27;.menu-item, .set-item, .deal-card, .store-card, .contact-card&#x27;).forEach(item =&gt; {
+    item.style.opacity = &#x27;0&#x27;;
+    item.style.transform = &#x27;translateY(50px)&#x27;;
+    item.style.transition = &#x27;all 0.8s ease&#x27;;
+    observer.observe(item);
+});
+
+// メニューアイテムのホバー効果強化
+document.querySelectorAll(&#x27;.menu-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;mouseenter&#x27;, function() {
+        const badge = this.querySelector(&#x27;.item-badge&#x27;);
+        if (badge) {
+            badge.style.transform = &#x27;scale(1.1) rotate(5deg)&#x27;;
+            badge.style.transition = &#x27;transform 0.3s ease&#x27;;
+        }
+    });
+    
+    item.addEventListener(&#x27;mouseleave&#x27;, function() {
+        const badge = this.querySelector(&#x27;.item-badge&#x27;);
+        if (badge) {
+            badge.style.transform = &#x27;scale(1) rotate(0deg)&#x27;;
+        }
+    });
+});
+
+// スパイシーレベルのインタラクション
+document.querySelectorAll(&#x27;.spicy-level&#x27;).forEach(spicy =&gt; {
+    spicy.addEventListener(&#x27;click&#x27;, function() {
+        const level = this.textContent.length;
+        let message = &#x27;&#x27;;
+        
+        switch(level) {
+            case 1:
+                message = &#x27;マイルドな辛さです&#x27;;
+                break;
+            case 2:
+                message = &#x27;中程度の辛さです&#x27;;
+                break;
+            case 3:
+                message = &#x27;かなり辛いです！&#x27;;
+                break;
+            default:
+                message = &#x27;お辛さについてお尋ねください&#x27;;
+        }
+        
+        alert(message);
+    });
+    
+    spicy.style.cursor = &#x27;pointer&#x27;;
+});
+
+// サイズオプションのクリック効果
+document.querySelectorAll(&#x27;.size&#x27;).forEach(size =&gt; {
+    size.addEventListener(&#x27;click&#x27;, function() {
+        // 同じメニューアイテム内の他のサイズをリセット
+        const parent = this.closest(&#x27;.size-options&#x27;);
+        parent.querySelectorAll(&#x27;.size&#x27;).forEach(s =&gt; {
+            s.style.background = &#x27;#ecf0f1&#x27;;
+            s.style.color = &#x27;#2c3e50&#x27;;
+        });
+        
+        // 選択されたサイズをハイライト
+        this.style.background = &#x27;#e74c3c&#x27;;
+        this.style.color = &#x27;white&#x27;;
+        this.style.transition = &#x27;all 0.3s ease&#x27;;
+    });
+    
+    size.style.cursor = &#x27;pointer&#x27;;
+});
+
+// 統計数値のカウントアップアニメーション
+function animateStats() {
+    const statNumbers = document.querySelectorAll(&#x27;.stat-number&#x27;);
+    
+    statNumbers.forEach(stat =&gt; {
+        const text = stat.textContent;
+        
+        if (text.includes(&#x27;-&#x27;)) {
+            // &quot;20-30&quot; のような範囲の場合
+            const [start, end] = text.split(&#x27;-&#x27;).map(n =&gt; parseInt(n));
+            let current = 0;
+            const timer = setInterval(() =&gt; {
+                current += 1;
+                if (current &gt;= start) {
+                    stat.textContent = `${start}-${end}`;
+                    clearInterval(timer);
+                } else {
+                    stat.textContent = `${current}-${current + 10}`;
+                }
+            }, 50);
+        } else if (text.includes(&#x27;%&#x27;)) {
+            // パーセンテージの場合
+            const number = parseInt(text.replace(&#x27;%&#x27;, &#x27;&#x27;));
+            let current = 0;
+            const timer = setInterval(() =&gt; {
+                current += 2;
+                if (current &gt;= number) {
+                    stat.textContent = number + &#x27;%&#x27;;
+                    clearInterval(timer);
+                } else {
+                    stat.textContent = current + &#x27;%&#x27;;
+                }
+            }, 30);
+        } else if (text.includes(&#x27;h&#x27;)) {
+            // &quot;24h&quot; の場合は特別処理
+            let current = 0;
+            const timer = setInterval(() =&gt; {
+                current += 1;
+                if (current &gt;= 24) {
+                    stat.textContent = &#x27;24h&#x27;;
+                    clearInterval(timer);
+                } else {
+                    stat.textContent = current + &#x27;h&#x27;;
+                }
+            }, 50);
+        }
+    });
+}
+
+// 統計セクションが見えたときにアニメーション開始
+const statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            animateStats();
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const deliveryStats = document.querySelector(&#x27;.delivery-stats&#x27;);
+if (deliveryStats) {
+    statsObserver.observe(deliveryStats);
+}
+
+// 電話番号のクリック効果
+document.querySelectorAll(&#x27;.phone-number&#x27;).forEach(phone =&gt; {
+    phone.addEventListener(&#x27;click&#x27;, function() {
+        this.style.transform = &#x27;scale(1.1)&#x27;;
+        this.style.transition = &#x27;transform 0.2s ease&#x27;;
+        
+        setTimeout(() =&gt; {
+            this.style.transform = &#x27;scale(1)&#x27;;
+        }, 200);
+    });
+});
+
+// ディールカードの特別効果
+document.querySelectorAll(&#x27;.deal-card.hot&#x27;).forEach(card =&gt; {
+    // HOTなディールカードに炎のエフェクトを追加
+    setInterval(() =&gt; {
+        const badge = card.querySelector(&#x27;.deal-badge&#x27;);
+        if (badge) {
+            badge.style.boxShadow = `0 0 ${Math.random() * 20 + 10}px rgba(231, 76, 60, 0.8)`;
+        }
+    }, 500);
+});
+
+// セットアイテムの節約額を強調
+document.querySelectorAll(&#x27;.savings&#x27;).forEach(saving =&gt; {
+    saving.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.transform = &#x27;scale(1.1) rotate(-5deg)&#x27;;
+        this.style.transition = &#x27;transform 0.3s ease&#x27;;
+    });
+    
+    saving.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.transform = &#x27;scale(1) rotate(0deg)&#x27;;
+    });
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="ファストフード店" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"restaurant-fastfood\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"restaurant-fastfood\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"restaurant-fastfood\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"restaurant-fastfood\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"3N1iccuuClEul_NQsEh3O\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"restaurant-fastfood\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

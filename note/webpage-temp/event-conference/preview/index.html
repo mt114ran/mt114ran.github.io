@@ -1,0 +1,2649 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;カンファレンス・セミナー&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&#x27;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap&#x27;);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Inter&#x27;, sans-serif;
+    color: #1a202c;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(26, 32, 44, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #00f5ff;
+    margin: 0;
+    background: linear-gradient(45deg, #00f5ff, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tagline {
+    font-size: 11px;
+    color: #a0aec0;
+    display: block;
+    margin-top: 2px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    align-items: center;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #e2e8f0;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s;
+    padding: 8px 0;
+}
+
+.main-nav a:hover {
+    color: #00f5ff;
+}
+
+.nav-cta a {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.nav-cta a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #e2e8f0;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26, 32, 44, 0.9), rgba(45, 55, 72, 0.8));
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    padding-top: 100px;
+}
+
+.event-badge {
+    background: linear-gradient(45deg, #00f5ff, #ff6b6b);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 30px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.hero-content h2 {
+    font-size: 64px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    line-height: 1.1;
+}
+
+.highlight {
+    background: linear-gradient(45deg, #00f5ff, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 50px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: #00f5ff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #a0aec0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 18px 36px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    padding: 18px 36px;
+    border: 2px solid white;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #1a202c;
+}
+
+/* Countdown Timer */
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.countdown-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.countdown-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #00f5ff;
+    display: block;
+    font-family: &#x27;JetBrains Mono&#x27;, monospace;
+}
+
+.countdown-label {
+    font-size: 12px;
+    color: #a0aec0;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Event Info */
+.event-info {
+    padding: 80px 0;
+    background: #f7fafc;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border: 2px solid transparent;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: #00f5ff;
+}
+
+.info-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.info-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2d3748;
+}
+
+.info-card p {
+    color: #718096;
+    line-height: 1.6;
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1a202c;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #718096;
+    margin-bottom: 80px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/* About */
+.about {
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-description {
+    margin-bottom: 50px;
+}
+
+.about-description p {
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.event-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.highlight-item {
+    padding: 25px;
+    background: #f7fafc;
+    border-radius: 12px;
+    border-left: 4px solid #00f5ff;
+}
+
+.highlight-icon {
+    font-size: 28px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.highlight-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2d3748;
+}
+
+.highlight-item p {
+    color: #718096;
+    line-height: 1.6;
+}
+
+.about-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.event-stats-visual {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.stat-circle {
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.stat-desc {
+    font-size: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Speakers */
+.speakers {
+    background: #f7fafc;
+}
+
+.keynote-speakers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.speaker-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.speaker-card:hover {
+    transform: translateY(-10px);
+}
+
+.speaker-card.keynote {
+    padding: 0;
+}
+
+.speaker-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.keynote .speaker-image {
+    height: 200px;
+}
+
+.speaker-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.speaker-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.speaker-info {
+    padding: 30px;
+}
+
+.speaker-info h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1a202c;
+}
+
+.speaker-title {
+    font-size: 16px;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.speaker-company {
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: 20px;
+}
+
+.speaker-bio {
+    margin-bottom: 25px;
+}
+
+.speaker-bio p {
+    color: #4a5568;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.speaker-session {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 10px;
+}
+
+.speaker-session h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.speaker-session p {
+    color: #1a202c;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.session-time {
+    color: #00f5ff;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.speaker-social {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    color: #718096;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #667eea;
+}
+
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.speakers-grid .speaker-card {
+    padding: 20px;
+}
+
+.speakers-grid .speaker-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.speakers-grid .speaker-info {
+    padding: 0;
+    text-align: center;
+}
+
+.speakers-cta {
+    text-align: center;
+}
+
+.speakers-cta p {
+    font-size: 18px;
+    color: #4a5568;
+    margin-bottom: 30px;
+}
+
+/* Schedule */
+.schedule {
+    background: white;
+}
+
+.schedule-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 60px;
+    background: #f7fafc;
+    padding: 8px;
+    border-radius: 50px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.schedule-tab {
+    background: transparent;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #718096;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.schedule-tab.active {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.schedule-day {
+    display: none;
+}
+
+.schedule-day.active {
+    display: block;
+}
+
+.day-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.day-header h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
+
+.day-header p {
+    color: #718096;
+    font-size: 18px;
+}
+
+.schedule-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.schedule-timeline::before {
+    content: &#x27;&#x27;;
+    position: absolute;
+    left: 150px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #667eea, #764ba2);
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: &#x27;&#x27;;
+    position: absolute;
+    left: 139px;
+    top: 10px;
+    width: 25px;
+    height: 25px;
+    background: white;
+    border: 4px solid #667eea;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-item.keynote::before {
+    background: #667eea;
+    border-color: #667eea;
+}
+
+.timeline-item.break::before {
+    background: #48bb78;
+    border-color: #48bb78;
+}
+
+.timeline-time {
+    width: 120px;
+    font-family: &#x27;JetBrains Mono&#x27;, monospace;
+    font-weight: 600;
+    color: #1a202c;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.timeline-content {
+    flex: 1;
+    margin-left: 50px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s;
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: #667eea;
+    transform: translateX(5px);
+}
+
+.timeline-item.keynote .timeline-content {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: transparent;
+}
+
+.timeline-content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1a202c;
+}
+
+.keynote .timeline-content h4 {
+    color: white;
+}
+
+.timeline-content p {
+    color: #4a5568;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.keynote .timeline-content p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.timeline-speaker {
+    font-size: 14px;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.keynote .timeline-speaker {
+    color: #ffd700;
+}
+
+.timeline-venue {
+    font-size: 12px;
+    color: #718096;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.keynote .timeline-venue {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.parallel-sessions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.session-track {
+    background: #f7fafc;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #00f5ff;
+}
+
+.session-track h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+.session-track p {
+    color: #4a5568;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.venue {
+    font-size: 12px;
+    color: #00f5ff;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Sponsors */
+.sponsors {
+    background: #f7fafc;
+}
+
+.sponsors-tiers {
+    margin-bottom: 80px;
+}
+
+.sponsor-tier {
+    margin-bottom: 60px;
+}
+
+.sponsor-tier h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 40px;
+}
+
+.sponsor-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.sponsor-logos.platinum .sponsor-logo {
+    height: 120px;
+    width: 300px;
+}
+
+.sponsor-logos.gold .sponsor-logo {
+    height: 100px;
+    width: 250px;
+}
+
+.sponsor-logos.silver .sponsor-logo {
+    height: 80px;
+    width: 200px;
+}
+
+.sponsor-logos.bronze .sponsor-logo {
+    height: 60px;
+    width: 150px;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: #4a5568;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.sponsor-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.sponsor-logo:hover img {
+    transform: scale(1.05);
+}
+
+.sponsor-benefits {
+    text-align: center;
+    background: white;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sponsor-benefits h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 20px;
+}
+
+.sponsor-benefits p {
+    color: #4a5568;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.benefit-item {
+    text-align: center;
+}
+
+.benefit-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
+
+.benefit-item p {
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Venue */
+.venue {
+    background: white;
+}
+
+.venue-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.venue-info h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 20px;
+}
+
+.venue-description {
+    color: #4a5568;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.venue-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.detail-icon {
+    font-size: 24px;
+    color: #667eea;
+    min-width: 30px;
+    margin-top: 2px;
+}
+
+.detail-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 5px;
+}
+
+.detail-item p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.venue-facilities h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 20px;
+}
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.facility-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: #f7fafc;
+    border-radius: 8px;
+}
+
+.facility-icon {
+    font-size: 18px;
+    min-width: 20px;
+}
+
+.venue-map {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.map-placeholder {
+    background: #f7fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 15px;
+    padding: 60px 40px;
+    text-align: center;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-placeholder h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 10px;
+}
+
+.map-placeholder p {
+    color: #718096;
+    margin-bottom: 20px;
+}
+
+.floor-plan {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #e2e8f0;
+}
+
+.floor-plan h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.floor-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.floor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f7fafc;
+    border-radius: 8px;
+}
+
+.floor-name {
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.floor-capacity {
+    color: #667eea;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Registration */
+.registration {
+    background: #f7fafc;
+}
+
+.ticket-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.ticket-card {
+    background: white;
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ticket-card:hover {
+    transform: translateY(-10px);
+}
+
+.ticket-card.featured {
+    border: 3px solid #667eea;
+    transform: scale(1.05);
+}
+
+.ticket-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.ticket-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 40px 30px 30px;
+    text-align: center;
+}
+
+.ticket-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.ticket-price {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.ticket-original {
+    font-size: 16px;
+    opacity: 0.8;
+    text-decoration: line-through;
+}
+
+.ticket-content {
+    padding: 30px;
+}
+
+.ticket-deadline {
+    text-align: center;
+    color: #e53e3e;
+    font-weight: 600;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.ticket-includes {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.ticket-includes li {
+    padding: 8px 0;
+    font-size: 14px;
+    color: #4a5568;
+}
+
+.ticket-btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 15px;
+}
+
+.tickets-remaining {
+    text-align: center;
+    color: #e53e3e;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.registration-info {
+    background: white;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.registration-info h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.info-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background: #1a202c;
+    color: white;
+    padding: 80px 0 40px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-section h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #00f5ff, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.footer-section p {
+    color: #a0aec0;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.event-info-footer p {
+    margin-bottom: 8px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section a {
+    color: #a0aec0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #00f5ff;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    background: #2d3748;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: #667eea;
+    transform: translateY(-2px);
+}
+
+.contact-info-footer p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    padding-top: 40px;
+    border-top: 1px solid #2d3748;
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.legal-links {
+    display: flex;
+    gap: 30px;
+}
+
+.legal-links a {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.legal-links a:hover {
+    color: #00f5ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(26, 32, 44, 0.98);
+        backdrop-filter: blur(10px);
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+    
+    .main-nav ul li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+    }
+    
+    .main-nav a {
+        padding: 15px 0;
+        display: block;
+    }
+    
+    .hero-content h2 {
+        font-size: 42px;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .countdown-timer {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content,
+    .venue-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .keynote-speakers {
+        grid-template-columns: 1fr;
+    }
+    
+    .speakers-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .event-highlights,
+    .event-stats-visual {
+        grid-template-columns: 1fr;
+    }
+    
+    .schedule-timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item::before {
+        left: 19px;
+    }
+    
+    .timeline-time {
+        width: 80px;
+        font-size: 12px;
+    }
+    
+    .timeline-content {
+        margin-left: 30px;
+    }
+    
+    .parallel-sessions {
+        grid-template-columns: 1fr;
+    }
+    
+    .sponsor-logos {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .benefits-grid,
+    .facilities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ticket-types {
+        grid-template-columns: 1fr;
+    }
+    
+    .ticket-card.featured {
+        transform: none;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-legal {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;header-content&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;h1&gt;Tech Summit 2025&lt;/h1&gt;
+                    &lt;span class=&quot;tagline&quot;&gt;Future Technology Conference&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;button class=&quot;hamburger&quot; id=&quot;hamburger&quot;&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;nav class=&quot;main-nav&quot; id=&quot;main-nav&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;イベント概要&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#speakers&quot;&gt;スピーカー&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#schedule&quot;&gt;スケジュール&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#sponsors&quot;&gt;スポンサー&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#venue&quot;&gt;会場・アクセス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;nav-cta&quot;&gt;&lt;a href=&quot;#registration&quot;&gt;参加登録&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-background&quot;&gt;
+            &lt;video autoplay muted loop&gt;
+                &lt;source src=&quot;https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4&quot; type=&quot;video/mp4&quot;&gt;
+            &lt;/video&gt;
+            &lt;div class=&quot;hero-overlay&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;hero-content&quot;&gt;
+                &lt;div class=&quot;event-badge&quot;&gt;2025年3月15日-16日&lt;/div&gt;
+                &lt;h2&gt;未来を創る&lt;br&gt;&lt;span class=&quot;highlight&quot;&gt;テクノロジー&lt;/span&gt;&lt;br&gt;カンファレンス&lt;/h2&gt;
+                &lt;p class=&quot;hero-subtitle&quot;&gt;AI、IoT、ブロックチェーンなど最先端技術のトレンドと実践を学ぶ2日間&lt;/p&gt;
+                
+                &lt;div class=&quot;hero-stats&quot;&gt;
+                    &lt;div class=&quot;stat-item&quot;&gt;
+                        &lt;div class=&quot;stat-number&quot;&gt;50+&lt;/div&gt;
+                        &lt;div class=&quot;stat-label&quot;&gt;登壇者&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;stat-item&quot;&gt;
+                        &lt;div class=&quot;stat-number&quot;&gt;2,000+&lt;/div&gt;
+                        &lt;div class=&quot;stat-label&quot;&gt;参加者&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;stat-item&quot;&gt;
+                        &lt;div class=&quot;stat-number&quot;&gt;30+&lt;/div&gt;
+                        &lt;div class=&quot;stat-label&quot;&gt;セッション&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;hero-buttons&quot;&gt;
+                    &lt;a href=&quot;#registration&quot; class=&quot;btn-primary&quot;&gt;今すぐ参加登録&lt;/a&gt;
+                    &lt;a href=&quot;#about&quot; class=&quot;btn-outline&quot;&gt;詳細を見る&lt;/a&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;countdown-timer&quot; id=&quot;countdown&quot;&gt;
+                    &lt;div class=&quot;countdown-item&quot;&gt;
+                        &lt;div class=&quot;countdown-number&quot; id=&quot;days&quot;&gt;00&lt;/div&gt;
+                        &lt;div class=&quot;countdown-label&quot;&gt;日&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;countdown-item&quot;&gt;
+                        &lt;div class=&quot;countdown-number&quot; id=&quot;hours&quot;&gt;00&lt;/div&gt;
+                        &lt;div class=&quot;countdown-label&quot;&gt;時間&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;countdown-item&quot;&gt;
+                        &lt;div class=&quot;countdown-number&quot; id=&quot;minutes&quot;&gt;00&lt;/div&gt;
+                        &lt;div class=&quot;countdown-label&quot;&gt;分&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;countdown-item&quot;&gt;
+                        &lt;div class=&quot;countdown-number&quot; id=&quot;seconds&quot;&gt;00&lt;/div&gt;
+                        &lt;div class=&quot;countdown-label&quot;&gt;秒&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;event-info&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;info-cards&quot;&gt;
+                &lt;div class=&quot;info-card&quot;&gt;
+                    &lt;div class=&quot;info-icon&quot;&gt;📅&lt;/div&gt;
+                    &lt;h3&gt;開催日程&lt;/h3&gt;
+                    &lt;p&gt;2025年3月15日(土) - 16日(日)&lt;br&gt;2日間開催&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;info-card&quot;&gt;
+                    &lt;div class=&quot;info-icon&quot;&gt;📍&lt;/div&gt;
+                    &lt;h3&gt;会場&lt;/h3&gt;
+                    &lt;p&gt;東京国際フォーラム&lt;br&gt;ホールA・B・C&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;info-card&quot;&gt;
+                    &lt;div class=&quot;info-icon&quot;&gt;👥&lt;/div&gt;
+                    &lt;h3&gt;参加者&lt;/h3&gt;
+                    &lt;p&gt;エンジニア・CTO・研究者&lt;br&gt;学生・起業家&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;info-card&quot;&gt;
+                    &lt;div class=&quot;info-icon&quot;&gt;🎯&lt;/div&gt;
+                    &lt;h3&gt;テーマ&lt;/h3&gt;
+                    &lt;p&gt;AI・IoT・ブロックチェーン&lt;br&gt;Web3・量子コンピューティング&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;イベント概要&lt;/h2&gt;
+                    &lt;p class=&quot;section-subtitle&quot;&gt;Technology for the Future&lt;/p&gt;
+                    
+                    &lt;div class=&quot;about-description&quot;&gt;
+                        &lt;p&gt;Tech Summit 2025は、最先端テクノロジーの今と未来を体験する日本最大級のテクノロジーカンファレンスです。&lt;/p&gt;
+                        &lt;p&gt;AI、IoT、ブロックチェーン、Web3、量子コンピューティングなど、注目のテクノロジー分野で活躍する国内外の専門家が一堂に会し、最新のトレンドと実践的な知見を共有します。&lt;/p&gt;
+                        &lt;p&gt;技術者、研究者、経営者、学生まで、テクノロジーに関心のあるすべての方にとって価値のある2日間をお届けします。&lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;event-highlights&quot;&gt;
+                        &lt;div class=&quot;highlight-item&quot;&gt;
+                            &lt;div class=&quot;highlight-icon&quot;&gt;🚀&lt;/div&gt;
+                            &lt;h4&gt;最先端技術&lt;/h4&gt;
+                            &lt;p&gt;業界をリードする最新技術とトレンドを体験&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;highlight-item&quot;&gt;
+                            &lt;div class=&quot;highlight-icon&quot;&gt;🌐&lt;/div&gt;
+                            &lt;h4&gt;グローバル視点&lt;/h4&gt;
+                            &lt;p&gt;海外から招待したトップスピーカーによる講演&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;highlight-item&quot;&gt;
+                            &lt;div class=&quot;highlight-icon&quot;&gt;🤝&lt;/div&gt;
+                            &lt;h4&gt;ネットワーキング&lt;/h4&gt;
+                            &lt;p&gt;同業者や専門家との貴重な交流機会&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;highlight-item&quot;&gt;
+                            &lt;div class=&quot;highlight-icon&quot;&gt;🎓&lt;/div&gt;
+                            &lt;h4&gt;実践的学習&lt;/h4&gt;
+                            &lt;p&gt;ハンズオンワークショップとデモンストレーション&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;about-visual&quot;&gt;
+                    &lt;div class=&quot;event-stats-visual&quot;&gt;
+                        &lt;div class=&quot;stat-circle&quot;&gt;
+                            &lt;div class=&quot;stat-value&quot;&gt;50+&lt;/div&gt;
+                            &lt;div class=&quot;stat-desc&quot;&gt;世界トップクラス&lt;br&gt;スピーカー&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;stat-circle&quot;&gt;
+                            &lt;div class=&quot;stat-value&quot;&gt;30+&lt;/div&gt;
+                            &lt;div class=&quot;stat-desc&quot;&gt;セッション&lt;br&gt;＆ワークショップ&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;stat-circle&quot;&gt;
+                            &lt;div class=&quot;stat-value&quot;&gt;2000+&lt;/div&gt;
+                            &lt;div class=&quot;stat-desc&quot;&gt;参加者&lt;br&gt;ネットワーキング&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;about-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;カンファレンス会場&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;speakers&quot; class=&quot;speakers&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;キーノートスピーカー&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;業界をリードする専門家たちが登壇&lt;/p&gt;
+            
+            &lt;div class=&quot;keynote-speakers&quot;&gt;
+                &lt;div class=&quot;speaker-card keynote&quot;&gt;
+                    &lt;div class=&quot;speaker-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&amp;h=300&amp;fit=crop&amp;crop=face&quot; alt=&quot;Dr. Hiroshi Tanaka&quot;&gt;
+                        &lt;div class=&quot;speaker-badge&quot;&gt;Keynote Speaker&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;speaker-info&quot;&gt;
+                        &lt;h3&gt;Dr. 田中 博&lt;/h3&gt;
+                        &lt;p class=&quot;speaker-title&quot;&gt;AI研究所 所長 / 東京大学教授&lt;/p&gt;
+                        &lt;p class=&quot;speaker-company&quot;&gt;Future AI Labs&lt;/p&gt;
+                        
+                        &lt;div class=&quot;speaker-bio&quot;&gt;
+                            &lt;p&gt;人工知能分野の世界的権威。機械学習とディープラーニングの研究で数々の受賞歴を持つ。著書「AI革命」は世界50カ国で翻訳され、AI教育の礎となっている。&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;speaker-session&quot;&gt;
+                            &lt;h4&gt;講演テーマ&lt;/h4&gt;
+                            &lt;p&gt;「AGIへの道筋：次世代人工知能が変える世界」&lt;/p&gt;
+                            &lt;div class=&quot;session-time&quot;&gt;3月15日 10:00-11:00 | メインホール&lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;speaker-social&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Twitter&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;LinkedIn&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Research&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;speaker-card keynote&quot;&gt;
+                    &lt;div class=&quot;speaker-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1494790108755-2616b612b890?w=300&amp;h=300&amp;fit=crop&amp;crop=face&quot; alt=&quot;Sarah Johnson&quot;&gt;
+                        &lt;div class=&quot;speaker-badge&quot;&gt;Keynote Speaker&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;speaker-info&quot;&gt;
+                        &lt;h3&gt;Sarah Johnson&lt;/h3&gt;
+                        &lt;p class=&quot;speaker-title&quot;&gt;CTO / Blockchain Pioneer&lt;/p&gt;
+                        &lt;p class=&quot;speaker-company&quot;&gt;CryptoTech Solutions&lt;/p&gt;
+                        
+                        &lt;div class=&quot;speaker-bio&quot;&gt;
+                            &lt;p&gt;ブロックチェーン技術のパイオニアとして、複数のスタートアップを成功に導く。Web3とDeFi分野での実績により、Forbes「40 Under 40」に選出された。&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;speaker-session&quot;&gt;
+                            &lt;h4&gt;講演テーマ&lt;/h4&gt;
+                            &lt;p&gt;「Web3の未来：分散型インターネットの実現」&lt;/p&gt;
+                            &lt;div class=&quot;session-time&quot;&gt;3月15日 14:00-15:00 | メインホール&lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;speaker-social&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Twitter&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;LinkedIn&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Blog&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;speakers-grid&quot;&gt;
+                &lt;div class=&quot;speaker-card&quot;&gt;
+                    &lt;div class=&quot;speaker-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&amp;h=200&amp;fit=crop&amp;crop=face&quot; alt=&quot;Dr. Yuki Sato&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;speaker-info&quot;&gt;
+                        &lt;h3&gt;Dr. 佐藤 雪&lt;/h3&gt;
+                        &lt;p class=&quot;speaker-title&quot;&gt;量子コンピューティング研究者&lt;/p&gt;
+                        &lt;p class=&quot;speaker-company&quot;&gt;IBM Quantum&lt;/p&gt;
+                        
+                        &lt;div class=&quot;speaker-session&quot;&gt;
+                            &lt;h4&gt;「量子優位性の実現と産業応用」&lt;/h4&gt;
+                            &lt;div class=&quot;session-time&quot;&gt;3月16日 11:00-11:45&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;speaker-card&quot;&gt;
+                    &lt;div class=&quot;speaker-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&amp;h=200&amp;fit=crop&amp;crop=face&quot; alt=&quot;Mark Chen&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;speaker-info&quot;&gt;
+                        &lt;h3&gt;Mark Chen&lt;/h3&gt;
+                        &lt;p class=&quot;speaker-title&quot;&gt;IoT Solutions Architect&lt;/p&gt;
+                        &lt;p class=&quot;speaker-company&quot;&gt;Google Cloud&lt;/p&gt;
+                        
+                        &lt;div class=&quot;speaker-session&quot;&gt;
+                            &lt;h4&gt;「IoTエコシステムの設計戦略」&lt;/h4&gt;
+                            &lt;div class=&quot;session-time&quot;&gt;3月15日 16:30-17:15&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;speaker-card&quot;&gt;
+                    &lt;div class=&quot;speaker-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&amp;h=200&amp;fit=crop&amp;crop=face&quot; alt=&quot;Anna Rodriguez&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;speaker-info&quot;&gt;
+                        &lt;h3&gt;Anna Rodriguez&lt;/h3&gt;
+                        &lt;p class=&quot;speaker-title&quot;&gt;Cybersecurity Expert&lt;/p&gt;
+                        &lt;p class=&quot;speaker-company&quot;&gt;Meta Security&lt;/p&gt;
+                        
+                        &lt;div class=&quot;speaker-session&quot;&gt;
+                            &lt;h4&gt;「ゼロトラスト時代のセキュリティ」&lt;/h4&gt;
+                            &lt;div class=&quot;session-time&quot;&gt;3月16日 14:30-15:15&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;speaker-card&quot;&gt;
+                    &lt;div class=&quot;speaker-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&amp;h=200&amp;fit=crop&amp;crop=face&quot; alt=&quot;Kenji Yamamoto&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;speaker-info&quot;&gt;
+                        &lt;h3&gt;山本 健二&lt;/h3&gt;
+                        &lt;p class=&quot;speaker-title&quot;&gt;スタートアップ起業家&lt;/p&gt;
+                        &lt;p class=&quot;speaker-company&quot;&gt;NextGen Robotics&lt;/p&gt;
+                        
+                        &lt;div class=&quot;speaker-session&quot;&gt;
+                            &lt;h4&gt;「ロボティクス×AI の可能性」&lt;/h4&gt;
+                            &lt;div class=&quot;session-time&quot;&gt;3月16日 10:00-10:45&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;speakers-cta&quot;&gt;
+                &lt;p&gt;その他50名以上の専門家が登壇予定&lt;/p&gt;
+                &lt;a href=&quot;#&quot; class=&quot;btn-outline&quot;&gt;全スピーカーを見る&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;schedule&quot; class=&quot;schedule&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;イベントスケジュール&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;2日間のプログラム概要&lt;/p&gt;
+            
+            &lt;div class=&quot;schedule-tabs&quot;&gt;
+                &lt;button class=&quot;schedule-tab active&quot; data-day=&quot;day1&quot;&gt;Day 1 - 3月15日(土)&lt;/button&gt;
+                &lt;button class=&quot;schedule-tab&quot; data-day=&quot;day2&quot;&gt;Day 2 - 3月16日(日)&lt;/button&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;schedule-content&quot;&gt;
+                &lt;div class=&quot;schedule-day active&quot; id=&quot;day1&quot;&gt;
+                    &lt;div class=&quot;day-header&quot;&gt;
+                        &lt;h3&gt;3月15日（土）- メインデー&lt;/h3&gt;
+                        &lt;p&gt;キーノート講演とコアテクノロジーセッション&lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;schedule-timeline&quot;&gt;
+                        &lt;div class=&quot;timeline-item&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;9:00-9:30&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;受付・開場&lt;/h4&gt;
+                                &lt;p&gt;参加者登録とネットワーキング&lt;/p&gt;
+                                &lt;div class=&quot;timeline-venue&quot;&gt;メインロビー&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;timeline-item keynote&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;10:00-11:00&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;キーノート講演&lt;/h4&gt;
+                                &lt;p&gt;「AGIへの道筋：次世代人工知能が変える世界」&lt;/p&gt;
+                                &lt;div class=&quot;timeline-speaker&quot;&gt;Dr. 田中 博 (AI研究所)&lt;/div&gt;
+                                &lt;div class=&quot;timeline-venue&quot;&gt;メインホール&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;timeline-item&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;11:30-12:15&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;技術セッション A&lt;/h4&gt;
+                                &lt;div class=&quot;parallel-sessions&quot;&gt;
+                                    &lt;div class=&quot;session-track&quot;&gt;
+                                        &lt;h5&gt;Track 1: 機械学習の実践&lt;/h5&gt;
+                                        &lt;p&gt;MLOpsとモデル運用&lt;/p&gt;
+                                        &lt;span class=&quot;venue&quot;&gt;ホールA&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;session-track&quot;&gt;
+                                        &lt;h5&gt;Track 2: クラウドネイティブ&lt;/h5&gt;
+                                        &lt;p&gt;Kubernetesとマイクロサービス&lt;/p&gt;
+                                        &lt;span class=&quot;venue&quot;&gt;ホールB&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;session-track&quot;&gt;
+                                        &lt;h5&gt;Track 3: フロントエンド最新動向&lt;/h5&gt;
+                                        &lt;p&gt;React 19とNext.js 15&lt;/p&gt;
+                                        &lt;span class=&quot;venue&quot;&gt;ホールC&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;timeline-item break&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;12:15-13:15&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;ランチ休憩&lt;/h4&gt;
+                                &lt;p&gt;ネットワーキングランチ・スポンサー展示&lt;/p&gt;
+                                &lt;div class=&quot;timeline-venue&quot;&gt;展示エリア&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;timeline-item keynote&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;14:00-15:00&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;キーノート講演&lt;/h4&gt;
+                                &lt;p&gt;「Web3の未来：分散型インターネットの実現」&lt;/p&gt;
+                                &lt;div class=&quot;timeline-speaker&quot;&gt;Sarah Johnson (CryptoTech Solutions)&lt;/div&gt;
+                                &lt;div class=&quot;timeline-venue&quot;&gt;メインホール&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;timeline-item&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;15:30-16:15&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;技術セッション B&lt;/h4&gt;
+                                &lt;div class=&quot;parallel-sessions&quot;&gt;
+                                    &lt;div class=&quot;session-track&quot;&gt;
+                                        &lt;h5&gt;Track 1: ブロックチェーン実装&lt;/h5&gt;
+                                        &lt;p&gt;DeFiプロトコルの構築&lt;/p&gt;
+                                        &lt;span class=&quot;venue&quot;&gt;ホールA&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;session-track&quot;&gt;
+                                        &lt;h5&gt;Track 2: DevOps進化&lt;/h5&gt;
+                                        &lt;p&gt;GitOpsとCI/CDパイプライン&lt;/p&gt;
+                                        &lt;span class=&quot;venue&quot;&gt;ホールB&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;session-track&quot;&gt;
+                                        &lt;h5&gt;Track 3: モバイル開発&lt;/h5&gt;
+                                        &lt;p&gt;React NativeとFlutter&lt;/p&gt;
+                                        &lt;span class=&quot;venue&quot;&gt;ホールC&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;timeline-item&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;16:30-17:15&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;IoTセッション&lt;/h4&gt;
+                                &lt;p&gt;「IoTエコシステムの設計戦略」&lt;/p&gt;
+                                &lt;div class=&quot;timeline-speaker&quot;&gt;Mark Chen (Google Cloud)&lt;/div&gt;
+                                &lt;div class=&quot;timeline-venue&quot;&gt;メインホール&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;timeline-item&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;18:00-20:00&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;ウェルカムパーティー&lt;/h4&gt;
+                                &lt;p&gt;参加者・スピーカー・スポンサー交流会&lt;/p&gt;
+                                &lt;div class=&quot;timeline-venue&quot;&gt;レセプションホール&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;schedule-day&quot; id=&quot;day2&quot;&gt;
+                    &lt;div class=&quot;day-header&quot;&gt;
+                        &lt;h3&gt;3月16日（日）- イノベーションデー&lt;/h3&gt;
+                        &lt;p&gt;新技術とワークショップ中心のプログラム&lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;schedule-timeline&quot;&gt;
+                        &lt;div class=&quot;timeline-item&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;9:00-9:45&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;モーニングセッション&lt;/h4&gt;
+                                &lt;p&gt;「スタートアップエコシステムの現在」&lt;/p&gt;
+                                &lt;div class=&quot;timeline-speaker&quot;&gt;パネルディスカッション&lt;/div&gt;
+                                &lt;div class=&quot;timeline-venue&quot;&gt;メインホール&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;timeline-item&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;10:00-10:45&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;ロボティクスセッション&lt;/h4&gt;
+                                &lt;p&gt;「ロボティクス×AI の可能性」&lt;/p&gt;
+                                &lt;div class=&quot;timeline-speaker&quot;&gt;山本 健二 (NextGen Robotics)&lt;/div&gt;
+                                &lt;div class=&quot;timeline-venue&quot;&gt;ホールA&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;timeline-item&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;11:00-11:45&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;量子コンピューティング&lt;/h4&gt;
+                                &lt;p&gt;「量子優位性の実現と産業応用」&lt;/p&gt;
+                                &lt;div class=&quot;timeline-speaker&quot;&gt;Dr. 佐藤 雪 (IBM Quantum)&lt;/div&gt;
+                                &lt;div class=&quot;timeline-venue&quot;&gt;メインホール&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;timeline-item&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;13:00-15:00&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;ハンズオンワークショップ&lt;/h4&gt;
+                                &lt;div class=&quot;parallel-sessions&quot;&gt;
+                                    &lt;div class=&quot;session-track&quot;&gt;
+                                        &lt;h5&gt;Workshop 1: ChatGPT API活用&lt;/h5&gt;
+                                        &lt;p&gt;実践的なアプリケーション開発&lt;/p&gt;
+                                        &lt;span class=&quot;venue&quot;&gt;ワークショップルーム1&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;session-track&quot;&gt;
+                                        &lt;h5&gt;Workshop 2: Dockerコンテナ&lt;/h5&gt;
+                                        &lt;p&gt;本格的なコンテナ運用&lt;/p&gt;
+                                        &lt;span class=&quot;venue&quot;&gt;ワークショップルーム2&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;session-track&quot;&gt;
+                                        &lt;h5&gt;Workshop 3: NFT開発&lt;/h5&gt;
+                                        &lt;p&gt;スマートコントラクト作成&lt;/p&gt;
+                                        &lt;span class=&quot;venue&quot;&gt;ワークショップルーム3&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;timeline-item&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;15:30-16:15&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;クロージングセッション&lt;/h4&gt;
+                                &lt;p&gt;「テクノロジーの未来を切り拓く」&lt;/p&gt;
+                                &lt;div class=&quot;timeline-speaker&quot;&gt;全登壇者パネル&lt;/div&gt;
+                                &lt;div class=&quot;timeline-venue&quot;&gt;メインホール&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;timeline-item&quot;&gt;
+                            &lt;div class=&quot;timeline-time&quot;&gt;16:15-16:30&lt;/div&gt;
+                            &lt;div class=&quot;timeline-content&quot;&gt;
+                                &lt;h4&gt;閉会式&lt;/h4&gt;
+                                &lt;p&gt;来年度の告知・記念撮影&lt;/p&gt;
+                                &lt;div class=&quot;timeline-venue&quot;&gt;メインホール&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;sponsors&quot; class=&quot;sponsors&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;スポンサー企業&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;Tech Summit 2025を支援いただく企業様&lt;/p&gt;
+            
+            &lt;div class=&quot;sponsors-tiers&quot;&gt;
+                &lt;div class=&quot;sponsor-tier&quot;&gt;
+                    &lt;h3&gt;プラチナスポンサー&lt;/h3&gt;
+                    &lt;div class=&quot;sponsor-logos platinum&quot;&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;
+                            &lt;img src=&quot;https://via.placeholder.com/300x120/4285f4/ffffff?text=Google&quot; alt=&quot;Google&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;
+                            &lt;img src=&quot;https://via.placeholder.com/300x120/ff6900/ffffff?text=Amazon&quot; alt=&quot;Amazon&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;sponsor-tier&quot;&gt;
+                    &lt;h3&gt;ゴールドスポンサー&lt;/h3&gt;
+                    &lt;div class=&quot;sponsor-logos gold&quot;&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;
+                            &lt;img src=&quot;https://via.placeholder.com/250x100/0078d4/ffffff?text=Microsoft&quot; alt=&quot;Microsoft&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;
+                            &lt;img src=&quot;https://via.placeholder.com/250x100/1877f2/ffffff?text=Meta&quot; alt=&quot;Meta&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;
+                            &lt;img src=&quot;https://via.placeholder.com/250x100/ff0000/ffffff?text=Oracle&quot; alt=&quot;Oracle&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;sponsor-tier&quot;&gt;
+                    &lt;h3&gt;シルバースポンサー&lt;/h3&gt;
+                    &lt;div class=&quot;sponsor-logos silver&quot;&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;
+                            &lt;img src=&quot;https://via.placeholder.com/200x80/000000/ffffff?text=IBM&quot; alt=&quot;IBM&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;
+                            &lt;img src=&quot;https://via.placeholder.com/200x80/ff6b6b/ffffff?text=Salesforce&quot; alt=&quot;Salesforce&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;
+                            &lt;img src=&quot;https://via.placeholder.com/200x80/764abc/ffffff?text=Slack&quot; alt=&quot;Slack&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;
+                            &lt;img src=&quot;https://via.placeholder.com/200x80/00d4aa/ffffff?text=Figma&quot; alt=&quot;Figma&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;sponsor-tier&quot;&gt;
+                    &lt;h3&gt;ブロンズスポンサー&lt;/h3&gt;
+                    &lt;div class=&quot;sponsor-logos bronze&quot;&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;Atlassian&lt;/div&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;Stripe&lt;/div&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;Zoom&lt;/div&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;Notion&lt;/div&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;GitHub&lt;/div&gt;
+                        &lt;div class=&quot;sponsor-logo&quot;&gt;Vercel&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;sponsor-benefits&quot;&gt;
+                &lt;h3&gt;スポンサーシップのご案内&lt;/h3&gt;
+                &lt;p&gt;Tech Summit 2025では、イベントを支援いただくスポンサー企業様を募集しています。&lt;/p&gt;
+                &lt;div class=&quot;benefits-grid&quot;&gt;
+                    &lt;div class=&quot;benefit-item&quot;&gt;
+                        &lt;h4&gt;ブランド露出&lt;/h4&gt;
+                        &lt;p&gt;2,000名以上の参加者への効果的なブランディング&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;benefit-item&quot;&gt;
+                        &lt;h4&gt;リードジェネレーション&lt;/h4&gt;
+                        &lt;p&gt;質の高い見込み客との接点創出&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;benefit-item&quot;&gt;
+                        &lt;h4&gt;採用機会&lt;/h4&gt;
+                        &lt;p&gt;優秀なエンジニア・研究者との出会い&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;benefit-item&quot;&gt;
+                        &lt;h4&gt;技術交流&lt;/h4&gt;
+                        &lt;p&gt;最新技術動向の情報収集と発信&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;a href=&quot;#&quot; class=&quot;btn-outline&quot;&gt;スポンサー資料請求&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;venue&quot; class=&quot;venue&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;会場・アクセス&lt;/h2&gt;
+            
+            &lt;div class=&quot;venue-content&quot;&gt;
+                &lt;div class=&quot;venue-info&quot;&gt;
+                    &lt;h3&gt;東京国際フォーラム&lt;/h3&gt;
+                    &lt;p class=&quot;venue-description&quot;&gt;東京の中心地に位置する国際的なコンベンション施設。最新の設備と優れたアクセス性を備えた会場です。&lt;/p&gt;
+                    
+                    &lt;div class=&quot;venue-details&quot;&gt;
+                        &lt;div class=&quot;detail-item&quot;&gt;
+                            &lt;div class=&quot;detail-icon&quot;&gt;📍&lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;h4&gt;住所&lt;/h4&gt;
+                                &lt;p&gt;〒100-0005&lt;br&gt;東京都千代田区丸の内3丁目5番1号&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;detail-item&quot;&gt;
+                            &lt;div class=&quot;detail-icon&quot;&gt;🚃&lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;h4&gt;アクセス&lt;/h4&gt;
+                                &lt;p&gt;JR有楽町駅 徒歩1分&lt;br&gt;JR東京駅 徒歩5分&lt;br&gt;地下鉄有楽町線有楽町駅 直結&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;detail-item&quot;&gt;
+                            &lt;div class=&quot;detail-icon&quot;&gt;🅿️&lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;h4&gt;駐車場&lt;/h4&gt;
+                                &lt;p&gt;地下駐車場あり（有料）&lt;br&gt;周辺コインパーキング多数&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;detail-item&quot;&gt;
+                            &lt;div class=&quot;detail-icon&quot;&gt;♿&lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;h4&gt;バリアフリー&lt;/h4&gt;
+                                &lt;p&gt;車椅子対応&lt;br&gt;多目的トイレ完備&lt;br&gt;エレベーター設置&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;venue-facilities&quot;&gt;
+                        &lt;h4&gt;会場設備&lt;/h4&gt;
+                        &lt;div class=&quot;facilities-grid&quot;&gt;
+                            &lt;div class=&quot;facility-item&quot;&gt;
+                                &lt;span class=&quot;facility-icon&quot;&gt;🎤&lt;/span&gt;
+                                &lt;span&gt;高性能音響システム&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;facility-item&quot;&gt;
+                                &lt;span class=&quot;facility-icon&quot;&gt;📺&lt;/span&gt;
+                                &lt;span&gt;4K大型スクリーン&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;facility-item&quot;&gt;
+                                &lt;span class=&quot;facility-icon&quot;&gt;📶&lt;/span&gt;
+                                &lt;span&gt;高速Wi-Fi完備&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;facility-item&quot;&gt;
+                                &lt;span class=&quot;facility-icon&quot;&gt;🍽️&lt;/span&gt;
+                                &lt;span&gt;レストラン・カフェ&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;facility-item&quot;&gt;
+                                &lt;span class=&quot;facility-icon&quot;&gt;🔌&lt;/span&gt;
+                                &lt;span&gt;電源コンセント完備&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;facility-item&quot;&gt;
+                                &lt;span class=&quot;facility-icon&quot;&gt;📞&lt;/span&gt;
+                                &lt;span&gt;同時通訳設備&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;venue-map&quot;&gt;
+                    &lt;div class=&quot;map-placeholder&quot;&gt;
+                        &lt;h4&gt;会場マップ&lt;/h4&gt;
+                        &lt;p&gt;東京国際フォーラム周辺&lt;/p&gt;
+                        &lt;button class=&quot;btn-outline&quot;&gt;Googleマップで開く&lt;/button&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;floor-plan&quot;&gt;
+                        &lt;h4&gt;フロアプラン&lt;/h4&gt;
+                        &lt;div class=&quot;floor-info&quot;&gt;
+                            &lt;div class=&quot;floor-item&quot;&gt;
+                                &lt;span class=&quot;floor-name&quot;&gt;メインホール&lt;/span&gt;
+                                &lt;span class=&quot;floor-capacity&quot;&gt;1,500席&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;floor-item&quot;&gt;
+                                &lt;span class=&quot;floor-name&quot;&gt;ホールA&lt;/span&gt;
+                                &lt;span class=&quot;floor-capacity&quot;&gt;400席&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;floor-item&quot;&gt;
+                                &lt;span class=&quot;floor-name&quot;&gt;ホールB&lt;/span&gt;
+                                &lt;span class=&quot;floor-capacity&quot;&gt;300席&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;floor-item&quot;&gt;
+                                &lt;span class=&quot;floor-name&quot;&gt;ホールC&lt;/span&gt;
+                                &lt;span class=&quot;floor-capacity&quot;&gt;200席&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;registration&quot; class=&quot;registration&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;参加登録&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;今すぐ登録して席を確保しましょう&lt;/p&gt;
+            
+            &lt;div class=&quot;ticket-types&quot;&gt;
+                &lt;div class=&quot;ticket-card&quot;&gt;
+                    &lt;div class=&quot;ticket-header&quot;&gt;
+                        &lt;h3&gt;アーリーバード&lt;/h3&gt;
+                        &lt;div class=&quot;ticket-price&quot;&gt;¥15,000&lt;/div&gt;
+                        &lt;div class=&quot;ticket-original&quot;&gt;通常価格 ¥25,000&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;ticket-content&quot;&gt;
+                        &lt;div class=&quot;ticket-deadline&quot;&gt;2月15日まで限定&lt;/div&gt;
+                        &lt;ul class=&quot;ticket-includes&quot;&gt;
+                            &lt;li&gt;✓ 2日間全セッション参加&lt;/li&gt;
+                            &lt;li&gt;✓ ランチ・コーヒー提供&lt;/li&gt;
+                            &lt;li&gt;✓ ネットワーキングパーティー&lt;/li&gt;
+                            &lt;li&gt;✓ 資料・ノベルティ&lt;/li&gt;
+                            &lt;li&gt;✓ オンライン録画視聴（30日間）&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;button class=&quot;btn-primary ticket-btn&quot;&gt;今すぐ登録&lt;/button&gt;
+                        &lt;div class=&quot;tickets-remaining&quot;&gt;残り 127 席&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;ticket-card featured&quot;&gt;
+                    &lt;div class=&quot;ticket-badge&quot;&gt;人気&lt;/div&gt;
+                    &lt;div class=&quot;ticket-header&quot;&gt;
+                        &lt;h3&gt;一般チケット&lt;/h3&gt;
+                        &lt;div class=&quot;ticket-price&quot;&gt;¥25,000&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;ticket-content&quot;&gt;
+                        &lt;div class=&quot;ticket-deadline&quot;&gt;一般販売&lt;/div&gt;
+                        &lt;ul class=&quot;ticket-includes&quot;&gt;
+                            &lt;li&gt;✓ 2日間全セッション参加&lt;/li&gt;
+                            &lt;li&gt;✓ ランチ・コーヒー提供&lt;/li&gt;
+                            &lt;li&gt;✓ ネットワーキングパーティー&lt;/li&gt;
+                            &lt;li&gt;✓ 資料・ノベルティ&lt;/li&gt;
+                            &lt;li&gt;✓ オンライン録画視聴（30日間）&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;button class=&quot;btn-primary ticket-btn&quot;&gt;今すぐ登録&lt;/button&gt;
+                        &lt;div class=&quot;tickets-remaining&quot;&gt;残り 890 席&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;ticket-card&quot;&gt;
+                    &lt;div class=&quot;ticket-header&quot;&gt;
+                        &lt;h3&gt;学生チケット&lt;/h3&gt;
+                        &lt;div class=&quot;ticket-price&quot;&gt;¥5,000&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;ticket-content&quot;&gt;
+                        &lt;div class=&quot;ticket-deadline&quot;&gt;学生証提示必要&lt;/div&gt;
+                        &lt;ul class=&quot;ticket-includes&quot;&gt;
+                            &lt;li&gt;✓ 2日間全セッション参加&lt;/li&gt;
+                            &lt;li&gt;✓ ランチ・コーヒー提供&lt;/li&gt;
+                            &lt;li&gt;✓ 資料・ノベルティ&lt;/li&gt;
+                            &lt;li&gt;✓ オンライン録画視聴（30日間）&lt;/li&gt;
+                            &lt;li&gt;✗ ネットワーキングパーティー&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;button class=&quot;btn-outline ticket-btn&quot;&gt;今すぐ登録&lt;/button&gt;
+                        &lt;div class=&quot;tickets-remaining&quot;&gt;残り 243 席&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;ticket-card&quot;&gt;
+                    &lt;div class=&quot;ticket-header&quot;&gt;
+                        &lt;h3&gt;オンライン参加&lt;/h3&gt;
+                        &lt;div class=&quot;ticket-price&quot;&gt;¥8,000&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;ticket-content&quot;&gt;
+                        &lt;div class=&quot;ticket-deadline&quot;&gt;ライブ配信視聴&lt;/div&gt;
+                        &lt;ul class=&quot;ticket-includes&quot;&gt;
+                            &lt;li&gt;✓ キーノート講演ライブ視聴&lt;/li&gt;
+                            &lt;li&gt;✓ 主要セッションライブ視聴&lt;/li&gt;
+                            &lt;li&gt;✓ チャットでの質疑参加&lt;/li&gt;
+                            &lt;li&gt;✓ 録画視聴（60日間）&lt;/li&gt;
+                            &lt;li&gt;✓ デジタル資料&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;button class=&quot;btn-outline ticket-btn&quot;&gt;今すぐ登録&lt;/button&gt;
+                        &lt;div class=&quot;tickets-remaining&quot;&gt;制限なし&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;registration-info&quot;&gt;
+                &lt;h3&gt;参加登録について&lt;/h3&gt;
+                &lt;div class=&quot;info-grid&quot;&gt;
+                    &lt;div class=&quot;info-item&quot;&gt;
+                        &lt;h4&gt;キャンセルポリシー&lt;/h4&gt;
+                        &lt;p&gt;開催1週間前まで：全額返金&lt;br&gt;開催3日前まで：50%返金&lt;br&gt;それ以降：返金不可&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;info-item&quot;&gt;
+                        &lt;h4&gt;お支払い方法&lt;/h4&gt;
+                        &lt;p&gt;クレジットカード・銀行振込・コンビニ決済に対応&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;info-item&quot;&gt;
+                        &lt;h4&gt;領収書発行&lt;/h4&gt;
+                        &lt;p&gt;参加登録完了後、マイページより発行可能&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;info-item&quot;&gt;
+                        &lt;h4&gt;お問い合わせ&lt;/h4&gt;
+                        &lt;p&gt;registration@techsummit2025.jp&lt;br&gt;03-1234-5678&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;Tech Summit 2025&lt;/h3&gt;
+                    &lt;p&gt;未来を創るテクノロジーカンファレンス&lt;/p&gt;
+                    &lt;div class=&quot;event-info-footer&quot;&gt;
+                        &lt;p&gt;2025年3月15日-16日&lt;/p&gt;
+                        &lt;p&gt;東京国際フォーラム&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;social-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;Twitter&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;LinkedIn&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;YouTube&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h4&gt;イベント情報&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;イベント概要&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#speakers&quot;&gt;スピーカー&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#schedule&quot;&gt;スケジュール&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#venue&quot;&gt;会場・アクセス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#sponsors&quot;&gt;スポンサー&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h4&gt;参加者向け&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#registration&quot;&gt;参加登録&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;マイページ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;よくある質問&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;参加者ガイド&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;コミュニティ&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h4&gt;お問い合わせ&lt;/h4&gt;
+                    &lt;div class=&quot;contact-info-footer&quot;&gt;
+                        &lt;p&gt;運営事務局&lt;/p&gt;
+                        &lt;p&gt;Email: info@techsummit2025.jp&lt;/p&gt;
+                        &lt;p&gt;Tel: 03-1234-5678&lt;/p&gt;
+                        &lt;p&gt;受付時間: 平日 10:00-18:00&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;div class=&quot;footer-legal&quot;&gt;
+                    &lt;p&gt;&amp;copy; 2025 Tech Summit. All rights reserved.&lt;/p&gt;
+                    &lt;div class=&quot;legal-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;利用規約&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;特定商取引法&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // ハンバーガーメニュー
+const hamburger = document.getElementById(&#x27;hamburger&#x27;);
+const mainNav = document.getElementById(&#x27;main-nav&#x27;);
+
+if (hamburger &amp;&amp; mainNav) {
+    hamburger.addEventListener(&#x27;click&#x27;, function() {
+        this.classList.toggle(&#x27;active&#x27;);
+        mainNav.classList.toggle(&#x27;active&#x27;);
+    });
+    
+    // メニューリンクをクリックしたら閉じる
+    const navLinks = mainNav.querySelectorAll(&#x27;a&#x27;);
+    navLinks.forEach(link =&gt; {
+        link.addEventListener(&#x27;click&#x27;, () =&gt; {
+            hamburger.classList.remove(&#x27;active&#x27;);
+            mainNav.classList.remove(&#x27;active&#x27;);
+        });
+    });
+}
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// カウントダウンタイマー
+function updateCountdown() {
+    const eventDate = new Date(&#x27;2025-03-15T10:00:00+09:00&#x27;).getTime();
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+    
+    if (distance &gt; 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        document.getElementById(&#x27;days&#x27;).textContent = days.toString().padStart(2, &#x27;0&#x27;);
+        document.getElementById(&#x27;hours&#x27;).textContent = hours.toString().padStart(2, &#x27;0&#x27;);
+        document.getElementById(&#x27;minutes&#x27;).textContent = minutes.toString().padStart(2, &#x27;0&#x27;);
+        document.getElementById(&#x27;seconds&#x27;).textContent = seconds.toString().padStart(2, &#x27;0&#x27;);
+    } else {
+        document.getElementById(&#x27;countdown&#x27;).innerHTML = &#x27;&lt;div class=&quot;countdown-finished&quot;&gt;イベント開催中！&lt;/div&gt;&#x27;;
+    }
+}
+
+// カウントダウンを1秒ごとに更新
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// スケジュールタブ切り替え
+const scheduleTabs = document.querySelectorAll(&#x27;.schedule-tab&#x27;);
+const scheduleDays = document.querySelectorAll(&#x27;.schedule-day&#x27;);
+
+scheduleTabs.forEach(tab =&gt; {
+    tab.addEventListener(&#x27;click&#x27;, function() {
+        const day = this.getAttribute(&#x27;data-day&#x27;);
+        
+        // アクティブなタブと日程をリセット
+        scheduleTabs.forEach(t =&gt; t.classList.remove(&#x27;active&#x27;));
+        scheduleDays.forEach(d =&gt; d.classList.remove(&#x27;active&#x27;));
+        
+        // 新しいタブと日程をアクティブに
+        this.classList.add(&#x27;active&#x27;);
+        document.getElementById(day).classList.add(&#x27;active&#x27;);
+    });
+});
+
+// チケット購入ボタン
+document.querySelectorAll(&#x27;.ticket-btn&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const ticketType = this.closest(&#x27;.ticket-card&#x27;).querySelector(&#x27;h3&#x27;).textContent;
+        alert(ticketType + &#x27;チケットの購入ページへ遷移します（実装予定）&#x27;);
+    });
+});
+
+// Googleマップボタン
+document.querySelector(&#x27;.map-placeholder button&#x27;)?.addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;Googleマップで東京国際フォーラムの場所を開きます（実装予定）&#x27;);
+});
+
+// スポンサー資料請求
+document.querySelector(&#x27;.sponsor-benefits .btn-outline&#x27;)?.addEventListener(&#x27;click&#x27;, function(e) {
+    e.preventDefault();
+    alert(&#x27;スポンサーシップ資料請求フォームへ遷移します（実装予定）&#x27;);
+});
+
+// 全スピーカー表示
+document.querySelector(&#x27;.speakers-cta .btn-outline&#x27;)?.addEventListener(&#x27;click&#x27;, function(e) {
+    e.preventDefault();
+    alert(&#x27;全スピーカー一覧ページへ遷移します（実装予定）&#x27;);
+});
+
+// スクロールアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -50px 0px&#x27;
+};
+
+const observer = new IntersectionObserver((entries) =&gt; {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = &#x27;1&#x27;;
+            entry.target.style.transform = &#x27;translateY(0)&#x27;;
+        }
+    });
+}, observerOptions);
+
+// アニメーション対象要素を観察
+window.addEventListener(&#x27;load&#x27;, () =&gt; {
+    const animateElements = document.querySelectorAll(&#x27;.info-card, .speaker-card, .timeline-item, .ticket-card&#x27;);
+    animateElements.forEach(el =&gt; {
+        el.style.opacity = &#x27;0&#x27;;
+        el.style.transform = &#x27;translateY(30px)&#x27;;
+        el.style.transition = &#x27;all 0.6s ease&#x27;;
+        observer.observe(el);
+    });
+});
+
+// 統計数字のカウントアニメーション
+function animateValue(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) =&gt; {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        element.textContent = value + (element.dataset.suffix || &#x27;&#x27;);
+        if (progress &lt; 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// 統計セクションが表示されたときのアニメーション
+const statsObserver = new IntersectionObserver((entries) =&gt; {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            const statNumbers = entry.target.querySelectorAll(&#x27;.stat-number&#x27;);
+            statNumbers.forEach(statNumber =&gt; {
+                if (!statNumber.classList.contains(&#x27;animated&#x27;)) {
+                    const text = statNumber.textContent;
+                    const number = parseInt(text.replace(/[^0-9]/g, &#x27;&#x27;));
+                    if (!isNaN(number)) {
+                        statNumber.dataset.suffix = text.replace(/[0-9]/g, &#x27;&#x27;);
+                        statNumber.textContent = &#x27;0&#x27;;
+                        animateValue(statNumber, 0, number, 2000);
+                        statNumber.classList.add(&#x27;animated&#x27;);
+                    }
+                }
+            });
+        }
+    });
+}, { threshold: 0.5 });
+
+// 統計セクションを観察
+document.querySelectorAll(&#x27;.hero-stats, .event-stats-visual&#x27;).forEach(stats =&gt; {
+    statsObserver.observe(stats);
+});
+
+// パララックス効果（ヒーロー背景）
+window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+    const scrolled = window.pageYOffset;
+    const heroBackground = document.querySelector(&#x27;.hero-background&#x27;);
+    if (heroBackground) {
+        heroBackground.style.transform = &#x27;translateY(&#x27; + (scrolled * 0.5) + &#x27;px)&#x27;;
+    }
+});
+
+// タイムラインアイテムのクリックイベント
+document.querySelectorAll(&#x27;.timeline-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;click&#x27;, function() {
+        const title = this.querySelector(&#x27;h4&#x27;).textContent;
+        if (!title.includes(&#x27;受付&#x27;) &amp;&amp; !title.includes(&#x27;休憩&#x27;)) {
+            alert(&#x27;&quot;&#x27; + title + &#x27;&quot;の詳細情報を表示します（実装予定）&#x27;);
+        }
+    });
+});
+
+// スピーカーカードのクリックイベント
+document.querySelectorAll(&#x27;.speaker-card&#x27;).forEach(card =&gt; {
+    card.addEventListener(&#x27;click&#x27;, function() {
+        const speakerName = this.querySelector(&#x27;h3&#x27;).textContent;
+        alert(speakerName + &#x27;のプロフィール詳細ページへ遷移します（実装予定）&#x27;);
+    });
+});
+
+// ソーシャルリンクのクリック
+document.querySelectorAll(&#x27;.social-link&#x27;).forEach(link =&gt; {
+    link.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const platform = this.textContent;
+        alert(platform + &#x27;プロフィールを開きます（実装予定）&#x27;);
+    });
+});
+
+// ページ読み込み時のアニメーション
+window.addEventListener(&#x27;load&#x27;, function() {
+    // ヒーローコンテンツのアニメーション
+    const heroContent = document.querySelector(&#x27;.hero-content&#x27;);
+    if (heroContent) {
+        heroContent.style.opacity = &#x27;0&#x27;;
+        heroContent.style.transform = &#x27;translateY(50px)&#x27;;
+        
+        setTimeout(() =&gt; {
+            heroContent.style.transition = &#x27;all 1.5s ease&#x27;;
+            heroContent.style.opacity = &#x27;1&#x27;;
+            heroContent.style.transform = &#x27;translateY(0)&#x27;;
+        }, 500);
+    }
+    
+    // イベントバッジのアニメーション
+    const eventBadge = document.querySelector(&#x27;.event-badge&#x27;);
+    if (eventBadge) {
+        eventBadge.style.animation = &#x27;pulse 2s infinite&#x27;;
+    }
+});
+
+// スクロール時のヘッダー背景変更
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const header = document.querySelector(&#x27;.header&#x27;);
+    if (window.scrollY &gt; 100) {
+        header.style.background = &#x27;rgba(26, 32, 44, 0.98)&#x27;;
+    } else {
+        header.style.background = &#x27;rgba(26, 32, 44, 0.95)&#x27;;
+    }
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="カンファレンス・セミナー" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"event-conference\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"event-conference\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"event-conference\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"event-conference\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"czAF8H2z0FUx-mnsezemj\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"event-conference\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

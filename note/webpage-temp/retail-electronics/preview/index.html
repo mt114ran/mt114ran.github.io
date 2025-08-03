@@ -1,0 +1,1252 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;小売店 - 家電量販店&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Helvetica Neue&#x27;, &#x27;Yu Gothic&#x27;, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: #f8f9fa;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 30px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.search-area {
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-box {
+    display: flex;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.category-select {
+    padding: 12px 15px;
+    border: none;
+    background: #f8f9fa;
+    outline: none;
+    min-width: 120px;
+}
+
+.search-btn {
+    padding: 12px 20px;
+    background: #00d4ff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.search-btn:hover {
+    background: #0099cc;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #00d4ff;
+}
+
+.header-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.compare-btn,
+.cart-btn {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.compare-btn:hover,
+.cart-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.compare-count,
+.cart-count {
+    background: #ff4757;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-text h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #00d4ff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-tech {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #00d4ff, #0099cc);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.btn-tech:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+}
+
+.hero-visual img {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Promotion Banner */
+.promotion-banner {
+    background: white;
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.promo-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.promo-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.promo-item h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.promo-item p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #333;
+    position: relative;
+}
+
+.section-title::after {
+    content: &#x27;&#x27;;
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(45deg, #00d4ff, #0099cc);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* Products */
+.featured-products {
+    background: white;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.badge.hot {
+    background: #ff4757;
+}
+
+.badge.new {
+    background: #2ed573;
+}
+
+.badge.sale {
+    background: #ffa502;
+}
+
+.compare-add {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.compare-add:hover {
+    background: #00d4ff;
+}
+
+.product-info {
+    padding: 25px;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.specs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.specs span {
+    background: #f1f3f4;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.stars {
+    color: #ffa502;
+}
+
+.review-count {
+    color: #666;
+    font-size: 12px;
+}
+
+.price-info {
+    margin-bottom: 20px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.sale-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff4757;
+    margin-right: 8px;
+}
+
+.discount {
+    background: #ff4757;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.add-to-cart {
+    width: 100%;
+    background: linear-gradient(45deg, #00d4ff, #0099cc);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-to-cart:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Categories */
+.categories {
+    background: #f8f9fa;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.category-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-info {
+    padding: 25px;
+}
+
+.category-info h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.category-info p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.item-count {
+    color: #00d4ff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Services */
+.services {
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    text-align: center;
+    padding: 40px 30px;
+    background: #f8f9fa;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.service-card:hover {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.service-card ul {
+    text-align: left;
+    color: #666;
+    list-style: none;
+}
+
+.service-card ul li {
+    margin-bottom: 8px;
+}
+
+/* Newsletter */
+.newsletter {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+}
+
+.newsletter-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.newsletter-text h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 15px;
+    min-width: 400px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+
+/* Support */
+.support {
+    background: white;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.support-item {
+    text-align: center;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.support-item:hover {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.support-item h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.support-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00d4ff;
+    margin-bottom: 10px;
+}
+
+.chat-btn,
+.store-locator,
+.faq-link {
+    display: inline-block;
+    background: #00d4ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+}
+
+.chat-btn:hover,
+.store-locator:hover,
+.faq-link:hover {
+    background: #0099cc;
+    transform: translateY(-1px);
+}
+
+/* Footer */
+.footer {
+    background: #1a1a2e;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    color: #00d4ff;
+    font-size: 18px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #00d4ff;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .search-area {
+        order: -1;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-text h2 {
+        font-size: 32px;
+    }
+    
+    .newsletter-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .newsletter-form {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;header-content&quot;&gt;
+                &lt;h1 class=&quot;logo&quot;&gt;TECH WORLD&lt;/h1&gt;
+                &lt;div class=&quot;search-area&quot;&gt;
+                    &lt;div class=&quot;search-box&quot;&gt;
+                        &lt;input type=&quot;text&quot; placeholder=&quot;商品を検索...&quot;&gt;
+                        &lt;select class=&quot;category-select&quot;&gt;
+                            &lt;option&gt;カテゴリー&lt;/option&gt;
+                            &lt;option&gt;スマートフォン&lt;/option&gt;
+                            &lt;option&gt;パソコン&lt;/option&gt;
+                            &lt;option&gt;家電&lt;/option&gt;
+                            &lt;option&gt;ゲーム&lt;/option&gt;
+                        &lt;/select&gt;
+                        &lt;button class=&quot;search-btn&quot;&gt;🔍&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;nav class=&quot;nav&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#featured&quot;&gt;特集&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#categories&quot;&gt;カテゴリ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;サービス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#support&quot;&gt;サポート&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+                &lt;div class=&quot;header-actions&quot;&gt;
+                    &lt;button class=&quot;compare-btn&quot;&gt;比較 &lt;span class=&quot;compare-count&quot;&gt;0&lt;/span&gt;&lt;/button&gt;
+                    &lt;button class=&quot;cart-btn&quot;&gt;🛒 &lt;span class=&quot;cart-count&quot;&gt;0&lt;/span&gt;&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;div class=&quot;hero-text&quot;&gt;
+                &lt;h2&gt;テクノロジーで未来を創る&lt;/h2&gt;
+                &lt;p&gt;最新家電・デジタル機器で快適なライフスタイルを&lt;/p&gt;
+                &lt;a href=&quot;#featured&quot; class=&quot;btn-tech&quot;&gt;今月の特集を見る&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;hero-visual&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;最新テクノロジー&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;promotion-banner&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;promo-grid&quot;&gt;
+                &lt;div class=&quot;promo-item&quot;&gt;
+                    &lt;span class=&quot;promo-icon&quot;&gt;🚚&lt;/span&gt;
+                    &lt;h3&gt;全国送料無料&lt;/h3&gt;
+                    &lt;p&gt;3万円以上のお買い上げで&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;promo-item&quot;&gt;
+                    &lt;span class=&quot;promo-icon&quot;&gt;🔧&lt;/span&gt;
+                    &lt;h3&gt;設置・設定サービス&lt;/h3&gt;
+                    &lt;p&gt;専門スタッフが対応&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;promo-item&quot;&gt;
+                    &lt;span class=&quot;promo-icon&quot;&gt;🛡️&lt;/span&gt;
+                    &lt;h3&gt;延長保証&lt;/h3&gt;
+                    &lt;p&gt;最大5年間の安心保証&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;promo-item&quot;&gt;
+                    &lt;span class=&quot;promo-icon&quot;&gt;💰&lt;/span&gt;
+                    &lt;h3&gt;下取りサービス&lt;/h3&gt;
+                    &lt;p&gt;古い製品も高価買取&lt;/p&gt;  
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;featured&quot; class=&quot;featured-products&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;今月の特集商品&lt;/h2&gt;
+            &lt;div class=&quot;product-grid&quot;&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;スマートフォン&quot;&gt;
+                        &lt;span class=&quot;badge hot&quot;&gt;HOT&lt;/span&gt;
+                        &lt;button class=&quot;compare-add&quot; data-product=&quot;smartphone&quot;&gt;比較に追加&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;最新5Gスマートフォン&lt;/h3&gt;
+                        &lt;div class=&quot;specs&quot;&gt;
+                            &lt;span&gt;128GB&lt;/span&gt;
+                            &lt;span&gt;6.1インチ&lt;/span&gt;
+                            &lt;span&gt;5G対応&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;rating&quot;&gt;
+                            &lt;span class=&quot;stars&quot;&gt;★★★★☆&lt;/span&gt;
+                            &lt;span class=&quot;review-count&quot;&gt;(124件)&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;price-info&quot;&gt;
+                            &lt;span class=&quot;original-price&quot;&gt;¥89,800&lt;/span&gt;
+                            &lt;span class=&quot;sale-price&quot;&gt;¥79,800&lt;/span&gt;
+                            &lt;span class=&quot;discount&quot;&gt;11%OFF&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;button class=&quot;add-to-cart&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;ノートパソコン&quot;&gt;
+                        &lt;span class=&quot;badge new&quot;&gt;NEW&lt;/span&gt;
+                        &lt;button class=&quot;compare-add&quot; data-product=&quot;laptop&quot;&gt;比較に追加&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;高性能ノートパソコン&lt;/h3&gt;
+                        &lt;div class=&quot;specs&quot;&gt;
+                            &lt;span&gt;Intel i7&lt;/span&gt;
+                            &lt;span&gt;16GB RAM&lt;/span&gt;
+                            &lt;span&gt;512GB SSD&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;rating&quot;&gt;
+                            &lt;span class=&quot;stars&quot;&gt;★★★★★&lt;/span&gt;
+                            &lt;span class=&quot;review-count&quot;&gt;(89件)&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;price-info&quot;&gt;
+                            &lt;span class=&quot;sale-price&quot;&gt;¥159,800&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;button class=&quot;add-to-cart&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;4Kテレビ&quot;&gt;
+                        &lt;span class=&quot;badge sale&quot;&gt;SALE&lt;/span&gt;
+                        &lt;button class=&quot;compare-add&quot; data-product=&quot;tv&quot;&gt;比較に追加&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;55型4K有機ELテレビ&lt;/h3&gt;
+                        &lt;div class=&quot;specs&quot;&gt;
+                            &lt;span&gt;4K対応&lt;/span&gt;
+                            &lt;span&gt;HDR10&lt;/span&gt;
+                            &lt;span&gt;スマートTV&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;rating&quot;&gt;
+                            &lt;span class=&quot;stars&quot;&gt;★★★★☆&lt;/span&gt;
+                            &lt;span class=&quot;review-count&quot;&gt;(256件)&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;price-info&quot;&gt;
+                            &lt;span class=&quot;original-price&quot;&gt;¥198,000&lt;/span&gt;
+                            &lt;span class=&quot;sale-price&quot;&gt;¥149,800&lt;/span&gt;
+                            &lt;span class=&quot;discount&quot;&gt;24%OFF&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;button class=&quot;add-to-cart&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;ワイヤレスイヤホン&quot;&gt;
+                        &lt;button class=&quot;compare-add&quot; data-product=&quot;earphones&quot;&gt;比較に追加&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;ノイズキャンセリングイヤホン&lt;/h3&gt;
+                        &lt;div class=&quot;specs&quot;&gt;
+                            &lt;span&gt;ANC対応&lt;/span&gt;
+                            &lt;span&gt;30時間再生&lt;/span&gt;
+                            &lt;span&gt;防水IPX4&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;rating&quot;&gt;
+                            &lt;span class=&quot;stars&quot;&gt;★★★★★&lt;/span&gt;
+                            &lt;span class=&quot;review-count&quot;&gt;(342件)&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;price-info&quot;&gt;
+                            &lt;span class=&quot;sale-price&quot;&gt;¥24,800&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;button class=&quot;add-to-cart&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;categories&quot; class=&quot;categories&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;カテゴリー&lt;/h2&gt;
+            &lt;div class=&quot;category-grid&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;スマートフォン・タブレット&quot;&gt;
+                    &lt;div class=&quot;category-info&quot;&gt;
+                        &lt;h3&gt;スマートフォン・タブレット&lt;/h3&gt;
+                        &lt;p&gt;最新モデルから人気機種まで&lt;/p&gt;
+                        &lt;span class=&quot;item-count&quot;&gt;1,234商品&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;パソコン・周辺機器&quot;&gt;
+                    &lt;div class=&quot;category-info&quot;&gt;
+                        &lt;h3&gt;パソコン・周辺機器&lt;/h3&gt;
+                        &lt;p&gt;デスクトップからモバイルまで&lt;/p&gt;
+                        &lt;span class=&quot;item-count&quot;&gt;856商品&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;テレビ・オーディオ&quot;&gt;
+                    &lt;div class=&quot;category-info&quot;&gt;
+                        &lt;h3&gt;テレビ・オーディオ&lt;/h3&gt;
+                        &lt;p&gt;4K・8K対応の最新映像機器&lt;/p&gt;
+                        &lt;span class=&quot;item-count&quot;&gt;567商品&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;生活家電&quot;&gt;
+                    &lt;div class=&quot;category-info&quot;&gt;
+                        &lt;h3&gt;生活家電&lt;/h3&gt;
+                        &lt;p&gt;便利で快適な暮らしをサポート&lt;/p&gt;
+                        &lt;span class=&quot;item-count&quot;&gt;1,789商品&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;ゲーム&quot;&gt;
+                    &lt;div class=&quot;category-info&quot;&gt;
+                        &lt;h3&gt;ゲーム・ホビー&lt;/h3&gt;
+                        &lt;p&gt;最新ゲーム機とソフト&lt;/p&gt;
+                        &lt;span class=&quot;item-count&quot;&gt;678商品&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;カメラ・ビデオ&quot;&gt;
+                    &lt;div class=&quot;category-info&quot;&gt;
+                        &lt;h3&gt;カメラ・ビデオ&lt;/h3&gt;
+                        &lt;p&gt;プロ仕様から入門機まで&lt;/p&gt;
+                        &lt;span class=&quot;item-count&quot;&gt;423商品&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;services&quot; class=&quot;services&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;充実のサービス&lt;/h2&gt;
+            &lt;div class=&quot;services-grid&quot;&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🚚&lt;/div&gt;
+                    &lt;h3&gt;配送・設置サービス&lt;/h3&gt;
+                    &lt;p&gt;大型家電の配送から設置、古い製品の回収まで、専門スタッフがしっかりサポートします。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;・全国配送対応&lt;/li&gt;
+                        &lt;li&gt;・設置・接続作業&lt;/li&gt;
+                        &lt;li&gt;・古い製品の引き取り&lt;/li&gt;
+                        &lt;li&gt;・動作確認サービス&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🛡️&lt;/div&gt;
+                    &lt;h3&gt;延長保証サービス&lt;/h3&gt;
+                    &lt;p&gt;メーカー保証を延長し、長期間にわたって安心してご利用いただけます。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;・最大5年間の保証&lt;/li&gt;
+                        &lt;li&gt;・修理回数制限なし&lt;/li&gt;
+                        &lt;li&gt;・全国の提携店で対応&lt;/li&gt;
+                        &lt;li&gt;・代替機貸し出し&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;💻&lt;/div&gt;
+                    &lt;h3&gt;技術サポート&lt;/h3&gt;
+                    &lt;p&gt;購入後の設定や使い方まで、技術スタッフが丁寧にサポートします。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;・初期設定サポート&lt;/li&gt;
+                        &lt;li&gt;・使い方講座&lt;/li&gt;
+                        &lt;li&gt;・電話・チャット対応&lt;/li&gt;
+                        &lt;li&gt;・出張サポート&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;newsletter&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;newsletter-content&quot;&gt;
+                &lt;div class=&quot;newsletter-text&quot;&gt;
+                    &lt;h2&gt;お得な情報をお届け&lt;/h2&gt;
+                    &lt;p&gt;新商品情報やセール情報をいち早くお知らせします&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;form class=&quot;newsletter-form&quot;&gt;
+                    &lt;input type=&quot;email&quot; placeholder=&quot;メールアドレスを入力&quot;&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;btn-tech&quot;&gt;登録する&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;support&quot; class=&quot;support&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;サポート・お問い合わせ&lt;/h2&gt;
+            &lt;div class=&quot;support-grid&quot;&gt;
+                &lt;div class=&quot;support-item&quot;&gt;
+                    &lt;h3&gt;📞 電話サポート&lt;/h3&gt;
+                    &lt;p class=&quot;support-number&quot;&gt;0120-123-456&lt;/p&gt;
+                    &lt;p&gt;受付時間: 9:00-21:00（年中無休）&lt;/p&gt;
+                    &lt;p&gt;購入相談・技術サポート・アフターサービス&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;support-item&quot;&gt;
+                    &lt;h3&gt;💬 チャットサポート&lt;/h3&gt;
+                    &lt;button class=&quot;chat-btn&quot;&gt;チャットを開始&lt;/button&gt;
+                    &lt;p&gt;リアルタイムでスタッフがお答えします&lt;/p&gt;
+                    &lt;p&gt;受付時間: 10:00-20:00&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;support-item&quot;&gt;
+                    &lt;h3&gt;📍 店舗案内&lt;/h3&gt;
+                    &lt;p&gt;全国50店舗でサービス展開&lt;/p&gt;
+                    &lt;p&gt;実際に商品を見て、触って、体験できます&lt;/p&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;store-locator&quot;&gt;店舗を探す&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;support-item&quot;&gt;
+                    &lt;h3&gt;📋 よくある質問&lt;/h3&gt;
+                    &lt;p&gt;配送・返品・保証など、よくあるご質問にお答えします&lt;/p&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;faq-link&quot;&gt;FAQを見る&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;TECH WORLD&lt;/h3&gt;
+                    &lt;p&gt;テクノロジーで未来を創る&lt;/p&gt;
+                    &lt;div class=&quot;social-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;YouTube&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Twitter&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;商品カテゴリー&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;スマートフォン&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;パソコン&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;家電&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ゲーム&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;カメラ&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;サービス&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;配送・設置&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;延長保証&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;技術サポート&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;下取りサービス&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;企業情報&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;会社概要&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;店舗案内&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;採用情報&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;copyright&quot;&gt;&amp;copy; 2025 TECH WORLD. All rights reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // Search functionality
+document.querySelector(&#x27;.search-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    const searchTerm = document.querySelector(&#x27;.search-box input&#x27;).value;
+    const category = document.querySelector(&#x27;.category-select&#x27;).value;
+    
+    if (searchTerm.trim()) {
+        alert(`検索中: &quot;${searchTerm}&quot;${category !== &#x27;カテゴリー&#x27; ? ` in ${category}` : &#x27;&#x27;}`);
+        // 実際の検索処理をここに実装
+    }
+});
+
+// Enter key search
+document.querySelector(&#x27;.search-box input&#x27;).addEventListener(&#x27;keypress&#x27;, function(e) {
+    if (e.key === &#x27;Enter&#x27;) {
+        document.querySelector(&#x27;.search-btn&#x27;).click();
+    }
+});
+
+// Compare functionality
+let compareList = [];
+const maxCompare = 3;
+
+document.querySelectorAll(&#x27;.compare-add&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const productId = this.dataset.product;
+        
+        if (compareList.includes(productId)) {
+            // Remove from compare
+            compareList = compareList.filter(id =&gt; id !== productId);
+            this.textContent = &#x27;比較に追加&#x27;;
+            this.style.background = &#x27;rgba(0,0,0,0.7)&#x27;;
+        } else {
+            // Add to compare
+            if (compareList.length &lt; maxCompare) {
+                compareList.push(productId);
+                this.textContent = &#x27;比較中&#x27;;
+                this.style.background = &#x27;#00d4ff&#x27;;
+            } else {
+                alert(`比較は最大${maxCompare}商品までです`);
+                return;
+            }
+        }
+        
+        updateCompareCount();
+    });
+});
+
+function updateCompareCount() {
+    const countElement = document.querySelector(&#x27;.compare-count&#x27;);
+    countElement.textContent = compareList.length;
+    
+    if (compareList.length &gt; 0) {
+        countElement.style.display = &#x27;inline-flex&#x27;;
+    } else {
+        countElement.style.display = &#x27;none&#x27;;
+    }
+}
+
+// Compare button click
+document.querySelector(&#x27;.compare-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    if (compareList.length &gt; 1) {
+        alert(`${compareList.length}商品の比較ページを表示します\n比較商品: ${compareList.join(&#x27;, &#x27;)}`);
+    } else {
+        alert(&#x27;比較するには2商品以上選択してください&#x27;);
+    }
+});
+
+// Add to cart functionality
+let cartItems = 0;
+
+document.querySelectorAll(&#x27;.add-to-cart&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const productCard = this.closest(&#x27;.product-card&#x27;);
+        const productName = productCard.querySelector(&#x27;h3&#x27;).textContent;
+        const price = productCard.querySelector(&#x27;.sale-price&#x27;).textContent;
+        
+        cartItems++;
+        updateCartCount();
+        
+        // Visual feedback
+        this.textContent = &#x27;カートに追加済み&#x27;;
+        this.style.background = &#x27;#2ed573&#x27;;
+        setTimeout(() =&gt; {
+            this.textContent = &#x27;カートに追加&#x27;;
+            this.style.background = &#x27;linear-gradient(45deg, #00d4ff, #0099cc)&#x27;;
+        }, 2000);
+        
+        alert(`${productName} を カートに追加しました\n価格: ${price}`);
+    });
+});
+
+function updateCartCount() {
+    const countElement = document.querySelector(&#x27;.cart-count&#x27;);
+    countElement.textContent = cartItems;
+    
+    if (cartItems &gt; 0) {
+        countElement.style.display = &#x27;inline-flex&#x27;;
+    } else {
+        countElement.style.display = &#x27;none&#x27;;
+    }
+}
+
+// Cart button click
+document.querySelector(&#x27;.cart-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    if (cartItems &gt; 0) {
+        alert(`カートページを表示します\n商品数: ${cartItems}点`);
+    } else {
+        alert(&#x27;カートは空です&#x27;);
+    }
+});
+
+// Category navigation
+document.querySelectorAll(&#x27;.category-card&#x27;).forEach(card =&gt; {
+    card.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        const categoryName = this.querySelector(&#x27;h3&#x27;).textContent;
+        const itemCount = this.querySelector(&#x27;.item-count&#x27;).textContent;
+        alert(`${categoryName} のページに移動します\n${itemCount}`);
+    });
+});
+
+// Newsletter subscription
+document.querySelector(&#x27;.newsletter-form&#x27;).addEventListener(&#x27;submit&#x27;, function(e) {
+    e.preventDefault();
+    const email = this.querySelector(&#x27;input&#x27;).value;
+    
+    if (email &amp;&amp; email.includes(&#x27;@&#x27;)) {
+        alert(`${email} でニュースレターに登録しました`);
+        this.querySelector(&#x27;input&#x27;).value = &#x27;&#x27;;
+    } else {
+        alert(&#x27;正しいメールアドレスを入力してください&#x27;);
+    }
+});
+
+// Support interactions
+document.querySelector(&#x27;.chat-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;チャットサポートを開始します\n\n担当者が接続されるまでお待ちください...&#x27;);
+});
+
+document.querySelectorAll(&#x27;.store-locator, .faq-link&#x27;).forEach(link =&gt; {
+    link.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        const text = this.textContent;
+        alert(`${text}ページに移動します`);
+    });
+});
+
+// Smooth scrolling
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// Initialize
+updateCompareCount();
+updateCartCount();
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="小売店 - 家電量販店" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"retail-electronics\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"retail-electronics\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"retail-electronics\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"retail-electronics\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"DZ4xuFza2ALzna199YlKq\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"retail-electronics\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

@@ -1,0 +1,1774 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;カフェ - コワーキング&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url(&#x27;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap&#x27;);
+
+body {
+    font-family: &#x27;Inter&#x27;, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #f7fafc;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3182ce;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background-color: #3182ce;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #3182ce;
+}
+
+.book-now-btn {
+    background: linear-gradient(135deg, #3182ce, #2c5aa0);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.book-now-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(49, 130, 206, 0.4);
+}
+
+/* Hero Section */
+.hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+}
+
+.hero-features {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.badge-icon {
+    font-size: 1.1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3182ce, #2c5aa0);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(49, 130, 206, 0.4);
+}
+
+.btn-secondary {
+    background: white;
+    color: #3182ce;
+    border: 2px solid #3182ce;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.btn-secondary:hover {
+    background: #3182ce;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.live-status {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.status-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.status-bar {
+    flex: 1;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.status-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #48bb78, #38a169);
+    transition: width 0.3s;
+}
+
+.status-text {
+    font-weight: 600;
+    color: #38a169;
+}
+
+/* Workspace Section */
+.workspace {
+    padding: 100px 0;
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 3rem;
+}
+
+.workspace-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.workspace-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    border: 1px solid #e2e8f0;
+}
+
+.workspace-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.workspace-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.workspace-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.workspace-card:hover .workspace-image img {
+    transform: scale(1.05);
+}
+
+.availability-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.availability-badge.available {
+    background: #48bb78;
+    color: white;
+}
+
+.availability-badge.busy {
+    background: #ed8936;
+    color: white;
+}
+
+.availability-badge.reserved {
+    background: #e53e3e;
+    color: white;
+}
+
+.workspace-info {
+    padding: 1.5rem;
+}
+
+.workspace-info h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+}
+
+.workspace-info p {
+    color: #4a5568;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.workspace-features {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.feature-tag {
+    background: #edf2f7;
+    color: #4a5568;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.workspace-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3182ce;
+}
+
+.duration {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+/* Services Section */
+.services {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.service-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 1rem;
+}
+
+.service-item p {
+    color: #4a5568;
+    margin-bottom: 1rem;
+}
+
+.service-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+/* Pricing Section */
+.pricing {
+    padding: 100px 0;
+    background: white;
+}
+
+.pricing-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem 0;
+}
+
+.pricing-tab {
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.pricing-tab.active,
+.pricing-tab:hover {
+    background: #3182ce;
+    color: white;
+    border-color: #3182ce;
+}
+
+.pricing-content {
+    display: none;
+}
+
+.pricing-content.active {
+    display: block;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.pricing-card {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.pricing-card.premium {
+    border-color: #3182ce;
+    transform: scale(1.05);
+}
+
+.pricing-card:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #3182ce, #2c5aa0);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 1rem;
+}
+
+.price-display {
+    margin-bottom: 2rem;
+}
+
+.price-display .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3182ce;
+}
+
+.price-display .duration {
+    font-size: 1rem;
+    color: #718096;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.pricing-features li {
+    padding: 0.5rem 0;
+    color: #4a5568;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.pricing-features li::before {
+    content: &#x27;✓&#x27;;
+    position: absolute;
+    left: 0;
+    color: #48bb78;
+    font-weight: bold;
+}
+
+/* Booking Section */
+.booking {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+}
+
+.booking-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.location-info h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 2rem;
+}
+
+.location-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.detail-item {
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+}
+
+.detail-icon {
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.detail-item strong {
+    color: #3182ce;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.detail-item p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.booking-widget {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.booking-widget h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3182ce;
+}
+
+.check-availability-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #3182ce, #2c5aa0);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.check-availability-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(49, 130, 206, 0.4);
+}
+
+.availability-result {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f0fff4;
+    border: 2px solid #48bb78;
+    border-radius: 10px;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.result-header h5 {
+    color: #1a202c;
+}
+
+.available-count {
+    color: #48bb78;
+    font-weight: 600;
+}
+
+.book-seat-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.book-seat-btn:hover {
+    background: #38a169;
+    transform: translateY(-2px);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 2% auto;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem 0;
+}
+
+.modal-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #718096;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.close-modal:hover {
+    background: #edf2f7;
+    color: #4a5568;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.required {
+    color: #e53e3e;
+}
+
+.booking-summary {
+    background: #f7fafc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.booking-summary h4 {
+    color: #1a202c;
+    margin-bottom: 1rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+}
+
+.summary-item.total {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 0.5rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.submit-booking-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #3182ce, #2c5aa0);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.submit-booking-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(49, 130, 206, 0.4);
+}
+
+/* Footer */
+.footer {
+    background: #1a202c;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3182ce;
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+    color: #a0aec0;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.link-group h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.link-group ul {
+    list-style: none;
+}
+
+.link-group li {
+    margin-bottom: 0.5rem;
+}
+
+.link-group a {
+    color: #a0aec0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link-group a:hover {
+    color: #3182ce;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #2d3748;
+}
+
+.footer-bottom p {
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 2rem 0;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-cta {
+        display: none;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .workspace-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card.premium {
+        transform: none;
+    }
+    
+    .booking-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;nav class=&quot;navbar&quot;&gt;
+            &lt;div class=&quot;nav-container&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;span class=&quot;logo-icon&quot;&gt;💻&lt;/span&gt;
+                    &lt;span class=&quot;logo-text&quot;&gt;Work Café Hub&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;button class=&quot;menu-toggle&quot; id=&quot;menuToggle&quot;&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;ul class=&quot;nav-menu&quot; id=&quot;navMenu&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#workspace&quot;&gt;Workspace&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#pricing&quot;&gt;Pricing&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#booking&quot;&gt;Booking&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;div class=&quot;nav-cta&quot;&gt;
+                    &lt;button class=&quot;book-now-btn&quot; onclick=&quot;openBookingModal()&quot;&gt;今すぐ予約&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;div class=&quot;hero-text&quot;&gt;
+                &lt;h1 class=&quot;hero-title&quot;&gt;新しい働き方の場所&lt;/h1&gt;
+                &lt;p class=&quot;hero-subtitle&quot;&gt;コーヒーを飲みながら、生産性を最大化&lt;/p&gt;
+                &lt;div class=&quot;hero-features&quot;&gt;
+                    &lt;div class=&quot;feature-badge&quot;&gt;
+                        &lt;span class=&quot;badge-icon&quot;&gt;📶&lt;/span&gt;
+                        &lt;span&gt;高速Wi-Fi&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;feature-badge&quot;&gt;
+                        &lt;span class=&quot;badge-icon&quot;&gt;🔌&lt;/span&gt;
+                        &lt;span&gt;電源完備&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;feature-badge&quot;&gt;
+                        &lt;span class=&quot;badge-icon&quot;&gt;🤫&lt;/span&gt;
+                        &lt;span&gt;静音エリア&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;hero-buttons&quot;&gt;
+                    &lt;button class=&quot;btn-primary&quot; onclick=&quot;openBookingModal()&quot;&gt;席を予約する&lt;/button&gt;
+                    &lt;button class=&quot;btn-secondary&quot; onclick=&quot;scrollToWorkspace()&quot;&gt;詳細を見る&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;hero-image&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1521736947700-36f6b61f2fe8?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;コワーキングスペース&quot;&gt;
+                &lt;div class=&quot;live-status&quot;&gt;
+                    &lt;div class=&quot;status-item&quot;&gt;
+                        &lt;span class=&quot;status-label&quot;&gt;現在の利用率&lt;/span&gt;
+                        &lt;div class=&quot;status-bar&quot;&gt;
+                            &lt;div class=&quot;status-fill&quot; style=&quot;width: 65%&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;span class=&quot;status-text&quot;&gt;65%&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;workspace&quot; class=&quot;workspace&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Work Spaces&lt;/h2&gt;
+            &lt;div class=&quot;workspace-grid&quot;&gt;
+                &lt;div class=&quot;workspace-card&quot;&gt;
+                    &lt;div class=&quot;workspace-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;オープンワークスペース&quot;&gt;
+                        &lt;div class=&quot;availability-badge available&quot;&gt;利用可能&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;workspace-info&quot;&gt;
+                        &lt;h3&gt;オープンワークスペース&lt;/h3&gt;
+                        &lt;p&gt;開放的な空間で集中作業に最適。大きなテーブルでゆったりと作業できます。&lt;/p&gt;
+                        &lt;div class=&quot;workspace-features&quot;&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;24席&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;Wi-Fi&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;電源&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;モニター貸出&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;workspace-price&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥500&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/時間&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;workspace-card&quot;&gt;
+                    &lt;div class=&quot;workspace-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;サイレントワークエリア&quot;&gt;
+                        &lt;div class=&quot;availability-badge busy&quot;&gt;混雑中&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;workspace-info&quot;&gt;
+                        &lt;h3&gt;サイレントワークエリア&lt;/h3&gt;
+                        &lt;p&gt;静寂に包まれた集中特化エリア。通話禁止で深い集中作業が可能です。&lt;/p&gt;
+                        &lt;div class=&quot;workspace-features&quot;&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;12席&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;Wi-Fi&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;電源&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;通話禁止&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;workspace-price&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥700&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/時間&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;workspace-card&quot;&gt;
+                    &lt;div class=&quot;workspace-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;プライベートブース&quot;&gt;
+                        &lt;div class=&quot;availability-badge available&quot;&gt;利用可能&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;workspace-info&quot;&gt;
+                        &lt;h3&gt;プライベートブース&lt;/h3&gt;
+                        &lt;p&gt;完全個室でWeb会議や電話対応も可能。プライバシーを重視する方に。&lt;/p&gt;
+                        &lt;div class=&quot;workspace-features&quot;&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;6室&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;Wi-Fi&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;電源&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;防音&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;workspace-price&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥1,200&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/時間&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;workspace-card&quot;&gt;
+                    &lt;div class=&quot;workspace-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;ミーティングルーム&quot;&gt;
+                        &lt;div class=&quot;availability-badge reserved&quot;&gt;予約済&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;workspace-info&quot;&gt;
+                        &lt;h3&gt;ミーティングルーム&lt;/h3&gt;
+                        &lt;p&gt;チームでの打ち合わせや会議に最適。プロジェクターとホワイトボード完備。&lt;/p&gt;
+                        &lt;div class=&quot;workspace-features&quot;&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;4-8名&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;Wi-Fi&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;プロジェクター&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;ホワイトボード&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;workspace-price&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥2,000&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/時間&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;workspace-card&quot;&gt;
+                    &lt;div class=&quot;workspace-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;カフェラウンジ&quot;&gt;
+                        &lt;div class=&quot;availability-badge available&quot;&gt;利用可能&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;workspace-info&quot;&gt;
+                        &lt;h3&gt;カフェラウンジ&lt;/h3&gt;
+                        &lt;p&gt;リラックスした雰囲気で軽作業やブレインストーミングに。ソファ席でくつろぎながら。&lt;/p&gt;
+                        &lt;div class=&quot;workspace-features&quot;&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;20席&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;Wi-Fi&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;電源&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;ソファ席&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;workspace-price&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥400&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/時間&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;workspace-card&quot;&gt;
+                    &lt;div class=&quot;workspace-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;テラス席&quot;&gt;
+                        &lt;div class=&quot;availability-badge available&quot;&gt;利用可能&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;workspace-info&quot;&gt;
+                        &lt;h3&gt;テラス席&lt;/h3&gt;
+                        &lt;p&gt;開放的なテラスで自然を感じながら作業。天気の良い日におすすめです。&lt;/p&gt;
+                        &lt;div class=&quot;workspace-features&quot;&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;16席&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;Wi-Fi&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;電源&lt;/span&gt;
+                            &lt;span class=&quot;feature-tag&quot;&gt;屋外&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;workspace-price&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥600&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/時間&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;services&quot; class=&quot;services&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Services &amp; Amenities&lt;/h2&gt;
+            &lt;div class=&quot;services-grid&quot;&gt;
+                &lt;div class=&quot;service-item&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;📶&lt;/div&gt;
+                    &lt;h3&gt;高速Wi-Fi&lt;/h3&gt;
+                    &lt;p&gt;光回線による安定した高速インターネット接続&lt;/p&gt;
+                    &lt;div class=&quot;service-detail&quot;&gt;
+                        &lt;span&gt;ダウンロード: 1Gbps&lt;/span&gt;
+                        &lt;span&gt;アップロード: 1Gbps&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-item&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🔌&lt;/div&gt;
+                    &lt;h3&gt;電源完備&lt;/h3&gt;
+                    &lt;p&gt;すべての席に電源コンセントとUSBポートを完備&lt;/p&gt;
+                    &lt;div class=&quot;service-detail&quot;&gt;
+                        &lt;span&gt;AC電源: 各席2口&lt;/span&gt;
+                        &lt;span&gt;USB-A/C: 各席4口&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-item&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🖥️&lt;/div&gt;
+                    &lt;h3&gt;外部モニター&lt;/h3&gt;
+                    &lt;p&gt;27インチ4Kモニターの無料貸出サービス&lt;/p&gt;
+                    &lt;div class=&quot;service-detail&quot;&gt;
+                        &lt;span&gt;27インチ 4K対応&lt;/span&gt;
+                        &lt;span&gt;USB-C/HDMI接続&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-item&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🖨️&lt;/div&gt;
+                    &lt;h3&gt;プリンター&lt;/h3&gt;
+                    &lt;p&gt;高画質カラープリンター・スキャナー完備&lt;/p&gt;
+                    &lt;div class=&quot;service-detail&quot;&gt;
+                        &lt;span&gt;カラー印刷: ¥20/枚&lt;/span&gt;
+                        &lt;span&gt;モノクロ印刷: ¥10/枚&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-item&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;📱&lt;/div&gt;
+                    &lt;h3&gt;充電ステーション&lt;/h3&gt;
+                    &lt;p&gt;各種デバイス対応の充電ステーション&lt;/p&gt;
+                    &lt;div class=&quot;service-detail&quot;&gt;
+                        &lt;span&gt;iPhone/Android対応&lt;/span&gt;
+                        &lt;span&gt;ワイヤレス充電対応&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-item&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🗄️&lt;/div&gt;
+                    &lt;h3&gt;ロッカー&lt;/h3&gt;
+                    &lt;p&gt;貴重品や荷物の保管用ロッカー&lt;/p&gt;
+                    &lt;div class=&quot;service-detail&quot;&gt;
+                        &lt;span&gt;大: ¥300/日&lt;/span&gt;
+                        &lt;span&gt;小: ¥200/日&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;pricing&quot; class=&quot;pricing&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Pricing Plans&lt;/h2&gt;
+            &lt;div class=&quot;pricing-tabs&quot;&gt;
+                &lt;button class=&quot;pricing-tab active&quot; onclick=&quot;showPricingTab(&#x27;hourly&#x27;)&quot;&gt;時間利用&lt;/button&gt;
+                &lt;button class=&quot;pricing-tab&quot; onclick=&quot;showPricingTab(&#x27;daily&#x27;)&quot;&gt;1日パス&lt;/button&gt;
+                &lt;button class=&quot;pricing-tab&quot; onclick=&quot;showPricingTab(&#x27;monthly&#x27;)&quot;&gt;月額プラン&lt;/button&gt;
+            &lt;/div&gt;
+            
+            &lt;div id=&quot;hourly&quot; class=&quot;pricing-content active&quot;&gt;
+                &lt;div class=&quot;pricing-grid&quot;&gt;
+                    &lt;div class=&quot;pricing-card&quot;&gt;
+                        &lt;h3&gt;ベーシック&lt;/h3&gt;
+                        &lt;div class=&quot;price-display&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥500&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/時間&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;ul class=&quot;pricing-features&quot;&gt;
+                            &lt;li&gt;オープンワークスペース利用&lt;/li&gt;
+                            &lt;li&gt;高速Wi-Fi&lt;/li&gt;
+                            &lt;li&gt;電源・USB完備&lt;/li&gt;
+                            &lt;li&gt;ドリンクバー&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;pricing-card premium&quot;&gt;
+                        &lt;div class=&quot;popular-badge&quot;&gt;人気&lt;/div&gt;
+                        &lt;h3&gt;プレミアム&lt;/h3&gt;
+                        &lt;div class=&quot;price-display&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥800&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/時間&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;ul class=&quot;pricing-features&quot;&gt;
+                            &lt;li&gt;全エリア利用可能&lt;/li&gt;
+                            &lt;li&gt;外部モニター無料&lt;/li&gt;
+                            &lt;li&gt;プリンター利用込み&lt;/li&gt;
+                            &lt;li&gt;軽食サービス&lt;/li&gt;
+                            &lt;li&gt;ロッカー利用&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;pricing-card&quot;&gt;
+                        &lt;h3&gt;プライベート&lt;/h3&gt;
+                        &lt;div class=&quot;price-display&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥1,500&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/時間&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;ul class=&quot;pricing-features&quot;&gt;
+                            &lt;li&gt;個室ブース利用&lt;/li&gt;
+                            &lt;li&gt;専用モニター&lt;/li&gt;
+                            &lt;li&gt;防音環境&lt;/li&gt;
+                            &lt;li&gt;Web会議対応&lt;/li&gt;
+                            &lt;li&gt;コンシェルジュサービス&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id=&quot;daily&quot; class=&quot;pricing-content&quot;&gt;
+                &lt;div class=&quot;pricing-grid&quot;&gt;
+                    &lt;div class=&quot;pricing-card&quot;&gt;
+                        &lt;h3&gt;デイパス&lt;/h3&gt;
+                        &lt;div class=&quot;price-display&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥2,500&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/日&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;ul class=&quot;pricing-features&quot;&gt;
+                            &lt;li&gt;9:00-21:00 利用可能&lt;/li&gt;
+                            &lt;li&gt;全エリア利用&lt;/li&gt;
+                            &lt;li&gt;ドリンク・軽食込み&lt;/li&gt;
+                            &lt;li&gt;プリンター利用込み&lt;/li&gt;
+                            &lt;li&gt;ロッカー利用&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;pricing-card premium&quot;&gt;
+                        &lt;div class=&quot;popular-badge&quot;&gt;お得&lt;/div&gt;
+                        &lt;h3&gt;ウィークパス&lt;/h3&gt;
+                        &lt;div class=&quot;price-display&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥12,000&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/週&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;ul class=&quot;pricing-features&quot;&gt;
+                            &lt;li&gt;7日間連続利用&lt;/li&gt;
+                            &lt;li&gt;プライベートブース優先&lt;/li&gt;
+                            &lt;li&gt;専用ロッカー&lt;/li&gt;
+                            &lt;li&gt;コーヒー豆持ち帰り&lt;/li&gt;
+                            &lt;li&gt;イベント参加無料&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id=&quot;monthly&quot; class=&quot;pricing-content&quot;&gt;
+                &lt;div class=&quot;pricing-grid&quot;&gt;
+                    &lt;div class=&quot;pricing-card&quot;&gt;
+                        &lt;h3&gt;スタンダード&lt;/h3&gt;
+                        &lt;div class=&quot;price-display&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥35,000&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/月&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;ul class=&quot;pricing-features&quot;&gt;
+                            &lt;li&gt;平日 9:00-18:00&lt;/li&gt;
+                            &lt;li&gt;固定席利用&lt;/li&gt;
+                            &lt;li&gt;ドリンク飲み放題&lt;/li&gt;
+                            &lt;li&gt;郵便物受取サービス&lt;/li&gt;
+                            &lt;li&gt;会議室月10時間無料&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;pricing-card premium&quot;&gt;
+                        &lt;div class=&quot;popular-badge&quot;&gt;推奨&lt;/div&gt;
+                        &lt;h3&gt;フルタイム&lt;/h3&gt;
+                        &lt;div class=&quot;price-display&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥55,000&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/月&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;ul class=&quot;pricing-features&quot;&gt;
+                            &lt;li&gt;24時間365日利用&lt;/li&gt;
+                            &lt;li&gt;専用固定席&lt;/li&gt;
+                            &lt;li&gt;住所利用可能&lt;/li&gt;
+                            &lt;li&gt;法人登記対応&lt;/li&gt;
+                            &lt;li&gt;会議室無制限利用&lt;/li&gt;
+                            &lt;li&gt;専用ロッカー&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;pricing-card&quot;&gt;
+                        &lt;h3&gt;プレミアム&lt;/h3&gt;
+                        &lt;div class=&quot;price-display&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥85,000&lt;/span&gt;
+                            &lt;span class=&quot;duration&quot;&gt;/月&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;ul class=&quot;pricing-features&quot;&gt;
+                            &lt;li&gt;個室オフィス利用&lt;/li&gt;
+                            &lt;li&gt;秘書サービス&lt;/li&gt;
+                            &lt;li&gt;専用電話番号&lt;/li&gt;
+                            &lt;li&gt;来客対応サービス&lt;/li&gt;
+                            &lt;li&gt;VIPラウンジアクセス&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;booking&quot; class=&quot;booking&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Location &amp; Access&lt;/h2&gt;
+            &lt;div class=&quot;booking-content&quot;&gt;
+                &lt;div class=&quot;location-info&quot;&gt;
+                    &lt;h3&gt;Work Café Hub&lt;/h3&gt;
+                    &lt;div class=&quot;location-details&quot;&gt;
+                        &lt;div class=&quot;detail-item&quot;&gt;
+                            &lt;span class=&quot;detail-icon&quot;&gt;📍&lt;/span&gt;
+                            &lt;div&gt;
+                                &lt;strong&gt;住所&lt;/strong&gt;
+                                &lt;p&gt;〒150-0002 東京都渋谷区渋谷2-24-12&lt;br&gt;スクランブルスクエア15F&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;detail-item&quot;&gt;
+                            &lt;span class=&quot;detail-icon&quot;&gt;🚇&lt;/span&gt;
+                            &lt;div&gt;
+                                &lt;strong&gt;アクセス&lt;/strong&gt;
+                                &lt;p&gt;JR渋谷駅より徒歩3分&lt;br&gt;東京メトロ・東急線各線直結&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;detail-item&quot;&gt;
+                            &lt;span class=&quot;detail-icon&quot;&gt;🕒&lt;/span&gt;
+                            &lt;div&gt;
+                                &lt;strong&gt;営業時間&lt;/strong&gt;
+                                &lt;p&gt;平日: 7:00 - 23:00&lt;br&gt;土日祝: 8:00 - 22:00&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;detail-item&quot;&gt;
+                            &lt;span class=&quot;detail-icon&quot;&gt;📞&lt;/span&gt;
+                            &lt;div&gt;
+                                &lt;strong&gt;お問い合わせ&lt;/strong&gt;
+                                &lt;p&gt;03-1234-5678&lt;br&gt;info@workcafehub.jp&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;booking-widget&quot;&gt;
+                    &lt;h4&gt;席の予約・空き状況確認&lt;/h4&gt;
+                    &lt;div class=&quot;booking-form&quot;&gt;
+                        &lt;div class=&quot;form-row&quot;&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label&gt;利用日&lt;/label&gt;
+                                &lt;input type=&quot;date&quot; id=&quot;bookingDate&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label&gt;時間&lt;/label&gt;
+                                &lt;select id=&quot;bookingTime&quot;&gt;
+                                    &lt;option&gt;9:00&lt;/option&gt;
+                                    &lt;option&gt;10:00&lt;/option&gt;
+                                    &lt;option&gt;11:00&lt;/option&gt;
+                                    &lt;option&gt;12:00&lt;/option&gt;
+                                    &lt;option&gt;13:00&lt;/option&gt;
+                                    &lt;option&gt;14:00&lt;/option&gt;
+                                    &lt;option&gt;15:00&lt;/option&gt;
+                                    &lt;option&gt;16:00&lt;/option&gt;
+                                    &lt;option&gt;17:00&lt;/option&gt;
+                                    &lt;option&gt;18:00&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;エリア&lt;/label&gt;
+                            &lt;select id=&quot;workspaceType&quot;&gt;
+                                &lt;option&gt;オープンワークスペース&lt;/option&gt;
+                                &lt;option&gt;サイレントワークエリア&lt;/option&gt;
+                                &lt;option&gt;プライベートブース&lt;/option&gt;
+                                &lt;option&gt;ミーティングルーム&lt;/option&gt;
+                                &lt;option&gt;カフェラウンジ&lt;/option&gt;
+                                &lt;option&gt;テラス席&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;button class=&quot;check-availability-btn&quot; onclick=&quot;checkAvailability()&quot;&gt;
+                            空き状況を確認
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div id=&quot;availabilityResult&quot; class=&quot;availability-result&quot; style=&quot;display: none;&quot;&gt;
+                        &lt;div class=&quot;result-header&quot;&gt;
+                            &lt;h5&gt;空き状況&lt;/h5&gt;
+                            &lt;span class=&quot;available-count&quot;&gt;12席利用可能&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;button class=&quot;book-seat-btn&quot; onclick=&quot;openBookingModal()&quot;&gt;この時間で予約する&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- 予約モーダル --&gt;
+    &lt;div id=&quot;bookingModal&quot; class=&quot;modal&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header&quot;&gt;
+                &lt;h3&gt;席の予約&lt;/h3&gt;
+                &lt;button class=&quot;close-modal&quot; onclick=&quot;closeBookingModal()&quot;&gt;&amp;times;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;form id=&quot;bookingForm&quot;&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;お名前 &lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+                        &lt;input type=&quot;text&quot; required&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;メールアドレス &lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+                        &lt;input type=&quot;email&quot; required&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;電話番号&lt;/label&gt;
+                        &lt;input type=&quot;tel&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-row&quot;&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;利用日 &lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+                            &lt;input type=&quot;date&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;開始時間 &lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+                            &lt;select required&gt;
+                                &lt;option&gt;9:00&lt;/option&gt;
+                                &lt;option&gt;10:00&lt;/option&gt;
+                                &lt;option&gt;11:00&lt;/option&gt;
+                                &lt;option&gt;12:00&lt;/option&gt;
+                                &lt;option&gt;13:00&lt;/option&gt;
+                                &lt;option&gt;14:00&lt;/option&gt;
+                                &lt;option&gt;15:00&lt;/option&gt;
+                                &lt;option&gt;16:00&lt;/option&gt;
+                                &lt;option&gt;17:00&lt;/option&gt;
+                                &lt;option&gt;18:00&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;利用時間 &lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+                        &lt;select required&gt;
+                            &lt;option&gt;1時間&lt;/option&gt;
+                            &lt;option&gt;2時間&lt;/option&gt;
+                            &lt;option&gt;3時間&lt;/option&gt;
+                            &lt;option&gt;4時間&lt;/option&gt;
+                            &lt;option&gt;半日（4時間以上）&lt;/option&gt;
+                            &lt;option&gt;1日（8時間以上）&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;エリア &lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+                        &lt;select required&gt;
+                            &lt;option&gt;オープンワークスペース - ¥500/時間&lt;/option&gt;
+                            &lt;option&gt;サイレントワークエリア - ¥700/時間&lt;/option&gt;
+                            &lt;option&gt;プライベートブース - ¥1,200/時間&lt;/option&gt;
+                            &lt;option&gt;ミーティングルーム - ¥2,000/時間&lt;/option&gt;
+                            &lt;option&gt;カフェラウンジ - ¥400/時間&lt;/option&gt;
+                            &lt;option&gt;テラス席 - ¥600/時間&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;特別なご要望&lt;/label&gt;
+                        &lt;textarea placeholder=&quot;モニター貸出希望、静音環境希望など&quot;&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;booking-summary&quot;&gt;
+                        &lt;h4&gt;予約内容&lt;/h4&gt;
+                        &lt;div class=&quot;summary-item&quot;&gt;
+                            &lt;span&gt;利用日時:&lt;/span&gt;
+                            &lt;span id=&quot;summaryDateTime&quot;&gt;-&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;summary-item&quot;&gt;
+                            &lt;span&gt;エリア:&lt;/span&gt;
+                            &lt;span id=&quot;summaryArea&quot;&gt;-&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;summary-item&quot;&gt;
+                            &lt;span&gt;利用時間:&lt;/span&gt;
+                            &lt;span id=&quot;summaryDuration&quot;&gt;-&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;summary-item total&quot;&gt;
+                            &lt;span&gt;合計金額:&lt;/span&gt;
+                            &lt;span id=&quot;summaryTotal&quot;&gt;¥0&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;submit-booking-btn&quot;&gt;予約を確定する&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-brand&quot;&gt;
+                    &lt;h3&gt;Work Café Hub&lt;/h3&gt;
+                    &lt;p&gt;新しい働き方の場所&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-links&quot;&gt;
+                    &lt;div class=&quot;link-group&quot;&gt;
+                        &lt;h4&gt;サービス&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#workspace&quot;&gt;ワークスペース&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;サービス&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#pricing&quot;&gt;料金プラン&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;link-group&quot;&gt;
+                        &lt;h4&gt;サポート&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;利用規約&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;よくある質問&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;link-group&quot;&gt;
+                        &lt;h4&gt;お問い合わせ&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;📞 03-1234-5678&lt;/li&gt;
+                            &lt;li&gt;✉️ info@workcafehub.jp&lt;/li&gt;
+                            &lt;li&gt;📍 東京都渋谷区渋谷2-24-12&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p&gt;&amp;copy; 2025 Work Café Hub. All rights reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // モバイルメニューのトグル
+document.getElementById(&#x27;menuToggle&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    document.getElementById(&#x27;navMenu&#x27;).classList.toggle(&#x27;active&#x27;);
+});
+
+// スムーススクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+            // モバイルメニューを閉じる
+            document.getElementById(&#x27;navMenu&#x27;).classList.remove(&#x27;active&#x27;);
+        }
+    });
+});
+
+// ワークスペースセクションへのスクロール
+function scrollToWorkspace() {
+    const target = document.querySelector(&#x27;#workspace&#x27;);
+    if (target) {
+        const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+        const targetPosition = target.offsetTop - headerHeight;
+        window.scrollTo({
+            top: targetPosition,
+            behavior: &#x27;smooth&#x27;
+        });
+    }
+}
+
+// 料金タブ切り替え
+function showPricingTab(tabName) {
+    // すべてのタブコンテンツを非表示
+    document.querySelectorAll(&#x27;.pricing-content&#x27;).forEach(content =&gt; {
+        content.classList.remove(&#x27;active&#x27;);
+    });
+    
+    // すべてのタブボタンからactiveクラスを削除
+    document.querySelectorAll(&#x27;.pricing-tab&#x27;).forEach(button =&gt; {
+        button.classList.remove(&#x27;active&#x27;);
+    });
+    
+    // 選択されたタブコンテンツを表示
+    document.getElementById(tabName).classList.add(&#x27;active&#x27;);
+    
+    // クリックされたタブボタンにactiveクラスを追加
+    event.target.classList.add(&#x27;active&#x27;);
+}
+
+// 空き状況確認
+function checkAvailability() {
+    const date = document.getElementById(&#x27;bookingDate&#x27;).value;
+    const time = document.getElementById(&#x27;bookingTime&#x27;).value;
+    const workspace = document.getElementById(&#x27;workspaceType&#x27;).value;
+    
+    if (!date || !time || !workspace) {
+        alert(&#x27;すべての項目を入力してください。&#x27;);
+        return;
+    }
+    
+    // 模拟的な空き状況チェック（実際にはAPIコールを行う）
+    setTimeout(() =&gt; {
+        document.getElementById(&#x27;availabilityResult&#x27;).style.display = &#x27;block&#x27;;
+        
+        // ランダムな空き状況を生成
+        const availableSeats = Math.floor(Math.random() * 20) + 5;
+        document.querySelector(&#x27;.available-count&#x27;).textContent = `${availableSeats}席利用可能`;
+    }, 1000);
+}
+
+// 予約モーダルの開閉
+function openBookingModal() {
+    document.getElementById(&#x27;bookingModal&#x27;).style.display = &#x27;block&#x27;;
+    document.body.style.overflow = &#x27;hidden&#x27;;
+}
+
+function closeBookingModal() {
+    document.getElementById(&#x27;bookingModal&#x27;).style.display = &#x27;none&#x27;;
+    document.body.style.overflow = &#x27;auto&#x27;;
+}
+
+// モーダル外クリックで閉じる
+window.onclick = function(event) {
+    const modal = document.getElementById(&#x27;bookingModal&#x27;);
+    if (event.target === modal) {
+        closeBookingModal();
+    }
+}
+
+// 予約フォーム送信処理
+document.getElementById(&#x27;bookingForm&#x27;).addEventListener(&#x27;submit&#x27;, function(e) {
+    e.preventDefault();
+    
+    // フォームデータの取得と検証
+    const formData = new FormData(this);
+    
+    // 予約内容のサマリー更新
+    updateBookingSummary();
+    
+    // 実際の予約処理（APIコール）をここに実装
+    alert(&#x27;予約が完了しました。確認メールをお送りいたします。&#x27;);
+    closeBookingModal();
+});
+
+// 予約サマリーの更新
+function updateBookingSummary() {
+    // この関数では予約内容を動的に更新する
+    // 実際の実装では、フォームの値を監視して自動更新する
+}
+
+// 利用率の動的更新（リアルタイム風）
+function updateOccupancyRate() {
+    const statusFill = document.querySelector(&#x27;.status-fill&#x27;);
+    const statusText = document.querySelector(&#x27;.status-text&#x27;);
+    
+    if (statusFill &amp;&amp; statusText) {
+        const newRate = Math.floor(Math.random() * 40) + 40; // 40-80%の範囲
+        statusFill.style.width = newRate + &#x27;%&#x27;;
+        statusText.textContent = newRate + &#x27;%&#x27;;
+    }
+}
+
+// 5分ごとに利用率を更新
+setInterval(updateOccupancyRate, 300000);
+
+// ワークスペースカードのホバーエフェクト
+document.querySelectorAll(&#x27;.workspace-card&#x27;).forEach(card =&gt; {
+    card.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.transform = &#x27;translateY(-10px)&#x27;;
+    });
+    
+    card.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.transform = &#x27;translateY(-5px)&#x27;;
+    });
+});
+
+// 初期化時の処理
+document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() {
+    // 今日の日付をデフォルトに設定
+    const today = new Date().toISOString().split(&#x27;T&#x27;)[0];
+    const dateInputs = document.querySelectorAll(&#x27;input[type=&quot;date&quot;]&#x27;);
+    dateInputs.forEach(input =&gt; {
+        input.value = today;
+        input.min = today;
+    });
+    
+    // ヘッダーのスクロール効果
+    let lastScroll = 0;
+    window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+        const currentScroll = window.pageYOffset;
+        const header = document.querySelector(&#x27;.header&#x27;);
+        
+        if (currentScroll &gt; 100) {
+            header.style.background = &#x27;rgba(255, 255, 255, 0.98)&#x27;;
+            header.style.boxShadow = &#x27;0 4px 20px rgba(0,0,0,0.15)&#x27;;
+        } else {
+            header.style.background = &#x27;rgba(255, 255, 255, 0.95)&#x27;;
+            header.style.boxShadow = &#x27;0 4px 6px -1px rgba(0, 0, 0, 0.1)&#x27;;
+        }
+        
+        lastScroll = currentScroll;
+    });
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="カフェ - コワーキング" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"cafe-coworking\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"cafe-coworking\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"cafe-coworking\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"cafe-coworking\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"RAUYElZtpJKoX2KeBAJcy\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"cafe-coworking\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

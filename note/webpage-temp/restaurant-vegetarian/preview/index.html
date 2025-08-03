@@ -1,0 +1,2286 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ベジタリアンレストラン&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&#x27;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap&#x27;);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Inter&#x27;, sans-serif;
+    color: #2d3748;
+    background: #fafafa;
+    line-height: 1.6;
+}
+
+.app-container {
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(46, 125, 50, 0.1);
+    border-bottom: 1px solid rgba(46, 125, 50, 0.1);
+}
+
+.header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+    animation: gentle-sway 3s ease-in-out infinite;
+}
+
+@keyframes gentle-sway {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+.logo-text h1 {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 2rem;
+    color: #2e7d32;
+    font-weight: 700;
+}
+
+.logo-tagline {
+    font-size: 0.8rem;
+    color: #4caf50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #2d3748;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 50%;
+    background: #4caf50;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-menu a:hover {
+    color: #2e7d32;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.booking-btn {
+    background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+    color: white !important;
+    padding: 0.8rem 1.8rem;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.booking-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.7) 0%, rgba(76, 175, 80, 0.5) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero-title {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.feature-badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.badge-icon {
+    font-size: 1.2rem;
+}
+
+.badge-text {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.hero-cta {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: &#x27;Inter&#x27;, sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.hero-cta:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hero-decoration {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+}
+
+.leaf-animation {
+    font-size: 3rem;
+    animation: float 4s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(5deg); }
+    75% { transform: translateY(10px) rotate(-5deg); }
+}
+
+/* Common Styles */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 6rem 0;
+    background: white;
+}
+
+section:nth-child(even) {
+    background: #f8fdf8;
+}
+
+.section-title {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 2.8rem;
+    color: #2d3748;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.title-decoration {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+/* Philosophy */
+.philosophy {
+    background: white;
+}
+
+.philosophy-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.philosophy-lead {
+    font-size: 1.4rem;
+    color: #4caf50;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.philosophy-text p {
+    margin-bottom: 1.8rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+}
+
+.visual-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.visual-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 2rem;
+}
+
+.card-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.value-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2f3e4;
+    transition: all 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.value-item h4 {
+    font-size: 1.1rem;
+    color: #2e7d32;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.value-item p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Menu */
+.menu {
+    background: #f8fdf8;
+}
+
+.menu-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+.menu-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.menu-tab {
+    padding: 1rem 2rem;
+    background: white;
+    border: 2px solid #4caf50;
+    color: #4caf50;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    font-family: &#x27;Inter&#x27;, sans-serif;
+}
+
+.menu-tab.active,
+.menu-tab:hover {
+    background: #4caf50;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.menu-section {
+    display: none;
+}
+
+.menu-section.active {
+    display: block;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item.featured {
+    border: 3px solid #4caf50;
+}
+
+.item-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff5722;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.item-image {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover .item-image img {
+    transform: scale(1.1);
+}
+
+.diet-tags {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tag {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tag.vegan {
+    background: #4caf50;
+    color: white;
+}
+
+.tag.gluten-free {
+    background: #ff9800;
+    color: white;
+}
+
+.tag.raw {
+    background: #2196f3;
+    color: white;
+}
+
+.item-details {
+    padding: 2rem;
+}
+
+.item-details h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #2d3748;
+}
+
+.item-desc {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.nutrition-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nutrition-item {
+    background: #e8f5e8;
+    color: #2e7d32;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.item-price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #4caf50;
+    text-align: right;
+}
+
+/* Ingredients */
+.ingredients {
+    background: white;
+}
+
+.ingredients-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+.ingredients-showcase {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.seasonal-ingredients h3 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.seasonal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.seasonal-item {
+    background: #f8fdf8;
+    padding: 2rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border-left: 4px solid #4caf50;
+    transition: all 0.3s ease;
+}
+
+.seasonal-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.seasonal-image {
+    flex-shrink: 0;
+}
+
+.seasonal-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.seasonal-info h4 {
+    font-size: 1.2rem;
+    color: #2d3748;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.seasonal-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.seasonal-benefit {
+    background: #4caf50;
+    color: white;
+    padding: 0.2rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.sourcing-info {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+}
+
+.sourcing-info h3 {
+    font-size: 1.5rem;
+    color: #2e7d32;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.sourcing-points {
+    display: grid;
+    gap: 2rem;
+}
+
+.sourcing-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.point-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.point-content h4 {
+    font-size: 1.1rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.point-content p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Wellness */
+.wellness {
+    background: #f8fdf8;
+}
+
+.wellness-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.wellness-lead {
+    font-size: 1.3rem;
+    color: #4caf50;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+}
+
+.wellness-programs {
+    display: grid;
+    gap: 2rem;
+}
+
+.program-item {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    transition: all 0.3s ease;
+}
+
+.program-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.program-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.program-content h3 {
+    font-size: 1.3rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.program-content p {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.program-price {
+    color: #4caf50;
+    font-weight: 600;
+    background: #e8f5e8;
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.wellness-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+
+.wellness-stats {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #4caf50;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* Events */
+.events {
+    background: white;
+}
+
+.events-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+.events-list {
+    display: grid;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.event-item {
+    background: #f8fdf8;
+    padding: 2.5rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #4caf50;
+    transition: all 0.3s ease;
+}
+
+.event-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.event-date {
+    text-align: center;
+    min-width: 80px;
+}
+
+.date-day {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4caf50;
+    line-height: 1;
+}
+
+.date-month {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+}
+
+.event-content {
+    flex-grow: 1;
+}
+
+.event-content h3 {
+    font-size: 1.4rem;
+    color: #2d3748;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.event-desc {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.event-details {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.event-time,
+.event-capacity,
+.event-price {
+    font-size: 0.9rem;
+    color: #4caf50;
+    font-weight: 500;
+}
+
+.event-status {
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    min-width: 100px;
+}
+
+.event-status.available {
+    background: #e8f5e8;
+    color: #2e7d32;
+}
+
+.event-status.few-left {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+/* Contact */
+.contact {
+    background: #f8fdf8;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.info-sections {
+    display: grid;
+    gap: 3rem;
+}
+
+.info-section h3 {
+    font-size: 1.4rem;
+    color: #2e7d32;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.hours-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e2f3e4;
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+.day {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.time {
+    color: #666;
+}
+
+.location-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+.address {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #2d3748;
+}
+
+.transport p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.contact-details {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+.phone {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #4caf50;
+    margin-bottom: 0.5rem;
+}
+
+.email {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #2e7d32;
+}
+
+.restaurant-images {
+    display: grid;
+    gap: 1rem;
+}
+
+.main-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.main-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.sub-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.sub-image {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.sub-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Booking */
+.booking {
+    background: white;
+}
+
+.booking-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+.booking-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.booking-method {
+    background: #f8fdf8;
+    padding: 3rem 2rem;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.booking-method:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+.method-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.booking-method h3 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.phone-info {
+    margin-bottom: 2rem;
+}
+
+.phone-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4caf50;
+    margin-bottom: 0.5rem;
+}
+
+.phone-hours {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.online-booking-btn {
+    background: #4caf50;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.online-booking-btn:hover {
+    background: #2e7d32;
+    transform: scale(1.05);
+}
+
+.online-note {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.booking-notes h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2d3748;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.notes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.note-item {
+    background: #f8fdf8;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #4caf50;
+}
+
+.note-item h4 {
+    font-size: 1.2rem;
+    color: #2e7d32;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.note-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background: #1a2e1c;
+    color: #ccc;
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo .logo-icon {
+    font-size: 2rem;
+}
+
+.footer-logo h3 {
+    font-family: &#x27;Playfair Display&#x27;, serif;
+    font-size: 1.8rem;
+    color: #4caf50;
+    margin-bottom: 0.2rem;
+}
+
+.footer-logo span {
+    font-size: 0.8rem;
+    color: #66bb69;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-description {
+    line-height: 1.7;
+    color: #aaa;
+}
+
+.link-group h4 {
+    color: #4caf50;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.link-group ul {
+    list-style: none;
+}
+
+.link-group li {
+    margin-bottom: 0.8rem;
+}
+
+.link-group a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-group a:hover {
+    color: #4caf50;
+}
+
+.footer-bottom {
+    border-top: 1px solid #2e4c2f;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-social .social-link {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-social .social-link:hover {
+    color: #4caf50;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .philosophy-layout,
+    .wellness-layout,
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .ingredients-showcase {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .seasonal-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-navigation {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .booking-methods {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .notes-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;div class=&quot;app-container&quot;&gt;
+        &lt;header class=&quot;header&quot;&gt;
+            &lt;div class=&quot;header-inner&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;div class=&quot;logo-icon&quot;&gt;🌱&lt;/div&gt;
+                    &lt;div class=&quot;logo-text&quot;&gt;
+                        &lt;h1&gt;Green Garden&lt;/h1&gt;
+                        &lt;span class=&quot;logo-tagline&quot;&gt;Plant-Based Restaurant&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;nav class=&quot;navigation&quot;&gt;
+                    &lt;ul class=&quot;nav-menu&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#philosophy&quot;&gt;理念&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;メニュー&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#ingredients&quot;&gt;食材&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#wellness&quot;&gt;ウェルネス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#events&quot;&gt;イベント&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;コンタクト&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#booking&quot; class=&quot;booking-btn&quot;&gt;予約&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+        &lt;/header&gt;
+
+        &lt;main&gt;
+            &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+                &lt;div class=&quot;hero-background&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1920&amp;h=800&amp;fit=crop&quot; alt=&quot;Organic vegetables&quot; class=&quot;hero-image&quot;&gt;
+                    &lt;div class=&quot;hero-overlay&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;hero-content&quot;&gt;
+                    &lt;div class=&quot;hero-text&quot;&gt;
+                        &lt;h2 class=&quot;hero-title&quot;&gt;Green Garden&lt;/h2&gt;
+                        &lt;p class=&quot;hero-subtitle&quot;&gt;自然の恵みを活かした植物性料理&lt;/p&gt;
+                        &lt;div class=&quot;hero-features&quot;&gt;
+                            &lt;div class=&quot;feature-badge&quot;&gt;
+                                &lt;span class=&quot;badge-icon&quot;&gt;🌿&lt;/span&gt;
+                                &lt;span class=&quot;badge-text&quot;&gt;100% Plant-Based&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;feature-badge&quot;&gt;
+                                &lt;span class=&quot;badge-icon&quot;&gt;🌾&lt;/span&gt;
+                                &lt;span class=&quot;badge-text&quot;&gt;オーガニック食材&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;feature-badge&quot;&gt;
+                                &lt;span class=&quot;badge-icon&quot;&gt;💚&lt;/span&gt;
+                                &lt;span class=&quot;badge-text&quot;&gt;環境に優しい&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;button class=&quot;hero-cta&quot;&gt;メニューを見る&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;hero-decoration&quot;&gt;
+                    &lt;div class=&quot;leaf-animation&quot;&gt;🍃&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;philosophy&quot; class=&quot;philosophy&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;philosophy-layout&quot;&gt;
+                        &lt;div class=&quot;philosophy-content&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;私たちの理念&lt;/h2&gt;
+                            &lt;div class=&quot;title-decoration&quot;&gt;🌱&lt;/div&gt;
+                            &lt;p class=&quot;philosophy-lead&quot;&gt;地球と身体に優しい、持続可能な食文化を&lt;/p&gt;
+                            
+                            &lt;div class=&quot;philosophy-text&quot;&gt;
+                                &lt;p&gt;Green Gardenでは、植物性食材のみを使用した料理を通じて、健康で持続可能な食文化の普及を目指しています。&lt;/p&gt;
+                                &lt;p&gt;地元の有機農家と直接契約し、農薬や化学肥料を使わない新鮮な野菜や果物を使用。動物性食品を使わないことで、環境負荷を軽減し、動物の福祉にも配慮しています。&lt;/p&gt;
+                                &lt;p&gt;美味しさと栄養を両立させた植物性料理で、すべての人に健康的な食事の喜びをお届けします。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;philosophy-visual&quot;&gt;
+                            &lt;div class=&quot;visual-card&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;オーガニック野菜&quot;&gt;
+                                &lt;div class=&quot;card-overlay&quot;&gt;
+                                    &lt;h3&gt;オーガニック食材&lt;/h3&gt;
+                                    &lt;p&gt;農薬不使用の安全な食材&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;values-grid&quot;&gt;
+                                &lt;div class=&quot;value-item&quot;&gt;
+                                    &lt;div class=&quot;value-icon&quot;&gt;🌍&lt;/div&gt;
+                                    &lt;h4&gt;地球に優しい&lt;/h4&gt;
+                                    &lt;p&gt;持続可能な農業を支援&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;value-item&quot;&gt;
+                                    &lt;div class=&quot;value-icon&quot;&gt;❤️&lt;/div&gt;
+                                    &lt;h4&gt;健康第一&lt;/h4&gt;
+                                    &lt;p&gt;栄養バランスを重視&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;value-item&quot;&gt;
+                                    &lt;div class=&quot;value-icon&quot;&gt;🐾&lt;/div&gt;
+                                    &lt;h4&gt;動物愛護&lt;/h4&gt;
+                                    &lt;p&gt;動物性食品を使用しない&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;value-item&quot;&gt;
+                                    &lt;div class=&quot;value-icon&quot;&gt;🌱&lt;/div&gt;
+                                    &lt;h4&gt;地産地消&lt;/h4&gt;
+                                    &lt;p&gt;地元農家を支援&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;menu&quot; class=&quot;menu&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;メニュー&lt;/h2&gt;
+                    &lt;div class=&quot;title-decoration&quot;&gt;🍽️&lt;/div&gt;
+                    &lt;p class=&quot;menu-intro&quot;&gt;季節の野菜と果物を使った、彩り豊かな植物性料理&lt;/p&gt;
+                    
+                    &lt;div class=&quot;menu-navigation&quot;&gt;
+                        &lt;button class=&quot;menu-tab active&quot; data-menu=&quot;bowls&quot;&gt;パワーボウル&lt;/button&gt;
+                        &lt;button class=&quot;menu-tab&quot; data-menu=&quot;salad&quot;&gt;サラダ&lt;/button&gt;
+                        &lt;button class=&quot;menu-tab&quot; data-menu=&quot;main&quot;&gt;メイン料理&lt;/button&gt;
+                        &lt;button class=&quot;menu-tab&quot; data-menu=&quot;dessert&quot;&gt;デザート&lt;/button&gt;
+                        &lt;button class=&quot;menu-tab&quot; data-menu=&quot;drink&quot;&gt;ドリンク&lt;/button&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;menu-sections&quot;&gt;
+                        &lt;div class=&quot;menu-section active&quot; id=&quot;bowls&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item featured&quot;&gt;
+                                    &lt;div class=&quot;item-badge&quot;&gt;人気No.1&lt;/div&gt;
+                                    &lt;div class=&quot;item-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;レインボーボウル&quot;&gt;
+                                        &lt;div class=&quot;diet-tags&quot;&gt;
+                                            &lt;span class=&quot;tag vegan&quot;&gt;ヴィーガン&lt;/span&gt;
+                                            &lt;span class=&quot;tag gluten-free&quot;&gt;グルテンフリー&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;レインボーボウル&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;7色の野菜とキヌア、アボカドのパワーボウル。タヒニドレッシング付き&lt;/p&gt;
+                                        &lt;div class=&quot;nutrition-info&quot;&gt;
+                                            &lt;span class=&quot;nutrition-item&quot;&gt;タンパク質 15g&lt;/span&gt;
+                                            &lt;span class=&quot;nutrition-item&quot;&gt;食物繊維 12g&lt;/span&gt;
+                                            &lt;span class=&quot;nutrition-item&quot;&gt;480kcal&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥1,580&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1547592180-85f173990554?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;ブッダボウル&quot;&gt;
+                                        &lt;div class=&quot;diet-tags&quot;&gt;
+                                            &lt;span class=&quot;tag vegan&quot;&gt;ヴィーガン&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;ブッダボウル&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;玄米、豆腐、季節野菜のバランスボウル&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥1,380&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;アサイーボウル&quot;&gt;
+                                        &lt;div class=&quot;diet-tags&quot;&gt;
+                                            &lt;span class=&quot;tag raw&quot;&gt;ロー&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;アサイーボウル&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;アサイー、フルーツ、ナッツのデトックスボウル&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥1,280&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-section&quot; id=&quot;salad&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;ケールサラダ&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;スーパーフードケールとアーモンドのサラダ&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥980&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;ビーツとほうれん草のサラダ&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;鉄分豊富な栄養満点サラダ&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥1,080&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;キヌアタブレ&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;中東風キヌアサラダ、ハーブたっぷり&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥1,180&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-section&quot; id=&quot;main&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;ヴィーガンパスタ&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;トマトベースとバジルの香り豊かなパスタ&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥1,680&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;きのこのリゾット&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;5種のきのこと玄米のクリーミーリゾット&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥1,780&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;野菜カレー&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;スパイス香る色とりどりの野菜カレー&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥1,480&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-section&quot; id=&quot;dessert&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;チョコレートムース&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;アボカドベースのリッチなチョコムース&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥680&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;フルーツタルト&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;季節のフルーツたっぷりタルト&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥780&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;チアシードプディング&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;ココナッツミルクとチアシードのプディング&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥580&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;menu-section&quot; id=&quot;drink&quot;&gt;
+                            &lt;div class=&quot;menu-grid&quot;&gt;
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;グリーンスムージー&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;ケール、りんご、バナナの栄養スムージー&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥680&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;コールドプレスジュース&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;人参、りんご、生姜の免疫力アップジュース&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥780&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;menu-item&quot;&gt;
+                                    &lt;div class=&quot;item-details&quot;&gt;
+                                        &lt;h3&gt;ハーブティー&lt;/h3&gt;
+                                        &lt;p class=&quot;item-desc&quot;&gt;カモミール、ペパーミント等、選べるハーブティー&lt;/p&gt;
+                                        &lt;div class=&quot;item-price&quot;&gt;¥480&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;ingredients&quot; class=&quot;ingredients&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;こだわりの食材&lt;/h2&gt;
+                    &lt;div class=&quot;title-decoration&quot;&gt;🥬&lt;/div&gt;
+                    &lt;p class=&quot;ingredients-intro&quot;&gt;地元の信頼できる農家から直接仕入れる新鮮なオーガニック食材&lt;/p&gt;
+                    
+                    &lt;div class=&quot;ingredients-showcase&quot;&gt;
+                        &lt;div class=&quot;showcase-main&quot;&gt;
+                            &lt;div class=&quot;seasonal-ingredients&quot;&gt;
+                                &lt;h3&gt;今月の旬の食材&lt;/h3&gt;
+                                &lt;div class=&quot;seasonal-grid&quot;&gt;
+                                    &lt;div class=&quot;seasonal-item&quot;&gt;
+                                        &lt;div class=&quot;seasonal-image&quot;&gt;
+                                            &lt;img src=&quot;https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=200&amp;h=200&amp;fit=crop&quot; alt=&quot;トマト&quot;&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;seasonal-info&quot;&gt;
+                                            &lt;h4&gt;完熟トマト&lt;/h4&gt;
+                                            &lt;p&gt;群馬県産オーガニック&lt;/p&gt;
+                                            &lt;span class=&quot;seasonal-benefit&quot;&gt;リコピン豊富&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class=&quot;seasonal-item&quot;&gt;
+                                        &lt;div class=&quot;seasonal-image&quot;&gt;
+                                            &lt;img src=&quot;https://images.unsplash.com/photo-1622973536968-3ead9e780960?w=200&amp;h=200&amp;fit=crop&quot; alt=&quot;ケール&quot;&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;seasonal-info&quot;&gt;
+                                            &lt;h4&gt;フレッシュケール&lt;/h4&gt;
+                                            &lt;p&gt;千葉県産無農薬&lt;/p&gt;
+                                            &lt;span class=&quot;seasonal-benefit&quot;&gt;ビタミンK豊富&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class=&quot;seasonal-item&quot;&gt;
+                                        &lt;div class=&quot;seasonal-image&quot;&gt;
+                                            &lt;img src=&quot;https://images.unsplash.com/photo-1553279768-865429fe0e67?w=200&amp;h=200&amp;fit=crop&quot; alt=&quot;アボカド&quot;&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;seasonal-info&quot;&gt;
+                                            &lt;h4&gt;アボカド&lt;/h4&gt;
+                                            &lt;p&gt;メキシコ産オーガニック&lt;/p&gt;
+                                            &lt;span class=&quot;seasonal-benefit&quot;&gt;良質な脂質&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class=&quot;seasonal-item&quot;&gt;
+                                        &lt;div class=&quot;seasonal-image&quot;&gt;
+                                            &lt;img src=&quot;https://images.unsplash.com/photo-1571197133937-4ad522cd9eda?w=200&amp;h=200&amp;fit=crop&quot; alt=&quot;キヌア&quot;&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;seasonal-info&quot;&gt;
+                                            &lt;h4&gt;キヌア&lt;/h4&gt;
+                                            &lt;p&gt;ボリビア産オーガニック&lt;/p&gt;
+                                            &lt;span class=&quot;seasonal-benefit&quot;&gt;完全タンパク質&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;showcase-sidebar&quot;&gt;
+                            &lt;div class=&quot;sourcing-info&quot;&gt;
+                                &lt;h3&gt;食材の調達について&lt;/h3&gt;
+                                &lt;div class=&quot;sourcing-points&quot;&gt;
+                                    &lt;div class=&quot;sourcing-point&quot;&gt;
+                                        &lt;div class=&quot;point-icon&quot;&gt;🚜&lt;/div&gt;
+                                        &lt;div class=&quot;point-content&quot;&gt;
+                                            &lt;h4&gt;契約農家&lt;/h4&gt;
+                                            &lt;p&gt;関東近郊の有機農家と直接契約し、新鮮な野菜を毎日仕入れています。&lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    
+                                    &lt;div class=&quot;sourcing-point&quot;&gt;
+                                        &lt;div class=&quot;point-icon&quot;&gt;🌱&lt;/div&gt;
+                                        &lt;div class=&quot;point-content&quot;&gt;
+                                            &lt;h4&gt;オーガニック認証&lt;/h4&gt;
+                                            &lt;p&gt;JAS有機認証を受けた食材のみを使用し、安全性を保証しています。&lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    
+                                    &lt;div class=&quot;sourcing-point&quot;&gt;
+                                        &lt;div class=&quot;point-icon&quot;&gt;📅&lt;/div&gt;
+                                        &lt;div class=&quot;point-content&quot;&gt;
+                                            &lt;h4&gt;季節重視&lt;/h4&gt;
+                                            &lt;p&gt;旬の食材を中心としたメニュー構成で、自然のリズムに合わせた食事を提供。&lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;wellness&quot; class=&quot;wellness&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;wellness-layout&quot;&gt;
+                        &lt;div class=&quot;wellness-content&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;ウェルネス&lt;/h2&gt;
+                            &lt;div class=&quot;title-decoration&quot;&gt;🧘‍♀️&lt;/div&gt;
+                            &lt;p class=&quot;wellness-lead&quot;&gt;心と体の健康をサポートする、総合的なウェルネス体験&lt;/p&gt;
+                            
+                            &lt;div class=&quot;wellness-programs&quot;&gt;
+                                &lt;div class=&quot;program-item&quot;&gt;
+                                    &lt;div class=&quot;program-icon&quot;&gt;🥗&lt;/div&gt;
+                                    &lt;div class=&quot;program-content&quot;&gt;
+                                        &lt;h3&gt;栄養相談&lt;/h3&gt;
+                                        &lt;p&gt;管理栄養士による個別栄養相談。植物性食品での栄養バランスについてアドバイスします。&lt;/p&gt;
+                                        &lt;span class=&quot;program-price&quot;&gt;30分 ¥3,000&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                
+                                &lt;div class=&quot;program-item&quot;&gt;
+                                    &lt;div class=&quot;program-icon&quot;&gt;📚&lt;/div&gt;
+                                    &lt;div class=&quot;program-content&quot;&gt;
+                                        &lt;h3&gt;料理教室&lt;/h3&gt;
+                                        &lt;p&gt;プロのシェフから学ぶ植物性料理のテクニック。月2回開催しています。&lt;/p&gt;
+                                        &lt;span class=&quot;program-price&quot;&gt;2時間 ¥5,500&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                
+                                &lt;div class=&quot;program-item&quot;&gt;
+                                    &lt;div class=&quot;program-icon&quot;&gt;🌿&lt;/div&gt;
+                                    &lt;div class=&quot;program-content&quot;&gt;
+                                        &lt;h3&gt;デトックスプログラム&lt;/h3&gt;
+                                        &lt;p&gt;7日間のコールドプレスジュースとスープによるデトックスプログラム。&lt;/p&gt;
+                                        &lt;span class=&quot;program-price&quot;&gt;7日間 ¥28,000&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;wellness-visual&quot;&gt;
+                            &lt;div class=&quot;wellness-image&quot;&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1506629905607-4d7d8b3ebe6f?w=600&amp;h=800&amp;fit=crop&quot; alt=&quot;ヨガと健康的な食事&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;wellness-stats&quot;&gt;
+                                &lt;div class=&quot;stat-item&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;500+&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;参加者&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;stat-item&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;95%&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;満足度&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;stat-item&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;12&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;プログラム&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;events&quot; class=&quot;events&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;イベント・ワークショップ&lt;/h2&gt;
+                    &lt;div class=&quot;title-decoration&quot;&gt;🎪&lt;/div&gt;
+                    &lt;p class=&quot;events-intro&quot;&gt;健康と環境を考える様々なイベントを開催しています&lt;/p&gt;
+                    
+                    &lt;div class=&quot;events-list&quot;&gt;
+                        &lt;div class=&quot;event-item&quot;&gt;
+                            &lt;div class=&quot;event-date&quot;&gt;
+                                &lt;span class=&quot;date-day&quot;&gt;15&lt;/span&gt;
+                                &lt;span class=&quot;date-month&quot;&gt;Feb&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;event-content&quot;&gt;
+                                &lt;h3&gt;ヴィーガン料理教室&lt;/h3&gt;
+                                &lt;p class=&quot;event-desc&quot;&gt;初心者向けのヴィーガン料理教室。基本的なテクニックから学べます。&lt;/p&gt;
+                                &lt;div class=&quot;event-details&quot;&gt;
+                                    &lt;span class=&quot;event-time&quot;&gt;14:00 - 16:00&lt;/span&gt;
+                                    &lt;span class=&quot;event-capacity&quot;&gt;定員8名&lt;/span&gt;
+                                    &lt;span class=&quot;event-price&quot;&gt;¥5,500&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;event-status available&quot;&gt;申込可能&lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;event-item&quot;&gt;
+                            &lt;div class=&quot;event-date&quot;&gt;
+                                &lt;span class=&quot;date-day&quot;&gt;22&lt;/span&gt;
+                                &lt;span class=&quot;date-month&quot;&gt;Feb&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;event-content&quot;&gt;
+                                &lt;h3&gt;オーガニック農場見学ツアー&lt;/h3&gt;
+                                &lt;p class=&quot;event-desc&quot;&gt;契約農家の農場を訪問し、有機栽培について学びます。&lt;/p&gt;
+                                &lt;div class=&quot;event-details&quot;&gt;
+                                    &lt;span class=&quot;event-time&quot;&gt;9:00 - 15:00&lt;/span&gt;
+                                    &lt;span class=&quot;event-capacity&quot;&gt;定員15名&lt;/span&gt;
+                                    &lt;span class=&quot;event-price&quot;&gt;¥8,800&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;event-status few-left&quot;&gt;残りわずか&lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;event-item&quot;&gt;
+                            &lt;div class=&quot;event-date&quot;&gt;
+                                &lt;span class=&quot;date-day&quot;&gt;08&lt;/span&gt;
+                                &lt;span class=&quot;date-month&quot;&gt;Mar&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;event-content&quot;&gt;
+                                &lt;h3&gt;プラントベース栄養学セミナー&lt;/h3&gt;
+                                &lt;p class=&quot;event-desc&quot;&gt;管理栄養士による植物性食品の栄養について詳しく学べるセミナーです。&lt;/p&gt;
+                                &lt;div class=&quot;event-details&quot;&gt;
+                                    &lt;span class=&quot;event-time&quot;&gt;19:00 - 21:00&lt;/span&gt;
+                                    &lt;span class=&quot;event-capacity&quot;&gt;定員20名&lt;/span&gt;
+                                    &lt;span class=&quot;event-price&quot;&gt;¥3,300&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;event-status available&quot;&gt;申込可能&lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;event-item&quot;&gt;
+                            &lt;div class=&quot;event-date&quot;&gt;
+                                &lt;span class=&quot;date-day&quot;&gt;20&lt;/span&gt;
+                                &lt;span class=&quot;date-month&quot;&gt;Mar&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;event-content&quot;&gt;
+                                &lt;h3&gt;スプリングデトックス体験会&lt;/h3&gt;
+                                &lt;p class=&quot;event-desc&quot;&gt;春の新生活に向けたデトックスプログラムの体験会です。&lt;/p&gt;
+                                &lt;div class=&quot;event-details&quot;&gt;
+                                    &lt;span class=&quot;event-time&quot;&gt;10:00 - 12:00&lt;/span&gt;
+                                    &lt;span class=&quot;event-capacity&quot;&gt;定員12名&lt;/span&gt;
+                                    &lt;span class=&quot;event-price&quot;&gt;¥2,200&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;event-status available&quot;&gt;申込可能&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;contact-layout&quot;&gt;
+                        &lt;div class=&quot;contact-info&quot;&gt;
+                            &lt;h2 class=&quot;section-title&quot;&gt;コンタクト&lt;/h2&gt;
+                            &lt;div class=&quot;title-decoration&quot;&gt;📍&lt;/div&gt;
+                            
+                            &lt;div class=&quot;info-sections&quot;&gt;
+                                &lt;div class=&quot;info-section&quot;&gt;
+                                    &lt;h3&gt;営業時間&lt;/h3&gt;
+                                    &lt;div class=&quot;hours-info&quot;&gt;
+                                        &lt;div class=&quot;hours-item&quot;&gt;
+                                            &lt;span class=&quot;day&quot;&gt;月〜土&lt;/span&gt;
+                                            &lt;span class=&quot;time&quot;&gt;11:00 - 21:00（L.O. 20:00）&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;hours-item&quot;&gt;
+                                            &lt;span class=&quot;day&quot;&gt;日・祝&lt;/span&gt;
+                                            &lt;span class=&quot;time&quot;&gt;11:00 - 19:00（L.O. 18:00）&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;hours-item&quot;&gt;
+                                            &lt;span class=&quot;day&quot;&gt;定休日&lt;/span&gt;
+                                            &lt;span class=&quot;time&quot;&gt;第2・第4火曜日&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                
+                                &lt;div class=&quot;info-section&quot;&gt;
+                                    &lt;h3&gt;アクセス&lt;/h3&gt;
+                                    &lt;div class=&quot;location-info&quot;&gt;
+                                        &lt;p class=&quot;address&quot;&gt;〒150-0001&lt;br&gt;東京都渋谷区神宮前5-8-5&lt;br&gt;グリーンビル 1F&lt;/p&gt;
+                                        &lt;div class=&quot;transport&quot;&gt;
+                                            &lt;p&gt;JR原宿駅 徒歩5分&lt;/p&gt;
+                                            &lt;p&gt;地下鉄表参道駅 A1出口より徒歩3分&lt;/p&gt;
+                                            &lt;p&gt;地下鉄明治神宮前駅 4番出口より徒歩2分&lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                
+                                &lt;div class=&quot;info-section&quot;&gt;
+                                    &lt;h3&gt;お問い合わせ&lt;/h3&gt;
+                                    &lt;div class=&quot;contact-details&quot;&gt;
+                                        &lt;p class=&quot;phone&quot;&gt;TEL: 03-6234-5678&lt;/p&gt;
+                                        &lt;p class=&quot;email&quot;&gt;EMAIL: hello@greengarden.jp&lt;/p&gt;
+                                        &lt;div class=&quot;social-links&quot;&gt;
+                                            &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Instagram&lt;/a&gt;
+                                            &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Facebook&lt;/a&gt;
+                                            &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Twitter&lt;/a&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;contact-visual&quot;&gt;
+                            &lt;div class=&quot;restaurant-images&quot;&gt;
+                                &lt;div class=&quot;main-image&quot;&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;店内の様子&quot;&gt;
+                                    &lt;div class=&quot;image-caption&quot;&gt;店内の様子&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;sub-images&quot;&gt;
+                                    &lt;div class=&quot;sub-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;テラス席&quot;&gt;
+                                        &lt;div class=&quot;image-caption&quot;&gt;テラス席&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;sub-image&quot;&gt;
+                                        &lt;img src=&quot;https://images.unsplash.com/photo-1524634126442-357e0eac3c14?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;外観&quot;&gt;
+                                        &lt;div class=&quot;image-caption&quot;&gt;外観&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;booking&quot; class=&quot;booking&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;booking-content&quot;&gt;
+                        &lt;h2 class=&quot;section-title&quot;&gt;ご予約&lt;/h2&gt;
+                        &lt;div class=&quot;title-decoration&quot;&gt;📅&lt;/div&gt;
+                        &lt;p class=&quot;booking-intro&quot;&gt;お電話またはオンラインでご予約を承っております&lt;/p&gt;
+                        
+                        &lt;div class=&quot;booking-methods&quot;&gt;
+                            &lt;div class=&quot;booking-method&quot;&gt;
+                                &lt;div class=&quot;method-icon&quot;&gt;📞&lt;/div&gt;
+                                &lt;h3&gt;お電話での予約&lt;/h3&gt;
+                                &lt;div class=&quot;phone-info&quot;&gt;
+                                    &lt;span class=&quot;phone-number&quot;&gt;03-6234-5678&lt;/span&gt;
+                                    &lt;span class=&quot;phone-hours&quot;&gt;受付時間: 10:00 - 20:00&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;p&gt;お急ぎの場合やご質問がございましたら、お気軽にお電話ください。&lt;/p&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;booking-method&quot;&gt;
+                                &lt;div class=&quot;method-icon&quot;&gt;💻&lt;/div&gt;
+                                &lt;h3&gt;オンライン予約&lt;/h3&gt;
+                                &lt;button class=&quot;online-booking-btn&quot;&gt;オンライン予約へ&lt;/button&gt;
+                                &lt;span class=&quot;online-note&quot;&gt;24時間受付可能&lt;/span&gt;
+                                &lt;p&gt;ご希望の日時とお席のタイプをお選びいただけます。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;booking-notes&quot;&gt;
+                            &lt;h3&gt;ご予約について&lt;/h3&gt;
+                            &lt;div class=&quot;notes-list&quot;&gt;
+                                &lt;div class=&quot;note-item&quot;&gt;
+                                    &lt;h4&gt;食物アレルギーについて&lt;/h4&gt;
+                                    &lt;p&gt;食物アレルギーをお持ちの方は、ご予約時にお知らせください。可能な限り対応いたします。&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;note-item&quot;&gt;
+                                    &lt;h4&gt;お子様連れについて&lt;/h4&gt;
+                                    &lt;p&gt;お子様連れでのご利用も歓迎です。キッズメニューもご用意しております。&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;note-item&quot;&gt;
+                                    &lt;h4&gt;団体利用について&lt;/h4&gt;
+                                    &lt;p&gt;8名様以上でのご利用の場合は、事前にお電話でご相談ください。&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;note-item&quot;&gt;
+                                    &lt;h4&gt;キャンセルについて&lt;/h4&gt;
+                                    &lt;p&gt;キャンセルの場合は、前日までにご連絡をお願いいたします。&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+
+        &lt;footer class=&quot;footer&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-main&quot;&gt;
+                    &lt;div class=&quot;footer-logo&quot;&gt;
+                        &lt;div class=&quot;logo-icon&quot;&gt;🌱&lt;/div&gt;
+                        &lt;div class=&quot;logo-text&quot;&gt;
+                            &lt;h3&gt;Green Garden&lt;/h3&gt;
+                            &lt;span&gt;Plant-Based Restaurant&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;p class=&quot;footer-description&quot;&gt;
+                        自然の恵みを活かした植物性料理で、健康と環境に配慮したライフスタイルをサポートします。
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-links&quot;&gt;
+                    &lt;div class=&quot;link-group&quot;&gt;
+                        &lt;h4&gt;メニュー&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;パワーボウル&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;サラダ&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;メイン料理&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;デザート&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;link-group&quot;&gt;
+                        &lt;h4&gt;サービス&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#wellness&quot;&gt;栄養相談&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#wellness&quot;&gt;料理教室&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#events&quot;&gt;イベント&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#booking&quot;&gt;予約&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;link-group&quot;&gt;
+                        &lt;h4&gt;コンタクト&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;〒150-0001&lt;/li&gt;
+                            &lt;li&gt;東京都渋谷区神宮前5-8-5&lt;/li&gt;
+                            &lt;li&gt;TEL: 03-6234-5678&lt;/li&gt;
+                            &lt;li&gt;EMAIL: hello@greengarden.jp&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p class=&quot;copyright&quot;&gt;© 2025 Green Garden. All rights reserved.&lt;/p&gt;
+                &lt;div class=&quot;footer-social&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Instagram&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Facebook&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;Twitter&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+
+
+&lt;script&gt;
+    // メニュータブ機能
+document.querySelectorAll(&#x27;.menu-tab&#x27;).forEach(tab =&gt; {
+    tab.addEventListener(&#x27;click&#x27;, function() {
+        // すべてのタブからactiveクラスを削除
+        document.querySelectorAll(&#x27;.menu-tab&#x27;).forEach(t =&gt; {
+            t.classList.remove(&#x27;active&#x27;);
+        });
+        
+        // すべてのメニューセクションを非表示
+        document.querySelectorAll(&#x27;.menu-section&#x27;).forEach(section =&gt; {
+            section.classList.remove(&#x27;active&#x27;);
+        });
+        
+        // クリックされたタブにactiveクラス追加
+        this.classList.add(&#x27;active&#x27;);
+        
+        // 対応するメニューセクションを表示
+        const menuId = this.getAttribute(&#x27;data-menu&#x27;);
+        document.getElementById(menuId).classList.add(&#x27;active&#x27;);
+    });
+});
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// ヒーローCTAボタン
+document.querySelector(&#x27;.hero-cta&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    const menuSection = document.querySelector(&#x27;#menu&#x27;);
+    const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+    const targetPosition = menuSection.offsetTop - headerHeight;
+    window.scrollTo({
+        top: targetPosition,
+        behavior: &#x27;smooth&#x27;
+    });
+});
+
+// オンライン予約ボタン
+document.querySelector(&#x27;.online-booking-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;オンライン予約システムへ移動します（実装予定）&#x27;);
+});
+
+// ヘッダーのスクロール効果
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const header = document.querySelector(&#x27;.header&#x27;);
+    if (window.scrollY &gt; 100) {
+        header.style.background = &#x27;rgba(255, 255, 255, 0.98)&#x27;;
+        header.style.boxShadow = &#x27;0 2px 30px rgba(46, 125, 50, 0.15)&#x27;;
+    } else {
+        header.style.background = &#x27;rgba(255, 255, 255, 0.95)&#x27;;
+        header.style.boxShadow = &#x27;0 2px 20px rgba(46, 125, 50, 0.1)&#x27;;
+    }
+});
+
+// 要素のアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -50px 0px&#x27;
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = &#x27;1&#x27;;
+            entry.target.style.transform = &#x27;translateY(0)&#x27;;
+        }
+    });
+}, observerOptions);
+
+// アニメーション対象要素の初期化
+document.querySelectorAll(&#x27;.menu-item, .value-item, .program-item, .event-item, .note-item&#x27;).forEach(item =&gt; {
+    item.style.opacity = &#x27;0&#x27;;
+    item.style.transform = &#x27;translateY(40px)&#x27;;
+    item.style.transition = &#x27;all 0.8s ease&#x27;;
+    observer.observe(item);
+});
+
+// 季節の食材アイテムのクリック効果
+document.querySelectorAll(&#x27;.seasonal-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;click&#x27;, function() {
+        const ingredientName = this.querySelector(&#x27;h4&#x27;).textContent;
+        this.style.background = &#x27;#e8f5e8&#x27;;
+        this.style.borderLeftColor = &#x27;#2e7d32&#x27;;
+        this.style.transform = &#x27;translateX(10px) scale(1.02)&#x27;;
+        this.style.transition = &#x27;all 0.3s ease&#x27;;
+        
+        setTimeout(() =&gt; {
+            this.style.background = &#x27;#f8fdf8&#x27;;
+            this.style.borderLeftColor = &#x27;#4caf50&#x27;;
+            this.style.transform = &#x27;translateX(0) scale(1)&#x27;;
+        }, 600);
+        
+        alert(`${ingredientName}についての詳しい情報は店舗までお問い合わせください。`);
+    });
+    
+    item.style.cursor = &#x27;pointer&#x27;;
+});
+
+// プログラムアイテムのホバー効果強化
+document.querySelectorAll(&#x27;.program-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;mouseenter&#x27;, function() {
+        const icon = this.querySelector(&#x27;.program-icon&#x27;);
+        icon.style.transform = &#x27;scale(1.2) rotate(5deg)&#x27;;
+        icon.style.transition = &#x27;transform 0.3s ease&#x27;;
+    });
+    
+    item.addEventListener(&#x27;mouseleave&#x27;, function() {
+        const icon = this.querySelector(&#x27;.program-icon&#x27;);
+        icon.style.transform = &#x27;scale(1) rotate(0deg)&#x27;;
+    });
+});
+
+// 統計数値のカウントアップアニメーション
+function animateStats() {
+    const statNumbers = document.querySelectorAll(&#x27;.stat-number&#x27;);
+    
+    statNumbers.forEach(stat =&gt; {
+        const text = stat.textContent;
+        const isPercentage = text.includes(&#x27;%&#x27;);
+        const number = parseInt(text.replace(/[^0-9]/g, &#x27;&#x27;));
+        
+        if (number &gt; 0) {
+            let current = 0;
+            const increment = number / 50;
+            const timer = setInterval(() =&gt; {
+                current += increment;
+                if (current &gt;= number) {
+                    stat.textContent = number + (isPercentage ? &#x27;%&#x27; : &#x27;+&#x27;);
+                    clearInterval(timer);
+                } else {
+                    stat.textContent = Math.floor(current) + (isPercentage ? &#x27;%&#x27; : &#x27;+&#x27;);
+                }
+            }, 40);
+        }
+    });
+}
+
+// 統計セクションが見えたときにアニメーション開始
+const statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            animateStats();
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const wellnessStats = document.querySelector(&#x27;.wellness-stats&#x27;);
+if (wellnessStats) {
+    statsObserver.observe(wellnessStats);
+}
+
+// イベントアイテムのクリック効果
+document.querySelectorAll(&#x27;.event-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;click&#x27;, function() {
+        const eventTitle = this.querySelector(&#x27;h3&#x27;).textContent;
+        const eventStatus = this.querySelector(&#x27;.event-status&#x27;).textContent;
+        
+        if (eventStatus === &#x27;申込可能&#x27;) {
+            alert(`${eventTitle}への参加申し込みページへ移動します（実装予定）`);
+        } else {
+            alert(`${eventTitle}は現在${eventStatus}です。`);
+        }
+    });
+    
+    item.style.cursor = &#x27;pointer&#x27;;
+});
+
+// 電話番号のクリック効果
+document.querySelectorAll(&#x27;.phone, .phone-number&#x27;).forEach(phone =&gt; {
+    phone.addEventListener(&#x27;click&#x27;, function() {
+        this.style.transform = &#x27;scale(1.05)&#x27;;
+        this.style.transition = &#x27;transform 0.2s ease&#x27;;
+        
+        setTimeout(() =&gt; {
+            this.style.transform = &#x27;scale(1)&#x27;;
+        }, 200);
+    });
+});
+
+// 画像のクリック効果（ライトボックス風）
+document.querySelectorAll(&#x27;.main-image img, .sub-image img&#x27;).forEach(img =&gt; {
+    img.addEventListener(&#x27;click&#x27;, function() {
+        const caption = this.parentElement.querySelector(&#x27;.image-caption&#x27;).textContent;
+        alert(`${caption}の拡大画像を表示します（実装予定）`);
+    });
+    
+    img.style.cursor = &#x27;pointer&#x27;;
+});
+
+// リーフアニメーションの向上
+const leaf = document.querySelector(&#x27;.leaf-animation&#x27;);
+if (leaf) {
+    // 風に舞うような動きを追加
+    setInterval(() =&gt; {
+        const randomX = (Math.random() - 0.5) * 20;
+        const randomY = (Math.random() - 0.5) * 20;
+        leaf.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${Math.random() * 360}deg)`;
+        leaf.style.transition = &#x27;transform 2s ease-in-out&#x27;;
+    }, 3000);
+}
+
+// ダイエットタグのインタラクション
+document.querySelectorAll(&#x27;.diet-tags .tag&#x27;).forEach(tag =&gt; {
+    tag.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.transform = &#x27;scale(1.1)&#x27;;
+        this.style.transition = &#x27;transform 0.3s ease&#x27;;
+    });
+    
+    tag.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.transform = &#x27;scale(1)&#x27;;
+    });
+});
+
+// 栄養情報の表示切り替え
+document.querySelectorAll(&#x27;.nutrition-info&#x27;).forEach(nutrition =&gt; {
+    nutrition.addEventListener(&#x27;click&#x27;, function() {
+        const items = this.querySelectorAll(&#x27;.nutrition-item&#x27;);
+        items.forEach((item, index) =&gt; {
+            setTimeout(() =&gt; {
+                item.style.background = &#x27;#2e7d32&#x27;;
+                item.style.color = &#x27;white&#x27;;
+                item.style.transform = &#x27;scale(1.05)&#x27;;
+                
+                setTimeout(() =&gt; {
+                    item.style.background = &#x27;#e8f5e8&#x27;;
+                    item.style.color = &#x27;#2e7d32&#x27;;
+                    item.style.transform = &#x27;scale(1)&#x27;;
+                }, 300);
+            }, index * 100);
+        });
+    });
+    
+    nutrition.style.cursor = &#x27;pointer&#x27;;
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="ベジタリアンレストラン" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"restaurant-vegetarian\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"restaurant-vegetarian\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"restaurant-vegetarian\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"restaurant-vegetarian\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"cIBVm3NCSvnckd-xA8ShK\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"restaurant-vegetarian\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

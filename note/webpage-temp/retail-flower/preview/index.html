@@ -1,0 +1,1896 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;小売店 - フラワーショップ&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Helvetica Neue&#x27;, &#x27;Yu Gothic&#x27;, sans-serif;
+    color: #2d5016;
+    line-height: 1.6;
+    background: #fdfffe;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(232, 121, 149, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: #e87995;
+    text-shadow: 1px 1px 3px rgba(232, 121, 149, 0.3);
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #2d5016;
+    font-size: 16px;
+    font-weight: 400;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav a:hover {
+    color: #e87995;
+}
+
+.nav a::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #e87995;
+    transition: width 0.3s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.care-guide-btn,
+.order-btn {
+    background: linear-gradient(45deg, #e87995, #f8a5c2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 10px rgba(232, 121, 149, 0.3);
+}
+
+.care-guide-btn:hover,
+.order-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(232, 121, 149, 0.4);
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+}
+
+.hero-text h2 {
+    font-size: 56px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 22px;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    font-weight: 300;
+}
+
+.btn-bloom {
+    display: inline-block;
+    padding: 18px 40px;
+    background: linear-gradient(45deg, #e87995, #f8a5c2);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0 8px 25px rgba(232, 121, 149, 0.4);
+    cursor: pointer;
+}
+
+.btn-bloom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(232, 121, 149, 0.5);
+}
+
+/* Flower Promise */
+.flower-promise {
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    padding: 80px 0;
+}
+
+.promise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.promise-item {
+    text-align: center;
+    padding: 40px 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(232, 121, 149, 0.1);
+    transition: transform 0.3s;
+}
+
+.promise-item:hover {
+    transform: translateY(-10px);
+}
+
+.promise-icon {
+    font-size: 48px;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.promise-item h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #e87995;
+    font-weight: 500;
+}
+
+.promise-item p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #2d5016;
+    position: relative;
+}
+
+.section-title::after {
+    content: &#x27;&#x27;;
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(45deg, #e87995, #f8a5c2);
+    margin: 20px auto;
+    border-radius: 2px;
+}
+
+/* Seasonal Flowers */
+.seasonal-flowers {
+    background: white;
+}
+
+.season-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.season-tab {
+    background: white;
+    border: 2px solid #e0e0e0;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #666;
+    position: relative;
+}
+
+.season-tab.active,
+.season-tab:hover {
+    background: linear-gradient(45deg, #e87995, #f8a5c2);
+    border-color: transparent;
+    color: white;
+}
+
+.flowers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.flower-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.flower-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.flower-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.flower-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.flower-card:hover .flower-image img {
+    transform: scale(1.05);
+}
+
+.flower-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.flower-card:hover .flower-overlay {
+    opacity: 1;
+}
+
+.flower-detail-btn,
+.add-to-bouquet {
+    background: rgba(232, 121, 149, 0.9);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-to-bouquet {
+    background: rgba(45, 80, 22, 0.9);
+}
+
+.flower-info {
+    padding: 25px;
+}
+
+.flower-info h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #2d5016;
+    font-weight: 500;
+}
+
+.flower-season {
+    color: #e87995;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.flower-meaning {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.flower-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flower-details .price {
+    font-size: 18px;
+    color: #e87995;
+    font-weight: bold;
+}
+
+.availability {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Arrangements */
+.arrangements {
+    background: #f8f9fa;
+}
+
+.arrangement-categories {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.arrangement-tab {
+    background: white;
+    border: 2px solid #e0e0e0;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #666;
+}
+
+.arrangement-tab.active,
+.arrangement-tab:hover {
+    background: linear-gradient(45deg, #2d5016, #4caf50);
+    border-color: transparent;
+    color: white;
+}
+
+.arrangement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.arrangement-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.arrangement-card:hover {
+    transform: translateY(-5px);
+}
+
+.arrangement-image {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.arrangement-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.arrangement-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.arrangement-card:hover .arrangement-overlay {
+    opacity: 1;
+}
+
+.order-arrangement {
+    background: #e87995;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.arrangement-info {
+    padding: 25px;
+}
+
+.arrangement-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #2d5016;
+    font-weight: 500;
+}
+
+.arrangement-description {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.arrangement-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.arrangement-specs span {
+    background: #f1f3f4;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #666;
+}
+
+.price-range {
+    font-size: 18px;
+    color: #e87995;
+    font-weight: bold;
+}
+
+/* Bouquets */
+.bouquets {
+    background: white;
+}
+
+.bouquet-purposes {
+    margin-bottom: 50px;
+}
+
+.purpose-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.purpose-tab {
+    background: white;
+    border: 2px solid #e0e0e0;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #666;
+}
+
+.purpose-tab.active,
+.purpose-tab:hover {
+    background: linear-gradient(45deg, #e87995, #f8a5c2);
+    border-color: transparent;
+    color: white;
+}
+
+.bouquet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.bouquet-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.bouquet-card:hover {
+    transform: translateY(-5px);
+}
+
+.bouquet-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.bouquet-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popular-badge,
+.premium-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.popular-badge {
+    background: #ff9800;
+}
+
+.premium-badge {
+    background: #9c27b0;
+}
+
+.order-bouquet {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(232, 121, 149, 0.9);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.bouquet-card:hover .order-bouquet {
+    opacity: 1;
+}
+
+.bouquet-info {
+    padding: 25px;
+}
+
+.bouquet-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #2d5016;
+    font-weight: 500;
+}
+
+.bouquet-description {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.bouquet-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.bouquet-features span {
+    background: #fce4ec;
+    color: #e87995;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.bouquet-pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.base-price {
+    font-size: 18px;
+    color: #e87995;
+    font-weight: bold;
+}
+
+.custom-note {
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Custom Order */
+.custom-order {
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+}
+
+.custom-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.custom-text h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #2d5016;
+    font-weight: 300;
+}
+
+.custom-text &gt; p {
+    margin-bottom: 40px;
+    color: #666;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.custom-process {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.process-step {
+    text-align: center;
+    padding: 25px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #e87995, #f8a5c2);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0 auto 15px;
+}
+
+.process-step h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #2d5016;
+}
+
+.process-step p {
+    color: #666;
+    font-size: 14px;
+}
+
+.custom-visual img {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Flower Care */
+.flower-care {
+    background: white;
+}
+
+.care-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.care-tab {
+    background: white;
+    border: 2px solid #e0e0e0;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #666;
+}
+
+.care-tab.active,
+.care-tab:hover {
+    background: linear-gradient(45deg, #2d5016, #4caf50);
+    border-color: transparent;
+    color: white;
+}
+
+.care-content {
+    position: relative;
+}
+
+.care-section {
+    display: none;
+}
+
+.care-section.active {
+    display: block;
+}
+
+.care-tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.tip-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.tip-card:hover {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.tip-icon {
+    font-size: 36px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.tip-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #2d5016;
+}
+
+.tip-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* About Shop */
+.about-shop {
+    background: #f8f9fa;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #2d5016;
+    font-weight: 300;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.shop-features {
+    margin: 40px 0;
+}
+
+.feature-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.feature-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #e87995;
+}
+
+.feature-item p {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+
+.shop-info {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.shop-info h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #e87995;
+}
+
+.shop-info p {
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.about-visual img {
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+.footer {
+    background: #2d5016;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    color: #f8a5c2;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #f8a5c2;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #4a6741;
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #e87995;
+}
+
+.quick-care-guide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.quick-tip h4 {
+    margin-bottom: 15px;
+    color: #2d5016;
+    font-size: 18px;
+}
+
+.quick-tip ul {
+    list-style: none;
+}
+
+.quick-tip ul li {
+    margin-bottom: 8px;
+    color: #666;
+    padding-left: 20px;
+    position: relative;
+}
+
+.quick-tip ul li::before {
+    content: &#x27;🌸&#x27;;
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-text h2 {
+        font-size: 36px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .about-content,
+    .custom-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .custom-process {
+        grid-template-columns: 1fr;
+    }
+    
+    .quick-care-guide {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+    }
+    
+    .season-tabs,
+    .arrangement-categories,
+    .purpose-tabs,
+    .care-tabs {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;header-content&quot;&gt;
+                &lt;h1 class=&quot;logo&quot;&gt;BLOOM GARDEN&lt;/h1&gt;
+                &lt;nav class=&quot;nav&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#flowers&quot;&gt;季節の花&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#arrangements&quot;&gt;アレンジメント&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#bouquets&quot;&gt;ブーケ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#care&quot;&gt;お手入れ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;店舗案内&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+                &lt;div class=&quot;header-actions&quot;&gt;
+                    &lt;button class=&quot;care-guide-btn&quot;&gt;お手入れガイド&lt;/button&gt;
+                    &lt;button class=&quot;order-btn&quot;&gt;オーダー相談&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;div class=&quot;hero-text&quot;&gt;
+                &lt;h2&gt;花のある暮らしを&lt;br&gt;お手伝い&lt;/h2&gt;
+                &lt;p&gt;季節の美しい花々で、あなたの毎日を彩ります&lt;/p&gt;
+                &lt;a href=&quot;#flowers&quot; class=&quot;btn-bloom&quot;&gt;季節の花を見る&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-bg&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1563241527-3004b7be0fba?w=1920&amp;h=800&amp;fit=crop&amp;q=80&quot; alt=&quot;美しい花束&quot;&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;flower-promise&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;promise-grid&quot;&gt;
+                &lt;div class=&quot;promise-item&quot;&gt;
+                    &lt;div class=&quot;promise-icon&quot;&gt;🌸&lt;/div&gt;
+                    &lt;h3&gt;新鮮な花々&lt;/h3&gt;
+                    &lt;p&gt;毎日市場から仕入れる新鮮な花&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;promise-item&quot;&gt;
+                    &lt;div class=&quot;promise-icon&quot;&gt;🎨&lt;/div&gt;
+                    &lt;h3&gt;オリジナルアレンジ&lt;/h3&gt;
+                    &lt;p&gt;お客様のご要望に合わせた特別なアレンジ&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;promise-item&quot;&gt;
+                    &lt;div class=&quot;promise-icon&quot;&gt;💝&lt;/div&gt;
+                    &lt;h3&gt;ギフトラッピング&lt;/h3&gt;
+                    &lt;p&gt;大切な方への贈り物を美しく包装&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;promise-item&quot;&gt;
+                    &lt;div class=&quot;promise-icon&quot;&gt;🌿&lt;/div&gt;
+                    &lt;h3&gt;アフターケア&lt;/h3&gt;
+                    &lt;p&gt;お花を長く楽しむためのサポート&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;flowers&quot; class=&quot;seasonal-flowers&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;季節の花&lt;/h2&gt;
+            &lt;div class=&quot;season-tabs&quot;&gt;
+                &lt;button class=&quot;season-tab active&quot; data-season=&quot;summer&quot;&gt;夏の花&lt;/button&gt;
+                &lt;button class=&quot;season-tab&quot; data-season=&quot;autumn&quot;&gt;秋の花&lt;/button&gt;
+                &lt;button class=&quot;season-tab&quot; data-season=&quot;winter&quot;&gt;冬の花&lt;/button&gt;
+                &lt;button class=&quot;season-tab&quot; data-season=&quot;spring&quot;&gt;春の花&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;flowers-grid&quot;&gt;
+                &lt;div class=&quot;flower-card&quot; data-season=&quot;summer&quot;&gt;
+                    &lt;div class=&quot;flower-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;ひまわり&quot;&gt;
+                        &lt;div class=&quot;flower-overlay&quot;&gt;
+                            &lt;button class=&quot;flower-detail-btn&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-to-bouquet&quot; data-flower=&quot;sunflower&quot;&gt;ブーケに追加&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;flower-info&quot;&gt;
+                        &lt;h3&gt;ひまわり&lt;/h3&gt;
+                        &lt;p class=&quot;flower-season&quot;&gt;夏の代表花&lt;/p&gt;
+                        &lt;p class=&quot;flower-meaning&quot;&gt;花言葉: 愛慕、崇拝&lt;/p&gt;
+                        &lt;div class=&quot;flower-details&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥300/本&lt;/span&gt;
+                            &lt;span class=&quot;availability&quot;&gt;在庫あり&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;flower-card&quot; data-season=&quot;summer&quot;&gt;
+                    &lt;div class=&quot;flower-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1595808408017-ac790ea0e56c?w=400&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;ガーベラ&quot;&gt;
+                        &lt;div class=&quot;flower-overlay&quot;&gt;
+                            &lt;button class=&quot;flower-detail-btn&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-to-bouquet&quot; data-flower=&quot;gerbera&quot;&gt;ブーケに追加&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;flower-info&quot;&gt;
+                        &lt;h3&gt;ガーベラ&lt;/h3&gt;
+                        &lt;p class=&quot;flower-season&quot;&gt;通年人気&lt;/p&gt;
+                        &lt;p class=&quot;flower-meaning&quot;&gt;花言葉: 希望、常に前進&lt;/p&gt;
+                        &lt;div class=&quot;flower-details&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥250/本&lt;/span&gt;
+                            &lt;span class=&quot;availability&quot;&gt;在庫あり&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;flower-card&quot; data-season=&quot;autumn&quot;&gt;
+                    &lt;div class=&quot;flower-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1541514458730-2a768ebe34a9?w=400&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;菊&quot;&gt;
+                        &lt;div class=&quot;flower-overlay&quot;&gt;
+                            &lt;button class=&quot;flower-detail-btn&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-to-bouquet&quot; data-flower=&quot;chrysanthemum&quot;&gt;ブーケに追加&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;flower-info&quot;&gt;
+                        &lt;h3&gt;菊&lt;/h3&gt;
+                        &lt;p class=&quot;flower-season&quot;&gt;秋の花&lt;/p&gt;
+                        &lt;p class=&quot;flower-meaning&quot;&gt;花言葉: 高貴、高尚&lt;/p&gt;
+                        &lt;div class=&quot;flower-details&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥200/本&lt;/span&gt;
+                            &lt;span class=&quot;availability&quot;&gt;在庫あり&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;flower-card&quot; data-season=&quot;autumn&quot;&gt;
+                    &lt;div class=&quot;flower-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1571149122634-6e4c68aef7b4?w=400&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;コスモス&quot;&gt;
+                        &lt;div class=&quot;flower-overlay&quot;&gt;
+                            &lt;button class=&quot;flower-detail-btn&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-to-bouquet&quot; data-flower=&quot;cosmos&quot;&gt;ブーケに追加&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;flower-info&quot;&gt;
+                        &lt;h3&gt;コスモス&lt;/h3&gt;
+                        &lt;p class=&quot;flower-season&quot;&gt;秋の花&lt;/p&gt;
+                        &lt;p class=&quot;flower-meaning&quot;&gt;花言葉: 調和、謙虚&lt;/p&gt;
+                        &lt;div class=&quot;flower-details&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥180/本&lt;/span&gt;
+                            &lt;span class=&quot;availability&quot;&gt;在庫あり&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;flower-card&quot; data-season=&quot;winter&quot;&gt;
+                    &lt;div class=&quot;flower-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;シクラメン&quot;&gt;
+                        &lt;div class=&quot;flower-overlay&quot;&gt;
+                            &lt;button class=&quot;flower-detail-btn&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-to-bouquet&quot; data-flower=&quot;cyclamen&quot;&gt;ブーケに追加&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;flower-info&quot;&gt;
+                        &lt;h3&gt;シクラメン&lt;/h3&gt;
+                        &lt;p class=&quot;flower-season&quot;&gt;冬の花&lt;/p&gt;
+                        &lt;p class=&quot;flower-meaning&quot;&gt;花言葉: 遠慮、気後れ&lt;/p&gt;
+                        &lt;div class=&quot;flower-details&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥450/鉢&lt;/span&gt;
+                            &lt;span class=&quot;availability&quot;&gt;在庫あり&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;flower-card&quot; data-season=&quot;spring&quot;&gt;
+                    &lt;div class=&quot;flower-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1490048642762-5d48e5cb0d90?w=400&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;桜&quot;&gt;
+                        &lt;div class=&quot;flower-overlay&quot;&gt;
+                            &lt;button class=&quot;flower-detail-btn&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-to-bouquet&quot; data-flower=&quot;cherry&quot;&gt;ブーケに追加&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;flower-info&quot;&gt;
+                        &lt;h3&gt;桜&lt;/h3&gt;
+                        &lt;p class=&quot;flower-season&quot;&gt;春の花&lt;/p&gt;
+                        &lt;p class=&quot;flower-meaning&quot;&gt;花言葉: 精神美、優美な女性&lt;/p&gt;
+                        &lt;div class=&quot;flower-details&quot;&gt;
+                            &lt;span class=&quot;price&quot;&gt;¥500/枝&lt;/span&gt;
+                            &lt;span class=&quot;availability&quot;&gt;期間限定&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;arrangements&quot; class=&quot;arrangements&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;フラワーアレンジメント&lt;/h2&gt;
+            &lt;div class=&quot;arrangement-categories&quot;&gt;
+                &lt;button class=&quot;arrangement-tab active&quot; data-category=&quot;table&quot;&gt;テーブル&lt;/button&gt;
+                &lt;button class=&quot;arrangement-tab&quot; data-category=&quot;wall&quot;&gt;壁掛け&lt;/button&gt;
+                &lt;button class=&quot;arrangement-tab&quot; data-category=&quot;standing&quot;&gt;スタンディング&lt;/button&gt;
+                &lt;button class=&quot;arrangement-tab&quot; data-category=&quot;wreath&quot;&gt;リース&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;arrangement-grid&quot;&gt;
+                &lt;div class=&quot;arrangement-card&quot; data-category=&quot;table&quot;&gt;
+                    &lt;div class=&quot;arrangement-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1563241527-3004b7be0fba?w=400&amp;h=350&amp;fit=crop&amp;q=80&quot; alt=&quot;テーブルアレンジメント&quot;&gt;
+                        &lt;div class=&quot;arrangement-overlay&quot;&gt;
+                            &lt;button class=&quot;order-arrangement&quot; data-type=&quot;table-basic&quot;&gt;オーダーする&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;arrangement-info&quot;&gt;
+                        &lt;h3&gt;テーブルアレンジメント - ベーシック&lt;/h3&gt;
+                        &lt;p class=&quot;arrangement-description&quot;&gt;食卓を彩る上品なアレンジメント&lt;/p&gt;
+                        &lt;div class=&quot;arrangement-specs&quot;&gt;
+                            &lt;span&gt;サイズ: 約30cm&lt;/span&gt;
+                            &lt;span&gt;花材: 季節の花5-7種&lt;/span&gt;
+                            &lt;span&gt;所要時間: 2-3日&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;arrangement-price&quot;&gt;
+                            &lt;span class=&quot;price-range&quot;&gt;¥3,500 - ¥6,000&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;arrangement-card&quot; data-category=&quot;wall&quot;&gt;
+                    &lt;div class=&quot;arrangement-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&amp;h=350&amp;fit=crop&amp;q=80&quot; alt=&quot;壁掛けアレンジメント&quot;&gt;
+                        &lt;div class=&quot;arrangement-overlay&quot;&gt;
+                            &lt;button class=&quot;order-arrangement&quot; data-type=&quot;wall-basic&quot;&gt;オーダーする&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;arrangement-info&quot;&gt;
+                        &lt;h3&gt;壁掛けアレンジメント&lt;/h3&gt;
+                        &lt;p class=&quot;arrangement-description&quot;&gt;空間を華やかに演出する壁掛けタイプ&lt;/p&gt;
+                        &lt;div class=&quot;arrangement-specs&quot;&gt;
+                            &lt;span&gt;サイズ: 約40cm&lt;/span&gt;
+                            &lt;span&gt;花材: ドライフラワー含む&lt;/span&gt;
+                            &lt;span&gt;所要時間: 3-4日&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;arrangement-price&quot;&gt;
+                            &lt;span class=&quot;price-range&quot;&gt;¥4,500 - ¥8,000&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;arrangement-card&quot; data-category=&quot;standing&quot;&gt;
+                    &lt;div class=&quot;arrangement-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1520763185298-1b434c919102?w=400&amp;h=350&amp;fit=crop&amp;q=80&quot; alt=&quot;スタンディングアレンジメント&quot;&gt;
+                        &lt;div class=&quot;arrangement-overlay&quot;&gt;
+                            &lt;button class=&quot;order-arrangement&quot; data-type=&quot;standing-luxury&quot;&gt;オーダーする&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;arrangement-info&quot;&gt;
+                        &lt;h3&gt;スタンディングアレンジメント&lt;/h3&gt;
+                        &lt;p class=&quot;arrangement-description&quot;&gt;開店祝いやイベントに最適な大型アレンジ&lt;/p&gt;
+                        &lt;div class=&quot;arrangement-specs&quot;&gt;
+                            &lt;span&gt;サイズ: 約100cm&lt;/span&gt;
+                            &lt;span&gt;花材: 豪華な花材使用&lt;/span&gt;
+                            &lt;span&gt;所要時間: 1週間&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;arrangement-price&quot;&gt;
+                            &lt;span class=&quot;price-range&quot;&gt;¥15,000 - ¥30,000&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;arrangement-card&quot; data-category=&quot;wreath&quot;&gt;
+                    &lt;div class=&quot;arrangement-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1513081041507-5f1be7e5c8a1?w=400&amp;h=350&amp;fit=crop&amp;q=80&quot; alt=&quot;リース&quot;&gt;
+                        &lt;div class=&quot;arrangement-overlay&quot;&gt;
+                            &lt;button class=&quot;order-arrangement&quot; data-type=&quot;wreath-seasonal&quot;&gt;オーダーする&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;arrangement-info&quot;&gt;
+                        &lt;h3&gt;季節のリース&lt;/h3&gt;
+                        &lt;p class=&quot;arrangement-description&quot;&gt;玄関やお部屋のドアを彩るリース&lt;/p&gt;
+                        &lt;div class=&quot;arrangement-specs&quot;&gt;
+                            &lt;span&gt;サイズ: 約35cm&lt;/span&gt;
+                            &lt;span&gt;花材: 季節の花・葉物&lt;/span&gt;
+                            &lt;span&gt;所要時間: 2-3日&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;arrangement-price&quot;&gt;
+                            &lt;span class=&quot;price-range&quot;&gt;¥2,800 - ¥5,500&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;bouquets&quot; class=&quot;bouquets&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;ブーケ・花束&lt;/h2&gt;
+            &lt;div class=&quot;bouquet-purposes&quot;&gt;
+                &lt;div class=&quot;purpose-tabs&quot;&gt;
+                    &lt;button class=&quot;purpose-tab active&quot; data-purpose=&quot;wedding&quot;&gt;ウェディング&lt;/button&gt;
+                    &lt;button class=&quot;purpose-tab&quot; data-purpose=&quot;gift&quot;&gt;ギフト&lt;/button&gt;
+                    &lt;button class=&quot;purpose-tab&quot; data-purpose=&quot;celebration&quot;&gt;お祝い&lt;/button&gt;
+                    &lt;button class=&quot;purpose-tab&quot; data-purpose=&quot;sympathy&quot;&gt;お悔やみ&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;bouquet-grid&quot;&gt;
+                &lt;div class=&quot;bouquet-card&quot; data-purpose=&quot;wedding&quot;&gt;
+                    &lt;div class=&quot;bouquet-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1519566401303-c64a24583d60?w=400&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;ウェディングブーケ&quot;&gt;
+                        &lt;span class=&quot;popular-badge&quot;&gt;人気&lt;/span&gt;
+                        &lt;button class=&quot;order-bouquet&quot; data-bouquet=&quot;wedding-classic&quot;&gt;オーダーする&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;bouquet-info&quot;&gt;
+                        &lt;h3&gt;クラシックウェディングブーケ&lt;/h3&gt;
+                        &lt;p class=&quot;bouquet-description&quot;&gt;純白のバラを中心とした上品なブーケ&lt;/p&gt;
+                        &lt;div class=&quot;bouquet-features&quot;&gt;
+                            &lt;span&gt;🌹 白バラメイン&lt;/span&gt;
+                            &lt;span&gt;🎀 サテンリボン&lt;/span&gt;
+                            &lt;span&gt;💍 ブートニア付き&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;bouquet-pricing&quot;&gt;
+                            &lt;span class=&quot;base-price&quot;&gt;¥12,000〜&lt;/span&gt;
+                            &lt;span class=&quot;custom-note&quot;&gt;カスタマイズ可能&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;bouquet-card&quot; data-purpose=&quot;gift&quot;&gt;
+                    &lt;div class=&quot;bouquet-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1586166169097-ab63453abe35?w=400&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;ギフトブーケ&quot;&gt;
+                        &lt;button class=&quot;order-bouquet&quot; data-bouquet=&quot;gift-colorful&quot;&gt;オーダーする&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;bouquet-info&quot;&gt;
+                        &lt;h3&gt;カラフルギフトブーケ&lt;/h3&gt;
+                        &lt;p class=&quot;bouquet-description&quot;&gt;明るく華やかな色合いのブーケ&lt;/p&gt;
+                        &lt;div class=&quot;bouquet-features&quot;&gt;
+                            &lt;span&gt;🌈 季節の色彩&lt;/span&gt;
+                            &lt;span&gt;📦 ギフトボックス&lt;/span&gt;
+                            &lt;span&gt;💌 メッセージカード&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;bouquet-pricing&quot;&gt;
+                            &lt;span class=&quot;base-price&quot;&gt;¥4,500〜&lt;/span&gt;
+                            &lt;span class=&quot;custom-note&quot;&gt;サイズ選択可&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;bouquet-card&quot; data-purpose=&quot;celebration&quot;&gt;
+                    &lt;div class=&quot;bouquet-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1563241527-3004b7be0fba?w=400&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;お祝いブーケ&quot;&gt;
+                        &lt;span class=&quot;premium-badge&quot;&gt;プレミアム&lt;/span&gt;
+                        &lt;button class=&quot;order-bouquet&quot; data-bouquet=&quot;celebration-luxury&quot;&gt;オーダーする&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;bouquet-info&quot;&gt;
+                        &lt;h3&gt;お祝い豪華ブーケ&lt;/h3&gt;
+                        &lt;p class=&quot;bouquet-description&quot;&gt;特別な日を彩る豪華なブーケ&lt;/p&gt;
+                        &lt;div class=&quot;bouquet-features&quot;&gt;
+                            &lt;span&gt;👑 高級花材使用&lt;/span&gt;
+                            &lt;span&gt;🎊 ゴールドリボン&lt;/span&gt;
+                            &lt;span&gt;📱 お届け写真送付&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;bouquet-pricing&quot;&gt;
+                            &lt;span class=&quot;base-price&quot;&gt;¥8,000〜&lt;/span&gt;
+                            &lt;span class=&quot;custom-note&quot;&gt;完全オーダーメイド&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;bouquet-card&quot; data-purpose=&quot;sympathy&quot;&gt;
+                    &lt;div class=&quot;bouquet-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;お悔やみの花&quot;&gt;
+                        &lt;button class=&quot;order-bouquet&quot; data-bouquet=&quot;sympathy-white&quot;&gt;オーダーする&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;bouquet-info&quot;&gt;
+                        &lt;h3&gt;お悔やみの花束&lt;/h3&gt;
+                        &lt;p class=&quot;bouquet-description&quot;&gt;故人を偲ぶ心を込めた花束&lt;/p&gt;
+                        &lt;div class=&quot;bouquet-features&quot;&gt;
+                            &lt;span&gt;🤍 白色基調&lt;/span&gt;
+                            &lt;span&gt;🕊️ 上品な仕上がり&lt;/span&gt;
+                            &lt;span&gt;📞 お急ぎ対応可&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;bouquet-pricing&quot;&gt;
+                            &lt;span class=&quot;base-price&quot;&gt;¥5,000〜&lt;/span&gt;
+                            &lt;span class=&quot;custom-note&quot;&gt;当日配送可能&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;custom-order&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;custom-content&quot;&gt;
+                &lt;div class=&quot;custom-text&quot;&gt;
+                    &lt;h2&gt;オーダーメイドフラワー&lt;/h2&gt;
+                    &lt;p&gt;お客様のご要望に合わせて、世界に一つだけのフラワーアレンジメントをお作りします。&lt;/p&gt;
+                    &lt;div class=&quot;custom-process&quot;&gt;
+                        &lt;div class=&quot;process-step&quot;&gt;
+                            &lt;div class=&quot;step-number&quot;&gt;1&lt;/div&gt;
+                            &lt;h3&gt;ご相談&lt;/h3&gt;
+                            &lt;p&gt;用途やご希望をお聞かせください&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;process-step&quot;&gt;
+                            &lt;div class=&quot;step-number&quot;&gt;2&lt;/div&gt;
+                            &lt;h3&gt;デザイン提案&lt;/h3&gt;
+                            &lt;p&gt;イメージに合わせてデザインをご提案&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;process-step&quot;&gt;
+                            &lt;div class=&quot;step-number&quot;&gt;3&lt;/div&gt;
+                            &lt;h3&gt;制作&lt;/h3&gt;
+                            &lt;p&gt;丁寧に心を込めてお作りします&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;process-step&quot;&gt;
+                            &lt;div class=&quot;step-number&quot;&gt;4&lt;/div&gt;
+                            &lt;h3&gt;お渡し&lt;/h3&gt;
+                            &lt;p&gt;店頭受取・配送をお選びいただけます&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;button class=&quot;btn-bloom consultation-btn&quot;&gt;無料相談を申し込む&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;custom-visual&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;オーダーメイドフラワー&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;care&quot; class=&quot;flower-care&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;お花のお手入れ方法&lt;/h2&gt;
+            &lt;div class=&quot;care-tabs&quot;&gt;
+                &lt;button class=&quot;care-tab active&quot; data-care=&quot;fresh&quot;&gt;切り花&lt;/button&gt;
+                &lt;button class=&quot;care-tab&quot; data-care=&quot;potted&quot;&gt;鉢植え&lt;/button&gt;
+                &lt;button class=&quot;care-tab&quot; data-care=&quot;arrangement&quot;&gt;アレンジメント&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;care-content&quot;&gt;
+                &lt;div class=&quot;care-section active&quot; data-care=&quot;fresh&quot;&gt;
+                    &lt;div class=&quot;care-tips&quot;&gt;
+                        &lt;div class=&quot;tip-card&quot;&gt;
+                            &lt;div class=&quot;tip-icon&quot;&gt;✂️&lt;/div&gt;
+                            &lt;h3&gt;茎の切り方&lt;/h3&gt;
+                            &lt;p&gt;水中でななめに切ることで水の吸い上げが良くなります。&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;tip-card&quot;&gt;
+                            &lt;div class=&quot;tip-icon&quot;&gt;💧&lt;/div&gt;
+                            &lt;h3&gt;水の管理&lt;/h3&gt;
+                            &lt;p&gt;毎日水を替え、花瓶をきれいに洗いましょう。&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;tip-card&quot;&gt;
+                            &lt;div class=&quot;tip-icon&quot;&gt;🌡️&lt;/div&gt;
+                            &lt;h3&gt;温度管理&lt;/h3&gt;
+                            &lt;p&gt;直射日光を避け、涼しい場所に置きましょう。&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;tip-card&quot;&gt;
+                            &lt;div class=&quot;tip-icon&quot;&gt;🍃&lt;/div&gt;
+                            &lt;h3&gt;葉の処理&lt;/h3&gt;
+                            &lt;p&gt;水に浸かる部分の葉は取り除きましょう。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;care-section&quot; data-care=&quot;potted&quot;&gt;
+                    &lt;div class=&quot;care-tips&quot;&gt;
+                        &lt;div class=&quot;tip-card&quot;&gt;
+                            &lt;div class=&quot;tip-icon&quot;&gt;💧&lt;/div&gt;
+                            &lt;h3&gt;水やり&lt;/h3&gt;
+                            &lt;p&gt;土の表面が乾いたらたっぷりと水をあげましょう。&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;tip-card&quot;&gt;
+                            &lt;div class=&quot;tip-icon&quot;&gt;☀️&lt;/div&gt;
+                            &lt;h3&gt;日光&lt;/h3&gt;
+                            &lt;p&gt;適度な日光を当て、風通しの良い場所に置きましょう。&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;tip-card&quot;&gt;
+                            &lt;div class=&quot;tip-icon&quot;&gt;🌱&lt;/div&gt;
+                            &lt;h3&gt;肥料&lt;/h3&gt;
+                            &lt;p&gt;月に1-2回、液体肥料を希釈して与えましょう。&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;tip-card&quot;&gt;
+                            &lt;div class=&quot;tip-icon&quot;&gt;✂️&lt;/div&gt;
+                            &lt;h3&gt;剪定&lt;/h3&gt;
+                            &lt;p&gt;枯れた花や葉を取り除き、形を整えましょう。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;care-section&quot; data-care=&quot;arrangement&quot;&gt;
+                    &lt;div class=&quot;care-tips&quot;&gt;
+                        &lt;div class=&quot;tip-card&quot;&gt;
+                            &lt;div class=&quot;tip-icon&quot;&gt;💧&lt;/div&gt;
+                            &lt;h3&gt;水の補給&lt;/h3&gt;
+                            &lt;p&gt;オアシスが乾燥しないよう、定期的に水を足しましょう。&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;tip-card&quot;&gt;
+                            &lt;div class=&quot;tip-icon&quot;&gt;❄️&lt;/div&gt;
+                            &lt;h3&gt;温度管理&lt;/h3&gt;
+                            &lt;p&gt;エアコンの風が直接当たらない場所に置きましょう。&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;tip-card&quot;&gt;
+                            &lt;div class=&quot;tip-icon&quot;&gt;🍃&lt;/div&gt;
+                            &lt;h3&gt;お手入れ&lt;/h3&gt;
+                            &lt;p&gt;枯れた花は取り除き、全体のバランスを保ちましょう。&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;tip-card&quot;&gt;
+                            &lt;div class=&quot;tip-icon&quot;&gt;🌿&lt;/div&gt;
+                            &lt;h3&gt;延命剤&lt;/h3&gt;
+                            &lt;p&gt;延命剤を使用することで、より長く楽しめます。&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about-shop&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;h2&gt;BLOOM GARDENについて&lt;/h2&gt;
+                    &lt;p&gt;2010年の開店以来、地域の皆様に愛され続けているフラワーショップです。&lt;/p&gt;
+                    &lt;p&gt;経験豊富なフローリストが、お客様の大切な瞬間を彩る花をご提案いたします。季節の花から特別なオーダーまで、心を込めてお作りします。&lt;/p&gt;
+                    &lt;div class=&quot;shop-features&quot;&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;h3&gt;🌸 季節の花&lt;/h3&gt;
+                            &lt;p&gt;市場から毎日仕入れる新鮮な季節の花&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;h3&gt;🎨 オリジナルアレンジ&lt;/h3&gt;
+                            &lt;p&gt;お客様のご要望に合わせたオーダーメイド&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;h3&gt;🚚 配送サービス&lt;/h3&gt;
+                            &lt;p&gt;大切な方への贈り物を心を込めてお届け&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;shop-info&quot;&gt;
+                        &lt;h3&gt;店舗情報&lt;/h3&gt;
+                        &lt;p&gt;📍 〒107-0052 東京都港区赤坂3-12-5&lt;/p&gt;
+                        &lt;p&gt;📞 TEL: 03-2345-6789&lt;/p&gt;
+                        &lt;p&gt;🕐 営業時間: 9:00-19:00（日曜定休）&lt;/p&gt;
+                        &lt;p&gt;🚇 地下鉄赤坂見附駅 徒歩3分&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-visual&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;店舗内観&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;BLOOM GARDEN&lt;/h3&gt;
+                    &lt;p&gt;花のある暮らしをお手伝い&lt;/p&gt;
+                    &lt;div class=&quot;social-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Pinterest&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;商品・サービス&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;季節の花&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;フラワーアレンジメント&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ブーケ・花束&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;鉢植え・観葉植物&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ドライフラワー&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;サービス&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;オーダーメイド&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;配送サービス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ウェディング装花&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;イベント装花&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お手入れサポート&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;お問い合わせ&lt;/h3&gt;
+                    &lt;p&gt;📞 03-2345-6789&lt;/p&gt;
+                    &lt;p&gt;✉️ info@bloomgarden.com&lt;/p&gt;
+                    &lt;p&gt;営業時間: 9:00-19:00（日曜定休）&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;copyright&quot;&gt;&amp;copy; 2025 BLOOM GARDEN. All rights reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+    &lt;!-- Care Guide Modal --&gt;
+    &lt;div class=&quot;modal&quot; id=&quot;care-guide-modal&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;span class=&quot;close&quot;&gt;&amp;times;&lt;/span&gt;
+            &lt;h3&gt;お花のお手入れクイックガイド&lt;/h3&gt;
+            &lt;div class=&quot;quick-care-guide&quot;&gt;
+                &lt;div class=&quot;quick-tip&quot;&gt;
+                    &lt;h4&gt;切り花を長持ちさせるコツ&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;茎を水中でななめに切る&lt;/li&gt;
+                        &lt;li&gt;毎日水を替える&lt;/li&gt;
+                        &lt;li&gt;延命剤を使用する&lt;/li&gt;
+                        &lt;li&gt;直射日光を避ける&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;quick-tip&quot;&gt;
+                    &lt;h4&gt;鉢植えのお手入れ&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;土の表面が乾いたら水やり&lt;/li&gt;
+                        &lt;li&gt;適度な日光と風通し&lt;/li&gt;
+                        &lt;li&gt;月1-2回の肥料&lt;/li&gt;
+                        &lt;li&gt;枯れた部分の剪定&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+&lt;script&gt;
+    // Season tabs for flowers
+document.querySelectorAll(&#x27;.season-tab&#x27;).forEach(tab =&gt; {
+    tab.addEventListener(&#x27;click&#x27;, function() {
+        const season = this.dataset.season;
+        
+        // Update active tab
+        document.querySelectorAll(&#x27;.season-tab&#x27;).forEach(t =&gt; t.classList.remove(&#x27;active&#x27;));
+        this.classList.add(&#x27;active&#x27;);
+        
+        // Show/hide flower cards
+        document.querySelectorAll(&#x27;.flower-card&#x27;).forEach(card =&gt; {
+            if (card.dataset.season === season) {
+                card.style.display = &#x27;block&#x27;;
+            } else {
+                card.style.display = &#x27;none&#x27;;
+            }
+        });
+    });
+});
+
+// Arrangement category tabs
+document.querySelectorAll(&#x27;.arrangement-tab&#x27;).forEach(tab =&gt; {
+    tab.addEventListener(&#x27;click&#x27;, function() {
+        const category = this.dataset.category;
+        
+        // Update active tab
+        document.querySelectorAll(&#x27;.arrangement-tab&#x27;).forEach(t =&gt; t.classList.remove(&#x27;active&#x27;));
+        this.classList.add(&#x27;active&#x27;);
+        
+        // Show/hide arrangement cards
+        document.querySelectorAll(&#x27;.arrangement-card&#x27;).forEach(card =&gt; {
+            if (card.dataset.category === category) {
+                card.style.display = &#x27;block&#x27;;
+            } else {
+                card.style.display = &#x27;none&#x27;;
+            }
+        });
+    });
+});
+
+// Bouquet purpose tabs
+document.querySelectorAll(&#x27;.purpose-tab&#x27;).forEach(tab =&gt; {
+    tab.addEventListener(&#x27;click&#x27;, function() {
+        const purpose = this.dataset.purpose;
+        
+        // Update active tab
+        document.querySelectorAll(&#x27;.purpose-tab&#x27;).forEach(t =&gt; t.classList.remove(&#x27;active&#x27;));
+        this.classList.add(&#x27;active&#x27;);
+        
+        // Show/hide bouquet cards
+        document.querySelectorAll(&#x27;.bouquet-card&#x27;).forEach(card =&gt; {
+            if (card.dataset.purpose === purpose) {
+                card.style.display = &#x27;block&#x27;;
+            } else {
+                card.style.display = &#x27;none&#x27;;
+            }
+        });
+    });
+});
+
+// Care tabs
+document.querySelectorAll(&#x27;.care-tab&#x27;).forEach(tab =&gt; {
+    tab.addEventListener(&#x27;click&#x27;, function() {
+        const care = this.dataset.care;
+        
+        // Update active tab
+        document.querySelectorAll(&#x27;.care-tab&#x27;).forEach(t =&gt; t.classList.remove(&#x27;active&#x27;));
+        this.classList.add(&#x27;active&#x27;);
+        
+        // Show/hide care sections
+        document.querySelectorAll(&#x27;.care-section&#x27;).forEach(section =&gt; {
+            section.classList.remove(&#x27;active&#x27;);
+        });
+        document.querySelector(`[data-care=&quot;${care}&quot;]`).classList.add(&#x27;active&#x27;);
+    });
+});
+
+// Flower detail and bouquet actions
+document.querySelectorAll(&#x27;.flower-detail-btn&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const flowerCard = this.closest(&#x27;.flower-card&#x27;);
+        const flowerName = flowerCard.querySelector(&#x27;h3&#x27;).textContent;
+        const meaning = flowerCard.querySelector(&#x27;.flower-meaning&#x27;).textContent;
+        const price = flowerCard.querySelector(&#x27;.price&#x27;).textContent;
+        
+        alert(`${flowerName}\n${meaning}\n価格: ${price}\n\n詳細情報：\n・お手入れ方法\n・花持ち期間\n・おすすめの組み合わせ`);
+    });
+});
+
+document.querySelectorAll(&#x27;.add-to-bouquet&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const flowerId = this.dataset.flower;
+        const flowerCard = this.closest(&#x27;.flower-card&#x27;);
+        const flowerName = flowerCard.querySelector(&#x27;h3&#x27;).textContent;
+        
+        alert(`${flowerName} をブーケの花材に追加しました\n\n現在の選択：\n・${flowerName}\n\nブーケのオーダーメイドをご希望の場合は、お気軽にご相談ください。`);
+    });
+});
+
+// Arrangement and bouquet ordering
+document.querySelectorAll(&#x27;.order-arrangement&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const arrangementType = this.dataset.type;
+        const card = this.closest(&#x27;.arrangement-card&#x27;);
+        const title = card.querySelector(&#x27;h3&#x27;).textContent;
+        const priceRange = card.querySelector(&#x27;.price-range&#x27;).textContent;
+        
+        alert(`${title} のオーダーページに移動します\n\n価格帯: ${priceRange}\n\nご希望をお聞かせください：\n・使用用途\n・色合いのご希望\n・お届け日時\n・ご予算`);
+    });
+});
+
+document.querySelectorAll(&#x27;.order-bouquet&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const bouquetType = this.dataset.bouquet;
+        const card = this.closest(&#x27;.bouquet-card&#x27;);
+        const title = card.querySelector(&#x27;h3&#x27;).textContent;
+        const basePrice = card.querySelector(&#x27;.base-price&#x27;).textContent;
+        
+        alert(`${title} のオーダーページに移動します\n\n基本価格: ${basePrice}\n\nカスタマイズオプション：\n・サイズ変更\n・花材の追加・変更\n・リボンの色\n・メッセージカード`);
+    });
+});
+
+// Header action buttons
+document.querySelector(&#x27;.order-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;オーダー相談ページに移動します\n\n以下のサービスをご利用いただけます：\n・フラワーアレンジメント\n・ブーケ・花束\n・ウェディング装花\n・イベント装花\n\nお気軽にご相談ください。&#x27;);
+});
+
+document.querySelector(&#x27;.consultation-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;無料相談のご予約ページに移動します\n\nご相談内容：\n・オーダーメイドアレンジメント\n・ウェディング装花\n・イベントや店舗装花\n・季節の花の組み合わせ\n\n経験豊富なフローリストがお答えします。&#x27;);
+});
+
+// Care guide modal
+const careModal = document.getElementById(&#x27;care-guide-modal&#x27;);
+const careGuideBtn = document.querySelector(&#x27;.care-guide-btn&#x27;);
+const closeBtn = document.querySelector(&#x27;.close&#x27;);
+
+careGuideBtn.addEventListener(&#x27;click&#x27;, function() {
+    careModal.style.display = &#x27;block&#x27;;
+});
+
+closeBtn.addEventListener(&#x27;click&#x27;, function() {
+    careModal.style.display = &#x27;none&#x27;;
+});
+
+window.addEventListener(&#x27;click&#x27;, function(event) {
+    if (event.target === careModal) {
+        careModal.style.display = &#x27;none&#x27;;
+    }
+});
+
+// Smooth scrolling for navigation
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// Initialize - show summer flowers by default
+document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() {
+    // Show summer flowers initially
+    document.querySelectorAll(&#x27;.flower-card&#x27;).forEach(card =&gt; {
+        if (card.dataset.season === &#x27;summer&#x27;) {
+            card.style.display = &#x27;block&#x27;;
+        } else {
+            card.style.display = &#x27;none&#x27;;
+        }
+    });
+    
+    // Show table arrangements initially
+    document.querySelectorAll(&#x27;.arrangement-card&#x27;).forEach(card =&gt; {
+        if (card.dataset.category === &#x27;table&#x27;) {
+            card.style.display = &#x27;block&#x27;;
+        } else {
+            card.style.display = &#x27;none&#x27;;
+        }
+    });
+    
+    // Show wedding bouquets initially
+    document.querySelectorAll(&#x27;.bouquet-card&#x27;).forEach(card =&gt; {
+        if (card.dataset.purpose === &#x27;wedding&#x27;) {
+            card.style.display = &#x27;block&#x27;;
+        } else {
+            card.style.display = &#x27;none&#x27;;
+        }
+    });
+});
+
+// Intersection Observer for animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -50px 0px&#x27;
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = &#x27;1&#x27;;
+            entry.target.style.transform = &#x27;translateY(0)&#x27;;
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll(&#x27;.promise-item, .flower-card, .arrangement-card, .bouquet-card, .tip-card&#x27;).forEach(el =&gt; {
+    el.style.opacity = &#x27;0&#x27;;
+    el.style.transform = &#x27;translateY(20px)&#x27;;
+    el.style.transition = &#x27;opacity 0.6s ease, transform 0.6s ease&#x27;;
+    observer.observe(el);
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="小売店 - フラワーショップ" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"retail-flower\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"retail-flower\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"retail-flower\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"retail-flower\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"iVHCqK7cjgVBslNqFIW9u\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"retail-flower\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

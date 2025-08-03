@@ -1,0 +1,1198 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ポートフォリオ - エージェンシー&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #2c3e50;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-menu a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.nav-menu a:hover {
+    color: #e74c3c;
+}
+
+/* Hero */
+.hero {
+    padding: 120px 0 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.hero-content {
+    padding-left: 2rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-cta {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    background: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.hero-cta:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+.hero-visual {
+    padding-right: 2rem;
+}
+
+.visual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    transform: rotate(5deg);
+}
+
+.visual-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.visual-item:hover {
+    transform: translateY(-10px);
+}
+
+.visual-item:nth-child(even) {
+    margin-top: 2rem;
+}
+
+.visual-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Services */
+.services {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #2c3e50;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.service-card &gt; p {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.service-list {
+    list-style: none;
+    text-align: left;
+}
+
+.service-list li {
+    padding: 0.5rem 0;
+    color: #666;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.service-list li:before {
+    content: &quot;→&quot;;
+    position: absolute;
+    left: 0;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Work */
+.work {
+    padding: 100px 0;
+}
+
+.work-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 2px solid #e0e0e0;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 50px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #e74c3c;
+    color: white;
+    border-color: #e74c3c;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.work-item:hover {
+    transform: translateY(-10px);
+}
+
+.work-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.work-item:hover img {
+    transform: scale(1.1);
+}
+
+.work-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: white;
+    padding: 2rem;
+    transform: translateY(50%);
+    transition: transform 0.3s;
+}
+
+.work-item:hover .work-overlay {
+    transform: translateY(0);
+}
+
+.work-category {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.work-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.work-info p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Team */
+.team {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.member-info {
+    padding: 2rem;
+}
+
+.member-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.member-role {
+    color: #e74c3c;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.member-bio {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* Clients */
+.clients {
+    padding: 100px 0;
+}
+
+.clients-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.client-logo {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.client-logo:hover {
+    transform: translateY(-5px);
+}
+
+.logo-placeholder {
+    font-weight: 700;
+    color: #666;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.testimonial {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-left: 4px solid #e74c3c;
+}
+
+.testimonial p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial cite {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: normal;
+}
+
+/* Contact */
+.contact {
+    padding: 100px 0;
+    background: #2c3e50;
+    color: white;
+}
+
+.contact .section-title {
+    color: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-text h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.contact-text &gt; p {
+    color: #bdc3c7;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item strong {
+    display: block;
+    color: #e74c3c;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.info-item p {
+    color: #bdc3c7;
+    line-height: 1.6;
+}
+
+.contact-form {
+    background: rgba(255,255,255,0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand .logo {
+    color: #e74c3c;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    color: #bdc3c7;
+    line-height: 1.6;
+}
+
+.footer-links h4,
+.footer-social h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #e74c3c;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #555;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    color: white;
+    border-color: #e74c3c;
+    background: #e74c3c;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 100px 0 60px;
+    }
+    
+    .hero-content {
+        padding-left: 0;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        justify-content: center;
+    }
+    
+    .visual-grid {
+        transform: none;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .services-grid,
+    .work-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .clients-logos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonials {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;nav class=&quot;nav&quot;&gt;
+            &lt;div class=&quot;nav-container&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;CREATIVE AGENCY&lt;/div&gt;
+                &lt;button class=&quot;menu-toggle&quot; id=&quot;menuToggle&quot;&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;ul class=&quot;nav-menu&quot; id=&quot;navMenu&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#work&quot;&gt;Work&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#team&quot;&gt;Team&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#clients&quot;&gt;Clients&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h1 class=&quot;hero-title&quot;&gt;Creative Solutions&lt;/h1&gt;
+            &lt;p class=&quot;hero-subtitle&quot;&gt;ブランドの可能性を最大限に引き出すクリエイティブエージェンシー&lt;/p&gt;
+            &lt;div class=&quot;hero-stats&quot;&gt;
+                &lt;div class=&quot;stat-item&quot;&gt;
+                    &lt;span class=&quot;stat-number&quot;&gt;200+&lt;/span&gt;
+                    &lt;span class=&quot;stat-label&quot;&gt;プロジェクト&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;stat-item&quot;&gt;
+                    &lt;span class=&quot;stat-number&quot;&gt;50+&lt;/span&gt;
+                    &lt;span class=&quot;stat-label&quot;&gt;クライアント&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;stat-item&quot;&gt;
+                    &lt;span class=&quot;stat-number&quot;&gt;15+&lt;/span&gt;
+                    &lt;span class=&quot;stat-label&quot;&gt;アワード&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;a href=&quot;#work&quot; class=&quot;hero-cta&quot;&gt;プロジェクトを見る&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-visual&quot;&gt;
+            &lt;div class=&quot;visual-grid&quot;&gt;
+                &lt;div class=&quot;visual-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1558655146-d09347e92766?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Project&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;visual-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Project&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;visual-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1555421689-491a97ff2040?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Project&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;visual-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Project&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;services&quot; class=&quot;services&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Our Services&lt;/h2&gt;
+            &lt;div class=&quot;services-grid&quot;&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🎨&lt;/div&gt;
+                    &lt;h3&gt;ブランディング&lt;/h3&gt;
+                    &lt;p&gt;ブランドアイデンティティの構築から戦略策定まで、包括的なブランディングサービスを提供します。&lt;/p&gt;
+                    &lt;ul class=&quot;service-list&quot;&gt;
+                        &lt;li&gt;ロゴデザイン&lt;/li&gt;
+                        &lt;li&gt;ブランドガイドライン&lt;/li&gt;
+                        &lt;li&gt;ネーミング&lt;/li&gt;
+                        &lt;li&gt;ブランド戦略&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;💻&lt;/div&gt;
+                    &lt;h3&gt;Webデザイン・開発&lt;/h3&gt;
+                    &lt;p&gt;ユーザー体験を重視したWebサイトの企画・デザイン・開発を一貫して行います。&lt;/p&gt;
+                    &lt;ul class=&quot;service-list&quot;&gt;
+                        &lt;li&gt;UI/UXデザイン&lt;/li&gt;
+                        &lt;li&gt;レスポンシブ対応&lt;/li&gt;
+                        &lt;li&gt;CMS構築&lt;/li&gt;
+                        &lt;li&gt;SEO対策&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;📱&lt;/div&gt;
+                    &lt;h3&gt;アプリ開発&lt;/h3&gt;
+                    &lt;p&gt;iOS・Android対応のモバイルアプリケーションの企画・デザイン・開発を行います。&lt;/p&gt;
+                    &lt;ul class=&quot;service-list&quot;&gt;
+                        &lt;li&gt;ネイティブアプリ&lt;/li&gt;
+                        &lt;li&gt;ハイブリッドアプリ&lt;/li&gt;
+                        &lt;li&gt;プロトタイピング&lt;/li&gt;
+                        &lt;li&gt;アプリストア申請&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;📈&lt;/div&gt;
+                    &lt;h3&gt;デジタルマーケティング&lt;/h3&gt;
+                    &lt;p&gt;データドリブンなマーケティング戦略で、ビジネス成長を支援します。&lt;/p&gt;
+                    &lt;ul class=&quot;service-list&quot;&gt;
+                        &lt;li&gt;広告運用&lt;/li&gt;
+                        &lt;li&gt;SNS運用&lt;/li&gt;
+                        &lt;li&gt;コンテンツ制作&lt;/li&gt;
+                        &lt;li&gt;アナリティクス&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;work&quot; class=&quot;work&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Featured Work&lt;/h2&gt;
+            &lt;div class=&quot;work-filter&quot;&gt;
+                &lt;button class=&quot;filter-btn active&quot; data-category=&quot;all&quot;&gt;All&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-category=&quot;branding&quot;&gt;Branding&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-category=&quot;web&quot;&gt;Web&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-category=&quot;app&quot;&gt;App&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-category=&quot;marketing&quot;&gt;Marketing&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;work-grid&quot;&gt;
+                &lt;div class=&quot;work-item&quot; data-category=&quot;branding&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Branding Project&quot;&gt;
+                    &lt;div class=&quot;work-overlay&quot;&gt;
+                        &lt;div class=&quot;work-info&quot;&gt;
+                            &lt;span class=&quot;work-category&quot;&gt;Branding&lt;/span&gt;
+                            &lt;h3&gt;スタートアップブランディング&lt;/h3&gt;
+                            &lt;p&gt;新進IT企業のブランドアイデンティティを構築&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;work-item&quot; data-category=&quot;web&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Web Project&quot;&gt;
+                    &lt;div class=&quot;work-overlay&quot;&gt;
+                        &lt;div class=&quot;work-info&quot;&gt;
+                            &lt;span class=&quot;work-category&quot;&gt;Web Design&lt;/span&gt;
+                            &lt;h3&gt;コーポレートサイト&lt;/h3&gt;
+                            &lt;p&gt;大手企業のコーポレートサイトリニューアル&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;work-item&quot; data-category=&quot;app&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1555421689-491a97ff2040?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;App Project&quot;&gt;
+                    &lt;div class=&quot;work-overlay&quot;&gt;
+                        &lt;div class=&quot;work-info&quot;&gt;
+                            &lt;span class=&quot;work-category&quot;&gt;App Development&lt;/span&gt;
+                            &lt;h3&gt;フィンテックアプリ&lt;/h3&gt;
+                            &lt;p&gt;金融サービス向けモバイルアプリ開発&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;work-item&quot; data-category=&quot;marketing&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Marketing Project&quot;&gt;
+                    &lt;div class=&quot;work-overlay&quot;&gt;
+                        &lt;div class=&quot;work-info&quot;&gt;
+                            &lt;span class=&quot;work-category&quot;&gt;Digital Marketing&lt;/span&gt;
+                            &lt;h3&gt;マーケティングキャンペーン&lt;/h3&gt;
+                            &lt;p&gt;ECサイト向けマーケティング戦略&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;work-item&quot; data-category=&quot;branding&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Branding Project&quot;&gt;
+                    &lt;div class=&quot;work-overlay&quot;&gt;
+                        &lt;div class=&quot;work-info&quot;&gt;
+                            &lt;span class=&quot;work-category&quot;&gt;Branding&lt;/span&gt;
+                            &lt;h3&gt;リブランディング&lt;/h3&gt;
+                            &lt;p&gt;老舗企業のリブランディングプロジェクト&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;work-item&quot; data-category=&quot;web&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;Web Project&quot;&gt;
+                    &lt;div class=&quot;work-overlay&quot;&gt;
+                        &lt;div class=&quot;work-info&quot;&gt;
+                            &lt;span class=&quot;work-category&quot;&gt;Web Development&lt;/span&gt;
+                            &lt;h3&gt;ECサイト構築&lt;/h3&gt;
+                            &lt;p&gt;大規模ECサイトの設計・開発&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;team&quot; class=&quot;team&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Our Team&lt;/h2&gt;
+            &lt;div class=&quot;team-grid&quot;&gt;
+                &lt;div class=&quot;team-member&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Team Member&quot;&gt;
+                    &lt;div class=&quot;member-info&quot;&gt;
+                        &lt;h3&gt;田中 太郎&lt;/h3&gt;
+                        &lt;p class=&quot;member-role&quot;&gt;Creative Director&lt;/p&gt;
+                        &lt;p class=&quot;member-bio&quot;&gt;15年の経験を持つクリエイティブディレクター。ブランディングとデザイン戦略を専門とする。&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;team-member&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1494790108755-2616c64c8d05?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Team Member&quot;&gt;
+                    &lt;div class=&quot;member-info&quot;&gt;
+                        &lt;h3&gt;佐藤 花子&lt;/h3&gt;
+                        &lt;p class=&quot;member-role&quot;&gt;UI/UX Designer&lt;/p&gt;
+                        &lt;p class=&quot;member-bio&quot;&gt;ユーザー中心のデザインアプローチでWebサイトとアプリのUI/UXを手がける。&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;team-member&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Team Member&quot;&gt;
+                    &lt;div class=&quot;member-info&quot;&gt;
+                        &lt;h3&gt;山田 次郎&lt;/h3&gt;
+                        &lt;p class=&quot;member-role&quot;&gt;Tech Lead&lt;/p&gt;
+                        &lt;p class=&quot;member-bio&quot;&gt;最新技術を活用したWeb開発とアプリ開発のテクニカルリードを担当。&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;team-member&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Team Member&quot;&gt;
+                    &lt;div class=&quot;member-info&quot;&gt;
+                        &lt;h3&gt;鈴木 美咲&lt;/h3&gt;
+                        &lt;p class=&quot;member-role&quot;&gt;Marketing Strategist&lt;/p&gt;
+                        &lt;p class=&quot;member-bio&quot;&gt;データ分析に基づいたデジタルマーケティング戦略の企画・実行を行う。&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;clients&quot; class=&quot;clients&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Our Clients&lt;/h2&gt;
+            &lt;div class=&quot;clients-logos&quot;&gt;
+                &lt;div class=&quot;client-logo&quot;&gt;
+                    &lt;div class=&quot;logo-placeholder&quot;&gt;COMPANY A&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;client-logo&quot;&gt;
+                    &lt;div class=&quot;logo-placeholder&quot;&gt;COMPANY B&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;client-logo&quot;&gt;
+                    &lt;div class=&quot;logo-placeholder&quot;&gt;COMPANY C&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;client-logo&quot;&gt;
+                    &lt;div class=&quot;logo-placeholder&quot;&gt;COMPANY D&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;client-logo&quot;&gt;
+                    &lt;div class=&quot;logo-placeholder&quot;&gt;COMPANY E&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;client-logo&quot;&gt;
+                    &lt;div class=&quot;logo-placeholder&quot;&gt;COMPANY F&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;testimonials&quot;&gt;
+                &lt;div class=&quot;testimonial&quot;&gt;
+                    &lt;p&gt;&quot;エージェンシーの創造力と技術力により、私たちのブランドは新たな次元に到達しました。&quot;&lt;/p&gt;
+                    &lt;cite&gt;- 株式会社A 代表取締役&lt;/cite&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;testimonial&quot;&gt;
+                    &lt;p&gt;&quot;プロジェクトの進行管理から最終的な成果まで、すべてにおいて期待を上回る結果でした。&quot;&lt;/p&gt;
+                    &lt;cite&gt;- 株式会社B マーケティング部長&lt;/cite&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Let&#x27;s Work Together&lt;/h2&gt;
+            &lt;div class=&quot;contact-content&quot;&gt;
+                &lt;div class=&quot;contact-text&quot;&gt;
+                    &lt;h3&gt;プロジェクトのご相談&lt;/h3&gt;
+                    &lt;p&gt;あなたのビジネスを次のレベルに押し上げるクリエイティブソリューションをご提案します。まずはお気軽にご相談ください。&lt;/p&gt;
+                    &lt;div class=&quot;contact-info&quot;&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;strong&gt;Email&lt;/strong&gt;
+                            &lt;p&gt;hello@creative-agency.com&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;strong&gt;Phone&lt;/strong&gt;
+                            &lt;p&gt;03-0000-0000&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;info-item&quot;&gt;
+                            &lt;strong&gt;Address&lt;/strong&gt;
+                            &lt;p&gt;東京都渋谷区○○1-2-3&lt;br&gt;○○ビル 5F&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;form class=&quot;contact-form&quot;&gt;
+                    &lt;div class=&quot;form-row&quot;&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;input type=&quot;text&quot; placeholder=&quot;会社名&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;input type=&quot;text&quot; placeholder=&quot;お名前&quot; required&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-row&quot;&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;input type=&quot;email&quot; placeholder=&quot;メールアドレス&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;input type=&quot;tel&quot; placeholder=&quot;電話番号&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;select required&gt;
+                            &lt;option value=&quot;&quot;&gt;サービスを選択&lt;/option&gt;
+                            &lt;option value=&quot;branding&quot;&gt;ブランディング&lt;/option&gt;
+                            &lt;option value=&quot;web&quot;&gt;Webデザイン・開発&lt;/option&gt;
+                            &lt;option value=&quot;app&quot;&gt;アプリ開発&lt;/option&gt;
+                            &lt;option value=&quot;marketing&quot;&gt;デジタルマーケティング&lt;/option&gt;
+                            &lt;option value=&quot;other&quot;&gt;その他&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;textarea placeholder=&quot;プロジェクトの詳細をお聞かせください&quot; rows=&quot;5&quot; required&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;submit-btn&quot;&gt;お問い合わせを送信&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-brand&quot;&gt;
+                    &lt;div class=&quot;logo&quot;&gt;CREATIVE AGENCY&lt;/div&gt;
+                    &lt;p&gt;クリエイティブな力でビジネスを変革するパートナー&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-links&quot;&gt;
+                    &lt;h4&gt;Services&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;ブランディング&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;Webデザイン&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;アプリ開発&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;マーケティング&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-social&quot;&gt;
+                    &lt;h4&gt;Follow Us&lt;/h4&gt;
+                    &lt;div class=&quot;social-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;Twitter&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;LinkedIn&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Behance&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p&gt;&amp;copy; 2024 Creative Agency. All rights reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // メニュートグル
+document.getElementById(&#x27;menuToggle&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    document.getElementById(&#x27;navMenu&#x27;).classList.toggle(&#x27;active&#x27;);
+});
+
+// スムーススクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            target.scrollIntoView({
+                behavior: &#x27;smooth&#x27;,
+                block: &#x27;start&#x27;
+            });
+            document.getElementById(&#x27;navMenu&#x27;).classList.remove(&#x27;active&#x27;);
+        }
+    });
+});
+
+// 作品フィルター
+document.querySelectorAll(&#x27;.filter-btn&#x27;).forEach(btn =&gt; {
+    btn.addEventListener(&#x27;click&#x27;, function() {
+        // アクティブクラス切り替え
+        document.querySelectorAll(&#x27;.filter-btn&#x27;).forEach(b =&gt; b.classList.remove(&#x27;active&#x27;));
+        this.classList.add(&#x27;active&#x27;);
+        
+        const category = this.dataset.category;
+        const workItems = document.querySelectorAll(&#x27;.work-item&#x27;);
+        
+        workItems.forEach(item =&gt; {
+            if (category === &#x27;all&#x27; || item.dataset.category === category) {
+                item.style.display = &#x27;block&#x27;;
+            } else {
+                item.style.display = &#x27;none&#x27;;
+            }
+        });
+    });
+});
+
+// 統計アニメーション
+function animateStats() {
+    const stats = document.querySelectorAll(&#x27;.stat-number&#x27;);
+    
+    stats.forEach(stat =&gt; {
+        const target = parseInt(stat.textContent.replace(/[^0-9]/g, &#x27;&#x27;));
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() =&gt; {
+            current += increment;
+            if (current &gt;= target) {
+                clearInterval(timer);
+                stat.textContent = stat.textContent.includes(&#x27;+&#x27;) ? target + &#x27;+&#x27; : target;
+            } else {
+                stat.textContent = Math.floor(current);
+            }
+        }, 50);
+    });
+}
+
+// スクロール時の統計アニメーション
+const observer = new IntersectionObserver((entries) =&gt; {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            animateStats();
+            observer.unobserve(entry.target);
+        }
+    });
+});
+
+const heroStats = document.querySelector(&#x27;.hero-stats&#x27;);
+if (heroStats) {
+    observer.observe(heroStats);
+}
+
+// フォーム送信
+document.querySelector(&#x27;.contact-form&#x27;).addEventListener(&#x27;submit&#x27;, function(e) {
+    e.preventDefault();
+    alert(&#x27;お問い合わせありがとうございます。担当者より24時間以内にご連絡させていただきます。&#x27;);
+    this.reset();
+});
+
+// ビジュアルグリッドホバー効果
+document.querySelectorAll(&#x27;.visual-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.zIndex = &#x27;10&#x27;;
+    });
+    
+    item.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.zIndex = &#x27;1&#x27;;
+    });
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="ポートフォリオ - エージェンシー" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"portfolio-agency\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"portfolio-agency\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"portfolio-agency\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"portfolio-agency\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"kpf_X6TYoYP-5GShC0-ra\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"portfolio-agency\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

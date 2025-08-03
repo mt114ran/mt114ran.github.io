@@ -1,0 +1,1531 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ポートフォリオ - コンサルタント&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Segoe UI&#x27;, Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #2563eb;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.nav-menu a:hover {
+    color: #2563eb;
+}
+
+/* Hero */
+.hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1e293b;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #2563eb;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.cta-primary,
+.cta-secondary {
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cta-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.cta-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.cta-secondary {
+    background: transparent;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+}
+
+.cta-secondary:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.hero-image {
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Achievements */
+.achievements {
+    padding: 60px 0;
+    background: #1e293b;
+    color: white;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.achievement-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #60a5fa;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-label {
+    font-size: 1rem;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Services */
+.services {
+    padding: 100px 0;
+    background: #f8fafc;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #1e293b;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    border-top: 4px solid #2563eb;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.service-description {
+    color: #64748b;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.service-features li {
+    padding: 0.5rem 0;
+    color: #475569;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.service-features li:before {
+    content: &quot;✓&quot;;
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+}
+
+.service-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2563eb;
+    text-align: center;
+    padding: 1rem;
+    background: #eff6ff;
+    border-radius: 8px;
+}
+
+/* Expertise */
+.expertise {
+    padding: 100px 0;
+}
+
+.expertise-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.expertise-text h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #1e293b;
+}
+
+.expertise-text &gt; p {
+    color: #64748b;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.expertise-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.stat-title {
+    font-weight: 600;
+    color: #374151;
+}
+
+.stat-value {
+    color: #2563eb;
+    font-weight: 500;
+}
+
+.expertise-areas {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.area-item h4 {
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.skill-bar {
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    border-radius: 5px;
+    transition: width 1s ease-out;
+}
+
+/* Results */
+.results {
+    padding: 100px 0;
+    background: #f8fafc;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.result-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-left: 5px solid #10b981;
+}
+
+.result-category {
+    display: inline-block;
+    background: #dcfce7;
+    color: #166534;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.result-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.result-card p {
+    color: #64748b;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.result-metrics {
+    display: flex;
+    gap: 2rem;
+}
+
+.metric {
+    text-align: center;
+}
+
+.metric-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #10b981;
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* About */
+.about {
+    padding: 100px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+}
+
+.about-title {
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.about-text &gt; p {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.credentials,
+.philosophy {
+    margin-top: 2rem;
+}
+
+.credentials h4,
+.philosophy h4 {
+    color: #1e293b;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.credentials-list {
+    list-style: none;
+}
+
+.credentials-list li {
+    padding: 0.5rem 0;
+    color: #64748b;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.philosophy blockquote {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+    font-style: italic;
+    color: #475569;
+    line-height: 1.7;
+}
+
+/* Blog */
+.blog {
+    padding: 100px 0;
+    background: #f8fafc;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.blog-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-date {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.blog-category {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+
+.blog-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+    line-height: 1.4;
+}
+
+.blog-card p {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.read-time {
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.read-more {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #1d4ed8;
+}
+
+.blog-cta {
+    text-align: center;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: #2563eb;
+    text-decoration: none;
+    border: 2px solid #2563eb;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-secondary:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* Contact */
+.contact {
+    padding: 100px 0;
+    background: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.contact-info &gt; p {
+    color: #64748b;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.consultation-process {
+    margin-bottom: 2rem;
+}
+
+.consultation-process h4 {
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.step {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: #2563eb;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h5 {
+    color: #1e293b;
+    margin-bottom: 0.3rem;
+}
+
+.step-content p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.detail-item strong {
+    display: block;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.detail-item p {
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.detail-item span {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.contact-form {
+    background: #f8fafc;
+    padding: 2.5rem;
+    border-radius: 15px;
+}
+
+.contact-form h4 {
+    color: #1e293b;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #374151;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #374151;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.radio-label input[type=&quot;radio&quot;] {
+    width: auto;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background: #1e293b;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand .logo {
+    color: #60a5fa;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+}
+
+.footer-nav h4,
+.footer-info h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-nav ul {
+    list-style: none;
+}
+
+.footer-nav li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #60a5fa;
+}
+
+.footer-info p {
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #475569;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    color: white;
+    border-color: #60a5fa;
+    background: #60a5fa;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-cta {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .services-grid,
+    .results-grid,
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .expertise-content,
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;nav class=&quot;nav&quot;&gt;
+            &lt;div class=&quot;nav-container&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;CONSULTANT&lt;/div&gt;
+                &lt;button class=&quot;menu-toggle&quot; id=&quot;menuToggle&quot;&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;ul class=&quot;nav-menu&quot; id=&quot;navMenu&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#expertise&quot;&gt;Expertise&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#results&quot;&gt;Results&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#blog&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-container&quot;&gt;
+            &lt;div class=&quot;hero-content&quot;&gt;
+                &lt;h1 class=&quot;hero-title&quot;&gt;Business Growth Consultant&lt;/h1&gt;
+                &lt;p class=&quot;hero-subtitle&quot;&gt;企業の成長を加速する戦略コンサルティング&lt;/p&gt;
+                &lt;p class=&quot;hero-description&quot;&gt;15年の実績と豊富な経験で、あなたのビジネスを次のレベルへ導きます。&lt;/p&gt;
+                &lt;div class=&quot;hero-cta&quot;&gt;
+                    &lt;a href=&quot;#contact&quot; class=&quot;cta-primary&quot;&gt;無料相談を申し込む&lt;/a&gt;
+                    &lt;a href=&quot;#results&quot; class=&quot;cta-secondary&quot;&gt;実績を見る&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;hero-image&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&amp;h=600&amp;fit=crop&quot; alt=&quot;Business Consultant&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;achievements&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;achievements-grid&quot;&gt;
+                &lt;div class=&quot;achievement-item&quot;&gt;
+                    &lt;div class=&quot;achievement-number&quot;&gt;200+&lt;/div&gt;
+                    &lt;div class=&quot;achievement-label&quot;&gt;プロジェクト実績&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;achievement-item&quot;&gt;
+                    &lt;div class=&quot;achievement-number&quot;&gt;95%&lt;/div&gt;
+                    &lt;div class=&quot;achievement-label&quot;&gt;クライアント満足度&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;achievement-item&quot;&gt;
+                    &lt;div class=&quot;achievement-number&quot;&gt;150M+&lt;/div&gt;
+                    &lt;div class=&quot;achievement-label&quot;&gt;売上向上支援額&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;achievement-item&quot;&gt;
+                    &lt;div class=&quot;achievement-number&quot;&gt;15&lt;/div&gt;
+                    &lt;div class=&quot;achievement-label&quot;&gt;年の経験&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;services&quot; class=&quot;services&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Consulting Services&lt;/h2&gt;
+            &lt;div class=&quot;services-grid&quot;&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-header&quot;&gt;
+                        &lt;div class=&quot;service-icon&quot;&gt;📊&lt;/div&gt;
+                        &lt;h3&gt;経営戦略&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;p class=&quot;service-description&quot;&gt;企業の長期的な成長戦略の策定と実行支援を行います。市場分析から競合分析まで包括的にサポート。&lt;/p&gt;
+                    &lt;ul class=&quot;service-features&quot;&gt;
+                        &lt;li&gt;事業戦略策定&lt;/li&gt;
+                        &lt;li&gt;市場分析・競合分析&lt;/li&gt;
+                        &lt;li&gt;新規事業開発&lt;/li&gt;
+                        &lt;li&gt;M&amp;A支援&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;div class=&quot;service-price&quot;&gt;月額 50万円〜&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-header&quot;&gt;
+                        &lt;div class=&quot;service-icon&quot;&gt;💰&lt;/div&gt;
+                        &lt;h3&gt;財務改善&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;p class=&quot;service-description&quot;&gt;キャッシュフローの改善から資金調達まで、財務面の課題解決をトータルサポートします。&lt;/p&gt;
+                    &lt;ul class=&quot;service-features&quot;&gt;
+                        &lt;li&gt;財務分析・改善&lt;/li&gt;
+                        &lt;li&gt;資金調達支援&lt;/li&gt;
+                        &lt;li&gt;コスト削減&lt;/li&gt;
+                        &lt;li&gt;予算管理システム構築&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;div class=&quot;service-price&quot;&gt;月額 40万円〜&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-header&quot;&gt;
+                        &lt;div class=&quot;service-icon&quot;&gt;🚀&lt;/div&gt;
+                        &lt;h3&gt;組織変革&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;p class=&quot;service-description&quot;&gt;組織の生産性向上と従業員エンゲージメント向上を実現する組織改革を支援します。&lt;/p&gt;
+                    &lt;ul class=&quot;service-features&quot;&gt;
+                        &lt;li&gt;組織診断・改革&lt;/li&gt;
+                        &lt;li&gt;人事制度設計&lt;/li&gt;
+                        &lt;li&gt;業務プロセス改善&lt;/li&gt;
+                        &lt;li&gt;チームビルディング&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;div class=&quot;service-price&quot;&gt;月額 35万円〜&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-header&quot;&gt;
+                        &lt;div class=&quot;service-icon&quot;&gt;📈&lt;/div&gt;
+                        &lt;h3&gt;マーケティング&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;p class=&quot;service-description&quot;&gt;デジタル時代に対応したマーケティング戦略の立案と実行支援を行います。&lt;/p&gt;
+                    &lt;ul class=&quot;service-features&quot;&gt;
+                        &lt;li&gt;マーケティング戦略&lt;/li&gt;
+                        &lt;li&gt;ブランド戦略&lt;/li&gt;
+                        &lt;li&gt;デジタル施策&lt;/li&gt;
+                        &lt;li&gt;営業力強化&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;div class=&quot;service-price&quot;&gt;月額 30万円〜&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;expertise&quot; class=&quot;expertise&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Areas of Expertise&lt;/h2&gt;
+            &lt;div class=&quot;expertise-content&quot;&gt;
+                &lt;div class=&quot;expertise-text&quot;&gt;
+                    &lt;h3&gt;専門分野&lt;/h3&gt;
+                    &lt;p&gt;15年間のコンサルティング経験を通じて培った専門知識と実践的なノウハウで、様々な業界の課題解決をサポートします。&lt;/p&gt;
+                    &lt;div class=&quot;expertise-stats&quot;&gt;
+                        &lt;div class=&quot;stat-item&quot;&gt;
+                            &lt;span class=&quot;stat-title&quot;&gt;主要業界&lt;/span&gt;
+                            &lt;span class=&quot;stat-value&quot;&gt;製造業、IT、小売業、サービス業&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;stat-item&quot;&gt;
+                            &lt;span class=&quot;stat-title&quot;&gt;企業規模&lt;/span&gt;
+                            &lt;span class=&quot;stat-value&quot;&gt;スタートアップ〜上場企業&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;stat-item&quot;&gt;
+                            &lt;span class=&quot;stat-title&quot;&gt;専門資格&lt;/span&gt;
+                            &lt;span class=&quot;stat-value&quot;&gt;MBA、中小企業診断士、PMP&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;expertise-areas&quot;&gt;
+                    &lt;div class=&quot;area-item&quot;&gt;
+                        &lt;h4&gt;戦略策定&lt;/h4&gt;
+                        &lt;div class=&quot;skill-bar&quot;&gt;
+                            &lt;div class=&quot;skill-progress&quot; style=&quot;width: 95%&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;area-item&quot;&gt;
+                        &lt;h4&gt;財務分析&lt;/h4&gt;
+                        &lt;div class=&quot;skill-bar&quot;&gt;
+                            &lt;div class=&quot;skill-progress&quot; style=&quot;width: 90%&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;area-item&quot;&gt;
+                        &lt;h4&gt;組織開発&lt;/h4&gt;
+                        &lt;div class=&quot;skill-bar&quot;&gt;
+                            &lt;div class=&quot;skill-progress&quot; style=&quot;width: 85%&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;area-item&quot;&gt;
+                        &lt;h4&gt;プロジェクト管理&lt;/h4&gt;
+                        &lt;div class=&quot;skill-bar&quot;&gt;
+                            &lt;div class=&quot;skill-progress&quot; style=&quot;width: 92%&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;results&quot; class=&quot;results&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Success Stories&lt;/h2&gt;
+            &lt;div class=&quot;results-grid&quot;&gt;
+                &lt;div class=&quot;result-card&quot;&gt;
+                    &lt;div class=&quot;result-category&quot;&gt;製造業&lt;/div&gt;
+                    &lt;h3&gt;売上3倍達成&lt;/h3&gt;
+                    &lt;p&gt;老舗製造業の新規事業開発支援により、3年で売上を3倍に拡大。海外展開も成功し、業界のリーディングカンパニーに成長。&lt;/p&gt;
+                    &lt;div class=&quot;result-metrics&quot;&gt;
+                        &lt;div class=&quot;metric&quot;&gt;
+                            &lt;span class=&quot;metric-value&quot;&gt;300%&lt;/span&gt;
+                            &lt;span class=&quot;metric-label&quot;&gt;売上向上&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;metric&quot;&gt;
+                            &lt;span class=&quot;metric-value&quot;&gt;5か国&lt;/span&gt;
+                            &lt;span class=&quot;metric-label&quot;&gt;海外展開&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;result-card&quot;&gt;
+                    &lt;div class=&quot;result-category&quot;&gt;IT企業&lt;/div&gt;
+                    &lt;h3&gt;IPO実現&lt;/h3&gt;
+                    &lt;p&gt;スタートアップの成長戦略策定から組織体制構築まで総合支援。3年でIPOを実現し、時価総額100億円企業に成長。&lt;/p&gt;
+                    &lt;div class=&quot;result-metrics&quot;&gt;
+                        &lt;div class=&quot;metric&quot;&gt;
+                            &lt;span class=&quot;metric-value&quot;&gt;100億円&lt;/span&gt;
+                            &lt;span class=&quot;metric-label&quot;&gt;時価総額&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;metric&quot;&gt;
+                            &lt;span class=&quot;metric-value&quot;&gt;200名&lt;/span&gt;
+                            &lt;span class=&quot;metric-label&quot;&gt;組織拡大&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;result-card&quot;&gt;
+                    &lt;div class=&quot;result-category&quot;&gt;小売業&lt;/div&gt;
+                    &lt;h3&gt;DX推進成功&lt;/h3&gt;
+                    &lt;p&gt;伝統的な小売業のデジタル変革を支援。ECサイト構築とオムニチャネル戦略により売上を2倍に向上。&lt;/p&gt;
+                    &lt;div class=&quot;result-metrics&quot;&gt;
+                        &lt;div class=&quot;metric&quot;&gt;
+                            &lt;span class=&quot;metric-value&quot;&gt;200%&lt;/span&gt;
+                            &lt;span class=&quot;metric-label&quot;&gt;売上向上&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;metric&quot;&gt;
+                            &lt;span class=&quot;metric-value&quot;&gt;50%&lt;/span&gt;
+                            &lt;span class=&quot;metric-label&quot;&gt;EC売上比率&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;About Me&lt;/h2&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&amp;h=500&amp;fit=crop&quot; alt=&quot;Consultant Profile&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;h3&gt;田中 一郎&lt;/h3&gt;
+                    &lt;p class=&quot;about-title&quot;&gt;経営戦略コンサルタント / MBA&lt;/p&gt;
+                    &lt;p&gt;大手コンサルティングファームでの経験を経て独立。これまでに200社以上の企業の成長支援を行い、多くの成功事例を創出してきました。&lt;/p&gt;
+                    &lt;p&gt;「理論と実践の融合」をモットーに、クライアント企業の持続的な成長を実現するパートナーとして活動しています。&lt;/p&gt;
+                    
+                    &lt;div class=&quot;credentials&quot;&gt;
+                        &lt;h4&gt;経歴・資格&lt;/h4&gt;
+                        &lt;ul class=&quot;credentials-list&quot;&gt;
+                            &lt;li&gt;慶應義塾大学大学院経営管理研究科 MBA取得&lt;/li&gt;
+                            &lt;li&gt;中小企業診断士&lt;/li&gt;
+                            &lt;li&gt;PMP（プロジェクトマネジメント・プロフェッショナル）&lt;/li&gt;
+                            &lt;li&gt;大手コンサルティングファーム マネージャー（8年）&lt;/li&gt;
+                            &lt;li&gt;独立コンサルタント（7年）&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;philosophy&quot;&gt;
+                        &lt;h4&gt;コンサルティング方針&lt;/h4&gt;
+                        &lt;blockquote&gt;
+                            「企業の真の課題を見極め、実行可能な解決策を提供する。理論だけでなく、現場に根ざした実践的なアプローチで、クライアントと共に歩み続けます。」
+                        &lt;/blockquote&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;blog&quot; class=&quot;blog&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Latest Insights&lt;/h2&gt;
+            &lt;div class=&quot;blog-grid&quot;&gt;
+                &lt;article class=&quot;blog-card&quot;&gt;
+                    &lt;div class=&quot;blog-date&quot;&gt;2024.03.15&lt;/div&gt;
+                    &lt;div class=&quot;blog-category&quot;&gt;経営戦略&lt;/div&gt;
+                    &lt;h3&gt;デジタル時代の経営戦略立案のポイント&lt;/h3&gt;
+                    &lt;p&gt;急速に変化するデジタル環境において、企業はどのような戦略を立てるべきか。成功事例を交えながら解説します。&lt;/p&gt;
+                    &lt;div class=&quot;blog-meta&quot;&gt;
+                        &lt;span class=&quot;read-time&quot;&gt;5分で読める&lt;/span&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;read-more&quot;&gt;続きを読む&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+                &lt;article class=&quot;blog-card&quot;&gt;
+                    &lt;div class=&quot;blog-date&quot;&gt;2024.03.10&lt;/div&gt;
+                    &lt;div class=&quot;blog-category&quot;&gt;組織開発&lt;/div&gt;
+                    &lt;h3&gt;リモートワーク時代の組織マネジメント&lt;/h3&gt;
+                    &lt;p&gt;リモートワークが常態化した今、組織の生産性を維持・向上させるために必要な施策について考察します。&lt;/p&gt;
+                    &lt;div class=&quot;blog-meta&quot;&gt;
+                        &lt;span class=&quot;read-time&quot;&gt;7分で読める&lt;/span&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;read-more&quot;&gt;続きを読む&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+                &lt;article class=&quot;blog-card&quot;&gt;
+                    &lt;div class=&quot;blog-date&quot;&gt;2024.03.05&lt;/div&gt;
+                    &lt;div class=&quot;blog-category&quot;&gt;財務管理&lt;/div&gt;
+                    &lt;h3&gt;中小企業のキャッシュフロー改善手法&lt;/h3&gt;
+                    &lt;p&gt;中小企業特有の財務課題に対する具体的な改善アプローチを、実際の事例をもとに紹介します。&lt;/p&gt;
+                    &lt;div class=&quot;blog-meta&quot;&gt;
+                        &lt;span class=&quot;read-time&quot;&gt;6分で読める&lt;/span&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;read-more&quot;&gt;続きを読む&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;blog-cta&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;btn-secondary&quot;&gt;すべての記事を見る&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Get Started&lt;/h2&gt;
+            &lt;div class=&quot;contact-content&quot;&gt;
+                &lt;div class=&quot;contact-info&quot;&gt;
+                    &lt;h3&gt;無料相談実施中&lt;/h3&gt;
+                    &lt;p&gt;まずはお気軽にご相談ください。初回相談（60分）は無料で承っております。現在の課題をお聞かせいただき、最適なソリューションをご提案いたします。&lt;/p&gt;
+                    
+                    &lt;div class=&quot;consultation-process&quot;&gt;
+                        &lt;h4&gt;相談の流れ&lt;/h4&gt;
+                        &lt;div class=&quot;process-steps&quot;&gt;
+                            &lt;div class=&quot;step&quot;&gt;
+                                &lt;div class=&quot;step-number&quot;&gt;1&lt;/div&gt;
+                                &lt;div class=&quot;step-content&quot;&gt;
+                                    &lt;h5&gt;お問い合わせ&lt;/h5&gt;
+                                    &lt;p&gt;フォームまたはお電話でご連絡&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;step&quot;&gt;
+                                &lt;div class=&quot;step-number&quot;&gt;2&lt;/div&gt;
+                                &lt;div class=&quot;step-content&quot;&gt;
+                                    &lt;h5&gt;初回相談&lt;/h5&gt;
+                                    &lt;p&gt;課題のヒアリングと解決方針の提示&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;step&quot;&gt;
+                                &lt;div class=&quot;step-number&quot;&gt;3&lt;/div&gt;
+                                &lt;div class=&quot;step-content&quot;&gt;
+                                    &lt;h5&gt;提案書作成&lt;/h5&gt;
+                                    &lt;p&gt;詳細な提案書とお見積もりを提出&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;contact-details&quot;&gt;
+                        &lt;div class=&quot;detail-item&quot;&gt;
+                            &lt;strong&gt;電話&lt;/strong&gt;
+                            &lt;p&gt;03-0000-0000&lt;/p&gt;
+                            &lt;span&gt;平日 9:00-18:00&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;detail-item&quot;&gt;
+                            &lt;strong&gt;メール&lt;/strong&gt;
+                            &lt;p&gt;consultant@example.com&lt;/p&gt;
+                            &lt;span&gt;24時間以内に返信&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;form class=&quot;contact-form&quot;&gt;
+                    &lt;h4&gt;お問い合わせフォーム&lt;/h4&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;会社名 *&lt;/label&gt;
+                        &lt;input type=&quot;text&quot; required&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-row&quot;&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;お名前 *&lt;/label&gt;
+                            &lt;input type=&quot;text&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;役職&lt;/label&gt;
+                            &lt;input type=&quot;text&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-row&quot;&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;メールアドレス *&lt;/label&gt;
+                            &lt;input type=&quot;email&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;電話番号&lt;/label&gt;
+                            &lt;input type=&quot;tel&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;ご相談内容 *&lt;/label&gt;
+                        &lt;select required&gt;
+                            &lt;option value=&quot;&quot;&gt;選択してください&lt;/option&gt;
+                            &lt;option value=&quot;strategy&quot;&gt;経営戦略&lt;/option&gt;
+                            &lt;option value=&quot;finance&quot;&gt;財務改善&lt;/option&gt;
+                            &lt;option value=&quot;organization&quot;&gt;組織変革&lt;/option&gt;
+                            &lt;option value=&quot;marketing&quot;&gt;マーケティング&lt;/option&gt;
+                            &lt;option value=&quot;other&quot;&gt;その他&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;詳細・ご質問&lt;/label&gt;
+                        &lt;textarea rows=&quot;5&quot; placeholder=&quot;現在の課題や相談したい内容をお聞かせください&quot;&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;希望相談方法&lt;/label&gt;
+                        &lt;div class=&quot;radio-group&quot;&gt;
+                            &lt;label class=&quot;radio-label&quot;&gt;
+                                &lt;input type=&quot;radio&quot; name=&quot;method&quot; value=&quot;online&quot;&gt;
+                                &lt;span&gt;オンライン&lt;/span&gt;
+                            &lt;/label&gt;
+                            &lt;label class=&quot;radio-label&quot;&gt;
+                                &lt;input type=&quot;radio&quot; name=&quot;method&quot; value=&quot;office&quot;&gt;
+                                &lt;span&gt;対面（当方オフィス）&lt;/span&gt;
+                            &lt;/label&gt;
+                            &lt;label class=&quot;radio-label&quot;&gt;
+                                &lt;input type=&quot;radio&quot; name=&quot;method&quot; value=&quot;client&quot;&gt;
+                                &lt;span&gt;対面（貴社訪問）&lt;/span&gt;
+                            &lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;submit-btn&quot;&gt;無料相談を申し込む&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-brand&quot;&gt;
+                    &lt;div class=&quot;logo&quot;&gt;CONSULTANT&lt;/div&gt;
+                    &lt;p&gt;Business Growth Consulting&lt;/p&gt;
+                    &lt;p&gt;〒000-0000 東京都千代田区○○1-2-3&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-nav&quot;&gt;
+                    &lt;h4&gt;Services&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;経営戦略&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;財務改善&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;組織変革&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;マーケティング&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-info&quot;&gt;
+                    &lt;h4&gt;Contact&lt;/h4&gt;
+                    &lt;p&gt;Tel: 03-0000-0000&lt;/p&gt;
+                    &lt;p&gt;Email: consultant@example.com&lt;/p&gt;
+                    &lt;div class=&quot;social-links&quot;&gt;
+                        &lt;a href=&quot;#&quot; aria-label=&quot;LinkedIn&quot;&gt;LinkedIn&lt;/a&gt;
+                        &lt;a href=&quot;#&quot; aria-label=&quot;Twitter&quot;&gt;Twitter&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p&gt;&amp;copy; 2024 Business Consultant. All rights reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // メニュートグル
+document.getElementById(&#x27;menuToggle&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    document.getElementById(&#x27;navMenu&#x27;).classList.toggle(&#x27;active&#x27;);
+});
+
+// スムーススクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            target.scrollIntoView({
+                behavior: &#x27;smooth&#x27;,
+                block: &#x27;start&#x27;
+            });
+            document.getElementById(&#x27;navMenu&#x27;).classList.remove(&#x27;active&#x27;);
+        }
+    });
+});
+
+// 統計カウンターアニメーション
+function animateCounters() {
+    const counters = document.querySelectorAll(&#x27;.achievement-number&#x27;);
+    
+    counters.forEach(counter =&gt; {
+        const target = counter.textContent;
+        const isPercentage = target.includes(&#x27;%&#x27;);
+        const hasPlus = target.includes(&#x27;+&#x27;);
+        const isMoney = target.includes(&#x27;M&#x27;);
+        
+        let numericTarget = parseInt(target.replace(/[^0-9]/g, &#x27;&#x27;));
+        
+        let current = 0;
+        const increment = numericTarget / 50;
+        
+        const timer = setInterval(() =&gt; {
+            current += increment;
+            if (current &gt;= numericTarget) {
+                clearInterval(timer);
+                let finalText = numericTarget.toString();
+                if (isPercentage) finalText += &#x27;%&#x27;;
+                if (hasPlus) finalText += &#x27;+&#x27;;
+                if (isMoney) finalText += &#x27;M+&#x27;;
+                counter.textContent = finalText;
+            } else {
+                let displayText = Math.floor(current).toString();
+                if (isPercentage) displayText += &#x27;%&#x27;;
+                if (hasPlus &amp;&amp; current &gt;= numericTarget * 0.8) displayText += &#x27;+&#x27;;
+                if (isMoney) displayText += &#x27;M&#x27;;
+                counter.textContent = displayText;
+            }
+        }, 50);
+    });
+}
+
+// スキルバーアニメーション
+function animateSkillBars() {
+    const skillBars = document.querySelectorAll(&#x27;.skill-progress&#x27;);
+    
+    skillBars.forEach(bar =&gt; {
+        const width = bar.style.width;
+        bar.style.width = &#x27;0%&#x27;;
+        
+        setTimeout(() =&gt; {
+            bar.style.width = width;
+        }, 200);
+    });
+}
+
+// インtersection Observer
+const observerOptions = {
+    threshold: 0.5,
+    rootMargin: &#x27;0px 0px -100px 0px&#x27;
+};
+
+const observer = new IntersectionObserver((entries) =&gt; {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            if (entry.target.classList.contains(&#x27;achievements&#x27;)) {
+                animateCounters();
+                observer.unobserve(entry.target);
+            }
+            
+            if (entry.target.classList.contains(&#x27;expertise&#x27;)) {
+                animateSkillBars();
+                observer.unobserve(entry.target);
+            }
+        }
+    });
+}, observerOptions);
+
+// 監視対象を追加
+const achievementsSection = document.querySelector(&#x27;.achievements&#x27;);
+const expertiseSection = document.querySelector(&#x27;.expertise&#x27;);
+
+if (achievementsSection) observer.observe(achievementsSection);
+if (expertiseSection) observer.observe(expertiseSection);
+
+// フォーム送信処理
+document.querySelector(&#x27;.contact-form&#x27;).addEventListener(&#x27;submit&#x27;, function(e) {
+    e.preventDefault();
+    
+    // 簡単なバリデーション
+    const requiredFields = this.querySelectorAll(&#x27;[required]&#x27;);
+    let isValid = true;
+    
+    requiredFields.forEach(field =&gt; {
+        if (!field.value.trim()) {
+            field.style.borderColor = &#x27;#ef4444&#x27;;
+            isValid = false;
+        } else {
+            field.style.borderColor = &#x27;#d1d5db&#x27;;
+        }
+    });
+    
+    if (isValid) {
+        alert(&#x27;お問い合わせありがとうございます。24時間以内にご連絡させていただきます。&#x27;);
+        this.reset();
+    } else {
+        alert(&#x27;必須項目をすべて入力してください。&#x27;);
+    }
+});
+
+// CTA ボタンのクリック追跡（デモ用）
+document.querySelectorAll(&#x27;.cta-primary, .cta-secondary&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function(e) {
+        // 実際のサービスでは、ここでアナリティクス追跡などを行う
+        console.log(&#x27;CTA clicked:&#x27;, this.textContent);
+    });
+});
+
+// サービスカードのホバー効果強化
+document.querySelectorAll(&#x27;.service-card&#x27;).forEach(card =&gt; {
+    card.addEventListener(&#x27;mouseenter&#x27;, function() {
+        this.style.boxShadow = &#x27;0 20px 40px rgba(0,0,0,0.1)&#x27;;
+    });
+    
+    card.addEventListener(&#x27;mouseleave&#x27;, function() {
+        this.style.boxShadow = &#x27;0 10px 30px rgba(0,0,0,0.05)&#x27;;
+    });
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="ポートフォリオ - コンサルタント" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"portfolio-consultant\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"portfolio-consultant\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"portfolio-consultant\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"portfolio-consultant\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"af7NbyO70nHpt3Za7nySg\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"portfolio-consultant\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

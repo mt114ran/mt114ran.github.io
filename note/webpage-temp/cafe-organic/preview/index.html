@@ -1,0 +1,2724 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;カフェ - オーガニック&lt;/title&gt;
+    &lt;style&gt;
+        
+:root {
+    --primary-color: #2d6e3e;
+    --secondary-color: #8bc34a;
+    --accent-color: #ff9800;
+    --earth-brown: #8d6e63;
+    --natural-beige: #f5f5dc;
+    --text-dark: #2e2e2e;
+    --text-light: #666666;
+    --text-muted: #999999;
+    --background-light: #fafafa;
+    --background-white: #ffffff;
+    --background-cream: #f9f7f4;
+    --background-green: #f1f8e9;
+    --border-color: #eeeeee;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+    --border-radius: 12px;
+    --font-heading: &#x27;Comfortaa&#x27;, sans-serif;
+    --font-body: &#x27;Noto Sans JP&#x27;, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--background-white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: var(--transition);
+    box-shadow: var(--shadow-light);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.nav-brand .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.brand-text h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2px;
+}
+
+.brand-subtitle {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 8px 0;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
+}
+
+.nav-menu a::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.order-btn {
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.order-btn:hover {
+    background: #1e4a2b;
+    transform: translateY(-2px);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e8 50%, #c8e6c9 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease-in-out infinite;
+}
+
+.hero-background::before {
+    content: &#x27;&#x27;;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(45, 110, 62, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 195, 74, 0.1) 0%, transparent 50%),
+        url(&quot;data:image/svg+xml,%3Csvg width=&#x27;60&#x27; height=&#x27;60&#x27; viewBox=&#x27;0 0 60 60&#x27; xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%3E%3Cg fill=&#x27;none&#x27; fill-rule=&#x27;evenodd&#x27;%3E%3Cg fill=&#x27;%23a5d6a7&#x27; fill-opacity=&#x27;0.1&#x27;%3E%3Cpath d=&#x27;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&#x27;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.title-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.title-line:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.6s forwards;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.9s forwards;
+}
+
+.btn {
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    font-size: 1rem;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    background: #1e4a2b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(45, 110, 62, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 1.2s forwards;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.feature-item i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.scroll-text {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.scroll-arrow {
+    animation: bounce 2s infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Section Styles */
+section {
+    padding: 100px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.section-header h2::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* About Section */
+.about {
+    background: var(--background-cream);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 50px;
+}
+
+.about-description p {
+    margin-bottom: 20px;
+}
+
+.about-values {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.value-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--background-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.value-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.value-content h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.value-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.about-images .image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    grid-template-rows: auto auto;
+}
+
+.image-item {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.image-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.main-image {
+    grid-column: span 2;
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    padding: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Menu Section */
+.menu {
+    background: var(--background-white);
+}
+
+.menu-categories {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.menu-tab {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-body);
+}
+
+.menu-tab.active,
+.menu-tab:hover {
+    border-color: var(--secondary-color);
+    background: var(--secondary-color);
+    color: white;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.menu-item {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.menu-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.menu-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.menu-item:hover .menu-image img {
+    transform: scale(1.05);
+}
+
+.organic-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--secondary-color);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu-content {
+    padding: 25px;
+}
+
+.menu-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.menu-description {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.menu-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-origin {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.menu-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.menu-cta {
+    text-align: center;
+}
+
+.menu-cta p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+/* Producers Section */
+.producers {
+    background: var(--background-light);
+}
+
+.producers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.producer-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.producer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.producer-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.producer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.producer-content {
+    padding: 25px;
+}
+
+.producer-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.producer-location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.producer-description {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.producer-products {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.product-tag {
+    background: var(--background-green);
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.producers-cta {
+    text-align: center;
+}
+
+.producers-cta p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Events Section */
+.events {
+    background: var(--background-white);
+}
+
+.events-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+}
+
+.featured-event {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.event-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--accent-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.event-details {
+    padding: 30px;
+}
+
+.event-category {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.event-details h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.event-description {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.event-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.event-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.meta-item i {
+    color: var(--secondary-color);
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.event-item {
+    background: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.event-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.event-date {
+    text-align: center;
+    background: var(--background-green);
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 80px;
+}
+
+.event-date .month {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.event-date .day {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 2px;
+}
+
+.event-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.event-content p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.event-price {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Sustainability Section */
+.sustainability {
+    background: var(--background-cream);
+}
+
+.sustainability-content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.sustainability-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.stat-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.stat-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--background-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.stat-icon i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.stat-description {
+    color: var(--text-light);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.sustainability-initiatives {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.initiative-item {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    display: flex;
+    gap: 20px;
+    transition: var(--transition);
+}
+
+.initiative-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.initiative-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--background-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.initiative-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.initiative-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.initiative-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Contact Section */
+.contact {
+    background: var(--background-white);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+.info-section {
+    margin-bottom: 40px;
+}
+
+.info-section h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+}
+
+.info-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.info-item strong {
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.access-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.access-item {
+    display: flex;
+    gap: 15px;
+}
+
+.access-item i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.reservation-form {
+    background: var(--background-cream);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+}
+
+.reservation-form h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    font-family: var(--font-body);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.checkbox-label input[type=&quot;checkbox&quot;] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.checkbox-label input[type=&quot;checkbox&quot;]:checked + .checkmark {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.checkbox-label input[type=&quot;checkbox&quot;]:checked + .checkmark::after {
+    content: &#x27;✓&#x27;;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.map-section {
+    margin-top: 60px;
+}
+
+.map-placeholder {
+    height: 400px;
+    background: var(--background-light);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--border-color);
+}
+
+.map-content {
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.map-content i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.map-content p {
+    margin-bottom: 5px;
+}
+
+.map-address {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.footer-logo i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.footer-logo h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.footer-brand p {
+    line-height: 1.7;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 1.3rem;
+    opacity: 0.8;
+    transition: var(--transition);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social a:hover {
+    opacity: 1;
+    background: var(--secondary-color);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-column h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.footer-column a:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-certifications {
+    display: flex;
+    gap: 30px;
+}
+
+.cert-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.cert-item i {
+    color: var(--secondary-color);
+}
+
+.copyright {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 50px;
+        transition: left 0.3s ease;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 20px 0;
+    }
+
+    .hero-features {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .events-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-certifications {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sustainability-stats {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .event-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .event-info {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid,
+    .producers-grid,
+    .sustainability-initiatives {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+
+    .order-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;nav class=&quot;nav&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;nav-content&quot;&gt;
+                    &lt;div class=&quot;nav-brand&quot;&gt;
+                        &lt;div class=&quot;logo-container&quot;&gt;
+                            &lt;i class=&quot;fas fa-leaf logo-icon&quot;&gt;&lt;/i&gt;
+                            &lt;div class=&quot;brand-text&quot;&gt;
+                                &lt;h1&gt;Green Leaf&lt;/h1&gt;
+                                &lt;span class=&quot;brand-subtitle&quot;&gt;Organic Cafe&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;ul class=&quot;nav-menu&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;#home&quot; class=&quot;active&quot;&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;私たちについて&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;メニュー&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#producers&quot;&gt;生産者&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#events&quot;&gt;イベント&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#sustainability&quot;&gt;サステナビリティ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;アクセス&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                    
+                    &lt;div class=&quot;nav-actions&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;order-btn&quot;&gt;
+                            &lt;i class=&quot;fas fa-shopping-bag&quot;&gt;&lt;/i&gt;
+                            オンライン注文
+                        &lt;/a&gt;
+                        &lt;button class=&quot;hamburger&quot;&gt;
+                            &lt;span&gt;&lt;/span&gt;
+                            &lt;span&gt;&lt;/span&gt;
+                            &lt;span&gt;&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+            &lt;div class=&quot;hero-background&quot;&gt;
+                &lt;div class=&quot;hero-overlay&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;hero-content&quot;&gt;
+                    &lt;h2 class=&quot;hero-title&quot;&gt;
+                        &lt;span class=&quot;title-line&quot;&gt;自然の恵みを&lt;/span&gt;
+                        &lt;span class=&quot;title-line&quot;&gt;あなたの日常に&lt;/span&gt;
+                    &lt;/h2&gt;
+                    &lt;p class=&quot;hero-description&quot;&gt;
+                        厳選されたオーガニック食材で作る、体に優しいコーヒーとお食事。&lt;br&gt;
+                        持続可能な未来のために、私たちができることから始めています。
+                    &lt;/p&gt;
+                    &lt;div class=&quot;hero-buttons&quot;&gt;
+                        &lt;a href=&quot;#menu&quot; class=&quot;btn btn-primary&quot;&gt;
+                            &lt;i class=&quot;fas fa-utensils&quot;&gt;&lt;/i&gt;
+                            メニューを見る
+                        &lt;/a&gt;
+                        &lt;a href=&quot;#about&quot; class=&quot;btn btn-outline&quot;&gt;
+                            &lt;i class=&quot;fas fa-heart&quot;&gt;&lt;/i&gt;
+                            私たちの想い
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;hero-features&quot;&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;i class=&quot;fas fa-seedling&quot;&gt;&lt;/i&gt;
+                            &lt;span&gt;100% オーガニック&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;i class=&quot;fas fa-leaf&quot;&gt;&lt;/i&gt;
+                            &lt;span&gt;地産地消&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;i class=&quot;fas fa-recycle&quot;&gt;&lt;/i&gt;
+                            &lt;span&gt;ゼロウェイスト&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;scroll-indicator&quot;&gt;
+                &lt;div class=&quot;scroll-text&quot;&gt;SCROLL&lt;/div&gt;
+                &lt;div class=&quot;scroll-arrow&quot;&gt;
+                    &lt;i class=&quot;fas fa-chevron-down&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;about-content&quot;&gt;
+                    &lt;div class=&quot;about-text&quot;&gt;
+                        &lt;div class=&quot;section-header&quot;&gt;
+                            &lt;h2&gt;私たちの想い&lt;/h2&gt;
+                            &lt;p class=&quot;section-subtitle&quot;&gt;自然と共に歩む、持続可能なカフェづくり&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;about-description&quot;&gt;
+                            &lt;p&gt;Green Leaf Cafeは、2018年に「自然の恵みを大切にし、お客様に本当に美味しいものをお届けしたい」という想いから始まりました。&lt;/p&gt;
+                            &lt;p&gt;私たちは、化学肥料や農薬を使わずに育てられたオーガニック食材にこだわり、地元の生産者の皆様と直接つながりながら、新鮮で安全な食材を仕入れています。&lt;/p&gt;
+                            &lt;p&gt;コーヒー豆は世界各地のフェアトレード認証農園から直接輸入し、店内で丁寧に焙煎。一杯一杯に込められた生産者の想いをお客様にお届けしています。&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;about-values&quot;&gt;
+                            &lt;div class=&quot;value-item&quot;&gt;
+                                &lt;div class=&quot;value-icon&quot;&gt;
+                                    &lt;i class=&quot;fas fa-heart&quot;&gt;&lt;/i&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;value-content&quot;&gt;
+                                    &lt;h4&gt;健康への配慮&lt;/h4&gt;
+                                    &lt;p&gt;添加物や化学調味料を使わず、自然本来の味わいを大切にしています。&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;value-item&quot;&gt;
+                                &lt;div class=&quot;value-icon&quot;&gt;
+                                    &lt;i class=&quot;fas fa-globe-americas&quot;&gt;&lt;/i&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;value-content&quot;&gt;
+                                    &lt;h4&gt;環境への責任&lt;/h4&gt;
+                                    &lt;p&gt;リサイクル可能な容器の使用と食材ロス削減に取り組んでいます。&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;value-item&quot;&gt;
+                                &lt;div class=&quot;value-icon&quot;&gt;
+                                    &lt;i class=&quot;fas fa-handshake&quot;&gt;&lt;/i&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;value-content&quot;&gt;
+                                    &lt;h4&gt;コミュニティとの絆&lt;/h4&gt;
+                                    &lt;p&gt;地域の生産者との継続的なパートナーシップを大切にしています。&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;about-images&quot;&gt;
+                        &lt;div class=&quot;image-grid&quot;&gt;
+                            &lt;div class=&quot;image-item main-image&quot;&gt;
+                                &lt;img src=&quot;/api/placeholder/400/300&quot; alt=&quot;カフェの店内&quot;&gt;
+                                &lt;div class=&quot;image-caption&quot;&gt;温かみのある店内&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;image-item&quot;&gt;
+                                &lt;img src=&quot;/api/placeholder/200/150&quot; alt=&quot;オーガニック野菜&quot;&gt;
+                                &lt;div class=&quot;image-caption&quot;&gt;新鮮な有機野菜&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;image-item&quot;&gt;
+                                &lt;img src=&quot;/api/placeholder/200/150&quot; alt=&quot;コーヒー焙煎&quot;&gt;
+                                &lt;div class=&quot;image-caption&quot;&gt;自家焙煎コーヒー&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;menu&quot; class=&quot;menu&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;section-header&quot;&gt;
+                    &lt;h2&gt;オーガニックメニュー&lt;/h2&gt;
+                    &lt;p class=&quot;section-subtitle&quot;&gt;厳選された有機食材で作る、体に優しいお食事とドリンク&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;menu-categories&quot;&gt;
+                    &lt;button class=&quot;menu-tab active&quot; data-category=&quot;all&quot;&gt;すべて&lt;/button&gt;
+                    &lt;button class=&quot;menu-tab&quot; data-category=&quot;coffee&quot;&gt;コーヒー&lt;/button&gt;
+                    &lt;button class=&quot;menu-tab&quot; data-category=&quot;drinks&quot;&gt;ドリンク&lt;/button&gt;
+                    &lt;button class=&quot;menu-tab&quot; data-category=&quot;food&quot;&gt;フード&lt;/button&gt;
+                    &lt;button class=&quot;menu-tab&quot; data-category=&quot;sweets&quot;&gt;スイーツ&lt;/button&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;menu-grid&quot;&gt;
+                    &lt;div class=&quot;menu-item&quot; data-category=&quot;coffee&quot;&gt;
+                        &lt;div class=&quot;menu-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/300/200&quot; alt=&quot;オーガニックブレンド&quot;&gt;
+                            &lt;div class=&quot;organic-badge&quot;&gt;
+                                &lt;i class=&quot;fas fa-leaf&quot;&gt;&lt;/i&gt;
+                                ORGANIC
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-content&quot;&gt;
+                            &lt;h3&gt;Green Leaf ブレンド&lt;/h3&gt;
+                            &lt;p class=&quot;menu-description&quot;&gt;エチオピア・グアテマラ・ブラジルの有機栽培豆をブレンド。バランスの取れた味わいが特徴です。&lt;/p&gt;
+                            &lt;div class=&quot;menu-details&quot;&gt;
+                                &lt;div class=&quot;menu-origin&quot;&gt;
+                                    &lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                                    エチオピア・グアテマラ・ブラジル
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-price&quot;&gt;¥480&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;menu-item&quot; data-category=&quot;coffee&quot;&gt;
+                        &lt;div class=&quot;menu-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/300/200&quot; alt=&quot;シングルオリジン&quot;&gt;
+                            &lt;div class=&quot;organic-badge&quot;&gt;
+                                &lt;i class=&quot;fas fa-leaf&quot;&gt;&lt;/i&gt;
+                                ORGANIC
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-content&quot;&gt;
+                            &lt;h3&gt;エチオピア シングルオリジン&lt;/h3&gt;
+                            &lt;p class=&quot;menu-description&quot;&gt;華やかな香りとフルーティーな酸味が楽しめる、エチオピア イルガチェフェ地区の豆を使用。&lt;/p&gt;
+                            &lt;div class=&quot;menu-details&quot;&gt;
+                                &lt;div class=&quot;menu-origin&quot;&gt;
+                                    &lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                                    エチオピア イルガチェフェ
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-price&quot;&gt;¥550&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;menu-item&quot; data-category=&quot;drinks&quot;&gt;
+                        &lt;div class=&quot;menu-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/300/200&quot; alt=&quot;ハーブティー&quot;&gt;
+                            &lt;div class=&quot;organic-badge&quot;&gt;
+                                &lt;i class=&quot;fas fa-leaf&quot;&gt;&lt;/i&gt;
+                                ORGANIC
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-content&quot;&gt;
+                            &lt;h3&gt;季節のハーブティー&lt;/h3&gt;
+                            &lt;p class=&quot;menu-description&quot;&gt;地元農家で無農薬栽培されたハーブを使用。春は桜の葉、夏はミント、秋はローズヒップなど。&lt;/p&gt;
+                            &lt;div class=&quot;menu-details&quot;&gt;
+                                &lt;div class=&quot;menu-origin&quot;&gt;
+                                    &lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                                    地元農家直送
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-price&quot;&gt;¥420&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;menu-item&quot; data-category=&quot;drinks&quot;&gt;
+                        &lt;div class=&quot;menu-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/300/200&quot; alt=&quot;スムージー&quot;&gt;
+                            &lt;div class=&quot;organic-badge&quot;&gt;
+                                &lt;i class=&quot;fas fa-leaf&quot;&gt;&lt;/i&gt;
+                                ORGANIC
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-content&quot;&gt;
+                            &lt;h3&gt;グリーンスムージー&lt;/h3&gt;
+                            &lt;p class=&quot;menu-description&quot;&gt;有機ほうれん草、バナナ、りんご、レモンを使った栄養満点のスムージー。美容と健康にも最適。&lt;/p&gt;
+                            &lt;div class=&quot;menu-details&quot;&gt;
+                                &lt;div class=&quot;menu-origin&quot;&gt;
+                                    &lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                                    国産有機野菜使用
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-price&quot;&gt;¥680&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;menu-item&quot; data-category=&quot;food&quot;&gt;
+                        &lt;div class=&quot;menu-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/300/200&quot; alt=&quot;アボカドトースト&quot;&gt;
+                            &lt;div class=&quot;organic-badge&quot;&gt;
+                                &lt;i class=&quot;fas fa-leaf&quot;&gt;&lt;/i&gt;
+                                ORGANIC
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-content&quot;&gt;
+                            &lt;h3&gt;アボカド＆トマトトースト&lt;/h3&gt;
+                            &lt;p class=&quot;menu-description&quot;&gt;有機全粒粉パンに新鮮なアボカドとトマトをトッピング。オリーブオイルとハーブソルトで仕上げます。&lt;/p&gt;
+                            &lt;div class=&quot;menu-details&quot;&gt;
+                                &lt;div class=&quot;menu-origin&quot;&gt;
+                                    &lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                                    国産有機小麦使用
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-price&quot;&gt;¥850&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;menu-item&quot; data-category=&quot;food&quot;&gt;
+                        &lt;div class=&quot;menu-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/300/200&quot; alt=&quot;キヌアサラダ&quot;&gt;
+                            &lt;div class=&quot;organic-badge&quot;&gt;
+                                &lt;i class=&quot;fas fa-leaf&quot;&gt;&lt;/i&gt;
+                                ORGANIC
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-content&quot;&gt;
+                            &lt;h3&gt;レインボーキヌアサラダ&lt;/h3&gt;
+                            &lt;p class=&quot;menu-description&quot;&gt;スーパーフードのキヌアと色とりどりの有機野菜を使ったヘルシーサラダ。自家製ドレッシング付き。&lt;/p&gt;
+                            &lt;div class=&quot;menu-details&quot;&gt;
+                                &lt;div class=&quot;menu-origin&quot;&gt;
+                                    &lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                                    ペルー産オーガニックキヌア
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-price&quot;&gt;¥980&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;menu-item&quot; data-category=&quot;sweets&quot;&gt;
+                        &lt;div class=&quot;menu-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/300/200&quot; alt=&quot;ヴィーガンケーキ&quot;&gt;
+                            &lt;div class=&quot;organic-badge&quot;&gt;
+                                &lt;i class=&quot;fas fa-leaf&quot;&gt;&lt;/i&gt;
+                                VEGAN
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-content&quot;&gt;
+                            &lt;h3&gt;ヴィーガンチョコレートケーキ&lt;/h3&gt;
+                            &lt;p class=&quot;menu-description&quot;&gt;卵・乳製品不使用のチョコレートケーキ。有機カカオとアーモンドミルクを使用し、しっとり濃厚な味わい。&lt;/p&gt;
+                            &lt;div class=&quot;menu-details&quot;&gt;
+                                &lt;div class=&quot;menu-origin&quot;&gt;
+                                    &lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                                    フェアトレードカカオ使用
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-price&quot;&gt;¥520&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;menu-item&quot; data-category=&quot;sweets&quot;&gt;
+                        &lt;div class=&quot;menu-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/300/200&quot; alt=&quot;フルーツタルト&quot;&gt;
+                            &lt;div class=&quot;organic-badge&quot;&gt;
+                                &lt;i class=&quot;fas fa-leaf&quot;&gt;&lt;/i&gt;
+                                ORGANIC
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;menu-content&quot;&gt;
+                            &lt;h3&gt;季節のフルーツタルト&lt;/h3&gt;
+                            &lt;p class=&quot;menu-description&quot;&gt;全粒粉タルト生地に豆乳カスタードと旬の有機フルーツをトッピング。季節ごとに変わる自然の甘み。&lt;/p&gt;
+                            &lt;div class=&quot;menu-details&quot;&gt;
+                                &lt;div class=&quot;menu-origin&quot;&gt;
+                                    &lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                                    地元農家の季節フルーツ
+                                &lt;/div&gt;
+                                &lt;div class=&quot;menu-price&quot;&gt;¥480&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;menu-cta&quot;&gt;
+                    &lt;p&gt;その他のメニューや詳細な食材情報は店頭でご確認いただけます&lt;/p&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;btn btn-outline&quot;&gt;
+                        &lt;i class=&quot;fas fa-download&quot;&gt;&lt;/i&gt;
+                        メニューPDFダウンロード
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;producers&quot; class=&quot;producers&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;section-header&quot;&gt;
+                    &lt;h2&gt;信頼できる生産者の皆様&lt;/h2&gt;
+                    &lt;p class=&quot;section-subtitle&quot;&gt;私たちの食材を支えてくださる、情熱あふれる生産者をご紹介&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;producers-grid&quot;&gt;
+                    &lt;div class=&quot;producer-card&quot;&gt;
+                        &lt;div class=&quot;producer-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/300/250&quot; alt=&quot;田中農園&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;producer-content&quot;&gt;
+                            &lt;h3&gt;田中農園&lt;/h3&gt;
+                            &lt;p class=&quot;producer-location&quot;&gt;
+                                &lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                                静岡県浜松市
+                            &lt;/p&gt;
+                            &lt;p class=&quot;producer-description&quot;&gt;3代続く有機栽培農家。農薬を使わず、土づくりからこだわって育てた野菜は、自然本来の濃い味わいが特徴です。&lt;/p&gt;
+                            &lt;div class=&quot;producer-products&quot;&gt;
+                                &lt;span class=&quot;product-tag&quot;&gt;有機野菜&lt;/span&gt;
+                                &lt;span class=&quot;product-tag&quot;&gt;ハーブ&lt;/span&gt;
+                                &lt;span class=&quot;product-tag&quot;&gt;果物&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;producer-card&quot;&gt;
+                        &lt;div class=&quot;producer-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/300/250&quot; alt=&quot;山田牧場&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;producer-content&quot;&gt;
+                            &lt;h3&gt;山田牧場&lt;/h3&gt;
+                            &lt;p class=&quot;producer-location&quot;&gt;
+                                &lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                                長野県安曇野市
+                            &lt;/p&gt;
+                            &lt;p class=&quot;producer-description&quot;&gt;標高800mの高原で放牧飼育された乳牛から、無添加のミルクとチーズを生産。自然の環境でストレスなく育った牛の恵みです。&lt;/p&gt;
+                            &lt;div class=&quot;producer-products&quot;&gt;
+                                &lt;span class=&quot;product-tag&quot;&gt;有機牛乳&lt;/span&gt;
+                                &lt;span class=&quot;product-tag&quot;&gt;チーズ&lt;/span&gt;
+                                &lt;span class=&quot;product-tag&quot;&gt;バター&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;producer-card&quot;&gt;
+                        &lt;div class=&quot;producer-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/300/250&quot; alt=&quot;佐藤養蜂場&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;producer-content&quot;&gt;
+                            &lt;h3&gt;佐藤養蜂場&lt;/h3&gt;
+                            &lt;p class=&quot;producer-location&quot;&gt;
+                                &lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                                岩手県花巻市
+                            &lt;/p&gt;
+                            &lt;p class=&quot;producer-description&quot;&gt;化学的な処理を一切行わない純粋はちみつ。季節ごとに採れるアカシア、クローバー、そば蜜など、それぞれ異なる風味が楽しめます。&lt;/p&gt;
+                            &lt;div class=&quot;producer-products&quot;&gt;
+                                &lt;span class=&quot;product-tag&quot;&gt;純粋はちみつ&lt;/span&gt;
+                                &lt;span class=&quot;product-tag&quot;&gt;蜜蝋&lt;/span&gt;
+                                &lt;span class=&quot;product-tag&quot;&gt;プロポリス&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;producer-card&quot;&gt;
+                        &lt;div class=&quot;producer-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/300/250&quot; alt=&quot;高橋製粉所&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;producer-content&quot;&gt;
+                            &lt;h3&gt;高橋製粉所&lt;/h3&gt;
+                            &lt;p class=&quot;producer-location&quot;&gt;
+                                &lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                                北海道十勝郡
+                            &lt;/p&gt;
+                            &lt;p class=&quot;producer-description&quot;&gt;北海道の広大な大地で育った有機小麦を石臼でゆっくりと挽いた全粒粉。栄養価が高く、小麦本来の香りと味わいが楽しめます。&lt;/p&gt;
+                            &lt;div class=&quot;producer-products&quot;&gt;
+                                &lt;span class=&quot;product-tag&quot;&gt;有機小麦粉&lt;/span&gt;
+                                &lt;span class=&quot;product-tag&quot;&gt;全粒粉&lt;/span&gt;
+                                &lt;span class=&quot;product-tag&quot;&gt;そば粉&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;producers-cta&quot;&gt;
+                    &lt;p&gt;生産者の皆様との直売市も定期開催しています&lt;/p&gt;
+                    &lt;a href=&quot;#events&quot; class=&quot;btn btn-primary&quot;&gt;
+                        &lt;i class=&quot;fas fa-calendar&quot;&gt;&lt;/i&gt;
+                        イベント情報を見る
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;events&quot; class=&quot;events&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;section-header&quot;&gt;
+                    &lt;h2&gt;イベント・ワークショップ&lt;/h2&gt;
+                    &lt;p class=&quot;section-subtitle&quot;&gt;オーガニックライフを楽しむ、様々な体験をご用意しています&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;events-content&quot;&gt;
+                    &lt;div class=&quot;featured-event&quot;&gt;
+                        &lt;div class=&quot;event-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/600/400&quot; alt=&quot;コーヒー焙煎ワークショップ&quot;&gt;
+                            &lt;div class=&quot;event-badge&quot;&gt;FEATURED&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;event-details&quot;&gt;
+                            &lt;div class=&quot;event-category&quot;&gt;ワークショップ&lt;/div&gt;
+                            &lt;h3&gt;コーヒー焙煎体験教室&lt;/h3&gt;
+                            &lt;p class=&quot;event-description&quot;&gt;生豆から焙煎まで、コーヒーができるまでの工程を体験できます。焙煎したコーヒー豆はお持ち帰りいただけます。初心者の方も大歓迎！&lt;/p&gt;
+                            &lt;div class=&quot;event-info&quot;&gt;
+                                &lt;div class=&quot;event-meta&quot;&gt;
+                                    &lt;div class=&quot;meta-item&quot;&gt;
+                                        &lt;i class=&quot;fas fa-calendar&quot;&gt;&lt;/i&gt;
+                                        &lt;span&gt;毎月第2土曜日&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;meta-item&quot;&gt;
+                                        &lt;i class=&quot;fas fa-clock&quot;&gt;&lt;/i&gt;
+                                        &lt;span&gt;14:00-16:00&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;meta-item&quot;&gt;
+                                        &lt;i class=&quot;fas fa-users&quot;&gt;&lt;/i&gt;
+                                        &lt;span&gt;定員8名&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;meta-item&quot;&gt;
+                                        &lt;i class=&quot;fas fa-yen-sign&quot;&gt;&lt;/i&gt;
+                                        &lt;span&gt;¥3,500&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;a href=&quot;#contact&quot; class=&quot;btn btn-primary&quot;&gt;予約する&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;events-list&quot;&gt;
+                        &lt;div class=&quot;event-item&quot;&gt;
+                            &lt;div class=&quot;event-date&quot;&gt;
+                                &lt;span class=&quot;month&quot;&gt;MAR&lt;/span&gt;
+                                &lt;span class=&quot;day&quot;&gt;25&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;event-content&quot;&gt;
+                                &lt;h4&gt;オーガニック料理教室&lt;/h4&gt;
+                                &lt;p&gt;季節の野菜を使ったヘルシーレシピをプロのシェフがお教えします。&lt;/p&gt;
+                                &lt;div class=&quot;event-price&quot;&gt;¥4,200&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;event-item&quot;&gt;
+                            &lt;div class=&quot;event-date&quot;&gt;
+                                &lt;span class=&quot;month&quot;&gt;APR&lt;/span&gt;
+                                &lt;span class=&quot;day&quot;&gt;8&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;event-content&quot;&gt;
+                                &lt;h4&gt;ハーブガーデン見学ツアー&lt;/h4&gt;
+                                &lt;p&gt;契約農家のハーブガーデンを見学し、ハーブティーの試飲も楽しめます。&lt;/p&gt;
+                                &lt;div class=&quot;event-price&quot;&gt;¥2,800&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;event-item&quot;&gt;
+                            &lt;div class=&quot;event-date&quot;&gt;
+                                &lt;span class=&quot;month&quot;&gt;APR&lt;/span&gt;
+                                &lt;span class=&quot;day&quot;&gt;15&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;event-content&quot;&gt;
+                                &lt;h4&gt;子ども向けパン作り教室&lt;/h4&gt;
+                                &lt;p&gt;親子で楽しめる天然酵母パン作り。小麦粉の違いも学べます。&lt;/p&gt;
+                                &lt;div class=&quot;event-price&quot;&gt;¥3,000&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;event-item&quot;&gt;
+                            &lt;div class=&quot;event-date&quot;&gt;
+                                &lt;span class=&quot;month&quot;&gt;MAY&lt;/span&gt;
+                                &lt;span class=&quot;day&quot;&gt;3&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;event-content&quot;&gt;
+                                &lt;h4&gt;生産者マルシェ&lt;/h4&gt;
+                                &lt;p&gt;提携農家による直売市。新鮮な野菜や加工品を特別価格で販売します。&lt;/p&gt;
+                                &lt;div class=&quot;event-price&quot;&gt;入場無料&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;sustainability&quot; class=&quot;sustainability&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;section-header&quot;&gt;
+                    &lt;h2&gt;サステナビリティへの取り組み&lt;/h2&gt;
+                    &lt;p class=&quot;section-subtitle&quot;&gt;地球環境と未来世代のために、私たちができること&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;sustainability-content&quot;&gt;
+                    &lt;div class=&quot;sustainability-stats&quot;&gt;
+                        &lt;div class=&quot;stat-card&quot;&gt;
+                            &lt;div class=&quot;stat-icon&quot;&gt;
+                                &lt;i class=&quot;fas fa-recycle&quot;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;stat-number&quot;&gt;95%&lt;/div&gt;
+                            &lt;div class=&quot;stat-label&quot;&gt;リサイクル率&lt;/div&gt;
+                            &lt;p class=&quot;stat-description&quot;&gt;コーヒーかすは肥料として、使用済み容器はリサイクルしています&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;stat-card&quot;&gt;
+                            &lt;div class=&quot;stat-icon&quot;&gt;
+                                &lt;i class=&quot;fas fa-leaf&quot;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;stat-number&quot;&gt;100%&lt;/div&gt;
+                            &lt;div class=&quot;stat-label&quot;&gt;オーガニック食材&lt;/div&gt;
+                            &lt;p class=&quot;stat-description&quot;&gt;すべてのメニューで有機認証食材のみを使用しています&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;stat-card&quot;&gt;
+                            &lt;div class=&quot;stat-icon&quot;&gt;
+                                &lt;i class=&quot;fas fa-solar-panel&quot;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;stat-number&quot;&gt;80%&lt;/div&gt;
+                            &lt;div class=&quot;stat-label&quot;&gt;再生可能エネルギー&lt;/div&gt;
+                            &lt;p class=&quot;stat-description&quot;&gt;店舗電力の8割を太陽光発電で賄っています&lt;/p&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;stat-card&quot;&gt;
+                            &lt;div class=&quot;stat-icon&quot;&gt;
+                                &lt;i class=&quot;fas fa-seedling&quot;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;stat-number&quot;&gt;12&lt;/div&gt;
+                            &lt;div class=&quot;stat-label&quot;&gt;植樹本数（月間）&lt;/div&gt;
+                            &lt;p class=&quot;stat-description&quot;&gt;売上の一部で地域の森林保護活動に貢献しています&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;sustainability-initiatives&quot;&gt;
+                        &lt;div class=&quot;initiative-item&quot;&gt;
+                            &lt;div class=&quot;initiative-icon&quot;&gt;
+                                &lt;i class=&quot;fas fa-shopping-bag&quot;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;initiative-content&quot;&gt;
+                                &lt;h3&gt;プラスチックフリー&lt;/h3&gt;
+                                &lt;p&gt;使い捨てプラスチック容器を廃止し、生分解性素材や再利用可能な容器を使用しています。マイカップ持参のお客様には割引サービスも実施。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;initiative-item&quot;&gt;
+                            &lt;div class=&quot;initiative-icon&quot;&gt;
+                                &lt;i class=&quot;fas fa-truck&quot;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;initiative-content&quot;&gt;
+                                &lt;h3&gt;地産地消の推進&lt;/h3&gt;
+                                &lt;p&gt;輸送によるCO2排出を削減するため、半径50km圏内の生産者から食材を調達。フードマイレージの短縮と地域経済の活性化を同時に実現しています。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;initiative-item&quot;&gt;
+                            &lt;div class=&quot;initiative-icon&quot;&gt;
+                                &lt;i class=&quot;fas fa-water&quot;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;initiative-content&quot;&gt;
+                                &lt;h3&gt;水資源の保護&lt;/h3&gt;
+                                &lt;p&gt;雨水回収システムを導入し、植物の水やりに活用。また、節水型の設備を使用し、水の使用量を従来の30%削減しています。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;initiative-item&quot;&gt;
+                            &lt;div class=&quot;initiative-icon&quot;&gt;
+                                &lt;i class=&quot;fas fa-hands-helping&quot;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;initiative-content&quot;&gt;
+                                &lt;h3&gt;フェアトレード支援&lt;/h3&gt;
+                                &lt;p&gt;コーヒー豆はすべてフェアトレード認証品を使用。生産者の生活向上と持続可能な農業を支援し、品質の向上にもつながっています。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;section-header&quot;&gt;
+                    &lt;h2&gt;アクセス・お問い合わせ&lt;/h2&gt;
+                    &lt;p class=&quot;section-subtitle&quot;&gt;お気軽にお立ち寄りください&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;contact-content&quot;&gt;
+                    &lt;div class=&quot;contact-info&quot;&gt;
+                        &lt;div class=&quot;info-section&quot;&gt;
+                            &lt;h3&gt;店舗情報&lt;/h3&gt;
+                            &lt;div class=&quot;info-item&quot;&gt;
+                                &lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                                &lt;div&gt;
+                                    &lt;strong&gt;住所&lt;/strong&gt;
+                                    &lt;p&gt;〒150-0001&lt;br&gt;東京都渋谷区神宮前3-15-6&lt;br&gt;Green Building 1F&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;info-item&quot;&gt;
+                                &lt;i class=&quot;fas fa-clock&quot;&gt;&lt;/i&gt;
+                                &lt;div&gt;
+                                    &lt;strong&gt;営業時間&lt;/strong&gt;
+                                    &lt;p&gt;平日: 7:00-20:00&lt;br&gt;土日祝: 8:00-21:00&lt;br&gt;定休日: なし&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;info-item&quot;&gt;
+                                &lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt;
+                                &lt;div&gt;
+                                    &lt;strong&gt;電話番号&lt;/strong&gt;
+                                    &lt;p&gt;03-1234-5678&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;info-item&quot;&gt;
+                                &lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt;
+                                &lt;div&gt;
+                                    &lt;strong&gt;メール&lt;/strong&gt;
+                                    &lt;p&gt;info@greenleafcafe.jp&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;info-section&quot;&gt;
+                            &lt;h3&gt;アクセス&lt;/h3&gt;
+                            &lt;div class=&quot;access-methods&quot;&gt;
+                                &lt;div class=&quot;access-item&quot;&gt;
+                                    &lt;i class=&quot;fas fa-train&quot;&gt;&lt;/i&gt;
+                                    &lt;div&gt;
+                                        &lt;strong&gt;電車でお越しの場合&lt;/strong&gt;
+                                        &lt;p&gt;JR山手線「原宿駅」徒歩8分&lt;br&gt;東京メトロ「表参道駅」徒歩5分&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;access-item&quot;&gt;
+                                    &lt;i class=&quot;fas fa-car&quot;&gt;&lt;/i&gt;
+                                    &lt;div&gt;
+                                        &lt;strong&gt;お車でお越しの場合&lt;/strong&gt;
+                                        &lt;p&gt;首都高速「渋谷IC」より10分&lt;br&gt;提携駐車場あり（2時間無料）&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;contact-form-section&quot;&gt;
+                        &lt;div class=&quot;reservation-form&quot;&gt;
+                            &lt;h3&gt;席予約・お問い合わせ&lt;/h3&gt;
+                            &lt;form class=&quot;contact-form&quot;&gt;
+                                &lt;div class=&quot;form-row&quot;&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                        &lt;label for=&quot;name&quot;&gt;お名前&lt;/label&gt;
+                                        &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; required&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                        &lt;label for=&quot;phone&quot;&gt;電話番号&lt;/label&gt;
+                                        &lt;input type=&quot;tel&quot; id=&quot;phone&quot; name=&quot;phone&quot;&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;form-group&quot;&gt;
+                                    &lt;label for=&quot;email&quot;&gt;メールアドレス&lt;/label&gt;
+                                    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;form-row&quot;&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                        &lt;label for=&quot;date&quot;&gt;希望日時&lt;/label&gt;
+                                        &lt;input type=&quot;datetime-local&quot; id=&quot;date&quot; name=&quot;date&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                        &lt;label for=&quot;party-size&quot;&gt;人数&lt;/label&gt;
+                                        &lt;select id=&quot;party-size&quot; name=&quot;party-size&quot;&gt;
+                                            &lt;option value=&quot;&quot;&gt;選択してください&lt;/option&gt;
+                                            &lt;option value=&quot;1&quot;&gt;1名&lt;/option&gt;
+                                            &lt;option value=&quot;2&quot;&gt;2名&lt;/option&gt;
+                                            &lt;option value=&quot;3&quot;&gt;3名&lt;/option&gt;
+                                            &lt;option value=&quot;4&quot;&gt;4名&lt;/option&gt;
+                                            &lt;option value=&quot;5&quot;&gt;5名以上&lt;/option&gt;
+                                        &lt;/select&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;form-group&quot;&gt;
+                                    &lt;label for=&quot;request-type&quot;&gt;お問い合わせ種別&lt;/label&gt;
+                                    &lt;div class=&quot;checkbox-group&quot;&gt;
+                                        &lt;label class=&quot;checkbox-label&quot;&gt;
+                                            &lt;input type=&quot;checkbox&quot; name=&quot;request-type&quot; value=&quot;reservation&quot;&gt;
+                                            &lt;span class=&quot;checkmark&quot;&gt;&lt;/span&gt;
+                                            席予約
+                                        &lt;/label&gt;
+                                        &lt;label class=&quot;checkbox-label&quot;&gt;
+                                            &lt;input type=&quot;checkbox&quot; name=&quot;request-type&quot; value=&quot;event&quot;&gt;
+                                            &lt;span class=&quot;checkmark&quot;&gt;&lt;/span&gt;
+                                            イベント参加
+                                        &lt;/label&gt;
+                                        &lt;label class=&quot;checkbox-label&quot;&gt;
+                                            &lt;input type=&quot;checkbox&quot; name=&quot;request-type&quot; value=&quot;takeout&quot;&gt;
+                                            &lt;span class=&quot;checkmark&quot;&gt;&lt;/span&gt;
+                                            テイクアウト注文
+                                        &lt;/label&gt;
+                                        &lt;label class=&quot;checkbox-label&quot;&gt;
+                                            &lt;input type=&quot;checkbox&quot; name=&quot;request-type&quot; value=&quot;other&quot;&gt;
+                                            &lt;span class=&quot;checkmark&quot;&gt;&lt;/span&gt;
+                                            その他お問い合わせ
+                                        &lt;/label&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;form-group&quot;&gt;
+                                    &lt;label for=&quot;message&quot;&gt;メッセージ&lt;/label&gt;
+                                    &lt;textarea id=&quot;message&quot; name=&quot;message&quot; rows=&quot;4&quot; placeholder=&quot;ご要望やアレルギー情報など、お気軽にお書きください&quot;&gt;&lt;/textarea&gt;
+                                &lt;/div&gt;
+                                &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;
+                                    &lt;i class=&quot;fas fa-paper-plane&quot;&gt;&lt;/i&gt;
+                                    送信する
+                                &lt;/button&gt;
+                            &lt;/form&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;map-section&quot;&gt;
+                    &lt;div class=&quot;map-placeholder&quot;&gt;
+                        &lt;div class=&quot;map-content&quot;&gt;
+                            &lt;i class=&quot;fas fa-map-marked-alt&quot;&gt;&lt;/i&gt;
+                            &lt;p&gt;Google Map&lt;/p&gt;
+                            &lt;p class=&quot;map-address&quot;&gt;東京都渋谷区神宮前3-15-6&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-brand&quot;&gt;
+                    &lt;div class=&quot;footer-logo&quot;&gt;
+                        &lt;i class=&quot;fas fa-leaf&quot;&gt;&lt;/i&gt;
+                        &lt;h3&gt;Green Leaf Cafe&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;p&gt;自然の恵みをあなたの日常に。&lt;br&gt;オーガニックな生活を、一杯のコーヒーから始めませんか？&lt;/p&gt;
+                    &lt;div class=&quot;footer-social&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-youtube&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-links&quot;&gt;
+                    &lt;div class=&quot;footer-column&quot;&gt;
+                        &lt;h4&gt;Menu&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;コーヒー&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;ドリンク&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;フード&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;スイーツ&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;テイクアウトメニュー&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;footer-column&quot;&gt;
+                        &lt;h4&gt;About&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;私たちについて&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#producers&quot;&gt;生産者紹介&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#sustainability&quot;&gt;サステナビリティ&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;採用情報&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プレスリリース&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;footer-column&quot;&gt;
+                        &lt;h4&gt;Events&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#events&quot;&gt;ワークショップ&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#events&quot;&gt;料理教室&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#events&quot;&gt;農園見学&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#events&quot;&gt;マルシェ&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プライベートイベント&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;footer-column&quot;&gt;
+                        &lt;h4&gt;Contact&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;店舗情報&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;アクセス&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;よくある質問&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;div class=&quot;footer-certifications&quot;&gt;
+                    &lt;div class=&quot;cert-item&quot;&gt;
+                        &lt;i class=&quot;fas fa-leaf&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;JAS有機認証&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;cert-item&quot;&gt;
+                        &lt;i class=&quot;fas fa-handshake&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;フェアトレード認証&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;cert-item&quot;&gt;
+                        &lt;i class=&quot;fas fa-recycle&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;ゼロウェイスト認定&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;copyright&quot;&gt;
+                    &lt;p&gt;&amp;copy; 2024 Green Leaf Cafe. All rights reserved.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+
+&lt;script&gt;
+    
+document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() {
+    // ハンバーガーメニューの制御
+    const hamburger = document.querySelector(&#x27;.hamburger&#x27;);
+    const navMenu = document.querySelector(&#x27;.nav-menu&#x27;);
+
+    if (hamburger &amp;&amp; navMenu) {
+        hamburger.addEventListener(&#x27;click&#x27;, function() {
+            navMenu.classList.toggle(&#x27;active&#x27;);
+            hamburger.classList.toggle(&#x27;active&#x27;);
+        });
+
+        // メニューリンクをクリックしたときにメニューを閉じる
+        const navLinks = document.querySelectorAll(&#x27;.nav-menu a&#x27;);
+        navLinks.forEach(link =&gt; {
+            link.addEventListener(&#x27;click&#x27;, function() {
+                navMenu.classList.remove(&#x27;active&#x27;);
+                hamburger.classList.remove(&#x27;active&#x27;);
+            });
+        });
+    }
+
+    // スムーズスクロール
+    document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+        anchor.addEventListener(&#x27;click&#x27;, function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+            if (target) {
+                const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: &#x27;smooth&#x27;
+                });
+            }
+        });
+    });
+
+    // ヘッダーのスクロール効果
+    const header = document.querySelector(&#x27;.header&#x27;);
+    let lastScrollTop = 0;
+
+    window.addEventListener(&#x27;scroll&#x27;, function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop &gt; 100) {
+            header.style.background = &#x27;rgba(255, 255, 255, 0.98)&#x27;;
+            header.style.boxShadow = &#x27;0 2px 20px rgba(0, 0, 0, 0.15)&#x27;;
+        } else {
+            header.style.background = &#x27;rgba(255, 255, 255, 0.95)&#x27;;
+            header.style.boxShadow = &#x27;0 2px 10px rgba(0, 0, 0, 0.05)&#x27;;
+        }
+
+        // ナビゲーションの現在位置をハイライト
+        const sections = document.querySelectorAll(&#x27;section[id]&#x27;);
+        const navLinks = document.querySelectorAll(&#x27;.nav-menu a[href^=&quot;#&quot;]&#x27;);
+        
+        let current = &#x27;&#x27;;
+        sections.forEach(section =&gt; {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollTop &gt;= sectionTop - 200) {
+                current = section.getAttribute(&#x27;id&#x27;);
+            }
+        });
+
+        navLinks.forEach(link =&gt; {
+            link.classList.remove(&#x27;active&#x27;);
+            if (link.getAttribute(&#x27;href&#x27;) === &#x27;#&#x27; + current) {
+                link.classList.add(&#x27;active&#x27;);
+            }
+        });
+
+        lastScrollTop = scrollTop;
+    });
+
+    // メニューカテゴリタブの切り替え
+    const menuTabs = document.querySelectorAll(&#x27;.menu-tab&#x27;);
+    const menuItems = document.querySelectorAll(&#x27;.menu-item&#x27;);
+
+    menuTabs.forEach(tab =&gt; {
+        tab.addEventListener(&#x27;click&#x27;, function() {
+            const targetCategory = this.getAttribute(&#x27;data-category&#x27;);
+            
+            // アクティブなタブを切り替え
+            menuTabs.forEach(t =&gt; t.classList.remove(&#x27;active&#x27;));
+            this.classList.add(&#x27;active&#x27;);
+            
+            // メニューアイテムをフィルタリング
+            menuItems.forEach(item =&gt; {
+                if (targetCategory === &#x27;all&#x27; || item.getAttribute(&#x27;data-category&#x27;) === targetCategory) {
+                    item.style.display = &#x27;block&#x27;;
+                    setTimeout(() =&gt; {
+                        item.style.opacity = &#x27;1&#x27;;
+                        item.style.transform = &#x27;translateY(0)&#x27;;
+                    }, 100);
+                } else {
+                    item.style.opacity = &#x27;0&#x27;;
+                    item.style.transform = &#x27;translateY(20px)&#x27;;
+                    setTimeout(() =&gt; {
+                        item.style.display = &#x27;none&#x27;;
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // お問い合わせフォーム送信処理
+    const contactForm = document.querySelector(&#x27;.contact-form&#x27;);
+    if (contactForm) {
+        contactForm.addEventListener(&#x27;submit&#x27;, function(e) {
+            e.preventDefault();
+            
+            // フォームデータの収集
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // チェックボックスの値を配列として収集
+            const requestTypes = [];
+            const checkboxes = this.querySelectorAll(&#x27;input[name=&quot;request-type&quot;]:checked&#x27;);
+            checkboxes.forEach(cb =&gt; requestTypes.push(cb.value));
+            data[&#x27;request-type&#x27;] = requestTypes;
+            
+            // 送信ボタンを無効化
+            const submitBtn = this.querySelector(&#x27;button[type=&quot;submit&quot;]&#x27;);
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = &#x27;&lt;i class=&quot;fas fa-spinner fa-spin&quot;&gt;&lt;/i&gt; 送信中...&#x27;;
+            submitBtn.disabled = true;
+            
+            // 実際の送信処理をシミュレート
+            setTimeout(() =&gt; {
+                alert(&#x27;お問い合わせありがとうございます。2営業日以内にご返信いたします。&#x27;);
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+            
+            console.log(&#x27;フォームデータ:&#x27;, data);
+        });
+    }
+
+    // スクロールアニメーション
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: &#x27;0px 0px -50px 0px&#x27;
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry =&gt; {
+            if (entry.isIntersecting) {
+                entry.target.classList.add(&#x27;visible&#x27;);
+                
+                // 統計カードのカウントアップアニメーション
+                if (entry.target.classList.contains(&#x27;stat-card&#x27;)) {
+                    const numberElement = entry.target.querySelector(&#x27;.stat-number&#x27;);
+                    const targetNumber = parseInt(numberElement.textContent);
+                    animateCounter(numberElement, targetNumber);
+                }
+            }
+        });
+    }, observerOptions);
+
+    // アニメーション対象要素の監視
+    document.querySelectorAll(&#x27;.menu-item, .producer-card, .stat-card, .initiative-item, .event-item, .value-item&#x27;).forEach(el =&gt; {
+        el.classList.add(&#x27;fade-in&#x27;);
+        observer.observe(el);
+    });
+
+    // カウントアップアニメーション
+    function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+        const suffix = element.textContent.replace(/[0-9]/g, &#x27;&#x27;);
+        
+        function updateCounter() {
+            start += increment;
+            if (start &lt; target) {
+                element.textContent = Math.ceil(start) + suffix;
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target + suffix;
+            }
+        }
+        
+        updateCounter();
+    }
+
+    // パララックス効果
+    window.addEventListener(&#x27;scroll&#x27;, function() {
+        const scrolled = window.pageYOffset;
+        const heroBackground = document.querySelector(&#x27;.hero-background&#x27;);
+        
+        if (heroBackground) {
+            const speed = scrolled * 0.5;
+            heroBackground.style.transform = `translateY(${speed}px)`;
+        }
+    });
+
+    // 画像の遅延読み込み
+    function lazyLoadImages() {
+        const images = document.querySelectorAll(&#x27;img[data-src]&#x27;);
+        const imageObserver = new IntersectionObserver((entries, observer) =&gt; {
+            entries.forEach(entry =&gt; {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute(&#x27;data-src&#x27;);
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        images.forEach(img =&gt; imageObserver.observe(img));
+    }
+
+    // 実際のプロジェクトでは画像のdata-src属性を使用
+    // lazyLoadImages();
+
+    // メニューのお気に入り機能
+    function initMenuFavorites() {
+        const menuItems = document.querySelectorAll(&#x27;.menu-item&#x27;);
+        
+        menuItems.forEach(item =&gt; {
+            // お気に入りボタンを追加
+            const favoriteBtn = document.createElement(&#x27;button&#x27;);
+            favoriteBtn.className = &#x27;favorite-btn&#x27;;
+            favoriteBtn.innerHTML = &#x27;&lt;i class=&quot;far fa-heart&quot;&gt;&lt;/i&gt;&#x27;;
+            favoriteBtn.style.cssText = `
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                background: rgba(255, 255, 255, 0.9);
+                border: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                z-index: 1;
+            `;
+            
+            const menuImage = item.querySelector(&#x27;.menu-image&#x27;);
+            menuImage.style.position = &#x27;relative&#x27;;
+            menuImage.appendChild(favoriteBtn);
+            
+            favoriteBtn.addEventListener(&#x27;click&#x27;, function() {
+                this.classList.toggle(&#x27;favorited&#x27;);
+                const icon = this.querySelector(&#x27;i&#x27;);
+                
+                if (this.classList.contains(&#x27;favorited&#x27;)) {
+                    icon.className = &#x27;fas fa-heart&#x27;;
+                    this.style.color = &#x27;#e74c3c&#x27;;
+                    console.log(&#x27;メニューをお気に入りに追加しました&#x27;);
+                } else {
+                    icon.className = &#x27;far fa-heart&#x27;;
+                    this.style.color = &#x27;&#x27;;
+                    console.log(&#x27;メニューをお気に入りから削除しました&#x27;);
+                }
+            });
+        });
+    }
+
+    initMenuFavorites();
+
+    // オンライン注文シミュレーション
+    const orderBtn = document.querySelector(&#x27;.order-btn&#x27;);
+    if (orderBtn) {
+        orderBtn.addEventListener(&#x27;click&#x27;, function(e) {
+            e.preventDefault();
+            alert(&#x27;オンライン注文システムに移動します。（実装時はECサイトやアプリに連携）&#x27;);
+        });
+    }
+
+    // 営業時間の表示更新
+    function updateBusinessHours() {
+        const now = new Date();
+        const currentHour = now.getHours();
+        const currentDay = now.getDay(); // 0: 日曜日, 1: 月曜日, ...
+        
+        let isOpen = false;
+        
+        if (currentDay &gt;= 1 &amp;&amp; currentDay &lt;= 5) { // 平日
+            isOpen = currentHour &gt;= 7 &amp;&amp; currentHour &lt; 20;
+        } else { // 土日祝
+            isOpen = currentHour &gt;= 8 &amp;&amp; currentHour &lt; 21;
+        }
+        
+        // 営業状況を表示（実際のプロジェクトでは動的に更新）
+        console.log(isOpen ? &#x27;営業中&#x27; : &#x27;営業時間外&#x27;);
+    }
+
+    updateBusinessHours();
+    
+    // 1分ごとに営業時間をチェック
+    setInterval(updateBusinessHours, 60000);
+
+    // ページ読み込み完了時の初期化
+    window.addEventListener(&#x27;load&#x27;, function() {
+        // ヒーローセクションのアニメーション開始
+        const heroContent = document.querySelector(&#x27;.hero-content&#x27;);
+        if (heroContent) {
+            heroContent.style.opacity = &#x27;1&#x27;;
+        }
+        
+        // メニューアイテムのスタッガードアニメーション
+        const menuItems = document.querySelectorAll(&#x27;.menu-item&#x27;);
+        menuItems.forEach((item, index) =&gt; {
+            item.style.animationDelay = `${index * 0.1}s`;
+        });
+    });
+
+    // リサイズ時の処理
+    window.addEventListener(&#x27;resize&#x27;, function() {
+        // モバイル表示時の調整
+        if (window.innerWidth &lt;= 768) {
+            menuItems.forEach(item =&gt; {
+                item.style.display = &#x27;block&#x27;;
+                item.style.opacity = &#x27;1&#x27;;
+                item.style.transform = &#x27;translateY(0)&#x27;;
+            });
+        }
+    });
+
+    // エラーハンドリング
+    window.addEventListener(&#x27;error&#x27;, function(e) {
+        console.error(&#x27;JavaScript Error:&#x27;, e.error);
+    });
+
+    // デバッグ情報（開発時のみ）
+    if (window.location.hostname === &#x27;localhost&#x27; || window.location.hostname === &#x27;127.0.0.1&#x27;) {
+        console.log(&#x27;Green Leaf Cafe template loaded in development mode&#x27;);
+        console.log(&#x27;Available menu categories:&#x27;, Array.from(menuTabs).map(tab =&gt; tab.getAttribute(&#x27;data-category&#x27;)));
+    }
+
+    console.log(&#x27;Green Leaf Cafe organic template loaded successfully!&#x27;);
+});
+
+// ユーティリティ関数
+function formatPrice(price) {
+    return &#x27;¥&#x27; + price.toLocaleString();
+}
+
+function validateEmail(email) {
+    const re = /^[^s@]+@[^s@]+.[^s@]+$/;
+    return re.test(email);
+}
+
+function validatePhone(phone) {
+    const re = /^[d-()+s]+$/;
+    return re.test(phone);
+}
+
+// カフェの営業情報を管理
+const CafeInfo = {
+    businessHours: {
+        weekday: { open: 7, close: 20 },
+        weekend: { open: 8, close: 21 }
+    },
+    location: {
+        lat: 35.6762,
+        lng: 139.7043,
+        address: &#x27;東京都渋谷区神宮前3-15-6&#x27;
+    },
+    contact: {
+        phone: &#x27;03-1234-5678&#x27;,
+        email: &#x27;info@greenleafcafe.jp&#x27;
+    }
+};
+
+// 季節に応じたメニューの更新（実際のプロジェクトで使用）
+function updateSeasonalMenu() {
+    const now = new Date();
+    const month = now.getMonth() + 1;
+    let season = &#x27;&#x27;;
+    
+    if (month &gt;= 3 &amp;&amp; month &lt;= 5) season = &#x27;spring&#x27;;
+    else if (month &gt;= 6 &amp;&amp; month &lt;= 8) season = &#x27;summer&#x27;;
+    else if (month &gt;= 9 &amp;&amp; month &lt;= 11) season = &#x27;autumn&#x27;;
+    else season = &#x27;winter&#x27;;
+    
+    console.log(`Current season: ${season}`);
+    // 季節に応じたメニューの表示切り替えロジックをここに実装
+}
+
+updateSeasonalMenu();
+
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="カフェ - オーガニック" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"cafe-organic\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"cafe-organic\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"cafe-organic\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"cafe-organic\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"2PzTS3_nHCDclXgrIVxiO\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"cafe-organic\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

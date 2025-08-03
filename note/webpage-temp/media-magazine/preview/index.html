@@ -1,0 +1,2777 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ライフスタイル雑誌・マガジン&lt;/title&gt;
+    &lt;style&gt;
+        
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --accent-color: #f39c12;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --text-muted: #95a5a6;
+    --background-light: #fafafa;
+    --background-white: #ffffff;
+    --background-cream: #fdf6f0;
+    --border-color: #ecf0f1;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+    --font-heading: &#x27;Playfair Display&#x27;, serif;
+    --font-body: &#x27;Noto Sans JP&#x27;, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--background-white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--background-white);
+    box-shadow: var(--shadow-light);
+}
+
+.header-top {
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 0;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.header-utils {
+    display: flex;
+    gap: 20px;
+}
+
+.header-utils a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+}
+
+.header-utils a:hover {
+    color: var(--secondary-color);
+}
+
+.nav {
+    padding: 20px 0;
+    position: relative;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    text-align: center;
+}
+
+.nav-brand h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.brand-plus {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-left: 5px;
+}
+
+.tagline {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    transition: var(--transition);
+    border-bottom: 2px solid transparent;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--background-white);
+    min-width: 180px;
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    padding: 15px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+    transition: var(--transition);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 20px;
+    border-bottom: none;
+    font-size: 0.85rem;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.dropdown-menu a:hover {
+    background: var(--background-light);
+    color: var(--secondary-color);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-toggle {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-toggle:hover {
+    color: var(--secondary-color);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: var(--text-dark);
+    transition: var(--transition);
+}
+
+.search-overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--background-white);
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.search-container {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 50px 0 0 50px;
+    outline: none;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.search-input:focus {
+    border-color: var(--secondary-color);
+}
+
+.search-btn {
+    padding: 15px 20px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.search-btn:hover {
+    background: #c0392b;
+}
+
+.search-close {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-close:hover {
+    color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero {
+    padding: 60px 0;
+    background: var(--background-cream);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
+
+.featured-article {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    height: 600px;
+}
+
+.article-image {
+    position: relative;
+    height: 100%;
+}
+
+.featured-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 40px;
+}
+
+.article-category {
+    background: var(--secondary-color);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.article-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.article-excerpt {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.publish-date {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.read-more-btn {
+    background: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.read-more-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Trending Articles */
+.trending-articles {
+    background: var(--background-white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow-light);
+    height: fit-content;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: var(--secondary-color);
+}
+
+.trending-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.trending-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.trending-item:last-child {
+    border-bottom: none;
+}
+
+.trending-item:hover {
+    transform: translateY(-2px);
+}
+
+.trending-image {
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.trending-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trending-content {
+    flex: 1;
+}
+
+.trending-category {
+    font-size: 0.7rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.trending-content h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 5px 0 8px;
+    color: var(--text-dark);
+}
+
+.trending-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Latest Articles Section */
+.latest-articles {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+}
+
+.category-filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-light);
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    border-color: var(--secondary-color);
+    background: var(--secondary-color);
+    color: white;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.article-card {
+    background: var(--background-white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.card-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.article-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.article-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.read-link {
+    background: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.read-link:hover {
+    background: #c0392b;
+}
+
+.card-content {
+    padding: 30px;
+}
+
+.card-category {
+    font-size: 0.75rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.card-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.card-excerpt {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.author-mini img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-mini span {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.card-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.load-more-container {
+    text-align: center;
+}
+
+.load-more-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.load-more-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Featured Collection Section */
+.featured-collection {
+    padding: 80px 0;
+    background: var(--background-light);
+}
+
+.collection-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.collection-header h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.collection-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.collection-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
+
+.main-feature {
+    background: var(--background-white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.feature-image {
+    height: 350px;
+    overflow: hidden;
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feature-text {
+    padding: 40px;
+}
+
+.feature-label {
+    background: var(--accent-color);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.feature-text h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.feature-description {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.feature-stats {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.feature-btn {
+    background: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.feature-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+.sub-features {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sub-feature-item {
+    background: var(--background-white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.sub-feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.sub-feature-image {
+    height: 150px;
+    overflow: hidden;
+}
+
+.sub-feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sub-feature-content {
+    padding: 20px;
+}
+
+.sub-feature-category {
+    font-size: 0.7rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sub-feature-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 8px 0 10px;
+    color: var(--text-dark);
+}
+
+.sub-feature-content p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* Photo Gallery Section */
+.photo-gallery {
+    padding: 80px 0;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.gallery-header h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.gallery-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.gallery-filter {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-light);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.gallery-filter.active,
+.gallery-filter:hover {
+    border-color: var(--accent-color);
+    background: var(--accent-color);
+    color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    grid-auto-rows: 200px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.gallery-item:nth-child(3n+1) {
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(5n+2) {
+    grid-row: span 2;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+}
+
+.overlay-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.overlay-content p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.view-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.view-btn:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    padding: 80px 0;
+    background: var(--background-cream);
+}
+
+.newsletter-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.newsletter-text h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.newsletter-text p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.newsletter-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.benefit-item i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.benefit-item span {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.newsletter-form-container {
+    background: var(--background-white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.newsletter-form .form-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 50px 0 0 50px;
+    outline: none;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.newsletter-form input:focus {
+    border-color: var(--secondary-color);
+}
+
+.newsletter-form button {
+    padding: 15px 25px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+    background: #c0392b;
+}
+
+.form-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.checkbox-label input[type=&quot;checkbox&quot;] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 3px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.checkbox-label input[type=&quot;checkbox&quot;]:checked + .checkmark {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.checkbox-label input[type=&quot;checkbox&quot;]:checked + .checkmark::after {
+    content: &#x27;✓&#x27;;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.privacy-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.privacy-note a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.privacy-note a:hover {
+    text-decoration: underline;
+}
+
+/* Instagram Section */
+.instagram-section {
+    padding: 80px 0;
+    background: var(--background-light);
+}
+
+.instagram-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.instagram-header h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.instagram-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.instagram-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.instagram-item {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.instagram-item:hover {
+    transform: scale(1.05);
+}
+
+.instagram-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instagram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.instagram-item:hover .instagram-overlay {
+    opacity: 1;
+}
+
+.instagram-stats {
+    display: flex;
+    gap: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+.instagram-stats span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Footer */
+.footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    margin-bottom: 25px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 1.3rem;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.footer-social a:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-column h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.footer-column a:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.footer-links-bottom {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links-bottom a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links-bottom a:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 120px);
+        background: var(--background-white);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 30px;
+        transition: left 0.3s ease;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: var(--background-light);
+        margin-top: 10px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .featured-article {
+        height: 500px;
+    }
+
+    .article-title {
+        font-size: 1.8rem;
+    }
+
+    .collection-content {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .category-filters,
+    .gallery-filters {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .feature-stats {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 480px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2,
+    .gallery-header h2,
+    .newsletter-text h2 {
+        font-size: 2rem;
+    }
+
+    .nav-brand h1 {
+        font-size: 2rem;
+    }
+
+    .newsletter-form .form-group {
+        flex-direction: column;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        border-radius: 25px;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;header-top&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;header-actions&quot;&gt;
+                    &lt;div class=&quot;social-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-pinterest&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;header-utils&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;newsletter-link&quot;&gt;Newsletter&lt;/a&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;subscribe-link&quot;&gt;Subscribe&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;nav class=&quot;nav&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;nav-content&quot;&gt;
+                    &lt;div class=&quot;nav-brand&quot;&gt;
+                        &lt;h1&gt;LIFESTYLE&lt;/h1&gt;
+                        &lt;span class=&quot;brand-plus&quot;&gt;PLUS&lt;/span&gt;
+                        &lt;p class=&quot;tagline&quot;&gt;Live beautifully, every day&lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;ul class=&quot;nav-menu&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;#home&quot; class=&quot;active&quot;&gt;HOME&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;dropdown&quot;&gt;
+                            &lt;a href=&quot;#fashion&quot;&gt;FASHION&lt;/a&gt;
+                            &lt;div class=&quot;dropdown-menu&quot;&gt;
+                                &lt;a href=&quot;#&quot;&gt;トレンド&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;コーディネート&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;アクセサリー&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;バッグ・シューズ&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;dropdown&quot;&gt;
+                            &lt;a href=&quot;#beauty&quot;&gt;BEAUTY&lt;/a&gt;
+                            &lt;div class=&quot;dropdown-menu&quot;&gt;
+                                &lt;a href=&quot;#&quot;&gt;スキンケア&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;メイクアップ&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;ヘアケア&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;ネイル&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#lifestyle&quot;&gt;LIFESTYLE&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#travel&quot;&gt;TRAVEL&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#food&quot;&gt;FOOD&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#wellness&quot;&gt;WELLNESS&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                    
+                    &lt;div class=&quot;nav-actions&quot;&gt;
+                        &lt;button class=&quot;search-toggle&quot;&gt;
+                            &lt;i class=&quot;fas fa-search&quot;&gt;&lt;/i&gt;
+                        &lt;/button&gt;
+                        &lt;button class=&quot;hamburger&quot;&gt;
+                            &lt;span&gt;&lt;/span&gt;
+                            &lt;span&gt;&lt;/span&gt;
+                            &lt;span&gt;&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;search-overlay&quot;&gt;
+                    &lt;div class=&quot;search-container&quot;&gt;
+                        &lt;input type=&quot;text&quot; placeholder=&quot;Search articles...&quot; class=&quot;search-input&quot;&gt;
+                        &lt;button class=&quot;search-btn&quot;&gt;&lt;i class=&quot;fas fa-search&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                        &lt;button class=&quot;search-close&quot;&gt;&lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;hero-content&quot;&gt;
+                    &lt;div class=&quot;featured-article&quot;&gt;
+                        &lt;div class=&quot;article-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/800/600&quot; alt=&quot;Featured Article&quot; class=&quot;featured-img&quot;&gt;
+                            &lt;div class=&quot;article-overlay&quot;&gt;
+                                &lt;div class=&quot;article-category&quot;&gt;FASHION&lt;/div&gt;
+                                &lt;h2 class=&quot;article-title&quot;&gt;2024年春のトレンドカラーで&lt;br&gt;新しい自分を発見しよう&lt;/h2&gt;
+                                &lt;p class=&quot;article-excerpt&quot;&gt;今年の春は、パステルピンクとミントグリーンが注目色。自分らしいスタイルを見つけるためのコーディネート術をファッションエディターが解説します。&lt;/p&gt;
+                                &lt;div class=&quot;article-meta&quot;&gt;
+                                    &lt;div class=&quot;author-info&quot;&gt;
+                                        &lt;img src=&quot;/api/placeholder/40/40&quot; alt=&quot;Author&quot; class=&quot;author-avatar&quot;&gt;
+                                        &lt;div class=&quot;author-details&quot;&gt;
+                                            &lt;span class=&quot;author-name&quot;&gt;田中 美咲&lt;/span&gt;
+                                            &lt;span class=&quot;publish-date&quot;&gt;March 15, 2024&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;a href=&quot;#&quot; class=&quot;read-more-btn&quot;&gt;READ MORE&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;trending-articles&quot;&gt;
+                        &lt;h3 class=&quot;section-title&quot;&gt;TRENDING NOW&lt;/h3&gt;
+                        &lt;div class=&quot;trending-list&quot;&gt;
+                            &lt;article class=&quot;trending-item&quot;&gt;
+                                &lt;div class=&quot;trending-image&quot;&gt;
+                                    &lt;img src=&quot;/api/placeholder/150/120&quot; alt=&quot;Trending&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;trending-content&quot;&gt;
+                                    &lt;span class=&quot;trending-category&quot;&gt;BEAUTY&lt;/span&gt;
+                                    &lt;h4&gt;春の肌トーンに合わせた&lt;br&gt;ベースメイクの選び方&lt;/h4&gt;
+                                    &lt;span class=&quot;trending-date&quot;&gt;3 hours ago&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/article&gt;
+                            
+                            &lt;article class=&quot;trending-item&quot;&gt;
+                                &lt;div class=&quot;trending-image&quot;&gt;
+                                    &lt;img src=&quot;/api/placeholder/150/120&quot; alt=&quot;Trending&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;trending-content&quot;&gt;
+                                    &lt;span class=&quot;trending-category&quot;&gt;LIFESTYLE&lt;/span&gt;
+                                    &lt;h4&gt;朝の5分で変わる&lt;br&gt;ポジティブな一日の始め方&lt;/h4&gt;
+                                    &lt;span class=&quot;trending-date&quot;&gt;5 hours ago&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/article&gt;
+                            
+                            &lt;article class=&quot;trending-item&quot;&gt;
+                                &lt;div class=&quot;trending-image&quot;&gt;
+                                    &lt;img src=&quot;/api/placeholder/150/120&quot; alt=&quot;Trending&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;trending-content&quot;&gt;
+                                    &lt;span class=&quot;trending-category&quot;&gt;TRAVEL&lt;/span&gt;
+                                    &lt;h4&gt;桜が美しい関西の&lt;br&gt;隠れた名所5選&lt;/h4&gt;
+                                    &lt;span class=&quot;trending-date&quot;&gt;8 hours ago&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/article&gt;
+                            
+                            &lt;article class=&quot;trending-item&quot;&gt;
+                                &lt;div class=&quot;trending-image&quot;&gt;
+                                    &lt;img src=&quot;/api/placeholder/150/120&quot; alt=&quot;Trending&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;trending-content&quot;&gt;
+                                    &lt;span class=&quot;trending-category&quot;&gt;FOOD&lt;/span&gt;
+                                    &lt;h4&gt;簡単なのに映える&lt;br&gt;春野菜のカラフルサラダ&lt;/h4&gt;
+                                    &lt;span class=&quot;trending-date&quot;&gt;12 hours ago&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/article&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;latest&quot; class=&quot;latest-articles&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;section-header&quot;&gt;
+                    &lt;h2&gt;LATEST ARTICLES&lt;/h2&gt;
+                    &lt;div class=&quot;category-filters&quot;&gt;
+                        &lt;button class=&quot;filter-btn active&quot; data-category=&quot;all&quot;&gt;ALL&lt;/button&gt;
+                        &lt;button class=&quot;filter-btn&quot; data-category=&quot;fashion&quot;&gt;FASHION&lt;/button&gt;
+                        &lt;button class=&quot;filter-btn&quot; data-category=&quot;beauty&quot;&gt;BEAUTY&lt;/button&gt;
+                        &lt;button class=&quot;filter-btn&quot; data-category=&quot;lifestyle&quot;&gt;LIFESTYLE&lt;/button&gt;
+                        &lt;button class=&quot;filter-btn&quot; data-category=&quot;travel&quot;&gt;TRAVEL&lt;/button&gt;
+                        &lt;button class=&quot;filter-btn&quot; data-category=&quot;food&quot;&gt;FOOD&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;articles-grid&quot;&gt;
+                    &lt;article class=&quot;article-card&quot; data-category=&quot;fashion&quot;&gt;
+                        &lt;div class=&quot;card-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/350/250&quot; alt=&quot;Article Image&quot;&gt;
+                            &lt;div class=&quot;image-overlay&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;read-link&quot;&gt;READ ARTICLE&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;card-content&quot;&gt;
+                            &lt;span class=&quot;card-category&quot;&gt;FASHION&lt;/span&gt;
+                            &lt;h3&gt;春のワードローブ更新術：投資すべき5つのアイテム&lt;/h3&gt;
+                            &lt;p class=&quot;card-excerpt&quot;&gt;長く愛用できる質の良いアイテムの選び方と、効果的なワードローブの整理方法をスタイリストがアドバイス。&lt;/p&gt;
+                            &lt;div class=&quot;card-meta&quot;&gt;
+                                &lt;div class=&quot;author-mini&quot;&gt;
+                                    &lt;img src=&quot;/api/placeholder/30/30&quot; alt=&quot;Author&quot;&gt;
+                                    &lt;span&gt;山田 花子&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;span class=&quot;card-date&quot;&gt;March 14&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+                    
+                    &lt;article class=&quot;article-card&quot; data-category=&quot;beauty&quot;&gt;
+                        &lt;div class=&quot;card-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/350/250&quot; alt=&quot;Article Image&quot;&gt;
+                            &lt;div class=&quot;image-overlay&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;read-link&quot;&gt;READ ARTICLE&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;card-content&quot;&gt;
+                            &lt;span class=&quot;card-category&quot;&gt;BEAUTY&lt;/span&gt;
+                            &lt;h3&gt;敏感肌でも安心！春のスキンケアルーティン&lt;/h3&gt;
+                            &lt;p class=&quot;card-excerpt&quot;&gt;季節の変わり目に起こりやすい肌トラブルを防ぐ、敏感肌向けのスキンケア方法を皮膚科医が解説。&lt;/p&gt;
+                            &lt;div class=&quot;card-meta&quot;&gt;
+                                &lt;div class=&quot;author-mini&quot;&gt;
+                                    &lt;img src=&quot;/api/placeholder/30/30&quot; alt=&quot;Author&quot;&gt;
+                                    &lt;span&gt;佐藤 麗子&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;span class=&quot;card-date&quot;&gt;March 13&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+                    
+                    &lt;article class=&quot;article-card&quot; data-category=&quot;lifestyle&quot;&gt;
+                        &lt;div class=&quot;card-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/350/250&quot; alt=&quot;Article Image&quot;&gt;
+                            &lt;div class=&quot;image-overlay&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;read-link&quot;&gt;READ ARTICLE&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;card-content&quot;&gt;
+                            &lt;span class=&quot;card-category&quot;&gt;LIFESTYLE&lt;/span&gt;
+                            &lt;h3&gt;在宅ワークを快適にする部屋づくりのコツ&lt;/h3&gt;
+                            &lt;p class=&quot;card-excerpt&quot;&gt;集中力が上がり、リラックスもできる理想的なホームオフィスの作り方をインテリアデザイナーが提案。&lt;/p&gt;
+                            &lt;div class=&quot;card-meta&quot;&gt;
+                                &lt;div class=&quot;author-mini&quot;&gt;
+                                    &lt;img src=&quot;/api/placeholder/30/30&quot; alt=&quot;Author&quot;&gt;
+                                    &lt;span&gt;鈴木 翔太&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;span class=&quot;card-date&quot;&gt;March 12&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+                    
+                    &lt;article class=&quot;article-card&quot; data-category=&quot;travel&quot;&gt;
+                        &lt;div class=&quot;card-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/350/250&quot; alt=&quot;Article Image&quot;&gt;
+                            &lt;div class=&quot;image-overlay&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;read-link&quot;&gt;READ ARTICLE&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;card-content&quot;&gt;
+                            &lt;span class=&quot;card-category&quot;&gt;TRAVEL&lt;/span&gt;
+                            &lt;h3&gt;女子旅におすすめ！関東近郊の温泉地巡り&lt;/h3&gt;
+                            &lt;p class=&quot;card-excerpt&quot;&gt;日帰りでも十分楽しめる、アクセス抜群の温泉地をピックアップ。女性に嬉しい美肌効果も期待できる温泉を厳選。&lt;/p&gt;
+                            &lt;div class=&quot;card-meta&quot;&gt;
+                                &lt;div class=&quot;author-mini&quot;&gt;
+                                    &lt;img src=&quot;/api/placeholder/30/30&quot; alt=&quot;Author&quot;&gt;
+                                    &lt;span&gt;高橋 愛美&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;span class=&quot;card-date&quot;&gt;March 11&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+                    
+                    &lt;article class=&quot;article-card&quot; data-category=&quot;food&quot;&gt;
+                        &lt;div class=&quot;card-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/350/250&quot; alt=&quot;Article Image&quot;&gt;
+                            &lt;div class=&quot;image-overlay&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;read-link&quot;&gt;READ ARTICLE&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;card-content&quot;&gt;
+                            &lt;span class=&quot;card-category&quot;&gt;FOOD&lt;/span&gt;
+                            &lt;h3&gt;忙しい朝でも作れる栄養満点スムージーレシピ&lt;/h3&gt;
+                            &lt;p class=&quot;card-excerpt&quot;&gt;野菜不足解消と美肌効果が期待できる、簡単で美味しいスムージーレシピを管理栄養士が紹介。&lt;/p&gt;
+                            &lt;div class=&quot;card-meta&quot;&gt;
+                                &lt;div class=&quot;author-mini&quot;&gt;
+                                    &lt;img src=&quot;/api/placeholder/30/30&quot; alt=&quot;Author&quot;&gt;
+                                    &lt;span&gt;川田 奈美&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;span class=&quot;card-date&quot;&gt;March 10&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+                    
+                    &lt;article class=&quot;article-card&quot; data-category=&quot;beauty&quot;&gt;
+                        &lt;div class=&quot;card-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/350/250&quot; alt=&quot;Article Image&quot;&gt;
+                            &lt;div class=&quot;image-overlay&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;read-link&quot;&gt;READ ARTICLE&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;card-content&quot;&gt;
+                            &lt;span class=&quot;card-category&quot;&gt;BEAUTY&lt;/span&gt;
+                            &lt;h3&gt;プロが教える！ナチュラルメイクのテクニック&lt;/h3&gt;
+                            &lt;p class=&quot;card-excerpt&quot;&gt;素肌感を活かしながら、きちんと感も演出できるナチュラルメイクの基本技術をメイクアップアーティストが解説。&lt;/p&gt;
+                            &lt;div class=&quot;card-meta&quot;&gt;
+                                &lt;div class=&quot;author-mini&quot;&gt;
+                                    &lt;img src=&quot;/api/placeholder/30/30&quot; alt=&quot;Author&quot;&gt;
+                                    &lt;span&gt;渡辺 由香&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;span class=&quot;card-date&quot;&gt;March 9&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;load-more-container&quot;&gt;
+                    &lt;button class=&quot;load-more-btn&quot;&gt;LOAD MORE ARTICLES&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;featured-collection&quot; class=&quot;featured-collection&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;collection-header&quot;&gt;
+                    &lt;h2&gt;EDITOR&#x27;S PICK&lt;/h2&gt;
+                    &lt;p&gt;編集部が厳選した特別な記事をお届け&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;collection-content&quot;&gt;
+                    &lt;div class=&quot;main-feature&quot;&gt;
+                        &lt;div class=&quot;feature-image&quot;&gt;
+                            &lt;img src=&quot;/api/placeholder/600/450&quot; alt=&quot;Editor&#x27;s Pick&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-text&quot;&gt;
+                            &lt;span class=&quot;feature-label&quot;&gt;SPECIAL FEATURE&lt;/span&gt;
+                            &lt;h3&gt;持続可能なファッションを楽しむ：エシカルブランド特集&lt;/h3&gt;
+                            &lt;p class=&quot;feature-description&quot;&gt;環境に配慮しながらもスタイルを諦めない、次世代のファッションブランドを徹底取材。サステナブルな素材選びから、長く愛用できるアイテムの見極め方まで、これからの時代に必要なファッション選択術を特集します。&lt;/p&gt;
+                            &lt;div class=&quot;feature-stats&quot;&gt;
+                                &lt;div class=&quot;stat-item&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;15&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;Brands Featured&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;stat-item&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;3&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;Weeks Research&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;stat-item&quot;&gt;
+                                    &lt;span class=&quot;stat-number&quot;&gt;50+&lt;/span&gt;
+                                    &lt;span class=&quot;stat-label&quot;&gt;Expert Interviews&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;feature-btn&quot;&gt;READ FULL FEATURE&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;sub-features&quot;&gt;
+                        &lt;article class=&quot;sub-feature-item&quot;&gt;
+                            &lt;div class=&quot;sub-feature-image&quot;&gt;
+                                &lt;img src=&quot;/api/placeholder/280/200&quot; alt=&quot;Sub Feature&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;sub-feature-content&quot;&gt;
+                                &lt;span class=&quot;sub-feature-category&quot;&gt;WELLNESS&lt;/span&gt;
+                                &lt;h4&gt;マインドフルネス生活で心の健康を保つ&lt;/h4&gt;
+                                &lt;p&gt;日常に取り入れやすい瞑想法と、ストレス解消のための簡単なテクニックを紹介。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/article&gt;
+                        
+                        &lt;article class=&quot;sub-feature-item&quot;&gt;
+                            &lt;div class=&quot;sub-feature-image&quot;&gt;
+                                &lt;img src=&quot;/api/placeholder/280/200&quot; alt=&quot;Sub Feature&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;sub-feature-content&quot;&gt;
+                                &lt;span class=&quot;sub-feature-category&quot;&gt;INTERIOR&lt;/span&gt;
+                                &lt;h4&gt;小さなスペースを最大活用するインテリア術&lt;/h4&gt;
+                                &lt;p&gt;限られた空間でも快適に過ごせる、プロのインテリアコーディネート術を公開。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/article&gt;
+                        
+                        &lt;article class=&quot;sub-feature-item&quot;&gt;
+                            &lt;div class=&quot;sub-feature-image&quot;&gt;
+                                &lt;img src=&quot;/api/placeholder/280/200&quot; alt=&quot;Sub Feature&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;sub-feature-content&quot;&gt;
+                                &lt;span class=&quot;sub-feature-category&quot;&gt;HEALTH&lt;/span&gt;
+                                &lt;h4&gt;忙しい女性のための栄養バランス完全ガイド&lt;/h4&gt;
+                                &lt;p&gt;時間がなくても健康的な食生活を送るための、実践的な栄養管理方法を解説。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/article&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;gallery&quot; class=&quot;photo-gallery&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;gallery-header&quot;&gt;
+                    &lt;h2&gt;PHOTO GALLERY&lt;/h2&gt;
+                    &lt;p&gt;インスピレーションを与える美しい写真をお楽しみください&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;gallery-filters&quot;&gt;
+                    &lt;button class=&quot;gallery-filter active&quot; data-filter=&quot;all&quot;&gt;ALL&lt;/button&gt;
+                    &lt;button class=&quot;gallery-filter&quot; data-filter=&quot;fashion&quot;&gt;FASHION&lt;/button&gt;
+                    &lt;button class=&quot;gallery-filter&quot; data-filter=&quot;beauty&quot;&gt;BEAUTY&lt;/button&gt;
+                    &lt;button class=&quot;gallery-filter&quot; data-filter=&quot;lifestyle&quot;&gt;LIFESTYLE&lt;/button&gt;
+                    &lt;button class=&quot;gallery-filter&quot; data-filter=&quot;travel&quot;&gt;TRAVEL&lt;/button&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;gallery-grid&quot;&gt;
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;fashion&quot;&gt;
+                        &lt;img src=&quot;/api/placeholder/300/400&quot; alt=&quot;Fashion Photography&quot;&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;div class=&quot;overlay-content&quot;&gt;
+                                &lt;h4&gt;Spring Fashion Editorial&lt;/h4&gt;
+                                &lt;p&gt;Photographer: 田中 健太&lt;/p&gt;
+                                &lt;button class=&quot;view-btn&quot;&gt;&lt;i class=&quot;fas fa-search-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;beauty&quot;&gt;
+                        &lt;img src=&quot;/api/placeholder/300/300&quot; alt=&quot;Beauty Photography&quot;&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;div class=&quot;overlay-content&quot;&gt;
+                                &lt;h4&gt;Natural Beauty Portrait&lt;/h4&gt;
+                                &lt;p&gt;Photographer: 佐藤 美香&lt;/p&gt;
+                                &lt;button class=&quot;view-btn&quot;&gt;&lt;i class=&quot;fas fa-search-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;lifestyle&quot;&gt;
+                        &lt;img src=&quot;/api/placeholder/300/500&quot; alt=&quot;Lifestyle Photography&quot;&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;div class=&quot;overlay-content&quot;&gt;
+                                &lt;h4&gt;Home &amp; Living&lt;/h4&gt;
+                                &lt;p&gt;Photographer: 鈴木 雅人&lt;/p&gt;
+                                &lt;button class=&quot;view-btn&quot;&gt;&lt;i class=&quot;fas fa-search-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;travel&quot;&gt;
+                        &lt;img src=&quot;/api/placeholder/300/350&quot; alt=&quot;Travel Photography&quot;&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;div class=&quot;overlay-content&quot;&gt;
+                                &lt;h4&gt;Cherry Blossom Journey&lt;/h4&gt;
+                                &lt;p&gt;Photographer: 高橋 直樹&lt;/p&gt;
+                                &lt;button class=&quot;view-btn&quot;&gt;&lt;i class=&quot;fas fa-search-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;fashion&quot;&gt;
+                        &lt;img src=&quot;/api/placeholder/300/450&quot; alt=&quot;Fashion Photography&quot;&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;div class=&quot;overlay-content&quot;&gt;
+                                &lt;h4&gt;Street Style Collection&lt;/h4&gt;
+                                &lt;p&gt;Photographer: 山田 隆二&lt;/p&gt;
+                                &lt;button class=&quot;view-btn&quot;&gt;&lt;i class=&quot;fas fa-search-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;gallery-item&quot; data-category=&quot;lifestyle&quot;&gt;
+                        &lt;img src=&quot;/api/placeholder/300/300&quot; alt=&quot;Lifestyle Photography&quot;&gt;
+                        &lt;div class=&quot;gallery-overlay&quot;&gt;
+                            &lt;div class=&quot;overlay-content&quot;&gt;
+                                &lt;h4&gt;Morning Routine&lt;/h4&gt;
+                                &lt;p&gt;Photographer: 川田 恵子&lt;/p&gt;
+                                &lt;button class=&quot;view-btn&quot;&gt;&lt;i class=&quot;fas fa-search-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;newsletter-signup&quot; class=&quot;newsletter-section&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;newsletter-content&quot;&gt;
+                    &lt;div class=&quot;newsletter-text&quot;&gt;
+                        &lt;h2&gt;Stay Inspired&lt;/h2&gt;
+                        &lt;p&gt;最新のライフスタイル情報とインスピレーションを&lt;br&gt;あなたのメールボックスにお届けします&lt;/p&gt;
+                        &lt;div class=&quot;newsletter-benefits&quot;&gt;
+                            &lt;div class=&quot;benefit-item&quot;&gt;
+                                &lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;週2回の厳選記事&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;benefit-item&quot;&gt;
+                                &lt;i class=&quot;fas fa-gift&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;限定プレゼント情報&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;benefit-item&quot;&gt;
+                                &lt;i class=&quot;fas fa-star&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;特別イベント優待&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;newsletter-form-container&quot;&gt;
+                        &lt;form class=&quot;newsletter-form&quot;&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;input type=&quot;email&quot; placeholder=&quot;メールアドレスを入力&quot; required&gt;
+                                &lt;button type=&quot;submit&quot;&gt;SUBSCRIBE&lt;/button&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;form-options&quot;&gt;
+                                &lt;label class=&quot;checkbox-label&quot;&gt;
+                                    &lt;input type=&quot;checkbox&quot; checked&gt;
+                                    &lt;span class=&quot;checkmark&quot;&gt;&lt;/span&gt;
+                                    ファッション・美容情報を受け取る
+                                &lt;/label&gt;
+                                &lt;label class=&quot;checkbox-label&quot;&gt;
+                                    &lt;input type=&quot;checkbox&quot;&gt;
+                                    &lt;span class=&quot;checkmark&quot;&gt;&lt;/span&gt;
+                                    限定イベント情報を受け取る
+                                &lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;p class=&quot;privacy-note&quot;&gt;
+                                登録により、&lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;に同意したものとみなされます。
+                            &lt;/p&gt;
+                        &lt;/form&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;instagram-feed&quot; class=&quot;instagram-section&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;instagram-header&quot;&gt;
+                    &lt;h2&gt;Follow Us&lt;/h2&gt;
+                    &lt;p&gt;@lifestyleplus でインスピレーションをシェア&lt;/p&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;instagram-link&quot;&gt;
+                        &lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;
+                        Follow on Instagram
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;instagram-grid&quot;&gt;
+                    &lt;div class=&quot;instagram-item&quot;&gt;
+                        &lt;img src=&quot;/api/placeholder/250/250&quot; alt=&quot;Instagram Post&quot;&gt;
+                        &lt;div class=&quot;instagram-overlay&quot;&gt;
+                            &lt;div class=&quot;instagram-stats&quot;&gt;
+                                &lt;span&gt;&lt;i class=&quot;fas fa-heart&quot;&gt;&lt;/i&gt; 1.2k&lt;/span&gt;
+                                &lt;span&gt;&lt;i class=&quot;fas fa-comment&quot;&gt;&lt;/i&gt; 89&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;instagram-item&quot;&gt;
+                        &lt;img src=&quot;/api/placeholder/250/250&quot; alt=&quot;Instagram Post&quot;&gt;
+                        &lt;div class=&quot;instagram-overlay&quot;&gt;
+                            &lt;div class=&quot;instagram-stats&quot;&gt;
+                                &lt;span&gt;&lt;i class=&quot;fas fa-heart&quot;&gt;&lt;/i&gt; 856&lt;/span&gt;
+                                &lt;span&gt;&lt;i class=&quot;fas fa-comment&quot;&gt;&lt;/i&gt; 42&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;instagram-item&quot;&gt;
+                        &lt;img src=&quot;/api/placeholder/250/250&quot; alt=&quot;Instagram Post&quot;&gt;
+                        &lt;div class=&quot;instagram-overlay&quot;&gt;
+                            &lt;div class=&quot;instagram-stats&quot;&gt;
+                                &lt;span&gt;&lt;i class=&quot;fas fa-heart&quot;&gt;&lt;/i&gt; 2.1k&lt;/span&gt;
+                                &lt;span&gt;&lt;i class=&quot;fas fa-comment&quot;&gt;&lt;/i&gt; 156&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;instagram-item&quot;&gt;
+                        &lt;img src=&quot;/api/placeholder/250/250&quot; alt=&quot;Instagram Post&quot;&gt;
+                        &lt;div class=&quot;instagram-overlay&quot;&gt;
+                            &lt;div class=&quot;instagram-stats&quot;&gt;
+                                &lt;span&gt;&lt;i class=&quot;fas fa-heart&quot;&gt;&lt;/i&gt; 934&lt;/span&gt;
+                                &lt;span&gt;&lt;i class=&quot;fas fa-comment&quot;&gt;&lt;/i&gt; 73&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;instagram-item&quot;&gt;
+                        &lt;img src=&quot;/api/placeholder/250/250&quot; alt=&quot;Instagram Post&quot;&gt;
+                        &lt;div class=&quot;instagram-overlay&quot;&gt;
+                            &lt;div class=&quot;instagram-stats&quot;&gt;
+                                &lt;span&gt;&lt;i class=&quot;fas fa-heart&quot;&gt;&lt;/i&gt; 1.8k&lt;/span&gt;
+                                &lt;span&gt;&lt;i class=&quot;fas fa-comment&quot;&gt;&lt;/i&gt; 92&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;instagram-item&quot;&gt;
+                        &lt;img src=&quot;/api/placeholder/250/250&quot; alt=&quot;Instagram Post&quot;&gt;
+                        &lt;div class=&quot;instagram-overlay&quot;&gt;
+                            &lt;div class=&quot;instagram-stats&quot;&gt;
+                                &lt;span&gt;&lt;i class=&quot;fas fa-heart&quot;&gt;&lt;/i&gt; 674&lt;/span&gt;
+                                &lt;span&gt;&lt;i class=&quot;fas fa-comment&quot;&gt;&lt;/i&gt; 28&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-brand&quot;&gt;
+                    &lt;h3&gt;LIFESTYLE PLUS&lt;/h3&gt;
+                    &lt;p&gt;あなたの毎日をもっと素敵にするライフスタイルマガジン&lt;/p&gt;
+                    &lt;div class=&quot;footer-social&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-pinterest&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-youtube&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;footer-links&quot;&gt;
+                    &lt;div class=&quot;footer-column&quot;&gt;
+                        &lt;h4&gt;Categories&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#fashion&quot;&gt;Fashion&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#beauty&quot;&gt;Beauty&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#lifestyle&quot;&gt;Lifestyle&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#travel&quot;&gt;Travel&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#food&quot;&gt;Food &amp; Drink&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#wellness&quot;&gt;Wellness&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;footer-column&quot;&gt;
+                        &lt;h4&gt;Magazine&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;最新号&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;バックナンバー&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;定期購読&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;デジタル版&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;読者プレゼント&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;読者投稿&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;footer-column&quot;&gt;
+                        &lt;h4&gt;About&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;編集部について&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ライター募集&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;広告掲載&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プレスリリース&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;採用情報&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;footer-column&quot;&gt;
+                        &lt;h4&gt;Support&lt;/h4&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ヘルプセンター&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;利用規約&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Cookie設定&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;アクセシビリティ&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;サイトマップ&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;div class=&quot;copyright&quot;&gt;
+                    &lt;p&gt;&amp;copy; 2024 Lifestyle Plus Magazine. All rights reserved.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-links-bottom&quot;&gt;
+                    &lt;a href=&quot;#&quot;&gt;Terms&lt;/a&gt;
+                    &lt;a href=&quot;#&quot;&gt;Privacy&lt;/a&gt;
+                    &lt;a href=&quot;#&quot;&gt;Cookies&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+
+&lt;script&gt;
+    
+document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() {
+    // ハンバーガーメニューの制御
+    const hamburger = document.querySelector(&#x27;.hamburger&#x27;);
+    const navMenu = document.querySelector(&#x27;.nav-menu&#x27;);
+
+    if (hamburger &amp;&amp; navMenu) {
+        hamburger.addEventListener(&#x27;click&#x27;, function() {
+            navMenu.classList.toggle(&#x27;active&#x27;);
+            hamburger.classList.toggle(&#x27;active&#x27;);
+        });
+
+        // メニューリンクをクリックしたときにメニューを閉じる
+        const navLinks = document.querySelectorAll(&#x27;.nav-menu a&#x27;);
+        navLinks.forEach(link =&gt; {
+            link.addEventListener(&#x27;click&#x27;, function() {
+                navMenu.classList.remove(&#x27;active&#x27;);
+                hamburger.classList.remove(&#x27;active&#x27;);
+            });
+        });
+    }
+
+    // 検索オーバーレイの制御
+    const searchToggle = document.querySelector(&#x27;.search-toggle&#x27;);
+    const searchOverlay = document.querySelector(&#x27;.search-overlay&#x27;);
+    const searchClose = document.querySelector(&#x27;.search-close&#x27;);
+    const searchInput = document.querySelector(&#x27;.search-input&#x27;);
+
+    if (searchToggle &amp;&amp; searchOverlay) {
+        searchToggle.addEventListener(&#x27;click&#x27;, function() {
+            searchOverlay.classList.add(&#x27;active&#x27;);
+            setTimeout(() =&gt; {
+                searchInput.focus();
+            }, 300);
+        });
+    }
+
+    if (searchClose) {
+        searchClose.addEventListener(&#x27;click&#x27;, function() {
+            searchOverlay.classList.remove(&#x27;active&#x27;);
+        });
+    }
+
+    // 検索機能
+    const searchBtn = document.querySelector(&#x27;.search-btn&#x27;);
+
+    if (searchBtn &amp;&amp; searchInput) {
+        searchBtn.addEventListener(&#x27;click&#x27;, function() {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm) {
+                performSearch(searchTerm);
+            }
+        });
+
+        searchInput.addEventListener(&#x27;keypress&#x27;, function(e) {
+            if (e.key === &#x27;Enter&#x27;) {
+                const searchTerm = this.value.trim();
+                if (searchTerm) {
+                    performSearch(searchTerm);
+                }
+            }
+        });
+    }
+
+    function performSearch(term) {
+        console.log(&#x27;検索キーワード:&#x27;, term);
+        // 実際の検索処理をシミュレート
+        searchOverlay.classList.remove(&#x27;active&#x27;);
+        alert(&#x27;「&#x27; + term + &#x27;」の検索結果を表示しています...&#x27;);
+        searchInput.value = &#x27;&#x27;;
+    }
+
+    // スムーズスクロール
+    document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+        anchor.addEventListener(&#x27;click&#x27;, function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+            if (target) {
+                const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: &#x27;smooth&#x27;
+                });
+            }
+        });
+    });
+
+    // ヘッダーのスクロール効果
+    const header = document.querySelector(&#x27;.header&#x27;);
+    let lastScrollTop = 0;
+
+    window.addEventListener(&#x27;scroll&#x27;, function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop &gt; 100) {
+            header.style.boxShadow = &#x27;0 2px 20px rgba(0, 0, 0, 0.15)&#x27;;
+        } else {
+            header.style.boxShadow = &#x27;0 2px 8px rgba(0, 0, 0, 0.08)&#x27;;
+        }
+
+        // ナビゲーションの現在位置をハイライト
+        const sections = document.querySelectorAll(&#x27;section[id]&#x27;);
+        const navLinks = document.querySelectorAll(&#x27;.nav-menu a[href^=&quot;#&quot;]&#x27;);
+        
+        let current = &#x27;&#x27;;
+        sections.forEach(section =&gt; {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollTop &gt;= sectionTop - 200) {
+                current = section.getAttribute(&#x27;id&#x27;);
+            }
+        });
+
+        navLinks.forEach(link =&gt; {
+            link.classList.remove(&#x27;active&#x27;);
+            if (link.getAttribute(&#x27;href&#x27;) === &#x27;#&#x27; + current) {
+                link.classList.add(&#x27;active&#x27;);
+            }
+        });
+
+        lastScrollTop = scrollTop;
+    });
+
+    // 記事カテゴリフィルター
+    const filterBtns = document.querySelectorAll(&#x27;.filter-btn&#x27;);
+    const articleCards = document.querySelectorAll(&#x27;.article-card&#x27;);
+
+    filterBtns.forEach(btn =&gt; {
+        btn.addEventListener(&#x27;click&#x27;, function() {
+            const targetCategory = this.getAttribute(&#x27;data-category&#x27;);
+            
+            // アクティブなボタンを切り替え
+            filterBtns.forEach(b =&gt; b.classList.remove(&#x27;active&#x27;));
+            this.classList.add(&#x27;active&#x27;);
+            
+            // 記事カードをフィルタリング
+            articleCards.forEach(card =&gt; {
+                if (targetCategory === &#x27;all&#x27; || card.getAttribute(&#x27;data-category&#x27;) === targetCategory) {
+                    card.style.display = &#x27;block&#x27;;
+                    setTimeout(() =&gt; {
+                        card.style.opacity = &#x27;1&#x27;;
+                        card.style.transform = &#x27;translateY(0)&#x27;;
+                    }, 100);
+                } else {
+                    card.style.opacity = &#x27;0&#x27;;
+                    card.style.transform = &#x27;translateY(20px)&#x27;;
+                    setTimeout(() =&gt; {
+                        card.style.display = &#x27;none&#x27;;
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // ギャラリーフィルター
+    const galleryFilters = document.querySelectorAll(&#x27;.gallery-filter&#x27;);
+    const galleryItems = document.querySelectorAll(&#x27;.gallery-item&#x27;);
+
+    galleryFilters.forEach(filter =&gt; {
+        filter.addEventListener(&#x27;click&#x27;, function() {
+            const targetCategory = this.getAttribute(&#x27;data-filter&#x27;);
+            
+            // アクティブなフィルターを切り替え
+            galleryFilters.forEach(f =&gt; f.classList.remove(&#x27;active&#x27;));
+            this.classList.add(&#x27;active&#x27;);
+            
+            // ギャラリーアイテムをフィルタリング
+            galleryItems.forEach(item =&gt; {
+                if (targetCategory === &#x27;all&#x27; || item.getAttribute(&#x27;data-category&#x27;) === targetCategory) {
+                    item.style.display = &#x27;block&#x27;;
+                    setTimeout(() =&gt; {
+                        item.style.opacity = &#x27;1&#x27;;
+                        item.style.transform = &#x27;scale(1)&#x27;;
+                    }, 100);
+                } else {
+                    item.style.opacity = &#x27;0&#x27;;
+                    item.style.transform = &#x27;scale(0.8)&#x27;;
+                    setTimeout(() =&gt; {
+                        item.style.display = &#x27;none&#x27;;
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // ギャラリーアイテムのモーダル表示
+    galleryItems.forEach(item =&gt; {
+        item.addEventListener(&#x27;click&#x27;, function() {
+            const img = this.querySelector(&#x27;img&#x27;);
+            const title = this.querySelector(&#x27;h4&#x27;).textContent;
+            const photographer = this.querySelector(&#x27;p&#x27;).textContent;
+            
+            // モーダルウィンドウを作成（実際のプロジェクトではライブラリを使用）
+            showImageModal(img.src, title, photographer);
+        });
+    });
+
+    function showImageModal(imageSrc, title, photographer) {
+        // 簡易モーダル実装
+        const modal = document.createElement(&#x27;div&#x27;);
+        modal.className = &#x27;image-modal&#x27;;
+        modal.innerHTML = `
+            &lt;div class=&quot;modal-backdrop&quot;&gt;
+                &lt;div class=&quot;modal-content&quot;&gt;
+                    &lt;button class=&quot;modal-close&quot;&gt;&amp;times;&lt;/button&gt;
+                    &lt;img src=&quot;${imageSrc}&quot; alt=&quot;${title}&quot;&gt;
+                    &lt;div class=&quot;modal-info&quot;&gt;
+                        &lt;h4&gt;${title}&lt;/h4&gt;
+                        &lt;p&gt;${photographer}&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        `;
+        
+        // モーダル用のスタイルを追加
+        const modalStyle = document.createElement(&#x27;style&#x27;);
+        modalStyle.textContent = `
+            .image-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 2000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .modal-backdrop {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+            .modal-content {
+                position: relative;
+                max-width: 90vw;
+                max-height: 90vh;
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+            }
+            .modal-content img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+            .modal-close {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                border: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                font-size: 1.5rem;
+                cursor: pointer;
+                z-index: 1;
+            }
+            .modal-info {
+                padding: 20px;
+                text-align: center;
+            }
+            .modal-info h4 {
+                margin-bottom: 5px;
+                color: var(--text-dark);
+            }
+            .modal-info p {
+                color: var(--text-light);
+                font-size: 0.9rem;
+            }
+        `;
+        
+        document.head.appendChild(modalStyle);
+        document.body.appendChild(modal);
+        
+        // モーダルを閉じる処理
+        const closeModal = () =&gt; {
+            document.body.removeChild(modal);
+            document.head.removeChild(modalStyle);
+        };
+        
+        modal.querySelector(&#x27;.modal-close&#x27;).addEventListener(&#x27;click&#x27;, closeModal);
+        modal.querySelector(&#x27;.modal-backdrop&#x27;).addEventListener(&#x27;click&#x27;, function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // ESCキーでモーダルを閉じる
+        const handleEscape = (e) =&gt; {
+            if (e.key === &#x27;Escape&#x27;) {
+                closeModal();
+                document.removeEventListener(&#x27;keydown&#x27;, handleEscape);
+            }
+        };
+        document.addEventListener(&#x27;keydown&#x27;, handleEscape);
+    }
+
+    // もっと見るボタン
+    const loadMoreBtn = document.querySelector(&#x27;.load-more-btn&#x27;);
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener(&#x27;click&#x27;, function() {
+            const originalText = this.textContent;
+            this.textContent = &#x27;LOADING...&#x27;;
+            this.disabled = true;
+            
+            // 追加記事の読み込みをシミュレート
+            setTimeout(() =&gt; {
+                // 実際のプロジェクトでは、APIから追加の記事データを取得
+                console.log(&#x27;追加の記事を読み込みました&#x27;);
+                this.textContent = originalText;
+                this.disabled = false;
+                
+                // 新しい記事カードを追加する処理をここに実装
+                addMoreArticles();
+            }, 2000);
+        });
+    }
+
+    function addMoreArticles() {
+        // 実際のプロジェクトでは、APIから取得したデータで記事カードを動的に生成
+        const articlesGrid = document.querySelector(&#x27;.articles-grid&#x27;);
+        const newArticleCount = 3;
+        
+        for (let i = 0; i &lt; newArticleCount; i++) {
+            const newArticle = createArticleCard({
+                category: &#x27;LIFESTYLE&#x27;,
+                title: &#x27;新しく追加された記事のタイトル&#x27;,
+                excerpt: &#x27;新しく追加された記事の抜粋文です。記事の内容を簡潔に説明しています。&#x27;,
+                author: &#x27;新人ライター&#x27;,
+                date: &#x27;March 16&#x27;,
+                image: &#x27;/api/placeholder/350/250&#x27;
+            });
+            
+            articlesGrid.appendChild(newArticle);
+        }
+    }
+
+    function createArticleCard(data) {
+        const article = document.createElement(&#x27;article&#x27;);
+        article.className = &#x27;article-card fade-in&#x27;;
+        article.setAttribute(&#x27;data-category&#x27;, data.category.toLowerCase());
+        
+        article.innerHTML = `
+            &lt;div class=&quot;card-image&quot;&gt;
+                &lt;img src=&quot;${data.image}&quot; alt=&quot;Article Image&quot;&gt;
+                &lt;div class=&quot;image-overlay&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;read-link&quot;&gt;READ ARTICLE&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;card-content&quot;&gt;
+                &lt;span class=&quot;card-category&quot;&gt;${data.category}&lt;/span&gt;
+                &lt;h3&gt;${data.title}&lt;/h3&gt;
+                &lt;p class=&quot;card-excerpt&quot;&gt;${data.excerpt}&lt;/p&gt;
+                &lt;div class=&quot;card-meta&quot;&gt;
+                    &lt;div class=&quot;author-mini&quot;&gt;
+                        &lt;img src=&quot;/api/placeholder/30/30&quot; alt=&quot;Author&quot;&gt;
+                        &lt;span&gt;${data.author}&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;span class=&quot;card-date&quot;&gt;${data.date}&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        `;
+        
+        // アニメーションを適用
+        setTimeout(() =&gt; {
+            article.classList.add(&#x27;visible&#x27;);
+        }, 100);
+        
+        return article;
+    }
+
+    // ニュースレター登録処理
+    const newsletterForm = document.querySelector(&#x27;.newsletter-form&#x27;);
+    if (newsletterForm) {
+        newsletterForm.addEventListener(&#x27;submit&#x27;, function(e) {
+            e.preventDefault();
+            
+            const emailInput = this.querySelector(&#x27;input[type=&quot;email&quot;]&#x27;);
+            const email = emailInput.value.trim();
+            const checkboxes = this.querySelectorAll(&#x27;input[type=&quot;checkbox&quot;]:checked&#x27;);
+            
+            if (email) {
+                const submitBtn = this.querySelector(&#x27;button[type=&quot;submit&quot;]&#x27;);
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = &#x27;SUBSCRIBING...&#x27;;
+                submitBtn.disabled = true;
+                
+                // 実際の登録処理をシミュレート
+                setTimeout(() =&gt; {
+                    alert(&#x27;ニュースレターの登録が完了しました！素敵なコンテンツをお届けします。&#x27;);
+                    emailInput.value = &#x27;&#x27;;
+                    checkboxes.forEach(cb =&gt; cb.checked = false);
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            }
+        });
+    }
+
+    // スクロールアニメーション
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: &#x27;0px 0px -50px 0px&#x27;
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry =&gt; {
+            if (entry.isIntersecting) {
+                entry.target.classList.add(&#x27;visible&#x27;);
+            }
+        });
+    }, observerOptions);
+
+    // アニメーション対象要素の監視
+    document.querySelectorAll(&#x27;.article-card, .trending-item, .sub-feature-item, .gallery-item, .instagram-item&#x27;).forEach(el =&gt; {
+        el.classList.add(&#x27;fade-in&#x27;);
+        observer.observe(el);
+    });
+
+    // パララックス効果
+    window.addEventListener(&#x27;scroll&#x27;, function() {
+        const scrolled = window.pageYOffset;
+        const heroImage = document.querySelector(&#x27;.featured-img&#x27;);
+        
+        if (heroImage) {
+            const speed = scrolled * 0.3;
+            heroImage.style.transform = `translateY(${speed}px)`;
+        }
+    });
+
+    // インスタグラムフィードの動的読み込み（実際のプロジェクトでAPI連携）
+    function loadInstagramFeed() {
+        // Instagram Graph APIやInstagram Basic Display APIと連携
+        // ここでは静的データのシミュレーション
+        const instagramData = [
+            { likes: 1200, comments: 89, image: &#x27;/api/placeholder/250/250&#x27; },
+            { likes: 856, comments: 42, image: &#x27;/api/placeholder/250/250&#x27; },
+            { likes: 2100, comments: 156, image: &#x27;/api/placeholder/250/250&#x27; },
+            { likes: 934, comments: 73, image: &#x27;/api/placeholder/250/250&#x27; },
+            { likes: 1800, comments: 92, image: &#x27;/api/placeholder/250/250&#x27; },
+            { likes: 674, comments: 28, image: &#x27;/api/placeholder/250/250&#x27; }
+        ];
+        
+        console.log(&#x27;Instagram feed data loaded:&#x27;, instagramData);
+    }
+
+    loadInstagramFeed();
+
+    // ページ読み込み完了時の初期化
+    window.addEventListener(&#x27;load&#x27;, function() {
+        // 記事カードのスタッガードアニメーション
+        const articleCards = document.querySelectorAll(&#x27;.article-card&#x27;);
+        articleCards.forEach((card, index) =&gt; {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+        
+        // 初期表示での要素のフェードイン
+        const elementsToAnimate = document.querySelectorAll(&#x27;.fade-in&#x27;);
+        elementsToAnimate.forEach((el, index) =&gt; {
+            setTimeout(() =&gt; {
+                el.classList.add(&#x27;visible&#x27;);
+            }, index * 100);
+        });
+    });
+
+    // リサイズ時の処理
+    window.addEventListener(&#x27;resize&#x27;, function() {
+        // モバイル表示時の調整
+        if (window.innerWidth &lt;= 768) {
+            articleCards.forEach(card =&gt; {
+                card.style.display = &#x27;block&#x27;;
+                card.style.opacity = &#x27;1&#x27;;
+                card.style.transform = &#x27;translateY(0)&#x27;;
+            });
+            
+            galleryItems.forEach(item =&gt; {
+                item.style.display = &#x27;block&#x27;;
+                item.style.opacity = &#x27;1&#x27;;
+                item.style.transform = &#x27;scale(1)&#x27;;
+            });
+        }
+    });
+
+    // ソーシャルシェア機能
+    function shareArticle(title, url) {
+        if (navigator.share) {
+            navigator.share({
+                title: title,
+                url: url
+            }).catch(console.error);
+        } else {
+            // フォールバック: クリップボードにコピー
+            navigator.clipboard.writeText(`${title} - ${url}`).then(() =&gt; {
+                alert(&#x27;記事のURLをクリップボードにコピーしました&#x27;);
+            }).catch(() =&gt; {
+                alert(&#x27;シェア機能が利用できません&#x27;);
+            });
+        }
+    }
+
+    // 記事の読み込み時間追跡
+    function trackReadingTime() {
+        const articles = document.querySelectorAll(&#x27;.article-card&#x27;);
+        articles.forEach(article =&gt; {
+            let startTime = null;
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry =&gt; {
+                    if (entry.isIntersecting &amp;&amp; !startTime) {
+                        startTime = Date.now();
+                    } else if (!entry.isIntersecting &amp;&amp; startTime) {
+                        const readTime = Date.now() - startTime;
+                        console.log(`記事閲覧時間: ${readTime}ms`);
+                        startTime = null;
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(article);
+        });
+    }
+
+    trackReadingTime();
+
+    console.log(&#x27;Lifestyle Plus magazine template loaded successfully!&#x27;);
+});
+
+// ユーティリティ関数
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { month: &#x27;long&#x27;, day: &#x27;numeric&#x27; };
+    return date.toLocaleDateString(&#x27;en-US&#x27;, options);
+}
+
+function truncateText(text, maxLength) {
+    if (text.length &lt;= maxLength) return text;
+    return text.substring(0, maxLength) + &#x27;...&#x27;;
+}
+
+function generateArticleSlug(title) {
+    return title.toLowerCase()
+        .replace(/[^ws-]/g, &#x27;&#x27;)
+        .replace(/s+/g, &#x27;-&#x27;)
+        .trim();
+}
+
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="ライフスタイル雑誌・マガジン" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"media-magazine\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"media-magazine\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"media-magazine\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"media-magazine\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"daLXogn3KupemBFNGROdT\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"media-magazine\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

@@ -1,0 +1,1240 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ホテル - リゾート&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&#x27;https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Noto+Sans+JP:wght@300;400;500;700&amp;display=swap&#x27;);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Noto Sans JP&#x27;, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    font-size: 36px;
+}
+
+.logo h1 {
+    font-family: &#x27;Libre Baskerville&#x27;, serif;
+    font-size: 24px;
+    color: #00a8cc;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: #666;
+    letter-spacing: 2px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #00a8cc;
+}
+
+.nav-reserve a {
+    background: #00a8cc;
+    color: white !important;
+    padding: 10px 25px;
+    border-radius: 25px;
+}
+
+.nav-reserve a:hover {
+    background: #008ba3;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    padding: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.hero-content h2 {
+    font-family: &#x27;Libre Baskerville&#x27;, serif;
+    font-size: 56px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Common Button Styles */
+.btn-primary {
+    background: #00a8cc;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: #008ba3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,168,204,0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #00a8cc;
+    padding: 12px 30px;
+    border: 2px solid #00a8cc;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: #00a8cc;
+    color: white;
+}
+
+.btn-outline-white {
+    background: transparent;
+    color: white;
+    padding: 15px 40px;
+    border: 2px solid white;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-outline-white:hover {
+    background: white;
+    color: #00a8cc;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: &#x27;Libre Baskerville&#x27;, serif;
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #00a8cc;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+    font-size: 16px;
+}
+
+/* Intro */
+.intro {
+    background: #f8f9fa;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+    color: #666;
+    line-height: 1.8;
+}
+
+.intro-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.intro-feature {
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.intro-feature h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.intro-feature p {
+    color: #666;
+}
+
+/* Stay */
+.stay {
+    background: white;
+}
+
+.room-showcase {
+    display: grid;
+    gap: 40px;
+}
+
+.room-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.room-item:nth-child(even) {
+    direction: rtl;
+}
+
+.room-item:nth-child(even) .room-details {
+    direction: ltr;
+}
+
+.room-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.room-details h3 {
+    font-size: 28px;
+    color: #00a8cc;
+    margin-bottom: 10px;
+}
+
+.room-details p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.room-description {
+    line-height: 1.8;
+}
+
+.room-price {
+    margin-top: 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.room-price span {
+    color: #999;
+}
+
+.room-price strong {
+    font-size: 28px;
+    color: #00a8cc;
+}
+
+/* Dining */
+.dining {
+    background: #f8f9fa;
+}
+
+.dining-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.dining-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.dining-item:hover {
+    transform: translateY(-5px);
+}
+
+.dining-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.dining-info {
+    padding: 25px;
+}
+
+.dining-info h3 {
+    color: #00a8cc;
+    margin-bottom: 10px;
+}
+
+.dining-info p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.dining-time {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Activities */
+.activities {
+    background: white;
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.activity-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+}
+
+.activity-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.activity-card:hover .activity-image img {
+    transform: scale(1.1);
+}
+
+.activity-card h3 {
+    padding: 20px 20px 10px;
+    color: #00a8cc;
+}
+
+.activity-card p {
+    padding: 0 20px 15px;
+    color: #666;
+}
+
+.activity-price {
+    display: block;
+    padding: 0 20px 20px;
+    color: #00a8cc;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Spa */
+.spa {
+    background: #f8f9fa;
+}
+
+.spa-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.spa-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.spa-info h3 {
+    font-size: 28px;
+    color: #00a8cc;
+    margin-bottom: 20px;
+}
+
+.spa-info p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.spa-menu {
+    margin-bottom: 30px;
+}
+
+.spa-item {
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spa-item h4 {
+    color: #333;
+}
+
+.spa-item p {
+    color: #00a8cc;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Wedding */
+.wedding {
+    background: white;
+}
+
+.wedding-gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.wedding-main img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.wedding-info h3 {
+    font-size: 28px;
+    color: #00a8cc;
+    margin-bottom: 20px;
+}
+
+.wedding-info p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.wedding-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.wedding-features li {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Gallery */
+.gallery {
+    background: #f8f9fa;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 300px;
+    gap: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.gallery-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* CTA */
+.cta {
+    background: linear-gradient(135deg, #00a8cc 0%, #0078a8 100%);
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+}
+
+.cta-content h2 {
+    font-family: &#x27;Libre Baskerville&#x27;, serif;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-info h3 {
+    font-family: &#x27;Libre Baskerville&#x27;, serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #00a8cc;
+}
+
+.footer-info p {
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00a8cc;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    background: #333;
+    color: #ccc;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: #00a8cc;
+    color: white;
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    text-align: center;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        position: relative;
+    }
+    
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .hero-content h2 {
+        font-size: 36px;
+    }
+    
+    .section-title {
+        font-size: 32px;
+    }
+    
+    .intro-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .room-item {
+        grid-template-columns: 1fr;
+    }
+    
+    .room-item:nth-child(even) {
+        direction: ltr;
+    }
+    
+    .dining-slider {
+        grid-template-columns: 1fr;
+    }
+    
+    .activity-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .spa-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .wedding-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-item.large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;header-content&quot;&gt;
+                &lt;div class=&quot;logo&quot;&gt;
+                    &lt;span class=&quot;logo-icon&quot;&gt;🌴&lt;/span&gt;
+                    &lt;div&gt;
+                        &lt;h1&gt;Ocean Paradise&lt;/h1&gt;
+                        &lt;span class=&quot;subtitle&quot;&gt;RESORT &amp; SPA&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;button class=&quot;hamburger&quot; id=&quot;hamburger&quot;&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;nav class=&quot;main-nav&quot; id=&quot;main-nav&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#stay&quot;&gt;ご宿泊&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#dining&quot;&gt;ダイニング&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#activities&quot;&gt;アクティビティ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#spa&quot;&gt;スパ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#wedding&quot;&gt;ウェディング&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;nav-reserve&quot;&gt;&lt;a href=&quot;#reservation&quot;&gt;予約&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-video&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1920&amp;h=800&amp;fit=crop&quot; alt=&quot;リゾート風景&quot;&gt;
+            &lt;div class=&quot;hero-overlay&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h2&gt;Welcome to Paradise&lt;/h2&gt;
+            &lt;p&gt;碧い海と白い砂浜、極上のリゾート体験を&lt;/p&gt;
+            &lt;button class=&quot;btn-primary&quot;&gt;今すぐ予約&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;intro&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;intro-content&quot;&gt;
+                &lt;h2 class=&quot;section-title&quot;&gt;Ocean Paradise Resort&lt;/h2&gt;
+                &lt;p class=&quot;intro-text&quot;&gt;
+                    沖縄本島の西海岸に位置する当リゾートは、エメラルドグリーンの海と白い砂浜に囲まれた楽園です。
+                    全室オーシャンビューの客室、世界各国の料理を楽しめるレストラン、
+                    充実したマリンアクティビティと極上のスパで、忘れられない思い出をお作りください。
+                &lt;/p&gt;
+                &lt;div class=&quot;intro-features&quot;&gt;
+                    &lt;div class=&quot;intro-feature&quot;&gt;
+                        &lt;span class=&quot;feature-icon&quot;&gt;🏖️&lt;/span&gt;
+                        &lt;h3&gt;プライベートビーチ&lt;/h3&gt;
+                        &lt;p&gt;1km続く白砂のビーチ&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;intro-feature&quot;&gt;
+                        &lt;span class=&quot;feature-icon&quot;&gt;🏊&lt;/span&gt;
+                        &lt;h3&gt;インフィニティプール&lt;/h3&gt;
+                        &lt;p&gt;海と一体化した絶景プール&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;intro-feature&quot;&gt;
+                        &lt;span class=&quot;feature-icon&quot;&gt;🍽️&lt;/span&gt;
+                        &lt;h3&gt;5つのレストラン&lt;/h3&gt;
+                        &lt;p&gt;多彩な美食体験&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;intro-feature&quot;&gt;
+                        &lt;span class=&quot;feature-icon&quot;&gt;💆&lt;/span&gt;
+                        &lt;h3&gt;オーシャンスパ&lt;/h3&gt;
+                        &lt;p&gt;海を眺めながらの極上トリートメント&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;stay&quot; class=&quot;stay&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;ご宿泊&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;全室オーシャンビューの贅沢な客室&lt;/p&gt;
+            &lt;div class=&quot;room-showcase&quot;&gt;
+                &lt;div class=&quot;room-item&quot;&gt;
+                    &lt;div class=&quot;room-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;オーシャンビュールーム&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;room-details&quot;&gt;
+                        &lt;h3&gt;オーシャンビュールーム&lt;/h3&gt;
+                        &lt;p&gt;45㎡ | バルコニー付き | 最大3名&lt;/p&gt;
+                        &lt;p class=&quot;room-description&quot;&gt;
+                            大きな窓から望む青い海。波の音を聞きながら過ごす贅沢な時間。
+                        &lt;/p&gt;
+                        &lt;div class=&quot;room-price&quot;&gt;
+                            &lt;span&gt;1泊2食付き&lt;/span&gt;
+                            &lt;strong&gt;¥35,000〜&lt;/strong&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;room-item&quot;&gt;
+                    &lt;div class=&quot;room-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;プレミアムスイート&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;room-details&quot;&gt;
+                        &lt;h3&gt;プレミアムスイート&lt;/h3&gt;
+                        &lt;p&gt;85㎡ | プライベートプール付き | 最大4名&lt;/p&gt;
+                        &lt;p class=&quot;room-description&quot;&gt;
+                            プライベートプール付きの特別なスイート。極上のプライベート空間。
+                        &lt;/p&gt;
+                        &lt;div class=&quot;room-price&quot;&gt;
+                            &lt;span&gt;1泊2食付き&lt;/span&gt;
+                            &lt;strong&gt;¥75,000〜&lt;/strong&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;room-item&quot;&gt;
+                    &lt;div class=&quot;room-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;ヴィラ&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;room-details&quot;&gt;
+                        &lt;h3&gt;オーシャンフロントヴィラ&lt;/h3&gt;
+                        &lt;p&gt;120㎡ | 独立型ヴィラ | 最大6名&lt;/p&gt;
+                        &lt;p class=&quot;room-description&quot;&gt;
+                            完全なプライバシーが保たれた独立型ヴィラ。専属バトラーサービス付き。
+                        &lt;/p&gt;
+                        &lt;div class=&quot;room-price&quot;&gt;
+                            &lt;span&gt;1泊2食付き&lt;/span&gt;
+                            &lt;strong&gt;¥150,000〜&lt;/strong&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;dining&quot; class=&quot;dining&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;ダイニング&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;5つのレストラン&amp;バーで多彩な美食体験&lt;/p&gt;
+            &lt;div class=&quot;dining-slider&quot;&gt;
+                &lt;div class=&quot;dining-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&amp;h=600&amp;fit=crop&quot; alt=&quot;メインダイニング&quot;&gt;
+                    &lt;div class=&quot;dining-info&quot;&gt;
+                        &lt;h3&gt;Azure - メインダイニング&lt;/h3&gt;
+                        &lt;p&gt;地元の新鮮な食材を使った創作料理&lt;/p&gt;
+                        &lt;p class=&quot;dining-time&quot;&gt;朝食 7:00-10:30 | ディナー 18:00-22:00&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;dining-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&amp;h=600&amp;fit=crop&quot; alt=&quot;ビーチバー&quot;&gt;
+                    &lt;div class=&quot;dining-info&quot;&gt;
+                        &lt;h3&gt;Sunset Beach Bar&lt;/h3&gt;
+                        &lt;p&gt;サンセットを眺めながらトロピカルカクテル&lt;/p&gt;
+                        &lt;p class=&quot;dining-time&quot;&gt;11:00-23:00&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;dining-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1200&amp;h=600&amp;fit=crop&quot; alt=&quot;鉄板焼き&quot;&gt;
+                    &lt;div class=&quot;dining-info&quot;&gt;
+                        &lt;h3&gt;極 - 鉄板焼き&lt;/h3&gt;
+                        &lt;p&gt;最高級和牛と新鮮な海の幸&lt;/p&gt;
+                        &lt;p class=&quot;dining-time&quot;&gt;ディナー 18:00-22:00（要予約）&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;activities&quot; class=&quot;activities&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;アクティビティ&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;海と自然を満喫する多彩なアクティビティ&lt;/p&gt;
+            &lt;div class=&quot;activity-grid&quot;&gt;
+                &lt;div class=&quot;activity-card&quot;&gt;
+                    &lt;div class=&quot;activity-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;シュノーケリング&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;シュノーケリング&lt;/h3&gt;
+                    &lt;p&gt;透明度抜群の海で熱帯魚と泳ぐ&lt;/p&gt;
+                    &lt;span class=&quot;activity-price&quot;&gt;¥8,000〜&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;activity-card&quot;&gt;
+                    &lt;div class=&quot;activity-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;カヤック&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;シーカヤック&lt;/h3&gt;
+                    &lt;p&gt;エメラルドグリーンの海を探検&lt;/p&gt;
+                    &lt;span class=&quot;activity-price&quot;&gt;¥6,000〜&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;activity-card&quot;&gt;
+                    &lt;div class=&quot;activity-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1530053969600-caed2596d242?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;サンセットクルーズ&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;サンセットクルーズ&lt;/h3&gt;
+                    &lt;p&gt;夕日を眺めながらのロマンチッククルーズ&lt;/p&gt;
+                    &lt;span class=&quot;activity-price&quot;&gt;¥12,000〜&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;activity-card&quot;&gt;
+                    &lt;div class=&quot;activity-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1599640842225-85d111c60e6b?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;ヨガ&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;ビーチヨガ&lt;/h3&gt;
+                    &lt;p&gt;朝の静かなビーチで心身をリフレッシュ&lt;/p&gt;
+                    &lt;span class=&quot;activity-price&quot;&gt;無料&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;activity-card&quot;&gt;
+                    &lt;div class=&quot;activity-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;ダイビング&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;体験ダイビング&lt;/h3&gt;
+                    &lt;p&gt;初心者でも安心の体験ダイビング&lt;/p&gt;
+                    &lt;span class=&quot;activity-price&quot;&gt;¥15,000〜&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;activity-card&quot;&gt;
+                    &lt;div class=&quot;activity-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;サーフィン&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;サーフィンレッスン&lt;/h3&gt;
+                    &lt;p&gt;プロインストラクターによる丁寧な指導&lt;/p&gt;
+                    &lt;span class=&quot;activity-price&quot;&gt;¥10,000〜&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;spa&quot; class=&quot;spa&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Ocean Spa&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;海を眺めながら極上のリラクゼーション&lt;/p&gt;
+            &lt;div class=&quot;spa-content&quot;&gt;
+                &lt;div class=&quot;spa-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;スパ&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;spa-info&quot;&gt;
+                    &lt;h3&gt;心と体を癒す至福の時間&lt;/h3&gt;
+                    &lt;p&gt;
+                        海を一望できるトリートメントルームで、熟練セラピストによる施術を。
+                        琉球の伝統的な手法と最新のテクニックを融合させた、
+                        当リゾートオリジナルのトリートメントをご体験ください。
+                    &lt;/p&gt;
+                    &lt;div class=&quot;spa-menu&quot;&gt;
+                        &lt;div class=&quot;spa-item&quot;&gt;
+                            &lt;h4&gt;琉球アロママッサージ&lt;/h4&gt;
+                            &lt;p&gt;90分 ¥22,000&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;spa-item&quot;&gt;
+                            &lt;h4&gt;オーシャンストーンセラピー&lt;/h4&gt;
+                            &lt;p&gt;60分 ¥18,000&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;spa-item&quot;&gt;
+                            &lt;h4&gt;カップルスパ&lt;/h4&gt;
+                            &lt;p&gt;120分 ¥45,000（2名様）&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;button class=&quot;btn-outline&quot;&gt;スパメニューを見る&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;wedding&quot; class=&quot;wedding&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Resort Wedding&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;海と空に祝福される特別な一日&lt;/p&gt;
+            &lt;div class=&quot;wedding-gallery&quot;&gt;
+                &lt;div class=&quot;wedding-main&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&amp;h=600&amp;fit=crop&quot; alt=&quot;ウェディング&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;wedding-info&quot;&gt;
+                    &lt;h3&gt;永遠の愛を誓う楽園ウェディング&lt;/h3&gt;
+                    &lt;p&gt;
+                        青い海と白い砂浜が織りなす絶景のロケーション。
+                        ガーデンチャペルでの挙式、ビーチでのパーティー、
+                        お二人の理想のウェディングを実現します。
+                    &lt;/p&gt;
+                    &lt;ul class=&quot;wedding-features&quot;&gt;
+                        &lt;li&gt;✓ オーシャンビューチャペル&lt;/li&gt;
+                        &lt;li&gt;✓ プライベートビーチパーティー&lt;/li&gt;
+                        &lt;li&gt;✓ フォトウェディングプラン&lt;/li&gt;
+                        &lt;li&gt;✓ ハネムーン特別プラン&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;button class=&quot;btn-primary&quot;&gt;ブライダルフェア予約&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;gallery&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Gallery&lt;/h2&gt;
+            &lt;div class=&quot;gallery-grid&quot;&gt;
+                &lt;div class=&quot;gallery-item large&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;リゾート風景&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;プール&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;ビーチ&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;客室&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;サンセット&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;cta&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;cta-content&quot;&gt;
+                &lt;h2&gt;特別なリゾート体験を&lt;/h2&gt;
+                &lt;p&gt;今すぐ予約して、楽園での素晴らしい休日をお過ごしください&lt;/p&gt;
+                &lt;div class=&quot;cta-buttons&quot;&gt;
+                    &lt;button class=&quot;btn-primary&quot;&gt;オンライン予約&lt;/button&gt;
+                    &lt;button class=&quot;btn-outline-white&quot;&gt;資料請求&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-info&quot;&gt;
+                    &lt;h3&gt;Ocean Paradise Resort&lt;/h3&gt;
+                    &lt;p&gt;〒904-0401 沖縄県国頭郡恩納村名嘉真2288-1&lt;/p&gt;
+                    &lt;p&gt;TEL: 098-123-4567 | FAX: 098-123-4568&lt;/p&gt;
+                    &lt;p&gt;Email: info@oceanparadise.jp&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-links&quot;&gt;
+                    &lt;h4&gt;Information&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;アクセス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;よくある質問&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;採用情報&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プライバシーポリシー&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-social&quot;&gt;
+                    &lt;h4&gt;Follow Us&lt;/h4&gt;
+                    &lt;div class=&quot;social-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Twitter&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;YouTube&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p&gt;&amp;copy; 2025 Ocean Paradise Resort. All rights reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // ハンバーガーメニュー
+const hamburger = document.getElementById(&#x27;hamburger&#x27;);
+const mainNav = document.getElementById(&#x27;main-nav&#x27;);
+
+if (hamburger &amp;&amp; mainNav) {
+    hamburger.addEventListener(&#x27;click&#x27;, function() {
+        this.classList.toggle(&#x27;active&#x27;);
+        mainNav.classList.toggle(&#x27;active&#x27;);
+    });
+    
+    // メニューリンクをクリックしたら閉じる
+    const navLinks = mainNav.querySelectorAll(&#x27;a&#x27;);
+    navLinks.forEach(link =&gt; {
+        link.addEventListener(&#x27;click&#x27;, () =&gt; {
+            hamburger.classList.remove(&#x27;active&#x27;);
+            mainNav.classList.remove(&#x27;active&#x27;);
+        });
+    });
+}
+
+// スムーズスクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// 予約ボタン
+document.querySelectorAll(&#x27;.btn-primary&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const text = this.textContent;
+        if (text.includes(&#x27;予約&#x27;)) {
+            alert(&#x27;予約システムに接続します（実装予定）&#x27;);
+        } else if (text.includes(&#x27;ブライダル&#x27;)) {
+            alert(&#x27;ブライダルフェア予約フォームを開きます（実装予定）&#x27;);
+        }
+    });
+});
+
+// スパメニュー
+document.querySelector(&#x27;.spa .btn-outline&#x27;)?.addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;スパメニューの詳細ページへ遷移します（実装予定）&#x27;);
+});
+
+// 資料請求
+document.querySelector(&#x27;.btn-outline-white&#x27;)?.addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;資料請求フォームを開きます（実装予定）&#x27;);
+});
+
+// パララックス効果
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector(&#x27;.hero-video img&#x27;);
+    if (hero) {
+        hero.style.transform = &#x27;translateY(&#x27; + scrolled * 0.5 + &#x27;px)&#x27;;
+    }
+});
+
+// ギャラリー画像のホバーエフェクト
+document.querySelectorAll(&#x27;.gallery-item&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;click&#x27;, function() {
+        alert(&#x27;画像を拡大表示します（実装予定）&#x27;);
+    });
+});
+
+// アクティビティカードのアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -50px 0px&#x27;
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = &#x27;0&#x27;;
+            entry.target.style.transform = &#x27;translateY(20px)&#x27;;
+            
+            setTimeout(() =&gt; {
+                entry.target.style.transition = &#x27;all 0.5s ease&#x27;;
+                entry.target.style.opacity = &#x27;1&#x27;;
+                entry.target.style.transform = &#x27;translateY(0)&#x27;;
+            }, 100);
+            
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll(&#x27;.activity-card&#x27;).forEach(card =&gt; {
+    observer.observe(card);
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="ホテル - リゾート" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"hotel-resort\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"hotel-resort\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"hotel-resort\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"hotel-resort\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"l5P3rj6mw6XJNA5eeF8xG\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"hotel-resort\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

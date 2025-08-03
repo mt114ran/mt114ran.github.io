@@ -1,0 +1,1633 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;小売店 - ホームセンター&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Arial&#x27;, &#x27;Yu Gothic&#x27;, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: #f8f9fa;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #2c5530 0%, #3d7c47 100%);
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 30px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.search-section {
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-box {
+    display: flex;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.category-select {
+    padding: 12px 15px;
+    border: none;
+    background: #f8f9fa;
+    outline: none;
+    min-width: 140px;
+    border-left: 1px solid #e0e0e0;
+}
+
+.search-btn {
+    padding: 12px 20px;
+    background: #2c5530;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.search-btn:hover {
+    background: #1e3b21;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #a8d5aa;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.store-locator,
+.cart-btn {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.store-locator:hover,
+.cart-btn:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+.cart-count {
+    background: #ff4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 80px 0;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #2c5530;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #666;
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2c5530, #3d7c47);
+    color: white;
+    box-shadow: 0 4px 15px rgba(44, 85, 48, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(44, 85, 48, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #2c5530;
+    border: 2px solid #2c5530;
+}
+
+.btn-secondary:hover {
+    background: #2c5530;
+    color: white;
+}
+
+.hero-visual img {
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Services Banner */
+.services-banner {
+    background: white;
+    padding: 60px 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.service-item {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.service-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #2c5530;
+    font-weight: 600;
+}
+
+.service-item p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #2c5530;
+    position: relative;
+}
+
+.section-title::after {
+    content: &#x27;&#x27;;
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #2c5530, #3d7c47);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* Categories */
+.categories {
+    background: white;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.category-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-info {
+    padding: 25px;
+}
+
+.category-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #2c5530;
+    font-weight: 600;
+}
+
+.category-info p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.category-features {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.category-features span {
+    background: #e8f5e8;
+    color: #2c5530;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Featured Products */
+.featured-products {
+    background: #f8f9fa;
+}
+
+.product-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.tab-btn {
+    background: white;
+    border: 2px solid #e0e0e0;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #666;
+    font-weight: 500;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #2c5530;
+    border-color: #2c5530;
+    color: white;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.badge.bestseller {
+    background: #ff6b35;
+}
+
+.badge.new {
+    background: #2ed573;
+}
+
+.badge.sale {
+    background: #ff4757;
+}
+
+.quick-add {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(44, 85, 48, 0.9);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.product-card:hover .quick-add {
+    opacity: 1;
+}
+
+.product-info {
+    padding: 25px;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+.brand {
+    color: #2c5530;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.product-specs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.product-specs span {
+    background: #f1f3f4;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    color: #666;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.stars {
+    color: #ffa502;
+    font-size: 14px;
+}
+
+.review-count {
+    color: #999;
+    font-size: 12px;
+}
+
+.price {
+    font-size: 18px;
+    color: #2c5530;
+    font-weight: bold;
+}
+
+.price-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+}
+
+.sale-price {
+    font-size: 18px;
+    color: #ff4757;
+    font-weight: bold;
+}
+
+/* DIY Section */
+.diy-section {
+    background: white;
+}
+
+.diy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.diy-project {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.diy-project:hover {
+    transform: translateY(-5px);
+}
+
+.diy-project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.diy-info {
+    padding: 25px;
+}
+
+.diy-info h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #2c5530;
+    font-weight: 600;
+}
+
+.diy-info p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.diy-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.difficulty {
+    color: #ff6b35;
+    font-weight: 500;
+}
+
+.diy-link {
+    color: #2c5530;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid #2c5530;
+    padding-bottom: 2px;
+    transition: all 0.3s;
+}
+
+.diy-link:hover {
+    color: #3d7c47;
+    border-bottom-color: #3d7c47;
+}
+
+/* Garden Section */
+.garden-section {
+    background: #f8f9fa;
+}
+
+.garden-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.garden-text h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #2c5530;
+    font-weight: bold;
+}
+
+.garden-text p {
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.7;
+}
+
+.seasonal-plants {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.seasonal-plants h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #2c5530;
+}
+
+.plant-list {
+    display: grid;
+    gap: 15px;
+}
+
+.plant-item h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #2c5530;
+}
+
+.plant-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+.garden-visual img {
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Services Detail */
+.services-detail {
+    background: white;
+}
+
+.services-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.service-detail-card {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.service-detail-card:hover {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.service-detail-icon {
+    font-size: 48px;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.service-detail-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2c5530;
+    font-weight: bold;
+}
+
+.service-detail-card p {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.service-detail-card ul {
+    text-align: left;
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.service-detail-card ul li {
+    margin-bottom: 8px;
+    color: #666;
+    padding-left: 15px;
+    position: relative;
+}
+
+.service-detail-card ul li::before {
+    content: &#x27;✓&#x27;;
+    color: #2c5530;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.service-price {
+    background: #e8f5e8;
+    color: #2c5530;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Pro Section */
+.pro-section {
+    background: #f8f9fa;
+}
+
+.pro-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.pro-benefits h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #2c5530;
+    font-weight: bold;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.benefit-item {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.benefit-item h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #2c5530;
+    font-weight: 600;
+}
+
+.benefit-item p {
+    color: #666;
+    font-size: 14px;
+}
+
+.pro-registration {
+    background: linear-gradient(135deg, #2c5530, #3d7c47);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.pro-registration h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.pro-registration p {
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.pro-registration .btn-primary {
+    background: white;
+    color: #2c5530;
+    margin-top: 20px;
+}
+
+.pro-registration .btn-primary:hover {
+    background: #f8f9fa;
+}
+
+/* Newsletter */
+.newsletter {
+    background: linear-gradient(135deg, #2c5530, #3d7c47);
+    color: white;
+    text-align: center;
+}
+
+.newsletter-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.newsletter-text h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.newsletter-text p {
+    opacity: 0.9;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 15px;
+    min-width: 400px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+}
+
+.newsletter-form .btn-primary {
+    background: white;
+    color: #2c5530;
+    box-shadow: none;
+}
+
+.newsletter-form .btn-primary:hover {
+    background: #f8f9fa;
+}
+
+/* Footer */
+.footer {
+    background: #2c2c2c;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    color: #3d7c47;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #3d7c47;
+}
+
+.store-hours h4 {
+    margin: 20px 0 10px;
+    color: #3d7c47;
+}
+
+.store-hours p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #444;
+    color: #999;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .hero-content,
+    .garden-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .hero-content h2 {
+        font-size: 36px;
+    }
+    
+    .newsletter-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .newsletter-form {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .pro-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;header-content&quot;&gt;
+                &lt;h1 class=&quot;logo&quot;&gt;HOME CRAFT&lt;/h1&gt;
+                &lt;div class=&quot;search-section&quot;&gt;
+                    &lt;div class=&quot;search-box&quot;&gt;
+                        &lt;input type=&quot;text&quot; placeholder=&quot;商品を検索...&quot;&gt;
+                        &lt;select class=&quot;category-select&quot;&gt;
+                            &lt;option&gt;全カテゴリー&lt;/option&gt;
+                            &lt;option&gt;工具・電動工具&lt;/option&gt;
+                            &lt;option&gt;資材・建材&lt;/option&gt;
+                            &lt;option&gt;園芸・ガーデニング&lt;/option&gt;
+                            &lt;option&gt;家庭用品・生活雑貨&lt;/option&gt;
+                        &lt;/select&gt;
+                        &lt;button class=&quot;search-btn&quot;&gt;🔍&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;nav class=&quot;nav&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#categories&quot;&gt;カテゴリー&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#diy&quot;&gt;DIY特集&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#garden&quot;&gt;ガーデニング&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;サービス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#pro&quot;&gt;プロ向け&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+                &lt;div class=&quot;header-actions&quot;&gt;
+                    &lt;button class=&quot;store-locator&quot;&gt;店舗検索&lt;/button&gt;
+                    &lt;button class=&quot;cart-btn&quot;&gt;🛒 &lt;span class=&quot;cart-count&quot;&gt;0&lt;/span&gt;&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h2&gt;暮らしをつくる&lt;br&gt;住まいを創る&lt;/h2&gt;
+            &lt;p&gt;DIYから本格的なリフォームまで、あなたの「つくりたい」を応援します&lt;/p&gt;
+            &lt;div class=&quot;hero-actions&quot;&gt;
+                &lt;a href=&quot;#categories&quot; class=&quot;btn-primary&quot;&gt;商品を探す&lt;/a&gt;
+                &lt;a href=&quot;#diy&quot; class=&quot;btn-secondary&quot;&gt;DIYアイデア&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-visual&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1558618644-fcd25c85cd64?w=800&amp;h=600&amp;fit=crop&amp;q=80&quot; alt=&quot;ホームセンター&quot;&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;services-banner&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;services-grid&quot;&gt;
+                &lt;div class=&quot;service-item&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🚚&lt;/div&gt;
+                    &lt;h3&gt;配送・設置サービス&lt;/h3&gt;
+                    &lt;p&gt;大型商品も安心配送&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-item&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🛠️&lt;/div&gt;
+                    &lt;h3&gt;カット・加工サービス&lt;/h3&gt;
+                    &lt;p&gt;木材・金属の加工承ります&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-item&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🏠&lt;/div&gt;
+                    &lt;h3&gt;リフォーム相談&lt;/h3&gt;
+                    &lt;p&gt;専門スタッフがご提案&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-item&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;📚&lt;/div&gt;
+                    &lt;h3&gt;DIY教室&lt;/h3&gt;
+                    &lt;p&gt;初心者向け講座開催&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;categories&quot; class=&quot;categories&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;商品カテゴリー&lt;/h2&gt;
+            &lt;div class=&quot;category-grid&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;工具・電動工具&quot;&gt;
+                    &lt;div class=&quot;category-info&quot;&gt;
+                        &lt;h3&gt;工具・電動工具&lt;/h3&gt;
+                        &lt;p&gt;プロ仕様から家庭用まで豊富な品揃え&lt;/p&gt;
+                        &lt;div class=&quot;category-features&quot;&gt;
+                            &lt;span&gt;電動ドリル&lt;/span&gt;
+                            &lt;span&gt;インパクトドライバー&lt;/span&gt;
+                            &lt;span&gt;のこぎり&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1558618644-fcd25c85cd64?w=400&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;資材・建材&quot;&gt;
+                    &lt;div class=&quot;category-info&quot;&gt;
+                        &lt;h3&gt;資材・建材&lt;/h3&gt;
+                        &lt;p&gt;木材からコンクリートまで幅広く対応&lt;/p&gt;
+                        &lt;div class=&quot;category-features&quot;&gt;
+                            &lt;span&gt;木材&lt;/span&gt;
+                            &lt;span&gt;金属材&lt;/span&gt;
+                            &lt;span&gt;塗料&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;園芸・ガーデニング&quot;&gt;
+                    &lt;div class=&quot;category-info&quot;&gt;
+                        &lt;h3&gt;園芸・ガーデニング&lt;/h3&gt;
+                        &lt;p&gt;美しい庭づくりをサポート&lt;/p&gt;
+                        &lt;div class=&quot;category-features&quot;&gt;
+                            &lt;span&gt;花・苗&lt;/span&gt;
+                            &lt;span&gt;園芸用品&lt;/span&gt;
+                            &lt;span&gt;肥料&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;家庭用品&quot;&gt;
+                    &lt;div class=&quot;category-info&quot;&gt;
+                        &lt;h3&gt;家庭用品・生活雑貨&lt;/h3&gt;
+                        &lt;p&gt;毎日の暮らしに必要なアイテム&lt;/p&gt;
+                        &lt;div class=&quot;category-features&quot;&gt;
+                            &lt;span&gt;収納用品&lt;/span&gt;
+                            &lt;span&gt;掃除用具&lt;/span&gt;
+                            &lt;span&gt;キッチン用品&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;家電・電設&quot;&gt;
+                    &lt;div class=&quot;category-info&quot;&gt;
+                        &lt;h3&gt;家電・電設機器&lt;/h3&gt;
+                        &lt;p&gt;家庭からオフィスまで対応&lt;/p&gt;
+                        &lt;div class=&quot;category-features&quot;&gt;
+                            &lt;span&gt;照明器具&lt;/span&gt;
+                            &lt;span&gt;配線部材&lt;/span&gt;
+                            &lt;span&gt;家電製品&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;category-card&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&amp;h=300&amp;fit=crop&amp;q=80&quot; alt=&quot;ペット・アウトドア&quot;&gt;
+                    &lt;div class=&quot;category-info&quot;&gt;
+                        &lt;h3&gt;ペット・アウトドア&lt;/h3&gt;
+                        &lt;p&gt;ペット用品からアウトドアグッズまで&lt;/p&gt;
+                        &lt;div class=&quot;category-features&quot;&gt;
+                            &lt;span&gt;ペット用品&lt;/span&gt;
+                            &lt;span&gt;キャンプ用品&lt;/span&gt;
+                            &lt;span&gt;バーベキュー&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;featured-products&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;おすすめ商品&lt;/h2&gt;
+            &lt;div class=&quot;product-tabs&quot;&gt;
+                &lt;button class=&quot;tab-btn active&quot; data-category=&quot;popular&quot;&gt;人気商品&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-category=&quot;new&quot;&gt;新商品&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-category=&quot;sale&quot;&gt;特価商品&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;products-grid&quot;&gt;
+                &lt;div class=&quot;product-card&quot; data-category=&quot;popular&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1504148455328-c376907d081c?w=300&amp;h=200&amp;fit=crop&amp;q=80&quot; alt=&quot;充電式ドライバー&quot;&gt;
+                        &lt;span class=&quot;badge bestseller&quot;&gt;ベストセラー&lt;/span&gt;
+                        &lt;button class=&quot;quick-add&quot; data-product=&quot;cordless-driver&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;充電式インパクトドライバー&lt;/h3&gt;
+                        &lt;p class=&quot;brand&quot;&gt;MAKITA&lt;/p&gt;
+                        &lt;div class=&quot;product-specs&quot;&gt;
+                            &lt;span&gt;18V&lt;/span&gt;
+                            &lt;span&gt;軽量1.5kg&lt;/span&gt;
+                            &lt;span&gt;LED付き&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;rating&quot;&gt;
+                            &lt;span class=&quot;stars&quot;&gt;★★★★★&lt;/span&gt;
+                            &lt;span class=&quot;review-count&quot;&gt;(234件)&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥28,800&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot; data-category=&quot;new&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=300&amp;h=200&amp;fit=crop&amp;q=80&quot; alt=&quot;園芸セット&quot;&gt;
+                        &lt;span class=&quot;badge new&quot;&gt;新商品&lt;/span&gt;
+                        &lt;button class=&quot;quick-add&quot; data-product=&quot;garden-set&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;ガーデニングスターターセット&lt;/h3&gt;
+                        &lt;p class=&quot;brand&quot;&gt;GREEN CRAFT&lt;/p&gt;
+                        &lt;div class=&quot;product-specs&quot;&gt;
+                            &lt;span&gt;10点セット&lt;/span&gt;
+                            &lt;span&gt;初心者向け&lt;/span&gt;
+                            &lt;span&gt;説明書付き&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;rating&quot;&gt;
+                            &lt;span class=&quot;stars&quot;&gt;★★★★☆&lt;/span&gt;
+                            &lt;span class=&quot;review-count&quot;&gt;(89件)&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥4,980&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot; data-category=&quot;sale&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1558618644-fcd25c85cd64?w=300&amp;h=200&amp;fit=crop&amp;q=80&quot; alt=&quot;木材セット&quot;&gt;
+                        &lt;span class=&quot;badge sale&quot;&gt;30%OFF&lt;/span&gt;
+                        &lt;button class=&quot;quick-add&quot; data-product=&quot;wood-set&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;DIY用木材セット&lt;/h3&gt;
+                        &lt;p class=&quot;brand&quot;&gt;WOOD CRAFT&lt;/p&gt;
+                        &lt;div class=&quot;product-specs&quot;&gt;
+                            &lt;span&gt;SPF材&lt;/span&gt;
+                            &lt;span&gt;5種類&lt;/span&gt;
+                            &lt;span&gt;カット済み&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;rating&quot;&gt;
+                            &lt;span class=&quot;stars&quot;&gt;★★★★☆&lt;/span&gt;
+                            &lt;span class=&quot;review-count&quot;&gt;(156件)&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;price-info&quot;&gt;
+                            &lt;span class=&quot;original-price&quot;&gt;¥8,500&lt;/span&gt;
+                            &lt;span class=&quot;sale-price&quot;&gt;¥5,950&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot; data-category=&quot;popular&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1484154218962-a197022b5858?w=300&amp;h=200&amp;fit=crop&amp;q=80&quot; alt=&quot;収納ボックス&quot;&gt;
+                        &lt;button class=&quot;quick-add&quot; data-product=&quot;storage-box&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;多機能収納ボックス&lt;/h3&gt;
+                        &lt;p class=&quot;brand&quot;&gt;STORAGE PRO&lt;/p&gt;
+                        &lt;div class=&quot;product-specs&quot;&gt;
+                            &lt;span&gt;75L&lt;/span&gt;
+                            &lt;span&gt;積み重ね可&lt;/span&gt;
+                            &lt;span&gt;透明窓付き&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;rating&quot;&gt;
+                            &lt;span class=&quot;stars&quot;&gt;★★★★☆&lt;/span&gt;
+                            &lt;span class=&quot;review-count&quot;&gt;(123件)&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥2,980&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot; data-category=&quot;new&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=300&amp;h=200&amp;fit=crop&amp;q=80&quot; alt=&quot;LED照明&quot;&gt;
+                        &lt;span class=&quot;badge new&quot;&gt;新商品&lt;/span&gt;
+                        &lt;button class=&quot;quick-add&quot; data-product=&quot;led-light&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;高効率LED照明器具&lt;/h3&gt;
+                        &lt;p class=&quot;brand&quot;&gt;LIGHT TECH&lt;/p&gt;
+                        &lt;div class=&quot;product-specs&quot;&gt;
+                            &lt;span&gt;60W相当&lt;/span&gt;
+                            &lt;span&gt;調光可能&lt;/span&gt;
+                            &lt;span&gt;10年保証&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;rating&quot;&gt;
+                            &lt;span class=&quot;stars&quot;&gt;★★★★★&lt;/span&gt;
+                            &lt;span class=&quot;review-count&quot;&gt;(67件)&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥12,800&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot; data-category=&quot;sale&quot;&gt;
+                    &lt;div class=&quot;product-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&amp;h=200&amp;fit=crop&amp;q=80&quot; alt=&quot;工具セット&quot;&gt;
+                        &lt;span class=&quot;badge sale&quot;&gt;25%OFF&lt;/span&gt;
+                        &lt;button class=&quot;quick-add&quot; data-product=&quot;tool-set&quot;&gt;カートに追加&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;product-info&quot;&gt;
+                        &lt;h3&gt;家庭用工具セット&lt;/h3&gt;
+                        &lt;p class=&quot;brand&quot;&gt;TOOL MASTER&lt;/p&gt;
+                        &lt;div class=&quot;product-specs&quot;&gt;
+                            &lt;span&gt;35点セット&lt;/span&gt;
+                            &lt;span&gt;収納ケース付&lt;/span&gt;
+                            &lt;span&gt;保証書付&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;rating&quot;&gt;
+                            &lt;span class=&quot;stars&quot;&gt;★★★★☆&lt;/span&gt;
+                            &lt;span class=&quot;review-count&quot;&gt;(189件)&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;price-info&quot;&gt;
+                            &lt;span class=&quot;original-price&quot;&gt;¥15,800&lt;/span&gt;
+                            &lt;span class=&quot;sale-price&quot;&gt;¥11,850&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;diy&quot; class=&quot;diy-section&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;DIY特集&lt;/h2&gt;
+            &lt;div class=&quot;diy-grid&quot;&gt;
+                &lt;div class=&quot;diy-project&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&amp;h=250&amp;fit=crop&amp;q=80&quot; alt=&quot;棚作りDIY&quot;&gt;
+                    &lt;div class=&quot;diy-info&quot;&gt;
+                        &lt;h3&gt;簡単！収納棚をDIY&lt;/h3&gt;
+                        &lt;p&gt;初心者でも作れる実用的な収納棚の作り方をご紹介。必要な工具や材料もリストアップ。&lt;/p&gt;
+                        &lt;div class=&quot;diy-meta&quot;&gt;
+                            &lt;span class=&quot;difficulty&quot;&gt;難易度: ★★☆☆☆&lt;/span&gt;
+                            &lt;span class=&quot;time&quot;&gt;所要時間: 3時間&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;diy-link&quot;&gt;作り方を見る&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;diy-project&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&amp;h=250&amp;fit=crop&amp;q=80&quot; alt=&quot;ガーデンDIY&quot;&gt;
+                    &lt;div class=&quot;diy-info&quot;&gt;
+                        &lt;h3&gt;ベランダガーデンを作ろう&lt;/h3&gt;
+                        &lt;p&gt;限られたスペースでも楽しめるベランダガーデンの作り方。季節の花を楽しもう。&lt;/p&gt;
+                        &lt;div class=&quot;diy-meta&quot;&gt;
+                            &lt;span class=&quot;difficulty&quot;&gt;難易度: ★☆☆☆☆&lt;/span&gt;
+                            &lt;span class=&quot;time&quot;&gt;所要時間: 1時間&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;diy-link&quot;&gt;作り方を見る&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;diy-project&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&amp;h=250&amp;fit=crop&amp;q=80&quot; alt=&quot;照明DIY&quot;&gt;
+                    &lt;div class=&quot;diy-info&quot;&gt;
+                        &lt;h3&gt;おしゃれな間接照明&lt;/h3&gt;
+                        &lt;p&gt;お部屋の雰囲気を変える間接照明をDIY。電気工事不要で簡単設置。&lt;/p&gt;
+                        &lt;div class=&quot;diy-meta&quot;&gt;
+                            &lt;span class=&quot;difficulty&quot;&gt;難易度: ★★★☆☆&lt;/span&gt;
+                            &lt;span class=&quot;time&quot;&gt;所要時間: 2時間&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;diy-link&quot;&gt;作り方を見る&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;garden&quot; class=&quot;garden-section&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;garden-content&quot;&gt;
+                &lt;div class=&quot;garden-text&quot;&gt;
+                    &lt;h2&gt;ガーデニング・園芸&lt;/h2&gt;
+                    &lt;p&gt;季節の花々で彩る美しい庭づくりをサポートします。&lt;/p&gt;
+                    &lt;p&gt;初心者からベテランまで、レベルに合わせたアドバイスをご提供。&lt;/p&gt;
+                    &lt;div class=&quot;seasonal-plants&quot;&gt;
+                        &lt;h3&gt;今月のおすすめ植物&lt;/h3&gt;
+                        &lt;div class=&quot;plant-list&quot;&gt;
+                            &lt;div class=&quot;plant-item&quot;&gt;
+                                &lt;h4&gt;🌸 夏の花&lt;/h4&gt;
+                                &lt;p&gt;ひまわり、朝顔、マリーゴールド&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;plant-item&quot;&gt;
+                                &lt;h4&gt;🌿 ハーブ&lt;/h4&gt;
+                                &lt;p&gt;バジル、ミント、ローズマリー&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;plant-item&quot;&gt;
+                                &lt;h4&gt;🥬 野菜&lt;/h4&gt;
+                                &lt;p&gt;トマト、きゅうり、なす&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;btn-primary&quot;&gt;園芸コーナーを見る&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;garden-visual&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&amp;h=400&amp;fit=crop&amp;q=80&quot; alt=&quot;ガーデニング&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;services&quot; class=&quot;services-detail&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;充実のサービス&lt;/h2&gt;
+            &lt;div class=&quot;services-detail-grid&quot;&gt;
+                &lt;div class=&quot;service-detail-card&quot;&gt;
+                    &lt;div class=&quot;service-detail-icon&quot;&gt;🚚&lt;/div&gt;
+                    &lt;h3&gt;配送・設置サービス&lt;/h3&gt;
+                    &lt;p&gt;重い建材や大型商品も安心してお任せください。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;・大型商品配送（2tトラック対応）&lt;/li&gt;
+                        &lt;li&gt;・家具・家電の設置&lt;/li&gt;
+                        &lt;li&gt;・不要品の回収&lt;/li&gt;
+                        &lt;li&gt;・時間指定配送&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;div class=&quot;service-price&quot;&gt;配送料: ¥1,500〜&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-detail-card&quot;&gt;
+                    &lt;div class=&quot;service-detail-icon&quot;&gt;🛠️&lt;/div&gt;
+                    &lt;h3&gt;カット・加工サービス&lt;/h3&gt;
+                    &lt;p&gt;木材・金属材の精密加工を承ります。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;・木材カット（直線・曲線）&lt;/li&gt;
+                        &lt;li&gt;・穴あけ加工&lt;/li&gt;
+                        &lt;li&gt;・金属材カット&lt;/li&gt;
+                        &lt;li&gt;・図面からの加工&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;div class=&quot;service-price&quot;&gt;加工料: ¥100〜&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-detail-card&quot;&gt;
+                    &lt;div class=&quot;service-detail-icon&quot;&gt;🏠&lt;/div&gt;
+                    &lt;h3&gt;リフォーム相談&lt;/h3&gt;
+                    &lt;p&gt;プロのリフォームプランナーがご提案。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;・無料相談・見積もり&lt;/li&gt;
+                        &lt;li&gt;・3Dシミュレーション&lt;/li&gt;
+                        &lt;li&gt;・施工業者紹介&lt;/li&gt;
+                        &lt;li&gt;・アフターフォロー&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;div class=&quot;service-price&quot;&gt;相談料: 無料&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;pro&quot; class=&quot;pro-section&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;プロ向けサービス&lt;/h2&gt;
+            &lt;div class=&quot;pro-content&quot;&gt;
+                &lt;div class=&quot;pro-benefits&quot;&gt;
+                    &lt;h3&gt;法人・建設業者様向け特典&lt;/h3&gt;
+                    &lt;div class=&quot;benefits-grid&quot;&gt;
+                        &lt;div class=&quot;benefit-item&quot;&gt;
+                            &lt;h4&gt;💰 大口割引&lt;/h4&gt;
+                            &lt;p&gt;まとめ買いで最大20%OFF&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;benefit-item&quot;&gt;
+                            &lt;h4&gt;📞 専用サポート&lt;/h4&gt;
+                            &lt;p&gt;プロサポートデスク&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;benefit-item&quot;&gt;
+                            &lt;h4&gt;🚚 優先配送&lt;/h4&gt;
+                            &lt;p&gt;現場直送・時間指定&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;benefit-item&quot;&gt;
+                            &lt;h4&gt;📋 後払い決済&lt;/h4&gt;
+                            &lt;p&gt;月末締め翌月払い&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;pro-registration&quot;&gt;
+                    &lt;h3&gt;プロ会員登録&lt;/h3&gt;
+                    &lt;p&gt;建設業・工務店・設計事務所の皆様&lt;/p&gt;
+                    &lt;p&gt;プロ会員登録で特別価格でご提供いたします&lt;/p&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;btn-primary&quot;&gt;プロ会員登録&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;newsletter&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;newsletter-content&quot;&gt;
+                &lt;div class=&quot;newsletter-text&quot;&gt;
+                    &lt;h2&gt;お得情報をお届け&lt;/h2&gt;
+                    &lt;p&gt;セール情報、新商品、DIYアイデアをメールでお送りします&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;form class=&quot;newsletter-form&quot;&gt;
+                    &lt;input type=&quot;email&quot; placeholder=&quot;メールアドレスを入力&quot; required&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;btn-primary&quot;&gt;登録する&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;HOME CRAFT CENTER&lt;/h3&gt;
+                    &lt;p&gt;暮らしをつくる、住まいを創る&lt;/p&gt;
+                    &lt;div class=&quot;store-hours&quot;&gt;
+                        &lt;h4&gt;営業時間&lt;/h4&gt;
+                        &lt;p&gt;平日: 9:00-20:00&lt;/p&gt;
+                        &lt;p&gt;土日祝: 9:00-19:00&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;商品カテゴリー&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;工具・電動工具&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;資材・建材&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;園芸・ガーデニング&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;家庭用品&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;家電・電設&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;サービス&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;配送・設置&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;カット・加工&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;リフォーム相談&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;DIY教室&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プロ向けサービス&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;サポート&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;よくある質問&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;配送について&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;返品・交換&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;店舗案内&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;copyright&quot;&gt;&amp;copy; 2025 HOME CRAFT CENTER. All rights reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // Search functionality
+document.querySelector(&#x27;.search-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    const searchTerm = document.querySelector(&#x27;.search-box input&#x27;).value;
+    const category = document.querySelector(&#x27;.category-select&#x27;).value;
+    
+    if (searchTerm.trim()) {
+        alert(`検索中: &quot;${searchTerm}&quot;${category !== &#x27;全カテゴリー&#x27; ? ` in ${category}` : &#x27;&#x27;}`);
+    }
+});
+
+// Enter key search
+document.querySelector(&#x27;.search-box input&#x27;).addEventListener(&#x27;keypress&#x27;, function(e) {
+    if (e.key === &#x27;Enter&#x27;) {
+        document.querySelector(&#x27;.search-btn&#x27;).click();
+    }
+});
+
+// Product tabs functionality
+document.querySelectorAll(&#x27;.tab-btn&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const category = this.dataset.category;
+        
+        // Update active tab
+        document.querySelectorAll(&#x27;.tab-btn&#x27;).forEach(btn =&gt; btn.classList.remove(&#x27;active&#x27;));
+        this.classList.add(&#x27;active&#x27;);
+        
+        // Show/hide products based on category
+        document.querySelectorAll(&#x27;.product-card&#x27;).forEach(card =&gt; {
+            if (card.dataset.category === category) {
+                card.style.display = &#x27;block&#x27;;
+            } else {
+                card.style.display = &#x27;none&#x27;;
+            }
+        });
+    });
+});
+
+// Cart functionality
+let cartItems = 0;
+
+document.querySelectorAll(&#x27;.quick-add&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const productId = this.dataset.product;
+        const productCard = this.closest(&#x27;.product-card&#x27;);
+        const productName = productCard.querySelector(&#x27;h3&#x27;).textContent;
+        const brand = productCard.querySelector(&#x27;.brand&#x27;).textContent;
+        const priceElement = productCard.querySelector(&#x27;.price, .sale-price&#x27;);
+        const price = priceElement ? priceElement.textContent : &#x27;価格未設定&#x27;;
+        
+        cartItems++;
+        updateCartCount();
+        
+        // Visual feedback
+        this.textContent = &#x27;追加済み&#x27;;
+        this.style.background = &#x27;#2ed573&#x27;;
+        setTimeout(() =&gt; {
+            this.textContent = &#x27;カートに追加&#x27;;
+            this.style.background = &#x27;rgba(44, 85, 48, 0.9)&#x27;;
+        }, 2000);
+        
+        alert(`${brand} ${productName} をカートに追加しました\n価格: ${price}`);
+    });
+});
+
+function updateCartCount() {
+    const countElement = document.querySelector(&#x27;.cart-count&#x27;);
+    countElement.textContent = cartItems;
+    
+    if (cartItems &gt; 0) {
+        countElement.style.display = &#x27;inline-flex&#x27;;
+    } else {
+        countElement.style.display = &#x27;none&#x27;;
+    }
+}
+
+// Cart button click
+document.querySelector(&#x27;.cart-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    if (cartItems &gt; 0) {
+        alert(`カートページを表示します\n商品数: ${cartItems}点`);
+    } else {
+        alert(&#x27;カートは空です&#x27;);
+    }
+});
+
+// Category navigation
+document.querySelectorAll(&#x27;.category-card&#x27;).forEach(card =&gt; {
+    card.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        const categoryName = this.querySelector(&#x27;h3&#x27;).textContent;
+        alert(`${categoryName} のページに移動します`);
+    });
+});
+
+// DIY project links
+document.querySelectorAll(&#x27;.diy-link&#x27;).forEach(link =&gt; {
+    link.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        const projectTitle = this.closest(&#x27;.diy-project&#x27;).querySelector(&#x27;h3&#x27;).textContent;
+        alert(`${projectTitle} の詳細ページに移動します\n\n必要な工具・材料リストと詳しい作り方をご紹介しています。`);
+    });
+});
+
+// Store locator
+document.querySelector(&#x27;.store-locator&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;店舗検索ページに移動します\n\n最寄りの店舗を検索できます：\n・住所から検索\n・現在地から検索\n・駅名から検索&#x27;);
+});
+
+// Newsletter subscription
+document.querySelector(&#x27;.newsletter-form&#x27;).addEventListener(&#x27;submit&#x27;, function(e) {
+    e.preventDefault();
+    
+    const email = this.querySelector(&#x27;input&#x27;).value;
+    
+    if (email &amp;&amp; email.includes(&#x27;@&#x27;)) {
+        alert(`${email} でニュースレターに登録しました\n\n以下の情報をお届けします：\n・セール・特価情報\n・新商品入荷情報\n・DIYアイデア・作り方\n・季節のガーデニング情報`);
+        this.querySelector(&#x27;input&#x27;).value = &#x27;&#x27;;
+    } else {
+        alert(&#x27;正しいメールアドレスを入力してください&#x27;);
+    }
+});
+
+// Pro registration
+document.querySelector(&#x27;.pro-registration .btn-primary&#x27;).addEventListener(&#x27;click&#x27;, function(e) {
+    e.preventDefault();
+    alert(&#x27;プロ会員登録ページに移動します\n\n以下の特典をご利用いただけます：\n・最大20%の大口割引\n・専用サポートデスク\n・優先配送サービス\n・後払い決済対応&#x27;);
+});
+
+// Smooth scrolling for navigation
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// Initialize
+updateCartCount();
+
+// Show popular products by default
+document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() {
+    // Show only popular products initially
+    document.querySelectorAll(&#x27;.product-card&#x27;).forEach(card =&gt; {
+        if (card.dataset.category === &#x27;popular&#x27;) {
+            card.style.display = &#x27;block&#x27;;
+        } else {
+            card.style.display = &#x27;none&#x27;;
+        }
+    });
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="小売店 - ホームセンター" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"retail-home\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"retail-home\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"retail-home\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"retail-home\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"Z6gAM_wsfHiGz11eLNOM-\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"retail-home\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

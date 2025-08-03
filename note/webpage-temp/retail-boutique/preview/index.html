@@ -1,0 +1,1113 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/8d311e01b6f6fa19.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;小売店 - ブティック&lt;/title&gt;
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Helvetica Neue&#x27;, &#x27;Hiragino Sans&#x27;, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: #fefefe;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    color: #d63384;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #d63384;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.slide-content h2 {
+    font-size: 56px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.slide-content p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.btn-elegant {
+    display: inline-block;
+    padding: 15px 40px;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.btn-elegant:hover {
+    background: white;
+    color: #333;
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: #333;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 60px;
+    font-weight: 300;
+}
+
+/* Collection */
+.collection-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: #999;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    color: #d63384;
+    border-bottom-color: #d63384;
+}
+
+.fashion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.fashion-item {
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.fashion-item:hover {
+    transform: translateY(-10px);
+}
+
+.fashion-image {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.fashion-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.fashion-item:hover .fashion-image img {
+    transform: scale(1.05);
+}
+
+.fashion-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.fashion-item:hover .fashion-overlay {
+    opacity: 1;
+}
+
+.quick-view,
+.add-wishlist {
+    padding: 10px 20px;
+    background: white;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.add-wishlist {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.fashion-info h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.designer {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price {
+    font-size: 20px;
+    color: #d63384;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.colors {
+    display: flex;
+    gap: 8px;
+}
+
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.color-dot:hover {
+    transform: scale(1.2);
+}
+
+/* Lookbook */
+.lookbook {
+    background: #f8f8f8;
+}
+
+.lookbook-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.look-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.look-item:hover {
+    transform: translateY(-5px);
+}
+
+.look-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.look-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 40px 30px 30px;
+}
+
+.look-info h3 {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.look-info p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.look-details {
+    color: #d63384;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #d63384;
+    padding-bottom: 2px;
+}
+
+/* Styling Service */
+.styling-service {
+    background: white;
+}
+
+.service-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.service-text h2 {
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #d63384;
+}
+
+.service-text &gt; p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.service-features {
+    margin-bottom: 40px;
+}
+
+.service-item {
+    margin-bottom: 30px;
+}
+
+.service-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.service-item p {
+    color: #666;
+    line-height: 1.7;
+}
+
+.service-image img {
+    border-radius: 10px;
+}
+
+/* Testimonial */
+.testimonial {
+    background: #d63384;
+    color: white;
+    text-align: center;
+}
+
+.testimonial .section-title {
+    color: white;
+}
+
+.testimonial-item {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-item p {
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.customer-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* About */
+.about {
+    background: #f8f8f8;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+}
+
+.atelier-info {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.atelier-info h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #d63384;
+}
+
+.atelier-info p {
+    margin-bottom: 10px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.gallery-grid img {
+    border-radius: 10px;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Contact */
+.contact {
+    background: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d63384;
+}
+
+.contact-info {
+    padding-left: 40px;
+}
+
+.contact-item {
+    margin-bottom: 40px;
+}
+
+.contact-item h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #d63384;
+}
+
+.contact-item p {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    color: #d63384;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #d63384;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    color: #999;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav ul {
+        display: none;
+    }
+    
+    .menu-btn {
+        display: block;
+    }
+    
+    .slide-content h2 {
+        font-size: 36px;
+    }
+    
+    .service-content,
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .lookbook-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        padding-left: 0;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;header-content&quot;&gt;
+                &lt;h1 class=&quot;logo&quot;&gt;ELEGANCE&lt;/h1&gt;
+                &lt;nav class=&quot;nav&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#collection&quot;&gt;コレクション&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#lookbook&quot;&gt;ルックブック&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#styling&quot;&gt;スタイリング&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;アトリエ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;予約&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+                &lt;div class=&quot;header-actions&quot;&gt;
+                    &lt;button class=&quot;menu-btn&quot;&gt;☰&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-slider&quot;&gt;
+            &lt;div class=&quot;slide active&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1920&amp;h=800&amp;fit=crop&quot; alt=&quot;エレガントなドレス&quot;&gt;
+                &lt;div class=&quot;slide-content&quot;&gt;
+                    &lt;h2&gt;Spring Couture 2025&lt;/h2&gt;
+                    &lt;p&gt;あなただけの特別な装いを&lt;/p&gt;
+                    &lt;a href=&quot;#collection&quot; class=&quot;btn-elegant&quot;&gt;コレクションを見る&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;collection&quot; class=&quot;collection&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;New Collection&lt;/h2&gt;
+            &lt;div class=&quot;collection-tabs&quot;&gt;
+                &lt;button class=&quot;tab-btn active&quot; data-category=&quot;all&quot;&gt;すべて&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-category=&quot;dress&quot;&gt;ドレス&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-category=&quot;blouse&quot;&gt;ブラウス&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-category=&quot;skirt&quot;&gt;スカート&lt;/button&gt;
+                &lt;button class=&quot;tab-btn&quot; data-category=&quot;jacket&quot;&gt;ジャケット&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;fashion-grid&quot;&gt;
+                &lt;div class=&quot;fashion-item&quot; data-category=&quot;dress&quot;&gt;
+                    &lt;div class=&quot;fashion-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&amp;h=600&amp;fit=crop&quot; alt=&quot;シルクドレス&quot;&gt;
+                        &lt;div class=&quot;fashion-overlay&quot;&gt;
+                            &lt;button class=&quot;quick-view&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-wishlist&quot;&gt;♡&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;fashion-info&quot;&gt;
+                        &lt;h3&gt;シルクフローラルドレス&lt;/h3&gt;
+                        &lt;p class=&quot;designer&quot;&gt;デザイナー: 田中美穂&lt;/p&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥89,000&lt;/p&gt;
+                        &lt;div class=&quot;colors&quot;&gt;
+                            &lt;span class=&quot;color-dot&quot; style=&quot;background: #ff6b9d&quot;&gt;&lt;/span&gt;
+                            &lt;span class=&quot;color-dot&quot; style=&quot;background: #4ecdc4&quot;&gt;&lt;/span&gt;
+                            &lt;span class=&quot;color-dot&quot; style=&quot;background: #ffe66d&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;fashion-item&quot; data-category=&quot;blouse&quot;&gt;
+                    &lt;div class=&quot;fashion-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&amp;h=600&amp;fit=crop&quot; alt=&quot;レースブラウス&quot;&gt;
+                        &lt;div class=&quot;fashion-overlay&quot;&gt;
+                            &lt;button class=&quot;quick-view&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-wishlist&quot;&gt;♡&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;fashion-info&quot;&gt;
+                        &lt;h3&gt;フレンチレースブラウス&lt;/h3&gt;
+                        &lt;p class=&quot;designer&quot;&gt;デザイナー: 佐藤雅子&lt;/p&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥45,000&lt;/p&gt;
+                        &lt;div class=&quot;colors&quot;&gt;
+                            &lt;span class=&quot;color-dot&quot; style=&quot;background: #ffffff; border: 1px solid #ddd&quot;&gt;&lt;/span&gt;
+                            &lt;span class=&quot;color-dot&quot; style=&quot;background: #f8f8f8; border: 1px solid #ddd&quot;&gt;&lt;/span&gt;
+                            &lt;span class=&quot;color-dot&quot; style=&quot;background: #000000&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;fashion-item&quot; data-category=&quot;skirt&quot;&gt;
+                    &lt;div class=&quot;fashion-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1564859228273-274232fdb516?w=400&amp;h=600&amp;fit=crop&quot; alt=&quot;プリーツスカート&quot;&gt;
+                        &lt;div class=&quot;fashion-overlay&quot;&gt;
+                            &lt;button class=&quot;quick-view&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-wishlist&quot;&gt;♡&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;fashion-info&quot;&gt;
+                        &lt;h3&gt;シフォンプリーツスカート&lt;/h3&gt;
+                        &lt;p class=&quot;designer&quot;&gt;デザイナー: 山田花織&lt;/p&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥38,000&lt;/p&gt;
+                        &lt;div class=&quot;colors&quot;&gt;
+                            &lt;span class=&quot;color-dot&quot; style=&quot;background: #e8b4cb&quot;&gt;&lt;/span&gt;
+                            &lt;span class=&quot;color-dot&quot; style=&quot;background: #a8e6cf&quot;&gt;&lt;/span&gt;
+                            &lt;span class=&quot;color-dot&quot; style=&quot;background: #dcedc1&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;fashion-item&quot; data-category=&quot;jacket&quot;&gt;
+                    &lt;div class=&quot;fashion-image&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1544441893-675973e31985?w=400&amp;h=600&amp;fit=crop&quot; alt=&quot;テーラードジャケット&quot;&gt;
+                        &lt;div class=&quot;fashion-overlay&quot;&gt;
+                            &lt;button class=&quot;quick-view&quot;&gt;詳細を見る&lt;/button&gt;
+                            &lt;button class=&quot;add-wishlist&quot;&gt;♡&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;fashion-info&quot;&gt;
+                        &lt;h3&gt;ウールテーラードジャケット&lt;/h3&gt;
+                        &lt;p class=&quot;designer&quot;&gt;デザイナー: 高橋絵里&lt;/p&gt;
+                        &lt;p class=&quot;price&quot;&gt;¥78,000&lt;/p&gt;
+                        &lt;div class=&quot;colors&quot;&gt;
+                            &lt;span class=&quot;color-dot&quot; style=&quot;background: #8d6e63&quot;&gt;&lt;/span&gt;
+                            &lt;span class=&quot;color-dot&quot; style=&quot;background: #37474f&quot;&gt;&lt;/span&gt;
+                            &lt;span class=&quot;color-dot&quot; style=&quot;background: #5d4037&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;lookbook&quot; class=&quot;lookbook&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Look Book&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;スタイリストが提案する季節のコーディネート&lt;/p&gt;
+            &lt;div class=&quot;lookbook-grid&quot;&gt;
+                &lt;div class=&quot;look-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&amp;h=700&amp;fit=crop&quot; alt=&quot;オフィススタイル&quot;&gt;
+                    &lt;div class=&quot;look-info&quot;&gt;
+                        &lt;h3&gt;エレガントオフィス&lt;/h3&gt;
+                        &lt;p&gt;洗練された大人の女性のためのビジネススタイル&lt;/p&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;look-details&quot;&gt;スタイル詳細&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;look-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&amp;h=700&amp;fit=crop&quot; alt=&quot;カジュアルエレガント&quot;&gt;
+                    &lt;div class=&quot;look-info&quot;&gt;
+                        &lt;h3&gt;カジュアルエレガント&lt;/h3&gt;
+                        &lt;p&gt;週末のお出かけにぴったりなリラックススタイル&lt;/p&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;look-details&quot;&gt;スタイル詳細&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;look-item&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=500&amp;h=700&amp;fit=crop&quot; alt=&quot;パーティードレス&quot;&gt;
+                    &lt;div class=&quot;look-info&quot;&gt;
+                        &lt;h3&gt;パーティーエレガンス&lt;/h3&gt;
+                        &lt;p&gt;特別な夜を彩る華やかなイブニングスタイル&lt;/p&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;look-details&quot;&gt;スタイル詳細&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;styling&quot; class=&quot;styling-service&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;service-content&quot;&gt;
+                &lt;div class=&quot;service-text&quot;&gt;
+                    &lt;h2&gt;パーソナルスタイリング&lt;/h2&gt;
+                    &lt;p&gt;あなたの魅力を最大限に引き出すスタイリングサービス&lt;/p&gt;
+                    &lt;div class=&quot;service-features&quot;&gt;
+                        &lt;div class=&quot;service-item&quot;&gt;
+                            &lt;h3&gt;🎨 カラー診断&lt;/h3&gt;
+                            &lt;p&gt;あなたに似合う色を見つけて、より美しく輝かせます&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;service-item&quot;&gt;
+                            &lt;h3&gt;👗 体型分析&lt;/h3&gt;
+                            &lt;p&gt;体型の特徴を活かした最適なシルエットをご提案&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;service-item&quot;&gt;
+                            &lt;h3&gt;✨ トータルコーディネート&lt;/h3&gt;
+                            &lt;p&gt;イベントやシーンに合わせた完璧なスタイリング&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;a href=&quot;#contact&quot; class=&quot;btn-elegant&quot;&gt;相談予約をする&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&amp;h=400&amp;fit=crop&quot; alt=&quot;スタイリングサービス&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;testimonial&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;お客様の声&lt;/h2&gt;
+            &lt;div class=&quot;testimonial-slider&quot;&gt;
+                &lt;div class=&quot;testimonial-item active&quot;&gt;
+                    &lt;p&gt;&quot;ELEGANCEでドレスを選んでから、自分に自信が持てるようになりました。スタッフの方々の的確なアドバイスに感謝しています。&quot;&lt;/p&gt;
+                    &lt;div class=&quot;customer-info&quot;&gt;
+                        &lt;span class=&quot;customer-name&quot;&gt;田中さま（30代）&lt;/span&gt;
+                        &lt;span class=&quot;customer-occasion&quot;&gt;結婚式参列&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;h2&gt;私たちについて&lt;/h2&gt;
+                    &lt;p&gt;ELEGANCEは、女性の美しさと個性を大切にする上質なブティックです。&lt;/p&gt;
+                    &lt;p&gt;経験豊富なスタイリストが、お一人お一人に寄り添い、その方だけの特別な装いをご提案いたします。&lt;/p&gt;
+                    &lt;p&gt;厳選された素材と確かな技術で作られた服は、着る人の魅力を最大限に引き出します。&lt;/p&gt;
+                    &lt;div class=&quot;atelier-info&quot;&gt;
+                        &lt;h3&gt;アトリエ情報&lt;/h3&gt;
+                        &lt;p&gt;📍 〒107-0062 東京都港区南青山3-15-8&lt;/p&gt;
+                        &lt;p&gt;📞 TEL: 03-5678-9012&lt;/p&gt;
+                        &lt;p&gt;🕐 営業時間: 11:00-20:00（火曜定休）&lt;/p&gt;
+                        &lt;p&gt;👥 完全予約制（お一人様60分）&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-gallery&quot;&gt;
+                    &lt;div class=&quot;gallery-grid&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;アトリエ内観1&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1445205170230-053b83016050?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;アトリエ内観2&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;アトリエ内観3&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=300&amp;h=200&amp;fit=crop&quot; alt=&quot;アトリエ内観4&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;ご予約・お問い合わせ&lt;/h2&gt;
+            &lt;div class=&quot;contact-content&quot;&gt;
+                &lt;div class=&quot;contact-form&quot;&gt;
+                    &lt;form&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;お名前&lt;/label&gt;
+                            &lt;input type=&quot;text&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;お電話番号&lt;/label&gt;
+                            &lt;input type=&quot;tel&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;メールアドレス&lt;/label&gt;
+                            &lt;input type=&quot;email&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;ご希望サービス&lt;/label&gt;
+                            &lt;select required&gt;
+                                &lt;option value=&quot;&quot;&gt;選択してください&lt;/option&gt;
+                                &lt;option value=&quot;styling&quot;&gt;パーソナルスタイリング&lt;/option&gt;
+                                &lt;option value=&quot;shopping&quot;&gt;お買い物同行&lt;/option&gt;
+                                &lt;option value=&quot;color&quot;&gt;カラー診断&lt;/option&gt;
+                                &lt;option value=&quot;other&quot;&gt;その他&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;ご希望日時&lt;/label&gt;
+                            &lt;input type=&quot;datetime-local&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label&gt;ご要望・ご質問&lt;/label&gt;
+                            &lt;textarea rows=&quot;4&quot;&gt;&lt;/textarea&gt;
+                        &lt;/div&gt;
+                        &lt;button type=&quot;submit&quot; class=&quot;btn-elegant&quot;&gt;予約を申し込む&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;contact-info&quot;&gt;
+                    &lt;div class=&quot;contact-item&quot;&gt;
+                        &lt;h3&gt;📞 お電話でのご予約&lt;/h3&gt;
+                        &lt;p&gt;03-5678-9012&lt;/p&gt;
+                        &lt;p&gt;営業時間: 11:00-20:00（火曜定休）&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;contact-item&quot;&gt;
+                        &lt;h3&gt;📍 アクセス&lt;/h3&gt;
+                        &lt;p&gt;東京メトロ表参道駅 A4出口徒歩5分&lt;/p&gt;
+                        &lt;p&gt;東京都港区南青山3-15-8&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;contact-item&quot;&gt;
+                        &lt;h3&gt;💎 特別サービス&lt;/h3&gt;
+                        &lt;p&gt;初回カウンセリング無料&lt;/p&gt;
+                        &lt;p&gt;VIP会員制度あり&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;ELEGANCE BOUTIQUE&lt;/h3&gt;
+                    &lt;p&gt;あなたの美しさを輝かせる&lt;/p&gt;
+                    &lt;div class=&quot;social-links&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Pinterest&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;サービス&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;パーソナルスタイリング&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;カラー診断&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お買い物同行&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ワードローブ診断&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-section&quot;&gt;
+                    &lt;h3&gt;ブランド&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;オリジナルライン&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;セレクトブランド&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;オーダーメイド&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;アクセサリー&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;copyright&quot;&gt;&amp;copy; 2025 ELEGANCE BOUTIQUE. All rights reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // Collection filter functionality
+document.querySelectorAll(&#x27;.tab-btn&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const category = this.dataset.category;
+        
+        // Update active tab
+        document.querySelectorAll(&#x27;.tab-btn&#x27;).forEach(btn =&gt; btn.classList.remove(&#x27;active&#x27;));
+        this.classList.add(&#x27;active&#x27;);
+        
+        // Filter items
+        document.querySelectorAll(&#x27;.fashion-item&#x27;).forEach(item =&gt; {
+            if (category === &#x27;all&#x27; || item.dataset.category === category) {
+                item.style.display = &#x27;block&#x27;;
+            } else {
+                item.style.display = &#x27;none&#x27;;
+            }
+        });
+    });
+});
+
+// Quick view functionality
+document.querySelectorAll(&#x27;.quick-view&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const item = this.closest(&#x27;.fashion-item&#x27;);
+        const title = item.querySelector(&#x27;h3&#x27;).textContent;
+        const price = item.querySelector(&#x27;.price&#x27;).textContent;
+        alert(`${title}\n${price}\n\n詳細ページに移動します`);
+    });
+});
+
+// Wishlist functionality
+document.querySelectorAll(&#x27;.add-wishlist&#x27;).forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        if (this.textContent === &#x27;♡&#x27;) {
+            this.textContent = &#x27;♥&#x27;;
+            this.style.color = &#x27;#d63384&#x27;;
+            this.style.backgroundColor = &#x27;white&#x27;;
+        } else {
+            this.textContent = &#x27;♡&#x27;;
+            this.style.color = &#x27;white&#x27;;
+            this.style.backgroundColor = &#x27;transparent&#x27;;
+        }
+    });
+});
+
+// Color selection
+document.querySelectorAll(&#x27;.color-dot&#x27;).forEach(dot =&gt; {
+    dot.addEventListener(&#x27;click&#x27;, function() {
+        const colorGroup = this.parentElement;
+        colorGroup.querySelectorAll(&#x27;.color-dot&#x27;).forEach(d =&gt; d.style.outline = &#x27;none&#x27;);
+        this.style.outline = &#x27;2px solid #d63384&#x27;;
+        this.style.outlineOffset = &#x27;2px&#x27;;
+    });
+});
+
+// Look book details
+document.querySelectorAll(&#x27;.look-details&#x27;).forEach(link =&gt; {
+    link.addEventListener(&#x27;click&#x27;, function(e) {
+        e.preventDefault();
+        const lookTitle = this.closest(&#x27;.look-item&#x27;).querySelector(&#x27;h3&#x27;).textContent;
+        alert(`${lookTitle} の詳細を表示します\n\n・使用アイテム一覧\n・スタイリングのポイント\n・類似コーディネート`);
+    });
+});
+
+// Contact form submission
+document.querySelector(&#x27;.contact form&#x27;).addEventListener(&#x27;submit&#x27;, function(e) {
+    e.preventDefault();
+    
+    const name = this.querySelector(&#x27;input[type=&quot;text&quot;]&#x27;).value;
+    const service = this.querySelector(&#x27;select&#x27;).value;
+    const datetime = this.querySelector(&#x27;input[type=&quot;datetime-local&quot;]&#x27;).value;
+    
+    if (name &amp;&amp; service &amp;&amp; datetime) {
+        alert(`${name}様\n\nご予約を承りました。\nサービス: ${service}\n日時: ${datetime}\n\n確認のご連絡をいたします。`);
+        this.reset();
+    }
+});
+
+// Smooth scrolling for navigation
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            const headerHeight = document.querySelector(&#x27;.header&#x27;).offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: &#x27;smooth&#x27;
+            });
+        }
+    });
+});
+
+// Mobile menu toggle
+document.querySelector(&#x27;.menu-btn&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    const nav = document.querySelector(&#x27;.nav ul&#x27;);
+    if (nav.style.display === &#x27;flex&#x27;) {
+        nav.style.display = &#x27;none&#x27;;
+    } else {
+        nav.style.display = &#x27;flex&#x27;;
+        nav.style.flexDirection = &#x27;column&#x27;;
+        nav.style.position = &#x27;absolute&#x27;;
+        nav.style.top = &#x27;100%&#x27;;
+        nav.style.left = &#x27;0&#x27;;
+        nav.style.right = &#x27;0&#x27;;
+        nav.style.background = &#x27;white&#x27;;
+        nav.style.padding = &#x27;20px&#x27;;
+        nav.style.boxShadow = &#x27;0 5px 15px rgba(0,0,0,0.1)&#x27;;
+    }
+});
+
+// Header scroll effect
+let lastScrollY = window.scrollY;
+window.addEventListener(&#x27;scroll&#x27;, function() {
+    const header = document.querySelector(&#x27;.header&#x27;);
+    if (window.scrollY &gt; lastScrollY) {
+        header.style.transform = &#x27;translateY(-100%)&#x27;;
+    } else {
+        header.style.transform = &#x27;translateY(0)&#x27;;
+    }
+    lastScrollY = window.scrollY;
+});
+&lt;/script&gt;
+&lt;/html&gt;" class="w-full h-screen" title="小売店 - ブティック" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[2562,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-f0ab49cf12bb4ac2.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/8d311e01b6f6fa19.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"tbF4ekhpLvjG8yl9Cjqn0\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"retail-boutique\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"retail-boutique\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8d311e01b6f6fa19.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"retail-boutique\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"retail-boutique\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"h1gPy_VyXYtyiZ1PMVur6\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"retail-boutique\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>
