@@ -1,0 +1,2024 @@
+import { WebTemplate, TEMPLATE_CATEGORIES } from '../types'
+
+export const serviceCleaningTemplate: WebTemplate = {
+  id: 'service-cleaning',
+  title: 'サービス業 - クリーニング店',
+  category: TEMPLATE_CATEGORIES.SERVICE,
+  description: 'フレッシュで清潔感のあるクリーニング店向けWebサイトテンプレート',
+  thumbnail: '/template-images/service-cleaning.jpg',
+  features: [
+    'サービスメニュー',
+    '料金表',
+    '宅配サービス案内',
+    'お客様の声'
+  ],
+  tags: ['サービス業', 'クリーニング店', '宅配クリーニング', 'ドライクリーニング'],
+  code: {
+    html: `<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フレッシュクリーニング - 大切な衣類をキレイに</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-info">
+                    <span>📞 集配無料</span>
+                    <span>03-3456-7890</span>
+                    <span>営業時間: 8:00-19:00（土曜18:00まで）</span>
+                    <span>宅配サービス対応</span>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>🧺 フレッシュクリーニング</h1>
+                        <p class="tagline">大切な衣類をキレイに</p>
+                    </div>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="#about">当店について</a></li>
+                            <li><a href="#services">サービス</a></li>
+                            <li><a href="#prices">料金</a></li>
+                            <li><a href="#delivery">宅配サービス</a></li>
+                            <li><a href="#testimonials">お客様の声</a></li>
+                            <li><a href="#access">店舗案内</a></li>
+                            <li class="nav-order"><a href="#order">宅配注文</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1582162212348-1f3bf0ea1e9a?w=1920&h=800&fit=crop" alt="クリーニング">
+        </div>
+        <div class="hero-content">
+            <h2>プロの技術で衣類をリフレッシュ</h2>
+            <p>創業50年の信頼と実績。最新技術と熟練の技で、大切な衣類を美しく仕上げます。</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">宅配サービス</button>
+                <button class="btn-secondary">料金を見る</button>
+            </div>
+            <div class="hero-features">
+                <div class="feature-item">
+                    <span class="feature-icon">🚚</span>
+                    <span>無料集配</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">⚡</span>
+                    <span>最短翌日仕上げ</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🛡️</span>
+                    <span>品質保証</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💰</span>
+                    <span>明朗会計</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-info">
+        <div class="container">
+            <div class="quick-info-grid">
+                <div class="info-card">
+                    <div class="info-icon">🕒</div>
+                    <h3>営業時間</h3>
+                    <p>平日: 8:00-19:00<br>土曜: 8:00-18:00<br>日祝: 定休日</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🚚</div>
+                    <h3>宅配サービス</h3>
+                    <p>朝8:00-夜20:00<br>土日祝も対応<br>集配無料エリア拡大中</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📱</div>
+                    <h3>LINEで簡単注文</h3>
+                    <p>LINEで集配依頼<br>進捗確認も可能<br>友だち登録で割引</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">💳</div>
+                    <h3>支払い方法</h3>
+                    <p>現金・カード<br>電子マネー対応<br>後払いも可能</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">当店について</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>創業50年の信頼と実績</h3>
+                    <p>フレッシュクリーニングは昭和48年の創業以来、地域の皆様に愛され続けてきました。</p>
+                    <p>「お客様の大切な衣類を、まるで新品のように美しく」をモットーに、最新のクリーニング技術と熟練職人の技術を組み合わせ、高品質なサービスをご提供しています。</p>
+                    <p>一般衣類から高級ブランド品、着物まで、あらゆる衣類のクリーニングに対応いたします。</p>
+                    
+                    <div class="about-commitments">
+                        <div class="commitment-item">
+                            <div class="commitment-icon">✨</div>
+                            <h4>品質へのこだわり</h4>
+                            <p>国家資格を持つクリーニング師が、一点一点丁寧に仕上げます</p>
+                        </div>
+                        <div class="commitment-item">
+                            <div class="commitment-icon">🌱</div>
+                            <h4>環境への配慮</h4>
+                            <p>エコロジー溶剤を使用し、環境に優しいクリーニングを実践</p>
+                        </div>
+                        <div class="commitment-item">
+                            <div class="commitment-icon">🎯</div>
+                            <h4>お客様第一主義</h4>
+                            <p>万が一の場合も保険完備で安心。アフターサービスも充実</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">50</div>
+                        <div class="stat-label">創業年数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10,000</div>
+                        <div class="stat-label">年間取扱件数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99.8%</div>
+                        <div class="stat-label">お客様満足度</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">スタッフ数</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">サービス内容</h2>
+            <div class="services-tabs">
+                <button class="tab-btn active" data-tab="general">一般クリーニング</button>
+                <button class="tab-btn" data-tab="special">特殊クリーニング</button>
+                <button class="tab-btn" data-tab="care">保管・ケア</button>
+                <button class="tab-btn" data-tab="repair">お直し・修理</button>
+            </div>
+            <div class="services-content">
+                <div class="tab-content active" id="general">
+                    <div class="service-grid">
+                        <div class="service-card">
+                            <div class="service-icon">👔</div>
+                            <h4>スーツ・ジャケット</h4>
+                            <p>型崩れしないよう立体的にプレス。ビジネスシーンに最適な仕上がりに。</p>
+                            <div class="service-price">¥800〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">👗</div>
+                            <h4>ワンピース・ドレス</h4>
+                            <p>デリケートな素材も安心。パーティーや特別な日に備えて美しく仕上げます。</p>
+                            <div class="service-price">¥1,200〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🧥</div>
+                            <h4>コート・アウター</h4>
+                            <p>季節の変わり目に。防水加工や撥水加工も承ります。</p>
+                            <div class="service-price">¥1,500〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">👕</div>
+                            <h4>ワイシャツ</h4>
+                            <p>襟・袖の汚れもスッキリ。パリッとした仕上がりで印象アップ。</p>
+                            <div class="service-price">¥300〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🧦</div>
+                            <h4>セーター・ニット</h4>
+                            <p>縮みや型崩れを防ぐ特殊技術で、ふんわり仕上げます。</p>
+                            <div class="service-price">¥600〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">👖</div>
+                            <h4>パンツ・スカート</h4>
+                            <p>センタープレスやプリーツもきれいに。シルエットを美しく保ちます。</p>
+                            <div class="service-price">¥500〜</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="special">
+                    <div class="service-grid">
+                        <div class="service-card">
+                            <div class="service-icon">👘</div>
+                            <h4>着物・和装</h4>
+                            <p>伝統技術で大切な着物を守ります。帯・小物類も対応。</p>
+                            <div class="service-price">¥5,000〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">👰</div>
+                            <h4>ウェディングドレス</h4>
+                            <p>一生に一度の大切なドレス。専門技術で美しく保存します。</p>
+                            <div class="service-price">¥15,000〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🧸</div>
+                            <h4>皮革・毛皮</h4>
+                            <p>レザーや毛皮製品の専門クリーニング。色あせ・ひび割れ防止。</p>
+                            <div class="service-price">¥3,000〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🧸</div>
+                            <h4>ぬいぐるみ</h4>
+                            <p>お子様の大切なぬいぐるみも安全にクリーニング。</p>
+                            <div class="service-price">¥1,500〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🛏️</div>
+                            <h4>布団・寝具</h4>
+                            <p>ダニ・アレルゲン除去。ふかふかで清潔な寝具に。</p>
+                            <div class="service-price">¥2,500〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🪑</div>
+                            <h4>カーテン・カーペット</h4>
+                            <p>大型アイテムも対応。お部屋の印象を一新します。</p>
+                            <div class="service-price">¥2,000〜</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="care">
+                    <div class="service-grid">
+                        <div class="service-card">
+                            <div class="service-icon">🏠</div>
+                            <h4>保管サービス</h4>
+                            <p>季節物の衣類を最適環境で保管。クローゼットもスッキリ。</p>
+                            <div class="service-price">¥200/月〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🛡️</div>
+                            <h4>防虫・防カビ加工</h4>
+                            <p>大切な衣類を虫食いやカビから守る特殊加工。</p>
+                            <div class="service-price">¥300〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">💧</div>
+                            <h4>撥水・防水加工</h4>
+                            <p>雨の日も安心。アウター類に撥水・防水効果をプラス。</p>
+                            <div class="service-price">¥500〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">✨</div>
+                            <h4>抗菌・消臭加工</h4>
+                            <p>気になる臭いをカット。抗菌効果で清潔さを持続。</p>
+                            <div class="service-price">¥400〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🌟</div>
+                            <h4>汗抜き加工</h4>
+                            <p>通常のクリーニングでは落ちない汗汚れもスッキリ。</p>
+                            <div class="service-price">¥600〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🎨</div>
+                            <h4>色修正・染め直し</h4>
+                            <p>色あせや変色した衣類を美しく修復します。</p>
+                            <div class="service-price">¥2,000〜</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="repair">
+                    <div class="service-grid">
+                        <div class="service-card">
+                            <div class="service-icon">✂️</div>
+                            <h4>裾上げ・裾直し</h4>
+                            <p>パンツやスカートの丈調整。体型に合わせて美しく仕上げます。</p>
+                            <div class="service-price">¥800〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🪡</div>
+                            <h4>かけはぎ・かけつぎ</h4>
+                            <p>虫食いや引っかけ傷も目立たなく修理。熟練職人の技術。</p>
+                            <div class="service-price">¥3,000〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🔘</div>
+                            <h4>ボタン・ファスナー</h4>
+                            <p>取れたボタンや壊れたファスナーの交換・修理。</p>
+                            <div class="service-price">¥300〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">📏</div>
+                            <h4>サイズ直し</h4>
+                            <p>ウエストや袖丈の調整。体型変化にも対応します。</p>
+                            <div class="service-price">¥1,500〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🧵</div>
+                            <h4>ほつれ直し</h4>
+                            <p>糸のほつれや小さな破れを丁寧に修理します。</p>
+                            <div class="service-price">¥500〜</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">👔</div>
+                            <h4>リフォーム</h4>
+                            <p>古い衣類を現代風にアレンジ。新しいスタイルに変身。</p>
+                            <div class="service-price">¥5,000〜</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prices" class="prices">
+        <div class="container">
+            <h2 class="section-title">料金表</h2>
+            <div class="price-categories">
+                <div class="price-category">
+                    <h3>🏃‍♂️ スピード仕上げ</h3>
+                    <p class="category-desc">お急ぎの方に。最短翌日お渡し</p>
+                    <div class="price-table">
+                        <div class="price-row">
+                            <span class="item-name">ワイシャツ</span>
+                            <span class="price-regular">¥300</span>
+                            <span class="price-speed">¥450</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="item-name">スーツ上下</span>
+                            <span class="price-regular">¥1,600</span>
+                            <span class="price-speed">¥2,400</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="item-name">コート</span>
+                            <span class="price-regular">¥1,500</span>
+                            <span class="price-speed">¥2,250</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-category">
+                    <h3>💎 プレミアム仕上げ</h3>
+                    <p class="category-desc">高級ブランド品・特殊素材対応</p>
+                    <div class="price-table">
+                        <div class="price-row">
+                            <span class="item-name">カシミヤコート</span>
+                            <span class="price-regular">-</span>
+                            <span class="price-premium">¥3,500</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="item-name">シルクブラウス</span>
+                            <span class="price-regular">-</span>
+                            <span class="price-premium">¥1,800</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="item-name">毛皮コート</span>
+                            <span class="price-regular">-</span>
+                            <span class="price-premium">¥8,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-category">
+                    <h3>👨‍👩‍👧‍👦 ファミリーパック</h3>
+                    <p class="category-desc">家族でお得。まとめて割引</p>
+                    <div class="price-table">
+                        <div class="price-row">
+                            <span class="item-name">10点パック</span>
+                            <span class="price-regular">¥8,000</span>
+                            <span class="price-family">¥7,200</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="item-name">20点パック</span>
+                            <span class="price-regular">¥16,000</span>
+                            <span class="price-family">¥13,600</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="item-name">定期便（月1回）</span>
+                            <span class="price-regular">-</span>
+                            <span class="price-family">15%OFF</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="price-notes">
+                <h4>料金について</h4>
+                <ul>
+                    <li>※表示価格は税込み価格です</li>
+                    <li>※汚れの程度により追加料金をいただく場合があります</li>
+                    <li>※宅配サービスは3,000円以上で送料無料</li>
+                    <li>※会員登録で5%割引（年会費無料）</li>
+                    <li>※学生証提示で10%割引</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="delivery" class="delivery">
+        <div class="container">
+            <h2 class="section-title">宅配サービス</h2>
+            <div class="delivery-intro">
+                <h3>お忙しい方に便利な宅配クリーニング</h3>
+                <p>ご自宅やオフィスまで無料で集配いたします。24時間いつでもネット注文可能です。</p>
+            </div>
+            <div class="delivery-content">
+                <div class="delivery-steps">
+                    <h4>ご利用の流れ</h4>
+                    <div class="steps-grid">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h5>お申し込み</h5>
+                                <p>WebサイトまたはLINEから集配の日時をご予約</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h5>お預かり</h5>
+                                <p>スタッフがご指定の場所まで衣類をお預かりに伺います</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h5>クリーニング</h5>
+                                <p>プロの技術で丁寧にクリーニング。進捗はLINEでお知らせ</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h5>お届け</h5>
+                                <p>仕上がった衣類をご指定の場所にお届けいたします</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="delivery-features">
+                    <h4>宅配サービスの特徴</h4>
+                    <div class="features-grid">
+                        <div class="feature-box">
+                            <div class="feature-icon">🆓</div>
+                            <h5>集配料無料</h5>
+                            <p>3,000円以上で集配料無料<br>エリア内なら何度でも</p>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">⏰</div>
+                            <h5>時間指定OK</h5>
+                            <p>朝8:00〜夜20:00<br>1時間単位で指定可能</p>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">📱</div>
+                            <h5>進捗をお知らせ</h5>
+                            <p>LINEで進捗状況を通知<br>仕上がり予定もわかる</p>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">🏠</div>
+                            <h5>不在時も安心</h5>
+                            <p>宅配ボックス対応<br>玄関前置きも可能</p>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">💳</div>
+                            <h5>支払い方法</h5>
+                            <p>現金・カード・電子マネー<br>請求書払いも対応</p>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">🌏</div>
+                            <h5>対応エリア拡大中</h5>
+                            <p>23区内全域対応<br>近隣市部も順次拡大</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">お客様の声</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">「宅配サービスがとても便利です。仕事が忙しくて店舗に行けない私には助かります。仕上がりもいつもパーフェクト！」</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616c33495e4?w=80&h=80&fit=crop" alt="お客様">
+                        <div class="author-info">
+                            <span class="author-name">田中様</span>
+                            <span class="author-detail">（30代女性・会社員）</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">「スーツのシワがひどかったのですが、新品のようにきれいになって戻ってきました。プレスの技術が素晴らしいです。」</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop" alt="お客様">
+                        <div class="author-info">
+                            <span class="author-name">佐藤様</span>
+                            <span class="author-detail">（40代男性・営業職）</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">「子供の制服や家族の衣類をまとめてお願いしています。ファミリーパックでお得だし、品質も安定していて信頼できます。」</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop" alt="お客様">
+                        <div class="author-info">
+                            <span class="author-name">山田様</span>
+                            <span class="author-detail">（30代女性・主婦）</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">「大切なカシミヤのコートをお願いしました。とても丁寧に扱っていただき、毛玉も取れてふわふわになりました。」</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop" alt="お客様">
+                        <div class="author-info">
+                            <span class="author-name">鈴木様</span>
+                            <span class="author-detail">（50代女性）</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">「LINEで注文できるのが本当に便利。進捗もわかるし、仕上がり日も事前に教えてもらえるので予定が立てやすいです。」</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop" alt="お客様">
+                        <div class="author-info">
+                            <span class="author-name">高橋様</span>
+                            <span class="author-detail">（20代男性・学生）</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">「母の着物をお願いしました。長年しまい込んでいてシミが心配でしたが、きれいに取れて大満足です。職人さんの技術に感謝です。」</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop" alt="お客様">
+                        <div class="author-info">
+                            <span class="author-name">伊藤様</span>
+                            <span class="author-detail">（60代女性）</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>まずはお気軽にお試しください</h2>
+                <p>初回ご利用の方は20%割引！宅配サービスも初回送料無料です。</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary">宅配注文</button>
+                    <button class="btn-secondary">店舗に持参</button>
+                </div>
+                <div class="cta-contact">
+                    <p>お電話でのご注文・お問い合わせ</p>
+                    <a href="tel:03-3456-7890" class="phone-link">📞 03-3456-7890</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="access" class="access">
+        <div class="container">
+            <h2 class="section-title">店舗案内</h2>
+            <div class="stores-grid">
+                <div class="store-card">
+                    <h3>本店</h3>
+                    <div class="store-info">
+                        <table>
+                            <tr>
+                                <th>住所</th>
+                                <td>〒150-0002 東京都渋谷区渋谷3-5-7 クリーンビル1F</td>
+                            </tr>
+                            <tr>
+                                <th>電話</th>
+                                <td>03-3456-7890</td>
+                            </tr>
+                            <tr>
+                                <th>営業時間</th>
+                                <td>
+                                    平日: 8:00-19:00<br>
+                                    土曜: 8:00-18:00<br>
+                                    日祝: 定休日
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>駐車場</th>
+                                <td>3台完備（30分無料）</td>
+                            </tr>
+                            <tr>
+                                <th>アクセス</th>
+                                <td>JR「渋谷駅」東口より徒歩5分</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="store-card">
+                    <h3>駅前店</h3>
+                    <div class="store-info">
+                        <table>
+                            <tr>
+                                <th>住所</th>
+                                <td>〒150-0043 東京都渋谷区道玄坂1-2-3 ステーションビル1F</td>
+                            </tr>
+                            <tr>
+                                <th>電話</th>
+                                <td>03-3456-7891</td>
+                            </tr>
+                            <tr>
+                                <th>営業時間</th>
+                                <td>
+                                    平日: 7:30-20:00<br>
+                                    土日: 9:00-18:00<br>
+                                    祝日: 10:00-17:00
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>駐車場</th>
+                                <td>なし（近隣コインパーキングあり）</td>
+                            </tr>
+                            <tr>
+                                <th>アクセス</th>
+                                <td>JR「渋谷駅」ハチ公口より徒歩1分</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="map-section">
+                <h3>アクセスマップ</h3>
+                <div class="map-placeholder">🗺️ Google Map（本店・駅前店）</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="order">
+        <div class="container">
+            <h2 class="section-title">宅配注文</h2>
+            <div class="order-content">
+                <div class="order-methods">
+                    <div class="order-method">
+                        <div class="method-icon">📱</div>
+                        <h4>LINEで注文</h4>
+                        <p>友だち登録で簡単注文<br>進捗確認も可能</p>
+                        <button class="btn-primary">LINE友だち追加</button>
+                    </div>
+                    <div class="order-method">
+                        <div class="method-icon">💻</div>
+                        <h4>Web注文</h4>
+                        <p>24時間いつでも注文<br>会員登録で便利に</p>
+                        <button class="btn-primary">Web注文フォーム</button>
+                    </div>
+                    <div class="order-method">
+                        <div class="method-icon">📞</div>
+                        <h4>電話注文</h4>
+                        <p>営業時間内にお電話<br>スタッフが丁寧に対応</p>
+                        <a href="tel:03-3456-7890" class="btn-primary">03-3456-7890</a>
+                    </div>
+                </div>
+                <div class="order-info">
+                    <h4>宅配エリア・料金</h4>
+                    <div class="delivery-zones">
+                        <div class="zone-item">
+                            <h5>無料配送エリア</h5>
+                            <p>渋谷区・新宿区・港区・中央区・千代田区<br>※3,000円以上のご注文</p>
+                        </div>
+                        <div class="zone-item">
+                            <h5>配送料300円エリア</h5>
+                            <p>品川区・目黒区・世田谷区・杉並区・中野区・豊島区<br>※3,000円以上で無料</p>
+                        </div>
+                        <div class="zone-item">
+                            <h5>配送料500円エリア</h5>
+                            <p>その他23区内・近隣市部<br>※5,000円以上で無料</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>🧺 フレッシュクリーニング</h3>
+                    <p>〒150-0002 東京都渋谷区渋谷3-5-7 クリーンビル1F</p>
+                    <p>TEL: 03-3456-7890</p>
+                    <p>営業時間: 平日 8:00-19:00 / 土曜 8:00-18:00</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>サービス</h4>
+                        <ul>
+                            <li><a href="#services">一般クリーニング</a></li>
+                            <li><a href="#services">特殊クリーニング</a></li>
+                            <li><a href="#services">保管・ケア</a></li>
+                            <li><a href="#services">お直し・修理</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>ご利用案内</h4>
+                        <ul>
+                            <li><a href="#prices">料金表</a></li>
+                            <li><a href="#delivery">宅配サービス</a></li>
+                            <li><a href="#order">宅配注文</a></li>
+                            <li><a href="#access">店舗案内</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>会社情報</h4>
+                        <ul>
+                            <li><a href="#about">会社概要</a></li>
+                            <li><a href="#">採用情報</a></li>
+                            <li><a href="#">プライバシーポリシー</a></li>
+                            <li><a href="#">よくある質問</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">© 2025 フレッシュクリーニング All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>`,
+    css: `* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP', sans-serif;
+    color: #333;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header-top {
+    background: linear-gradient(135deg, #00bcd4 0%, #26a69a 100%);
+    padding: 8px 0;
+    font-size: 13px;
+    color: white;
+}
+
+.header-info {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
+}
+
+.header-main {
+    background: white;
+    box-shadow: 0 2px 15px rgba(0, 188, 212, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo h1 {
+    color: #00bcd4;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #4caf50;
+    margin-top: 5px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #00bcd4;
+}
+
+.nav-order a {
+    background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.nav-order a:hover {
+    background: linear-gradient(135deg, #388e3c 0%, #4caf50 100%);
+    transform: translateY(-2px);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 188, 212, 0.8) 0%, rgba(76, 175, 80, 0.6) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 18px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #388e3c 0%, #4caf50 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.5);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.feature-icon {
+    font-size: 24px;
+}
+
+/* Quick Info */
+.quick-info {
+    background: #e0f2f1;
+    padding: 60px 0;
+}
+
+.quick-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 188, 212, 0.1);
+    transition: transform 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+}
+
+.info-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    color: #00bcd4;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.info-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    color: #00bcd4;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #00bcd4, #4caf50);
+    border-radius: 2px;
+}
+
+/* About */
+.about {
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-text h3 {
+    color: #00bcd4;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.about-commitments {
+    display: grid;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.commitment-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: #e0f2f1;
+    border-radius: 15px;
+}
+
+.commitment-icon {
+    font-size: 28px;
+    margin-top: 5px;
+}
+
+.commitment-item h4 {
+    color: #00bcd4;
+    margin-bottom: 8px;
+}
+
+.commitment-item p {
+    color: #666;
+    margin: 0;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 188, 212, 0.1);
+}
+
+.stat-number {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Services */
+.services {
+    background: #e0f2f1;
+}
+
+.services-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 15px 30px;
+    background: white;
+    border: 2px solid #00bcd4;
+    color: #00bcd4;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #00bcd4;
+    color: white;
+}
+
+.services-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.1);
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.service-card h4 {
+    color: #00bcd4;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.service-price {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #4caf50;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Prices */
+.prices {
+    background: white;
+}
+
+.price-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.price-category {
+    background: #e0f2f1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 188, 212, 0.1);
+}
+
+.price-category h3 {
+    background: linear-gradient(135deg, #00bcd4 0%, #26a69a 100%);
+    color: white;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    font-size: 22px;
+}
+
+.category-desc {
+    text-align: center;
+    padding: 15px 20px;
+    background: #b2dfdb;
+    color: #00695c;
+    margin: 0;
+    font-size: 14px;
+}
+
+.price-table {
+    padding: 20px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #b2dfdb;
+}
+
+.price-row:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    font-weight: 500;
+}
+
+.price-regular {
+    color: #666;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.price-speed, .price-premium, .price-family {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.price-notes {
+    background: #e0f2f1;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.price-notes h4 {
+    color: #00bcd4;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.price-notes ul {
+    list-style: none;
+}
+
+.price-notes li {
+    padding: 5px 0;
+    color: #666;
+}
+
+.price-notes li:before {
+    content: "•";
+    color: #4caf50;
+    margin-right: 10px;
+}
+
+/* Delivery */
+.delivery {
+    background: #e0f2f1;
+}
+
+.delivery-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.delivery-intro h3 {
+    color: #00bcd4;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.delivery-steps h4 {
+    color: #00bcd4;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.step-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.1);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #00bcd4 0%, #26a69a 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.step-content h5 {
+    color: #00bcd4;
+    margin-bottom: 10px;
+}
+
+.step-content p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.delivery-features h4 {
+    color: #00bcd4;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.feature-box {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.1);
+}
+
+.feature-box .feature-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.feature-box h5 {
+    color: #00bcd4;
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Testimonials */
+.testimonials {
+    background: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: #e0f2f1;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 188, 212, 0.1);
+    transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-rating {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-name {
+    font-weight: bold;
+    color: #00bcd4;
+}
+
+.author-detail {
+    font-size: 12px;
+    color: #666;
+}
+
+/* CTA */
+.cta {
+    background: linear-gradient(135deg, #00bcd4 0%, #4caf50 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.cta .btn-primary {
+    background: white;
+    color: #00bcd4;
+}
+
+.cta .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-contact p {
+    margin-bottom: 10px;
+}
+
+.phone-link {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Access */
+.access {
+    background: #e0f2f1;
+}
+
+.stores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.store-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 188, 212, 0.1);
+}
+
+.store-card h3 {
+    color: #00bcd4;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.store-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.store-info th {
+    text-align: left;
+    padding: 12px;
+    background: #e0f2f1;
+    color: #00695c;
+    width: 100px;
+    font-weight: 600;
+}
+
+.store-info td {
+    padding: 12px;
+    border-bottom: 1px solid #e0f2f1;
+}
+
+.store-info tr:last-child td {
+    border-bottom: none;
+}
+
+.map-section {
+    text-align: center;
+}
+
+.map-section h3 {
+    color: #00bcd4;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.map-placeholder {
+    background: white;
+    padding: 60px;
+    border-radius: 15px;
+    font-size: 48px;
+    color: #00bcd4;
+    box-shadow: 0 4px 20px rgba(0, 188, 212, 0.1);
+}
+
+/* Order */
+.order {
+    background: white;
+}
+
+.order-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.order-method {
+    text-align: center;
+    padding: 40px 30px;
+    background: #e0f2f1;
+    border-radius: 20px;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.1);
+}
+
+.order-method:hover {
+    transform: translateY(-5px);
+}
+
+.method-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.order-method h4 {
+    color: #00bcd4;
+    margin-bottom: 10px;
+}
+
+.order-method p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.order-info {
+    background: #e0f2f1;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.order-info h4 {
+    color: #00bcd4;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.delivery-zones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.zone-item {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.zone-item h5 {
+    color: #00bcd4;
+    margin-bottom: 10px;
+}
+
+.zone-item p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #00bcd4 0%, #26a69a 100%);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-info h3 {
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-section h4 {
+    margin-bottom: 20px;
+    color: #4caf50;
+    font-size: 18px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #4caf50;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    color: #80cbc4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-info {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        font-size: 12px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .hero-content h2 {
+        font-size: 32px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .quick-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .services-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .price-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .stores-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .order-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .delivery-zones {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+}`,
+    js: `// タブ切り替え機能
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        
+        // タブボタンのアクティブ状態を切り替え
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // タブコンテンツの表示を切り替え
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+            if (content.id === tab) {
+                content.classList.add('active');
+            }
+        });
+    });
+});
+
+// 宅配サービスボタンのクリック処理
+document.querySelectorAll('.btn-primary').forEach(button => {
+    if (button.textContent.includes('03-3456-7890')) return;
+    
+    button.addEventListener('click', function() {
+        const btnText = button.textContent;
+        if (btnText.includes('宅配サービス') || btnText.includes('宅配注文')) {
+            alert('宅配サービスのご注文を承ります。LINEまたはお電話でお申し込みください。');
+        } else if (btnText.includes('LINE友だち追加')) {
+            alert('LINEアプリが起動します（実装予定）');
+        } else if (btnText.includes('Web注文フォーム')) {
+            alert('Web注文フォームへ移動します（実装予定）');
+        }
+    });
+});
+
+// その他のボタンのクリック処理
+document.querySelectorAll('.btn-secondary').forEach(button => {
+    button.addEventListener('click', function(e) {
+        if (button.textContent === '料金を見る') {
+            e.preventDefault();
+            document.getElementById('prices').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        } else if (button.textContent === '店舗に持参') {
+            e.preventDefault();
+            document.getElementById('access').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// スムーズスクロール
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerHeight = document.querySelector('.header-main').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// 電話番号のクリック処理
+document.querySelectorAll('a[href^="tel:"]').forEach(tel => {
+    tel.addEventListener('click', function(e) {
+        if (!tel.href.includes('tel:')) return;
+        
+        // デスクトップの場合はアラートを表示
+        if (!/Mobi|Android/i.test(navigator.userAgent)) {
+            e.preventDefault();
+            alert('お電話でのお問い合わせ: ' + this.textContent.replace('📞 ', ''));
+        }
+    });
+});
+
+// サービスカードのクリック処理
+document.querySelectorAll('.service-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function() {
+        const title = this.querySelector('h4').textContent;
+        const description = this.querySelector('p').textContent;
+        const price = this.querySelector('.service-price');
+        const priceText = price ? price.textContent : '料金についてはお問い合わせください';
+        alert(\`サービス詳細: \${title}\n\n\${description}\n\n料金: \${priceText}\n\n詳細についてはお気軽にお問い合わせください。\`);
+    });
+});
+
+// お客様の声カードのクリック処理
+document.querySelectorAll('.testimonial-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function() {
+        const text = this.querySelector('.testimonial-text').textContent;
+        const author = this.querySelector('.author-name').textContent;
+        const detail = this.querySelector('.author-detail').textContent;
+        alert(\`お客様の声\n\n\${text}\n\n\${author}様 \${detail}\`);
+    });
+});
+
+// ページ読み込み時のアニメーション
+window.addEventListener('load', function() {
+    const hero = document.querySelector('.hero-content');
+    if (hero) {
+        hero.style.opacity = '0';
+        hero.style.transform = 'translateY(50px)';
+        hero.style.transition = 'all 1.2s ease';
+        
+        setTimeout(() => {
+            hero.style.opacity = '1';
+            hero.style.transform = 'translateY(0)';
+        }, 300);
+    }
+    
+    // 統計データのカウントアップアニメーション
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers.forEach(stat => {
+        const finalValue = parseFloat(stat.textContent.replace(/[^\d.]/g, ''));
+        let currentValue = 0;
+        const increment = finalValue / 60;
+        
+        const timer = setInterval(() => {
+            currentValue += increment;
+            if (currentValue >= finalValue) {
+                stat.textContent = stat.textContent; // 元の値を保持
+                clearInterval(timer);
+            } else {
+                if (stat.textContent.includes('.')) {
+                    stat.textContent = currentValue.toFixed(1);
+                } else {
+                    stat.textContent = Math.floor(currentValue);
+                }
+            }
+        }, 25);
+    });
+});
+
+// スクロールでヘッダーの背景を変更
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header-main');
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.backdropFilter = 'blur(10px)';
+    } else {
+        header.style.background = 'white';
+        header.style.backdropFilter = 'none';
+    }
+});
+
+// インフォカードのホバー効果
+document.querySelectorAll('.info-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+    });
+});
+
+// 料金カテゴリーのクリック処理
+document.querySelectorAll('.price-category').forEach(category => {
+    category.style.cursor = 'pointer';
+    category.addEventListener('click', function() {
+        const title = this.querySelector('h3').textContent;
+        const desc = this.querySelector('.category-desc').textContent;
+        const rows = Array.from(this.querySelectorAll('.price-row')).map(row => {
+            const item = row.querySelector('.item-name').textContent;
+            const prices = Array.from(row.querySelectorAll('span:not(.item-name)')).map(span => span.textContent).join(' → ');
+            return \`\${item}: \${prices}\`;
+        }).join('\\n');
+        
+        alert(\`\${title}\n\${desc}\n\n\${rows}\n\n詳細についてはお問い合わせください。\`);
+    });
+});
+
+// 配送ステップのアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const stepItems = entry.target.querySelectorAll('.step-item');
+            stepItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        }
+    });
+}, observerOptions);
+
+const stepsGrid = document.querySelector('.steps-grid');
+if (stepsGrid) {
+    // 初期状態を設定
+    stepsGrid.querySelectorAll('.step-item').forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(30px)';
+        item.style.transition = 'all 0.6s ease';
+    });
+    
+    observer.observe(stepsGrid);
+}`
+  }
+}
