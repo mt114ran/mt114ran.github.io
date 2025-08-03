@@ -99,6 +99,7 @@ export const portfolioFreelanceTemplate: WebTemplate = {
             <div class="work-grid">
                 <div class="work-item" data-category="web">
                     <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop" alt="Webプロジェクト">
                         <div class="work-overlay">
                             <h3>E-commerce Platform</h3>
                             <p>Modern online shopping experience</p>

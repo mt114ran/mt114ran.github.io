@@ -43,6 +43,7 @@ export const restaurantJapaneseTemplate: WebTemplate = {
 
         <main>
             <section class="hero">
+                <img src="https://images.unsplash.com/photo-1579027989536-b7b1f875659b?w=1920&h=800&fit=crop" alt="和食料理" style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0.6;">
                 <div class="hero-content">
                     <h1 class="hero-title">
                         <span>四季を味わう</span>

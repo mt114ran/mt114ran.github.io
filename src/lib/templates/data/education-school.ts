@@ -50,7 +50,7 @@ export const educationSchoolTemplate: WebTemplate = {
 
     <section class="hero">
         <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&h=600&fit=crop" alt="学習風景">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1920&h=600&fit=crop" alt="学習風景">
         </div>
         <div class="hero-content">
             <h2>君の未来を、<br>確実に変える。</h2>
@@ -202,19 +202,19 @@ export const educationSchoolTemplate: WebTemplate = {
             <h2 class="section-title">講師紹介</h2>
             <div class="teachers-grid">
                 <div class="teacher-card">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop" alt="講師1">
+                    <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=300&h=300&fit=crop" alt="講師1">
                     <h3>山田 太郎</h3>
                     <p class="subject">数学・物理</p>
                     <p class="profile">東京大学理学部卒。大手予備校での指導経験10年。</p>
                 </div>
                 <div class="teacher-card">
-                    <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=300&h=300&fit=crop" alt="講師2">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop" alt="講師2">
                     <h3>佐藤 花子</h3>
                     <p class="subject">英語</p>
                     <p class="profile">上智大学外国語学部卒。TOEIC990点。</p>
                 </div>
                 <div class="teacher-card">
-                    <img src="https://images.unsplash.com/photo-1582896911227-c966f6e7fb93?w=300&h=300&fit=crop" alt="講師3">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&h=300&fit=crop" alt="講師3">
                     <h3>鈴木 一郎</h3>
                     <p class="subject">国語・社会</p>
                     <p class="profile">早稲田大学文学部卒。元高校教諭。</p>

@@ -38,6 +38,7 @@ export const cafeVintageTemplate: WebTemplate = {
 
         <main class="main-content">
             <section class="hero">
+                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1920&h=600&fit=crop" alt="カフェ内観" style="position:absolute;width:100%;height:100%;object-fit:cover;">
                 <div class="hero-overlay">
                     <h2>昔ながらの珈琲店</h2>
                     <p>一杯一杯、心を込めて</p>

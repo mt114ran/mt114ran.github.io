@@ -53,6 +53,7 @@ export const serviceClinicTemplate: WebTemplate = {
     </header>
 
     <section class="hero">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&h=600&fit=crop" alt="クリニック外観" style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0.3;">
         <div class="hero-content">
             <h2>患者様一人ひとりに寄り添う医療を提供します</h2>
             <div class="hero-buttons">
