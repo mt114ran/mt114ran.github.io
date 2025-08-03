@@ -9,6 +9,9 @@ import { restaurantWesternTemplate } from './data/restaurant-western'
 import { serviceClinicTemplate } from './data/service-clinic'
 import { serviceBeautyTemplate } from './data/service-beauty'
 import { portfolioFreelanceTemplate } from './data/portfolio-freelance'
+import { educationSchoolTemplate } from './data/education-school'
+import { sportsGymTemplate } from './data/sports-gym'
+import { realEstateTemplate } from './data/real-estate'
 
 /**
  * すべてのテンプレートデータ
@@ -23,7 +26,10 @@ export const templates: WebTemplate[] = [
   restaurantWesternTemplate,
   serviceClinicTemplate,
   serviceBeautyTemplate,
-  portfolioFreelanceTemplate
+  portfolioFreelanceTemplate,
+  educationSchoolTemplate,
+  sportsGymTemplate,
+  realEstateTemplate
 ]
 
 /**

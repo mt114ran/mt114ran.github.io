@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { getAllTemplates } from '@/lib/templates'
-import TemplateCard from '@/components/templates/TemplateCard'
+import TemplateCarousel from '@/components/templates/TemplateCarousel'
 import { TEMPLATE_CATEGORIES } from '@/lib/templates/types'
 
 export default function WebPageTemplatesPage() {
@@ -30,6 +30,19 @@ export default function WebPageTemplatesPage() {
             カフェや小規模ビジネス向けの美しいWebサイトテンプレートをご覧いただけます。
             各テンプレートはレスポンシブ対応で、すぐに使えるHTML/CSS/JavaScriptコードが含まれています。
           </p>
+          
+          {/* 学習ガイドへのリンク */}
+          <div className="mt-4">
+            <Link 
+              href="/note/webpage-temp/guide" 
+              className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              初心者向け学習ガイドを見る
+            </Link>
+          </div>
         </div>
 
         {/* 統計情報 */}
@@ -54,21 +67,18 @@ export default function WebPageTemplatesPage() {
           </div>
         </div>
 
-        {/* カテゴリー別テンプレート表示 */}
-        {templatesByCategory.map(({ category, templates: categoryTemplates }) => (
-          categoryTemplates.length > 0 && (
-            <div key={category} className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b-2 border-blue-500">
-                {category}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {categoryTemplates.map(template => (
-                  <TemplateCard key={template.id} template={template} />
-                ))}
-              </div>
-            </div>
-          )
-        ))}
+        {/* カテゴリー別カルーセル表示 */}
+        <div className="space-y-12">
+          {templatesByCategory.map(({ category, templates: categoryTemplates }) => (
+            categoryTemplates.length > 0 && (
+              <TemplateCarousel 
+                key={category}
+                category={category} 
+                templates={categoryTemplates} 
+              />
+            )
+          ))}
+        </div>
 
         {/* フッター */}
         <div className="mt-12 pt-8 border-t border-gray-200">
