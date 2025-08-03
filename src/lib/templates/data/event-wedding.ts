@@ -1,0 +1,2151 @@
+import { WebTemplate } from '../types';
+import { TEMPLATE_CATEGORIES } from '../types';
+
+export const eventWeddingTemplate: WebTemplate = {
+  id: 'event-wedding',
+  title: '結婚式・ウェディング',
+  category: TEMPLATE_CATEGORIES.EVENT,
+  description: '結婚式場やウェディングプランナー向けの優雅なテンプレート',
+  thumbnail: '/template-images/event-wedding.jpg',
+  features: [
+    'ギャラリー表示',
+    'プラン比較表',
+    '見積もりフォーム',
+    'お客様の声',
+    'チャペル・会場紹介',
+    'ブライダルフェア情報'
+  ],
+  tags: ['結婚式', 'ウェディング', 'ブライダル', 'チャペル', '披露宴'],
+  code: {
+    html: `
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belle Mariage - あなたの特別な一日を演出</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <span class="brand-text">Belle Mariage</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#about">会場紹介</a></li>
+                <li><a href="#plans">プラン</a></li>
+                <li><a href="#gallery">ギャラリー</a></li>
+                <li><a href="#testimonials">お客様の声</a></li>
+                <li><a href="#fair">ブライダルフェア</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">あなたの特別な一日を<br><span class="accent">永遠の記憶</span>に</h1>
+                <p class="hero-subtitle">Belle Mariageが叶える、心に残るウェディング</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">見学予約</a>
+                    <a href="#plans" class="btn btn-outline">プラン詳細</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span></span>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>会場紹介</h2>
+                    <p>愛を誓う特別な場所として、心に残る空間をご用意いたします</p>
+                </div>
+                <div class="venues">
+                    <div class="venue-card">
+                        <div class="venue-image">
+                            <div class="venue-placeholder chapel"></div>
+                        </div>
+                        <div class="venue-info">
+                            <h3>チャペル</h3>
+                            <p>自然光が差し込む神聖な空間で、永遠の愛を誓います。バージンロードを歩く瞬間は、一生の宝物となるでしょう。</p>
+                            <ul class="venue-features">
+                                <li>収容人数: 80名</li>
+                                <li>天然大理石のバージンロード</li>
+                                <li>ステンドグラス装飾</li>
+                                <li>オルガン演奏対応</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="venue-card">
+                        <div class="venue-image">
+                            <div class="venue-placeholder garden"></div>
+                        </div>
+                        <div class="venue-info">
+                            <h3>ガーデン</h3>
+                            <p>四季折々の美しい自然に囲まれたガーデンウェディング。開放感あふれる空間で、アットホームな式を挙げられます。</p>
+                            <ul class="venue-features">
+                                <li>収容人数: 120名</li>
+                                <li>季節の花々で彩られた会場</li>
+                                <li>屋外人前式対応</li>
+                                <li>ナイトウェディング可能</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="venue-card">
+                        <div class="venue-image">
+                            <div class="venue-placeholder banquet"></div>
+                        </div>
+                        <div class="venue-info">
+                            <h3>バンケットホール</h3>
+                            <p>上品で洗練されたバンケットホール。大切なゲストをおもてなしする、特別な披露宴会場です。</p>
+                            <ul class="venue-features">
+                                <li>収容人数: 150名</li>
+                                <li>高級感あふれる内装</li>
+                                <li>最新音響・映像設備</li>
+                                <li>専属シェフによる料理</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="plans" class="plans">
+            <div class="container">
+                <div class="section-header">
+                    <h2>ウェディングプラン</h2>
+                    <p>お二人の理想に合わせた、多彩なプランをご用意しています</p>
+                </div>
+                <div class="plan-tabs">
+                    <button class="plan-tab active" data-plan="basic">ベーシック</button>
+                    <button class="plan-tab" data-plan="premium">プレミアム</button>
+                    <button class="plan-tab" data-plan="luxury">ラグジュアリー</button>
+                </div>
+                <div class="plan-content">
+                    <div class="plan-details active" data-plan="basic">
+                        <div class="plan-header">
+                            <h3>ベーシックプラン</h3>
+                            <div class="plan-price">
+                                <span class="price">¥980,000</span>
+                                <span class="guests">（60名様）</span>
+                            </div>
+                        </div>
+                        <div class="plan-features">
+                            <div class="feature-group">
+                                <h4>式場・設備</h4>
+                                <ul>
+                                    <li>チャペル挙式</li>
+                                    <li>バンケットホール披露宴</li>
+                                    <li>ブライズルーム使用</li>
+                                    <li>音響・映像設備</li>
+                                </ul>
+                            </div>
+                            <div class="feature-group">
+                                <h4>料理・ドリンク</h4>
+                                <ul>
+                                    <li>フレンチコース料理</li>
+                                    <li>ウェディングケーキ</li>
+                                    <li>フリードリンク（3時間）</li>
+                                    <li>乾杯用シャンパン</li>
+                                </ul>
+                            </div>
+                            <div class="feature-group">
+                                <h4>装花・装飾</h4>
+                                <ul>
+                                    <li>ブライダルブーケ</li>
+                                    <li>会場装花（基本）</li>
+                                    <li>キャンドルサービス</li>
+                                    <li>テーブルクロス・ナプキン</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plan-details" data-plan="premium">
+                        <div class="plan-header">
+                            <h3>プレミアムプラン</h3>
+                            <div class="plan-price">
+                                <span class="price">¥1,480,000</span>
+                                <span class="guests">（80名様）</span>
+                            </div>
+                        </div>
+                        <div class="plan-features">
+                            <div class="feature-group">
+                                <h4>式場・設備</h4>
+                                <ul>
+                                    <li>チャペル挙式＋ガーデン演出</li>
+                                    <li>バンケットホール披露宴</li>
+                                    <li>ブライズルーム・親族控室使用</li>
+                                    <li>最新音響・映像設備</li>
+                                    <li>プロフィールムービー上映</li>
+                                </ul>
+                            </div>
+                            <div class="feature-group">
+                                <h4>料理・ドリンク</h4>
+                                <ul>
+                                    <li>特選フレンチコース料理</li>
+                                    <li>3段ウェディングケーキ</li>
+                                    <li>プレミアムフリードリンク（3時間）</li>
+                                    <li>乾杯用プレミアムシャンパン</li>
+                                    <li>デザートビュッフェ</li>
+                                </ul>
+                            </div>
+                            <div class="feature-group">
+                                <h4>装花・装飾</h4>
+                                <ul>
+                                    <li>ブライダルブーケ＋ブートニア</li>
+                                    <li>会場装花（グレードアップ）</li>
+                                    <li>キャンドルサービス</li>
+                                    <li>高級リネン使用</li>
+                                    <li>フラワーシャワー</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plan-details" data-plan="luxury">
+                        <div class="plan-header">
+                            <h3>ラグジュアリープラン</h3>
+                            <div class="plan-price">
+                                <span class="price">¥2,280,000</span>
+                                <span class="guests">（100名様）</span>
+                            </div>
+                        </div>
+                        <div class="plan-features">
+                            <div class="feature-group">
+                                <h4>式場・設備</h4>
+                                <ul>
+                                    <li>全会場貸切</li>
+                                    <li>チャペル＋ガーデン＋バンケット</li>
+                                    <li>専用ブライズルーム・親族控室</li>
+                                    <li>最新音響・映像・照明設備</li>
+                                    <li>オリジナルムービー制作</li>
+                                    <li>生演奏（ピアノ・ヴァイオリン）</li>
+                                </ul>
+                            </div>
+                            <div class="feature-group">
+                                <h4>料理・ドリンク</h4>
+                                <ul>
+                                    <li>シェフ特製オリジナルコース</li>
+                                    <li>オーダーメイドウェディングケーキ</li>
+                                    <li>プレミアムフリードリンク（4時間）</li>
+                                    <li>ヴィンテージシャンパン乾杯</li>
+                                    <li>デザートビュッフェ＋夜食</li>
+                                </ul>
+                            </div>
+                            <div class="feature-group">
+                                <h4>装花・装飾</h4>
+                                <ul>
+                                    <li>オーダーメイドブーケ一式</li>
+                                    <li>会場装花（最高グレード）</li>
+                                    <li>キャンドル演出</li>
+                                    <li>最高級リネン使用</li>
+                                    <li>フラワーシャワー＋バルーンリリース</li>
+                                    <li>ナイトイルミネーション</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="plan-cta">
+                    <a href="#contact" class="btn btn-primary">詳細見積もり依頼</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <h2>ギャラリー</h2>
+                    <p>実際の結婚式の美しい瞬間をご覧ください</p>
+                </div>
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">すべて</button>
+                    <button class="filter-btn" data-filter="ceremony">挙式</button>
+                    <button class="filter-btn" data-filter="reception">披露宴</button>
+                    <button class="filter-btn" data-filter="garden">ガーデン</button>
+                    <button class="filter-btn" data-filter="details">装飾・料理</button>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="ceremony">
+                        <div class="gallery-image ceremony-1"></div>
+                        <div class="gallery-overlay">
+                            <h4>チャペル挙式</h4>
+                            <p>神聖な誓いの瞬間</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="reception">
+                        <div class="gallery-image reception-1"></div>
+                        <div class="gallery-overlay">
+                            <h4>披露宴</h4>
+                            <p>感動の入場シーン</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="garden">
+                        <div class="gallery-image garden-1"></div>
+                        <div class="gallery-overlay">
+                            <h4>ガーデンウェディング</h4>
+                            <p>自然に囲まれた幸せ</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="details">
+                        <div class="gallery-image details-1"></div>
+                        <div class="gallery-overlay">
+                            <h4>会場装飾</h4>
+                            <p>上質な空間演出</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="ceremony">
+                        <div class="gallery-image ceremony-2"></div>
+                        <div class="gallery-overlay">
+                            <h4>指輪交換</h4>
+                            <p>永遠の約束</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="reception">
+                        <div class="gallery-image reception-2"></div>
+                        <div class="gallery-overlay">
+                            <h4>ケーキカット</h4>
+                            <p>甘い瞬間</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="garden">
+                        <div class="gallery-image garden-2"></div>
+                        <div class="gallery-overlay">
+                            <h4>フラワーシャワー</h4>
+                            <p>祝福の瞬間</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="details">
+                        <div class="gallery-image details-2"></div>
+                        <div class="gallery-overlay">
+                            <h4>テーブルコーディネート</h4>
+                            <p>美しいおもてなし</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>お客様の声</h2>
+                    <p>Belle Mariageで結婚式を挙げられたお客様からのメッセージ</p>
+                </div>
+                <div class="testimonial-slider">
+                    <div class="testimonial-track">
+                        <div class="testimonial-item active">
+                            <div class="testimonial-content">
+                                <div class="testimonial-image couple-1"></div>
+                                <div class="testimonial-text">
+                                    <blockquote>
+                                        「スタッフの皆さんが本当に親身になって相談に乗ってくださり、理想以上の結婚式を挙げることができました。ゲストの皆さんからも『素敵な式だった』とたくさんお声をいただき、選んで良かったと心から思います。」
+                                    </blockquote>
+                                    <div class="testimonial-author">
+                                        <h4>田中様ご夫妻</h4>
+                                        <p>2023年10月挙式</p>
+                                        <div class="testimonial-rating">
+                                            <span>★★★★★</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item">
+                            <div class="testimonial-content">
+                                <div class="testimonial-image couple-2"></div>
+                                <div class="testimonial-text">
+                                    <blockquote>
+                                        「ガーデンウェディングに憧れていた私たちの夢を叶えてくださいました。お料理も本当に美味しく、ゲストの皆さんにも大好評でした。一生の思い出になる素晴らしい一日でした。」
+                                    </blockquote>
+                                    <div class="testimonial-author">
+                                        <h4>佐藤様ご夫妻</h4>
+                                        <p>2023年9月挙式</p>
+                                        <div class="testimonial-rating">
+                                            <span>★★★★★</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item">
+                            <div class="testimonial-content">
+                                <div class="testimonial-image couple-3"></div>
+                                <div class="testimonial-text">
+                                    <blockquote>
+                                        「プランニングから当日まで、本当にきめ細やかなサポートをいただきました。特にチャペルでの挙式は神聖で感動的で、両親も涙を流して喜んでくれました。ありがとうございました。」
+                                    </blockquote>
+                                    <div class="testimonial-author">
+                                        <h4>山田様ご夫妻</h4>
+                                        <p>2023年11月挙式</p>
+                                        <div class="testimonial-rating">
+                                            <span>★★★★★</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-nav">
+                        <button class="testimonial-prev">&lt;</button>
+                        <div class="testimonial-dots">
+                            <span class="dot active" data-slide="0"></span>
+                            <span class="dot" data-slide="1"></span>
+                            <span class="dot" data-slide="2"></span>
+                        </div>
+                        <button class="testimonial-next">&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fair" class="fair">
+            <div class="container">
+                <div class="section-header">
+                    <h2>ブライダルフェア</h2>
+                    <p>実際の会場をご見学いただき、お二人の理想をお聞かせください</p>
+                </div>
+                <div class="fair-events">
+                    <div class="fair-item">
+                        <div class="fair-date">
+                            <span class="month">DEC</span>
+                            <span class="day">15</span>
+                        </div>
+                        <div class="fair-info">
+                            <h3>チャペル見学＆試食会</h3>
+                            <p>神聖なチャペルをご見学いただき、シェフ特製のお料理を試食していただきます。</p>
+                            <div class="fair-details">
+                                <span class="time">10:00-15:00</span>
+                                <span class="price">無料</span>
+                            </div>
+                        </div>
+                        <div class="fair-cta">
+                            <a href="#contact" class="btn btn-outline">予約する</a>
+                        </div>
+                    </div>
+                    <div class="fair-item">
+                        <div class="fair-date">
+                            <span class="month">DEC</span>
+                            <span class="day">22</span>
+                        </div>
+                        <div class="fair-info">
+                            <h3>ガーデンウェディング相談会</h3>
+                            <p>四季の美しさを楽しめるガーデンウェディングの魅力をご紹介します。</p>
+                            <div class="fair-details">
+                                <span class="time">13:00-17:00</span>
+                                <span class="price">無料</span>
+                            </div>
+                        </div>
+                        <div class="fair-cta">
+                            <a href="#contact" class="btn btn-outline">予約する</a>
+                        </div>
+                    </div>
+                    <div class="fair-item">
+                        <div class="fair-date">
+                            <span class="month">JAN</span>
+                            <span class="day">12</span>
+                        </div>
+                        <div class="fair-info">
+                            <h3>新春特別相談会</h3>
+                            <p>新年のお祝いを込めて、特別プランのご案内をいたします。</p>
+                            <div class="fair-details">
+                                <span class="time">10:00-18:00</span>
+                                <span class="price">無料</span>
+                            </div>
+                        </div>
+                        <div class="fair-cta">
+                            <a href="#contact" class="btn btn-outline">予約する</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>お問い合わせ</h2>
+                    <p>お二人の特別な一日のため、まずはお気軽にご相談ください</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>お電話でのお問い合わせ</h3>
+                            <p class="phone">0120-123-456</p>
+                            <p>営業時間: 9:00-19:00（年中無休）</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>所在地</h3>
+                            <p>〒100-0001<br>
+                            東京都千代田区千代田1-1-1<br>
+                            Belle Mariage Tokyo</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>アクセス</h3>
+                            <p>JR東京駅より徒歩5分<br>
+                            地下鉄大手町駅より徒歩3分<br>
+                            駐車場完備（50台）</p>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">お名前</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="partner">お相手様のお名前</label>
+                            <input type="text" id="partner" name="partner">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">メールアドレス</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">電話番号</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">ご希望挙式日</label>
+                                <input type="date" id="date" name="date">
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">ご招待予定人数</label>
+                                <select id="guests" name="guests">
+                                    <option value="">選択してください</option>
+                                    <option value="30">30名以下</option>
+                                    <option value="50">31-50名</option>
+                                    <option value="80">51-80名</option>
+                                    <option value="100">81-100名</option>
+                                    <option value="100+">100名以上</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="chapel">
+                                <span class="checkmark"></span>
+                                チャペルウェディング
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="garden">
+                                <span class="checkmark"></span>
+                                ガーデンウェディング
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="reception">
+                                <span class="checkmark"></span>
+                                披露宴のみ
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="fair">
+                                <span class="checkmark"></span>
+                                ブライダルフェア参加希望
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">ご質問・ご要望</label>
+                            <textarea id="message" name="message" rows="5" placeholder="ご不明な点やご要望がございましたら、お気軽にお書きください。"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">お問い合わせ送信</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Belle Mariage</h3>
+                    <p>あなたの特別な一日を、永遠の記憶に</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>サービス</h4>
+                        <ul>
+                            <li><a href="#about">会場紹介</a></li>
+                            <li><a href="#plans">ウェディングプラン</a></li>
+                            <li><a href="#gallery">ギャラリー</a></li>
+                            <li><a href="#fair">ブライダルフェア</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>サポート</h4>
+                        <ul>
+                            <li><a href="#contact">お問い合わせ</a></li>
+                            <li><a href="#">よくある質問</a></li>
+                            <li><a href="#">アクセス</a></li>
+                            <li><a href="#">資料請求</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>お問い合わせ</h4>
+                        <p>0120-123-456</p>
+                        <p>9:00-19:00（年中無休）</p>
+                        <p>info@belle-mariage.jp</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Belle Mariage. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+`,
+    css: `
+:root {
+    --primary-color: #d4a574;
+    --secondary-color: #8b7d6b;
+    --accent-color: #e8c4a0;
+    --text-dark: #2c2c2c;
+    --text-light: #666;
+    --background-light: #faf9f7;
+    --background-white: #ffffff;
+    --border-color: #e5e5e5;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --gradient-gold: linear-gradient(135deg, #d4a574 0%, #e8c4a0 100%);
+    --gradient-overlay: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.nav-brand .brand-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: italic;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 400;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #f8f4f0 0%, #e8d5c4 50%, #d4a574 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease-in-out infinite;
+}
+
+.hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(212, 165, 116, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(232, 196, 160, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(139, 125, 107, 0.2) 0%, transparent 50%);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-family: 'Crimson Text', serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title .accent {
+    color: var(--primary-color);
+    position: relative;
+}
+
+.hero-title .accent::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-gold);
+    border-radius: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: var(--gradient-gold);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(212, 165, 116, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 50px;
+    background: var(--primary-color);
+    border-radius: 1px;
+}
+
+.scroll-indicator span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(20px); }
+}
+
+/* Section Styles */
+section {
+    padding: 100px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-header h2 {
+    font-family: 'Crimson Text', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--gradient-gold);
+    border-radius: 2px;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* About Section */
+.about {
+    background: var(--background-light);
+}
+
+.venues {
+    display: grid;
+    gap: 40px;
+}
+
+.venue-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    min-height: 400px;
+}
+
+.venue-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.venue-card:nth-child(even) {
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.venue-card:nth-child(even) .venue-image {
+    order: 2;
+}
+
+.venue-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.venue-placeholder {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.venue-placeholder.chapel {
+    background: linear-gradient(135deg, #e8d5c4 0%, #d4a574 100%);
+}
+
+.venue-placeholder.garden {
+    background: linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
+}
+
+.venue-placeholder.banquet {
+    background: linear-gradient(135deg, #e1bee7 0%, #ba68c8 100%);
+}
+
+.venue-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+.venue-info {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.venue-info h3 {
+    font-family: 'Crimson Text', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.venue-info p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.venue-features {
+    list-style: none;
+}
+
+.venue-features li {
+    padding: 8px 0;
+    color: var(--text-light);
+    position: relative;
+    padding-left: 25px;
+}
+
+.venue-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Plans Section */
+.plans {
+    background: var(--background-white);
+}
+
+.plan-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.plan-tab {
+    padding: 15px 30px;
+    border: 2px solid var(--border-color);
+    background: transparent;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.plan-tab.active,
+.plan-tab:hover {
+    border-color: var(--primary-color);
+    background: var(--gradient-gold);
+    color: white;
+}
+
+.plan-content {
+    position: relative;
+}
+
+.plan-details {
+    display: none;
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: var(--shadow-light);
+}
+
+.plan-details.active {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.plan-header h3 {
+    font-family: 'Crimson Text', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.plan-price .price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.plan-price .guests {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-left: 10px;
+}
+
+.plan-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.feature-group h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.feature-group ul {
+    list-style: none;
+}
+
+.feature-group li {
+    padding: 10px 0;
+    color: var(--text-light);
+    position: relative;
+    padding-left: 25px;
+}
+
+.feature-group li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.plan-cta {
+    text-align: center;
+    margin-top: 60px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gallery Section */
+.gallery {
+    background: var(--background-light);
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border: 2px solid var(--border-color);
+    background: white;
+    border-radius: 25px;
+    font-size: 1rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gallery-image.ceremony-1 {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+}
+
+.gallery-image.ceremony-2 {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+}
+
+.gallery-image.reception-1 {
+    background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+}
+
+.gallery-image.reception-2 {
+    background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+}
+
+.gallery-image.garden-1 {
+    background: linear-gradient(135deg, #55a3ff 0%, #003d82 100%);
+}
+
+.gallery-image.garden-2 {
+    background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+}
+
+.gallery-image.details-1 {
+    background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+}
+
+.gallery-image.details-2 {
+    background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--gradient-overlay);
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: var(--background-white);
+}
+
+.testimonial-slider {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-track {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.testimonial-item {
+    display: none;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+}
+
+.testimonial-item.active {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+.testimonial-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 400px;
+}
+
+.testimonial-image {
+    position: relative;
+}
+
+.testimonial-image.couple-1 {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+}
+
+.testimonial-image.couple-2 {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+}
+
+.testimonial-image.couple-3 {
+    background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+}
+
+.testimonial-text {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimonial-text blockquote {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    font-style: italic;
+    position: relative;
+}
+
+.testimonial-text blockquote::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--accent-color);
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-family: 'Crimson Text', serif;
+}
+
+.testimonial-author h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.testimonial-author p {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.testimonial-rating span {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.testimonial-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-prev,
+.testimonial-next {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    border-radius: 50%;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.testimonial-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--primary-color);
+}
+
+/* Fair Section */
+.fair {
+    background: var(--background-light);
+}
+
+.fair-events {
+    display: grid;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.fair-item {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow-light);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 30px;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.fair-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.fair-date {
+    text-align: center;
+    padding: 20px;
+    background: var(--gradient-gold);
+    border-radius: 15px;
+    color: white;
+    min-width: 80px;
+}
+
+.fair-date .month {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.fair-date .day {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.fair-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.fair-info p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.fair-details {
+    display: flex;
+    gap: 20px;
+}
+
+.fair-details .time,
+.fair-details .price {
+    background: var(--background-light);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Contact Section */
+.contact {
+    background: var(--background-white);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.phone {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    background: var(--background-light);
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+    font-family: 'Crimson Text', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.footer-brand p {
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 50px;
+        transition: left 0.3s ease;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 20px 0;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .venue-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .venue-card:nth-child(even) {
+        grid-template-columns: 1fr;
+    }
+
+    .venue-card:nth-child(even) .venue-image {
+        order: 0;
+    }
+
+    .plan-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-features {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .fair-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact-form {
+        padding: 30px 20px;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+`,
+    js: `
+document.addEventListener('DOMContentLoaded', function() {
+    // ハンバーガーメニューの制御
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // メニューリンクをクリックしたときにメニューを閉じる
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    }
+
+    // スムーズスクロール
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // ヘッダーのスクロール効果
+    const header = document.querySelector('.header');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            header.style.background = 'rgba(255, 255, 255, 0.98)';
+            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.boxShadow = 'none';
+        }
+
+        lastScrollTop = scrollTop;
+    });
+
+    // プランタブの切り替え
+    const planTabs = document.querySelectorAll('.plan-tab');
+    const planDetails = document.querySelectorAll('.plan-details');
+
+    planTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetPlan = this.getAttribute('data-plan');
+            
+            // アクティブなタブを切り替え
+            planTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // プラン詳細を切り替え
+            planDetails.forEach(detail => {
+                detail.classList.remove('active');
+                if (detail.getAttribute('data-plan') === targetPlan) {
+                    detail.classList.add('active');
+                }
+            });
+        });
+    });
+
+    // ギャラリーフィルター
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            
+            // アクティブなボタンを切り替え
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // ギャラリーアイテムをフィルタリング
+            galleryItems.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 100);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // お客様の声スライダー
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    const testimonialPrev = document.querySelector('.testimonial-prev');
+    const testimonialNext = document.querySelector('.testimonial-next');
+    const testimonialDots = document.querySelectorAll('.dot');
+    let currentTestimonial = 0;
+
+    function showTestimonial(index) {
+        testimonialItems.forEach((item, i) => {
+            item.classList.remove('active');
+            if (i === index) {
+                item.classList.add('active');
+            }
+        });
+
+        testimonialDots.forEach((dot, i) => {
+            dot.classList.remove('active');
+            if (i === index) {
+                dot.classList.add('active');
+            }
+        });
+    }
+
+    if (testimonialNext) {
+        testimonialNext.addEventListener('click', function() {
+            currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+            showTestimonial(currentTestimonial);
+        });
+    }
+
+    if (testimonialPrev) {
+        testimonialPrev.addEventListener('click', function() {
+            currentTestimonial = (currentTestimonial - 1 + testimonialItems.length) % testimonialItems.length;
+            showTestimonial(currentTestimonial);
+        });
+    }
+
+    testimonialDots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+            currentTestimonial = index;
+            showTestimonial(currentTestimonial);
+        });
+    });
+
+    // 自動スライド
+    setInterval(function() {
+        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+        showTestimonial(currentTestimonial);
+    }, 8000);
+
+    // フォーム送信処理
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // フォームデータの収集
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // 送信ボタンを無効化
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '送信中...';
+            submitBtn.disabled = true;
+            
+            // 実際の送信処理をシミュレート
+            setTimeout(() => {
+                alert('お問い合わせありがとうございます。2営業日以内にご返信いたします。');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+    }
+
+    // スクロールアニメーション
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // アニメーション対象要素の監視
+    document.querySelectorAll('.venue-card, .plan-details, .gallery-item, .testimonial-item, .fair-item').forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+
+    // パララックス効果
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const heroBackground = document.querySelector('.hero-background');
+        
+        if (heroBackground) {
+            const speed = scrolled * 0.5;
+            heroBackground.style.transform = \`translateY(\${speed}px)\`;
+        }
+    });
+
+    // カウントアップアニメーション（数字がある場合）
+    function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+        
+        function updateCounter() {
+            start += increment;
+            if (start < target) {
+                element.textContent = Math.ceil(start).toLocaleString();
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target.toLocaleString();
+            }
+        }
+        
+        updateCounter();
+    }
+
+    // ページ読み込み完了時の初期化
+    window.addEventListener('load', function() {
+        // ローディング完了時のフェードイン効果
+        document.body.style.opacity = '1';
+        
+        // 統計数字のカウントアップ（もしあれば）
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            if (target) {
+                animateCounter(counter, target);
+            }
+        });
+    });
+
+    // リサイズ時の処理
+    window.addEventListener('resize', function() {
+        // ギャラリーアイテムの再配置
+        const galleryGrid = document.querySelector('.gallery-grid');
+        if (galleryGrid) {
+            // モバイル表示時の調整
+            if (window.innerWidth <= 768) {
+                galleryItems.forEach(item => {
+                    item.style.display = 'block';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                });
+            }
+        }
+    });
+
+    // タッチイベントの処理（モバイル対応）
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // 左スワイプ - 次のテスティモニアル
+                if (testimonialNext) {
+                    testimonialNext.click();
+                }
+            } else {
+                // 右スワイプ - 前のテスティモニアル
+                if (testimonialPrev) {
+                    testimonialPrev.click();
+                }
+            }
+        }
+    }
+
+    // クリックリップル効果
+    function createRipple(event) {
+        const button = event.currentTarget;
+        const circle = document.createElement('span');
+        const diameter = Math.max(button.clientWidth, button.clientHeight);
+        const radius = diameter / 2;
+
+        circle.style.width = circle.style.height = \`\${diameter}px\`;
+        circle.style.left = \`\${event.clientX - button.offsetLeft - radius}px\`;
+        circle.style.top = \`\${event.clientY - button.offsetTop - radius}px\`;
+        circle.classList.add('ripple');
+
+        const ripple = button.getElementsByClassName('ripple')[0];
+        if (ripple) {
+            ripple.remove();
+        }
+
+        button.appendChild(circle);
+    }
+
+    // ボタンにリップル効果を追加
+    document.querySelectorAll('.btn, .plan-tab, .filter-btn').forEach(btn => {
+        btn.addEventListener('click', createRipple);
+    });
+
+    console.log('Belle Mariage wedding template loaded successfully!');
+});
+
+// CSS for ripple effect
+const rippleStyle = document.createElement('style');
+rippleStyle.textContent = \`
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+    }
+
+    @keyframes ripple {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+\`;
+document.head.appendChild(rippleStyle);
+`
+  }
+};

@@ -1,0 +1,2716 @@
+import { WebTemplate } from '../types';
+import { TEMPLATE_CATEGORIES } from '../types';
+
+export const eventFestivalTemplate: WebTemplate = {
+  id: 'event-festival',
+  title: '音楽フェスティバル・イベント',
+  category: TEMPLATE_CATEGORIES.EVENT,
+  description: '音楽フェスティバルやイベント運営者向けの躍動的なテンプレート',
+  thumbnail: '/template-images/event-festival.jpg',
+  features: [
+    'アーティスト紹介',
+    'タイムテーブル表示',
+    'チケット購入',
+    'フード＆ドリンク情報',
+    'アクセス・宿泊案内',
+    'ライブ配信対応'
+  ],
+  tags: ['フェスティバル', '音楽', 'イベント', 'コンサート', 'エンターテイメント'],
+  code: {
+    html: `
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOUND WAVE FESTIVAL 2024 - 音楽で繋がる、心躍る3日間</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-music"></i>
+                <span class="brand-text">SOUND WAVE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#lineup">LINEUP</a></li>
+                <li><a href="#timetable">TIMETABLE</a></li>
+                <li><a href="#info">INFO</a></li>
+                <li><a href="#food">FOOD</a></li>
+                <li><a href="#access">ACCESS</a></li>
+                <li><a href="#tickets" class="nav-ticket">TICKETS</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <div class="hero-video-overlay"></div>
+                <div class="hero-particles"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-date">2024.08.16 - 18</div>
+                <h1 class="hero-title">
+                    <span class="title-main">SOUND WAVE</span>
+                    <span class="title-sub">FESTIVAL 2024</span>
+                </h1>
+                <p class="hero-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    富士山麓特設ステージ / Mt. Fuji Special Stage
+                </p>
+                <p class="hero-description">音楽で繋がる、心躍る3日間。国内外のトップアーティストが集結</p>
+                
+                <div class="hero-countdown">
+                    <div class="countdown-title">開催まで</div>
+                    <div class="countdown-timer">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">000</span>
+                            <span class="countdown-label">DAYS</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">HOURS</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">MIN</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label">SEC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#tickets" class="btn btn-primary">
+                        <i class="fas fa-ticket-alt"></i>
+                        チケット購入
+                    </a>
+                    <a href="#lineup" class="btn btn-outline">
+                        <i class="fas fa-music"></i>
+                        ラインナップ
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-scroll">
+                <div class="scroll-text">SCROLL</div>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <section id="lineup" class="lineup">
+            <div class="container">
+                <div class="section-header">
+                    <h2>LINEUP</h2>
+                    <p>世界各国から集結するトップアーティストたち</p>
+                </div>
+                
+                <div class="lineup-categories">
+                    <button class="lineup-tab active" data-day="all">ALL ARTISTS</button>
+                    <button class="lineup-tab" data-day="day1">DAY 1 (8/16)</button>
+                    <button class="lineup-tab" data-day="day2">DAY 2 (8/17)</button>
+                    <button class="lineup-tab" data-day="day3">DAY 3 (8/18)</button>
+                </div>
+
+                <div class="lineup-content">
+                    <div class="headliners">
+                        <h3 class="lineup-tier-title">HEADLINERS</h3>
+                        <div class="headliner-grid">
+                            <div class="artist-card headliner" data-day="day1">
+                                <div class="artist-image electronic-1"></div>
+                                <div class="artist-info">
+                                    <h4>ELECTRIC PULSE</h4>
+                                    <p class="artist-genre">Electronic / House</p>
+                                    <p class="artist-time">DAY 1 - 21:00-22:30</p>
+                                    <div class="artist-social">
+                                        <a href="#"><i class="fab fa-spotify"></i></a>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="artist-card headliner" data-day="day2">
+                                <div class="artist-image rock-1"></div>
+                                <div class="artist-info">
+                                    <h4>NEON NIGHTS</h4>
+                                    <p class="artist-genre">Alternative Rock</p>
+                                    <p class="artist-time">DAY 2 - 21:30-23:00</p>
+                                    <div class="artist-social">
+                                        <a href="#"><i class="fab fa-spotify"></i></a>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="artist-card headliner" data-day="day3">
+                                <div class="artist-image pop-1"></div>
+                                <div class="artist-info">
+                                    <h4>AURORA DREAMS</h4>
+                                    <p class="artist-genre">Indie Pop</p>
+                                    <p class="artist-time">DAY 3 - 20:30-22:00</p>
+                                    <div class="artist-social">
+                                        <a href="#"><i class="fab fa-spotify"></i></a>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="supporting-acts">
+                        <h3 class="lineup-tier-title">SUPPORTING ACTS</h3>
+                        <div class="supporting-grid">
+                            <div class="artist-card supporting" data-day="day1">
+                                <div class="artist-image electronic-2"></div>
+                                <div class="artist-info">
+                                    <h4>DIGITAL RAIN</h4>
+                                    <p class="artist-genre">Techno</p>
+                                    <p class="artist-time">DAY 1 - 19:00-20:00</p>
+                                </div>
+                            </div>
+                            <div class="artist-card supporting" data-day="day1">
+                                <div class="artist-image hip-hop-1"></div>
+                                <div class="artist-info">
+                                    <h4>URBAN FLOW</h4>
+                                    <p class="artist-genre">Hip Hop</p>
+                                    <p class="artist-time">DAY 1 - 17:30-18:30</p>
+                                </div>
+                            </div>
+                            <div class="artist-card supporting" data-day="day2">
+                                <div class="artist-image rock-2"></div>
+                                <div class="artist-info">
+                                    <h4>MIDNIGHT ECHO</h4>
+                                    <p class="artist-genre">Progressive Rock</p>
+                                    <p class="artist-time">DAY 2 - 19:30-20:30</p>
+                                </div>
+                            </div>
+                            <div class="artist-card supporting" data-day="day2">
+                                <div class="artist-image electronic-3"></div>
+                                <div class="artist-info">
+                                    <h4>COSMIC WAVE</h4>
+                                    <p class="artist-genre">Ambient</p>
+                                    <p class="artist-time">DAY 2 - 18:00-19:00</p>
+                                </div>
+                            </div>
+                            <div class="artist-card supporting" data-day="day3">
+                                <div class="artist-image pop-2"></div>
+                                <div class="artist-info">
+                                    <h4>SUMMER BREEZE</h4>
+                                    <p class="artist-genre">Indie Folk</p>
+                                    <p class="artist-time">DAY 3 - 18:30-19:30</p>
+                                </div>
+                            </div>
+                            <div class="artist-card supporting" data-day="day3">
+                                <div class="artist-image jazz-1"></div>
+                                <div class="artist-info">
+                                    <h4>BLUE NOTE COLLECTIVE</h4>
+                                    <p class="artist-genre">Jazz Fusion</p>
+                                    <p class="artist-time">DAY 3 - 17:00-18:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="timetable" class="timetable">
+            <div class="container">
+                <div class="section-header">
+                    <h2>TIMETABLE</h2>
+                    <p>各ステージの詳細なタイムテーブル</p>
+                </div>
+
+                <div class="timetable-tabs">
+                    <button class="timetable-tab active" data-day="day1">
+                        DAY 1<br><span>8/16 (FRI)</span>
+                    </button>
+                    <button class="timetable-tab" data-day="day2">
+                        DAY 2<br><span>8/17 (SAT)</span>
+                    </button>
+                    <button class="timetable-tab" data-day="day3">
+                        DAY 3<br><span>8/18 (SUN)</span>
+                    </button>
+                </div>
+
+                <div class="timetable-content">
+                    <div class="day-schedule active" data-day="day1">
+                        <div class="stage-schedules">
+                            <div class="stage-schedule">
+                                <h3 class="stage-name">MAIN STAGE</h3>
+                                <div class="schedule-items">
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">16:00-17:00</div>
+                                        <div class="schedule-artist">OPENING ACT</div>
+                                        <div class="schedule-genre">Various</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">17:30-18:30</div>
+                                        <div class="schedule-artist">URBAN FLOW</div>
+                                        <div class="schedule-genre">Hip Hop</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">19:00-20:00</div>
+                                        <div class="schedule-artist">DIGITAL RAIN</div>
+                                        <div class="schedule-genre">Techno</div>
+                                    </div>
+                                    <div class="schedule-item headliner-item">
+                                        <div class="schedule-time">21:00-22:30</div>
+                                        <div class="schedule-artist">ELECTRIC PULSE</div>
+                                        <div class="schedule-genre">Electronic / House</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stage-schedule">
+                                <h3 class="stage-name">SUB STAGE</h3>
+                                <div class="schedule-items">
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">15:30-16:30</div>
+                                        <div class="schedule-artist">LOCAL HEROES</div>
+                                        <div class="schedule-genre">J-Rock</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">17:00-18:00</div>
+                                        <div class="schedule-artist">ACOUSTIC DREAMS</div>
+                                        <div class="schedule-genre">Folk</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">18:30-19:30</div>
+                                        <div class="schedule-artist">FUTURE BASS</div>
+                                        <div class="schedule-genre">Electronic</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">20:00-21:00</div>
+                                        <div class="schedule-artist">INDIE COLLECTIVE</div>
+                                        <div class="schedule-genre">Indie Rock</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule" data-day="day2">
+                        <div class="stage-schedules">
+                            <div class="stage-schedule">
+                                <h3 class="stage-name">MAIN STAGE</h3>
+                                <div class="schedule-items">
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">16:30-17:30</div>
+                                        <div class="schedule-artist">RISING STARS</div>
+                                        <div class="schedule-genre">Alternative</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">18:00-19:00</div>
+                                        <div class="schedule-artist">COSMIC WAVE</div>
+                                        <div class="schedule-genre">Ambient</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">19:30-20:30</div>
+                                        <div class="schedule-artist">MIDNIGHT ECHO</div>
+                                        <div class="schedule-genre">Progressive Rock</div>
+                                    </div>
+                                    <div class="schedule-item headliner-item">
+                                        <div class="schedule-time">21:30-23:00</div>
+                                        <div class="schedule-artist">NEON NIGHTS</div>
+                                        <div class="schedule-genre">Alternative Rock</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stage-schedule">
+                                <h3 class="stage-name">SUB STAGE</h3>
+                                <div class="schedule-items">
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">15:00-16:00</div>
+                                        <div class="schedule-artist">SUNSET VIBES</div>
+                                        <div class="schedule-genre">Chill Out</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">16:30-17:30</div>
+                                        <div class="schedule-artist">URBAN LEGENDS</div>
+                                        <div class="schedule-genre">R&B</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">18:00-19:00</div>
+                                        <div class="schedule-artist">SYNTH WAVE</div>
+                                        <div class="schedule-genre">Synthpop</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">20:00-21:00</div>
+                                        <div class="schedule-artist">DREAM STATE</div>
+                                        <div class="schedule-genre">Shoegaze</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule" data-day="day3">
+                        <div class="stage-schedules">
+                            <div class="stage-schedule">
+                                <h3 class="stage-name">MAIN STAGE</h3>
+                                <div class="schedule-items">
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">17:00-18:00</div>
+                                        <div class="schedule-artist">BLUE NOTE COLLECTIVE</div>
+                                        <div class="schedule-genre">Jazz Fusion</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">18:30-19:30</div>
+                                        <div class="schedule-artist">SUMMER BREEZE</div>
+                                        <div class="schedule-genre">Indie Folk</div>
+                                    </div>
+                                    <div class="schedule-item headliner-item">
+                                        <div class="schedule-time">20:30-22:00</div>
+                                        <div class="schedule-artist">AURORA DREAMS</div>
+                                        <div class="schedule-genre">Indie Pop</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">22:30-23:30</div>
+                                        <div class="schedule-artist">GRAND FINALE</div>
+                                        <div class="schedule-genre">All Artists</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stage-schedule">
+                                <h3 class="stage-name">SUB STAGE</h3>
+                                <div class="schedule-items">
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">14:00-15:00</div>
+                                        <div class="schedule-artist">AFTERNOON LIGHT</div>
+                                        <div class="schedule-genre">Acoustic</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">15:30-16:30</div>
+                                        <div class="schedule-artist">GOLDEN HOUR</div>
+                                        <div class="schedule-genre">Indie Pop</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">17:00-18:00</div>
+                                        <div class="schedule-artist">PEACEFUL MINDS</div>
+                                        <div class="schedule-genre">Ambient</div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">19:00-20:00</div>
+                                        <div class="schedule-artist">FINAL ECHO</div>
+                                        <div class="schedule-genre">Alternative</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="info" class="info">
+            <div class="container">
+                <div class="section-header">
+                    <h2>FESTIVAL INFO</h2>
+                    <p>フェスティバル基本情報とお役立ち情報</p>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>開催期間</h3>
+                        <p>2024年8月16日（金）〜18日（日）<br>
+                        3日間開催</p>
+                        <ul class="info-details">
+                            <li>DAY 1: 16:00-23:00</li>
+                            <li>DAY 2: 15:00-23:30</li>
+                            <li>DAY 3: 14:00-24:00</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>会場</h3>
+                        <p>富士山麓特設ステージ<br>
+                        〒401-0301 山梨県南都留郡富士河口湖町</p>
+                        <ul class="info-details">
+                            <li>メインステージ・サブステージ</li>
+                            <li>フード＆ドリンクエリア</li>
+                            <li>キャンプサイト完備</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>収容人数</h3>
+                        <p>1日最大20,000人<br>
+                        3日間で延べ60,000人</p>
+                        <ul class="info-details">
+                            <li>メインステージ前: 15,000人</li>
+                            <li>サブステージ前: 5,000人</li>
+                            <li>キャンプエリア: 3,000人</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>安全対策</h3>
+                        <p>万全のセキュリティ体制<br>
+                        医療スタッフ常駐</p>
+                        <ul class="info-details">
+                            <li>24時間警備体制</li>
+                            <li>救護テント設置</li>
+                            <li>AED設置</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3>設備・サービス</h3>
+                        <p>快適にお過ごしいただくための<br>
+                        各種設備をご用意</p>
+                        <ul class="info-details">
+                            <li>無料Wi-Fi完備</li>
+                            <li>コインロッカー</li>
+                            <li>ATM設置</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>環境への取り組み</h3>
+                        <p>サステナブルな<br>
+                        フェスティバルを目指して</p>
+                        <ul class="info-details">
+                            <li>リユースカップ導入</li>
+                            <li>ゴミ分別徹底</li>
+                            <li>太陽光発電利用</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="food" class="food">
+            <div class="container">
+                <div class="section-header">
+                    <h2>FOOD & DRINK</h2>
+                    <p>全国から集結した絶品グルメを楽しもう</p>
+                </div>
+                
+                <div class="food-categories">
+                    <button class="food-tab active" data-category="all">ALL</button>
+                    <button class="food-tab" data-category="food">FOOD</button>
+                    <button class="food-tab" data-category="drink">DRINK</button>
+                    <button class="food-tab" data-category="sweet">SWEETS</button>
+                </div>
+                
+                <div class="food-grid">
+                    <div class="food-item" data-category="food">
+                        <div class="food-image burger"></div>
+                        <div class="food-info">
+                            <h3>GOURMET BURGER</h3>
+                            <p class="food-description">厳選和牛を使用した特製バーガー</p>
+                            <p class="food-price">¥1,200</p>
+                            <div class="food-location">メインエリア A-1</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-item" data-category="food">
+                        <div class="food-image ramen"></div>
+                        <div class="food-info">
+                            <h3>FESTIVAL RAMEN</h3>
+                            <p class="food-description">コク深い豚骨スープの特製ラーメン</p>
+                            <p class="food-price">¥900</p>
+                            <div class="food-location">フードコート B-3</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-item" data-category="food">
+                        <div class="food-image tacos"></div>
+                        <div class="food-info">
+                            <h3>MEXICAN TACOS</h3>
+                            <p class="food-description">本格的なメキシカンタコス</p>
+                            <p class="food-price">¥800</p>
+                            <div class="food-location">インターナショナル C-2</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-item" data-category="drink">
+                        <div class="food-image cocktail"></div>
+                        <div class="food-info">
+                            <h3>SIGNATURE COCKTAIL</h3>
+                            <p class="food-description">フェス限定オリジナルカクテル</p>
+                            <p class="food-price">¥1,000</p>
+                            <div class="food-location">バーエリア D-1</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-item" data-category="drink">
+                        <div class="food-image beer"></div>
+                        <div class="food-info">
+                            <h3>CRAFT BEER</h3>
+                            <p class="food-description">地元醸造所のクラフトビール</p>
+                            <p class="food-price">¥700</p>
+                            <div class="food-location">ビアガーデン D-2</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-item" data-category="sweet">
+                        <div class="food-image icecream"></div>
+                        <div class="food-info">
+                            <h3>ARTISAN ICE CREAM</h3>
+                            <p class="food-description">職人手作りのプレミアムアイス</p>
+                            <p class="food-price">¥500</p>
+                            <div class="food-location">スイーツエリア E-1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="access" class="access">
+            <div class="container">
+                <div class="section-header">
+                    <h2>ACCESS & STAY</h2>
+                    <p>会場までのアクセス方法と宿泊情報</p>
+                </div>
+                
+                <div class="access-content">
+                    <div class="access-methods">
+                        <div class="access-method">
+                            <div class="access-icon">
+                                <i class="fas fa-bus"></i>
+                            </div>
+                            <h3>シャトルバス</h3>
+                            <p class="access-description">JR大月駅・河口湖駅から直行シャトルバス運行</p>
+                            <ul class="access-details">
+                                <li>運行時間: 13:00-25:00（15分間隔）</li>
+                                <li>料金: 往復 ¥800</li>
+                                <li>所要時間: 約30分</li>
+                                <li>事前予約不要</li>
+                            </ul>
+                            <a href="#tickets" class="access-btn">チケット購入</a>
+                        </div>
+                        
+                        <div class="access-method">
+                            <div class="access-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h3>自家用車</h3>
+                            <p class="access-description">中央自動車道河口湖ICから約15分</p>
+                            <ul class="access-details">
+                                <li>駐車場: 5,000台完備</li>
+                                <li>料金: 1日 ¥2,000</li>
+                                <li>24時間利用可能</li>
+                                <li>事前予約推奨</li>
+                            </ul>
+                            <a href="#" class="access-btn">駐車場予約</a>
+                        </div>
+                        
+                        <div class="access-method">
+                            <div class="access-icon">
+                                <i class="fas fa-campground"></i>
+                            </div>
+                            <h3>キャンプサイト</h3>
+                            <p class="access-description">会場隣接のキャンプエリアで宿泊可能</p>
+                            <ul class="access-details">
+                                <li>テントサイト: 3,000区画</li>
+                                <li>料金: 3泊4日 ¥8,000</li>
+                                <li>シャワー・トイレ完備</li>
+                                <li>レンタル用品あり</li>
+                            </ul>
+                            <a href="#tickets" class="access-btn">キャンプ予約</a>
+                        </div>
+                    </div>
+                    
+                    <div class="accommodation">
+                        <h3>推奨宿泊施設</h3>
+                        <div class="hotel-list">
+                            <div class="hotel-item">
+                                <div class="hotel-info">
+                                    <h4>富士山リゾートホテル</h4>
+                                    <p>会場まで車で10分の好立地</p>
+                                    <div class="hotel-price">¥12,000〜 / 泊</div>
+                                </div>
+                                <a href="#" class="hotel-link">予約サイトへ</a>
+                            </div>
+                            <div class="hotel-item">
+                                <div class="hotel-info">
+                                    <h4>河口湖温泉旅館</h4>
+                                    <p>温泉で疲れを癒してリフレッシュ</p>
+                                    <div class="hotel-price">¥15,000〜 / 泊</div>
+                                </div>
+                                <a href="#" class="hotel-link">予約サイトへ</a>
+                            </div>
+                            <div class="hotel-item">
+                                <div class="hotel-info">
+                                    <h4>ビジネスホテル大月</h4>
+                                    <p>リーズナブルで快適な宿泊</p>
+                                    <div class="hotel-price">¥8,000〜 / 泊</div>
+                                </div>
+                                <a href="#" class="hotel-link">予約サイトへ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tickets" class="tickets">
+            <div class="container">
+                <div class="section-header">
+                    <h2>TICKETS</h2>
+                    <p>各種チケット情報</p>
+                </div>
+                
+                <div class="ticket-types">
+                    <div class="ticket-card">
+                        <div class="ticket-header">
+                            <h3>1日券</h3>
+                            <div class="ticket-price">¥8,000</div>
+                        </div>
+                        <div class="ticket-content">
+                            <ul class="ticket-includes">
+                                <li>選択した1日のみ入場可能</li>
+                                <li>全ステージ観覧可</li>
+                                <li>フードエリア利用可</li>
+                                <li>再入場可（当日のみ）</li>
+                            </ul>
+                            <div class="ticket-options">
+                                <label class="ticket-option">
+                                    <input type="radio" name="day-ticket" value="day1">
+                                    <span>DAY 1 (8/16)</span>
+                                </label>
+                                <label class="ticket-option">
+                                    <input type="radio" name="day-ticket" value="day2">
+                                    <span>DAY 2 (8/17)</span>
+                                </label>
+                                <label class="ticket-option">
+                                    <input type="radio" name="day-ticket" value="day3">
+                                    <span>DAY 3 (8/18)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button class="ticket-btn">購入する</button>
+                    </div>
+                    
+                    <div class="ticket-card popular">
+                        <div class="ticket-badge">人気</div>
+                        <div class="ticket-header">
+                            <h3>3日通し券</h3>
+                            <div class="ticket-price">
+                                <span class="original-price">¥24,000</span>
+                                <span class="sale-price">¥20,000</span>
+                            </div>
+                        </div>
+                        <div class="ticket-content">
+                            <ul class="ticket-includes">
+                                <li>3日間すべて入場可能</li>
+                                <li>全ステージ観覧可</li>
+                                <li>フードエリア利用可</li>
+                                <li>各日再入場可</li>
+                                <li>限定グッズ付き</li>
+                                <li>4,000円お得！</li>
+                            </ul>
+                        </div>
+                        <button class="ticket-btn">購入する</button>
+                    </div>
+                    
+                    <div class="ticket-card premium">
+                        <div class="ticket-header">
+                            <h3>VIP パッケージ</h3>
+                            <div class="ticket-price">¥35,000</div>
+                        </div>
+                        <div class="ticket-content">
+                            <ul class="ticket-includes">
+                                <li>3日間VIPエリア入場</li>
+                                <li>専用ラウンジ利用</li>
+                                <li>アーティストとのMeet & Greet</li>
+                                <li>限定グッズセット</li>
+                                <li>フード・ドリンククーポン</li>
+                                <li>専用駐車場利用</li>
+                            </ul>
+                        </div>
+                        <button class="ticket-btn">購入する</button>
+                    </div>
+                </div>
+                
+                <div class="ticket-info">
+                    <div class="info-section">
+                        <h4>購入について</h4>
+                        <ul>
+                            <li>チケットは電子チケットでの発行となります</li>
+                            <li>購入後のキャンセル・変更はできません</li>
+                            <li>転売は禁止されています</li>
+                            <li>入場時に身分証明書が必要です</li>
+                        </ul>
+                    </div>
+                    <div class="info-section">
+                        <h4>注意事項</h4>
+                        <ul>
+                            <li>雨天決行（荒天時は中止の場合があります）</li>
+                            <li>持ち込み禁止物品があります</li>
+                            <li>会場内は禁煙です</li>
+                            <li>ペットの同伴はできません</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <i class="fas fa-music"></i>
+                        <h3>SOUND WAVE FESTIVAL</h3>
+                    </div>
+                    <p>音楽で繋がる、心躍る3日間</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-spotify"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Festival</h4>
+                        <ul>
+                            <li><a href="#lineup">Lineup</a></li>
+                            <li><a href="#timetable">Timetable</a></li>
+                            <li><a href="#info">Info</a></li>
+                            <li><a href="#food">Food & Drink</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Access</h4>
+                        <ul>
+                            <li><a href="#access">交通アクセス</a></li>
+                            <li><a href="#access">宿泊情報</a></li>
+                            <li><a href="#access">キャンプサイト</a></li>
+                            <li><a href="#access">駐車場</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Tickets</h4>
+                        <ul>
+                            <li><a href="#tickets">チケット購入</a></li>
+                            <li><a href="#">利用規約</a></li>
+                            <li><a href="#">キャンセルポリシー</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="#">お問い合わせ</a></li>
+                            <li><a href="#">プレス</a></li>
+                            <li><a href="#">出演者募集</a></li>
+                            <li><a href="#">スポンサー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 SOUND WAVE FESTIVAL. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">プライバシーポリシー</a>
+                    <a href="#">利用規約</a>
+                    <a href="#">特定商取引法</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+`,
+    css: `
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --accent-color: #45b7d1;
+    --dark-color: #2c3e50;
+    --text-light: #ecf0f1;
+    --text-dark: #2c3e50;
+    --gradient-primary: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    --gradient-secondary: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+    --gradient-accent: linear-gradient(135deg, #45b7d1 0%, #3742fa 100%);
+    --gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 15px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: var(--text-light);
+    background: var(--dark-color);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
+}
+
+.nav-brand i {
+    font-size: 2rem;
+}
+
+.brand-text {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.nav-ticket {
+    background: var(--gradient-primary);
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white !important;
+}
+
+.nav-ticket:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 107, 107, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(78, 205, 196, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(69, 183, 209, 0.3) 0%, transparent 50%),
+        linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    animation: backgroundShift 10s ease-in-out infinite;
+}
+
+.hero-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px, 80px 80px;
+    animation: particleFloat 20s linear infinite;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-date {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.hero-title {
+    margin-bottom: 30px;
+}
+
+.title-main {
+    display: block;
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    letter-spacing: 5px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 50px rgba(255, 107, 107, 0.5);
+}
+
+.title-sub {
+    display: block;
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 400;
+    letter-spacing: 8px;
+    color: var(--text-light);
+    margin-top: 10px;
+}
+
+.hero-location {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 50px;
+    opacity: 0.9;
+}
+
+.hero-countdown {
+    margin-bottom: 50px;
+}
+
+.countdown-title {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    min-width: 80px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.countdown-number {
+    display: block;
+    font-family: 'Orbitron', monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+}
+
+.countdown-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn-outline:hover {
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    transform: translateY(-3px);
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.scroll-text {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    opacity: 0.7;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.scroll-line {
+    width: 2px;
+    height: 50px;
+    background: var(--primary-color);
+    margin: 0 auto;
+    border-radius: 1px;
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(30deg); }
+}
+
+@keyframes particleFloat {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-100px) rotate(360deg); }
+}
+
+@keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(10px); }
+}
+
+/* Section Styles */
+section {
+    padding: 100px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-header h2 {
+    font-family: 'Orbitron', monospace;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Lineup Section */
+.lineup {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.lineup-categories {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.lineup-tab {
+    padding: 12px 25px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    border-radius: 25px;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 1px;
+}
+
+.lineup-tab.active,
+.lineup-tab:hover {
+    background: var(--gradient-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.lineup-tier-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+.headliner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.supporting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.artist-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.artist-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.artist-card.headliner {
+    background: rgba(255, 107, 107, 0.1);
+    border-color: var(--primary-color);
+}
+
+.artist-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.artist-image.electronic-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.artist-image.electronic-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.artist-image.electronic-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.artist-image.rock-1 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+.artist-image.rock-2 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+.artist-image.pop-1 { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+.artist-image.pop-2 { background: linear-gradient(135deg, #ff8a80 0%, #ea80fc 100%); }
+.artist-image.hip-hop-1 { background: linear-gradient(135deg, #8360c3 0%, #2ebf91 100%); }
+.artist-image.jazz-1 { background: linear-gradient(135deg, #ebbba7 0%, #cfc7f8 100%); }
+
+.artist-image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+}
+
+.artist-info {
+    padding: 25px;
+}
+
+.artist-info h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.artist-genre {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.artist-time {
+    color: var(--text-light);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.artist-social {
+    display: flex;
+    gap: 10px;
+}
+
+.artist-social a {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.artist-social a:hover {
+    opacity: 1;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Timetable Section */
+.timetable {
+    background: var(--dark-color);
+}
+
+.timetable-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.timetable-tab {
+    padding: 20px 30px;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    border-radius: var(--border-radius);
+    color: var(--accent-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    min-width: 120px;
+}
+
+.timetable-tab span {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.timetable-tab.active,
+.timetable-tab:hover {
+    background: var(--gradient-accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.day-schedule {
+    display: none;
+}
+
+.day-schedule.active {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+.stage-schedules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 40px;
+}
+
+.stage-schedule {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stage-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-item.headliner-item {
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid var(--primary-color);
+}
+
+.schedule-time {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.schedule-artist {
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.schedule-genre {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Info Section */
+.info {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    padding: 40px 30px;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.info-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    color: var(--text-light);
+    opacity: 0.8;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.info-details {
+    list-style: none;
+    text-align: left;
+}
+
+.info-details li {
+    padding: 8px 0;
+    color: var(--text-light);
+    opacity: 0.8;
+    position: relative;
+    padding-left: 20px;
+}
+
+.info-details li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+/* Food Section */
+.food {
+    background: var(--dark-color);
+}
+
+.food-categories {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.food-tab {
+    padding: 12px 25px;
+    border: 2px solid var(--secondary-color);
+    background: transparent;
+    border-radius: 25px;
+    color: var(--secondary-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 1px;
+}
+
+.food-tab.active,
+.food-tab:hover {
+    background: var(--gradient-secondary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.food-item {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.food-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.food-image {
+    height: 200px;
+    position: relative;
+}
+
+.food-image.burger { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
+.food-image.ramen { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
+.food-image.tacos { background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%); }
+.food-image.cocktail { background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); }
+.food-image.beer { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+.food-image.icecream { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+
+.food-info {
+    padding: 25px;
+}
+
+.food-info h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.food-description {
+    color: var(--text-light);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.food-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.food-location {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    opacity: 0.8;
+}
+
+/* Access Section */
+.access {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.access-content {
+    display: grid;
+    gap: 80px;
+}
+
+.access-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.access-method {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    padding: 40px 30px;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.access-method:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.access-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.access-method h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.access-description {
+    color: var(--text-light);
+    opacity: 0.8;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.access-details {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.access-details li {
+    padding: 8px 0;
+    color: var(--text-light);
+    opacity: 0.8;
+    position: relative;
+    padding-left: 20px;
+}
+
+.access-details li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.access-btn {
+    background: var(--gradient-accent);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    letter-spacing: 1px;
+}
+
+.access-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+.accommodation h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hotel-list {
+    display: grid;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hotel-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hotel-info h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.hotel-info p {
+    color: var(--text-light);
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.hotel-price {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.hotel-link {
+    background: var(--gradient-secondary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    letter-spacing: 1px;
+}
+
+.hotel-link:hover {
+    transform: translateY(-2px);
+}
+
+/* Tickets Section */
+.tickets {
+    background: var(--dark-color);
+}
+
+.ticket-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.ticket-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    padding: 40px 30px;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.ticket-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.ticket-card.popular {
+    border-color: var(--primary-color);
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.ticket-card.premium {
+    border-color: var(--accent-color);
+    background: rgba(69, 183, 209, 0.1);
+}
+
+.ticket-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.ticket-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.ticket-price {
+    margin-bottom: 30px;
+}
+
+.original-price {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    opacity: 0.5;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.sale-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.ticket-price:not(.original-price):not(.sale-price) {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.ticket-includes {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.ticket-includes li {
+    padding: 10px 0;
+    color: var(--text-light);
+    opacity: 0.9;
+    position: relative;
+    padding-left: 25px;
+}
+
+.ticket-includes li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.ticket-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.ticket-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.ticket-option:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.ticket-option input[type="radio"] {
+    accent-color: var(--primary-color);
+}
+
+.ticket-btn {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.ticket-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+.ticket-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.info-section h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.info-section ul {
+    list-style: none;
+}
+
+.info-section li {
+    padding: 8px 0;
+    color: var(--text-light);
+    opacity: 0.8;
+    position: relative;
+    padding-left: 20px;
+}
+
+.info-section li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-brand {
+    text-align: center;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.brand-logo i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.brand-logo h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 2px;
+}
+
+.footer-brand p {
+    color: var(--text-light);
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    opacity: 1;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: var(--text-light);
+    opacity: 0.8;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-column a:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-legal {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-legal a {
+    color: var(--text-light);
+    opacity: 0.7;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-legal a:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(44, 62, 80, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 50px;
+        transition: left 0.3s ease;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 20px 0;
+    }
+
+    .countdown-timer {
+        gap: 15px;
+    }
+
+    .countdown-item {
+        min-width: 60px;
+        padding: 15px;
+    }
+
+    .countdown-number {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lineup-categories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .headliner-grid,
+    .supporting-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timetable-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stage-schedules {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .food-categories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .access-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .hotel-item {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .ticket-types {
+        grid-template-columns: 1fr;
+    }
+
+    .ticket-info {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+
+    .title-main {
+        font-size: 2.5rem;
+    }
+
+    .title-sub {
+        font-size: 1.2rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+`,
+    js: `
+document.addEventListener('DOMContentLoaded', function() {
+    // ハンバーガーメニューの制御
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // メニューリンクをクリックしたときにメニューを閉じる
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    }
+
+    // スムーズスクロール
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // カウントダウンタイマー
+    function initCountdown() {
+        const eventDate = new Date('2024-08-16T16:00:00').getTime();
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(3, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            } else {
+                document.getElementById('days').textContent = '000';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    }
+
+    initCountdown();
+
+    // ヘッダーのスクロール効果
+    const header = document.querySelector('.header');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            header.style.background = 'rgba(44, 62, 80, 0.98)';
+            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+        } else {
+            header.style.background = 'rgba(44, 62, 80, 0.95)';
+            header.style.boxShadow = 'none';
+        }
+
+        lastScrollTop = scrollTop;
+    });
+
+    // ラインナップタブの切り替え
+    const lineupTabs = document.querySelectorAll('.lineup-tab');
+    const artistCards = document.querySelectorAll('.artist-card');
+
+    lineupTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetDay = this.getAttribute('data-day');
+            
+            // アクティブなタブを切り替え
+            lineupTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // アーティストカードをフィルタリング
+            artistCards.forEach(card => {
+                if (targetDay === 'all' || card.getAttribute('data-day') === targetDay) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // タイムテーブルタブの切り替え
+    const timetableTabs = document.querySelectorAll('.timetable-tab');
+    const daySchedules = document.querySelectorAll('.day-schedule');
+
+    timetableTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetDay = this.getAttribute('data-day');
+            
+            // アクティブなタブを切り替え
+            timetableTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // スケジュールを切り替え
+            daySchedules.forEach(schedule => {
+                schedule.classList.remove('active');
+                if (schedule.getAttribute('data-day') === targetDay) {
+                    schedule.classList.add('active');
+                }
+            });
+        });
+    });
+
+    // フードタブの切り替え
+    const foodTabs = document.querySelectorAll('.food-tab');
+    const foodItems = document.querySelectorAll('.food-item');
+
+    foodTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetCategory = this.getAttribute('data-category');
+            
+            // アクティブなタブを切り替え
+            foodTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // フードアイテムをフィルタリング
+            foodItems.forEach(item => {
+                if (targetCategory === 'all' || item.getAttribute('data-category') === targetCategory) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 100);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // チケット購入処理
+    const ticketBtns = document.querySelectorAll('.ticket-btn');
+    ticketBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const card = this.closest('.ticket-card');
+            const ticketType = card.querySelector('h3').textContent;
+            
+            // 送信ボタンを無効化
+            const originalText = this.textContent;
+            this.textContent = '処理中...';
+            this.disabled = true;
+            
+            // 実際の購入処理をシミュレート
+            setTimeout(() => {
+                alert(\`\${ticketType}の購入手続きページに移動します。\`);
+                this.textContent = originalText;
+                this.disabled = false;
+            }, 2000);
+        });
+    });
+
+    // スクロールアニメーション
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // アニメーション対象要素の監視
+    document.querySelectorAll('.artist-card, .info-card, .food-item, .access-method, .ticket-card').forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+
+    // パララックス効果
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const heroBackground = document.querySelector('.hero-background');
+        const heroParticles = document.querySelector('.hero-particles');
+        
+        if (heroBackground) {
+            const speed = scrolled * 0.5;
+            heroBackground.style.transform = \`translateY(\${speed}px)\`;
+        }
+        
+        if (heroParticles) {
+            const particleSpeed = scrolled * 0.3;
+            heroParticles.style.transform = \`translateY(\${particleSpeed}px)\`;
+        }
+    });
+
+    // 音楽ビジュアライザー風のアニメーション
+    function createMusicVisualization() {
+        const hero = document.querySelector('.hero');
+        const visualizer = document.createElement('div');
+        visualizer.className = 'music-visualizer';
+        visualizer.style.cssText = \`
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 3px;
+            z-index: 2;
+        \`;
+
+        for (let i = 0; i < 20; i++) {
+            const bar = document.createElement('div');
+            bar.style.cssText = \`
+                width: 3px;
+                height: 20px;
+                background: linear-gradient(to top, #ff6b6b, #4ecdc4);
+                border-radius: 2px;
+                animation: musicBeat \${0.5 + Math.random() * 2}s ease-in-out infinite alternate;
+            \`;
+            visualizer.appendChild(bar);
+        }
+
+        hero.appendChild(visualizer);
+
+        // CSS アニメーションを追加
+        const style = document.createElement('style');
+        style.textContent = \`
+            @keyframes musicBeat {
+                0% { height: 5px; opacity: 0.3; }
+                100% { height: \${20 + Math.random() * 30}px; opacity: 1; }
+            }
+        \`;
+        document.head.appendChild(style);
+    }
+
+    createMusicVisualization();
+
+    // ページ読み込み完了時の初期化
+    window.addEventListener('load', function() {
+        // ローディング完了時のフェードイン効果
+        document.body.style.opacity = '1';
+        
+        // アーティストカードのスタッガードアニメーション
+        const artistCards = document.querySelectorAll('.artist-card');
+        artistCards.forEach((card, index) => {
+            card.style.animationDelay = \`\${index * 0.1}s\`;
+        });
+    });
+
+    // リサイズ時の処理
+    window.addEventListener('resize', function() {
+        // モバイル表示時の調整
+        if (window.innerWidth <= 768) {
+            artistCards.forEach(card => {
+                card.style.display = 'block';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            });
+            
+            foodItems.forEach(item => {
+                item.style.display = 'block';
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            });
+        }
+    });
+
+    // タッチイベントの処理（モバイル対応）
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            // スワイプ機能は必要に応じて実装
+            console.log(diff > 0 ? 'Left swipe' : 'Right swipe');
+        }
+    }
+
+    // クリックリップル効果
+    function createRipple(event) {
+        const button = event.currentTarget;
+        const circle = document.createElement('span');
+        const diameter = Math.max(button.clientWidth, button.clientHeight);
+        const radius = diameter / 2;
+
+        circle.style.width = circle.style.height = \`\${diameter}px\`;
+        circle.style.left = \`\${event.clientX - button.offsetLeft - radius}px\`;
+        circle.style.top = \`\${event.clientY - button.offsetTop - radius}px\`;
+        circle.classList.add('ripple');
+
+        const ripple = button.getElementsByClassName('ripple')[0];
+        if (ripple) {
+            ripple.remove();
+        }
+
+        button.appendChild(circle);
+    }
+
+    // ボタンにリップル効果を追加
+    document.querySelectorAll('.btn, .lineup-tab, .timetable-tab, .food-tab').forEach(btn => {
+        btn.addEventListener('click', createRipple);
+    });
+
+    // カスタムカーソル効果（デスクトップのみ）
+    if (window.innerWidth > 768) {
+        const cursor = document.createElement('div');
+        cursor.className = 'custom-cursor';
+        cursor.style.cssText = \`
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease;
+        \`;
+        document.body.appendChild(cursor);
+
+        document.addEventListener('mousemove', function(e) {
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
+        });
+
+        // インタラクティブ要素にホバー時の効果
+        document.querySelectorAll('a, button, .artist-card, .food-item').forEach(el => {
+            el.addEventListener('mouseenter', function() {
+                cursor.style.transform = 'scale(2)';
+                cursor.style.background = 'radial-gradient(circle, rgba(78, 205, 196, 0.8) 0%, transparent 70%)';
+            });
+            
+            el.addEventListener('mouseleave', function() {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.background = 'radial-gradient(circle, rgba(255, 107, 107, 0.8) 0%, transparent 70%)';
+            });
+        });
+    }
+
+    console.log('Sound Wave Festival template loaded successfully!');
+});
+
+// CSS for ripple effect
+const rippleStyle = document.createElement('style');
+rippleStyle.textContent = \`
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+    }
+
+    @keyframes ripple {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+
+    .custom-cursor {
+        transition: all 0.1s ease;
+    }
+\`;
+document.head.appendChild(rippleStyle);
+`
+  }
+};

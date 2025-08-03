@@ -1,0 +1,2071 @@
+import { WebTemplate, TEMPLATE_CATEGORIES } from '../types'
+
+export const itSaasTemplate: WebTemplate = {
+  id: 'it-saas',
+  title: 'SaaS プラットフォーム',
+  category: TEMPLATE_CATEGORIES.IT,
+  description: 'クラウドサービス事業者向けのSaaSプラットフォーム紹介サイトテンプレート',
+  thumbnail: '/template-images/it-saas.jpg',
+  features: [
+    'プランと料金表示',
+    '機能比較チャート',
+    'API ドキュメント',
+    '顧客事例・testimonials',
+    'ダッシュボードプレビュー'
+  ],
+  tags: ['SaaS', 'クラウド', 'サブスクリプション', 'API', 'プラットフォーム'],
+  code: {
+    html: `<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudFlow - 次世代ワークフロー自動化プラットフォーム</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>CloudFlow</h1>
+                    <span class="tagline">Workflow Automation</span>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="main-nav" id="main-nav">
+                    <ul>
+                        <li><a href="#features">機能</a></li>
+                        <li><a href="#pricing">料金</a></li>
+                        <li><a href="#customers">導入事例</a></li>
+                        <li><a href="#api">API</a></li>
+                        <li><a href="#support">サポート</a></li>
+                        <li class="nav-item">
+                            <a href="#" class="btn-login">ログイン</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="btn-signup">無料で始める</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>ワークフローを<span class="highlight">自動化</span>して<br>生産性を10倍に</h2>
+                    <p>CloudFlowは、ノーコードでワークフローを構築できる次世代プラットフォーム。複雑な業務プロセスを視覚的に設計し、AIの力で自動化を実現します。</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" id="start-trial">14日間無料トライアル</button>
+                        <button class="btn-secondary" id="watch-demo">デモを見る ▶</button>
+                    </div>
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <span class="icon">✓</span>
+                            <span>クレジットカード不要</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="icon">✓</span>
+                            <span>即座にセットアップ</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="icon">✓</span>
+                            <span>24/7サポート</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="dashboard-preview">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop" alt="ダッシュボード">
+                        <div class="floating-stats">
+                            <div class="stat-card">
+                                <div class="stat-icon">📊</div>
+                                <div class="stat-value">2,340</div>
+                                <div class="stat-label">自動化済みタスク</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">⚡</div>
+                                <div class="stat-value">85%</div>
+                                <div class="stat-label">時間短縮</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">🚀</div>
+                                <div class="stat-value">50+</div>
+                                <div class="stat-label">アプリ連携</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trusted-by">
+        <div class="container">
+            <p class="trusted-text">世界中の10,000以上の企業に信頼されています</p>
+            <div class="logos-container">
+                <div class="logo-item">Microsoft</div>
+                <div class="logo-item">Google</div>
+                <div class="logo-item">Salesforce</div>
+                <div class="logo-item">Shopify</div>
+                <div class="logo-item">Stripe</div>
+                <div class="logo-item">Zoom</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">なぜCloudFlowが選ばれるのか</h2>
+            <p class="section-subtitle">ビジネスの成長を加速させる強力な機能</p>
+            
+            <div class="features-showcase">
+                <div class="feature-main">
+                    <div class="feature-tabs">
+                        <button class="tab-button active" data-tab="visual">ビジュアルエディタ</button>
+                        <button class="tab-button" data-tab="ai">AI アシスタント</button>
+                        <button class="tab-button" data-tab="integrations">アプリ連携</button>
+                        <button class="tab-button" data-tab="analytics">分析・レポート</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="tab-visual">
+                        <div class="tab-layout">
+                            <div class="tab-image">
+                                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop" alt="ビジュアルエディタ">
+                            </div>
+                            <div class="tab-text">
+                                <h3>直感的なビジュアルエディタ</h3>
+                                <p>ドラッグ&ドロップで簡単にワークフローを構築。プログラミング知識は一切不要です。</p>
+                                <ul class="feature-list">
+                                    <li>ノーコード設計</li>
+                                    <li>リアルタイムプレビュー</li>
+                                    <li>テンプレートライブラリ</li>
+                                    <li>バージョン管理</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="tab-ai">
+                        <div class="tab-layout">
+                            <div class="tab-image">
+                                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" alt="AI アシスタント">
+                            </div>
+                            <div class="tab-text">
+                                <h3>AI搭載の自動化エンジン</h3>
+                                <p>機械学習により、ワークフローを自動で最適化。効率性を継続的に向上させます。</p>
+                                <ul class="feature-list">
+                                    <li>自動最適化</li>
+                                    <li>異常検知</li>
+                                    <li>予測分析</li>
+                                    <li>自然言語処理</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="tab-integrations">
+                        <div class="tab-layout">
+                            <div class="tab-image">
+                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop" alt="アプリ連携">
+                            </div>
+                            <div class="tab-text">
+                                <h3>500以上のアプリと連携</h3>
+                                <p>Slack、Salesforce、Google Workspace など、普段使っているツールと簡単に連携できます。</p>
+                                <ul class="feature-list">
+                                    <li>API自動検出</li>
+                                    <li>リアルタイム同期</li>
+                                    <li>カスタム連携</li>
+                                    <li>Webhook対応</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="tab-analytics">
+                        <div class="tab-layout">
+                            <div class="tab-image">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="分析・レポート">
+                            </div>
+                            <div class="tab-text">
+                                <h3>詳細な分析とレポート</h3>
+                                <p>ワークフローのパフォーマンスを可視化。データドリブンな改善を実現します。</p>
+                                <ul class="feature-list">
+                                    <li>リアルタイム監視</li>
+                                    <li>カスタムダッシュボード</li>
+                                    <li>自動レポート</li>
+                                    <li>アラート設定</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">シンプルで透明な料金体系</h2>
+            <p class="section-subtitle">あなたのニーズに合ったプランを選択してください</p>
+            
+            <div class="pricing-toggle">
+                <span class="toggle-label">月払い</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="annual-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="toggle-label">年払い <span class="discount">20% OFF</span></span>
+            </div>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3>Starter</h3>
+                        <p>個人・小規模チーム向け</p>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">¥</span>
+                        <span class="amount monthly">980</span>
+                        <span class="amount annual hidden">784</span>
+                        <span class="period">/月</span>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li>✓ 月間実行数: 1,000回</li>
+                            <li>✓ 基本的なアプリ連携</li>
+                            <li>✓ メールサポート</li>
+                            <li>✓ ダッシュボード</li>
+                            <li>✗ AI機能</li>
+                            <li>✗ カスタム連携</li>
+                        </ul>
+                    </div>
+                    <button class="plan-button btn-outline">始める</button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="plan-badge">人気No.1</div>
+                    <div class="plan-header">
+                        <h3>Professional</h3>
+                        <p>成長企業向け</p>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">¥</span>
+                        <span class="amount monthly">2,980</span>
+                        <span class="amount annual hidden">2,384</span>
+                        <span class="period">/月</span>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li>✓ 月間実行数: 10,000回</li>
+                            <li>✓ 全アプリ連携</li>
+                            <li>✓ チャットサポート</li>
+                            <li>✓ 高度なダッシュボード</li>
+                            <li>✓ AI機能</li>
+                            <li>✓ API アクセス</li>
+                        </ul>
+                    </div>
+                    <button class="plan-button btn-primary">始める</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3>Enterprise</h3>
+                        <p>大企業向け</p>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">¥</span>
+                        <span class="amount monthly">9,800</span>
+                        <span class="amount annual hidden">7,840</span>
+                        <span class="period">/月</span>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li>✓ 無制限実行</li>
+                            <li>✓ カスタム連携</li>
+                            <li>✓ 専任サポート</li>
+                            <li>✓ カスタムダッシュボード</li>
+                            <li>✓ 高度なAI機能</li>
+                            <li>✓ SSO・SAML対応</li>
+                        </ul>
+                    </div>
+                    <button class="plan-button btn-outline">お問い合わせ</button>
+                </div>
+            </div>
+            
+            <div class="pricing-faq">
+                <h3>よくある質問</h3>
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>プランはいつでも変更できますか？</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>はい、いつでもプランの変更が可能です。アップグレードは即座に反映され、ダウングレードは次の請求サイクルから適用されます。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>無料トライアル期間中にキャンセルできますか？</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>14日間の無料トライアル期間中は、いつでもキャンセルできます。課金は一切発生しません。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>どのような支払い方法に対応していますか？</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>クレジットカード（Visa、MasterCard、American Express）、PayPal、銀行振込に対応しています。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="customers" class="customers">
+        <div class="container">
+            <h2 class="section-title">お客様の声</h2>
+            <p class="section-subtitle">CloudFlowで成果を上げているお客様の事例</p>
+            
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <span>⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p>"CloudFlowを導入してから、手動だった承認プロセスが完全に自動化され、処理時間が80%短縮されました。チーム全体の生産性が劇的に向上しています。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="田中様">
+                        <div class="author-info">
+                            <h4>田中 健一 様</h4>
+                            <p>株式会社テックソリューション<br>CTO</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <span>⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p>"カスタマーサポートの対応が素晴らしく、導入もスムーズでした。直感的なUIで誰でも簡単にワークフローが作れるのが気に入っています。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b890?w=80&h=80&fit=crop&crop=face" alt="佐藤様">
+                        <div class="author-info">
+                            <h4>佐藤 美咲 様</h4>
+                            <p>グローバル商事株式会社<br>業務改革部長</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <span>⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p>"AI機能により、予想していなかった業務効率化のアイデアを得ることができました。ROIは3ヶ月で回収できました。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="山田様">
+                        <div class="author-info">
+                            <h4>山田 雄介 様</h4>
+                            <p>イノベーション株式会社<br>代表取締役</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-studies">
+                <h3>詳細な導入事例</h3>
+                <div class="case-study-grid">
+                    <div class="case-study-card">
+                        <div class="case-image">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=250&fit=crop" alt="製造業事例">
+                        </div>
+                        <div class="case-content">
+                            <h4>製造業A社様</h4>
+                            <p class="case-metric">処理時間 <strong>75%短縮</strong></p>
+                            <p>品質管理プロセスの自動化により、検査時間を大幅に短縮。不良品の早期発見も実現。</p>
+                            <a href="#" class="case-link">事例を読む →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-card">
+                        <div class="case-image">
+                            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=250&fit=crop" alt="金融業事例">
+                        </div>
+                        <div class="case-content">
+                            <h4>金融業B社様</h4>
+                            <p class="case-metric">コスト削減 <strong>60%</strong></p>
+                            <p>与信審査プロセスの自動化により、審査時間の短縮とヒューマンエラーの削減を実現。</p>
+                            <a href="#" class="case-link">事例を読む →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-card">
+                        <div class="case-image">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=250&fit=crop" alt="EC事例">
+                        </div>
+                        <div class="case-content">
+                            <h4>EC事業C社様</h4>
+                            <p class="case-metric">売上向上 <strong>40%</strong></p>
+                            <p>在庫管理と顧客対応の自動化により、運営効率を大幅に改善し売上増加を達成。</p>
+                            <a href="#" class="case-link">事例を読む →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="api" class="api">
+        <div class="container">
+            <h2 class="section-title">開発者向けAPI</h2>
+            <p class="section-subtitle">柔軟で強力なAPIでシステム連携を実現</p>
+            
+            <div class="api-content">
+                <div class="api-info">
+                    <div class="api-features">
+                        <div class="api-feature">
+                            <div class="api-icon">🚀</div>
+                            <h3>RESTful API</h3>
+                            <p>直感的でシンプルなREST APIにより、簡単にシステム連携が可能です。</p>
+                        </div>
+                        
+                        <div class="api-feature">
+                            <div class="api-icon">🔒</div>
+                            <h3>セキュア認証</h3>
+                            <p>OAuth 2.0とAPI キーによる安全な認証システムを提供しています。</p>
+                        </div>
+                        
+                        <div class="api-feature">
+                            <div class="api-icon">📚</div>
+                            <h3>豊富なドキュメント</h3>
+                            <p>詳細なドキュメントとコード例で、迅速な開発をサポートします。</p>
+                        </div>
+                        
+                        <div class="api-feature">
+                            <div class="api-icon">⚡</div>
+                            <h3>リアルタイム</h3>
+                            <p>WebhookとWebSocketによるリアルタイム通知で即座に反応します。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="api-demo">
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span>API 例</span>
+                            <div class="code-tabs">
+                                <button class="code-tab active" data-lang="curl">cURL</button>
+                                <button class="code-tab" data-lang="js">JavaScript</button>
+                                <button class="code-tab" data-lang="python">Python</button>
+                            </div>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-block active" id="curl-code">
+<pre><code># ワークフロー実行
+curl -X POST https://api.cloudflow.com/v1/workflows/execute \\
+  -H "Authorization: Bearer YOUR_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "workflow_id": "wf_12345",
+    "input_data": {
+      "user_email": "user@example.com",
+      "order_id": "12345"
+    }
+  }'</code></pre>
+                            </div>
+                            <div class="code-block" id="js-code">
+<pre><code>// ワークフロー実行
+const response = await fetch('https://api.cloudflow.com/v1/workflows/execute', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    workflow_id: 'wf_12345',
+    input_data: {
+      user_email: 'user@example.com',
+      order_id: '12345'
+    }
+  })
+});
+
+const result = await response.json();</code></pre>
+                            </div>
+                            <div class="code-block" id="python-code">
+<pre><code># ワークフロー実行
+import requests
+
+response = requests.post(
+    'https://api.cloudflow.com/v1/workflows/execute',
+    headers={
+        'Authorization': 'Bearer YOUR_API_KEY',
+        'Content-Type': 'application/json'
+    },
+    json={
+        'workflow_id': 'wf_12345',
+        'input_data': {
+            'user_email': 'user@example.com',
+            'order_id': '12345'
+        }
+    }
+)
+
+result = response.json()</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="api-resources">
+                        <h3>開発者リソース</h3>
+                        <div class="resource-links">
+                            <a href="#" class="resource-link">
+                                <div class="resource-icon">📖</div>
+                                <div>
+                                    <h4>API ドキュメント</h4>
+                                    <p>詳細な API リファレンス</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-link">
+                                <div class="resource-icon">🛠️</div>
+                                <div>
+                                    <h4>SDK ダウンロード</h4>
+                                    <p>各言語のSDK提供</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-link">
+                                <div class="resource-icon">💬</div>
+                                <div>
+                                    <h4>開発者コミュニティ</h4>
+                                    <p>質問・情報交換の場</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>今すぐ始めて、生産性を10倍に</h2>
+                <p>14日間の無料トライアルで、CloudFlowの威力を体験してください。</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary large">無料トライアル開始</button>
+                    <button class="btn-secondary large">デモを予約</button>
+                </div>
+                <p class="cta-note">クレジットカード不要 • 即座にセットアップ • いつでもキャンセル可能</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudFlow</h3>
+                    <p>次世代のワークフロー自動化プラットフォーム</p>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">GitHub</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>プロダクト</h4>
+                    <ul>
+                        <li><a href="#">機能</a></li>
+                        <li><a href="#">料金</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">セキュリティ</a></li>
+                        <li><a href="#">アップデート</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>ソリューション</h4>
+                    <ul>
+                        <li><a href="#">マーケティング</a></li>
+                        <li><a href="#">セールス</a></li>
+                        <li><a href="#">カスタマーサポート</a></li>
+                        <li><a href="#">人事・総務</a></li>
+                        <li><a href="#">IT・開発</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>リソース</h4>
+                    <ul>
+                        <li><a href="#">ドキュメント</a></li>
+                        <li><a href="#">ブログ</a></li>
+                        <li><a href="#">事例</a></li>
+                        <li><a href="#">ウェビナー</a></li>
+                        <li><a href="#">ヘルプセンター</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>会社情報</h4>
+                    <ul>
+                        <li><a href="#">会社概要</a></li>
+                        <li><a href="#">採用</a></li>
+                        <li><a href="#">パートナー</a></li>
+                        <li><a href="#">お問い合わせ</a></li>
+                        <li><a href="#">プレス</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2025 CloudFlow Inc. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#">プライバシーポリシー</a>
+                        <a href="#">利用規約</a>
+                        <a href="#">SLA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>`,
+    css: `@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(30, 41, 59, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #3b82f6;
+    margin: 0;
+}
+
+.tagline {
+    font-size: 11px;
+    color: #64748b;
+    display: block;
+    margin-top: 2px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #3b82f6;
+}
+
+.btn-login {
+    color: #3b82f6 !important;
+    font-weight: 600;
+}
+
+.btn-signup {
+    background: #3b82f6;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-signup:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 3px;
+    padding: 8px;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: #475569;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+/* Hero */
+.hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.highlight {
+    background: linear-gradient(45deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    background: #f59e0b;
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: #d97706;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 16px 32px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-features {
+    display: flex;
+    gap: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+}
+
+.feature-item .icon {
+    color: #10b981;
+    font-weight: bold;
+}
+
+/* Hero Visual */
+.hero-visual {
+    position: relative;
+}
+
+.dashboard-preview {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.floating-stats {
+    position: absolute;
+    top: 20px;
+    right: -50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: float 6s ease-in-out infinite;
+}
+
+.stat-card:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.stat-card:nth-child(3) {
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.stat-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3b82f6;
+    display: block;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* Trusted By */
+.trusted-by {
+    padding: 60px 0;
+    background: #f8fafc;
+    text-align: center;
+}
+
+.trusted-text {
+    color: #64748b;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.logo-item {
+    color: #94a3b8;
+    font-size: 18px;
+    font-weight: 600;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.logo-item:hover {
+    opacity: 1;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #1e293b;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 60px;
+    font-size: 18px;
+}
+
+/* Features */
+.features {
+    background: white;
+}
+
+.features-showcase {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+    background: #f1f5f9;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.tab-button {
+    background: transparent;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-button.active {
+    background: white;
+    color: #3b82f6;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tab-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.tab-text h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+.tab-text p {
+    color: #64748b;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.feature-list {
+    list-style: none;
+}
+
+.feature-list li {
+    padding: 8px 0;
+    color: #64748b;
+    position: relative;
+    padding-left: 25px;
+}
+
+.feature-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: 600;
+}
+
+/* Pricing */
+.pricing {
+    background: #f8fafc;
+}
+
+.pricing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.toggle-label {
+    color: #64748b;
+    font-weight: 500;
+}
+
+.discount {
+    background: #dcfce7;
+    color: #16a34a;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #3b82f6;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.pricing-card {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.pricing-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+}
+
+.pricing-card.featured {
+    border-color: #3b82f6;
+    transform: scale(1.05);
+}
+
+.plan-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3b82f6;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.plan-header h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1e293b;
+}
+
+.plan-header p {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.currency {
+    font-size: 18px;
+    color: #64748b;
+}
+
+.amount {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.amount.hidden {
+    display: none;
+}
+
+.period {
+    font-size: 16px;
+    color: #64748b;
+    margin-left: 5px;
+}
+
+.plan-features ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.plan-features li {
+    padding: 8px 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.plan-button {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+}
+
+.btn-outline:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+/* FAQ */
+.pricing-faq {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pricing-faq h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #1e293b;
+}
+
+.faq-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: #f8fafc;
+}
+
+.faq-question h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.faq-toggle {
+    font-size: 24px;
+    color: #64748b;
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 20px 20px;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-answer p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Customers */
+.customers {
+    background: white;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.testimonial-card {
+    background: #f8fafc;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.testimonial-rating {
+    margin-bottom: 20px;
+}
+
+.testimonial-content p {
+    color: #1e293b;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+.author-info p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* Case Studies */
+.case-studies h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 50px;
+    color: #1e293b;
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.case-study-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.case-study-card:hover {
+    transform: translateY(-5px);
+}
+
+.case-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.case-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.case-content {
+    padding: 30px;
+}
+
+.case-content h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.case-metric {
+    color: #10b981;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.case-content p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.case-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.case-link:hover {
+    color: #2563eb;
+}
+
+/* API */
+.api {
+    background: #f8fafc;
+}
+
+.api-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.api-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.api-feature {
+    text-align: center;
+}
+
+.api-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.api-feature h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.api-feature p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Code Example */
+.code-example {
+    background: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #334155;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.code-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.code-tab {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.code-tab.active {
+    background: #1e293b;
+    color: white;
+}
+
+.code-content {
+    position: relative;
+}
+
+.code-block {
+    display: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #e2e8f0;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.code-block.active {
+    display: block;
+}
+
+.code-block pre {
+    margin: 0;
+}
+
+/* API Resources */
+.api-resources h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #1e293b;
+}
+
+.resource-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.resource-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.resource-link:hover {
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+}
+
+.resource-icon {
+    font-size: 24px;
+    min-width: 30px;
+}
+
+.resource-link h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+.resource-link p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* CTA */
+.cta {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.cta-content h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.btn-primary.large,
+.btn-secondary.large {
+    padding: 18px 36px;
+    font-size: 18px;
+}
+
+.cta-note {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+    background: #1e293b;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #3b82f6;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-section p {
+    color: #94a3b8;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #3b82f6;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    background: #334155;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.social-links a:hover {
+    background: #3b82f6;
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid #334155;
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.legal-links {
+    display: flex;
+    gap: 20px;
+}
+
+.legal-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.legal-links a:hover {
+    color: #3b82f6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .hero-text h2 {
+        font-size: 36px;
+    }
+    
+    .hero-features {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .floating-stats {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    
+    .tab-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .pricing-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card.featured {
+        transform: none;
+    }
+    
+    .testimonials,
+    .case-study-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .api-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .api-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-legal {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}`,
+    js: `// ハンバーガーメニュー
+const hamburger = document.getElementById('hamburger');
+const mainNav = document.getElementById('main-nav');
+
+if (hamburger && mainNav) {
+    hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mainNav.classList.toggle('active');
+    });
+    
+    // メニューリンクをクリックしたら閉じる
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mainNav.classList.remove('active');
+        });
+    });
+}
+
+// スムーズスクロール
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// 機能タブ切り替え
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const tabId = this.getAttribute('data-tab');
+        
+        // アクティブなタブボタンとコンテンツをリセット
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // 新しいタブをアクティブに
+        this.classList.add('active');
+        document.getElementById('tab-' + tabId).classList.add('active');
+    });
+});
+
+// 料金プラン年払い切り替え
+const annualToggle = document.getElementById('annual-toggle');
+const monthlyAmounts = document.querySelectorAll('.amount.monthly');
+const annualAmounts = document.querySelectorAll('.amount.annual');
+
+if (annualToggle) {
+    annualToggle.addEventListener('change', function() {
+        if (this.checked) {
+            monthlyAmounts.forEach(amount => amount.classList.add('hidden'));
+            annualAmounts.forEach(amount => amount.classList.remove('hidden'));
+        } else {
+            monthlyAmounts.forEach(amount => amount.classList.remove('hidden'));
+            annualAmounts.forEach(amount => amount.classList.add('hidden'));
+        }
+    });
+}
+
+// FAQ アコーディオン
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', function() {
+        const isActive = item.classList.contains('active');
+        
+        // 他のFAQを閉じる
+        faqItems.forEach(faq => faq.classList.remove('active'));
+        
+        // クリックされたFAQを開く/閉じる
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    });
+});
+
+// コードタブ切り替え
+const codeTabButtons = document.querySelectorAll('.code-tab');
+const codeBlocks = document.querySelectorAll('.code-block');
+
+codeTabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const lang = this.getAttribute('data-lang');
+        
+        // アクティブなタブとコードブロックをリセット
+        codeTabButtons.forEach(btn => btn.classList.remove('active'));
+        codeBlocks.forEach(block => block.classList.remove('active'));
+        
+        // 新しいタブとコードブロックをアクティブに
+        this.classList.add('active');
+        document.getElementById(lang + '-code').classList.add('active');
+    });
+});
+
+// CTAボタン
+document.getElementById('start-trial')?.addEventListener('click', function() {
+    alert('無料トライアル登録ページへ遷移します（実装予定）');
+});
+
+document.getElementById('watch-demo')?.addEventListener('click', function() {
+    alert('デモビデオを再生します（実装予定）');
+});
+
+// プランボタン
+document.querySelectorAll('.plan-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const text = this.textContent;
+        if (text.includes('始める')) {
+            alert('プラン登録ページへ遷移します（実装予定）');
+        } else if (text.includes('お問い合わせ')) {
+            alert('お問い合わせフォームへ遷移します（実装予定）');
+        }
+    });
+});
+
+// ケーススタディリンク
+document.querySelectorAll('.case-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('事例詳細ページへ遷移します（実装予定）');
+    });
+});
+
+// リソースリンク
+document.querySelectorAll('.resource-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const title = this.querySelector('h4').textContent;
+        alert(title + 'ページへ遷移します（実装予定）');
+    });
+});
+
+// スクロールアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// アニメーション対象要素を観察
+window.addEventListener('load', () => {
+    const animateElements = document.querySelectorAll('.testimonial-card, .case-study-card, .pricing-card');
+    animateElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+    });
+});
+
+// ロゴホバーエフェクト
+document.querySelectorAll('.logo-item').forEach(logo => {
+    logo.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1)';
+    });
+    
+    logo.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+    });
+});
+
+// 統計カードのカウントアニメーション
+function animateNumber(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            element.textContent = target.toLocaleString();
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(start).toLocaleString();
+        }
+    }, 16);
+}
+
+// 統計カードが表示されたときのアニメーション
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const valueElement = entry.target.querySelector('.stat-value');
+            if (valueElement && !valueElement.classList.contains('animated')) {
+                const value = parseInt(valueElement.textContent.replace(/[^0-9]/g, ''));
+                if (!isNaN(value)) {
+                    valueElement.textContent = '0';
+                    animateNumber(valueElement, value);
+                    valueElement.classList.add('animated');
+                }
+            }
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-card').forEach(card => {
+    statsObserver.observe(card);
+});`
+  }
+}

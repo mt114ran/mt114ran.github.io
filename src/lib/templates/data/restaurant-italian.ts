@@ -1,0 +1,3354 @@
+import { WebTemplate } from '../types';
+import { TEMPLATE_CATEGORIES } from '../types';
+
+export const restaurantItalianTemplate: WebTemplate = {
+  id: 'restaurant-italian',
+  title: 'イタリアンレストラン',
+  category: TEMPLATE_CATEGORIES.RESTAURANT,
+  description: '本格的なイタリア料理を提供するレストラン向けの情熱的なテンプレート',
+  thumbnail: '/template-images/restaurant-italian.jpg',
+  features: [
+    '本格イタリアンメニュー',
+    'シェフ・スタッフ紹介',
+    'ワインペアリング',
+    'オンライン予約',
+    'プライベートダイニング',
+    'イタリア文化紹介'
+  ],
+  tags: ['イタリアン', 'レストラン', 'パスタ', 'ピザ', 'ワイン'],
+  code: {
+    html: `
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Vista - 本格イタリアンの情熱が息づくレストラン</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-info">
+                    <div class="contact-info">
+                        <span><i class="fas fa-phone"></i> 03-5678-9012</span>
+                        <span><i class="fas fa-clock"></i> 11:30-14:30 / 17:30-22:00</span>
+                    </div>
+                    <div class="header-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="nav-brand">
+                        <h1>Bella Vista</h1>
+                        <span class="brand-subtitle">Authentic Italian Restaurant</span>
+                    </div>
+                    
+                    <ul class="nav-menu">
+                        <li><a href="#home" class="active">HOME</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#menu">MENU</a></li>
+                        <li><a href="#chef">CHEF</a></li>
+                        <li><a href="#wine">WINE</a></li>
+                        <li><a href="#gallery">GALLERY</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <a href="#reservation" class="reservation-btn">
+                            <i class="fas fa-calendar-check"></i>
+                            RESERVATION
+                        </a>
+                        <button class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-slider">
+                <div class="hero-slide active">
+                    <div class="hero-image">
+                        <img src="/api/placeholder/1200/800" alt="Bella Vista Restaurant">
+                    </div>
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h2 class="hero-title">Benvenuti alla Bella Vista</h2>
+                            <p class="hero-subtitle">本場イタリアの味と情熱をお届けする、心温まるトラットリア</p>
+                            <div class="hero-buttons">
+                                <a href="#menu" class="btn btn-primary">
+                                    <i class="fas fa-utensils"></i>
+                                    メニューを見る
+                                </a>
+                                <a href="#reservation" class="btn btn-outline">
+                                    <i class="fas fa-calendar"></i>
+                                    予約する
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-slide">
+                    <div class="hero-image">
+                        <img src="/api/placeholder/1200/800" alt="Italian Chef">
+                    </div>
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h2 class="hero-title">Passione Italiana</h2>
+                            <p class="hero-subtitle">ナポリ出身のシェフが作る、家族に愛され続けてきた伝統の味</p>
+                            <div class="hero-buttons">
+                                <a href="#chef" class="btn btn-primary">
+                                    <i class="fas fa-user-chef"></i>
+                                    シェフについて
+                                </a>
+                                <a href="#about" class="btn btn-outline">
+                                    <i class="fas fa-heart"></i>
+                                    私たちの物語
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-slide">
+                    <div class="hero-image">
+                        <img src="/api/placeholder/1200/800" alt="Wine Collection">
+                    </div>
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h2 class="hero-title">Vino & Cibo</h2>
+                            <p class="hero-subtitle">イタリア各地から厳選したワインと料理の完璧なマリアージュ</p>
+                            <div class="hero-buttons">
+                                <a href="#wine" class="btn btn-primary">
+                                    <i class="fas fa-wine-glass-alt"></i>
+                                    ワインリスト
+                                </a>
+                                <a href="#menu" class="btn btn-outline">
+                                    <i class="fas fa-leaf"></i>
+                                    季節のコース
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-controls">
+                <button class="hero-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="hero-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+                <button class="hero-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="section-header">
+                            <h2>La Nostra Storia</h2>
+                            <p class="section-subtitle">私たちの物語</p>
+                        </div>
+                        <div class="story-content">
+                            <p class="story-intro">2008年、ナポリ出身のシェフ・マルコが東京で始めた小さなトラットリア。それがBella Vistaの始まりでした。</p>
+                            <p>祖母から受け継いだレシピと、イタリア各地で修行して身につけた技術を融合させ、本場の味を日本の皆様にお届けしたいという想いから生まれたレストランです。</p>
+                            <p>「Bella Vista（美しい景色）」という名前には、お客様に美味しい料理を通じて、イタリアの美しい景色や文化を感じていただきたいという願いが込められています。</p>
+                            <p>開店から15年、多くのお客様に愛され続けてきた私たちの味は、今も変わらずイタリアの家庭の温かさを大切にしています。</p>
+                        </div>
+                        <div class="story-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-number">2008</div>
+                                <div class="highlight-text">創業年</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-number">15+</div>
+                                <div class="highlight-text">年の歴史</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-number">50+</div>
+                                <div class="highlight-text">伝統レシピ</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-number">10k+</div>
+                                <div class="highlight-text">満足のお客様</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-images">
+                        <div class="image-collage">
+                            <div class="image-item large">
+                                <img src="/api/placeholder/400/300" alt="レストラン外観">
+                                <div class="image-caption">心温まる空間でお迎えします</div>
+                            </div>
+                            <div class="image-item small">
+                                <img src="/api/placeholder/200/150" alt="厨房の様子">
+                                <div class="image-caption">オープンキッチン</div>
+                            </div>
+                            <div class="image-item small">
+                                <img src="/api/placeholder/200/150" alt="イタリアの風景">
+                                <div class="image-caption">故郷ナポリの風景</div>
+                            </div>
+                            <div class="image-item medium">
+                                <img src="/api/placeholder/300/200" alt="手作りパスタ">
+                                <div class="image-caption">毎日手作りの生パスタ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu">
+            <div class="container">
+                <div class="section-header">
+                    <h2>La Nostra Cucina</h2>
+                    <p class="section-subtitle">本格イタリアンメニュー</p>
+                </div>
+                
+                <div class="menu-categories">
+                    <button class="menu-tab active" data-category="all">TUTTO</button>
+                    <button class="menu-tab" data-category="antipasti">ANTIPASTI</button>
+                    <button class="menu-tab" data-category="primi">PRIMI PIATTI</button>
+                    <button class="menu-tab" data-category="secondi">SECONDI PIATTI</button>
+                    <button class="menu-tab" data-category="dolci">DOLCI</button>
+                </div>
+                
+                <div class="menu-content">
+                    <div class="menu-section" data-category="antipasti">
+                        <h3 class="menu-section-title">Antipasti - 前菜</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Antipasto della Casa</h4>
+                                    <span class="menu-price">¥1,800</span>
+                                </div>
+                                <p class="menu-description">イタリア各地の厳選チーズとサラミの盛り合わせ。オリーブとドライトマトを添えて</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-origin">北イタリア伝統</span>
+                                    <div class="menu-dietary">
+                                        <span class="dietary-icon" title="グルテンフリー対応可"><i class="fas fa-wheat"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Bruschetta Tricolore</h4>
+                                    <span class="menu-price">¥1,200</span>
+                                </div>
+                                <p class="menu-description">トマト、モッツァレッラ、バジルの3色ブルスケッタ。イタリア国旗をイメージした一品</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-origin">南イタリア風</span>
+                                    <div class="menu-dietary">
+                                        <span class="dietary-icon vegetarian" title="ベジタリアン対応"><i class="fas fa-leaf"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Carpaccio di Manzo</h4>
+                                    <span class="menu-price">¥2,200</span>
+                                </div>
+                                <p class="menu-description">国産黒毛和牛の薄切りカルパッチョ。ルッコラとパルミジャーノのシャワーをかけて</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-origin">ヴェネツィア発祥</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-section" data-category="primi">
+                        <h3 class="menu-section-title">Primi Piatti - パスタ・リゾット</h3>
+                        <div class="menu-items">
+                            <div class="menu-item featured">
+                                <div class="menu-item-header">
+                                    <h4>Spaghetti alle Vongole</h4>
+                                    <span class="menu-price">¥2,800</span>
+                                    <span class="featured-badge">シェフおすすめ</span>
+                                </div>
+                                <p class="menu-description">厳選されたアサリのスパゲッティ。白ワインとニンニクの香りが食欲をそそります</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-origin">ナポリ伝統</span>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Risotto ai Porcini</h4>
+                                    <span class="menu-price">¥3,200</span>
+                                </div>
+                                <p class="menu-description">イタリア産ポルチーニ茸のリゾット。濃厚なチーズとの絶妙なハーモニー</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-origin">北イタリア伝統</span>
+                                    <div class="menu-dietary">
+                                        <span class="dietary-icon vegetarian" title="ベジタリアン対応"><i class="fas fa-leaf"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Pasta all'Amatriciana</h4>
+                                    <span class="menu-price">¥2,400</span>
+                                </div>
+                                <p class="menu-description">グアンチャーレ（豚ほほ肉）とトマトの伝統的なローマ風パスタ</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-origin">ローマ伝統</span>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Gnocchi di Patate</h4>
+                                    <span class="menu-price">¥2,600</span>
+                                </div>
+                                <p class="menu-description">手作りポテトニョッキ。ゴルゴンゾーラソースまたはトマトソースで</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-origin">手作り</span>
+                                    <div class="menu-dietary">
+                                        <span class="dietary-icon vegetarian" title="ベジタリアン対応"><i class="fas fa-leaf"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-section" data-category="secondi">
+                        <h3 class="menu-section-title">Secondi Piatti - メイン料理</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Osso Buco alla Milanese</h4>
+                                    <span class="menu-price">¥4,800</span>
+                                </div>
+                                <p class="menu-description">仔牛すね肉の煮込み ミラノ風。サフランリゾットを添えて</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-origin">ミラノ伝統</span>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Branzino in Crosta di Sale</h4>
+                                    <span class="menu-price">¥3,800</span>
+                                </div>
+                                <p class="menu-description">スズキの塩釜焼き。ハーブとレモンを効かせた地中海風</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-origin">南イタリア風</span>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Saltimbocca alla Romana</h4>
+                                    <span class="menu-price">¥3,600</span>
+                                </div>
+                                <p class="menu-description">仔牛肉のサルティンボッカ ローマ風。生ハムとセージの香り</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-origin">ローマ伝統</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-section" data-category="dolci">
+                        <h3 class="menu-section-title">Dolci - デザート</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Tiramisù della Casa</h4>
+                                    <span class="menu-price">¥890</span>
+                                </div>
+                                <p class="menu-description">自家製ティラミス。マスカルポーネとエスプレッソの絶妙なバランス</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-origin">ヴェネト発祥</span>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Panna Cotta ai Frutti di Bosco</h4>
+                                    <span class="menu-price">¥780</span>
+                                </div>
+                                <p class="menu-description">ベリーソースのパンナコッタ。季節のフルーツと共に</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-origin">ピエモンテ伝統</span>
+                                    <div class="menu-dietary">
+                                        <span class="dietary-icon vegetarian" title="ベジタリアン対応"><i class="fas fa-leaf"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Cannoli Siciliani</h4>
+                                    <span class="menu-price">¥980</span>
+                                </div>
+                                <p class="menu-description">シチリア名物カンノーリ。リコッタチーズクリームとピスタチオ</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-origin">シチリア伝統</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-cta">
+                    <div class="menu-note">
+                        <p><i class="fas fa-info-circle"></i> 料理は季節により内容が変更になる場合がございます</p>
+                        <p><i class="fas fa-utensils"></i> アレルギー等お気軽にスタッフまでお申し付けください</p>
+                    </div>
+                    <div class="menu-download">
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-download"></i>
+                            フルメニューダウンロード
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chef" class="chef">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Il Nostro Chef</h2>
+                    <p class="section-subtitle">情熱的なシェフとスタッフ</p>
+                </div>
+                
+                <div class="chef-content">
+                    <div class="main-chef">
+                        <div class="chef-image">
+                            <img src="/api/placeholder/400/500" alt="Chef Marco">
+                            <div class="chef-flag">
+                                <img src="/api/placeholder/50/30" alt="Italy Flag">
+                            </div>
+                        </div>
+                        <div class="chef-info">
+                            <h3>Marco Rossi</h3>
+                            <p class="chef-title">Executive Chef / Owner</p>
+                            <p class="chef-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Napoli, Italia
+                            </p>
+                            <div class="chef-bio">
+                                <p>ナポリ生まれのマルコシェフは、幼い頃から祖母と母親の料理を見て育ちました。18歳でローマの名門レストランに入り、その後ミラノ、フィレンツェで修行を積みました。</p>
+                                <p>2005年に来日し、都内の有名イタリアンレストランでスーシェフを務めた後、2008年にBella Vistaをオープン。「料理は愛情」をモットーに、本場の味を日本の皆様にお届けしています。</p>
+                                <p>毎年イタリアに帰郷し、新しいレシピや食材を探求。常に進化し続ける料理への情熱は、今も変わりません。</p>
+                            </div>
+                            <div class="chef-specialties">
+                                <h4>得意料理</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">手打ち生パスタ</span>
+                                    <span class="specialty-tag">ナポリピッツァ</span>
+                                    <span class="specialty-tag">魚介料理</span>
+                                    <span class="specialty-tag">ティラミス</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="staff-grid">
+                        <div class="staff-member">
+                            <div class="staff-image">
+                                <img src="/api/placeholder/200/250" alt="Sous Chef">
+                            </div>
+                            <div class="staff-info">
+                                <h4>田中 健太</h4>
+                                <p class="staff-role">Sous Chef</p>
+                                <p class="staff-experience">イタリア修行3年</p>
+                            </div>
+                        </div>
+                        
+                        <div class="staff-member">
+                            <div class="staff-image">
+                                <img src="/api/placeholder/200/250" alt="Sommelier">
+                            </div>
+                            <div class="staff-info">
+                                <h4>佐藤 美香</h4>
+                                <p class="staff-role">Sommelier</p>
+                                <p class="staff-experience">JSA認定ソムリエ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="staff-member">
+                            <div class="staff-image">
+                                <img src="/api/placeholder/200/250" alt="Pastry Chef">
+                            </div>
+                            <div class="staff-info">
+                                <h4>高橋 恵子</h4>
+                                <p class="staff-role">Pastry Chef</p>
+                                <p class="staff-experience">シチリア修行2年</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="wine" class="wine">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Carta dei Vini</h2>
+                    <p class="section-subtitle">厳選されたイタリアワインコレクション</p>
+                </div>
+                
+                <div class="wine-content">
+                    <div class="wine-intro">
+                        <div class="wine-intro-text">
+                            <h3>ソムリエが選ぶ上質なワイン</h3>
+                            <p>イタリア各州から厳選した200種類以上のワインをご用意。料理との完璧なマリアージュをお楽しみください。</p>
+                        </div>
+                        <div class="wine-regions">
+                            <div class="region-item">
+                                <div class="region-icon">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <div class="region-info">
+                                    <h4>20州</h4>
+                                    <p>イタリア全土から</p>
+                                </div>
+                            </div>
+                            <div class="region-item">
+                                <div class="region-icon">
+                                    <i class="fas fa-wine-bottle"></i>
+                                </div>
+                                <div class="region-info">
+                                    <h4>200+</h4>
+                                    <p>厳選ワイン</p>
+                                </div>
+                            </div>
+                            <div class="region-item">
+                                <div class="region-icon">
+                                    <i class="fas fa-medal"></i>
+                                </div>
+                                <div class="region-info">
+                                    <h4>DOCG</h4>
+                                    <p>最高品質保証</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="wine-categories">
+                        <div class="wine-category">
+                            <h3>Vini Rossi - 赤ワイン</h3>
+                            <div class="wine-list">
+                                <div class="wine-item">
+                                    <div class="wine-info">
+                                        <h4>Barolo DOCG 2018</h4>
+                                        <p class="wine-region">Piemonte - ピエモンテ</p>
+                                        <p class="wine-description">ワインの王様と呼ばれるバローロ。力強いタンニンと複雑な香り</p>
+                                    </div>
+                                    <div class="wine-price">
+                                        <span class="glass-price">Glass ¥2,800</span>
+                                        <span class="bottle-price">Bottle ¥15,800</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="wine-item">
+                                    <div class="wine-info">
+                                        <h4>Chianti Classico DOCG 2020</h4>
+                                        <p class="wine-region">Toscana - トスカーナ</p>
+                                        <p class="wine-description">サンジョヴェーゼ種の上品な酸味とフルボディの味わい</p>
+                                    </div>
+                                    <div class="wine-price">
+                                        <span class="glass-price">Glass ¥1,800</span>
+                                        <span class="bottle-price">Bottle ¥9,800</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="wine-item">
+                                    <div class="wine-info">
+                                        <h4>Amarone della Valpolicella DOCG 2017</h4>
+                                        <p class="wine-region">Veneto - ヴェネト</p>
+                                        <p class="wine-description">干しブドウから作られる贅沢で濃厚な赤ワイン</p>
+                                    </div>
+                                    <div class="wine-price">
+                                        <span class="glass-price">Glass ¥3,200</span>
+                                        <span class="bottle-price">Bottle ¥18,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="wine-category">
+                            <h3>Vini Bianchi - 白ワイン</h3>
+                            <div class="wine-list">
+                                <div class="wine-item">
+                                    <div class="wine-info">
+                                        <h4>Greco di Tufo DOCG 2021</h4>
+                                        <p class="wine-region">Campania - カンパーニア</p>
+                                        <p class="wine-description">シェフの故郷から。ミネラル豊富でエレガントな白ワイン</p>
+                                    </div>
+                                    <div class="wine-price">
+                                        <span class="glass-price">Glass ¥1,600</span>
+                                        <span class="bottle-price">Bottle ¥8,800</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="wine-item">
+                                    <div class="wine-info">
+                                        <h4>Vermentino di Sardegna DOC 2022</h4>
+                                        <p class="wine-region">Sardegna - サルデーニャ</p>
+                                        <p class="wine-description">地中海の風を感じる爽やかで果実味豊かな白ワイン</p>
+                                    </div>
+                                    <div class="wine-price">
+                                        <span class="glass-price">Glass ¥1,400</span>
+                                        <span class="bottle-price">Bottle ¥7,800</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="wine-category">
+                            <h3>Spumanti - スパークリング</h3>
+                            <div class="wine-list">
+                                <div class="wine-item">
+                                    <div class="wine-info">
+                                        <h4>Prosecco di Valdobbiadene DOCG NV</h4>
+                                        <p class="wine-region">Veneto - ヴェネト</p>
+                                        <p class="wine-description">最高級プロセッコ。きめ細かい泡と上品な果実味</p>
+                                    </div>
+                                    <div class="wine-price">
+                                        <span class="glass-price">Glass ¥1,200</span>
+                                        <span class="bottle-price">Bottle ¥6,800</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="wine-item">
+                                    <div class="wine-info">
+                                        <h4>Franciacorta DOCG Brut 2019</h4>
+                                        <p class="wine-region">Lombardia - ロンバルディア</p>
+                                        <p class="wine-description">シャンパーニュ製法で作られるイタリア最高級スパークリング</p>
+                                    </div>
+                                    <div class="wine-price">
+                                        <span class="glass-price">Glass ¥2,000</span>
+                                        <span class="bottle-price">Bottle ¥12,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="wine-pairing">
+                        <h3>Abbinamento Cibo e Vino - ペアリングのご提案</h3>
+                        <div class="pairing-grid">
+                            <div class="pairing-item">
+                                <div class="pairing-dish">魚介料理</div>
+                                <div class="pairing-arrow"><i class="fas fa-arrow-right"></i></div>
+                                <div class="pairing-wine">Vermentino / Greco di Tufo</div>
+                            </div>
+                            <div class="pairing-item">
+                                <div class="pairing-dish">肉料理</div>
+                                <div class="pairing-arrow"><i class="fas fa-arrow-right"></i></div>
+                                <div class="pairing-wine">Chianti Classico / Barolo</div>
+                            </div>
+                            <div class="pairing-item">
+                                <div class="pairing-dish">チーズ</div>
+                                <div class="pairing-arrow"><i class="fas fa-arrow-right"></i></div>
+                                <div class="pairing-wine">Amarone / Franciacorta</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Galleria Fotografica</h2>
+                    <p class="section-subtitle">美味しい瞬間をお楽しみください</p>
+                </div>
+                
+                <div class="gallery-filters">
+                    <button class="gallery-filter active" data-filter="all">TUTTO</button>
+                    <button class="gallery-filter" data-filter="food">CIBO</button>
+                    <button class="gallery-filter" data-filter="interior">AMBIENTE</button>
+                    <button class="gallery-filter" data-filter="events">EVENTI</button>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="food">
+                        <img src="/api/placeholder/300/300" alt="Pasta">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>Spaghetti alle Vongole</h4>
+                                <p>シェフ自慢の一品</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="interior">
+                        <img src="/api/placeholder/300/400" alt="Restaurant Interior">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>温かい雰囲気の店内</h4>
+                                <p>イタリアの家庭のような温もり</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="food">
+                        <img src="/api/placeholder/300/200" alt="Pizza">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>Margherita Pizza</h4>
+                                <p>薪窯で焼き上げる本格ピッツァ</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="events">
+                        <img src="/api/placeholder/300/350" alt="Wine Tasting">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>ワインテイスティング</h4>
+                                <p>月例イベントの様子</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="food">
+                        <img src="/api/placeholder/300/300" alt="Tiramisu">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>自家製ティラミス</h4>
+                                <p>マスカルポーネの芳醇な味わい</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="interior">
+                        <img src="/api/placeholder/300/250" alt="Private Room">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>プライベートルーム</h4>
+                                <p>特別な日のための個室空間</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="food">
+                        <img src="/api/placeholder/300/400" alt="Seafood">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>魚介のアクアパッツァ</h4>
+                                <p>新鮮な魚介を使った南イタリア料理</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="events">
+                        <img src="/api/placeholder/300/300" alt="Cooking Class">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h4>パスタ作り教室</h4>
+                                <p>シェフが直接指導</p>
+                                <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contattaci</h2>
+                    <p class="section-subtitle">ご予約・お問い合わせ</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="info-section">
+                            <h3>店舗情報</h3>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>住所</strong>
+                                    <p>〒106-0032<br>東京都港区六本木7-14-23<br>Bella Vista Building 2F</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>電話番号</strong>
+                                    <p>03-5678-9012</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>営業時間</strong>
+                                    <p>ランチ: 11:30-14:30 (L.O. 14:00)<br>
+                                    ディナー: 17:30-22:00 (L.O. 21:00)<br>
+                                    定休日: 月曜日</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>メール</strong>
+                                    <p>info@bellavista-tokyo.jp</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3>アクセス</h3>
+                            <div class="access-methods">
+                                <div class="access-item">
+                                    <i class="fas fa-train"></i>
+                                    <div>
+                                        <strong>電車でお越しの場合</strong>
+                                        <p>東京メトロ日比谷線「六本木駅」徒歩3分<br>
+                                        都営大江戸線「六本木駅」徒歩5分</p>
+                                    </div>
+                                </div>
+                                <div class="access-item">
+                                    <i class="fas fa-car"></i>
+                                    <div>
+                                        <strong>お車でお越しの場合</strong>
+                                        <p>首都高速「飯倉IC」より5分<br>
+                                        提携駐車場あり（3時間まで無料）</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="reservation-section" id="reservation">
+                        <div class="reservation-form">
+                            <h3>ご予約フォーム</h3>
+                            <form class="contact-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name">お名前</label>
+                                        <input type="text" id="name" name="name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">電話番号</label>
+                                        <input type="tel" id="phone" name="phone" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">メールアドレス</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="date">ご希望日</label>
+                                        <input type="date" id="date" name="date" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="time">ご希望時間</label>
+                                        <select id="time" name="time" required>
+                                            <option value="">選択してください</option>
+                                            <option value="11:30">11:30</option>
+                                            <option value="12:00">12:00</option>
+                                            <option value="12:30">12:30</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="13:30">13:30</option>
+                                            <option value="17:30">17:30</option>
+                                            <option value="18:00">18:00</option>
+                                            <option value="18:30">18:30</option>
+                                            <option value="19:00">19:00</option>
+                                            <option value="19:30">19:30</option>
+                                            <option value="20:00">20:00</option>
+                                            <option value="20:30">20:30</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="party-size">人数</label>
+                                        <select id="party-size" name="party-size" required>
+                                            <option value="">選択してください</option>
+                                            <option value="1">1名</option>
+                                            <option value="2">2名</option>
+                                            <option value="3">3名</option>
+                                            <option value="4">4名</option>
+                                            <option value="5">5名</option>
+                                            <option value="6">6名</option>
+                                            <option value="7">7名</option>
+                                            <option value="8">8名以上</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="occasion">ご利用目的</label>
+                                        <select id="occasion" name="occasion">
+                                            <option value="">選択してください</option>
+                                            <option value="date">デート</option>
+                                            <option value="anniversary">記念日</option>
+                                            <option value="business">接待・会食</option>
+                                            <option value="family">家族での食事</option>
+                                            <option value="friends">友人との食事</option>
+                                            <option value="other">その他</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="special-requests">特別なご要望</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="requests" value="private-room">
+                                            <span class="checkmark"></span>
+                                            個室希望
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="requests" value="wine-pairing">
+                                            <span class="checkmark"></span>
+                                            ワインペアリング
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="requests" value="birthday">
+                                            <span class="checkmark"></span>
+                                            誕生日・記念日
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="requests" value="vegetarian">
+                                            <span class="checkmark"></span>
+                                            ベジタリアン対応
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">その他ご要望・アレルギー情報等</label>
+                                    <textarea id="message" name="message" rows="4" placeholder="アレルギーやご要望がございましたら、お気軽にお書きください"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-calendar-check"></i>
+                                    予約を送信する
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-section">
+                    <div class="map-placeholder">
+                        <div class="map-content">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Google Map</p>
+                            <p class="map-address">東京都港区六本木7-14-23</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Bella Vista</h3>
+                    <p class="footer-tagline">Authentic Italian Restaurant</p>
+                    <p>本場ナポリの味と心温まるおもてなしで、<br>皆様をお迎えいたします。</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Menu</h4>
+                        <ul>
+                            <li><a href="#menu">Antipasti</a></li>
+                            <li><a href="#menu">Primi Piatti</a></li>
+                            <li><a href="#menu">Secondi Piatti</a></li>
+                            <li><a href="#menu">Dolci</a></li>
+                            <li><a href="#wine">Wine List</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="#about">私たちの物語</a></li>
+                            <li><a href="#chef">シェフ紹介</a></li>
+                            <li><a href="#gallery">ギャラリー</a></li>
+                            <li><a href="#">プライベートイベント</a></li>
+                            <li><a href="#">料理教室</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#reservation">ご予約</a></li>
+                            <li><a href="#">ケータリング</a></li>
+                            <li><a href="#">テイクアウト</a></li>
+                            <li><a href="#">ギフトカード</a></li>
+                            <li><a href="#">法人様向けサービス</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="#contact">アクセス</a></li>
+                            <li><a href="tel:03-5678-9012">03-5678-9012</a></li>
+                            <li><a href="mailto:info@bellavista-tokyo.jp">メールでお問い合わせ</a></li>
+                            <li><a href="#">よくある質問</a></li>
+                            <li><a href="#">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-awards">
+                    <div class="award-item">
+                        <i class="fas fa-star"></i>
+                        <span>ミシュランガイド掲載</span>
+                    </div>
+                    <div class="award-item">
+                        <i class="fas fa-wine-glass-alt"></i>
+                        <span>Best Wine Selection 2023</span>
+                    </div>
+                    <div class="award-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Best Italian Restaurant Tokyo</span>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2024 Bella Vista Restaurant. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+`,
+    css: `
+:root {
+    --primary-color: #c41e3a;
+    --secondary-color: #2b7a2b;
+    --accent-color: #ffd700;
+    --text-dark: #2c3e50;
+    --text-light: #666666;
+    --text-muted: #999999;
+    --background-light: #fafafa;
+    --background-white: #ffffff;
+    --background-cream: #fdf8f5;
+    --background-warm: #f5f1eb;
+    --border-color: #eeeeee;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+    --border-radius: 12px;
+    --font-heading: 'Playfair Display', serif;
+    --font-script: 'Dancing Script', cursive;
+    --font-body: 'Noto Sans JP', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--background-white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--background-white);
+    box-shadow: var(--shadow-light);
+}
+
+.header-top {
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 0;
+}
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.contact-info {
+    display: flex;
+    gap: 25px;
+}
+
+.contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header-social {
+    display: flex;
+    gap: 12px;
+}
+
+.header-social a {
+    color: white;
+    opacity: 0.8;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.header-social a:hover {
+    opacity: 1;
+}
+
+.nav {
+    padding: 15px 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand h1 {
+    font-family: var(--font-script);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 2px;
+}
+
+.brand-subtitle {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 8px 0;
+    transition: var(--transition);
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.reservation-btn {
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.reservation-btn:hover {
+    background: #a01729;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-dark);
+    transition: var(--transition);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slider {
+    height: 100%;
+    position: relative;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+}
+
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-text {
+    max-width: 800px;
+    padding: 0 20px;
+    color: white;
+}
+
+.hero-title {
+    font-family: var(--font-script);
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    margin-bottom: 40px;
+    opacity: 0.95;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    font-size: 1rem;
+    border: 2px solid transparent;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    background: #a01729;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px rgba(196, 30, 58, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.hero-controls {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero-prev,
+.hero-next {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.hero-prev:hover,
+.hero-next:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.hero-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Section Styles */
+section {
+    padding: 100px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-header h2 {
+    font-family: var(--font-script);
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* About Section */
+.about {
+    background: var(--background-cream);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.story-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 50px;
+}
+
+.story-intro {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.story-content p {
+    margin-bottom: 20px;
+}
+
+.story-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.highlight-item {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.highlight-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.highlight-number {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.highlight-text {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.about-images .image-collage {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 15px;
+}
+
+.image-item {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.image-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.image-item.large {
+    grid-row: span 2;
+}
+
+.image-item.medium {
+    grid-column: span 2;
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Menu Section */
+.menu {
+    background: var(--background-white);
+}
+
+.menu-categories {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.menu-tab {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-body);
+    letter-spacing: 0.5px;
+}
+
+.menu-tab.active,
+.menu-tab:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+}
+
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.menu-section-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+    font-style: italic;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.menu-item {
+    background: var(--background-warm);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    position: relative;
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.menu-item.featured {
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.05) 0%, rgba(196, 30, 58, 0.1) 100%);
+    border: 2px solid rgba(196, 30, 58, 0.2);
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.menu-item h4 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-style: italic;
+}
+
+.menu-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    margin-left: 20px;
+}
+
+.featured-badge {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.menu-description {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.menu-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-origin {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.menu-dietary {
+    display: flex;
+    gap: 8px;
+}
+
+.dietary-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    background: var(--border-color);
+    color: var(--text-muted);
+}
+
+.dietary-icon.vegetarian {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.menu-cta {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+    margin-top: 60px;
+    padding: 40px;
+    background: var(--background-light);
+    border-radius: var(--border-radius);
+}
+
+.menu-note {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-note p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.menu-note i {
+    color: var(--primary-color);
+}
+
+/* Chef Section */
+.chef {
+    background: var(--background-warm);
+}
+
+.chef-content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.main-chef {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.chef-image {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.chef-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.chef-flag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+}
+
+.chef-flag img {
+    width: 50px;
+    height: 30px;
+}
+
+.chef-info h3 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.chef-title {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.chef-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.chef-bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.chef-bio p {
+    margin-bottom: 20px;
+}
+
+.chef-specialties h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.specialty-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.specialty-tag {
+    background: var(--primary-color);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.staff-member {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.staff-member:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.staff-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.staff-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.staff-info {
+    padding: 20px;
+}
+
+.staff-info h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.staff-role {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.staff-experience {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Wine Section */
+.wine {
+    background: var(--background-cream);
+}
+
+.wine-content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.wine-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.wine-intro-text h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.wine-intro-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+.wine-regions {
+    display: flex;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.region-item {
+    text-align: center;
+    background: white;
+    padding: 30px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.region-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.region-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.region-info h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.region-info p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.wine-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.wine-category {
+    background: white;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+}
+
+.wine-category h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-style: italic;
+    text-align: center;
+}
+
+.wine-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.wine-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.wine-item:last-child {
+    border-bottom: none;
+}
+
+.wine-info h4 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
+.wine-region {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.wine-description {
+    color: var(--text-light);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.wine-price {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.glass-price,
+.bottle-price {
+    font-weight: 600;
+}
+
+.glass-price {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.bottle-price {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.wine-pairing {
+    background: var(--background-light);
+    padding: 40px;
+    border-radius: var(--border-radius);
+}
+
+.wine-pairing h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+    font-style: italic;
+}
+
+.pairing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.pairing-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+}
+
+.pairing-dish,
+.pairing-wine {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.pairing-arrow {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* Gallery Section */
+.gallery {
+    background: var(--background-white);
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.gallery-filter {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-light);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-body);
+    letter-spacing: 0.5px;
+}
+
+.gallery-filter.active,
+.gallery-filter:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    grid-auto-rows: 200px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.gallery-item:nth-child(3n+1) {
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(5n+2) {
+    grid-row: span 2;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    color: white;
+    width: 100%;
+}
+
+.overlay-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.overlay-content p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.view-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.1rem;
+}
+
+.view-btn:hover {
+    background: #a01729;
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+.contact {
+    background: var(--background-warm);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+.info-section {
+    margin-bottom: 40px;
+}
+
+.info-section h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.info-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.info-item strong {
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.access-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.access-item {
+    display: flex;
+    gap: 15px;
+}
+
+.access-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.reservation-form {
+    background: white;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.reservation-form h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+    font-style: italic;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    font-family: var(--font-body);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.map-section {
+    margin-top: 60px;
+}
+
+.map-placeholder {
+    height: 400px;
+    background: var(--background-light);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--border-color);
+}
+
+.map-content {
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.map-content i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.map-content p {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.map-address {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Footer */
+.footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+    font-family: var(--font-script);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.footer-tagline {
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    line-height: 1.7;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 1.3rem;
+    opacity: 0.8;
+    transition: var(--transition);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social a:hover {
+    opacity: 1;
+    background: var(--primary-color);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.footer-column a:hover {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-awards {
+    display: flex;
+    gap: 30px;
+}
+
+.award-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.award-item i {
+    color: var(--accent-color);
+}
+
+.copyright {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 120px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 120px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 50px;
+        transition: left 0.3s ease;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 20px 0;
+    }
+
+    .header-info {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .main-chef {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .wine-intro {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .wine-regions {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-awards {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .pairing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wine-item {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        text-align: left;
+    }
+
+    .wine-price {
+        text-align: left;
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .story-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-cta {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .reservation-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+`,
+    js: `
+document.addEventListener('DOMContentLoaded', function() {
+    // ハンバーガーメニューの制御
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // メニューリンクをクリックしたときにメニューを閉じる
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    }
+
+    // ヒーロースライダーの制御
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroNext = document.querySelector('.hero-next');
+    const heroPrev = document.querySelector('.hero-prev');
+    const heroDots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        heroSlides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+
+        heroDots.forEach((dot, i) => {
+            dot.classList.remove('active');
+            if (i === index) {
+                dot.classList.add('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % heroSlides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + heroSlides.length) % heroSlides.length;
+        showSlide(currentSlide);
+    }
+
+    function startSlideshow() {
+        slideInterval = setInterval(nextSlide, 6000);
+    }
+
+    function stopSlideshow() {
+        clearInterval(slideInterval);
+    }
+
+    if (heroNext) {
+        heroNext.addEventListener('click', function() {
+            stopSlideshow();
+            nextSlide();
+            startSlideshow();
+        });
+    }
+
+    if (heroPrev) {
+        heroPrev.addEventListener('click', function() {
+            stopSlideshow();
+            prevSlide();
+            startSlideshow();
+        });
+    }
+
+    heroDots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+            stopSlideshow();
+            currentSlide = index;
+            showSlide(currentSlide);
+            startSlideshow();
+        });
+    });
+
+    // スライドショー開始
+    startSlideshow();
+
+    // マウスホバーでスライドショー停止
+    const heroSlider = document.querySelector('.hero-slider');
+    if (heroSlider) {
+        heroSlider.addEventListener('mouseenter', stopSlideshow);
+        heroSlider.addEventListener('mouseleave', startSlideshow);
+    }
+
+    // スムーズスクロール
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // ヘッダーのスクロール効果
+    const header = document.querySelector('.header');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
+        } else {
+            header.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.08)';
+        }
+
+        // ナビゲーションの現在位置をハイライト
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollTop >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+
+        lastScrollTop = scrollTop;
+    });
+
+    // メニューカテゴリタブの切り替え
+    const menuTabs = document.querySelectorAll('.menu-tab');
+    const menuSections = document.querySelectorAll('.menu-section');
+
+    menuTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetCategory = this.getAttribute('data-category');
+            
+            // アクティブなタブを切り替え
+            menuTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // メニューセクションをフィルタリング
+            if (targetCategory === 'all') {
+                menuSections.forEach(section => {
+                    section.style.display = 'block';
+                    setTimeout(() => {
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    }, 100);
+                });
+            } else {
+                menuSections.forEach(section => {
+                    if (section.getAttribute('data-category') === targetCategory) {
+                        section.style.display = 'block';
+                        setTimeout(() => {
+                            section.style.opacity = '1';
+                            section.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        section.style.opacity = '0';
+                        section.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            section.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            }
+        });
+    });
+
+    // ギャラリーフィルター
+    const galleryFilters = document.querySelectorAll('.gallery-filter');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    galleryFilters.forEach(filter => {
+        filter.addEventListener('click', function() {
+            const targetCategory = this.getAttribute('data-filter');
+            
+            // アクティブなフィルターを切り替え
+            galleryFilters.forEach(f => f.classList.remove('active'));
+            this.classList.add('active');
+            
+            // ギャラリーアイテムをフィルタリング
+            galleryItems.forEach(item => {
+                if (targetCategory === 'all' || item.getAttribute('data-category') === targetCategory) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 100);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // 予約フォーム送信処理
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // フォームデータの収集
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // チェックボックスの値を配列として収集
+            const requests = [];
+            const checkboxes = this.querySelectorAll('input[name="requests"]:checked');
+            checkboxes.forEach(cb => requests.push(cb.value));
+            data['requests'] = requests;
+            
+            // 送信ボタンを無効化
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
+            submitBtn.disabled = true;
+            
+            // バリデーション
+            const requiredFields = ['name', 'phone', 'email', 'date', 'time', 'party-size'];
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                const input = this.querySelector(\`[name="\${field}"]\`);
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#e74c3c';
+                } else {
+                    input.style.borderColor = '';
+                }
+            });
+            
+            if (!isValid) {
+                alert('必須項目を全て入力してください。');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                return;
+            }
+            
+            // 実際の送信処理をシミュレート
+            setTimeout(() => {
+                alert(\`\${data.name}様、ご予約ありがとうございます。\\n\\n日時: \${data.date} \${data.time}\\n人数: \${data['party-size']}名\\n\\n確認のお電話をさせていただきます。\\nGrazie mille!\`);
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+            
+            console.log('予約データ:', data);
+        });
+    }
+
+    // スクロールアニメーション
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                // 統計数字のカウントアップアニメーション
+                if (entry.target.classList.contains('highlight-number')) {
+                    const numberElement = entry.target;
+                    const targetText = numberElement.textContent;
+                    const targetNumber = parseInt(targetText.replace(/[^\d]/g, ''));
+                    
+                    if (targetNumber && !numberElement.hasAttribute('data-animated')) {
+                        numberElement.setAttribute('data-animated', 'true');
+                        animateCounter(numberElement, targetNumber, targetText);
+                    }
+                }
+            }
+        });
+    }, observerOptions);
+
+    // アニメーション対象要素の監視
+    document.querySelectorAll('.menu-item, .highlight-item, .staff-member, .wine-item, .gallery-item, .region-item').forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+
+    // 統計数字のカウントアップアニメーション
+    document.querySelectorAll('.highlight-number').forEach(el => {
+        observer.observe(el);
+    });
+
+    // カウントアップアニメーション
+    function animateCounter(element, target, originalText, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+        const suffix = originalText.replace(/[0-9]/g, '');
+        
+        function updateCounter() {
+            start += increment;
+            if (start < target) {
+                element.textContent = Math.ceil(start) + suffix;
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = originalText;
+            }
+        }
+        
+        updateCounter();
+    }
+
+    // ギャラリーアイテムのモーダル表示
+    galleryItems.forEach(item => {
+        const viewBtn = item.querySelector('.view-btn');
+        if (viewBtn) {
+            viewBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                showImageModal(item);
+            });
+        }
+        
+        item.addEventListener('click', function() {
+            showImageModal(this);
+        });
+    });
+
+    function showImageModal(galleryItem) {
+        const img = galleryItem.querySelector('img');
+        const title = galleryItem.querySelector('h4').textContent;
+        const description = galleryItem.querySelector('p').textContent;
+        
+        const modal = document.createElement('div');
+        modal.className = 'image-modal';
+        modal.innerHTML = \`
+            <div class="modal-backdrop">
+                <div class="modal-content">
+                    <button class="modal-close">&times;</button>
+                    <img src="\${img.src}" alt="\${title}">
+                    <div class="modal-info">
+                        <h4>\${title}</h4>
+                        <p>\${description}</p>
+                    </div>
+                </div>
+            </div>
+        \`;
+        
+        // モーダル用のスタイルを追加
+        const modalStyle = document.createElement('style');
+        modalStyle.textContent = \`
+            .image-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 2000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: modalFadeIn 0.3s ease;
+            }
+            .modal-backdrop {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+            .modal-content {
+                position: relative;
+                max-width: 90vw;
+                max-height: 90vh;
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+                animation: modalSlideIn 0.3s ease;
+            }
+            .modal-content img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+            .modal-close {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                border: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                font-size: 1.5rem;
+                cursor: pointer;
+                z-index: 1;
+                transition: all 0.3s ease;
+            }
+            .modal-close:hover {
+                background: var(--primary-color);
+            }
+            .modal-info {
+                padding: 25px;
+                text-align: center;
+            }
+            .modal-info h4 {
+                margin-bottom: 10px;
+                color: var(--text-dark);
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+            .modal-info p {
+                color: var(--text-light);
+                font-size: 1rem;
+            }
+            @keyframes modalFadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            @keyframes modalSlideIn {
+                from { transform: scale(0.8) translateY(20px); opacity: 0; }
+                to { transform: scale(1) translateY(0); opacity: 1; }
+            }
+        \`;
+        
+        document.head.appendChild(modalStyle);
+        document.body.appendChild(modal);
+        
+        // モーダルを閉じる処理
+        const closeModal = () => {
+            modal.style.animation = 'modalFadeIn 0.3s ease reverse';
+            setTimeout(() => {
+                document.body.removeChild(modal);
+                document.head.removeChild(modalStyle);
+            }, 300);
+        };
+        
+        modal.querySelector('.modal-close').addEventListener('click', closeModal);
+        modal.querySelector('.modal-backdrop').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // ESCキーでモーダルを閉じる
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                document.removeEventListener('keydown', handleEscape);
+            }
+        };
+        document.addEventListener('keydown', handleEscape);
+    }
+
+    // 営業時間の表示更新
+    function updateBusinessStatus() {
+        const now = new Date();
+        const currentHour = now.getHours();
+        const currentDay = now.getDay(); // 0: 日曜日, 1: 月曜日
+        
+        let isOpen = false;
+        
+        if (currentDay !== 1) { // 月曜日以外
+            // ランチ: 11:30-14:30, ディナー: 17:30-22:00
+            isOpen = (currentHour >= 11 && currentHour < 14) || 
+                     (currentHour === 14 && now.getMinutes() <= 30) ||
+                     (currentHour >= 17 && currentHour < 22);
+        }
+        
+        console.log(isOpen ? '営業中' : '営業時間外');
+        
+        // 実際のプロジェクトでは、営業状況をUIに反映
+        const statusElements = document.querySelectorAll('.business-status');
+        statusElements.forEach(element => {
+            element.textContent = isOpen ? '営業中' : '営業時間外';
+            element.className = \`business-status \${isOpen ? 'open' : 'closed'}\`;
+        });
+    }
+
+    updateBusinessStatus();
+    setInterval(updateBusinessStatus, 60000); // 1分ごとに更新
+
+    // レストラン予約の空席状況チェック（実際のプロジェクトで実装）
+    function checkAvailability(date, time, partySize) {
+        // 実際のプロジェクトでは、予約システムAPIと連携
+        const reservations = {
+            '2024-03-20': {
+                '19:00': { available: 2, total: 10 },
+                '19:30': { available: 0, total: 10 },
+                '20:00': { available: 3, total: 10 }
+            }
+        };
+        
+        const dateReservations = reservations[date];
+        if (dateReservations && dateReservations[time]) {
+            return dateReservations[time].available >= parseInt(partySize);
+        }
+        
+        return true; // デフォルトで予約可能
+    }
+
+    // 日付・時間選択時の空席チェック
+    const dateInput = document.querySelector('#date');
+    const timeSelect = document.querySelector('#time');
+    const partySizeSelect = document.querySelector('#party-size');
+
+    if (dateInput && timeSelect && partySizeSelect) {
+        [dateInput, timeSelect, partySizeSelect].forEach(input => {
+            input.addEventListener('change', function() {
+                const date = dateInput.value;
+                const time = timeSelect.value;
+                const partySize = partySizeSelect.value;
+                
+                if (date && time && partySize) {
+                    const isAvailable = checkAvailability(date, time, partySize);
+                    console.log(\`予約可能性: \${isAvailable ? '可能' : '満席'}\`);
+                    
+                    // UIに反映（実際のプロジェクトで実装）
+                    if (!isAvailable) {
+                        timeSelect.style.borderColor = '#e74c3c';
+                        // 別の時間を提案するなどの処理
+                    } else {
+                        timeSelect.style.borderColor = '';
+                    }
+                }
+            });
+        });
+    }
+
+    // ページ読み込み完了時の初期化
+    window.addEventListener('load', function() {
+        // 要素のスタッガードアニメーション
+        const animatedElements = document.querySelectorAll('.fade-in');
+        animatedElements.forEach((el, index) => {
+            el.style.animationDelay = \`\${index * 0.1}s\`;
+        });
+    });
+
+    // エラーハンドリング
+    window.addEventListener('error', function(e) {
+        console.error('JavaScript Error:', e.error);
+    });
+
+    console.log('Bella Vista Italian restaurant template loaded successfully!');
+});
+
+// ユーティリティ関数
+function formatCurrency(amount) {
+    return '¥' + amount.toLocaleString();
+}
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function validatePhone(phone) {
+    const re = /^[\d\-\(\)\+\s]+$/;
+    return re.test(phone);
+}
+
+// レストラン情報管理
+const RestaurantInfo = {
+    businessHours: {
+        lunch: { start: 11.5, end: 14.5 }, // 11:30-14:30
+        dinner: { start: 17.5, end: 22 }   // 17:30-22:00
+    },
+    closedDays: [1], // 月曜日
+    location: {
+        lat: 35.6627,
+        lng: 139.7314,
+        address: '東京都港区六本木7-14-23'
+    },
+    contact: {
+        phone: '03-5678-9012',
+        email: 'info@bellavista-tokyo.jp'
+    },
+    capacity: {
+        total: 80,
+        privateRoom: 12
+    }
+};
+
+// イタリア語の挨拶や表現を動的に表示
+const ItalianPhrases = [
+    { italian: 'Benvenuti!', japanese: 'いらっしゃいませ！' },
+    { italian: 'Buon appetito!', japanese: 'お食事をお楽しみください！' },
+    { italian: 'Grazie mille!', japanese: 'ありがとうございます！' },
+    { italian: 'Arrivederci!', japanese: 'また会いましょう！' },
+    { italian: 'Prego!', japanese: 'どういたしまして！' }
+];
+
+function showRandomItalianPhrase() {
+    const phrase = ItalianPhrases[Math.floor(Math.random() * ItalianPhrases.length)];
+    console.log(\`\${phrase.italian} (\${phrase.japanese})\`);
+    // 実際のプロジェクトでは、これをUIに表示
+}
+
+// 5分ごとにランダムなイタリア語フレーズを表示
+setInterval(showRandomItalianPhrase, 300000);
+`
+  }
+};
