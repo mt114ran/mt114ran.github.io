@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getTemplateById, getTemplateIds } from '@/lib/templates'
 import TemplateViewer from '@/components/templates/TemplateViewer'
+import PreviewButtons from '@/components/templates/PreviewButtons'
 
 interface PageProps {
   params: Promise<{
@@ -56,7 +57,7 @@ export default async function TemplateDetailPage(props: PageProps) {
           </div>
 
           {/* タグ */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mb-6">
             {template.tags.map((tag, index) => (
               <span 
                 key={index}
@@ -66,6 +67,9 @@ export default async function TemplateDetailPage(props: PageProps) {
               </span>
             ))}
           </div>
+
+          {/* アクションボタン */}
+          <PreviewButtons templateId={id} />
         </div>
 
         {/* テンプレートビューア */}

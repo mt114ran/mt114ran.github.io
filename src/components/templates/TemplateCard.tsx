@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { WebTemplate } from '@/lib/templates/types'
 
 interface TemplateCardProps {
@@ -29,6 +28,7 @@ export default function TemplateCard({ template }: TemplateCardProps) {
       <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col">
         <div className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative overflow-hidden">
           {imageUrl ? (
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={imageUrl}
               alt={template.title}
