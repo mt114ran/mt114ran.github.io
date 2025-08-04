@@ -25,8 +25,359 @@ export const itCorporateProTemplate: WebTemplate = {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechVision Pro - AIとイノベーションの最前線</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap');
+</head>
+<body>
+    <!-- ローディング画面 -->
+    <div class="loading-screen" id="loading">
+        <div class="loading-logo">
+            <div class="loading-cube">
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+            </div>
+        </div>
+        <div class="loading-text">システムを初期化中...</div>
+    </div>
+
+    <!-- ヘッダー -->
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                TechVision Pro
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#services">サービス</a></li>
+                <li><a href="#tech">テクノロジー</a></li>
+                <li><a href="#ai">AI</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+            <button class="nav-cta">無料相談</button>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="particles" id="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <div class="badge-dot"></div>
+                    <span>AI駆動の次世代ソリューション</span>
+                </div>
+                <h1>
+                    ビジネスを革新する<br>
+                    <span class="gradient-text">最先端テクノロジー</span>
+                </h1>
+                <p class="hero-description">
+                    人工知能、機械学習、ビッグデータ分析を活用し、
+                    あなたのビジネスを次のレベルへ導きます。
+                    デジタルトランスフォーメーションの真のパートナー。
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">導入事例を見る</button>
+                    <button class="btn-secondary">資料ダウンロード</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="tech-grid">
+                    <!-- 動的に生成されるグリッド線 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 統計セクション -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">導入企業数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="99.9">0</div>
+                <div class="stat-label">稼働率 %</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">AIモデル数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="24">0</div>
+                <div class="stat-label">サポート体制 H</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- サービスセクション -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <div class="section-subtitle">Services</div>
+            <h2 class="section-title">
+                <span class="gradient-text">革新的なソリューション</span>
+            </h2>
+            <p class="section-description">
+                最新技術を駆使したサービスで、お客様のビジネスに革新をもたらします
+            </p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3 class="service-title">AI開発</h3>
+                <p class="service-description">
+                    カスタムAIモデルの開発から、既存システムへの統合まで、
+                    お客様のニーズに合わせたAIソリューションを提供します。
+                </p>
+                <ul class="service-features">
+                    <li>自然言語処理</li>
+                    <li>画像認識</li>
+                    <li>予測分析</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3 class="service-title">データ分析</h3>
+                <p class="service-description">
+                    ビッグデータを活用した高度な分析により、
+                    ビジネスインサイトを発見し、意思決定を支援します。
+                </p>
+                <ul class="service-features">
+                    <li>リアルタイム分析</li>
+                    <li>予測モデリング</li>
+                    <li>ダッシュボード構築</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">☁️</div>
+                <h3 class="service-title">クラウド移行</h3>
+                <p class="service-description">
+                    オンプレミスからクラウドへのスムーズな移行を実現し、
+                    スケーラブルなインフラを構築します。
+                </p>
+                <ul class="service-features">
+                    <li>AWS / Azure / GCP</li>
+                    <li>マイクロサービス</li>
+                    <li>DevOps自動化</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔒</div>
+                <h3 class="service-title">セキュリティ</h3>
+                <p class="service-description">
+                    最新のサイバーセキュリティ技術で、
+                    お客様のデータとシステムを守ります。
+                </p>
+                <ul class="service-features">
+                    <li>脆弱性診断</li>
+                    <li>ゼロトラスト</li>
+                    <li>インシデント対応</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3 class="service-title">自動化</h3>
+                <p class="service-description">
+                    RPA と AI を組み合わせた業務自動化により、
+                    生産性を大幅に向上させます。
+                </p>
+                <ul class="service-features">
+                    <li>プロセス自動化</li>
+                    <li>チャットボット</li>
+                    <li>ワークフロー最適化</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3 class="service-title">アプリ開発</h3>
+                <p class="service-description">
+                    ネイティブアプリからWebアプリまで、
+                    ユーザー体験を重視した開発を行います。
+                </p>
+                <ul class="service-features">
+                    <li>React Native</li>
+                    <li>Flutter</li>
+                    <li>Progressive Web Apps</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- テクノロジースタック -->
+    <section class="tech-stack" id="tech">
+        <div class="section-header">
+            <div class="section-subtitle">Technology Stack</div>
+            <h2 class="section-title">
+                <span class="gradient-text">最先端技術スタック</span>
+            </h2>
+            <p class="section-description">
+                業界をリードする技術を駆使してソリューションを構築
+            </p>
+        </div>
+        <div class="tech-grid-container">
+            <div class="tech-item">
+                <div class="tech-icon">⚛️</div>
+                <div class="tech-name">React</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🅰️</div>
+                <div class="tech-name">Angular</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🟢</div>
+                <div class="tech-name">Node.js</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🐍</div>
+                <div class="tech-name">Python</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">☕</div>
+                <div class="tech-name">Java</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🐳</div>
+                <div class="tech-name">Docker</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">☸️</div>
+                <div class="tech-name">Kubernetes</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🔥</div>
+                <div class="tech-name">Firebase</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🗄️</div>
+                <div class="tech-name">MongoDB</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🐘</div>
+                <div class="tech-name">PostgreSQL</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">📊</div>
+                <div class="tech-name">TensorFlow</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🤖</div>
+                <div class="tech-name">PyTorch</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AIチャットセクション -->
+    <section class="ai-chat" id="ai">
+        <div class="section-header">
+            <div class="section-subtitle">AI Assistant</div>
+            <h2 class="section-title">
+                <span class="gradient-text">AIアシスタントと対話</span>
+            </h2>
+            <p class="section-description">
+                最新のAI技術でお客様の質問にお答えします
+            </p>
+        </div>
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-avatar">🤖</div>
+                <div class="chat-info">
+                    <div class="chat-name">TechVision AI Assistant</div>
+                    <div class="chat-status">
+                        <div class="status-dot"></div>
+                        オンライン
+                    </div>
+                </div>
+            </div>
+            <div class="chat-messages">
+                <div class="message message-bot">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <p class="message-text">
+                            こんにちは！TechVision AI アシスタントです。
+                            デジタルトランスフォーメーションについて、何でもお気軽にご質問ください。
+                        </p>
+                    </div>
+                </div>
+                <div class="message message-bot">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="typing-indicator">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="メッセージを入力...">
+                <button>送信</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">TechVision Pro</div>
+                <p class="footer-description">
+                    最先端のテクノロジーで、ビジネスの未来を創造します。
+                    AIとデジタルトランスフォーメーションのリーディングカンパニー。
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link">f</a>
+                    <a href="#" class="social-link">t</a>
+                    <a href="#" class="social-link">in</a>
+                    <a href="#" class="social-link">g</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>サービス</h4>
+                <ul class="footer-links">
+                    <li><a href="#">AI開発</a></li>
+                    <li><a href="#">データ分析</a></li>
+                    <li><a href="#">クラウド移行</a></li>
+                    <li><a href="#">セキュリティ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>会社情報</h4>
+                <ul class="footer-links">
+                    <li><a href="#">会社概要</a></li>
+                    <li><a href="#">採用情報</a></li>
+                    <li><a href="#">ニュース</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>リソース</h4>
+                <ul class="footer-links">
+                    <li><a href="#">ドキュメント</a></li>
+                    <li><a href="#">ブログ</a></li>
+                    <li><a href="#">導入事例</a></li>
+                    <li><a href="#">サポート</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TechVision Pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>`,
+    css: `@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap');
         
         * {
             margin: 0;
@@ -1193,360 +1544,8 @@ export const itCorporateProTemplate: WebTemplate = {
             .chat-container {
                 padding: 20px;
             }
-        }
-    </style>
-</head>
-<body>
-    <!-- ローディング画面 -->
-    <div class="loading-screen" id="loading">
-        <div class="loading-logo">
-            <div class="loading-cube">
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-            </div>
-        </div>
-        <div class="loading-text">システムを初期化中...</div>
-    </div>
-
-    <!-- ヘッダー -->
-    <header id="header">
-        <nav>
-            <div class="logo">
-                <div class="logo-icon"></div>
-                TechVision Pro
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">ホーム</a></li>
-                <li><a href="#services">サービス</a></li>
-                <li><a href="#tech">テクノロジー</a></li>
-                <li><a href="#ai">AI</a></li>
-                <li><a href="#contact">お問い合わせ</a></li>
-            </ul>
-            <button class="nav-cta">無料相談</button>
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
-    </header>
-
-    <!-- ヒーローセクション -->
-    <section class="hero" id="home">
-        <div class="hero-bg">
-            <div class="particles" id="particles"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-badge">
-                    <div class="badge-dot"></div>
-                    <span>AI駆動の次世代ソリューション</span>
-                </div>
-                <h1>
-                    ビジネスを革新する<br>
-                    <span class="gradient-text">最先端テクノロジー</span>
-                </h1>
-                <p class="hero-description">
-                    人工知能、機械学習、ビッグデータ分析を活用し、
-                    あなたのビジネスを次のレベルへ導きます。
-                    デジタルトランスフォーメーションの真のパートナー。
-                </p>
-                <div class="hero-buttons">
-                    <button class="btn-primary">導入事例を見る</button>
-                    <button class="btn-secondary">資料ダウンロード</button>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="tech-grid">
-                    <!-- 動的に生成されるグリッド線 -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 統計セクション -->
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-card">
-                <div class="stat-number" data-target="500">0</div>
-                <div class="stat-label">導入企業数</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="99.9">0</div>
-                <div class="stat-label">稼働率 %</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="50">0</div>
-                <div class="stat-label">AIモデル数</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="24">0</div>
-                <div class="stat-label">サポート体制 H</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- サービスセクション -->
-    <section class="services" id="services">
-        <div class="section-header">
-            <div class="section-subtitle">Services</div>
-            <h2 class="section-title">
-                <span class="gradient-text">革新的なソリューション</span>
-            </h2>
-            <p class="section-description">
-                最新技術を駆使したサービスで、お客様のビジネスに革新をもたらします
-            </p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🤖</div>
-                <h3 class="service-title">AI開発</h3>
-                <p class="service-description">
-                    カスタムAIモデルの開発から、既存システムへの統合まで、
-                    お客様のニーズに合わせたAIソリューションを提供します。
-                </p>
-                <ul class="service-features">
-                    <li>自然言語処理</li>
-                    <li>画像認識</li>
-                    <li>予測分析</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">📊</div>
-                <h3 class="service-title">データ分析</h3>
-                <p class="service-description">
-                    ビッグデータを活用した高度な分析により、
-                    ビジネスインサイトを発見し、意思決定を支援します。
-                </p>
-                <ul class="service-features">
-                    <li>リアルタイム分析</li>
-                    <li>予測モデリング</li>
-                    <li>ダッシュボード構築</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">☁️</div>
-                <h3 class="service-title">クラウド移行</h3>
-                <p class="service-description">
-                    オンプレミスからクラウドへのスムーズな移行を実現し、
-                    スケーラブルなインフラを構築します。
-                </p>
-                <ul class="service-features">
-                    <li>AWS / Azure / GCP</li>
-                    <li>マイクロサービス</li>
-                    <li>DevOps自動化</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🔒</div>
-                <h3 class="service-title">セキュリティ</h3>
-                <p class="service-description">
-                    最新のサイバーセキュリティ技術で、
-                    お客様のデータとシステムを守ります。
-                </p>
-                <ul class="service-features">
-                    <li>脆弱性診断</li>
-                    <li>ゼロトラスト</li>
-                    <li>インシデント対応</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">⚡</div>
-                <h3 class="service-title">自動化</h3>
-                <p class="service-description">
-                    RPA と AI を組み合わせた業務自動化により、
-                    生産性を大幅に向上させます。
-                </p>
-                <ul class="service-features">
-                    <li>プロセス自動化</li>
-                    <li>チャットボット</li>
-                    <li>ワークフロー最適化</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">📱</div>
-                <h3 class="service-title">アプリ開発</h3>
-                <p class="service-description">
-                    ネイティブアプリからWebアプリまで、
-                    ユーザー体験を重視した開発を行います。
-                </p>
-                <ul class="service-features">
-                    <li>React Native</li>
-                    <li>Flutter</li>
-                    <li>Progressive Web Apps</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- テクノロジースタック -->
-    <section class="tech-stack" id="tech">
-        <div class="section-header">
-            <div class="section-subtitle">Technology Stack</div>
-            <h2 class="section-title">
-                <span class="gradient-text">最先端技術スタック</span>
-            </h2>
-            <p class="section-description">
-                業界をリードする技術を駆使してソリューションを構築
-            </p>
-        </div>
-        <div class="tech-grid-container">
-            <div class="tech-item">
-                <div class="tech-icon">⚛️</div>
-                <div class="tech-name">React</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">🅰️</div>
-                <div class="tech-name">Angular</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">🟢</div>
-                <div class="tech-name">Node.js</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">🐍</div>
-                <div class="tech-name">Python</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">☕</div>
-                <div class="tech-name">Java</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">🐳</div>
-                <div class="tech-name">Docker</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">☸️</div>
-                <div class="tech-name">Kubernetes</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">🔥</div>
-                <div class="tech-name">Firebase</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">🗄️</div>
-                <div class="tech-name">MongoDB</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">🐘</div>
-                <div class="tech-name">PostgreSQL</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">📊</div>
-                <div class="tech-name">TensorFlow</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">🤖</div>
-                <div class="tech-name">PyTorch</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AIチャットセクション -->
-    <section class="ai-chat" id="ai">
-        <div class="section-header">
-            <div class="section-subtitle">AI Assistant</div>
-            <h2 class="section-title">
-                <span class="gradient-text">AIアシスタントと対話</span>
-            </h2>
-            <p class="section-description">
-                最新のAI技術でお客様の質問にお答えします
-            </p>
-        </div>
-        <div class="chat-container">
-            <div class="chat-header">
-                <div class="chat-avatar">🤖</div>
-                <div class="chat-info">
-                    <div class="chat-name">TechVision AI Assistant</div>
-                    <div class="chat-status">
-                        <div class="status-dot"></div>
-                        オンライン
-                    </div>
-                </div>
-            </div>
-            <div class="chat-messages">
-                <div class="message message-bot">
-                    <div class="message-avatar">🤖</div>
-                    <div class="message-content">
-                        <p class="message-text">
-                            こんにちは！TechVision AI アシスタントです。
-                            デジタルトランスフォーメーションについて、何でもお気軽にご質問ください。
-                        </p>
-                    </div>
-                </div>
-                <div class="message message-bot">
-                    <div class="message-avatar">🤖</div>
-                    <div class="message-content">
-                        <div class="typing-indicator">
-                            <div class="typing-dot"></div>
-                            <div class="typing-dot"></div>
-                            <div class="typing-dot"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="chat-input">
-                <input type="text" placeholder="メッセージを入力...">
-                <button>送信</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- フッター -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">TechVision Pro</div>
-                <p class="footer-description">
-                    最先端のテクノロジーで、ビジネスの未来を創造します。
-                    AIとデジタルトランスフォーメーションのリーディングカンパニー。
-                </p>
-                <div class="social-links">
-                    <a href="#" class="social-link">f</a>
-                    <a href="#" class="social-link">t</a>
-                    <a href="#" class="social-link">in</a>
-                    <a href="#" class="social-link">g</a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h4>サービス</h4>
-                <ul class="footer-links">
-                    <li><a href="#">AI開発</a></li>
-                    <li><a href="#">データ分析</a></li>
-                    <li><a href="#">クラウド移行</a></li>
-                    <li><a href="#">セキュリティ</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>会社情報</h4>
-                <ul class="footer-links">
-                    <li><a href="#">会社概要</a></li>
-                    <li><a href="#">採用情報</a></li>
-                    <li><a href="#">ニュース</a></li>
-                    <li><a href="#">お問い合わせ</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>リソース</h4>
-                <ul class="footer-links">
-                    <li><a href="#">ドキュメント</a></li>
-                    <li><a href="#">ブログ</a></li>
-                    <li><a href="#">導入事例</a></li>
-                    <li><a href="#">サポート</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 TechVision Pro. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // ローディング画面
+        }`,
+    js: `// ローディング画面
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loading').classList.add('hidden');
@@ -1753,11 +1752,6 @@ export const itCorporateProTemplate: WebTemplate = {
             item.style.transform = 'translateY(30px)';
             item.style.transition = 'all 0.6s ease';
             animateOnScroll.observe(item);
-        });
-    </script>
-</body>
-</html>`,
-    css: '',
-    js: ''
+        });`
   }
 }

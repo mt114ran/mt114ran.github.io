@@ -25,8 +25,286 @@ export const portfolioCreativeProTemplate: WebTemplate = {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Vision Pro - アートとテクノロジーの融合</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+</head>
+<body>
+    <!-- ローディング画面 -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- カスタムカーソル -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- ナビゲーション -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">CREATIVE PRO</div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="liquid-bg"></div>
+            <video class="hero-video" autoplay muted loop>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">CREATIVE<br>VISION</h1>
+            <p class="hero-subtitle">Where Art Meets Technology</p>
+            <a href="#projects" class="hero-cta">Explore Work</a>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- プロジェクトセクション -->
+    <section class="projects" id="projects">
+        <div class="section-header">
+            <h2 class="section-title">SELECTED WORKS</h2>
+            <p class="section-subtitle">A collection of creative excellence</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop" alt="Project 1" class="project-image">
+                <div class="project-info">
+                    <div class="project-number">01</div>
+                    <h3 class="project-title">Digital Dreams</h3>
+                    <p class="project-category">Web Design / Development</p>
+                    <p class="project-description">革新的なWebエクスペリエンスを創造する、最先端のデジタルプロジェクト。</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1604076913837-52ab5629fba9?w=800&h=1200&fit=crop" alt="Project 2" class="project-image">
+                <div class="project-info">
+                    <div class="project-number">02</div>
+                    <h3 class="project-title">Brand Evolution</h3>
+                    <p class="project-category">Branding / Identity</p>
+                    <p class="project-description">ブランドの本質を視覚的に表現し、新たな価値を創出。</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=1200&fit=crop" alt="Project 3" class="project-image">
+                <div class="project-info">
+                    <div class="project-number">03</div>
+                    <h3 class="project-title">Interactive Art</h3>
+                    <p class="project-category">Installation / Experience</p>
+                    <p class="project-description">テクノロジーとアートが融合した、インタラクティブな体験。</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1561998338-13ad7883b21e?w=800&h=1200&fit=crop" alt="Project 4" class="project-image">
+                <div class="project-info">
+                    <div class="project-number">04</div>
+                    <h3 class="project-title">Motion Graphics</h3>
+                    <p class="project-category">Animation / Video</p>
+                    <p class="project-description">動きで物語を語る、ダイナミックなビジュアル表現。</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1524634126442-357e0eac3c14?w=800&h=1200&fit=crop" alt="Project 5" class="project-image">
+                <div class="project-info">
+                    <div class="project-number">05</div>
+                    <h3 class="project-title">Future Vision</h3>
+                    <p class="project-category">Concept / Strategy</p>
+                    <p class="project-description">未来を見据えたコンセプトデザインとストラテジー。</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&h=1200&fit=crop" alt="Project 6" class="project-image">
+                <div class="project-info">
+                    <div class="project-number">06</div>
+                    <h3 class="project-title">Artistic Code</h3>
+                    <p class="project-category">Generative / Creative Coding</p>
+                    <p class="project-description">プログラミングで生み出す、独創的なアート作品。</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- スキルセクション -->
+    <section class="skills" id="skills">
+        <div class="skills-container">
+            <div class="skills-text">
+                <h2 class="skills-title">EXPERTISE</h2>
+                <p class="skills-description">
+                    10年以上の経験を持つクリエイティブディレクターとして、
+                    ブランディング、デジタルデザイン、インタラクティブメディアの
+                    分野で革新的なソリューションを提供しています。
+                </p>
+                <div class="skills-list">
+                    <div class="skill-item" data-progress="95">
+                        <div class="skill-name">Creative Direction</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-progress="90">
+                        <div class="skill-name">UI/UX Design</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-progress="85">
+                        <div class="skill-name">Web Development</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-progress="92">
+                        <div class="skill-name">Brand Strategy</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-progress="88">
+                        <div class="skill-name">Motion Design</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-progress="80">
+                        <div class="skill-name">3D Visualization</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-visual">
+                <div class="floating-shapes">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- アバウトセクション -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop" alt="Profile">
+            </div>
+            <div class="about-content">
+                <h2 class="about-title">ABOUT ME</h2>
+                <p class="about-text">
+                    クリエイティブディレクターとして、アートとテクノロジーの境界を
+                    探求し続けています。東京を拠点に、グローバルなプロジェクトで
+                    革新的なデザインソリューションを提供。
+                </p>
+                <blockquote class="about-quote">
+                    "デザインは問題を解決するだけでなく、
+                    新たな体験を創造する力を持っている"
+                </blockquote>
+                <p class="about-text">
+                    常に新しい技術とクリエイティブな表現方法を追求し、
+                    クライアントのビジョンを超える成果を実現することを
+                    目指しています。
+                </p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Awards</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- コンタクトセクション -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2 class="contact-title">LET'S CREATE</h2>
+            <p class="contact-subtitle">新しいプロジェクトについて話しましょう</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">hello@creative.pro</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value">+81 90 1234 5678</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-label">Location</div>
+                    <div class="contact-value">Tokyo, Japan</div>
+                </div>
+            </div>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder=" " required>
+                    <label class="form-label">お名前</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder=" " required>
+                    <label class="form-label">メールアドレス</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder=" " required>
+                    <label class="form-label">件名</label>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-input form-textarea" placeholder=" " required></textarea>
+                    <label class="form-label">メッセージ</label>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" class="social-link">Tw</a>
+                <a href="#" class="social-link">In</a>
+                <a href="#" class="social-link">Be</a>
+                <a href="#" class="social-link">Dr</a>
+            </div>
+            <p class="footer-text">© 2024 Creative Vision Pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>`,
+    css: `@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
         
         * {
             margin: 0;
@@ -1100,287 +1378,8 @@ export const portfolioCreativeProTemplate: WebTemplate = {
             .contact-info {
                 grid-template-columns: 1fr;
             }
-        }
-    </style>
-</head>
-<body>
-    <!-- ローディング画面 -->
-    <div class="loader" id="loader">
-        <div class="loader-content">
-            <div class="loader-text">LOADING</div>
-            <div class="loader-bar"></div>
-        </div>
-    </div>
-
-    <!-- カスタムカーソル -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursor-follower"></div>
-
-    <!-- ナビゲーション -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">CREATIVE PRO</div>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="menu-toggle" id="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- ヒーローセクション -->
-    <section class="hero" id="home">
-        <div class="hero-bg">
-            <div class="liquid-bg"></div>
-            <video class="hero-video" autoplay muted loop>
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="hero-content">
-            <h1 class="hero-title">CREATIVE<br>VISION</h1>
-            <p class="hero-subtitle">Where Art Meets Technology</p>
-            <a href="#projects" class="hero-cta">Explore Work</a>
-        </div>
-        <div class="scroll-indicator"></div>
-    </section>
-
-    <!-- プロジェクトセクション -->
-    <section class="projects" id="projects">
-        <div class="section-header">
-            <h2 class="section-title">SELECTED WORKS</h2>
-            <p class="section-subtitle">A collection of creative excellence</p>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop" alt="Project 1" class="project-image">
-                <div class="project-info">
-                    <div class="project-number">01</div>
-                    <h3 class="project-title">Digital Dreams</h3>
-                    <p class="project-category">Web Design / Development</p>
-                    <p class="project-description">革新的なWebエクスペリエンスを創造する、最先端のデジタルプロジェクト。</p>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1604076913837-52ab5629fba9?w=800&h=1200&fit=crop" alt="Project 2" class="project-image">
-                <div class="project-info">
-                    <div class="project-number">02</div>
-                    <h3 class="project-title">Brand Evolution</h3>
-                    <p class="project-category">Branding / Identity</p>
-                    <p class="project-description">ブランドの本質を視覚的に表現し、新たな価値を創出。</p>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=1200&fit=crop" alt="Project 3" class="project-image">
-                <div class="project-info">
-                    <div class="project-number">03</div>
-                    <h3 class="project-title">Interactive Art</h3>
-                    <p class="project-category">Installation / Experience</p>
-                    <p class="project-description">テクノロジーとアートが融合した、インタラクティブな体験。</p>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1561998338-13ad7883b21e?w=800&h=1200&fit=crop" alt="Project 4" class="project-image">
-                <div class="project-info">
-                    <div class="project-number">04</div>
-                    <h3 class="project-title">Motion Graphics</h3>
-                    <p class="project-category">Animation / Video</p>
-                    <p class="project-description">動きで物語を語る、ダイナミックなビジュアル表現。</p>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1524634126442-357e0eac3c14?w=800&h=1200&fit=crop" alt="Project 5" class="project-image">
-                <div class="project-info">
-                    <div class="project-number">05</div>
-                    <h3 class="project-title">Future Vision</h3>
-                    <p class="project-category">Concept / Strategy</p>
-                    <p class="project-description">未来を見据えたコンセプトデザインとストラテジー。</p>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&h=1200&fit=crop" alt="Project 6" class="project-image">
-                <div class="project-info">
-                    <div class="project-number">06</div>
-                    <h3 class="project-title">Artistic Code</h3>
-                    <p class="project-category">Generative / Creative Coding</p>
-                    <p class="project-description">プログラミングで生み出す、独創的なアート作品。</p>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- スキルセクション -->
-    <section class="skills" id="skills">
-        <div class="skills-container">
-            <div class="skills-text">
-                <h2 class="skills-title">EXPERTISE</h2>
-                <p class="skills-description">
-                    10年以上の経験を持つクリエイティブディレクターとして、
-                    ブランディング、デジタルデザイン、インタラクティブメディアの
-                    分野で革新的なソリューションを提供しています。
-                </p>
-                <div class="skills-list">
-                    <div class="skill-item" data-progress="95">
-                        <div class="skill-name">Creative Direction</div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 95%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item" data-progress="90">
-                        <div class="skill-name">UI/UX Design</div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item" data-progress="85">
-                        <div class="skill-name">Web Development</div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item" data-progress="92">
-                        <div class="skill-name">Brand Strategy</div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 92%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item" data-progress="88">
-                        <div class="skill-name">Motion Design</div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 88%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item" data-progress="80">
-                        <div class="skill-name">3D Visualization</div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 80%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skills-visual">
-                <div class="floating-shapes">
-                    <div class="shape"></div>
-                    <div class="shape"></div>
-                    <div class="shape"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- アバウトセクション -->
-    <section class="about" id="about">
-        <div class="about-container">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop" alt="Profile">
-            </div>
-            <div class="about-content">
-                <h2 class="about-title">ABOUT ME</h2>
-                <p class="about-text">
-                    クリエイティブディレクターとして、アートとテクノロジーの境界を
-                    探求し続けています。東京を拠点に、グローバルなプロジェクトで
-                    革新的なデザインソリューションを提供。
-                </p>
-                <blockquote class="about-quote">
-                    "デザインは問題を解決するだけでなく、
-                    新たな体験を創造する力を持っている"
-                </blockquote>
-                <p class="about-text">
-                    常に新しい技術とクリエイティブな表現方法を追求し、
-                    クライアントのビジョンを超える成果を実現することを
-                    目指しています。
-                </p>
-                <div class="about-stats">
-                    <div class="stat">
-                        <div class="stat-number">150+</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Awards</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Years</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- コンタクトセクション -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <h2 class="contact-title">LET'S CREATE</h2>
-            <p class="contact-subtitle">新しいプロジェクトについて話しましょう</p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div class="contact-label">Email</div>
-                    <div class="contact-value">hello@creative.pro</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <div class="contact-label">Phone</div>
-                    <div class="contact-value">+81 90 1234 5678</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div class="contact-label">Location</div>
-                    <div class="contact-value">Tokyo, Japan</div>
-                </div>
-            </div>
-            
-            <form class="contact-form">
-                <div class="form-group">
-                    <input type="text" class="form-input" placeholder=" " required>
-                    <label class="form-label">お名前</label>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-input" placeholder=" " required>
-                    <label class="form-label">メールアドレス</label>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-input" placeholder=" " required>
-                    <label class="form-label">件名</label>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-input form-textarea" placeholder=" " required></textarea>
-                    <label class="form-label">メッセージ</label>
-                </div>
-                <button type="submit" class="form-submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- フッター -->
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="#" class="social-link">Tw</a>
-                <a href="#" class="social-link">In</a>
-                <a href="#" class="social-link">Be</a>
-                <a href="#" class="social-link">Dr</a>
-            </div>
-            <p class="footer-text">© 2024 Creative Vision Pro. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // ローディング画面
+        }`,
+    js: `// ローディング画面
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loader').classList.add('hidden');
@@ -1471,11 +1470,6 @@ export const portfolioCreativeProTemplate: WebTemplate = {
         document.querySelector('.contact-form').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('メッセージを送信しました！');
-        });
-    </script>
-</body>
-</html>`,
-    css: '',
-    js: ''
+        });`
   }
 }
