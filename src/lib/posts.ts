@@ -5,6 +5,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
+export const POSTS_PER_PAGE = 10;
 
 export function getAllPostSlugs() {
   const filenames = fs.readdirSync(postsDirectory);
@@ -61,4 +62,46 @@ export async function getPostData(slug: string) {
     contentHtml,
     ...(matterResult.data as { id: number; title: string; create: string; update?: string; tags?: string[] }),
   };
+}
+
+/**
+ * ページネーション対応の記事データ取得関数
+ * @param page ページ番号（1から始まる）
+ * @returns 指定ページの記事データと総ページ数
+ */
+export function getPostsWithPagination(page: number) {
+  const allPosts = getSortedPostsData();
+  const totalPosts = allPosts.length;
+  const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
+  
+  // ページ番号の検証
+  if (page < 1 || page > totalPages) {
+    return {
+      posts: [],
+      currentPage: page,
+      totalPages,
+      hasNextPage: false,
+      hasPrevPage: false,
+    };
+  }
+  
+  const startIndex = (page - 1) * POSTS_PER_PAGE;
+  const endIndex = startIndex + POSTS_PER_PAGE;
+  const posts = allPosts.slice(startIndex, endIndex);
+  
+  return {
+    posts,
+    currentPage: page,
+    totalPages,
+    hasNextPage: page < totalPages,
+    hasPrevPage: page > 1,
+  };
+}
+
+/**
+ * 総ページ数を取得
+ */
+export function getTotalPages() {
+  const allPosts = getSortedPostsData();
+  return Math.ceil(allPosts.length / POSTS_PER_PAGE);
 }
