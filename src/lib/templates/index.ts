@@ -72,6 +72,7 @@ import { eventFestivalTemplate } from './data/event-festival'
 // メディア・出版カテゴリ
 import { mediaNewsTemplate } from './data/media-news'
 import { mediaMagazineTemplate } from './data/media-magazine'
+import { mediaBlogTemplate } from './data/media-blog'
 
 /**
  * すべてのテンプレートデータ
@@ -147,9 +148,10 @@ export const templates: WebTemplate[] = [
   eventConferenceTemplate,
   eventWeddingTemplate,
   eventFestivalTemplate,
-  // メディア・出版カテゴリ（2個）
+  // メディア・出版カテゴリ（3個）
   mediaNewsTemplate,
-  mediaMagazineTemplate
+  mediaMagazineTemplate,
+  mediaBlogTemplate
 ]
 
 /**
