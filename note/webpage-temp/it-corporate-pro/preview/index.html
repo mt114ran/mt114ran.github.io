@@ -1,0 +1,1745 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/043e8c6284e44f46.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-d8f047cced1b4886.js" async=""></script><script src="/_next/static/chunks/684-8e4d9e1e4139006e.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-94bc7d4390c0f889.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Tech Enterprise Pro - 次世代企業サイト&lt;/title&gt;
+    
+    &lt;style&gt;
+        @import url(&#x27;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap&#x27;);
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #14b8a6;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --white: #ffffff;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        body {
+            font-family: &#x27;Inter&#x27;, sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        /* カスタムスクロールバー */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--dark-light);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* ローディング画面 */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease-out;
+        }
+        
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loading-logo {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .loading-cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateCube 2s infinite linear;
+        }
+        
+        @keyframes rotateCube {
+            0% { transform: rotateX(-30deg) rotateY(0deg); }
+            100% { transform: rotateX(-30deg) rotateY(360deg); }
+        }
+        
+        .cube-face {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cube-face:nth-child(1) { transform: translateZ(30px); }
+        .cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(30px); }
+        .cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(30px); }
+        .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(30px); }
+        .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(30px); }
+        .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(30px); }
+        
+        .loading-text {
+            font-size: 14px;
+            color: var(--gray);
+            font-family: &#x27;JetBrains Mono&#x27;, monospace;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        /* ヘッダー */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--gradient-1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-icon::before {
+            content: &#x27;T&#x27;;
+            color: white;
+            font-weight: 900;
+            font-size: 20px;
+            z-index: 1;
+        }
+        
+        .logo-icon::after {
+            content: &#x27;&#x27;;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-100%) skewX(-45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) skewX(-45deg); }
+            10% { transform: translateX(200%) skewX(-45deg); }
+            100% { transform: translateX(200%) skewX(-45deg); }
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: &#x27;&#x27;;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--white);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            padding: 10px 24px;
+            background: var(--gradient-1);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-cta::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: left 0.5s ease;
+        }
+        
+        .nav-cta:hover::before {
+            left: 100%;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+        
+        /* ハンバーガーメニュー */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            from {
+                transform: translateY(100vh) translateX(0);
+            }
+            to {
+                transform: translateY(-100vh) translateX(100px);
+            }
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-text {
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50px;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        .hero-badge span {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .btn-primary {
+            padding: 14px 32px;
+            background: var(--gradient-1);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+        }
+        
+        .btn-secondary {
+            padding: 14px 32px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+        }
+        
+        /* 3Dビジュアライゼーション */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease-out 0.8s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .tech-grid {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            transform-style: preserve-3d;
+            animation: rotateGrid 20s infinite linear;
+        }
+        
+        @keyframes rotateGrid {
+            from { transform: rotateX(25deg) rotateY(0deg); }
+            to { transform: rotateX(25deg) rotateY(360deg); }
+        }
+        
+        .grid-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0.3;
+        }
+        
+        .grid-line.horizontal {
+            width: 100%;
+            height: 1px;
+            left: 0;
+        }
+        
+        .grid-line.vertical {
+            width: 1px;
+            height: 100%;
+            top: 0;
+        }
+        
+        .data-point {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--secondary);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--secondary);
+            animation: pulse 2s infinite;
+        }
+        
+        /* 統計セクション */
+        .stats {
+            padding: 80px 40px;
+            background: var(--dark-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            animation: scan 3s infinite;
+        }
+        
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+        
+        .stat-card:hover::before {
+            opacity: 0.05;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* サービスセクション */
+        .services {
+            padding: 100px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        
+        .section-description {
+            color: var(--gray);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            position: relative;
+        }
+        
+        .service-icon::after {
+            content: &#x27;&#x27;;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            opacity: 0.3;
+            animation: ping 2s infinite;
+        }
+        
+        @keyframes ping {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        .service-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .service-description {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            list-style: none;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .service-features li::before {
+            content: &#x27;✓&#x27;;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        /* テクノロジースタック */
+        .tech-stack {
+            padding: 100px 40px;
+            background: var(--dark-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-grid-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-item::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, var(--primary), transparent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+        }
+        
+        .tech-item:hover::before {
+            width: 200px;
+            height: 200px;
+            opacity: 0.1;
+        }
+        
+        .tech-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+        }
+        
+        .tech-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+        
+        .tech-item:hover .tech-icon {
+            filter: grayscale(0%);
+        }
+        
+        .tech-name {
+            font-size: 14px;
+            color: var(--gray);
+            font-weight: 600;
+        }
+        
+        /* AIチャットセクション */
+        .ai-chat {
+            padding: 100px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .chat-container {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+        
+        .chat-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .chat-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            animation: rotate 10s infinite linear;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .chat-info {
+            flex: 1;
+        }
+        
+        .chat-name {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .chat-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--secondary);
+            font-size: 14px;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+        
+        .chat-messages {
+            margin-bottom: 30px;
+        }
+        
+        .message {
+            margin-bottom: 20px;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .message-bot {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .message-avatar {
+            width: 35px;
+            height: 35px;
+            background: var(--gradient-2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        
+        .message-content {
+            flex: 1;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            padding: 15px 20px;
+        }
+        
+        .message-text {
+            color: var(--white);
+            line-height: 1.6;
+        }
+        
+        .typing-indicator {
+            display: flex;
+            gap: 5px;
+            padding: 10px;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--gray);
+            border-radius: 50%;
+            animation: typing 1.5s infinite;
+        }
+        
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+            30% {
+                transform: translateY(-10px);
+                opacity: 1;
+            }
+        }
+        
+        .chat-input {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px 20px;
+            color: var(--white);
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-input input:focus {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .chat-input button {
+            padding: 15px 30px;
+            background: var(--gradient-1);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-input button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+        
+        /* フッター */
+        footer {
+            padding: 60px 40px 30px;
+            background: var(--dark-light);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .footer-description {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--gray);
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-visual {
+                display: none;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .nav-cta {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-grid-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav {
+                padding: 15px 20px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+            
+            .chat-container {
+                padding: 20px;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;!-- ローディング画面 --&gt;
+    &lt;div class=&quot;loading-screen&quot; id=&quot;loading&quot;&gt;
+        &lt;div class=&quot;loading-logo&quot;&gt;
+            &lt;div class=&quot;loading-cube&quot;&gt;
+                &lt;div class=&quot;cube-face&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;cube-face&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;cube-face&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;cube-face&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;cube-face&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;cube-face&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;loading-text&quot;&gt;システムを初期化中...&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- ヘッダー --&gt;
+    &lt;header id=&quot;header&quot;&gt;
+        &lt;nav&gt;
+            &lt;div class=&quot;logo&quot;&gt;
+                &lt;div class=&quot;logo-icon&quot;&gt;&lt;/div&gt;
+                TechVision Pro
+            &lt;/div&gt;
+            &lt;ul class=&quot;nav-links&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;サービス&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#tech&quot;&gt;テクノロジー&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#ai&quot;&gt;AI&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;button class=&quot;nav-cta&quot;&gt;無料相談&lt;/button&gt;
+            &lt;button class=&quot;hamburger&quot; id=&quot;hamburger&quot;&gt;
+                &lt;span&gt;&lt;/span&gt;
+                &lt;span&gt;&lt;/span&gt;
+                &lt;span&gt;&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;!-- ヒーローセクション --&gt;
+    &lt;section class=&quot;hero&quot; id=&quot;home&quot;&gt;
+        &lt;div class=&quot;hero-bg&quot;&gt;
+            &lt;div class=&quot;particles&quot; id=&quot;particles&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;div class=&quot;hero-text&quot;&gt;
+                &lt;div class=&quot;hero-badge&quot;&gt;
+                    &lt;div class=&quot;badge-dot&quot;&gt;&lt;/div&gt;
+                    &lt;span&gt;AI駆動の次世代ソリューション&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;h1&gt;
+                    ビジネスを革新する&lt;br&gt;
+                    &lt;span class=&quot;gradient-text&quot;&gt;最先端テクノロジー&lt;/span&gt;
+                &lt;/h1&gt;
+                &lt;p class=&quot;hero-description&quot;&gt;
+                    人工知能、機械学習、ビッグデータ分析を活用し、
+                    あなたのビジネスを次のレベルへ導きます。
+                    デジタルトランスフォーメーションの真のパートナー。
+                &lt;/p&gt;
+                &lt;div class=&quot;hero-buttons&quot;&gt;
+                    &lt;button class=&quot;btn-primary&quot;&gt;導入事例を見る&lt;/button&gt;
+                    &lt;button class=&quot;btn-secondary&quot;&gt;資料ダウンロード&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;hero-visual&quot;&gt;
+                &lt;div class=&quot;tech-grid&quot;&gt;
+                    &lt;!-- 動的に生成されるグリッド線 --&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- 統計セクション --&gt;
+    &lt;section class=&quot;stats&quot;&gt;
+        &lt;div class=&quot;stats-container&quot;&gt;
+            &lt;div class=&quot;stat-card&quot;&gt;
+                &lt;div class=&quot;stat-number&quot; data-target=&quot;500&quot;&gt;0&lt;/div&gt;
+                &lt;div class=&quot;stat-label&quot;&gt;導入企業数&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;stat-card&quot;&gt;
+                &lt;div class=&quot;stat-number&quot; data-target=&quot;99.9&quot;&gt;0&lt;/div&gt;
+                &lt;div class=&quot;stat-label&quot;&gt;稼働率 %&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;stat-card&quot;&gt;
+                &lt;div class=&quot;stat-number&quot; data-target=&quot;50&quot;&gt;0&lt;/div&gt;
+                &lt;div class=&quot;stat-label&quot;&gt;AIモデル数&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;stat-card&quot;&gt;
+                &lt;div class=&quot;stat-number&quot; data-target=&quot;24&quot;&gt;0&lt;/div&gt;
+                &lt;div class=&quot;stat-label&quot;&gt;サポート体制 H&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- サービスセクション --&gt;
+    &lt;section class=&quot;services&quot; id=&quot;services&quot;&gt;
+        &lt;div class=&quot;section-header&quot;&gt;
+            &lt;div class=&quot;section-subtitle&quot;&gt;Services&lt;/div&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;
+                &lt;span class=&quot;gradient-text&quot;&gt;革新的なソリューション&lt;/span&gt;
+            &lt;/h2&gt;
+            &lt;p class=&quot;section-description&quot;&gt;
+                最新技術を駆使したサービスで、お客様のビジネスに革新をもたらします
+            &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;services-grid&quot;&gt;
+            &lt;div class=&quot;service-card&quot;&gt;
+                &lt;div class=&quot;service-icon&quot;&gt;🤖&lt;/div&gt;
+                &lt;h3 class=&quot;service-title&quot;&gt;AI開発&lt;/h3&gt;
+                &lt;p class=&quot;service-description&quot;&gt;
+                    カスタムAIモデルの開発から、既存システムへの統合まで、
+                    お客様のニーズに合わせたAIソリューションを提供します。
+                &lt;/p&gt;
+                &lt;ul class=&quot;service-features&quot;&gt;
+                    &lt;li&gt;自然言語処理&lt;/li&gt;
+                    &lt;li&gt;画像認識&lt;/li&gt;
+                    &lt;li&gt;予測分析&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;service-card&quot;&gt;
+                &lt;div class=&quot;service-icon&quot;&gt;📊&lt;/div&gt;
+                &lt;h3 class=&quot;service-title&quot;&gt;データ分析&lt;/h3&gt;
+                &lt;p class=&quot;service-description&quot;&gt;
+                    ビッグデータを活用した高度な分析により、
+                    ビジネスインサイトを発見し、意思決定を支援します。
+                &lt;/p&gt;
+                &lt;ul class=&quot;service-features&quot;&gt;
+                    &lt;li&gt;リアルタイム分析&lt;/li&gt;
+                    &lt;li&gt;予測モデリング&lt;/li&gt;
+                    &lt;li&gt;ダッシュボード構築&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;service-card&quot;&gt;
+                &lt;div class=&quot;service-icon&quot;&gt;☁️&lt;/div&gt;
+                &lt;h3 class=&quot;service-title&quot;&gt;クラウド移行&lt;/h3&gt;
+                &lt;p class=&quot;service-description&quot;&gt;
+                    オンプレミスからクラウドへのスムーズな移行を実現し、
+                    スケーラブルなインフラを構築します。
+                &lt;/p&gt;
+                &lt;ul class=&quot;service-features&quot;&gt;
+                    &lt;li&gt;AWS / Azure / GCP&lt;/li&gt;
+                    &lt;li&gt;マイクロサービス&lt;/li&gt;
+                    &lt;li&gt;DevOps自動化&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;service-card&quot;&gt;
+                &lt;div class=&quot;service-icon&quot;&gt;🔒&lt;/div&gt;
+                &lt;h3 class=&quot;service-title&quot;&gt;セキュリティ&lt;/h3&gt;
+                &lt;p class=&quot;service-description&quot;&gt;
+                    最新のサイバーセキュリティ技術で、
+                    お客様のデータとシステムを守ります。
+                &lt;/p&gt;
+                &lt;ul class=&quot;service-features&quot;&gt;
+                    &lt;li&gt;脆弱性診断&lt;/li&gt;
+                    &lt;li&gt;ゼロトラスト&lt;/li&gt;
+                    &lt;li&gt;インシデント対応&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;service-card&quot;&gt;
+                &lt;div class=&quot;service-icon&quot;&gt;⚡&lt;/div&gt;
+                &lt;h3 class=&quot;service-title&quot;&gt;自動化&lt;/h3&gt;
+                &lt;p class=&quot;service-description&quot;&gt;
+                    RPA と AI を組み合わせた業務自動化により、
+                    生産性を大幅に向上させます。
+                &lt;/p&gt;
+                &lt;ul class=&quot;service-features&quot;&gt;
+                    &lt;li&gt;プロセス自動化&lt;/li&gt;
+                    &lt;li&gt;チャットボット&lt;/li&gt;
+                    &lt;li&gt;ワークフロー最適化&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;service-card&quot;&gt;
+                &lt;div class=&quot;service-icon&quot;&gt;📱&lt;/div&gt;
+                &lt;h3 class=&quot;service-title&quot;&gt;アプリ開発&lt;/h3&gt;
+                &lt;p class=&quot;service-description&quot;&gt;
+                    ネイティブアプリからWebアプリまで、
+                    ユーザー体験を重視した開発を行います。
+                &lt;/p&gt;
+                &lt;ul class=&quot;service-features&quot;&gt;
+                    &lt;li&gt;React Native&lt;/li&gt;
+                    &lt;li&gt;Flutter&lt;/li&gt;
+                    &lt;li&gt;Progressive Web Apps&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- テクノロジースタック --&gt;
+    &lt;section class=&quot;tech-stack&quot; id=&quot;tech&quot;&gt;
+        &lt;div class=&quot;section-header&quot;&gt;
+            &lt;div class=&quot;section-subtitle&quot;&gt;Technology Stack&lt;/div&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;
+                &lt;span class=&quot;gradient-text&quot;&gt;最先端技術スタック&lt;/span&gt;
+            &lt;/h2&gt;
+            &lt;p class=&quot;section-description&quot;&gt;
+                業界をリードする技術を駆使してソリューションを構築
+            &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;tech-grid-container&quot;&gt;
+            &lt;div class=&quot;tech-item&quot;&gt;
+                &lt;div class=&quot;tech-icon&quot;&gt;⚛️&lt;/div&gt;
+                &lt;div class=&quot;tech-name&quot;&gt;React&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;tech-item&quot;&gt;
+                &lt;div class=&quot;tech-icon&quot;&gt;🅰️&lt;/div&gt;
+                &lt;div class=&quot;tech-name&quot;&gt;Angular&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;tech-item&quot;&gt;
+                &lt;div class=&quot;tech-icon&quot;&gt;🟢&lt;/div&gt;
+                &lt;div class=&quot;tech-name&quot;&gt;Node.js&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;tech-item&quot;&gt;
+                &lt;div class=&quot;tech-icon&quot;&gt;🐍&lt;/div&gt;
+                &lt;div class=&quot;tech-name&quot;&gt;Python&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;tech-item&quot;&gt;
+                &lt;div class=&quot;tech-icon&quot;&gt;☕&lt;/div&gt;
+                &lt;div class=&quot;tech-name&quot;&gt;Java&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;tech-item&quot;&gt;
+                &lt;div class=&quot;tech-icon&quot;&gt;🐳&lt;/div&gt;
+                &lt;div class=&quot;tech-name&quot;&gt;Docker&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;tech-item&quot;&gt;
+                &lt;div class=&quot;tech-icon&quot;&gt;☸️&lt;/div&gt;
+                &lt;div class=&quot;tech-name&quot;&gt;Kubernetes&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;tech-item&quot;&gt;
+                &lt;div class=&quot;tech-icon&quot;&gt;🔥&lt;/div&gt;
+                &lt;div class=&quot;tech-name&quot;&gt;Firebase&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;tech-item&quot;&gt;
+                &lt;div class=&quot;tech-icon&quot;&gt;🗄️&lt;/div&gt;
+                &lt;div class=&quot;tech-name&quot;&gt;MongoDB&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;tech-item&quot;&gt;
+                &lt;div class=&quot;tech-icon&quot;&gt;🐘&lt;/div&gt;
+                &lt;div class=&quot;tech-name&quot;&gt;PostgreSQL&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;tech-item&quot;&gt;
+                &lt;div class=&quot;tech-icon&quot;&gt;📊&lt;/div&gt;
+                &lt;div class=&quot;tech-name&quot;&gt;TensorFlow&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;tech-item&quot;&gt;
+                &lt;div class=&quot;tech-icon&quot;&gt;🤖&lt;/div&gt;
+                &lt;div class=&quot;tech-name&quot;&gt;PyTorch&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- AIチャットセクション --&gt;
+    &lt;section class=&quot;ai-chat&quot; id=&quot;ai&quot;&gt;
+        &lt;div class=&quot;section-header&quot;&gt;
+            &lt;div class=&quot;section-subtitle&quot;&gt;AI Assistant&lt;/div&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;
+                &lt;span class=&quot;gradient-text&quot;&gt;AIアシスタントと対話&lt;/span&gt;
+            &lt;/h2&gt;
+            &lt;p class=&quot;section-description&quot;&gt;
+                最新のAI技術でお客様の質問にお答えします
+            &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;chat-container&quot;&gt;
+            &lt;div class=&quot;chat-header&quot;&gt;
+                &lt;div class=&quot;chat-avatar&quot;&gt;🤖&lt;/div&gt;
+                &lt;div class=&quot;chat-info&quot;&gt;
+                    &lt;div class=&quot;chat-name&quot;&gt;TechVision AI Assistant&lt;/div&gt;
+                    &lt;div class=&quot;chat-status&quot;&gt;
+                        &lt;div class=&quot;status-dot&quot;&gt;&lt;/div&gt;
+                        オンライン
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;chat-messages&quot;&gt;
+                &lt;div class=&quot;message message-bot&quot;&gt;
+                    &lt;div class=&quot;message-avatar&quot;&gt;🤖&lt;/div&gt;
+                    &lt;div class=&quot;message-content&quot;&gt;
+                        &lt;p class=&quot;message-text&quot;&gt;
+                            こんにちは！TechVision AI アシスタントです。
+                            デジタルトランスフォーメーションについて、何でもお気軽にご質問ください。
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;message message-bot&quot;&gt;
+                    &lt;div class=&quot;message-avatar&quot;&gt;🤖&lt;/div&gt;
+                    &lt;div class=&quot;message-content&quot;&gt;
+                        &lt;div class=&quot;typing-indicator&quot;&gt;
+                            &lt;div class=&quot;typing-dot&quot;&gt;&lt;/div&gt;
+                            &lt;div class=&quot;typing-dot&quot;&gt;&lt;/div&gt;
+                            &lt;div class=&quot;typing-dot&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;chat-input&quot;&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;メッセージを入力...&quot;&gt;
+                &lt;button&gt;送信&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- フッター --&gt;
+    &lt;footer&gt;
+        &lt;div class=&quot;footer-content&quot;&gt;
+            &lt;div class=&quot;footer-brand&quot;&gt;
+                &lt;div class=&quot;footer-logo&quot;&gt;TechVision Pro&lt;/div&gt;
+                &lt;p class=&quot;footer-description&quot;&gt;
+                    最先端のテクノロジーで、ビジネスの未来を創造します。
+                    AIとデジタルトランスフォーメーションのリーディングカンパニー。
+                &lt;/p&gt;
+                &lt;div class=&quot;social-links&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;f&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;t&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;in&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;g&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-column&quot;&gt;
+                &lt;h4&gt;サービス&lt;/h4&gt;
+                &lt;ul class=&quot;footer-links&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;AI開発&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;データ分析&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;クラウド移行&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;セキュリティ&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-column&quot;&gt;
+                &lt;h4&gt;会社情報&lt;/h4&gt;
+                &lt;ul class=&quot;footer-links&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;会社概要&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;採用情報&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ニュース&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-column&quot;&gt;
+                &lt;h4&gt;リソース&lt;/h4&gt;
+                &lt;ul class=&quot;footer-links&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ドキュメント&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ブログ&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;導入事例&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;サポート&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;footer-bottom&quot;&gt;
+            &lt;p&gt;&amp;copy; 2024 TechVision Pro. All rights reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+
+&lt;script&gt;
+    // ローディング画面
+        window.addEventListener(&#x27;load&#x27;, () =&gt; {
+            setTimeout(() =&gt; {
+                document.getElementById(&#x27;loading&#x27;).classList.add(&#x27;hidden&#x27;);
+            }, 1500);
+        });
+        
+        // ヘッダースクロール効果
+        window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+            const header = document.getElementById(&#x27;header&#x27;);
+            if (window.scrollY &gt; 50) {
+                header.classList.add(&#x27;scrolled&#x27;);
+            } else {
+                header.classList.remove(&#x27;scrolled&#x27;);
+            }
+        });
+        
+        // ハンバーガーメニュー
+        const hamburger = document.getElementById(&#x27;hamburger&#x27;);
+        hamburger.addEventListener(&#x27;click&#x27;, () =&gt; {
+            hamburger.classList.toggle(&#x27;active&#x27;);
+        });
+        
+        // パーティクル生成
+        const particlesContainer = document.getElementById(&#x27;particles&#x27;);
+        for (let i = 0; i &lt; 50; i++) {
+            const particle = document.createElement(&#x27;div&#x27;);
+            particle.className = &#x27;particle&#x27;;
+            particle.style.left = Math.random() * 100 + &#x27;%&#x27;;
+            particle.style.animationDelay = Math.random() * 20 + &#x27;s&#x27;;
+            particle.style.animationDuration = (Math.random() * 20 + 20) + &#x27;s&#x27;;
+            particlesContainer.appendChild(particle);
+        }
+        
+        // 3Dグリッド生成
+        const techGrid = document.querySelector(&#x27;.tech-grid&#x27;);
+        if (techGrid) {
+            // 水平線
+            for (let i = 0; i &lt; 10; i++) {
+                const line = document.createElement(&#x27;div&#x27;);
+                line.className = &#x27;grid-line horizontal&#x27;;
+                line.style.top = (i * 10) + &#x27;%&#x27;;
+                techGrid.appendChild(line);
+            }
+            // 垂直線
+            for (let i = 0; i &lt; 10; i++) {
+                const line = document.createElement(&#x27;div&#x27;);
+                line.className = &#x27;grid-line vertical&#x27;;
+                line.style.left = (i * 10) + &#x27;%&#x27;;
+                techGrid.appendChild(line);
+            }
+            // データポイント
+            for (let i = 0; i &lt; 15; i++) {
+                const point = document.createElement(&#x27;div&#x27;);
+                point.className = &#x27;data-point&#x27;;
+                point.style.left = Math.random() * 90 + 5 + &#x27;%&#x27;;
+                point.style.top = Math.random() * 90 + 5 + &#x27;%&#x27;;
+                point.style.animationDelay = Math.random() * 2 + &#x27;s&#x27;;
+                techGrid.appendChild(point);
+            }
+        }
+        
+        // カウントアップアニメーション
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: &#x27;0px 0px -100px 0px&#x27;
+        };
+        
+        const countUp = (element) =&gt; {
+            const target = parseFloat(element.dataset.target);
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() =&gt; {
+                current += step;
+                if (current &gt;= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                if (element.dataset.target.includes(&#x27;.&#x27;)) {
+                    element.textContent = current.toFixed(1);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        };
+        
+        const statsObserver = new IntersectionObserver((entries) =&gt; {
+            entries.forEach(entry =&gt; {
+                if (entry.isIntersecting &amp;&amp; !entry.target.classList.contains(&#x27;counted&#x27;)) {
+                    entry.target.classList.add(&#x27;counted&#x27;);
+                    countUp(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll(&#x27;.stat-number&#x27;).forEach(stat =&gt; {
+            statsObserver.observe(stat);
+        });
+        
+        // スムーズスクロール
+        document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+            anchor.addEventListener(&#x27;click&#x27;, function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: &#x27;smooth&#x27;,
+                        block: &#x27;start&#x27;
+                    });
+                }
+            });
+        });
+        
+        // AIチャット機能
+        const chatInput = document.querySelector(&#x27;.chat-input input&#x27;);
+        const chatButton = document.querySelector(&#x27;.chat-input button&#x27;);
+        const chatMessages = document.querySelector(&#x27;.chat-messages&#x27;);
+        
+        const aiResponses = [
+            &#x27;ご質問ありがとうございます。詳細な情報をお送りします。&#x27;,
+            &#x27;その件について、専門チームがサポートいたします。&#x27;,
+            &#x27;AIソリューションの導入で、業務効率が平均40%向上しています。&#x27;,
+            &#x27;無料相談を承っております。お気軽にお問い合わせください。&#x27;,
+            &#x27;最新の事例をご紹介させていただきます。&#x27;
+        ];
+        
+        chatButton.addEventListener(&#x27;click&#x27;, () =&gt; {
+            const message = chatInput.value.trim();
+            if (message) {
+                // ユーザーメッセージを追加
+                const userMessage = document.createElement(&#x27;div&#x27;);
+                userMessage.className = &#x27;message message-user&#x27;;
+                userMessage.innerHTML = `
+                    &lt;div class=&quot;message-content&quot; style=&quot;background: rgba(99, 102, 241, 0.2); margin-left: auto; max-width: 70%;&quot;&gt;
+                        &lt;p class=&quot;message-text&quot;&gt;${message}&lt;/p&gt;
+                    &lt;/div&gt;
+                `;
+                
+                // タイピングインジケーターを削除
+                const typingIndicator = document.querySelector(&#x27;.typing-indicator&#x27;);
+                if (typingIndicator) {
+                    typingIndicator.parentElement.parentElement.remove();
+                }
+                
+                chatMessages.appendChild(userMessage);
+                chatInput.value = &#x27;&#x27;;
+                
+                // AIレスポンスを追加
+                setTimeout(() =&gt; {
+                    const aiMessage = document.createElement(&#x27;div&#x27;);
+                    aiMessage.className = &#x27;message message-bot&#x27;;
+                    const randomResponse = aiResponses[Math.floor(Math.random() * aiResponses.length)];
+                    aiMessage.innerHTML = `
+                        &lt;div class=&quot;message-avatar&quot;&gt;🤖&lt;/div&gt;
+                        &lt;div class=&quot;message-content&quot;&gt;
+                            &lt;p class=&quot;message-text&quot;&gt;${randomResponse}&lt;/p&gt;
+                        &lt;/div&gt;
+                    `;
+                    chatMessages.appendChild(aiMessage);
+                    
+                    // 新しいタイピングインジケーターを追加
+                    const newTyping = document.createElement(&#x27;div&#x27;);
+                    newTyping.className = &#x27;message message-bot&#x27;;
+                    newTyping.innerHTML = `
+                        &lt;div class=&quot;message-avatar&quot;&gt;🤖&lt;/div&gt;
+                        &lt;div class=&quot;message-content&quot;&gt;
+                            &lt;div class=&quot;typing-indicator&quot;&gt;
+                                &lt;div class=&quot;typing-dot&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;typing-dot&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;typing-dot&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    `;
+                    chatMessages.appendChild(newTyping);
+                    
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1000);
+            }
+        });
+        
+        chatInput.addEventListener(&#x27;keypress&#x27;, (e) =&gt; {
+            if (e.key === &#x27;Enter&#x27;) {
+                chatButton.click();
+            }
+        });
+        
+        // Intersection Observer for animations
+        const animateOnScroll = new IntersectionObserver((entries) =&gt; {
+            entries.forEach(entry =&gt; {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = &#x27;1&#x27;;
+                    entry.target.style.transform = &#x27;translateY(0)&#x27;;
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: &#x27;0px 0px -50px 0px&#x27;
+        });
+        
+        document.querySelectorAll(&#x27;.service-card, .tech-item&#x27;).forEach(item =&gt; {
+            item.style.opacity = &#x27;0&#x27;;
+            item.style.transform = &#x27;translateY(30px)&#x27;;
+            item.style.transition = &#x27;all 0.6s ease&#x27;;
+            animateOnScroll.observe(item);
+        });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;" class="w-full h-screen" title="Tech Enterprise Pro - 次世代企業サイト" sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[6162,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-94bc7d4390c0f889.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/043e8c6284e44f46.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"OhZI5wbBKfTSX929P2Q1U\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"it-corporate-pro\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"it-corporate-pro\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/043e8c6284e44f46.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"it-corporate-pro\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"it-corporate-pro\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"Ah9ZGJBHw-yvNVeTFtGwG\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"it-corporate-pro\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

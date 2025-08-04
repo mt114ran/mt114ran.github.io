@@ -1,0 +1,1826 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/043e8c6284e44f46.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-d8f047cced1b4886.js" async=""></script><script src="/_next/static/chunks/684-8e4d9e1e4139006e.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-94bc7d4390c0f889.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Café Luxe Pro - プレミアムレストラン&lt;/title&gt;
+    
+    &lt;style&gt;
+        @import url(&#x27;https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap&#x27;);
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --gold: #d4af37;
+            --dark-gold: #b8941f;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --light-gray: #f8f8f8;
+            --white: #ffffff;
+            --accent: #8b0000;
+        }
+        
+        body {
+            font-family: &#x27;Montserrat&#x27;, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            cursor: none;
+        }
+        
+        /* カスタムカーソル */
+        .cursor {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.3s ease;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: difference;
+        }
+        
+        .cursor-follower {
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+            transform: translate(-50%, -50%);
+        }
+        
+        .cursor.hover {
+            transform: translate(-50%, -50%) scale(1.5);
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        /* ローディング画面 */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--black);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+        
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader-content {
+            text-align: center;
+        }
+        
+        .loader-logo {
+            font-family: &#x27;Playfair Display&#x27;, serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .loader-logo::after {
+            content: &#x27;&#x27;;
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            animation: loadingLine 2s infinite;
+        }
+        
+        @keyframes loadingLine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        /* ナビゲーション */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 2rem 4rem;
+            transition: all 0.5s ease;
+            mix-blend-mode: difference;
+        }
+        
+        nav.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 4rem;
+            mix-blend-mode: normal;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: &#x27;Playfair Display&#x27;, serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: &#x27;PREMIUM&#x27;;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            opacity: 0.6;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+        
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: &#x27;&#x27;;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .reservation-btn {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reservation-btn::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gold);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+        
+        .reservation-btn:hover {
+            color: var(--black);
+        }
+        
+        .reservation-btn:hover::before {
+            left: 0;
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+        
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4);
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            animation: fadeInUp 1.5s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-subtitle {
+            font-family: &#x27;Montserrat&#x27;, sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .hero-title {
+            font-family: &#x27;Playfair Display&#x27;, serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .hero-title .highlight {
+            color: var(--gold);
+            position: relative;
+        }
+        
+        .hero-title .highlight::after {
+            content: &#x27;&#x27;;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: expandLine 2s ease forwards;
+            animation-delay: 1s;
+        }
+        
+        @keyframes expandLine {
+            to {
+                transform: scaleX(1);
+            }
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 1rem 3rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: var(--gold);
+            color: var(--black);
+            border: 2px solid var(--gold);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+        
+        /* スクロールインジケーター */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        
+        .scroll-indicator::before {
+            content: &#x27;&#x27;;
+            display: block;
+            width: 30px;
+            height: 50px;
+            border: 2px solid var(--gold);
+            border-radius: 25px;
+            position: relative;
+        }
+        
+        .scroll-indicator::after {
+            content: &#x27;&#x27;;
+            display: block;
+            width: 4px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 2px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollDown 2s infinite;
+        }
+        
+        @keyframes scrollDown {
+            0% {
+                opacity: 0;
+                top: 10px;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                top: 30px;
+            }
+        }
+        
+        /* アバウトセクション */
+        .about {
+            padding: 150px 4rem;
+            background: var(--dark-gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+            opacity: 0.05;
+            animation: rotate 30s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+        
+        .about-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-subtitle {
+            font-family: &#x27;Montserrat&#x27;, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: &#x27;Playfair Display&#x27;, serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+        
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
+        }
+        
+        .feature-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-text p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+        
+        .about-image {
+            position: relative;
+            height: 600px;
+        }
+        
+        .about-image-wrapper {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .about-image-wrapper::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid var(--gold);
+            z-index: -1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-badge {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 120px;
+            height: 120px;
+            background: var(--black);
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: rotateBadge 10s linear infinite;
+        }
+        
+        @keyframes rotateBadge {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .about-badge-text {
+            font-family: &#x27;Playfair Display&#x27;, serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gold);
+            animation: rotateBackBadge 10s linear infinite;
+        }
+        
+        @keyframes rotateBackBadge {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+        
+        .about-badge-year {
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            animation: rotateBackBadge 10s linear infinite;
+        }
+        
+        /* メニューセクション */
+        .menu {
+            padding: 150px 4rem;
+            background: linear-gradient(180deg, var(--dark-gray) 0%, var(--black) 100%);
+        }
+        
+        .menu-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 5rem;
+        }
+        
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .menu-tab {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--white);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-tab::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gold);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .menu-tab.active,
+        .menu-tab:hover {
+            color: var(--black);
+            border-color: var(--gold);
+        }
+        
+        .menu-tab.active::before,
+        .menu-tab:hover::before {
+            left: 0;
+        }
+        
+        .menu-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .menu-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-item::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .menu-item:hover::before {
+            left: 100%;
+        }
+        
+        .menu-item-info {
+            flex: 1;
+        }
+        
+        .menu-item-name {
+            font-family: &#x27;Playfair Display&#x27;, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+        
+        .menu-item-description {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+        
+        .menu-item-price {
+            font-family: &#x27;Playfair Display&#x27;, serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-left: 2rem;
+        }
+        
+        /* ギャラリーセクション */
+        .gallery {
+            padding: 150px 0;
+            background: var(--black);
+        }
+        
+        .gallery-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 5rem;
+            padding: 0 4rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+        
+        .gallery-item:nth-child(3),
+        .gallery-item:nth-child(6) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-text h3 {
+            font-family: &#x27;Playfair Display&#x27;, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-text p {
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        /* 予約セクション */
+        .reservation {
+            padding: 150px 4rem;
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+            position: relative;
+        }
+        
+        .reservation::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .reservation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .reservation-form {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-title {
+            font-family: &#x27;Playfair Display&#x27;, serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            position: relative;
+        }
+        
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--white);
+            font-family: &#x27;Montserrat&#x27;, sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-select {
+            cursor: pointer;
+        }
+        
+        .form-select option {
+            background: var(--dark-gray);
+            color: var(--white);
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--gold);
+            color: var(--black);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .reservation-info {
+            padding-left: 2rem;
+        }
+        
+        .info-title {
+            font-family: &#x27;Playfair Display&#x27;, serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .info-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
+        }
+        
+        .info-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+        
+        .info-text p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+        
+        /* フッター */
+        footer {
+            background: var(--black);
+            padding: 80px 4rem 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand {
+            max-width: 300px;
+        }
+        
+        .footer-logo {
+            font-family: &#x27;Playfair Display&#x27;, serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-description {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+        
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
+            transition: stroke 0.3s ease;
+        }
+        
+        .social-link:hover svg {
+            stroke: var(--black);
+        }
+        
+        .footer-column h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .cursor,
+            .cursor-follower {
+                display: none;
+            }
+            
+            body {
+                cursor: auto;
+            }
+            
+            nav {
+                padding: 1rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--black);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.3s ease;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .about-container,
+            .reservation-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-item:nth-child(3),
+            .gallery-item:nth-child(6) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        /* プロレベルバッジ */
+        .pro-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            color: var(--black);
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            z-index: 9998;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;!-- カスタムカーソル --&gt;
+    &lt;div class=&quot;cursor&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;cursor-follower&quot;&gt;&lt;/div&gt;
+    
+    &lt;!-- ローディング画面 --&gt;
+    &lt;div class=&quot;loader&quot;&gt;
+        &lt;div class=&quot;loader-content&quot;&gt;
+            &lt;div class=&quot;loader-logo&quot;&gt;CAFÉ LUXE&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- プロレベルバッジ --&gt;
+    &lt;div class=&quot;pro-badge&quot;&gt;PRO LEVEL&lt;/div&gt;
+    
+    &lt;!-- ナビゲーション --&gt;
+    &lt;nav&gt;
+        &lt;div class=&quot;nav-container&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;logo&quot;&gt;CAFÉ LUXE&lt;/a&gt;
+            &lt;ul class=&quot;nav-menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#about&quot; class=&quot;nav-link&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#menu&quot; class=&quot;nav-link&quot;&gt;Menu&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#gallery&quot; class=&quot;nav-link&quot;&gt;Gallery&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#reservation&quot; class=&quot;nav-link&quot;&gt;Reservation&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;button class=&quot;reservation-btn&quot;&gt;予約する&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    
+    &lt;!-- ヒーローセクション --&gt;
+    &lt;section class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-bg&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1920&amp;h=1080&amp;fit=crop&quot; alt=&quot;Luxury Restaurant&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;p class=&quot;hero-subtitle&quot;&gt;Michelin Star Restaurant&lt;/p&gt;
+            &lt;h1 class=&quot;hero-title&quot;&gt;
+                極上の&lt;span class=&quot;highlight&quot;&gt;美食体験&lt;/span&gt;を&lt;br&gt;
+                あなたに
+            &lt;/h1&gt;
+            &lt;p class=&quot;hero-description&quot;&gt;
+                伝統と革新が織りなす、唯一無二のガストロノミー。&lt;br&gt;
+                五感すべてで愉しむ、至福のひとときをお約束します。
+            &lt;/p&gt;
+            &lt;div class=&quot;hero-buttons&quot;&gt;
+                &lt;a href=&quot;#reservation&quot; class=&quot;btn-primary&quot;&gt;予約する&lt;/a&gt;
+                &lt;a href=&quot;#menu&quot; class=&quot;btn-secondary&quot;&gt;メニューを見る&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;scroll-indicator&quot;&gt;&lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;!-- アバウトセクション --&gt;
+    &lt;section class=&quot;about&quot; id=&quot;about&quot;&gt;
+        &lt;div class=&quot;about-container&quot;&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;p class=&quot;section-subtitle&quot;&gt;Our Story&lt;/p&gt;
+                &lt;h2 class=&quot;section-title&quot;&gt;伝統と革新の&lt;br&gt;ガストロノミー&lt;/h2&gt;
+                &lt;p class=&quot;about-text&quot;&gt;
+                    1985年の創業以来、私たちは常に最高の食材と技術を追求し続けてきました。
+                    世界各地から厳選された食材と、熟練シェフの技が織りなす料理は、
+                    まさに芸術作品と呼ぶにふさわしい逸品です。
+                &lt;/p&gt;
+                &lt;p class=&quot;about-text&quot;&gt;
+                    ミシュラン三つ星を5年連続で獲得し、
+                    世界のベストレストラン50にも選出された当店で、
+                    忘れられない美食体験をお楽しみください。
+                &lt;/p&gt;
+                &lt;div class=&quot;about-features&quot;&gt;
+                    &lt;div class=&quot;feature-item&quot;&gt;
+                        &lt;div class=&quot;feature-icon&quot;&gt;
+                            &lt;svg viewBox=&quot;0 0 24 24&quot;&gt;
+                                &lt;path d=&quot;M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z&quot;/&gt;
+                            &lt;/svg&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-text&quot;&gt;
+                            &lt;h4&gt;ミシュラン三つ星&lt;/h4&gt;
+                            &lt;p&gt;5年連続獲得の実績&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;feature-item&quot;&gt;
+                        &lt;div class=&quot;feature-icon&quot;&gt;
+                            &lt;svg viewBox=&quot;0 0 24 24&quot;&gt;
+                                &lt;path d=&quot;M3 3h18v18H3V3zm2 2v14h14V5H5z&quot;/&gt;
+                            &lt;/svg&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-text&quot;&gt;
+                            &lt;h4&gt;完全個室&lt;/h4&gt;
+                            &lt;p&gt;プライベートな空間を提供&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;feature-item&quot;&gt;
+                        &lt;div class=&quot;feature-icon&quot;&gt;
+                            &lt;svg viewBox=&quot;0 0 24 24&quot;&gt;
+                                &lt;path d=&quot;M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z&quot;/&gt;
+                            &lt;/svg&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-text&quot;&gt;
+                            &lt;h4&gt;厳選食材&lt;/h4&gt;
+                            &lt;p&gt;世界中から取り寄せた最高級食材&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;feature-item&quot;&gt;
+                        &lt;div class=&quot;feature-icon&quot;&gt;
+                            &lt;svg viewBox=&quot;0 0 24 24&quot;&gt;
+                                &lt;path d=&quot;M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z&quot;/&gt;
+                            &lt;/svg&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-text&quot;&gt;
+                            &lt;h4&gt;ソムリエ&lt;/h4&gt;
+                            &lt;p&gt;専属ソムリエによるペアリング&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;about-image&quot;&gt;
+                &lt;div class=&quot;about-image-wrapper&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;Fine Dining&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-badge&quot;&gt;
+                    &lt;div class=&quot;about-badge-text&quot;&gt;40&lt;/div&gt;
+                    &lt;div class=&quot;about-badge-year&quot;&gt;YEARS&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;!-- メニューセクション --&gt;
+    &lt;section class=&quot;menu&quot; id=&quot;menu&quot;&gt;
+        &lt;div class=&quot;menu-header&quot;&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;Our Menu&lt;/p&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;季節の厳選コース&lt;/h2&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;menu-tabs&quot;&gt;
+            &lt;button class=&quot;menu-tab active&quot; data-menu=&quot;lunch&quot;&gt;Lunch&lt;/button&gt;
+            &lt;button class=&quot;menu-tab&quot; data-menu=&quot;dinner&quot;&gt;Dinner&lt;/button&gt;
+            &lt;button class=&quot;menu-tab&quot; data-menu=&quot;wine&quot;&gt;Wine&lt;/button&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;menu-content active&quot; id=&quot;lunch&quot;&gt;
+            &lt;div class=&quot;menu-grid&quot;&gt;
+                &lt;div class=&quot;menu-item&quot;&gt;
+                    &lt;div class=&quot;menu-item-info&quot;&gt;
+                        &lt;h3 class=&quot;menu-item-name&quot;&gt;季節の前菜盛り合わせ&lt;/h3&gt;
+                        &lt;p class=&quot;menu-item-description&quot;&gt;旬の食材を使用した5種類の前菜を美しく盛り付けました&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-price&quot;&gt;¥3,800&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;menu-item&quot;&gt;
+                    &lt;div class=&quot;menu-item-info&quot;&gt;
+                        &lt;h3 class=&quot;menu-item-name&quot;&gt;本日の鮮魚のカルパッチョ&lt;/h3&gt;
+                        &lt;p class=&quot;menu-item-description&quot;&gt;市場直送の新鮮な魚介を特製ソースで&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-price&quot;&gt;¥4,200&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;menu-item&quot;&gt;
+                    &lt;div class=&quot;menu-item-info&quot;&gt;
+                        &lt;h3 class=&quot;menu-item-name&quot;&gt;黒毛和牛のステーキ&lt;/h3&gt;
+                        &lt;p class=&quot;menu-item-description&quot;&gt;A5ランクの黒毛和牛を絶妙な火入れで&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-price&quot;&gt;¥8,500&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;menu-item&quot;&gt;
+                    &lt;div class=&quot;menu-item-info&quot;&gt;
+                        &lt;h3 class=&quot;menu-item-name&quot;&gt;シェフ特製デザート&lt;/h3&gt;
+                        &lt;p class=&quot;menu-item-description&quot;&gt;季節のフルーツを使用した創作デザート&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-price&quot;&gt;¥2,000&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;menu-content&quot; id=&quot;dinner&quot;&gt;
+            &lt;div class=&quot;menu-grid&quot;&gt;
+                &lt;div class=&quot;menu-item&quot;&gt;
+                    &lt;div class=&quot;menu-item-info&quot;&gt;
+                        &lt;h3 class=&quot;menu-item-name&quot;&gt;フォアグラのテリーヌ&lt;/h3&gt;
+                        &lt;p class=&quot;menu-item-description&quot;&gt;トリュフの香りを添えた贅沢な一皿&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-price&quot;&gt;¥6,800&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;menu-item&quot;&gt;
+                    &lt;div class=&quot;menu-item-info&quot;&gt;
+                        &lt;h3 class=&quot;menu-item-name&quot;&gt;オマール海老のビスク&lt;/h3&gt;
+                        &lt;p class=&quot;menu-item-description&quot;&gt;濃厚な海老の旨味を凝縮したスープ&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-price&quot;&gt;¥5,200&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;menu-item&quot;&gt;
+                    &lt;div class=&quot;menu-item-info&quot;&gt;
+                        &lt;h3 class=&quot;menu-item-name&quot;&gt;和牛フィレ肉のロッシーニ&lt;/h3&gt;
+                        &lt;p class=&quot;menu-item-description&quot;&gt;フォアグラとトリュフを贅沢に使用&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-price&quot;&gt;¥12,000&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;menu-item&quot;&gt;
+                    &lt;div class=&quot;menu-item-info&quot;&gt;
+                        &lt;h3 class=&quot;menu-item-name&quot;&gt;シェフのおまかせコース&lt;/h3&gt;
+                        &lt;p class=&quot;menu-item-description&quot;&gt;その日最高の食材を使用した特別コース&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-price&quot;&gt;¥20,000&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;menu-content&quot; id=&quot;wine&quot;&gt;
+            &lt;div class=&quot;menu-grid&quot;&gt;
+                &lt;div class=&quot;menu-item&quot;&gt;
+                    &lt;div class=&quot;menu-item-info&quot;&gt;
+                        &lt;h3 class=&quot;menu-item-name&quot;&gt;シャンパーニュ&lt;/h3&gt;
+                        &lt;p class=&quot;menu-item-description&quot;&gt;Dom Pérignon / Krug / Salon&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-price&quot;&gt;¥25,000〜&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;menu-item&quot;&gt;
+                    &lt;div class=&quot;menu-item-info&quot;&gt;
+                        &lt;h3 class=&quot;menu-item-name&quot;&gt;ブルゴーニュ&lt;/h3&gt;
+                        &lt;p class=&quot;menu-item-description&quot;&gt;Romanée-Conti / Montrachet&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-price&quot;&gt;¥35,000〜&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;menu-item&quot;&gt;
+                    &lt;div class=&quot;menu-item-info&quot;&gt;
+                        &lt;h3 class=&quot;menu-item-name&quot;&gt;ボルドー&lt;/h3&gt;
+                        &lt;p class=&quot;menu-item-description&quot;&gt;Château Margaux / Pétrus&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-price&quot;&gt;¥30,000〜&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;menu-item&quot;&gt;
+                    &lt;div class=&quot;menu-item-info&quot;&gt;
+                        &lt;h3 class=&quot;menu-item-name&quot;&gt;ソムリエセレクション&lt;/h3&gt;
+                        &lt;p class=&quot;menu-item-description&quot;&gt;お料理に合わせたペアリングワイン&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;menu-item-price&quot;&gt;¥15,000〜&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;!-- ギャラリーセクション --&gt;
+    &lt;section class=&quot;gallery&quot; id=&quot;gallery&quot;&gt;
+        &lt;div class=&quot;gallery-header&quot;&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;Gallery&lt;/p&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;美食の記憶&lt;/h2&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;gallery-grid&quot;&gt;
+            &lt;div class=&quot;gallery-item&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;Dish 1&quot;&gt;
+                &lt;div class=&quot;gallery-overlay&quot;&gt;
+                    &lt;div class=&quot;gallery-text&quot;&gt;
+                        &lt;h3&gt;前菜&lt;/h3&gt;
+                        &lt;p&gt;Appetizer&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;gallery-item&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;Dish 2&quot;&gt;
+                &lt;div class=&quot;gallery-overlay&quot;&gt;
+                    &lt;div class=&quot;gallery-text&quot;&gt;
+                        &lt;h3&gt;メインディッシュ&lt;/h3&gt;
+                        &lt;p&gt;Main Course&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;gallery-item&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&amp;h=800&amp;fit=crop&quot; alt=&quot;Interior&quot;&gt;
+                &lt;div class=&quot;gallery-overlay&quot;&gt;
+                    &lt;div class=&quot;gallery-text&quot;&gt;
+                        &lt;h3&gt;店内&lt;/h3&gt;
+                        &lt;p&gt;Interior&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;gallery-item&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;Dish 3&quot;&gt;
+                &lt;div class=&quot;gallery-overlay&quot;&gt;
+                    &lt;div class=&quot;gallery-text&quot;&gt;
+                        &lt;h3&gt;シェフ特製&lt;/h3&gt;
+                        &lt;p&gt;Chef&#x27;s Special&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;gallery-item&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;Dish 4&quot;&gt;
+                &lt;div class=&quot;gallery-overlay&quot;&gt;
+                    &lt;div class=&quot;gallery-text&quot;&gt;
+                        &lt;h3&gt;デザート&lt;/h3&gt;
+                        &lt;p&gt;Dessert&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;gallery-item&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800&amp;h=800&amp;fit=crop&quot; alt=&quot;Bar&quot;&gt;
+                &lt;div class=&quot;gallery-overlay&quot;&gt;
+                    &lt;div class=&quot;gallery-text&quot;&gt;
+                        &lt;h3&gt;バーラウンジ&lt;/h3&gt;
+                        &lt;p&gt;Bar Lounge&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;gallery-item&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;Dish 5&quot;&gt;
+                &lt;div class=&quot;gallery-overlay&quot;&gt;
+                    &lt;div class=&quot;gallery-text&quot;&gt;
+                        &lt;h3&gt;季節の一皿&lt;/h3&gt;
+                        &lt;p&gt;Seasonal Dish&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;gallery-item&quot;&gt;
+                &lt;img src=&quot;https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;Wine&quot;&gt;
+                &lt;div class=&quot;gallery-overlay&quot;&gt;
+                    &lt;div class=&quot;gallery-text&quot;&gt;
+                        &lt;h3&gt;ワインセラー&lt;/h3&gt;
+                        &lt;p&gt;Wine Cellar&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;!-- 予約セクション --&gt;
+    &lt;section class=&quot;reservation&quot; id=&quot;reservation&quot;&gt;
+        &lt;div class=&quot;reservation-container&quot;&gt;
+            &lt;div class=&quot;reservation-form&quot;&gt;
+                &lt;h2 class=&quot;form-title&quot;&gt;ご予約&lt;/h2&gt;
+                &lt;form&gt;
+                    &lt;div class=&quot;form-grid&quot;&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label class=&quot;form-label&quot;&gt;お名前&lt;/label&gt;
+                            &lt;input type=&quot;text&quot; class=&quot;form-input&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label class=&quot;form-label&quot;&gt;電話番号&lt;/label&gt;
+                            &lt;input type=&quot;tel&quot; class=&quot;form-input&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label class=&quot;form-label&quot;&gt;日付&lt;/label&gt;
+                            &lt;input type=&quot;date&quot; class=&quot;form-input&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label class=&quot;form-label&quot;&gt;時間&lt;/label&gt;
+                            &lt;select class=&quot;form-select&quot; required&gt;
+                                &lt;option value=&quot;&quot;&gt;選択してください&lt;/option&gt;
+                                &lt;option value=&quot;11:30&quot;&gt;11:30&lt;/option&gt;
+                                &lt;option value=&quot;12:00&quot;&gt;12:00&lt;/option&gt;
+                                &lt;option value=&quot;12:30&quot;&gt;12:30&lt;/option&gt;
+                                &lt;option value=&quot;18:00&quot;&gt;18:00&lt;/option&gt;
+                                &lt;option value=&quot;18:30&quot;&gt;18:30&lt;/option&gt;
+                                &lt;option value=&quot;19:00&quot;&gt;19:00&lt;/option&gt;
+                                &lt;option value=&quot;19:30&quot;&gt;19:30&lt;/option&gt;
+                                &lt;option value=&quot;20:00&quot;&gt;20:00&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label class=&quot;form-label&quot;&gt;人数&lt;/label&gt;
+                            &lt;select class=&quot;form-select&quot; required&gt;
+                                &lt;option value=&quot;&quot;&gt;選択してください&lt;/option&gt;
+                                &lt;option value=&quot;1&quot;&gt;1名様&lt;/option&gt;
+                                &lt;option value=&quot;2&quot;&gt;2名様&lt;/option&gt;
+                                &lt;option value=&quot;3&quot;&gt;3名様&lt;/option&gt;
+                                &lt;option value=&quot;4&quot;&gt;4名様&lt;/option&gt;
+                                &lt;option value=&quot;5&quot;&gt;5名様&lt;/option&gt;
+                                &lt;option value=&quot;6&quot;&gt;6名様以上&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label class=&quot;form-label&quot;&gt;コース&lt;/label&gt;
+                            &lt;select class=&quot;form-select&quot; required&gt;
+                                &lt;option value=&quot;&quot;&gt;選択してください&lt;/option&gt;
+                                &lt;option value=&quot;lunch&quot;&gt;ランチコース&lt;/option&gt;
+                                &lt;option value=&quot;dinner&quot;&gt;ディナーコース&lt;/option&gt;
+                                &lt;option value=&quot;special&quot;&gt;シェフのおまかせコース&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group full-width&quot;&gt;
+                            &lt;label class=&quot;form-label&quot;&gt;ご要望&lt;/label&gt;
+                            &lt;textarea class=&quot;form-textarea&quot; placeholder=&quot;アレルギーや特別なご要望がございましたらお知らせください&quot;&gt;&lt;/textarea&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;form-submit&quot;&gt;予約を確定する&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;reservation-info&quot;&gt;
+                &lt;h2 class=&quot;info-title&quot;&gt;営業時間・アクセス&lt;/h2&gt;
+                &lt;div class=&quot;info-item&quot;&gt;
+                    &lt;div class=&quot;info-icon&quot;&gt;
+                        &lt;svg viewBox=&quot;0 0 24 24&quot;&gt;
+                            &lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot;/&gt;
+                            &lt;path d=&quot;M12 6v6l4 2&quot;/&gt;
+                        &lt;/svg&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;info-text&quot;&gt;
+                        &lt;h4&gt;営業時間&lt;/h4&gt;
+                        &lt;p&gt;
+                            ランチ: 11:30 - 14:30 (L.O. 13:30)&lt;br&gt;
+                            ディナー: 18:00 - 22:00 (L.O. 21:00)&lt;br&gt;
+                            定休日: 月曜日・第1火曜日
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;info-item&quot;&gt;
+                    &lt;div class=&quot;info-icon&quot;&gt;
+                        &lt;svg viewBox=&quot;0 0 24 24&quot;&gt;
+                            &lt;path d=&quot;M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z&quot;/&gt;
+                            &lt;circle cx=&quot;12&quot; cy=&quot;9&quot; r=&quot;2.5&quot;/&gt;
+                        &lt;/svg&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;info-text&quot;&gt;
+                        &lt;h4&gt;アクセス&lt;/h4&gt;
+                        &lt;p&gt;
+                            〒100-0000 東京都千代田区丸の内1-1-1&lt;br&gt;
+                            東京駅 徒歩5分&lt;br&gt;
+                            駐車場完備（要予約）
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;info-item&quot;&gt;
+                    &lt;div class=&quot;info-icon&quot;&gt;
+                        &lt;svg viewBox=&quot;0 0 24 24&quot;&gt;
+                            &lt;path d=&quot;M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z&quot;/&gt;
+                            &lt;path d=&quot;M20 8l-8 5-8-5V6l8 5 8-5v2z&quot;/&gt;
+                        &lt;/svg&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;info-text&quot;&gt;
+                        &lt;h4&gt;お問い合わせ&lt;/h4&gt;
+                        &lt;p&gt;
+                            TEL: 03-0000-0000&lt;br&gt;
+                            EMAIL: info@cafeluxe.jp
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;!-- フッター --&gt;
+    &lt;footer&gt;
+        &lt;div class=&quot;footer-content&quot;&gt;
+            &lt;div class=&quot;footer-brand&quot;&gt;
+                &lt;div class=&quot;footer-logo&quot;&gt;CAFÉ LUXE&lt;/div&gt;
+                &lt;p class=&quot;footer-description&quot;&gt;
+                    1985年創業。ミシュラン三つ星を5年連続獲得。
+                    極上の美食体験をお届けします。
+                &lt;/p&gt;
+                &lt;div class=&quot;social-links&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;
+                        &lt;svg viewBox=&quot;0 0 24 24&quot;&gt;
+                            &lt;path d=&quot;M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z&quot;/&gt;
+                        &lt;/svg&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;
+                        &lt;svg viewBox=&quot;0 0 24 24&quot;&gt;
+                            &lt;rect x=&quot;2&quot; y=&quot;2&quot; width=&quot;20&quot; height=&quot;20&quot; rx=&quot;5&quot; ry=&quot;5&quot;/&gt;
+                            &lt;path d=&quot;M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z&quot;/&gt;
+                            &lt;line x1=&quot;17.5&quot; y1=&quot;6.5&quot; x2=&quot;17.51&quot; y2=&quot;6.5&quot;/&gt;
+                        &lt;/svg&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;social-link&quot;&gt;
+                        &lt;svg viewBox=&quot;0 0 24 24&quot;&gt;
+                            &lt;path d=&quot;M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z&quot;/&gt;
+                        &lt;/svg&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;footer-column&quot;&gt;
+                &lt;h4&gt;MENU&lt;/h4&gt;
+                &lt;ul class=&quot;footer-links&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;ランチ&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;ディナー&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;ワインリスト&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;コース料理&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;footer-column&quot;&gt;
+                &lt;h4&gt;SERVICE&lt;/h4&gt;
+                &lt;ul class=&quot;footer-links&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#reservation&quot;&gt;ご予約&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;個室のご案内&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ケータリング&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ギフト券&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;footer-column&quot;&gt;
+                &lt;h4&gt;INFORMATION&lt;/h4&gt;
+                &lt;ul class=&quot;footer-links&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;私たちについて&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;採用情報&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;プレスリリース&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;footer-bottom&quot;&gt;
+            &lt;p&gt;&amp;copy; 2024 CAFÉ LUXE. All rights reserved. | PRO LEVEL Template&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+    
+
+
+&lt;script&gt;
+    // ローディング画面
+        window.addEventListener(&#x27;load&#x27;, () =&gt; {
+            setTimeout(() =&gt; {
+                document.querySelector(&#x27;.loader&#x27;).classList.add(&#x27;hidden&#x27;);
+            }, 2000);
+        });
+        
+        // カスタムカーソル
+        const cursor = document.querySelector(&#x27;.cursor&#x27;);
+        const cursorFollower = document.querySelector(&#x27;.cursor-follower&#x27;);
+        
+        document.addEventListener(&#x27;mousemove&#x27;, (e) =&gt; {
+            cursor.style.left = e.clientX + &#x27;px&#x27;;
+            cursor.style.top = e.clientY + &#x27;px&#x27;;
+            
+            setTimeout(() =&gt; {
+                cursorFollower.style.left = e.clientX + &#x27;px&#x27;;
+                cursorFollower.style.top = e.clientY + &#x27;px&#x27;;
+            }, 100);
+        });
+        
+        document.querySelectorAll(&#x27;a, button&#x27;).forEach(element =&gt; {
+            element.addEventListener(&#x27;mouseenter&#x27;, () =&gt; {
+                cursor.classList.add(&#x27;hover&#x27;);
+            });
+            element.addEventListener(&#x27;mouseleave&#x27;, () =&gt; {
+                cursor.classList.remove(&#x27;hover&#x27;);
+            });
+        });
+        
+        // スクロールナビゲーション
+        window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+            const nav = document.querySelector(&#x27;nav&#x27;);
+            if (window.scrollY &gt; 100) {
+                nav.classList.add(&#x27;scrolled&#x27;);
+            } else {
+                nav.classList.remove(&#x27;scrolled&#x27;);
+            }
+        });
+        
+        // スムーススクロール
+        document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+            anchor.addEventListener(&#x27;click&#x27;, function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: &#x27;smooth&#x27;,
+                        block: &#x27;start&#x27;
+                    });
+                }
+            });
+        });
+        
+        // メニュータブ
+        const menuTabs = document.querySelectorAll(&#x27;.menu-tab&#x27;);
+        const menuContents = document.querySelectorAll(&#x27;.menu-content&#x27;);
+        
+        menuTabs.forEach(tab =&gt; {
+            tab.addEventListener(&#x27;click&#x27;, () =&gt; {
+                const menuType = tab.dataset.menu;
+                
+                menuTabs.forEach(t =&gt; t.classList.remove(&#x27;active&#x27;));
+                tab.classList.add(&#x27;active&#x27;);
+                
+                menuContents.forEach(content =&gt; {
+                    content.classList.remove(&#x27;active&#x27;);
+                    if (content.id === menuType) {
+                        content.classList.add(&#x27;active&#x27;);
+                    }
+                });
+            });
+        });
+        
+        // パララックスエフェクト
+        window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+            const scrolled = window.pageYOffset;
+            const heroImg = document.querySelector(&#x27;.hero-bg img&#x27;);
+            if (heroImg) {
+                heroImg.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+        
+        // フォームバリデーション
+        document.querySelector(&#x27;form&#x27;).addEventListener(&#x27;submit&#x27;, (e) =&gt; {
+            e.preventDefault();
+            alert(&#x27;ご予約ありがとうございます。確認メールをお送りしました。&#x27;);
+        });
+        
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: &#x27;0px 0px -100px 0px&#x27;
+        };
+        
+        const observer = new IntersectionObserver((entries) =&gt; {
+            entries.forEach(entry =&gt; {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = &#x27;1&#x27;;
+                    entry.target.style.transform = &#x27;translateY(0)&#x27;;
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll(&#x27;.menu-item, .gallery-item&#x27;).forEach(item =&gt; {
+            item.style.opacity = &#x27;0&#x27;;
+            item.style.transform = &#x27;translateY(30px)&#x27;;
+            item.style.transition = &#x27;all 0.6s ease&#x27;;
+            observer.observe(item);
+        });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;" class="w-full h-screen" title="Café Luxe Pro - プレミアムレストラン" sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[6162,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-94bc7d4390c0f889.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/043e8c6284e44f46.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"OhZI5wbBKfTSX929P2Q1U\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"cafe-luxe-pro\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"cafe-luxe-pro\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/043e8c6284e44f46.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"cafe-luxe-pro\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"cafe-luxe-pro\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"qcpbJ4-I4aDCPhVF78mgq\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"cafe-luxe-pro\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>
