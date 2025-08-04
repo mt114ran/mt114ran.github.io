@@ -1,0 +1,266 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/af5aeccb70b69a08.css","style"]
+0:{"P":null,"b":"CqBq0TJhPaO81q1h_xBoh","p":"","c":["","blog","typescript-build-errors-game-components",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","typescript-build-errors-game-components","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/af5aeccb70b69a08.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","typescript-build-errors-game-components","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","_LnvkLs7eAOzrpPxNC3kO",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-34b4dd4f63f068f7.js"],""]
+13:T2e84,<h2>はじめに：TypeScriptの厳格な型チェックとの戦い</h2>
+<p>ブラウザゲーム集を実装した後、<code>npm run build</code>を実行したところ、TypeScriptとESLintから大量のエラーが...。今回は、これらのビルドエラーを解決する過程で学んだTypeScriptの型定義とReact Hooksの依存関係管理について紹介します。</p>
+<h2>発生した問題の概要</h2>
+<h3>遭遇したエラーたち</h3>
+<pre><code class="language-bash"># ビルド実行
+npm run build
+
+# 結果：6つのTypeScriptエラーと複数のESLint警告
+./src/components/games/TetrisGame.tsx
+28:34  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+103:16  Error: 'prev' is defined but never used.  @typescript-eslint/no-unused-vars
+255:6  Warning: React Hook useEffect has missing dependencies...
+</code></pre>
+<p>主なエラーは以下の3種類：</p>
+<ol>
+<li><strong>TypeScriptの<code>any</code>型エラー</strong> - 型定義が不適切</li>
+<li><strong>未使用変数の警告</strong> - 使われていないパラメータ</li>
+<li><strong>React Hooksの依存関係警告</strong> - useEffectの依存配列が不完全</li>
+</ol>
+<h2>問題1: TypeScriptの<code>any</code>型エラー</h2>
+<h3>問題のコード</h3>
+<pre><code class="language-typescript">// 問題：any型を使用している
+const currentPieceRef = useRef&#x3C;any>(null)
+
+const collision = (piece: any, board: number[][], offsetX = 0, offsetY = 0) => {
+  // ...
+}
+
+const rotate = (piece: any) => {
+  const rotated = piece.shape[0].map((_: any, i: number) =>
+    piece.shape.map((row: number[]) => row[i]).reverse()
+  )
+  // ...
+}
+</code></pre>
+<h3>なぜ<code>any</code>型は問題なのか？</h3>
+<p><code>any</code>型は「なんでもあり」を意味し、TypeScriptの型チェックを無効化してしまいます。これでは、TypeScriptを使う意味が半減してしまいます。</p>
+<h3>解決策：適切な型定義を作成</h3>
+<pre><code class="language-typescript">// TetrisPiece型インターフェースを定義
+interface TetrisPiece {
+  shape: number[][]  // テトロミノの形状（2次元配列）
+  color: string      // ピースの色
+  x: number         // X座標
+  y: number         // Y座標
+}
+
+// 型定義を適用
+const currentPieceRef = useRef&#x3C;TetrisPiece | null>(null)
+
+const collision = (piece: TetrisPiece, board: (number | string)[][], offsetX = 0, offsetY = 0) => {
+  // 型安全なコード
+}
+</code></pre>
+<h3>学び：型定義のベストプラクティス</h3>
+<ol>
+<li><strong>インターフェースで構造を明確に</strong> - オブジェクトの構造を明示的に定義</li>
+<li><strong>Union型の活用</strong> - <code>TetrisPiece | null</code>で、nullの可能性を型で表現</li>
+<li><strong>配列の型も正確に</strong> - <code>(number | string)[][]</code>で、複数の型を許容</li>
+</ol>
+<h2>問題2: 配列の型の不一致</h2>
+<h3>発生したエラー</h3>
+<pre><code class="language-bash">Type error: Type 'string' is not assignable to type 'number'.
+board[piece.y + y][piece.x + x] = piece.color  // colorはstring、boardはnumber[][]
+</code></pre>
+<h3>原因の分析</h3>
+<ul>
+<li><code>boardRef</code>を<code>number[][]</code>として定義</li>
+<li>しかし、実際には色情報（string型）を格納していた</li>
+<li>TypeScriptが型の不一致を検出</li>
+</ul>
+<h3>解決方法</h3>
+<pre><code class="language-typescript">// 修正前
+const boardRef = useRef&#x3C;number[][]>([])
+
+// 修正後：stringとnumberの両方を許容
+const boardRef = useRef&#x3C;(number | string)[][]>([])
+</code></pre>
+<h2>問題3: null参照エラー</h2>
+<h3>問題のコード</h3>
+<pre><code class="language-typescript">// currentPieceRef.currentがnullの可能性があるのにチェックしていない
+ctx.fillStyle = currentPieceRef.current.color  // エラー：'currentPieceRef.current' is possibly 'null'
+</code></pre>
+<h3>解決策：変数への代入でnullチェック</h3>
+<pre><code class="language-typescript">// 修正版：一度変数に代入することでTypeScriptが型を絞り込める
+if (currentPieceRef.current &#x26;&#x26; !gameOver) {
+  const piece = currentPieceRef.current  // ここでnullではないことが保証される
+  piece.shape.forEach((row: number[], y: number) => {
+    row.forEach((value: number, x: number) => {
+      if (value) {
+        ctx.fillStyle = piece.color  // 安全にアクセス可能
+        ctx.fillRect(
+          (piece.x + x) * BLOCK_SIZE,
+          (piece.y + y) * BLOCK_SIZE,
+          BLOCK_SIZE - 1,
+          BLOCK_SIZE - 1
+        )
+      }
+    })
+  })
+}
+</code></pre>
+<h2>問題4: React Hooksの依存関係警告</h2>
+<h3>警告の内容</h3>
+<pre><code class="language-bash">React Hook useEffect has missing dependencies: 'gameLoop' and 'rotate'. 
+Either include them or remove the dependency array.
+</code></pre>
+<h3>なぜこの警告が出るのか？</h3>
+<p>React Hooksのルール：</p>
+<ul>
+<li>useEffect内で使用する関数や変数は、依存配列に含める必要がある</li>
+<li>これにより、値が変更されたときに適切に再実行される</li>
+</ul>
+<h3>解決方法の選択肢</h3>
+<h4>方法1: 依存関係を追加（理想的だが...）</h4>
+<pre><code class="language-typescript">useEffect(() => {
+  // gameLoopとrotateを使用
+}, [gameOver, isPaused, level, gameLoop, rotate])  // 依存関係を追加
+</code></pre>
+<p>問題：関数が毎回再生成されるため、無限ループに陥る可能性がある</p>
+<h4>方法2: ESLintの警告を無効化（今回採用）</h4>
+<pre><code class="language-typescript">useEffect(() => {
+  // 初期化処理
+  initBoard()
+  currentPieceRef.current = randomTetromino()
+  animationIdRef.current = requestAnimationFrame(gameLoop)
+  
+  return () => {
+    if (animationIdRef.current) {
+      cancelAnimationFrame(animationIdRef.current)
+    }
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [])  // 意図的に空の依存配列（初回のみ実行）
+</code></pre>
+<h4>方法3: useCallbackでメモ化（より高度な解決策）</h4>
+<pre><code class="language-typescript">const gameLoop = useCallback((time: number = 0) => {
+  // ゲームループの処理
+}, [/* 必要な依存関係 */])
+
+useEffect(() => {
+  // gameLoopを使用
+}, [gameLoop])  // メモ化された関数を依存関係に含める
+</code></pre>
+<h2>問題5: 未使用変数の警告</h2>
+<h3>問題のコード</h3>
+<pre><code class="language-typescript">setLevel(prev => Math.floor((lines + linesCleared) / 10) + 1)
+// prevパラメータが未使用
+</code></pre>
+<h3>解決策：不要なパラメータを削除</h3>
+<pre><code class="language-typescript">setLevel(() => Math.floor((lines + linesCleared) / 10) + 1)
+// prevを使わないなら、引数なしの関数に
+</code></pre>
+<h2>実装手順とデバッグプロセス</h2>
+<h3>1. エラーの詳細確認</h3>
+<pre><code class="language-bash"># ビルドエラーの詳細を確認
+npm run build 2>&#x26;1 | head -100
+</code></pre>
+<h3>2. 新しいブランチで修正作業</h3>
+<pre><code class="language-bash"># 修正用ブランチを作成
+git checkout -b fix/build-errors
+</code></pre>
+<h3>3. 段階的な修正とテスト</h3>
+<ol>
+<li>TypeScriptエラーを修正</li>
+<li>ビルドを実行して確認</li>
+<li>新たなエラーが出たら修正</li>
+<li>すべてのエラーが解消されるまで繰り返し</li>
+</ol>
+<h3>4. 最終確認</h3>
+<pre><code class="language-bash"># ビルド成功！
+> mt114ran.github.io@0.1.0 build
+> next build &#x26;&#x26; touch out/.nojekyll
+
+✓ Generating static pages (158/158)
+✓ Exporting (3/3)
+</code></pre>
+<h2>学んだベストプラクティス</h2>
+<h3>TypeScriptの型定義</h3>
+<ol>
+<li><strong><code>any</code>型は避ける</strong> - 具体的な型定義を作成</li>
+<li><strong>インターフェースを活用</strong> - 複雑なオブジェクトには型定義</li>
+<li><strong>Union型で柔軟に</strong> - 複数の型を許容する場合は<code>|</code>を使用</li>
+<li><strong>nullチェックは確実に</strong> - null許容型（<code>Type | null</code>）を使用</li>
+</ol>
+<h3>React Hooksの管理</h3>
+<ol>
+<li><strong>依存配列は正確に</strong> - 使用する値をすべて含める</li>
+<li><strong>メモ化を検討</strong> - useCallbackやuseMemoで最適化</li>
+<li><strong>ESLintルールの理解</strong> - 警告の意味を理解して対処</li>
+<li><strong>意図的な無視は明示的に</strong> - eslint-disable-next-lineでコメント</li>
+</ol>
+<h3>デバッグのコツ</h3>
+<ol>
+<li><strong>エラーメッセージを丁寧に読む</strong> - TypeScriptのエラーは詳細</li>
+<li><strong>一つずつ解決</strong> - 複数のエラーがある場合は順番に</li>
+<li><strong>型推論を活用</strong> - TypeScriptの型推論機能を理解</li>
+<li><strong>VSCodeの補完を活用</strong> - 型情報がリアルタイムで確認できる</li>
+</ol>
+<h2>トラブルシューティングのヒント</h2>
+<h3>よくある型エラーと対処法</h3>
+<pre><code class="language-typescript">// エラー：Object is possibly 'null'
+// 対処法1：オプショナルチェイニング
+const value = ref.current?.property
+
+// 対処法2：nullチェック
+if (ref.current) {
+  const value = ref.current.property
+}
+
+// エラー：Type 'string' is not assignable to type 'number'
+// 対処法：型変換または型定義の修正
+const num = parseInt(str, 10)  // 文字列を数値に変換
+// または
+type FlexibleType = string | number  // 両方を許容
+</code></pre>
+<h2>まとめ：型安全なコードの重要性</h2>
+<p>TypeScriptの厳格な型チェックは、最初は面倒に感じるかもしれません。しかし、これらのエラーを解決することで：</p>
+<ol>
+<li><strong>バグの早期発見</strong> - 実行時エラーを未然に防ぐ</li>
+<li><strong>コードの可読性向上</strong> - 型定義がドキュメントの役割を果たす</li>
+<li><strong>リファクタリングの安全性</strong> - 型チェックが変更の影響を教えてくれる</li>
+<li><strong>開発体験の向上</strong> - IDEの補完が効果的に働く</li>
+</ol>
+<p>今回の経験を通じて、TypeScriptの型システムとReact Hooksの依存関係管理について深く理解できました。エラーメッセージは友達です！丁寧に読み解いて、より良いコードを書いていきましょう。</p>
+<h2>参考リソース</h2>
+<h3>TypeScript関連</h3>
+<ul>
+<li><a href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html">TypeScript Handbook - Type Checking</a></li>
+<li><a href="https://basarat.gitbook.io/typescript/type-system">TypeScript Deep Dive - Type System</a></li>
+<li><a href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any">Understanding TypeScript's any type</a></li>
+</ul>
+<h3>React Hooks関連</h3>
+<ul>
+<li><a href="https://ja.react.dev/reference/rules/rules-of-hooks">React公式 - Hooks のルール</a></li>
+<li><a href="https://www.npmjs.com/package/eslint-plugin-react-hooks">ESLint Plugin React Hooks</a></li>
+<li><a href="https://overreacted.io/a-complete-guide-to-useeffect/">useEffect 完全ガイド</a></li>
+</ul>
+<h3>Next.js &#x26; ESLint</h3>
+<ul>
+<li><a href="https://nextjs.org/docs/app/api-reference/config/eslint">Next.js - ESLint</a></li>
+<li><a href="https://eslint.org/docs/latest/use/configure/rules#disabling-rules">Disabling ESLint Rules</a></li>
+</ul>
+<hr>
+<p><strong>今回の教訓：</strong> TypeScriptのエラーは敵ではなく、より良いコードへの道しるべ。エラーメッセージを恐れずに、一つずつ丁寧に解決していきましょう！</p>
+4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",15]}]," ","TypeScriptのビルドエラー解決！ゲームコンポーネントの型定義とReact Hooks依存関係の修正"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-01-08 10:00"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"TypeScript"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"React"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ESLint"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ビルドエラー"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Next.js"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ゲーム開発"}],["$","span","6",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"型定義"}],["$","span","7",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"個人作業用"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}
