@@ -264,6 +264,7 @@ export default function Game2048() {
     
     window.addEventListener('keydown', handleKeyPress)
     return () => window.removeEventListener('keydown', handleKeyPress)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameOver, gameWon, score, bestScore])
 
   // タッチ操作
@@ -312,12 +313,14 @@ export default function Game2048() {
       canvas.removeEventListener('touchstart', handleTouchStart)
       canvas.removeEventListener('touchend', handleTouchEnd)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameOver, gameWon])
 
   // 初期化
   useEffect(() => {
     initGrid()
     draw()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // リスタート

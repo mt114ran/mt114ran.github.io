@@ -246,6 +246,7 @@ export default function SnakeGame() {
         clearInterval(gameLoopRef.current)
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // ゲームループの更新
@@ -255,7 +256,8 @@ export default function SnakeGame() {
     } else if (gameLoopRef.current) {
       clearInterval(gameLoopRef.current)
     }
-  }, [gameOver, isPaused, speedRef.current])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gameOver, isPaused])
 
   // リスタート
   const restart = () => {
