@@ -24,9 +24,12 @@ export default function TemplateViewer({ template }: TemplateViewerProps) {
     // bodyの内容（bodyタグ自体は除く）
     const bodyContent = bodyMatch ? bodyMatch[1] : htmlContent
     
-    // headの内容からtitleとmetaを抽出（scriptとstyleは除く）
+    // headの内容からtitleとmetaを抽出
     const headContent = headMatch ? headMatch[1] : ''
     const titleMatch = headContent.match(/<title[^>]*>[\s\S]*?<\/title>/)
+    
+    // headタグ内のCDNスクリプトを抽出
+    const cdnScripts = headContent.match(/<script[^>]*src=["'][^"']*cdn[^"']*["'][^>]*><\/script>/gi) || []
     
     return `
       <!DOCTYPE html>
@@ -35,6 +38,7 @@ export default function TemplateViewer({ template }: TemplateViewerProps) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         ${titleMatch ? titleMatch[0] : ''}
+        ${cdnScripts.join('\n')}
         <style>${template.code.css}</style>
       </head>
       <body>
@@ -142,7 +146,7 @@ export default function TemplateViewer({ template }: TemplateViewerProps) {
                   deviceMode === 'desktop' ? 'h-[700px]' : 'h-[700px] max-w-[375px] mx-auto'
                 }`}
                 title="Template Preview"
-                sandbox="allow-scripts allow-same-origin allow-forms allow-modals"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups"
               />
             </div>
           </div>

@@ -18,6 +18,19 @@ export default function TemplatePreviewPage({ params }: Props) {
     notFound()
   }
 
+  // HTMLから必要な要素を抽出
+  const htmlDoc = template.code.html
+  
+  // headタグ内のscriptタグを抽出（CDNなど）
+  const headScripts = htmlDoc.match(/<head>[\s\S]*?<\/head>/)?.[0]
+    ?.match(/<script[^>]*>[\s\S]*?<\/script>/g)?.join('\n') || ''
+  
+  // bodyタグ内のコンテンツを抽出
+  const bodyContent = htmlDoc
+    .replace(/<\/?html[^>]*>/g, '')
+    .replace(/<head>[\s\S]*?<\/head>/g, '')
+    .replace(/<\/?body[^>]*>/g, '')
+  
   // HTMLにCSSとJSを埋め込んだ完全なHTMLを生成
   const fullHtml = `
 <!DOCTYPE html>
@@ -26,14 +39,17 @@ export default function TemplatePreviewPage({ params }: Props) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${template.title}</title>
+    ${headScripts}
     <style>
         ${template.code.css}
     </style>
 </head>
-${template.code.html.replace(/<\/?html[^>]*>/g, '').replace(/<head>[\s\S]*?<\/head>/g, '').replace(/<\/?body[^>]*>/g, '')}
+<body>
+${bodyContent}
 <script>
     ${template.code.js}
 </script>
+</body>
 </html>
   `.trim()
 
@@ -42,7 +58,7 @@ ${template.code.html.replace(/<\/?html[^>]*>/g, '').replace(/<head>[\s\S]*?<\/he
       srcDoc={fullHtml}
       className="w-full h-screen"
       title={template.title}
-      sandbox="allow-scripts allow-same-origin allow-forms"
+      sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups"
     />
   )
 }
