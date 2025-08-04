@@ -1,7 +1,7 @@
 ---
 id: 15
 title: "TypeScriptのビルドエラー解決！ゲームコンポーネントの型定義とReact Hooks依存関係の修正"
-create: "2025-01-08 10:00"
+create: "2025-08-04 15:15"
 tags: ["TypeScript", "React", "ESLint", "ビルドエラー", "Next.js", "ゲーム開発", "型定義", "個人作業用"]
 ---
 
@@ -139,7 +139,7 @@ if (currentPieceRef.current && !gameOver) {
 ### 警告の内容
 
 ```bash
-React Hook useEffect has missing dependencies: 'gameLoop' and 'rotate'. 
+React Hook useEffect has missing dependencies: 'gameLoop' and 'rotate'.
 Either include them or remove the dependency array.
 ```
 
@@ -169,7 +169,7 @@ useEffect(() => {
   initBoard()
   currentPieceRef.current = randomTetromino()
   animationIdRef.current = requestAnimationFrame(gameLoop)
-  
+
   return () => {
     if (animationIdRef.current) {
       cancelAnimationFrame(animationIdRef.current)
