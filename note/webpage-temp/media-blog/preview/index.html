@@ -1,0 +1,566 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/42959d850b9ab63d.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-9c0875a04aa9c2c1.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;メディア - ブログプラットフォーム&lt;/title&gt;
+    &lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt;
+    &lt;style&gt;
+        /* TailwindCSSがCDN経由で読み込まれているため、追加のカスタムCSSは最小限に */
+@import url(&#x27;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap&#x27;);
+
+body {
+    font-family: &#x27;Inter&#x27;, sans-serif;
+}
+
+/* カスタムアニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* スクロール時のヘッダーシャドウ */
+.header-scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* タブのアクティブ状態 */
+.tab-button.active {
+    color: #2563eb;
+    border-bottom-color: #2563eb;
+}
+
+.dark .tab-button.active {
+    color: #60a5fa;
+    border-bottom-color: #60a5fa;
+}
+
+/* いいねボタンのアニメーション */
+.like-button.liked {
+    color: #ef4444;
+}
+
+.like-button.liked svg {
+    fill: currentColor;
+}
+
+/* モバイルメニューのアニメーション */
+.mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+/* ニュースレター成功メッセージ */
+#successMessage.show {
+    display: block;
+}
+
+/* カード効果 */
+article {
+    transition: all 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-4px);
+}
+
+/* ダークモードのトランジション */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;!-- Header --&gt;
+    &lt;header class=&quot;bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50&quot; id=&quot;header&quot;&gt;
+        &lt;nav class=&quot;container mx-auto px-4 py-4&quot;&gt;
+            &lt;div class=&quot;flex justify-between items-center&quot;&gt;
+                &lt;div class=&quot;flex items-center space-x-8&quot;&gt;
+                    &lt;h1 class=&quot;text-2xl font-bold text-gray-900 dark:text-white&quot;&gt;
+                        TechBlog
+                    &lt;/h1&gt;
+                    &lt;div class=&quot;hidden md:flex space-x-6&quot;&gt;
+                        &lt;a href=&quot;#latest&quot; class=&quot;text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition&quot;&gt;最新記事&lt;/a&gt;
+                        &lt;a href=&quot;#categories&quot; class=&quot;text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition&quot;&gt;カテゴリー&lt;/a&gt;
+                        &lt;a href=&quot;#popular&quot; class=&quot;text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition&quot;&gt;人気記事&lt;/a&gt;
+                        &lt;a href=&quot;#about&quot; class=&quot;text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition&quot;&gt;About&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;flex items-center space-x-4&quot;&gt;
+                    &lt;!-- Search Toggle --&gt;
+                    &lt;button id=&quot;searchToggle&quot; class=&quot;p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition&quot;&gt;
+                        &lt;svg class=&quot;w-5 h-5 text-gray-600 dark:text-gray-300&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/button&gt;
+                    &lt;!-- Dark Mode Toggle --&gt;
+                    &lt;button id=&quot;darkModeToggle&quot; class=&quot;p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition&quot;&gt;
+                        &lt;svg class=&quot;w-5 h-5 text-gray-600 dark:text-gray-300&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/button&gt;
+                    &lt;!-- Mobile Menu --&gt;
+                    &lt;button id=&quot;mobileMenuToggle&quot; class=&quot;md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition&quot;&gt;
+                        &lt;svg class=&quot;w-6 h-6 text-gray-600 dark:text-gray-300&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M4 6h16M4 12h16M4 18h16&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- Search Bar --&gt;
+            &lt;div id=&quot;searchBar&quot; class=&quot;hidden mt-4 relative&quot;&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;記事を検索...&quot; class=&quot;w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500&quot;&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;!-- Hero Section --&gt;
+    &lt;section class=&quot;relative bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20&quot;&gt;
+        &lt;div class=&quot;container mx-auto px-4&quot;&gt;
+            &lt;div class=&quot;max-w-3xl&quot;&gt;
+                &lt;h2 class=&quot;text-4xl md:text-5xl font-bold mb-4&quot;&gt;最新テクノロジーの情報発信&lt;/h2&gt;
+                &lt;p class=&quot;text-xl mb-8 text-blue-100&quot;&gt;開発者のための技術ブログプラットフォーム&lt;/p&gt;
+                &lt;div class=&quot;flex flex-wrap gap-4&quot;&gt;
+                    &lt;button class=&quot;px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition&quot;&gt;
+                        記事を読む
+                    &lt;/button&gt;
+                    &lt;button class=&quot;px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-800 transition&quot;&gt;
+                        ニュースレター登録
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Featured Article --&gt;
+    &lt;section class=&quot;container mx-auto px-4 py-12&quot;&gt;
+        &lt;div class=&quot;bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden&quot;&gt;
+            &lt;div class=&quot;md:flex&quot;&gt;
+                &lt;div class=&quot;md:w-1/2&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;Featured Article&quot; class=&quot;w-full h-64 md:h-full object-cover&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;md:w-1/2 p-8&quot;&gt;
+                    &lt;div class=&quot;flex items-center space-x-4 mb-4&quot;&gt;
+                        &lt;span class=&quot;px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm font-semibold&quot;&gt;特集記事&lt;/span&gt;
+                        &lt;span class=&quot;text-gray-500 dark:text-gray-400 text-sm&quot;&gt;2024年8月4日&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;h3 class=&quot;text-2xl font-bold text-gray-900 dark:text-white mb-4&quot;&gt;
+                        次世代AI技術がもたらすWeb開発の未来
+                    &lt;/h3&gt;
+                    &lt;p class=&quot;text-gray-600 dark:text-gray-300 mb-6&quot;&gt;
+                        人工知能の進化がWeb開発にもたらす影響について、最新の研究結果とともに解説します。生成AIによる自動コード生成、スマートなUIデザイン、そして開発効率の大幅な向上について。
+                    &lt;/p&gt;
+                    &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition&quot;&gt;続きを読む →&lt;/a&gt;
+                        &lt;button class=&quot;like-button flex items-center space-x-2 text-gray-500 dark:text-gray-400 hover:text-red-500 transition&quot; data-likes=&quot;156&quot;&gt;
+                            &lt;svg class=&quot;w-5 h-5&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+                                &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z&quot;&gt;&lt;/path&gt;
+                            &lt;/svg&gt;
+                            &lt;span class=&quot;like-count&quot;&gt;156&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Latest Articles with Tabs --&gt;
+    &lt;section class=&quot;container mx-auto px-4 py-12&quot;&gt;
+        &lt;div class=&quot;bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8&quot;&gt;
+            &lt;!-- Tab Navigation --&gt;
+            &lt;div class=&quot;flex border-b border-gray-200 dark:border-gray-700 mb-8&quot;&gt;
+                &lt;button class=&quot;tab-button px-6 py-3 text-gray-600 dark:text-gray-300 font-semibold border-b-2 border-transparent hover:text-blue-600 dark:hover:text-blue-400 transition active&quot; data-tab=&quot;latest&quot;&gt;
+                    最新記事
+                &lt;/button&gt;
+                &lt;button class=&quot;tab-button px-6 py-3 text-gray-600 dark:text-gray-300 font-semibold border-b-2 border-transparent hover:text-blue-600 dark:hover:text-blue-400 transition&quot; data-tab=&quot;popular&quot;&gt;
+                    人気記事
+                &lt;/button&gt;
+                &lt;button class=&quot;tab-button px-6 py-3 text-gray-600 dark:text-gray-300 font-semibold border-b-2 border-transparent hover:text-blue-600 dark:hover:text-blue-400 transition&quot; data-tab=&quot;recommended&quot;&gt;
+                    おすすめ
+                &lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Tab Content --&gt;
+            &lt;div id=&quot;latest&quot; class=&quot;tab-content&quot;&gt;
+                &lt;div class=&quot;grid md:grid-cols-2 lg:grid-cols-3 gap-6&quot;&gt;
+                    &lt;article class=&quot;bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden hover:shadow-lg transition&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;Article&quot; class=&quot;w-full h-48 object-cover&quot;&gt;
+                        &lt;div class=&quot;p-4&quot;&gt;
+                            &lt;h4 class=&quot;font-bold text-gray-900 dark:text-white mb-2&quot;&gt;ReactとNext.jsで始めるモダンWeb開発&lt;/h4&gt;
+                            &lt;p class=&quot;text-gray-600 dark:text-gray-300 text-sm mb-4&quot;&gt;最新のReact 18とNext.js 14を使った実践的な開発手法を解説。&lt;/p&gt;
+                            &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                                &lt;span class=&quot;text-gray-500 dark:text-gray-400 text-sm&quot;&gt;2024.08.03&lt;/span&gt;
+                                &lt;button class=&quot;like-button text-gray-500 dark:text-gray-400 hover:text-red-500 transition&quot; data-likes=&quot;42&quot;&gt;
+                                    ♥ &lt;span class=&quot;like-count&quot;&gt;42&lt;/span&gt;
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+                    &lt;article class=&quot;bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden hover:shadow-lg transition&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;Article&quot; class=&quot;w-full h-48 object-cover&quot;&gt;
+                        &lt;div class=&quot;p-4&quot;&gt;
+                            &lt;h4 class=&quot;font-bold text-gray-900 dark:text-white mb-2&quot;&gt;TypeScriptの型システム完全ガイド&lt;/h4&gt;
+                            &lt;p class=&quot;text-gray-600 dark:text-gray-300 text-sm mb-4&quot;&gt;高度な型操作から実践的な型安全の実現方法まで。&lt;/p&gt;
+                            &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                                &lt;span class=&quot;text-gray-500 dark:text-gray-400 text-sm&quot;&gt;2024.08.02&lt;/span&gt;
+                                &lt;button class=&quot;like-button text-gray-500 dark:text-gray-400 hover:text-red-500 transition&quot; data-likes=&quot;89&quot;&gt;
+                                    ♥ &lt;span class=&quot;like-count&quot;&gt;89&lt;/span&gt;
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+                    &lt;article class=&quot;bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden hover:shadow-lg transition&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;Article&quot; class=&quot;w-full h-48 object-cover&quot;&gt;
+                        &lt;div class=&quot;p-4&quot;&gt;
+                            &lt;h4 class=&quot;font-bold text-gray-900 dark:text-white mb-2&quot;&gt;GitHub Copilotで効率化する開発フロー&lt;/h4&gt;
+                            &lt;p class=&quot;text-gray-600 dark:text-gray-300 text-sm mb-4&quot;&gt;AI支援ツールを最大限活用する方法とベストプラクティス。&lt;/p&gt;
+                            &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                                &lt;span class=&quot;text-gray-500 dark:text-gray-400 text-sm&quot;&gt;2024.08.01&lt;/span&gt;
+                                &lt;button class=&quot;like-button text-gray-500 dark:text-gray-400 hover:text-red-500 transition&quot; data-likes=&quot;67&quot;&gt;
+                                    ♥ &lt;span class=&quot;like-count&quot;&gt;67&lt;/span&gt;
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div id=&quot;popular&quot; class=&quot;tab-content hidden&quot;&gt;
+                &lt;div class=&quot;grid md:grid-cols-2 lg:grid-cols-3 gap-6&quot;&gt;
+                    &lt;article class=&quot;bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden hover:shadow-lg transition&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;Article&quot; class=&quot;w-full h-48 object-cover&quot;&gt;
+                        &lt;div class=&quot;p-4&quot;&gt;
+                            &lt;h4 class=&quot;font-bold text-gray-900 dark:text-white mb-2&quot;&gt;2024年に学ぶべきプログラミング言語Top10&lt;/h4&gt;
+                            &lt;p class=&quot;text-gray-600 dark:text-gray-300 text-sm mb-4&quot;&gt;市場動向と需要から見る最適な言語選択。&lt;/p&gt;
+                            &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                                &lt;span class=&quot;text-gray-500 dark:text-gray-400 text-sm&quot;&gt;2024.07.28&lt;/span&gt;
+                                &lt;button class=&quot;like-button text-gray-500 dark:text-gray-400 hover:text-red-500 transition&quot; data-likes=&quot;234&quot;&gt;
+                                    ♥ &lt;span class=&quot;like-count&quot;&gt;234&lt;/span&gt;
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div id=&quot;recommended&quot; class=&quot;tab-content hidden&quot;&gt;
+                &lt;div class=&quot;grid md:grid-cols-2 lg:grid-cols-3 gap-6&quot;&gt;
+                    &lt;article class=&quot;bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden hover:shadow-lg transition&quot;&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&amp;h=300&amp;fit=crop&quot; alt=&quot;Article&quot; class=&quot;w-full h-48 object-cover&quot;&gt;
+                        &lt;div class=&quot;p-4&quot;&gt;
+                            &lt;h4 class=&quot;font-bold text-gray-900 dark:text-white mb-2&quot;&gt;Web3.0時代のフロントエンド開発&lt;/h4&gt;
+                            &lt;p class=&quot;text-gray-600 dark:text-gray-300 text-sm mb-4&quot;&gt;ブロックチェーンとDAppsの基礎から実装まで。&lt;/p&gt;
+                            &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                                &lt;span class=&quot;text-gray-500 dark:text-gray-400 text-sm&quot;&gt;2024.07.25&lt;/span&gt;
+                                &lt;button class=&quot;like-button text-gray-500 dark:text-gray-400 hover:text-red-500 transition&quot; data-likes=&quot;178&quot;&gt;
+                                    ♥ &lt;span class=&quot;like-count&quot;&gt;178&lt;/span&gt;
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Categories --&gt;
+    &lt;section id=&quot;categories&quot; class=&quot;bg-gray-100 dark:bg-gray-800 py-12&quot;&gt;
+        &lt;div class=&quot;container mx-auto px-4&quot;&gt;
+            &lt;h2 class=&quot;text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center&quot;&gt;カテゴリー&lt;/h2&gt;
+            &lt;div class=&quot;grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4&quot;&gt;
+                &lt;div class=&quot;bg-white dark:bg-gray-700 rounded-lg p-4 text-center hover:shadow-lg transition cursor-pointer&quot;&gt;
+                    &lt;div class=&quot;text-3xl mb-2&quot;&gt;💻&lt;/div&gt;
+                    &lt;h3 class=&quot;font-semibold text-gray-900 dark:text-white&quot;&gt;プログラミング&lt;/h3&gt;
+                    &lt;p class=&quot;text-sm text-gray-500 dark:text-gray-400&quot;&gt;234記事&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;bg-white dark:bg-gray-700 rounded-lg p-4 text-center hover:shadow-lg transition cursor-pointer&quot;&gt;
+                    &lt;div class=&quot;text-3xl mb-2&quot;&gt;🎨&lt;/div&gt;
+                    &lt;h3 class=&quot;font-semibold text-gray-900 dark:text-white&quot;&gt;デザイン&lt;/h3&gt;
+                    &lt;p class=&quot;text-sm text-gray-500 dark:text-gray-400&quot;&gt;156記事&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;bg-white dark:bg-gray-700 rounded-lg p-4 text-center hover:shadow-lg transition cursor-pointer&quot;&gt;
+                    &lt;div class=&quot;text-3xl mb-2&quot;&gt;📱&lt;/div&gt;
+                    &lt;h3 class=&quot;font-semibold text-gray-900 dark:text-white&quot;&gt;モバイル&lt;/h3&gt;
+                    &lt;p class=&quot;text-sm text-gray-500 dark:text-gray-400&quot;&gt;89記事&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;bg-white dark:bg-gray-700 rounded-lg p-4 text-center hover:shadow-lg transition cursor-pointer&quot;&gt;
+                    &lt;div class=&quot;text-3xl mb-2&quot;&gt;🤖&lt;/div&gt;
+                    &lt;h3 class=&quot;font-semibold text-gray-900 dark:text-white&quot;&gt;AI・機械学習&lt;/h3&gt;
+                    &lt;p class=&quot;text-sm text-gray-500 dark:text-gray-400&quot;&gt;67記事&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;bg-white dark:bg-gray-700 rounded-lg p-4 text-center hover:shadow-lg transition cursor-pointer&quot;&gt;
+                    &lt;div class=&quot;text-3xl mb-2&quot;&gt;☁️&lt;/div&gt;
+                    &lt;h3 class=&quot;font-semibold text-gray-900 dark:text-white&quot;&gt;クラウド&lt;/h3&gt;
+                    &lt;p class=&quot;text-sm text-gray-500 dark:text-gray-400&quot;&gt;112記事&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;bg-white dark:bg-gray-700 rounded-lg p-4 text-center hover:shadow-lg transition cursor-pointer&quot;&gt;
+                    &lt;div class=&quot;text-3xl mb-2&quot;&gt;🔒&lt;/div&gt;
+                    &lt;h3 class=&quot;font-semibold text-gray-900 dark:text-white&quot;&gt;セキュリティ&lt;/h3&gt;
+                    &lt;p class=&quot;text-sm text-gray-500 dark:text-gray-400&quot;&gt;45記事&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Newsletter --&gt;
+    &lt;section class=&quot;bg-gradient-to-r from-blue-600 to-purple-600 py-12&quot;&gt;
+        &lt;div class=&quot;container mx-auto px-4&quot;&gt;
+            &lt;div class=&quot;max-w-2xl mx-auto text-center&quot;&gt;
+                &lt;h2 class=&quot;text-3xl font-bold text-white mb-4&quot;&gt;最新情報をお届け&lt;/h2&gt;
+                &lt;p class=&quot;text-blue-100 mb-8&quot;&gt;週に1回、厳選した技術記事をメールでお送りします&lt;/p&gt;
+                &lt;form id=&quot;newsletterForm&quot; class=&quot;flex flex-col sm:flex-row gap-4 max-w-md mx-auto&quot;&gt;
+                    &lt;input type=&quot;email&quot; placeholder=&quot;メールアドレス&quot; class=&quot;flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white&quot; required&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition&quot;&gt;購読する&lt;/button&gt;
+                &lt;/form&gt;
+                &lt;div id=&quot;successMessage&quot; class=&quot;hidden mt-4 text-white font-semibold animate-fadeIn&quot;&gt;
+                    ✓ 購読登録ありがとうございます！
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Popular Articles --&gt;
+    &lt;section id=&quot;popular&quot; class=&quot;container mx-auto px-4 py-12&quot;&gt;
+        &lt;h2 class=&quot;text-3xl font-bold text-gray-900 dark:text-white mb-8&quot;&gt;人気記事&lt;/h2&gt;
+        &lt;div class=&quot;grid md:grid-cols-2 gap-8&quot;&gt;
+            &lt;div class=&quot;bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6&quot;&gt;
+                &lt;div class=&quot;flex gap-4&quot;&gt;
+                    &lt;span class=&quot;text-4xl font-bold text-blue-600 dark:text-blue-400&quot;&gt;1&lt;/span&gt;
+                    &lt;div&gt;
+                        &lt;h3 class=&quot;font-bold text-gray-900 dark:text-white mb-2&quot;&gt;VSCodeの生産性を10倍にする拡張機能&lt;/h3&gt;
+                        &lt;p class=&quot;text-gray-600 dark:text-gray-300 text-sm mb-2&quot;&gt;プロが使う必須の拡張機能と設定を完全網羅。&lt;/p&gt;
+                        &lt;div class=&quot;flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400&quot;&gt;
+                            &lt;span&gt;👁 12,345 views&lt;/span&gt;
+                            &lt;span&gt;💬 234 comments&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6&quot;&gt;
+                &lt;div class=&quot;flex gap-4&quot;&gt;
+                    &lt;span class=&quot;text-4xl font-bold text-blue-600 dark:text-blue-400&quot;&gt;2&lt;/span&gt;
+                    &lt;div&gt;
+                        &lt;h3 class=&quot;font-bold text-gray-900 dark:text-white mb-2&quot;&gt;Docker完全入門：基礎から実践まで&lt;/h3&gt;
+                        &lt;p class=&quot;text-gray-600 dark:text-gray-300 text-sm mb-2&quot;&gt;コンテナ技術の基本概念から本番環境での運用まで。&lt;/p&gt;
+                        &lt;div class=&quot;flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400&quot;&gt;
+                            &lt;span&gt;👁 10,234 views&lt;/span&gt;
+                            &lt;span&gt;💬 189 comments&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Footer --&gt;
+    &lt;footer class=&quot;bg-gray-900 text-gray-300 py-12&quot;&gt;
+        &lt;div class=&quot;container mx-auto px-4&quot;&gt;
+            &lt;div class=&quot;grid md:grid-cols-4 gap-8&quot;&gt;
+                &lt;div&gt;
+                    &lt;h3 class=&quot;text-white font-bold text-xl mb-4&quot;&gt;TechBlog&lt;/h3&gt;
+                    &lt;p class=&quot;text-sm&quot;&gt;最新テクノロジーと開発手法を発信する技術ブログプラットフォーム&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h4 class=&quot;text-white font-semibold mb-4&quot;&gt;カテゴリー&lt;/h4&gt;
+                    &lt;ul class=&quot;space-y-2 text-sm&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;hover:text-white transition&quot;&gt;プログラミング&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;hover:text-white transition&quot;&gt;デザイン&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;hover:text-white transition&quot;&gt;モバイル開発&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;hover:text-white transition&quot;&gt;AI・機械学習&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h4 class=&quot;text-white font-semibold mb-4&quot;&gt;リンク&lt;/h4&gt;
+                    &lt;ul class=&quot;space-y-2 text-sm&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;hover:text-white transition&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;hover:text-white transition&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;hover:text-white transition&quot;&gt;プライバシーポリシー&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;hover:text-white transition&quot;&gt;利用規約&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h4 class=&quot;text-white font-semibold mb-4&quot;&gt;フォロー&lt;/h4&gt;
+                    &lt;div class=&quot;flex space-x-4&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;text-gray-400 hover:text-white transition&quot;&gt;
+                            &lt;svg class=&quot;w-6 h-6&quot; fill=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+                                &lt;path d=&quot;M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z&quot;&gt;&lt;/path&gt;
+                            &lt;/svg&gt;
+                        &lt;/a&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;text-gray-400 hover:text-white transition&quot;&gt;
+                            &lt;svg class=&quot;w-6 h-6&quot; fill=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+                                &lt;path d=&quot;M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z&quot;&gt;&lt;/path&gt;
+                            &lt;/svg&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;mt-8 pt-8 border-t border-gray-700 text-center text-sm&quot;&gt;
+                &lt;p&gt;&amp;copy; 2024 TechBlog. All rights reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // ダークモード切り替え
+const darkModeToggle = document.getElementById(&#x27;darkModeToggle&#x27;);
+if (darkModeToggle) {
+    // ローカルストレージから設定を読み込み
+    const savedTheme = localStorage.getItem(&#x27;theme&#x27;);
+    if (savedTheme === &#x27;dark&#x27;) {
+        document.documentElement.classList.add(&#x27;dark&#x27;);
+    }
+    
+    darkModeToggle.addEventListener(&#x27;click&#x27;, function() {
+        const html = document.documentElement;
+        if (html.classList.contains(&#x27;dark&#x27;)) {
+            html.classList.remove(&#x27;dark&#x27;);
+            localStorage.setItem(&#x27;theme&#x27;, &#x27;light&#x27;);
+        } else {
+            html.classList.add(&#x27;dark&#x27;);
+            localStorage.setItem(&#x27;theme&#x27;, &#x27;dark&#x27;);
+        }
+    });
+}
+
+// 検索バーの表示/非表示
+const searchToggle = document.getElementById(&#x27;searchToggle&#x27;);
+const searchBar = document.getElementById(&#x27;searchBar&#x27;);
+if (searchToggle &amp;&amp; searchBar) {
+    searchToggle.addEventListener(&#x27;click&#x27;, function() {
+        searchBar.classList.toggle(&#x27;hidden&#x27;);
+        if (!searchBar.classList.contains(&#x27;hidden&#x27;)) {
+            const input = searchBar.querySelector(&#x27;input&#x27;);
+            if (input) {
+                input.focus();
+            }
+        }
+    });
+}
+
+// モバイルメニューの制御
+const mobileMenuToggle = document.getElementById(&#x27;mobileMenuToggle&#x27;);
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener(&#x27;click&#x27;, function() {
+        // モバイルメニューの実装（必要に応じて追加）
+        console.log(&#x27;Mobile menu toggled&#x27;);
+    });
+}
+
+// いいねボタンの機能
+document.querySelectorAll(&#x27;.like-button&#x27;).forEach(button =&gt; {
+    let isLiked = false;
+    const originalLikes = parseInt(button.dataset.likes || &#x27;0&#x27;);
+    
+    button.addEventListener(&#x27;click&#x27;, function() {
+        isLiked = !isLiked;
+        const countElement = button.querySelector(&#x27;.like-count&#x27;);
+        if (countElement) {
+            const currentCount = parseInt(countElement.textContent);
+            if (isLiked) {
+                countElement.textContent = currentCount + 1;
+                button.classList.add(&#x27;liked&#x27;);
+                button.style.color = &#x27;#ef4444&#x27;;
+            } else {
+                countElement.textContent = currentCount - 1;
+                button.classList.remove(&#x27;liked&#x27;);
+                button.style.color = &#x27;&#x27;;
+            }
+        }
+    });
+});
+
+// タブ切り替え機能
+const tabButtons = document.querySelectorAll(&#x27;.tab-button&#x27;);
+const tabContents = document.querySelectorAll(&#x27;.tab-content&#x27;);
+
+tabButtons.forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, function() {
+        const targetTab = button.dataset.tab;
+        
+        // アクティブなタブボタンを更新
+        tabButtons.forEach(btn =&gt; {
+            btn.classList.remove(&#x27;active&#x27;);
+        });
+        button.classList.add(&#x27;active&#x27;);
+        
+        // タブコンテンツの表示切り替え
+        tabContents.forEach(content =&gt; {
+            if (content.id === targetTab) {
+                content.classList.remove(&#x27;hidden&#x27;);
+            } else {
+                content.classList.add(&#x27;hidden&#x27;);
+            }
+        });
+    });
+});
+
+// ニュースレターフォームの送信
+const newsletterForm = document.getElementById(&#x27;newsletterForm&#x27;);
+const successMessage = document.getElementById(&#x27;successMessage&#x27;);
+
+if (newsletterForm &amp;&amp; successMessage) {
+    newsletterForm.addEventListener(&#x27;submit&#x27;, function(e) {
+        e.preventDefault();
+        
+        // 成功メッセージを表示
+        successMessage.classList.remove(&#x27;hidden&#x27;);
+        successMessage.classList.add(&#x27;show&#x27;);
+        
+        // フォームをリセット
+        newsletterForm.reset();
+        
+        // 3秒後にメッセージを非表示
+        setTimeout(() =&gt; {
+            successMessage.classList.add(&#x27;hidden&#x27;);
+            successMessage.classList.remove(&#x27;show&#x27;);
+        }, 3000);
+    });
+}
+
+// スクロール時のヘッダーエフェクト
+const header = document.getElementById(&#x27;header&#x27;);
+if (header) {
+    window.addEventListener(&#x27;scroll&#x27;, function() {
+        if (window.scrollY &gt; 10) {
+            header.classList.add(&#x27;header-scrolled&#x27;);
+        } else {
+            header.classList.remove(&#x27;header-scrolled&#x27;);
+        }
+    });
+}
+
+// スムーススクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            target.scrollIntoView({
+                behavior: &#x27;smooth&#x27;,
+                block: &#x27;start&#x27;
+            });
+        }
+    });
+});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;" class="w-full h-screen" title="メディア - ブログプラットフォーム" sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[8823,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-9c0875a04aa9c2c1.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/42959d850b9ab63d.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"PJHVPoZAHFtsh8fu5K9t6\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"media-blog\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"media-blog\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/42959d850b9ab63d.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"media-blog\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"media-blog\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"QFANU0M6c2d4fu2qUh7VR\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"media-blog\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>
