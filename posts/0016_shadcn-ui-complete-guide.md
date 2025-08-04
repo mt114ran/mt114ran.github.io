@@ -7,7 +7,7 @@ tags: ["React", "shadcn/ui", "Tailwind CSS", "UI Components", "フロントエ�
 
 ## はじめに：なぜshadcn/uiが注目されているのか？
 
-2023年、JavaScriptエコシステムで異例の現象が起きました。「**shadcn/ui**」が、[JavaScript Rising Stars](https://risingstars.js.org/2023)で総合1位を獲得。2位のBunに10,000スター以上の差をつけての圧勝でした。さらに2024年も連続で1位を獲得し、その勢いは止まりません。
+2023年、JavaScriptエコシステムで異例の現象が起きました。「**shadcn/ui**」が、[JavaScript Rising Stars](https://risingstars.js.org/2023/ja)で総合1位を獲得。2位のBunに10,000スター以上の差をつけての圧勝でした。さらに2024年も連続で1位を獲得し、その勢いは止まりません。
 
 なぜこれほどまでに注目されているのでしょうか？
 
@@ -1149,7 +1149,7 @@ shadcn/uiは「ライブラリ」ではなく「哲学」です。コンポー�
 - [Tailwind CSS](https://tailwindcss.com/)
 - [v0.dev](https://v0.dev/)
 - [shadcn/ui GitHub](https://github.com/shadcn-ui/ui)
-- [JavaScript Rising Stars 2023](https://risingstars.js.org/2023)
+- [JavaScript Rising Stars 2023](https://risingstars.js.org/2023/ja)
 
 ---
 
