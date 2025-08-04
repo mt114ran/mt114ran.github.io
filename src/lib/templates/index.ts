@@ -10,6 +10,7 @@ import { cafeJapaneseTemplate } from './data/cafe-japanese'
 import { cafeLuxuryTemplate } from './data/cafe-luxury'
 import { cafeCoworkingTemplate } from './data/cafe-coworking'
 import { cafeBookshopTemplate } from './data/cafe-bookshop'
+import { cafeLuxeProTemplate } from './data/cafe-luxe-pro'
 // 小売店カテゴリ
 import { retailFashionTemplate } from './data/retail-fashion'
 import { retailGeneralTemplate } from './data/retail-general'
@@ -54,6 +55,7 @@ import { portfolioMusicianTemplate } from './data/portfolio-musician'
 import { portfolioAgencyTemplate } from './data/portfolio-agency'
 import { portfolioConsultantTemplate } from './data/portfolio-consultant'
 import { portfolioPhotographerInstagramTemplate } from './data/portfolio-photographer-instagram'
+import { portfolioCreativeProTemplate } from './data/portfolio-creative-pro'
 // ホテル・宿泊カテゴリ
 import { hotelLuxuryTemplate } from './data/hotel-luxury'
 import { hotelBusinessTemplate } from './data/hotel-business'
@@ -74,12 +76,13 @@ import { eventFestivalTemplate } from './data/event-festival'
 import { mediaNewsTemplate } from './data/media-news'
 import { mediaMagazineTemplate } from './data/media-magazine'
 import { mediaBlogTemplate } from './data/media-blog'
+import { itCorporateProTemplate } from './data/it-corporate-pro'
 
 /**
  * すべてのテンプレートデータ
  */
 export const templates: WebTemplate[] = [
-  // カフェカテゴリ（10個）
+  // カフェカテゴリ（11個）
   cafeModernTemplate,
   cafeVintageTemplate,
   cafeMinimalTemplate,
@@ -90,6 +93,7 @@ export const templates: WebTemplate[] = [
   cafeLuxuryTemplate,
   cafeCoworkingTemplate,
   cafeBookshopTemplate,
+  cafeLuxeProTemplate,
   // 小売店カテゴリ（10個）
   retailFashionTemplate,
   retailGeneralTemplate,
@@ -122,7 +126,7 @@ export const templates: WebTemplate[] = [
   serviceAccountingTemplate,
   serviceInsuranceTemplate,
   serviceCleaningTemplate,
-  // ポートフォリオカテゴリ（11個）
+  // ポートフォリオカテゴリ（12個）
   portfolioFreelanceTemplate,
   portfolioDesignerTemplate,
   portfolioPhotographerTemplate,
@@ -134,14 +138,16 @@ export const templates: WebTemplate[] = [
   portfolioAgencyTemplate,
   portfolioConsultantTemplate,
   portfolioPhotographerInstagramTemplate,
+  portfolioCreativeProTemplate,
   // ホテル・宿泊カテゴリ（3個）
   hotelLuxuryTemplate,
   hotelBusinessTemplate,
   hotelResortTemplate,
-  // IT・テクノロジーカテゴリ（3個）
+  // IT・テクノロジーカテゴリ（4個）
   itStartupTemplate,
   itCorporateTemplate,
   itSaasTemplate,
+  itCorporateProTemplate,
   // 医療・ヘルスケアカテゴリ（3個）
   medicalHospitalTemplate,
   medicalDentalTemplate,

@@ -1,0 +1,1844 @@
+import { WebTemplate, TEMPLATE_CATEGORIES } from '../types'
+
+export const cafeLuxeProTemplate: WebTemplate = {
+  id: 'cafe-luxe-pro',
+  title: 'Café Luxe Pro - プレミアムレストラン',
+  category: TEMPLATE_CATEGORIES.CAFE,
+  description: 'ミシュラン級レストランにふさわしい高級感あふれるWebサイト。パララックスエフェクト、3Dアニメーション、インタラクティブメニューを搭載',
+  thumbnail: '/template-images/cafe-luxe-pro.jpg',
+  features: [
+    'カスタムカーソルエフェクト',
+    'パララックススクロール',
+    '3Dアニメーション',
+    'インタラクティブメニュー',
+    'ローディングアニメーション',
+    'スムーズスクロール',
+    'Intersection Observer API使用',
+    'モバイル完全対応'
+  ],
+  tags: ['プロレベル', '高級レストラン', 'パララックス', '3Dアニメーション', 'インタラクティブ'],
+  isPro: true,
+  code: {
+    html: `<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Luxe - ミシュラン級の体験を</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --gold: #d4af37;
+            --dark-gold: #b8941f;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --light-gray: #f8f8f8;
+            --white: #ffffff;
+            --accent: #8b0000;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            cursor: none;
+        }
+        
+        /* カスタムカーソル */
+        .cursor {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.3s ease;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: difference;
+        }
+        
+        .cursor-follower {
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+            transform: translate(-50%, -50%);
+        }
+        
+        .cursor.hover {
+            transform: translate(-50%, -50%) scale(1.5);
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        /* ローディング画面 */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--black);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+        
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader-content {
+            text-align: center;
+        }
+        
+        .loader-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .loader-logo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            animation: loadingLine 2s infinite;
+        }
+        
+        @keyframes loadingLine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        /* ナビゲーション */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 2rem 4rem;
+            transition: all 0.5s ease;
+            mix-blend-mode: difference;
+        }
+        
+        nav.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 4rem;
+            mix-blend-mode: normal;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: 'PREMIUM';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            opacity: 0.6;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+        
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .reservation-btn {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reservation-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gold);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+        
+        .reservation-btn:hover {
+            color: var(--black);
+        }
+        
+        .reservation-btn:hover::before {
+            left: 0;
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+        
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4);
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            animation: fadeInUp 1.5s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .hero-title .highlight {
+            color: var(--gold);
+            position: relative;
+        }
+        
+        .hero-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: expandLine 2s ease forwards;
+            animation-delay: 1s;
+        }
+        
+        @keyframes expandLine {
+            to {
+                transform: scaleX(1);
+            }
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 1rem 3rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: var(--gold);
+            color: var(--black);
+            border: 2px solid var(--gold);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+        
+        /* スクロールインジケーター */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        
+        .scroll-indicator::before {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 50px;
+            border: 2px solid var(--gold);
+            border-radius: 25px;
+            position: relative;
+        }
+        
+        .scroll-indicator::after {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 2px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollDown 2s infinite;
+        }
+        
+        @keyframes scrollDown {
+            0% {
+                opacity: 0;
+                top: 10px;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                top: 30px;
+            }
+        }
+        
+        /* アバウトセクション */
+        .about {
+            padding: 150px 4rem;
+            background: var(--dark-gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+            opacity: 0.05;
+            animation: rotate 30s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+        
+        .about-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+        
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
+        }
+        
+        .feature-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-text p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+        
+        .about-image {
+            position: relative;
+            height: 600px;
+        }
+        
+        .about-image-wrapper {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .about-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid var(--gold);
+            z-index: -1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-badge {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 120px;
+            height: 120px;
+            background: var(--black);
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: rotateBadge 10s linear infinite;
+        }
+        
+        @keyframes rotateBadge {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .about-badge-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gold);
+            animation: rotateBackBadge 10s linear infinite;
+        }
+        
+        @keyframes rotateBackBadge {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+        
+        .about-badge-year {
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            animation: rotateBackBadge 10s linear infinite;
+        }
+        
+        /* メニューセクション */
+        .menu {
+            padding: 150px 4rem;
+            background: linear-gradient(180deg, var(--dark-gray) 0%, var(--black) 100%);
+        }
+        
+        .menu-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 5rem;
+        }
+        
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .menu-tab {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--white);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gold);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .menu-tab.active,
+        .menu-tab:hover {
+            color: var(--black);
+            border-color: var(--gold);
+        }
+        
+        .menu-tab.active::before,
+        .menu-tab:hover::before {
+            left: 0;
+        }
+        
+        .menu-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .menu-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .menu-item:hover::before {
+            left: 100%;
+        }
+        
+        .menu-item-info {
+            flex: 1;
+        }
+        
+        .menu-item-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+        
+        .menu-item-description {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+        
+        .menu-item-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-left: 2rem;
+        }
+        
+        /* ギャラリーセクション */
+        .gallery {
+            padding: 150px 0;
+            background: var(--black);
+        }
+        
+        .gallery-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 5rem;
+            padding: 0 4rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+        
+        .gallery-item:nth-child(3),
+        .gallery-item:nth-child(6) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-text p {
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        /* 予約セクション */
+        .reservation {
+            padding: 150px 4rem;
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+            position: relative;
+        }
+        
+        .reservation::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .reservation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .reservation-form {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            position: relative;
+        }
+        
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-select {
+            cursor: pointer;
+        }
+        
+        .form-select option {
+            background: var(--dark-gray);
+            color: var(--white);
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--gold);
+            color: var(--black);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .reservation-info {
+            padding-left: 2rem;
+        }
+        
+        .info-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .info-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
+        }
+        
+        .info-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+        
+        .info-text p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+        
+        /* フッター */
+        footer {
+            background: var(--black);
+            padding: 80px 4rem 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand {
+            max-width: 300px;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-description {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+        
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
+            transition: stroke 0.3s ease;
+        }
+        
+        .social-link:hover svg {
+            stroke: var(--black);
+        }
+        
+        .footer-column h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .cursor,
+            .cursor-follower {
+                display: none;
+            }
+            
+            body {
+                cursor: auto;
+            }
+            
+            nav {
+                padding: 1rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--black);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.3s ease;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .about-container,
+            .reservation-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-item:nth-child(3),
+            .gallery-item:nth-child(6) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        /* プロレベルバッジ */
+        .pro-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            color: var(--black);
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            z-index: 9998;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- カスタムカーソル -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- ローディング画面 -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">CAFÉ LUXE</div>
+        </div>
+    </div>
+    
+    <!-- プロレベルバッジ -->
+    <div class="pro-badge">PRO LEVEL</div>
+    
+    <!-- ナビゲーション -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">CAFÉ LUXE</a>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#reservation" class="nav-link">Reservation</a></li>
+            </ul>
+            <button class="reservation-btn">予約する</button>
+        </div>
+    </nav>
+    
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1920&h=1080&fit=crop" alt="Luxury Restaurant">
+        </div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Michelin Star Restaurant</p>
+            <h1 class="hero-title">
+                極上の<span class="highlight">美食体験</span>を<br>
+                あなたに
+            </h1>
+            <p class="hero-description">
+                伝統と革新が織りなす、唯一無二のガストロノミー。<br>
+                五感すべてで愉しむ、至福のひとときをお約束します。
+            </p>
+            <div class="hero-buttons">
+                <a href="#reservation" class="btn-primary">予約する</a>
+                <a href="#menu" class="btn-secondary">メニューを見る</a>
+            </div>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+    
+    <!-- アバウトセクション -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <p class="section-subtitle">Our Story</p>
+                <h2 class="section-title">伝統と革新の<br>ガストロノミー</h2>
+                <p class="about-text">
+                    1985年の創業以来、私たちは常に最高の食材と技術を追求し続けてきました。
+                    世界各地から厳選された食材と、熟練シェフの技が織りなす料理は、
+                    まさに芸術作品と呼ぶにふさわしい逸品です。
+                </p>
+                <p class="about-text">
+                    ミシュラン三つ星を5年連続で獲得し、
+                    世界のベストレストラン50にも選出された当店で、
+                    忘れられない美食体験をお楽しみください。
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h4>ミシュラン三つ星</h4>
+                            <p>5年連続獲得の実績</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3 3h18v18H3V3zm2 2v14h14V5H5z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h4>完全個室</h4>
+                            <p>プライベートな空間を提供</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h4>厳選食材</h4>
+                            <p>世界中から取り寄せた最高級食材</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h4>ソムリエ</h4>
+                            <p>専属ソムリエによるペアリング</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="about-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop" alt="Fine Dining">
+                </div>
+                <div class="about-badge">
+                    <div class="about-badge-text">40</div>
+                    <div class="about-badge-year">YEARS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- メニューセクション -->
+    <section class="menu" id="menu">
+        <div class="menu-header">
+            <p class="section-subtitle">Our Menu</p>
+            <h2 class="section-title">季節の厳選コース</h2>
+        </div>
+        
+        <div class="menu-tabs">
+            <button class="menu-tab active" data-menu="lunch">Lunch</button>
+            <button class="menu-tab" data-menu="dinner">Dinner</button>
+            <button class="menu-tab" data-menu="wine">Wine</button>
+        </div>
+        
+        <div class="menu-content active" id="lunch">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3 class="menu-item-name">季節の前菜盛り合わせ</h3>
+                        <p class="menu-item-description">旬の食材を使用した5種類の前菜を美しく盛り付けました</p>
+                    </div>
+                    <div class="menu-item-price">¥3,800</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3 class="menu-item-name">本日の鮮魚のカルパッチョ</h3>
+                        <p class="menu-item-description">市場直送の新鮮な魚介を特製ソースで</p>
+                    </div>
+                    <div class="menu-item-price">¥4,200</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3 class="menu-item-name">黒毛和牛のステーキ</h3>
+                        <p class="menu-item-description">A5ランクの黒毛和牛を絶妙な火入れで</p>
+                    </div>
+                    <div class="menu-item-price">¥8,500</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3 class="menu-item-name">シェフ特製デザート</h3>
+                        <p class="menu-item-description">季節のフルーツを使用した創作デザート</p>
+                    </div>
+                    <div class="menu-item-price">¥2,000</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-content" id="dinner">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3 class="menu-item-name">フォアグラのテリーヌ</h3>
+                        <p class="menu-item-description">トリュフの香りを添えた贅沢な一皿</p>
+                    </div>
+                    <div class="menu-item-price">¥6,800</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3 class="menu-item-name">オマール海老のビスク</h3>
+                        <p class="menu-item-description">濃厚な海老の旨味を凝縮したスープ</p>
+                    </div>
+                    <div class="menu-item-price">¥5,200</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3 class="menu-item-name">和牛フィレ肉のロッシーニ</h3>
+                        <p class="menu-item-description">フォアグラとトリュフを贅沢に使用</p>
+                    </div>
+                    <div class="menu-item-price">¥12,000</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3 class="menu-item-name">シェフのおまかせコース</h3>
+                        <p class="menu-item-description">その日最高の食材を使用した特別コース</p>
+                    </div>
+                    <div class="menu-item-price">¥20,000</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-content" id="wine">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3 class="menu-item-name">シャンパーニュ</h3>
+                        <p class="menu-item-description">Dom Pérignon / Krug / Salon</p>
+                    </div>
+                    <div class="menu-item-price">¥25,000〜</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3 class="menu-item-name">ブルゴーニュ</h3>
+                        <p class="menu-item-description">Romanée-Conti / Montrachet</p>
+                    </div>
+                    <div class="menu-item-price">¥35,000〜</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3 class="menu-item-name">ボルドー</h3>
+                        <p class="menu-item-description">Château Margaux / Pétrus</p>
+                    </div>
+                    <div class="menu-item-price">¥30,000〜</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3 class="menu-item-name">ソムリエセレクション</h3>
+                        <p class="menu-item-description">お料理に合わせたペアリングワイン</p>
+                    </div>
+                    <div class="menu-item-price">¥15,000〜</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ギャラリーセクション -->
+    <section class="gallery" id="gallery">
+        <div class="gallery-header">
+            <p class="section-subtitle">Gallery</p>
+            <h2 class="section-title">美食の記憶</h2>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=400&fit=crop" alt="Dish 1">
+                <div class="gallery-overlay">
+                    <div class="gallery-text">
+                        <h3>前菜</h3>
+                        <p>Appetizer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=400&fit=crop" alt="Dish 2">
+                <div class="gallery-overlay">
+                    <div class="gallery-text">
+                        <h3>メインディッシュ</h3>
+                        <p>Main Course</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=800&fit=crop" alt="Interior">
+                <div class="gallery-overlay">
+                    <div class="gallery-text">
+                        <h3>店内</h3>
+                        <p>Interior</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=400&fit=crop" alt="Dish 3">
+                <div class="gallery-overlay">
+                    <div class="gallery-text">
+                        <h3>シェフ特製</h3>
+                        <p>Chef's Special</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=400&fit=crop" alt="Dish 4">
+                <div class="gallery-overlay">
+                    <div class="gallery-text">
+                        <h3>デザート</h3>
+                        <p>Dessert</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800&h=800&fit=crop" alt="Bar">
+                <div class="gallery-overlay">
+                    <div class="gallery-text">
+                        <h3>バーラウンジ</h3>
+                        <p>Bar Lounge</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=400&fit=crop" alt="Dish 5">
+                <div class="gallery-overlay">
+                    <div class="gallery-text">
+                        <h3>季節の一皿</h3>
+                        <p>Seasonal Dish</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&h=400&fit=crop" alt="Wine">
+                <div class="gallery-overlay">
+                    <div class="gallery-text">
+                        <h3>ワインセラー</h3>
+                        <p>Wine Cellar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 予約セクション -->
+    <section class="reservation" id="reservation">
+        <div class="reservation-container">
+            <div class="reservation-form">
+                <h2 class="form-title">ご予約</h2>
+                <form>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">お名前</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">電話番号</label>
+                            <input type="tel" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">日付</label>
+                            <input type="date" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">時間</label>
+                            <select class="form-select" required>
+                                <option value="">選択してください</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">人数</label>
+                            <select class="form-select" required>
+                                <option value="">選択してください</option>
+                                <option value="1">1名様</option>
+                                <option value="2">2名様</option>
+                                <option value="3">3名様</option>
+                                <option value="4">4名様</option>
+                                <option value="5">5名様</option>
+                                <option value="6">6名様以上</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">コース</label>
+                            <select class="form-select" required>
+                                <option value="">選択してください</option>
+                                <option value="lunch">ランチコース</option>
+                                <option value="dinner">ディナーコース</option>
+                                <option value="special">シェフのおまかせコース</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label class="form-label">ご要望</label>
+                            <textarea class="form-textarea" placeholder="アレルギーや特別なご要望がございましたらお知らせください"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="form-submit">予約を確定する</button>
+                </form>
+            </div>
+            
+            <div class="reservation-info">
+                <h2 class="info-title">営業時間・アクセス</h2>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <div class="info-text">
+                        <h4>営業時間</h4>
+                        <p>
+                            ランチ: 11:30 - 14:30 (L.O. 13:30)<br>
+                            ディナー: 18:00 - 22:00 (L.O. 21:00)<br>
+                            定休日: 月曜日・第1火曜日
+                        </p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                            <circle cx="12" cy="9" r="2.5"/>
+                        </svg>
+                    </div>
+                    <div class="info-text">
+                        <h4>アクセス</h4>
+                        <p>
+                            〒100-0000 東京都千代田区丸の内1-1-1<br>
+                            東京駅 徒歩5分<br>
+                            駐車場完備（要予約）
+                        </p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+                            <path d="M20 8l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
+                    <div class="info-text">
+                        <h4>お問い合わせ</h4>
+                        <p>
+                            TEL: 03-0000-0000<br>
+                            EMAIL: info@cafeluxe.jp
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- フッター -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">CAFÉ LUXE</div>
+                <p class="footer-description">
+                    1985年創業。ミシュラン三つ星を5年連続獲得。
+                    極上の美食体験をお届けします。
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>MENU</h4>
+                <ul class="footer-links">
+                    <li><a href="#menu">ランチ</a></li>
+                    <li><a href="#menu">ディナー</a></li>
+                    <li><a href="#menu">ワインリスト</a></li>
+                    <li><a href="#menu">コース料理</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>SERVICE</h4>
+                <ul class="footer-links">
+                    <li><a href="#reservation">ご予約</a></li>
+                    <li><a href="#">個室のご案内</a></li>
+                    <li><a href="#">ケータリング</a></li>
+                    <li><a href="#">ギフト券</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>INFORMATION</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">私たちについて</a></li>
+                    <li><a href="#">採用情報</a></li>
+                    <li><a href="#">プレスリリース</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 CAFÉ LUXE. All rights reserved. | PRO LEVEL Template</p>
+        </div>
+    </footer>
+    
+    <script>
+        // ローディング画面
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.loader').classList.add('hidden');
+            }, 2000);
+        });
+        
+        // カスタムカーソル
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                cursorFollower.style.left = e.clientX + 'px';
+                cursorFollower.style.top = e.clientY + 'px';
+            }, 100);
+        });
+        
+        document.querySelectorAll('a, button').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            element.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+        
+        // スクロールナビゲーション
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+        
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // メニュータブ
+        const menuTabs = document.querySelectorAll('.menu-tab');
+        const menuContents = document.querySelectorAll('.menu-content');
+        
+        menuTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const menuType = tab.dataset.menu;
+                
+                menuTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                menuContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === menuType) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        // パララックスエフェクト
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImg = document.querySelector('.hero-bg img');
+            if (heroImg) {
+                heroImg.style.transform = \`translateY(\${scrolled * 0.5}px)\`;
+            }
+        });
+        
+        // フォームバリデーション
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('ご予約ありがとうございます。確認メールをお送りしました。');
+        });
+        
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.menu-item, .gallery-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'all 0.6s ease';
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>`,
+    css: '',
+    js: ''
+  }
+}
