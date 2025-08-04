@@ -25,6 +25,8 @@ export interface WebTemplate {
   }
   /** タグリスト */
   tags: string[]
+  /** プロレベルテンプレートかどうか */
+  isPro?: boolean
 }
 
 /**
