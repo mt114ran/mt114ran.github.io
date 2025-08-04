@@ -53,6 +53,7 @@ import { portfolioWriterTemplate } from './data/portfolio-writer'
 import { portfolioMusicianTemplate } from './data/portfolio-musician'
 import { portfolioAgencyTemplate } from './data/portfolio-agency'
 import { portfolioConsultantTemplate } from './data/portfolio-consultant'
+import { portfolioPhotographerInstagramTemplate } from './data/portfolio-photographer-instagram'
 // ホテル・宿泊カテゴリ
 import { hotelLuxuryTemplate } from './data/hotel-luxury'
 import { hotelBusinessTemplate } from './data/hotel-business'
@@ -121,7 +122,7 @@ export const templates: WebTemplate[] = [
   serviceAccountingTemplate,
   serviceInsuranceTemplate,
   serviceCleaningTemplate,
-  // ポートフォリオカテゴリ（10個）
+  // ポートフォリオカテゴリ（11個）
   portfolioFreelanceTemplate,
   portfolioDesignerTemplate,
   portfolioPhotographerTemplate,
@@ -132,6 +133,7 @@ export const templates: WebTemplate[] = [
   portfolioMusicianTemplate,
   portfolioAgencyTemplate,
   portfolioConsultantTemplate,
+  portfolioPhotographerInstagramTemplate,
   // ホテル・宿泊カテゴリ（3個）
   hotelLuxuryTemplate,
   hotelBusinessTemplate,
