@@ -1,11 +1,8 @@
 ---
-layout: post
+id: 14
 title: "ブラウザで遊べるミニゲーム集を作ってみた"
-date: 2025-01-05
-categories: [Web開発, JavaScript, ゲーム開発]
-tags: [HTML5, Canvas, ゲーム, JavaScript]
-description: "JavaScriptとHTML5 Canvasを使って、ブラウザで動作するミニゲームコレクションを作成しました。テトリス、スネーク、2048などのクラシックゲームを実装。"
-author: MT
+create: "2025-01-05"
+tags: ["Web開発", "JavaScript", "ゲーム開発", "HTML5", "Canvas"]
 ---
 
 ## はじめに
