@@ -6,6 +6,14 @@ const BOARD_WIDTH = 10
 const BOARD_HEIGHT = 20
 const BLOCK_SIZE = 30
 
+// ピースの型定義
+interface TetrisPiece {
+  shape: number[][]
+  color: string
+  x: number
+  y: number
+}
+
 const TETROMINOS = {
   I: { shape: [[1,1,1,1]], color: '#00f0f0' },
   O: { shape: [[1,1],[1,1]], color: '#f0f000' },
@@ -24,8 +32,8 @@ export default function TetrisGame() {
   const [gameOver, setGameOver] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
   
-  const boardRef = useRef<number[][]>([])
-  const currentPieceRef = useRef<any>(null)
+  const boardRef = useRef<(number | string)[][]>([])
+  const currentPieceRef = useRef<TetrisPiece | null>(null)
   const animationIdRef = useRef<number>(0)
   const dropCounterRef = useRef(0)
   const lastTimeRef = useRef(0)
@@ -49,7 +57,7 @@ export default function TetrisGame() {
   }
 
   // 衝突判定
-  const collision = (piece: any, board: number[][], offsetX = 0, offsetY = 0) => {
+  const collision = (piece: TetrisPiece, board: (number | string)[][], offsetX = 0, offsetY = 0) => {
     for (let y = 0; y < piece.shape.length; y++) {
       for (let x = 0; x < piece.shape[y].length; x++) {
         if (piece.shape[y][x]) {
@@ -70,7 +78,7 @@ export default function TetrisGame() {
   }
 
   // ピースを固定
-  const merge = (piece: any, board: number[][]) => {
+  const merge = (piece: TetrisPiece, board: (number | string)[][]) => {
     piece.shape.forEach((row: number[], y: number) => {
       row.forEach((value: number, x: number) => {
         if (value) {
@@ -100,13 +108,13 @@ export default function TetrisGame() {
     if (linesCleared > 0) {
       setLines(prev => prev + linesCleared)
       setScore(prev => prev + linesCleared * 100 * level)
-      setLevel(prev => Math.floor((lines + linesCleared) / 10) + 1)
+      setLevel(() => Math.floor((lines + linesCleared) / 10) + 1)
     }
   }
 
   // ピースを回転
-  const rotate = (piece: any) => {
-    const rotated = piece.shape[0].map((_: any, i: number) =>
+  const rotate = (piece: TetrisPiece) => {
+    const rotated = piece.shape[0].map((_, i) =>
       piece.shape.map((row: number[]) => row[i]).reverse()
     )
     
@@ -156,13 +164,14 @@ export default function TetrisGame() {
     
     // 現在のピース
     if (currentPieceRef.current && !gameOver) {
-      currentPieceRef.current.shape.forEach((row: number[], y: number) => {
+      const piece = currentPieceRef.current
+      piece.shape.forEach((row: number[], y: number) => {
         row.forEach((value: number, x: number) => {
           if (value) {
-            ctx.fillStyle = currentPieceRef.current.color
+            ctx.fillStyle = piece.color
             ctx.fillRect(
-              (currentPieceRef.current.x + x) * BLOCK_SIZE,
-              (currentPieceRef.current.y + y) * BLOCK_SIZE,
+              (piece.x + x) * BLOCK_SIZE,
+              (piece.y + y) * BLOCK_SIZE,
               BLOCK_SIZE - 1,
               BLOCK_SIZE - 1
             )
@@ -252,6 +261,7 @@ export default function TetrisGame() {
     
     window.addEventListener('keydown', handleKeyPress)
     return () => window.removeEventListener('keydown', handleKeyPress)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameOver, isPaused, level])
 
   // 初期化
@@ -265,6 +275,7 @@ export default function TetrisGame() {
         cancelAnimationFrame(animationIdRef.current)
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // リスタート
