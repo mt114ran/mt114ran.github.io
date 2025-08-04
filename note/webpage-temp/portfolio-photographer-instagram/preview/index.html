@@ -1,0 +1,1251 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/42959d850b9ab63d.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-bb7985c3f697f36d.js" async=""></script><script src="/_next/static/chunks/684-dfeb58e0de1c8546.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-ad0caa8eece80f8d.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ポートフォリオ - インスタグラムカメラマン&lt;/title&gt;
+    
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Helvetica Neue&#x27;, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.tagline {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #e1306c;
+}
+
+.social-links a {
+    color: #333;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #e1306c;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.hero-content {
+    flex: 1;
+    color: white;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background: #e1306c;
+    color: white;
+}
+
+.btn-secondary {
+    background: white;
+    color: #764ba2;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #333;
+    border: 2px solid #333;
+}
+
+.btn-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-instagram-large {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.instagram-follow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.instagram-follow:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Styles */
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+/* Gallery */
+.gallery {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid #e1306c;
+    background: white;
+    color: #e1306c;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #e1306c;
+    color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Services */
+.services {
+    padding: 4rem 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.service-card ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.service-card li {
+    padding: 0.5rem 0;
+    color: #666;
+}
+
+/* Pricing */
+.pricing {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card.featured {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: #e1306c;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.pricing-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.pricing-price {
+    margin: 1rem 0;
+}
+
+.currency {
+    font-size: 1.5rem;
+}
+
+.amount {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #e1306c;
+}
+
+.period {
+    color: #666;
+}
+
+.pricing-features {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.pricing-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.pricing-note {
+    text-align: center;
+    margin-top: 2rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* About */
+.about {
+    padding: 4rem 0;
+}
+
+.about-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-image img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-role {
+    color: #e1306c;
+    margin-bottom: 1rem;
+}
+
+.about-description {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.about-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e1306c;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    background: #f0f0f0;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Instagram Feed */
+.instagram-feed {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.instagram-post {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.instagram-post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.instagram-post:hover img {
+    transform: scale(1.1);
+}
+
+.instagram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.instagram-post:hover .instagram-overlay {
+    opacity: 1;
+}
+
+.instagram-cta {
+    text-align: center;
+}
+
+/* Contact */
+.contact {
+    padding: 4rem 0;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-info h3 {
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    font-size: 2rem;
+}
+
+.contact-item h4 {
+    margin-bottom: 0.3rem;
+}
+
+.contact-item p {
+    color: #666;
+}
+
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e1306c;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer h3,
+.footer h4 {
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #e1306c;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #e1306c;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #555;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!DOCTYPE html&gt;
+
+
+
+    &lt;!-- Header --&gt;
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;nav class=&quot;nav-container&quot;&gt;
+            &lt;div class=&quot;logo&quot;&gt;
+                &lt;h1&gt;Tomoya Photography&lt;/h1&gt;
+                &lt;span class=&quot;tagline&quot;&gt;あなたの特別な瞬間を永遠に&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;ul class=&quot;nav-menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#gallery&quot;&gt;ギャラリー&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;サービス&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#pricing&quot;&gt;料金&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;プロフィール&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class=&quot;social-links&quot;&gt;
+                &lt;a href=&quot;https://www.instagram.com/m_tomoya831?igsh=dzFpb2JnNGUwNjFm&amp;utm_source=qr&quot; target=&quot;_blank&quot; class=&quot;instagram-link&quot;&gt;
+                    &lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;&gt;
+                        &lt;path d=&quot;M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z&quot;/&gt;
+                    &lt;/svg&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;button class=&quot;mobile-menu-toggle&quot;&gt;☰&lt;/button&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;!-- Hero Section --&gt;
+    &lt;section id=&quot;home&quot; class=&quot;hero&quot;&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h2 class=&quot;hero-title&quot;&gt;プロフェッショナル撮影サービス&lt;/h2&gt;
+            &lt;p class=&quot;hero-subtitle&quot;&gt;ポートレート、ウェディング、イベント撮影まで&lt;br&gt;あなたの大切な瞬間を美しく切り取ります&lt;/p&gt;
+            &lt;div class=&quot;hero-buttons&quot;&gt;
+                &lt;a href=&quot;#gallery&quot; class=&quot;btn btn-primary&quot;&gt;作品を見る&lt;/a&gt;
+                &lt;a href=&quot;#contact&quot; class=&quot;btn btn-secondary&quot;&gt;お問い合わせ&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;instagram-embed&quot;&gt;
+                &lt;a href=&quot;https://www.instagram.com/m_tomoya831&quot; target=&quot;_blank&quot; class=&quot;instagram-follow&quot;&gt;
+                    &lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;&gt;
+                        &lt;path d=&quot;M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z&quot;/&gt;
+                    &lt;/svg&gt;
+                    @m_tomoya831をフォロー
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hero-image&quot;&gt;
+            &lt;img src=&quot;https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&amp;h=600&amp;fit=crop&quot; alt=&quot;カメラマン&quot;&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Gallery Section --&gt;
+    &lt;section id=&quot;gallery&quot; class=&quot;gallery&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;フォトギャラリー&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;最新の作品をご覧ください&lt;/p&gt;
+            &lt;div class=&quot;filter-buttons&quot;&gt;
+                &lt;button class=&quot;filter-btn active&quot; data-filter=&quot;all&quot;&gt;すべて&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-filter=&quot;portrait&quot;&gt;ポートレート&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-filter=&quot;wedding&quot;&gt;ウェディング&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-filter=&quot;event&quot;&gt;イベント&lt;/button&gt;
+                &lt;button class=&quot;filter-btn&quot; data-filter=&quot;landscape&quot;&gt;風景&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;gallery-grid&quot;&gt;
+                &lt;div class=&quot;gallery-item&quot; data-category=&quot;portrait&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;ポートレート作品1&quot;&gt;
+                    &lt;div class=&quot;gallery-overlay&quot;&gt;
+                        &lt;h3&gt;ポートレート撮影&lt;/h3&gt;
+                        &lt;p&gt;自然光での撮影&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot; data-category=&quot;wedding&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1519741497674-611481863552?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;ウェディング作品1&quot;&gt;
+                    &lt;div class=&quot;gallery-overlay&quot;&gt;
+                        &lt;h3&gt;ウェディング撮影&lt;/h3&gt;
+                        &lt;p&gt;特別な一日を記録&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot; data-category=&quot;event&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;イベント作品1&quot;&gt;
+                    &lt;div class=&quot;gallery-overlay&quot;&gt;
+                        &lt;h3&gt;イベント撮影&lt;/h3&gt;
+                        &lt;p&gt;企業イベント&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot; data-category=&quot;landscape&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;風景作品1&quot;&gt;
+                    &lt;div class=&quot;gallery-overlay&quot;&gt;
+                        &lt;h3&gt;風景撮影&lt;/h3&gt;
+                        &lt;p&gt;日本の美しい風景&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot; data-category=&quot;portrait&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;ポートレート作品2&quot;&gt;
+                    &lt;div class=&quot;gallery-overlay&quot;&gt;
+                        &lt;h3&gt;ポートレート撮影&lt;/h3&gt;
+                        &lt;p&gt;スタジオ撮影&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;gallery-item&quot; data-category=&quot;wedding&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;ウェディング作品2&quot;&gt;
+                    &lt;div class=&quot;gallery-overlay&quot;&gt;
+                        &lt;h3&gt;ウェディング撮影&lt;/h3&gt;
+                        &lt;p&gt;前撮り撮影&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;gallery-cta&quot;&gt;
+                &lt;p&gt;もっと多くの作品はInstagramでご覧いただけます&lt;/p&gt;
+                &lt;a href=&quot;https://www.instagram.com/m_tomoya831&quot; target=&quot;_blank&quot; class=&quot;btn btn-instagram&quot;&gt;
+                    Instagramで見る
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Services Section --&gt;
+    &lt;section id=&quot;services&quot; class=&quot;services&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;サービス内容&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;お客様のニーズに合わせた撮影プランをご用意&lt;/p&gt;
+            &lt;div class=&quot;services-grid&quot;&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;📸&lt;/div&gt;
+                    &lt;h3&gt;ポートレート撮影&lt;/h3&gt;
+                    &lt;p&gt;プロフィール写真、宣材写真、記念写真など、あなたの魅力を最大限に引き出します。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;スタジオ撮影&lt;/li&gt;
+                        &lt;li&gt;ロケーション撮影&lt;/li&gt;
+                        &lt;li&gt;ヘアメイク手配可能&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;💒&lt;/div&gt;
+                    &lt;h3&gt;ウェディング撮影&lt;/h3&gt;
+                    &lt;p&gt;人生で最も特別な日を、美しく感動的に記録します。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;挙式・披露宴撮影&lt;/li&gt;
+                        &lt;li&gt;前撮り・後撮り&lt;/li&gt;
+                        &lt;li&gt;フォトアルバム制作&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🎉&lt;/div&gt;
+                    &lt;h3&gt;イベント撮影&lt;/h3&gt;
+                    &lt;p&gt;企業イベント、パーティー、セミナーなど、大切なイベントを記録します。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;企業イベント&lt;/li&gt;
+                        &lt;li&gt;セミナー・講演会&lt;/li&gt;
+                        &lt;li&gt;パーティー撮影&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;service-card&quot;&gt;
+                    &lt;div class=&quot;service-icon&quot;&gt;🏢&lt;/div&gt;
+                    &lt;h3&gt;商業撮影&lt;/h3&gt;
+                    &lt;p&gt;商品撮影、店舗撮影、料理撮影など、ビジネス用途の撮影に対応。&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;商品撮影&lt;/li&gt;
+                        &lt;li&gt;店舗・施設撮影&lt;/li&gt;
+                        &lt;li&gt;料理・メニュー撮影&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Pricing Section --&gt;
+    &lt;section id=&quot;pricing&quot; class=&quot;pricing&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;料金プラン&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;明確でわかりやすい料金体系&lt;/p&gt;
+            &lt;div class=&quot;pricing-grid&quot;&gt;
+                &lt;div class=&quot;pricing-card&quot;&gt;
+                    &lt;h3 class=&quot;pricing-title&quot;&gt;ベーシック&lt;/h3&gt;
+                    &lt;div class=&quot;pricing-price&quot;&gt;
+                        &lt;span class=&quot;currency&quot;&gt;¥&lt;/span&gt;
+                        &lt;span class=&quot;amount&quot;&gt;30,000&lt;/span&gt;
+                        &lt;span class=&quot;period&quot;&gt;〜&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;ul class=&quot;pricing-features&quot;&gt;
+                        &lt;li&gt;撮影時間：1時間&lt;/li&gt;
+                        &lt;li&gt;納品枚数：20枚&lt;/li&gt;
+                        &lt;li&gt;基本レタッチ込み&lt;/li&gt;
+                        &lt;li&gt;データ納品&lt;/li&gt;
+                        &lt;li&gt;1ロケーション&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;button class=&quot;btn btn-outline&quot;&gt;お問い合わせ&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;pricing-card featured&quot;&gt;
+                    &lt;div class=&quot;pricing-badge&quot;&gt;おすすめ&lt;/div&gt;
+                    &lt;h3 class=&quot;pricing-title&quot;&gt;スタンダード&lt;/h3&gt;
+                    &lt;div class=&quot;pricing-price&quot;&gt;
+                        &lt;span class=&quot;currency&quot;&gt;¥&lt;/span&gt;
+                        &lt;span class=&quot;amount&quot;&gt;50,000&lt;/span&gt;
+                        &lt;span class=&quot;period&quot;&gt;〜&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;ul class=&quot;pricing-features&quot;&gt;
+                        &lt;li&gt;撮影時間：2時間&lt;/li&gt;
+                        &lt;li&gt;納品枚数：50枚&lt;/li&gt;
+                        &lt;li&gt;詳細レタッチ込み&lt;/li&gt;
+                        &lt;li&gt;データ納品&lt;/li&gt;
+                        &lt;li&gt;2ロケーション対応&lt;/li&gt;
+                        &lt;li&gt;衣装チェンジ可能&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;button class=&quot;btn btn-primary&quot;&gt;お問い合わせ&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;pricing-card&quot;&gt;
+                    &lt;h3 class=&quot;pricing-title&quot;&gt;プレミアム&lt;/h3&gt;
+                    &lt;div class=&quot;pricing-price&quot;&gt;
+                        &lt;span class=&quot;currency&quot;&gt;¥&lt;/span&gt;
+                        &lt;span class=&quot;amount&quot;&gt;80,000&lt;/span&gt;
+                        &lt;span class=&quot;period&quot;&gt;〜&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;ul class=&quot;pricing-features&quot;&gt;
+                        &lt;li&gt;撮影時間：4時間&lt;/li&gt;
+                        &lt;li&gt;納品枚数：100枚&lt;/li&gt;
+                        &lt;li&gt;詳細レタッチ込み&lt;/li&gt;
+                        &lt;li&gt;データ納品＋プリント&lt;/li&gt;
+                        &lt;li&gt;複数ロケーション&lt;/li&gt;
+                        &lt;li&gt;ヘアメイク込み&lt;/li&gt;
+                        &lt;li&gt;アルバム制作&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;button class=&quot;btn btn-outline&quot;&gt;お問い合わせ&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;pricing-note&quot;&gt;※料金は撮影内容により変動する場合があります。詳細はお問い合わせください。&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- About Section --&gt;
+    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;プロフィール&lt;/h2&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-image&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&amp;h=400&amp;fit=crop&quot; alt=&quot;カメラマン Tomoya&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;h3&gt;Tomoya&lt;/h3&gt;
+                    &lt;p class=&quot;about-role&quot;&gt;フリーランスフォトグラファー&lt;/p&gt;
+                    &lt;p class=&quot;about-description&quot;&gt;
+                        写真を通じて、人々の大切な瞬間や感情を永遠に残すことを使命としています。
+                        10年以上の撮影経験を活かし、お客様一人ひとりのストーリーを大切にした撮影を心がけています。
+                    &lt;/p&gt;
+                    &lt;div class=&quot;about-stats&quot;&gt;
+                        &lt;div class=&quot;stat&quot;&gt;
+                            &lt;span class=&quot;stat-number&quot;&gt;10+&lt;/span&gt;
+                            &lt;span class=&quot;stat-label&quot;&gt;年の経験&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;stat&quot;&gt;
+                            &lt;span class=&quot;stat-number&quot;&gt;500+&lt;/span&gt;
+                            &lt;span class=&quot;stat-label&quot;&gt;撮影実績&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;stat&quot;&gt;
+                            &lt;span class=&quot;stat-number&quot;&gt;100%&lt;/span&gt;
+                            &lt;span class=&quot;stat-label&quot;&gt;満足度&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;about-skills&quot;&gt;
+                        &lt;h4&gt;得意分野&lt;/h4&gt;
+                        &lt;div class=&quot;skill-tags&quot;&gt;
+                            &lt;span class=&quot;skill-tag&quot;&gt;ポートレート&lt;/span&gt;
+                            &lt;span class=&quot;skill-tag&quot;&gt;ウェディング&lt;/span&gt;
+                            &lt;span class=&quot;skill-tag&quot;&gt;イベント&lt;/span&gt;
+                            &lt;span class=&quot;skill-tag&quot;&gt;商品撮影&lt;/span&gt;
+                            &lt;span class=&quot;skill-tag&quot;&gt;風景写真&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Instagram Feed Section --&gt;
+    &lt;section class=&quot;instagram-feed&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;Instagram&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;最新の作品をチェック&lt;/p&gt;
+            &lt;div class=&quot;instagram-grid&quot;&gt;
+                &lt;div class=&quot;instagram-post&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram post 1&quot;&gt;
+                    &lt;div class=&quot;instagram-overlay&quot;&gt;
+                        &lt;span&gt;❤️ 234&lt;/span&gt;
+                        &lt;span&gt;💬 12&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;instagram-post&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram post 2&quot;&gt;
+                    &lt;div class=&quot;instagram-overlay&quot;&gt;
+                        &lt;span&gt;❤️ 189&lt;/span&gt;
+                        &lt;span&gt;💬 8&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;instagram-post&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram post 3&quot;&gt;
+                    &lt;div class=&quot;instagram-overlay&quot;&gt;
+                        &lt;span&gt;❤️ 456&lt;/span&gt;
+                        &lt;span&gt;💬 23&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;instagram-post&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram post 4&quot;&gt;
+                    &lt;div class=&quot;instagram-overlay&quot;&gt;
+                        &lt;span&gt;❤️ 321&lt;/span&gt;
+                        &lt;span&gt;💬 15&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;instagram-post&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram post 5&quot;&gt;
+                    &lt;div class=&quot;instagram-overlay&quot;&gt;
+                        &lt;span&gt;❤️ 567&lt;/span&gt;
+                        &lt;span&gt;💬 34&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;instagram-post&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=300&amp;h=300&amp;fit=crop&quot; alt=&quot;Instagram post 6&quot;&gt;
+                    &lt;div class=&quot;instagram-overlay&quot;&gt;
+                        &lt;span&gt;❤️ 412&lt;/span&gt;
+                        &lt;span&gt;💬 19&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;instagram-cta&quot;&gt;
+                &lt;a href=&quot;https://www.instagram.com/m_tomoya831&quot; target=&quot;_blank&quot; class=&quot;btn btn-instagram-large&quot;&gt;
+                    &lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;&gt;
+                        &lt;path d=&quot;M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z&quot;/&gt;
+                    &lt;/svg&gt;
+                    Instagramをフォロー
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Contact Section --&gt;
+    &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2 class=&quot;section-title&quot;&gt;お問い合わせ&lt;/h2&gt;
+            &lt;p class=&quot;section-subtitle&quot;&gt;撮影のご依頼・ご相談はお気軽にどうぞ&lt;/p&gt;
+            &lt;div class=&quot;contact-content&quot;&gt;
+                &lt;div class=&quot;contact-info&quot;&gt;
+                    &lt;h3&gt;連絡先情報&lt;/h3&gt;
+                    &lt;div class=&quot;contact-item&quot;&gt;
+                        &lt;span class=&quot;contact-icon&quot;&gt;📧&lt;/span&gt;
+                        &lt;div&gt;
+                            &lt;h4&gt;メール&lt;/h4&gt;
+                            &lt;p&gt;info@tomoya-photography.com&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;contact-item&quot;&gt;
+                        &lt;span class=&quot;contact-icon&quot;&gt;📱&lt;/span&gt;
+                        &lt;div&gt;
+                            &lt;h4&gt;電話&lt;/h4&gt;
+                            &lt;p&gt;090-1234-5678&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;contact-item&quot;&gt;
+                        &lt;span class=&quot;contact-icon&quot;&gt;📍&lt;/span&gt;
+                        &lt;div&gt;
+                            &lt;h4&gt;拠点&lt;/h4&gt;
+                            &lt;p&gt;東京都内（全国出張可能）&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;contact-item&quot;&gt;
+                        &lt;span class=&quot;contact-icon&quot;&gt;⏰&lt;/span&gt;
+                        &lt;div&gt;
+                            &lt;h4&gt;営業時間&lt;/h4&gt;
+                            &lt;p&gt;10:00 - 19:00（不定休）&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;form class=&quot;contact-form&quot;&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;input type=&quot;text&quot; placeholder=&quot;お名前 *&quot; required&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;input type=&quot;email&quot; placeholder=&quot;メールアドレス *&quot; required&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;input type=&quot;tel&quot; placeholder=&quot;電話番号&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;select&gt;
+                            &lt;option value=&quot;&quot;&gt;撮影の種類を選択&lt;/option&gt;
+                            &lt;option value=&quot;portrait&quot;&gt;ポートレート撮影&lt;/option&gt;
+                            &lt;option value=&quot;wedding&quot;&gt;ウェディング撮影&lt;/option&gt;
+                            &lt;option value=&quot;event&quot;&gt;イベント撮影&lt;/option&gt;
+                            &lt;option value=&quot;commercial&quot;&gt;商業撮影&lt;/option&gt;
+                            &lt;option value=&quot;other&quot;&gt;その他&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;textarea placeholder=&quot;メッセージ *&quot; rows=&quot;5&quot; required&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary btn-block&quot;&gt;送信する&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Footer --&gt;
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;footer-content&quot;&gt;
+                &lt;div class=&quot;footer-brand&quot;&gt;
+                    &lt;h3&gt;Tomoya Photography&lt;/h3&gt;
+                    &lt;p&gt;あなたの特別な瞬間を永遠に&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-links&quot;&gt;
+                    &lt;h4&gt;リンク&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#gallery&quot;&gt;ギャラリー&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;サービス&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#pricing&quot;&gt;料金&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;footer-social&quot;&gt;
+                    &lt;h4&gt;フォローする&lt;/h4&gt;
+                    &lt;div class=&quot;social-icons&quot;&gt;
+                        &lt;a href=&quot;https://www.instagram.com/m_tomoya831&quot; target=&quot;_blank&quot;&gt;
+                            &lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;&gt;
+                                &lt;path d=&quot;M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z&quot;/&gt;
+                            &lt;/svg&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer-bottom&quot;&gt;
+                &lt;p&gt;&amp;copy; 2024 Tomoya Photography. All rights reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;script&gt;
+    // スムーススクロール
+document.querySelectorAll(&#x27;a[href^=&quot;#&quot;]&#x27;).forEach(anchor =&gt; {
+    anchor.addEventListener(&#x27;click&#x27;, function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(&#x27;href&#x27;));
+        if (target) {
+            target.scrollIntoView({
+                behavior: &#x27;smooth&#x27;,
+                block: &#x27;start&#x27;
+            });
+        }
+    });
+});
+
+// モバイルメニュー
+const mobileMenuToggle = document.querySelector(&#x27;.mobile-menu-toggle&#x27;);
+const navMenu = document.querySelector(&#x27;.nav-menu&#x27;);
+
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener(&#x27;click&#x27;, () =&gt; {
+        navMenu.style.display = navMenu.style.display === &#x27;flex&#x27; ? &#x27;none&#x27; : &#x27;flex&#x27;;
+        navMenu.style.flexDirection = &#x27;column&#x27;;
+        navMenu.style.position = &#x27;absolute&#x27;;
+        navMenu.style.top = &#x27;60px&#x27;;
+        navMenu.style.left = &#x27;0&#x27;;
+        navMenu.style.right = &#x27;0&#x27;;
+        navMenu.style.background = &#x27;white&#x27;;
+        navMenu.style.padding = &#x27;1rem&#x27;;
+        navMenu.style.boxShadow = &#x27;0 2px 10px rgba(0,0,0,0.1)&#x27;;
+    });
+}
+
+// ギャラリーフィルター
+const filterButtons = document.querySelectorAll(&#x27;.filter-btn&#x27;);
+const galleryItems = document.querySelectorAll(&#x27;.gallery-item&#x27;);
+
+filterButtons.forEach(button =&gt; {
+    button.addEventListener(&#x27;click&#x27;, () =&gt; {
+        // アクティブクラスの切り替え
+        filterButtons.forEach(btn =&gt; btn.classList.remove(&#x27;active&#x27;));
+        button.classList.add(&#x27;active&#x27;);
+        
+        const filter = button.getAttribute(&#x27;data-filter&#x27;);
+        
+        galleryItems.forEach(item =&gt; {
+            if (filter === &#x27;all&#x27; || item.getAttribute(&#x27;data-category&#x27;) === filter) {
+                item.style.display = &#x27;block&#x27;;
+            } else {
+                item.style.display = &#x27;none&#x27;;
+            }
+        });
+    });
+});
+
+// フォーム送信
+const contactForm = document.querySelector(&#x27;.contact-form&#x27;);
+if (contactForm) {
+    contactForm.addEventListener(&#x27;submit&#x27;, (e) =&gt; {
+        e.preventDefault();
+        alert(&#x27;お問い合わせありがとうございます。後日ご連絡させていただきます。&#x27;);
+        contactForm.reset();
+    });
+}
+
+// Instagram投稿のクリックイベント
+document.querySelectorAll(&#x27;.instagram-post&#x27;).forEach(post =&gt; {
+    post.addEventListener(&#x27;click&#x27;, () =&gt; {
+        window.open(&#x27;https://www.instagram.com/m_tomoya831&#x27;, &#x27;_blank&#x27;);
+    });
+});
+
+// 料金カードのアニメーション
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: &#x27;0px 0px -100px 0px&#x27;
+};
+
+const observer = new IntersectionObserver((entries) =&gt; {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = &#x27;fadeInUp 0.6s ease forwards&#x27;;
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll(&#x27;.pricing-card, .service-card, .gallery-item&#x27;).forEach(el =&gt; {
+    observer.observe(el);
+});
+
+// アニメーションの定義
+const style = document.createElement(&#x27;style&#x27;);
+style.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// ヘッダーのスクロールエフェクト
+let lastScroll = 0;
+const header = document.querySelector(&#x27;.header&#x27;);
+
+window.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll &gt; 100) {
+        header.style.boxShadow = &#x27;0 2px 20px rgba(0,0,0,0.1)&#x27;;
+    } else {
+        header.style.boxShadow = &#x27;0 2px 10px rgba(0,0,0,0.1)&#x27;;
+    }
+    
+    lastScroll = currentScroll;
+});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;" class="w-full h-screen" title="ポートフォリオ - インスタグラムカメラマン" sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[6450,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-ad0caa8eece80f8d.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/42959d850b9ab63d.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"f_mwhLENF0MEKK8_NyHGo\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"portfolio-photographer-instagram\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"portfolio-photographer-instagram\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/42959d850b9ab63d.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"portfolio-photographer-instagram\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"portfolio-photographer-instagram\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"XEWs7TxQsOQyNYV84z0AE\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"portfolio-photographer-instagram\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>
