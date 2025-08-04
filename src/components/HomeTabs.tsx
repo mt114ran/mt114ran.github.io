@@ -30,7 +30,7 @@ export default function HomeTabs({ posts }: HomeTabsProps) {
         )
       case 'private':
         return posts.filter(post => 
-          post.tags?.some(tag => tag.toLowerCase() === 'プライベート')
+          post.tags?.some(tag => tag.toLowerCase() === 'private' || tag.toLowerCase() === 'プライベート')
         )
       case 'latest':
       default:
@@ -41,7 +41,7 @@ export default function HomeTabs({ posts }: HomeTabsProps) {
   const tabConfig = [
     { id: 'latest' as TabType, label: '最新記事', count: posts.length },
     { id: 'personal' as TabType, label: '個人作業用', count: posts.filter(p => p.tags?.some(t => t.toLowerCase() === '個人作業用')).length },
-    { id: 'private' as TabType, label: 'プライベート', count: posts.filter(p => p.tags?.some(t => t.toLowerCase() === 'プライベート')).length },
+    { id: 'private' as TabType, label: 'プライベート', count: posts.filter(p => p.tags?.some(t => t.toLowerCase() === 'private' || t.toLowerCase() === 'プライベート')).length },
   ]
 
   return (
@@ -104,7 +104,7 @@ export default function HomeTabs({ posts }: HomeTabsProps) {
                         key={index} 
                         className={`px-2 py-1 rounded text-xs ${
                           (tag === '個人作業用' && activeTab === 'personal') ||
-                          (tag === 'プライベート' && activeTab === 'private')
+                          ((tag.toLowerCase() === 'private' || tag === 'プライベート') && activeTab === 'private')
                             ? 'bg-blue-900 text-blue-300'
                             : 'bg-gray-800 text-gray-300'
                         }`}
