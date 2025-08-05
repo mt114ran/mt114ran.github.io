@@ -1,7 +1,7 @@
 ---
-id: 18
+id: 19
 title: "フロントエンド・バックエンド分離からモノレポへ：AI駆動開発時代の最適解"
-create: "2025-01-09 00:15"
+create: "2025-08-05 00:15"
 tags: ["モノレポ", "マルチレポ", "pnpm", "AI駆動開発", "セキュリティ", "TypeScript", "プロジェクト構成"]
 ---
 
@@ -114,7 +114,7 @@ describe('教材アップロード', () => {
     // AIは全体の流れを理解してテストを生成
     const response = await uploadMaterial(testData);
     expect(response.status).toBe(200);
-    
+
     const materials = await getMaterials();
     expect(materials).toContainEqual(testData);
   });
