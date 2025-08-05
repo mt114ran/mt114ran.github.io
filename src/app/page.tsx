@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="max-w-2xl mx-auto py-10 px-4">
       <div className="flex justify-between items-start mb-4">
-        <h1 className="text-4xl font-bold">maita tomoya dev io</h1>
+        <h1 className="text-3xl md:text-4xl font-bold">maita tomoya dev io</h1>
         <Image 
           src="/favicon.png" 
           alt="ブログアイコン" 
