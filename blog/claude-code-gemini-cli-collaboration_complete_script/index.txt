@@ -1,0 +1,260 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/61c3d0bf027d0c8d.css","style"]
+0:{"P":null,"b":"EHTYA-tiVpLeGMiIzKClR","p":"","c":["","blog","claude-code-gemini-cli-collaboration_complete_script",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","claude-code-gemini-cli-collaboration_complete_script","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/61c3d0bf027d0c8d.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","claude-code-gemini-cli-collaboration_complete_script","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","2tnlW1mHB8Iao58qOgTAD",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
+13:T21a1,<h2>完全版：consult-gemini.shスクリプト</h2>
+<p>記事内で紹介した連携スクリプトの完全版を以下に示します。このスクリプトをコピーして使用できます。</p>
+<pre><code class="language-bash">#!/bin/bash
+
+# consult-gemini.sh - Claude CodeからGemini CLIに相談するためのヘルパースクリプト
+# 
+# 使用方法:
+#   ./consult-gemini.sh -t "トピック" -q "質問内容" [-f "ファイルパス"]
+#
+# オプション:
+#   -t  トピック（必須）
+#   -q  質問内容（必須）
+#   -f  参照ファイル（オプション、複数指定可能）
+#   -h  ヘルプを表示
+
+set -e  # エラーが発生したら即座に終了
+
+# カラー定義
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# ディレクトリ設定
+CONSULT_DIR="$HOME/.claude/gemini-consultations"
+RESPONSE_DIR="$HOME/.claude/gemini-responses"
+
+# ヘルプ表示関数
+show_help() {
+    echo "使用方法: $0 -t \"トピック\" -q \"質問内容\" [-f \"ファイルパス\"]"
+    echo ""
+    echo "オプション:"
+    echo "  -t  トピック（必須）"
+    echo "  -q  質問内容（必須）"
+    echo "  -f  参照ファイル（オプション、複数指定可能）"
+    echo "  -h  このヘルプを表示"
+    echo ""
+    echo "例:"
+    echo "  $0 -t \"API設計\" -q \"RESTfulなエンドポイント設計について相談したい\""
+    echo "  $0 -t \"パフォーマンス\" -q \"DBクエリの最適化\" -f \"src/db/queries.js\""
+    exit 0
+}
+
+# 引数解析
+TOPIC=""
+QUESTION=""
+FILES=()
+
+while getopts "t:q:f:h" opt; do
+    case $opt in
+        t) TOPIC="$OPTARG";;
+        q) QUESTION="$OPTARG";;
+        f) FILES+=("$OPTARG");;
+        h) show_help;;
+        \?) echo "無効なオプション: -$OPTARG" >&#x26;2; exit 1;;
+    esac
+done
+
+# 必須引数チェック
+if [ -z "$TOPIC" ] || [ -z "$QUESTION" ]; then
+    echo -e "${RED}エラー: トピック(-t)と質問(-q)は必須です${NC}"
+    show_help
+fi
+
+# ディレクトリ作成
+mkdir -p "$CONSULT_DIR" "$RESPONSE_DIR"
+
+# タイムスタンプ生成
+TIMESTAMP=$(date +"%Y-%m-%d-%H-%M-%S")
+FILENAME_BASE="${TIMESTAMP}-$(echo "$TOPIC" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')"
+
+# 相談内容ファイルの作成
+CONSULT_FILE="$CONSULT_DIR/${FILENAME_BASE}.md"
+RESPONSE_FILE="$RESPONSE_DIR/${FILENAME_BASE}.md"
+
+echo "# Claude CodeからGeminiへの相談" > "$CONSULT_FILE"
+echo "" >> "$CONSULT_FILE"
+echo "## トピック: $TOPIC" >> "$CONSULT_FILE"
+echo "" >> "$CONSULT_FILE"
+echo "## 質問内容" >> "$CONSULT_FILE"
+echo "$QUESTION" >> "$CONSULT_FILE"
+echo "" >> "$CONSULT_FILE"
+
+# ファイルが指定されている場合は内容を追加
+if [ ${#FILES[@]} -gt 0 ]; then
+    echo "## 参照ファイル" >> "$CONSULT_FILE"
+    echo "" >> "$CONSULT_FILE"
+    
+    for file in "${FILES[@]}"; do
+        if [ -f "$file" ]; then
+            echo "### $file" >> "$CONSULT_FILE"
+            echo '```' >> "$CONSULT_FILE"
+            cat "$file" >> "$CONSULT_FILE"
+            echo '```' >> "$CONSULT_FILE"
+            echo "" >> "$CONSULT_FILE"
+        else
+            echo -e "${YELLOW}警告: ファイルが見つかりません: $file${NC}"
+        fi
+    done
+fi
+
+# プロンプト追加
+echo "" >> "$CONSULT_FILE"
+echo "---" >> "$CONSULT_FILE"
+echo "" >> "$CONSULT_FILE"
+echo "上記の内容について、技術的なアドバイスを日本語でお願いします。" >> "$CONSULT_FILE"
+echo "特に以下の観点から検討してください：" >> "$CONSULT_FILE"
+echo "1. 実装の妥当性" >> "$CONSULT_FILE"
+echo "2. パフォーマンスへの影響" >> "$CONSULT_FILE"
+echo "3. セキュリティ上の懸念" >> "$CONSULT_FILE"
+echo "4. より良い代替案" >> "$CONSULT_FILE"
+
+echo -e "${GREEN}相談内容を作成しました: $CONSULT_FILE${NC}"
+
+# Gemini CLIの実行
+echo -e "${YELLOW}Gemini CLIを実行中...${NC}"
+
+# APIキーの確認
+if [ -z "$GEMINI_API_KEY" ]; then
+    # 環境変数が設定されていない場合は設定ファイルを確認
+    if [ -f "$HOME/.gemini/settings.json" ]; then
+        echo -e "${GREEN}設定ファイルからAPIキーを読み込みます${NC}"
+    else
+        echo -e "${RED}エラー: GEMINI_API_KEYが設定されていません${NC}"
+        echo "以下のいずれかの方法で設定してください："
+        echo "1. export GEMINI_API_KEY='your-api-key'"
+        echo "2. gemini コマンドを実行して初期設定を行う"
+        exit 1
+    fi
+fi
+
+# Geminiに相談を送信
+if command -v gemini &#x26;> /dev/null; then
+    # 一時的な応答ファイルを作成
+    TEMP_RESPONSE=$(mktemp)
+    
+    # Geminiを実行（エラーハンドリング付き）
+    if gemini -p "$(cat "$CONSULT_FILE")" > "$TEMP_RESPONSE" 2>&#x26;1; then
+        # 成功した場合、応答を整形して保存
+        echo "# Geminiからの回答" > "$RESPONSE_FILE"
+        echo "" >> "$RESPONSE_FILE"
+        echo "相談日時: $(date '+%Y-%m-%d %H:%M:%S')" >> "$RESPONSE_FILE"
+        echo "トピック: $TOPIC" >> "$RESPONSE_FILE"
+        echo "" >> "$RESPONSE_FILE"
+        echo "---" >> "$RESPONSE_FILE"
+        echo "" >> "$RESPONSE_FILE"
+        cat "$TEMP_RESPONSE" >> "$RESPONSE_FILE"
+        
+        echo -e "${GREEN}回答を保存しました: $RESPONSE_FILE${NC}"
+        echo ""
+        echo "回答の概要:"
+        echo "----------------------------------------"
+        # 最初の数行を表示
+        head -n 20 "$TEMP_RESPONSE"
+        echo "..."
+        echo "----------------------------------------"
+        echo ""
+        echo -e "${GREEN}完全な回答は $RESPONSE_FILE で確認できます${NC}"
+    else
+        echo -e "${RED}エラー: Gemini CLIの実行に失敗しました${NC}"
+        echo "エラー内容:"
+        cat "$TEMP_RESPONSE"
+        rm -f "$TEMP_RESPONSE"
+        exit 1
+    fi
+    
+    rm -f "$TEMP_RESPONSE"
+else
+    echo -e "${RED}エラー: gemini コマンドが見つかりません${NC}"
+    echo "以下のコマンドでインストールしてください："
+    echo "  npm install -g @google/gemini-cli"
+    exit 1
+fi
+
+# 履歴の表示
+echo ""
+echo -e "${GREEN}相談履歴:${NC}"
+echo "相談内容: $CONSULT_FILE"
+echo "回答: $RESPONSE_FILE"
+
+# 相談内容をクリップボードにコピー（macOSの場合）
+if command -v pbcopy &#x26;> /dev/null; then
+    echo "$RESPONSE_FILE" | pbcopy
+    echo -e "${GREEN}回答ファイルのパスをクリップボードにコピーしました${NC}"
+fi
+</code></pre>
+<h2>スクリプトの使用方法</h2>
+<h3>1. スクリプトの保存</h3>
+<p>上記のスクリプトを<code>consult-gemini.sh</code>という名前で保存します：</p>
+<pre><code class="language-bash"># スクリプトを作成
+nano consult-gemini.sh
+
+# または、お使いのエディタで作成
+code consult-gemini.sh
+</code></pre>
+<h3>2. 実行権限の付与</h3>
+<pre><code class="language-bash">chmod +x consult-gemini.sh
+</code></pre>
+<h3>3. 環境変数の設定（APIキーを使用する場合）</h3>
+<pre><code class="language-bash"># 一時的に設定
+export GEMINI_API_KEY="your-api-key-here"
+
+# 永続的に設定（.bashrcまたは.zshrcに追加）
+echo 'export GEMINI_API_KEY="your-api-key-here"' >> ~/.bashrc
+source ~/.bashrc
+</code></pre>
+<h3>4. スクリプトの実行例</h3>
+<pre><code class="language-bash"># 基本的な使用方法
+./consult-gemini.sh -t "API設計" -q "RESTfulなエンドポイント設計について教えてください"
+
+# ファイルを参照する場合
+./consult-gemini.sh -t "コードレビュー" -q "このコードの改善点を教えてください" -f "src/api/users.js"
+
+# 複数ファイルを参照する場合
+./consult-gemini.sh -t "アーキテクチャ" -q "このシステム設計の問題点は？" -f "docs/architecture.md" -f "src/index.js"
+</code></pre>
+<h2>スクリプトの機能説明</h2>
+<h3>エラーハンドリング</h3>
+<ul>
+<li>必須引数のチェック</li>
+<li>ファイルの存在確認</li>
+<li>Gemini CLIの実行可否確認</li>
+<li>APIキーの設定確認</li>
+</ul>
+<h3>便利機能</h3>
+<ul>
+<li>カラー出力で見やすい表示</li>
+<li>相談履歴の自動保存</li>
+<li>タイムスタンプ付きファイル名</li>
+<li>回答の概要表示</li>
+<li>macOSでのクリップボードコピー機能</li>
+</ul>
+<h3>セキュリティ配慮</h3>
+<ul>
+<li>APIキーを直接スクリプトに記載しない</li>
+<li>環境変数または設定ファイルから読み込み</li>
+<li>エラー時の適切なメッセージ表示</li>
+</ul>
+4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#","$undefined"]}]," ","$undefined"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":["$undefined","$undefined","$undefined"]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}
