@@ -84,7 +84,7 @@ export default function HomeTabs({ posts }: HomeTabsProps) {
             {activeTab === 'daily' && '日次メモ'}
             {activeTab === 'bookmark' && 'BookMark'}
           </h2>
-          <Link href="/blog/search" className="text-blue-400 hover:text-blue-300 hover:underline text-sm">
+          <Link href="/blog" className="text-blue-400 hover:text-blue-300 hover:underline text-sm">
             すべての記事を見る →
           </Link>
         </div>
