@@ -36,6 +36,26 @@ export function getSortedPostsData() {
   return allPostsData.sort((a, b) => (b.id - a.id));
 }
 
+export function getSortedPostsDataWithContent() {
+  const fileNames = fs.readdirSync(postsDirectory);
+
+  const allPostsData = fileNames.map((fileName) => {
+    // 番号付きファイル名から番号を除去
+    const slug = fileName.replace(/^\d+_/, '').replace(/\.md$/, '');
+    const fullPath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+
+    return {
+      slug,
+      content: matterResult.content,
+      ...(matterResult.data as { id: number; title: string; create: string, update?: string, tags?: string[] }),
+    };
+  });
+
+  return allPostsData.sort((a, b) => (b.id - a.id));
+}
+
 export async function getPostData(slug: string) {
   // postsディレクトリ内のファイルを検索
   const fileNames = fs.readdirSync(postsDirectory);

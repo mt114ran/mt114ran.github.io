@@ -79,6 +79,15 @@ export default async function BlogPage({ params }: PageProps) {
         />
       </div>
       
+      <div className="mb-6">
+        <Link 
+          href="/blog/search" 
+          className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+        >
+          🔍 記事を検索する
+        </Link>
+      </div>
+      
       {posts.length === 0 ? (
         <p className="text-gray-500">記事がありません</p>
       ) : (
