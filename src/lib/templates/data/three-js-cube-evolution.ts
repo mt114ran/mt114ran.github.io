@@ -52,8 +52,9 @@ export const threeJsCubeEvolutionTemplate: WebTemplate = {
 
 &lt;style&gt;
 .plain-square {
-    width: 150px;
-    height: 150px;
+    width: min(150px, 100%);
+    height: min(150px, 100%);
+    aspect-ratio: 1;
     border: 2px solid #333;
 }
 &lt;/style&gt;</code></pre>
@@ -83,8 +84,9 @@ export const threeJsCubeEvolutionTemplate: WebTemplate = {
 
 &lt;style&gt;
 .colored-square {
-    width: 150px;
-    height: 150px;
+    width: min(150px, 100%);
+    height: min(150px, 100%);
+    aspect-ratio: 1;
     background: linear-gradient(135deg, #667eea, #764ba2);
 }
 &lt;/style&gt;</code></pre>
@@ -114,8 +116,9 @@ export const threeJsCubeEvolutionTemplate: WebTemplate = {
 
 &lt;style&gt;
 .shadow-square {
-    width: 150px;
-    height: 150px;
+    width: min(150px, 100%);
+    height: min(150px, 100%);
+    aspect-ratio: 1;
     background: linear-gradient(135deg, #667eea, #764ba2);
     box-shadow:
         0 10px 20px rgba(0,0,0,0.3),
@@ -290,15 +293,28 @@ h1 {
 
 .evolution-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
+    min-width: 0;
+    width: 100%;
 }
 
-@media (max-width: 640px) {
+@media (min-width: 768px) {
+    .evolution-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 420px) {
     .evolution-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+    
+    .three-canvas {
+        width: calc(100% + 1rem);
+        margin: 0 -0.5rem;
     }
 }
 
@@ -308,6 +324,8 @@ h1 {
     padding: 1.5rem;
     box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
+    min-width: 0;
+    width: 100%;
 }
 
 @media (max-width: 640px) {
@@ -358,10 +376,19 @@ h1 {
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: visible;
+}
+
+@media (max-width: 420px) {
+    .preview-container {
+        padding: 1rem;
+    }
 }
 
 .code-container {
     margin-top: 1rem;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .code-header {
@@ -401,7 +428,9 @@ h1 {
     line-height: 1.5;
     max-height: 300px;
     overflow-y: auto;
-    white-space: pre;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-width: 100%;
 }
 
 @media (max-width: 640px) {
@@ -413,22 +442,25 @@ h1 {
 
 /* Stage 1: 平面の四角形（色なし） */
 .plain-square {
-    width: 150px;
-    height: 150px;
+    width: min(150px, 100%);
+    height: min(150px, 100%);
+    aspect-ratio: 1;
     border: 2px solid #333;
 }
 
 /* Stage 2: 色付き四角形 */
 .colored-square {
-    width: 150px;
-    height: 150px;
+    width: min(150px, 100%);
+    height: min(150px, 100%);
+    aspect-ratio: 1;
     background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
 /* Stage 3: 影付き四角形 */
 .shadow-square {
-    width: 150px;
-    height: 150px;
+    width: min(150px, 100%);
+    height: min(150px, 100%);
+    aspect-ratio: 1;
     background: linear-gradient(135deg, #667eea, #764ba2);
     box-shadow:
         0 10px 20px rgba(0,0,0,0.3),
@@ -446,7 +478,8 @@ h1 {
 
 /* Three.js Canvas */
 .three-canvas {
-    width: 100%;
+    width: calc(100% + 2rem);
+    margin: 0 -1rem;
     height: 300px;
     border-radius: 8px;
 }
@@ -488,8 +521,8 @@ setTimeout(() => {
     const height = 300;
 
     // Camera setup
-    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    camera.position.set(3, 3, 5);
+    const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+    camera.position.set(4, 4, 6);
 
     // Renderer setup
     const renderer = new THREE.WebGLRenderer({
