@@ -10,28 +10,40 @@ export const POSTS_PER_PAGE = 10;
 export function getAllPostSlugs() {
   const filenames = fs.readdirSync(postsDirectory);
 
-  return filenames.map((filename) => {
-    // 番号付きファイル名から番号を除去
-    const slug = filename.replace(/^\d+_/, '').replace(/\.md$/, '');
-    return { slug };
-  });
+  return filenames
+    .filter((filename) => {
+      // .mdファイルのみを対象とする（ディレクトリを除外）
+      const fullPath = path.join(postsDirectory, filename);
+      return fs.statSync(fullPath).isFile() && filename.endsWith('.md');
+    })
+    .map((filename) => {
+      // 番号付きファイル名から番号を除去
+      const slug = filename.replace(/^\d+_/, '').replace(/\.md$/, '');
+      return { slug };
+    });
 }
 
 export function getSortedPostsData() {
   const fileNames = fs.readdirSync(postsDirectory);
 
-  const allPostsData = fileNames.map((fileName) => {
-    // 番号付きファイル名から番号を除去
-    const slug = fileName.replace(/^\d+_/, '').replace(/\.md$/, '');
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const matterResult = matter(fileContents);
+  const allPostsData = fileNames
+    .filter((fileName) => {
+      // .mdファイルのみを対象とする（ディレクトリを除外）
+      const fullPath = path.join(postsDirectory, fileName);
+      return fs.statSync(fullPath).isFile() && fileName.endsWith('.md');
+    })
+    .map((fileName) => {
+      // 番号付きファイル名から番号を除去
+      const slug = fileName.replace(/^\d+_/, '').replace(/\.md$/, '');
+      const fullPath = path.join(postsDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const matterResult = matter(fileContents);
 
-    return {
-      slug,
-      ...(matterResult.data as { id: number; title: string; create: string, update?: string, tags?: string[] }),
-    };
-  });
+      return {
+        slug,
+        ...(matterResult.data as { id: number; title: string; create: string, update?: string, tags?: string[] }),
+      };
+    });
 
   return allPostsData.sort((a, b) => (b.id - a.id));
 }
@@ -40,10 +52,16 @@ export function getSortedPostsData() {
 export async function getPostData(slug: string) {
   // postsディレクトリ内のファイルを検索
   const fileNames = fs.readdirSync(postsDirectory);
-  const matchingFile = fileNames.find((fileName) => {
-    const fileSlug = fileName.replace(/^\d+_/, '').replace(/\.md$/, '');
-    return fileSlug === slug;
-  });
+  const matchingFile = fileNames
+    .filter((fileName) => {
+      // .mdファイルのみを対象とする（ディレクトリを除外）
+      const fullPath = path.join(postsDirectory, fileName);
+      return fs.statSync(fullPath).isFile() && fileName.endsWith('.md');
+    })
+    .find((fileName) => {
+      const fileSlug = fileName.replace(/^\d+_/, '').replace(/\.md$/, '');
+      return fileSlug === slug;
+    });
 
   if (!matchingFile) {
     throw new Error(`Post not found: ${slug}`);
