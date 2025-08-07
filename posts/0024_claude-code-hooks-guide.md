@@ -138,6 +138,86 @@ touch ~/.claude/settings.json
 
 **注意**: パスは`settings.json`からの相対パスで指定します。
 
+### 複数のスクリプトを同じHookに登録する方法
+
+同じ種類のHookに複数のスクリプトを登録することはできません。各Hookタイプ（user-prompt-submit-hook、tool-pre-hook、tool-post-hook）には1つのスクリプトのみ指定できます。
+
+**しかし、複数の処理を実行したい場合は以下の方法があります：**
+
+#### 方法1: ラッパースクリプトを作成（推奨）
+
+1つのメインスクリプトから複数のスクリプトを呼び出す：
+
+**`.claude/hooks/main-post-hook.sh`**:
+```bash
+#!/bin/bash
+
+# 入力を変数に保存（複数のスクリプトで使用するため）
+input_data=$(cat)
+
+# スクリプト1: ログ記録
+echo "$input_data" | ./hooks/logger.sh > /tmp/result1.txt
+
+# スクリプト2: 通知
+echo "$input_data" | ./hooks/notifier.sh > /tmp/result2.txt
+
+# スクリプト3: フォーマッタ
+echo "$input_data" | ./hooks/formatter.sh
+
+# 最後のスクリプトの結果を返す（または最初の入力データを返す）
+```
+
+**`settings.json`**:
+```json
+{
+  "hooks": {
+    "tool-post-hook": "./hooks/main-post-hook.sh"
+  }
+}
+```
+
+#### 方法2: 1つのスクリプトに複数の機能を統合
+
+**`.claude/hooks/multi-function.sh`**:
+```bash
+#!/bin/bash
+
+input_data=$(cat)
+
+# 機能1: ログ記録
+echo "$(date): $input_data" >> .claude/logs/activity.log
+
+# 機能2: 危険コマンドチェック
+if echo "$input_data" | grep -q "rm -rf"; then
+    echo "危険なコマンドを検出" >&2
+fi
+
+# 機能3: 通知
+if echo "$input_data" | grep -q "completed"; then
+    osascript -e 'display notification "タスク完了" with title "Claude Code"'
+fi
+
+# 元のデータを返す
+echo "$input_data"
+```
+
+#### グローバルとプロジェクトHookの併用
+
+グローバル設定とプロジェクト設定の両方に同じタイプのHookがある場合、**プロジェクト設定が優先**されます。両方を実行したい場合は、プロジェクトのHookからグローバルのHookを明示的に呼び出す必要があります：
+
+**プロジェクトの`.claude/hooks/combined-hook.sh`**:
+```bash
+#!/bin/bash
+
+input_data=$(cat)
+
+# まずグローバルHookを実行
+result=$(echo "$input_data" | ~/.claude/hooks/global-hook.sh)
+
+# 次にプロジェクト固有の処理を実行
+echo "$result" | ./hooks/project-specific.sh
+```
+
 ### ステップ3: Hookスクリプトの作成
 
 各Hookスクリプトを`.claude/hooks/`ディレクトリに作成します。
