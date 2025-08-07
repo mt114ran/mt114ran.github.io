@@ -1,4 +1,5 @@
 ---
+id: 25
 title: "Gemini CLIのセットアップとClaude Code連携のトラブルシューティング完全ガイド"
 tags: ["Gemini CLI", "Claude Code", "Google AI", "AI開発", "環境構築", "トラブルシューティング"]
 create: "2025-08-07 19:10"

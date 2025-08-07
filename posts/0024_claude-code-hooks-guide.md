@@ -1,4 +1,5 @@
 ---
+id: 24
 title: "Claude Code Hooks完全ガイド：開発ワークフローを自動化する魔法の仕組み"
 tags: ["Claude Code", "Hooks", "自動化", "開発効率化", "macOS"]
 create: "2025-08-07 19:16"
