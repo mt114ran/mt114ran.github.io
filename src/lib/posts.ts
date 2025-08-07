@@ -36,6 +36,7 @@ export function getSortedPostsData() {
   return allPostsData.sort((a, b) => (b.id - a.id));
 }
 
+
 export async function getPostData(slug: string) {
   // postsディレクトリ内のファイルを検索
   const fileNames = fs.readdirSync(postsDirectory);

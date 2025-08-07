@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useState, useMemo } from 'react'
 
-type TabType = 'latest' | 'personal' | 'private'
+type TabType = 'latest' | 'daily' | 'bookmark'
 
 type Post = {
   slug: string
@@ -21,27 +21,33 @@ interface HomeTabsProps {
 export default function HomeTabs({ posts }: HomeTabsProps) {
   const [activeTab, setActiveTab] = useState<TabType>('latest')
 
-  // タグに基づいて記事をフィルタリング
+  // タグに基づいて記事をフィルタリング（最大20件）
   const filteredPosts = useMemo(() => {
+    let filtered;
     switch (activeTab) {
-      case 'personal':
-        return posts.filter(post => 
-          post.tags?.some(tag => tag.toLowerCase() === '個人作業用')
+      case 'daily':
+        filtered = posts.filter(post => 
+          post.tags?.some(tag => tag === '日次メモ')
         )
-      case 'private':
-        return posts.filter(post => 
-          post.tags?.some(tag => tag.toLowerCase() === 'private' || tag.toLowerCase() === 'プライベート')
+        break
+      case 'bookmark':
+        filtered = posts.filter(post => 
+          post.tags?.some(tag => tag === 'BookMark')
         )
+        break
       case 'latest':
       default:
-        return posts
+        filtered = posts
+        break
     }
+    // 最大20件に制限
+    return filtered.slice(0, 20)
   }, [posts, activeTab])
 
   const tabConfig = [
     { id: 'latest' as TabType, label: '最新記事', count: posts.length },
-    { id: 'personal' as TabType, label: '個人作業用', count: posts.filter(p => p.tags?.some(t => t.toLowerCase() === '個人作業用')).length },
-    { id: 'private' as TabType, label: 'プライベート', count: posts.filter(p => p.tags?.some(t => t.toLowerCase() === 'private' || t.toLowerCase() === 'プライベート')).length },
+    { id: 'daily' as TabType, label: '日次メモ', count: posts.filter(p => p.tags?.some(t => t === '日次メモ')).length },
+    { id: 'bookmark' as TabType, label: 'BookMark', count: posts.filter(p => p.tags?.some(t => t === 'BookMark')).length },
   ]
 
   return (
@@ -75,8 +81,8 @@ export default function HomeTabs({ posts }: HomeTabsProps) {
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-semibold">
             {activeTab === 'latest' && '最新記事'}
-            {activeTab === 'personal' && '個人作業用'}
-            {activeTab === 'private' && 'プライベート'}
+            {activeTab === 'daily' && '日次メモ'}
+            {activeTab === 'bookmark' && 'BookMark'}
           </h2>
           <Link href="/blog" className="text-blue-400 hover:text-blue-300 hover:underline text-sm">
             すべての記事を見る →
@@ -103,8 +109,8 @@ export default function HomeTabs({ posts }: HomeTabsProps) {
                       <span 
                         key={index} 
                         className={`px-2 py-1 rounded text-xs ${
-                          (tag === '個人作業用' && activeTab === 'personal') ||
-                          ((tag.toLowerCase() === 'private' || tag === 'プライベート') && activeTab === 'private')
+                          (tag === '日次メモ' && activeTab === 'daily') ||
+                          (tag === 'BookMark' && activeTab === 'bookmark')
                             ? 'bg-blue-900 text-blue-300'
                             : 'bg-gray-800 text-gray-300'
                         }`}

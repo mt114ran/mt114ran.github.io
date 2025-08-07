@@ -2,7 +2,7 @@
 id: 14
 title: "ゲーム開発でHTML/CSS/JSを楽しく学ぼう！ミニゲーム集を作ってみた"
 create: "2025-01-05 15:00"
-tags: ["Web開発", "JavaScript", "ゲーム開発", "HTML5", "Canvas", "学習", "初心者向け", "個人作業用"]
+tags: ["Web開発", "JavaScript", "ゲーム開発", "HTML5", "Canvas", "学習", "初心者向け", "BookMark"]
 ---
 
 ## はじめに：なぜゲーム開発が学習に最適なのか？
