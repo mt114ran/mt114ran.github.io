@@ -40,6 +40,12 @@ jobs:
           additional_permissions: |
             actions: read
           
+          # Custom instructions for all interactions
+          custom_instructions: |
+            すべての応答を日本語で行ってください。
+            コメントや説明も日本語で記載してください。
+            技術用語は適切な日本語訳を使用するか、カタカナ表記にしてください。
+          
           # Optional: Specify model (defaults to Claude Sonnet 4, uncomment for Claude Opus 4)
           # model: "claude-opus-4-20250514"
           
