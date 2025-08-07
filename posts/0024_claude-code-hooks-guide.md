@@ -822,6 +822,18 @@ Claude Code Hooksを使えば：
 
 ## 参考リンク
 
+### 公式ドキュメント
 - [Claude Code 公式ドキュメント](https://docs.anthropic.com/claude-code)
+- [Claude Code Hooks詳細ドキュメント](https://docs.anthropic.com/en/docs/claude-code/hooks)
+- [Claude Code Settings仕様](https://docs.anthropic.com/en/docs/claude-code/settings)
+
+### 参考にした情報源
+本記事の新形式に関する情報は、以下の調査により確認しました：
+- Claude Code公式ドキュメントのHooksページ（WebFetch APIで確認）
+- グローバル設定ファイル（`~/.claude/settings.json`）の実例確認
+- Claude Code内部のTaskツールによる詳細調査
+
+### 関連技術ドキュメント
 - [Bash スクリプティングガイド](https://www.gnu.org/software/bash/manual/)
 - [jq マニュアル](https://stedolan.github.io/jq/manual/)
+- [Git Hooks ドキュメント](https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA-Git-%E3%83%95%E3%83%83%E3%82%AF)
