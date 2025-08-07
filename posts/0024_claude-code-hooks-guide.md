@@ -140,18 +140,63 @@ touch ~/.claude/settings.json
 
 ### 複数のスクリプトを同じHookに登録する方法
 
-同じ種類のHookに複数のスクリプトを登録することはできません。各Hookタイプ（user-prompt-submit-hook、tool-pre-hook、tool-post-hook）には1つのスクリプトのみ指定できます。
+Claude Code Hooksには**新旧2つの設定形式**があり、新しい形式では複数のスクリプトを登録できます。
 
-**しかし、複数の処理を実行したい場合は以下の方法があります：**
+#### 新しい形式（推奨） - 複数スクリプト対応
 
-#### 方法1: ラッパースクリプトを作成（推奨）
+**特徴**：
+- イベント名: `PreToolUse`、`PostToolUse`、`Notification`、`Stop`
+- 配列形式で複数のスクリプトを登録可能
+- matcherでツールを指定可能
 
-1つのメインスクリプトから複数のスクリプトを呼び出す：
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./hooks/format-code.sh"
+          },
+          {
+            "type": "command",
+            "command": "./hooks/validate-syntax.sh"
+          },
+          {
+            "type": "command",
+            "command": "./hooks/notify-changes.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
 
-**`.claude/hooks/main-post-hook.sh`**:
+この設定では、Write、Edit、MultiEditツールの実行後に3つのスクリプトが順番に実行されます。
+
+#### 旧い形式（廃止予定） - 単一スクリプトのみ
+
+**特徴**：
+- イベント名: `tool-post-hook`、`tool-pre-hook`、`user-prompt-submit-hook`
+- 1つのスクリプトパスのみ指定可能
+
+```json
+{
+  "hooks": {
+    "tool-post-hook": "./hooks/single-script.sh"
+  }
+}
+```
+
+#### 旧形式で複数処理を実現する方法
+
+##### 方法1: ラッパースクリプトを作成
+
 ```bash
 #!/bin/bash
-
 # 入力を変数に保存（複数のスクリプトで使用するため）
 input_data=$(cat)
 
@@ -162,26 +207,16 @@ echo "$input_data" | ./hooks/logger.sh > /tmp/result1.txt
 echo "$input_data" | ./hooks/notifier.sh > /tmp/result2.txt
 
 # スクリプト3: フォーマッタ
-echo "$input_data" | ./hooks/formatter.sh
+result=$(echo "$input_data" | ./hooks/formatter.sh)
 
-# 最後のスクリプトの結果を返す（または最初の入力データを返す）
+# 最後のスクリプトの結果を返す
+echo "$result"
 ```
 
-**`settings.json`**:
-```json
-{
-  "hooks": {
-    "tool-post-hook": "./hooks/main-post-hook.sh"
-  }
-}
-```
+##### 方法2: 1つのスクリプトに複数の機能を統合
 
-#### 方法2: 1つのスクリプトに複数の機能を統合
-
-**`.claude/hooks/multi-function.sh`**:
 ```bash
 #!/bin/bash
-
 input_data=$(cat)
 
 # 機能1: ログ記録
@@ -201,21 +236,95 @@ fi
 echo "$input_data"
 ```
 
-#### グローバルとプロジェクトHookの併用
+### 新形式への移行方法
 
-グローバル設定とプロジェクト設定の両方に同じタイプのHookがある場合、**プロジェクト設定が優先**されます。両方を実行したい場合は、プロジェクトのHookからグローバルのHookを明示的に呼び出す必要があります：
+現在プロジェクトで使用中の旧形式を新形式に移行する例：
 
-**プロジェクトの`.claude/hooks/combined-hook.sh`**:
-```bash
-#!/bin/bash
+**旧形式**：
+```json
+{
+  "hooks": {
+    "tool-post-hook": "./hooks/task-notifier.sh"
+  }
+}
+```
 
-input_data=$(cat)
+**新形式**：
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./hooks/task-notifier.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
 
-# まずグローバルHookを実行
-result=$(echo "$input_data" | ~/.claude/hooks/global-hook.sh)
+### Matcherの指定方法
 
-# 次にプロジェクト固有の処理を実行
-echo "$result" | ./hooks/project-specific.sh
+**特定のツールのみ**：
+```json
+"matcher": "Write"  // Writeツールのみ
+"matcher": "Bash"   // Bashコマンドのみ
+```
+
+**複数ツール**：
+```json
+"matcher": "Write|Edit|MultiEdit"  // ファイル編集系
+"matcher": "Read|Grep|LS"          // ファイル読み取り系
+```
+
+**全ツール**：
+```json
+"matcher": "*"  // すべてのツール
+```
+
+### グローバルとプロジェクトHookの併用
+
+新形式では、グローバル設定とプロジェクト設定の**両方のHookが実行**されます。設定ファイルは以下の順序で読み込まれ、すべての一致するフックが実行されます：
+
+1. **グローバル設定**: `~/.claude/settings.json`
+2. **ローカル設定**: `~/.claude/settings.local.json`
+3. **プロジェクト設定**: `.claude/settings.json`
+4. **プロジェクトローカル設定**: `.claude/settings.local.json`
+
+**例**: グローバルで汎用的なログ、プロジェクトで固有の通知を設定
+```json
+// ~/.claude/settings.json（グローバル）
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {"type": "command", "command": "~/.claude/hooks/global-logger.sh"}
+        ]
+      }
+    ]
+  }
+}
+
+// .claude/settings.json（プロジェクト）
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "TodoWrite",
+        "hooks": [
+          {"type": "command", "command": "./hooks/task-notifier.sh"}
+        ]
+      }
+    ]
+  }
+}
 ```
 
 ### ステップ3: Hookスクリプトの作成
