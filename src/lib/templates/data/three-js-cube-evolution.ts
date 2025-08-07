@@ -260,12 +260,24 @@ body {
     padding: 2rem;
 }
 
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+}
+
 h1 {
     text-align: center;
     color: white;
     font-size: 2.5rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 640px) {
+    h1 {
+        font-size: 1.8rem;
+    }
 }
 
 .intro {
@@ -278,9 +290,16 @@ h1 {
 
 .evolution-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
+}
+
+@media (max-width: 640px) {
+    .evolution-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
 
 .stage {
@@ -289,6 +308,12 @@ h1 {
     padding: 1.5rem;
     box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
+}
+
+@media (max-width: 640px) {
+    .stage {
+        padding: 1rem;
+    }
 }
 
 .stage:hover {
@@ -376,6 +401,14 @@ h1 {
     line-height: 1.5;
     max-height: 300px;
     overflow-y: auto;
+    white-space: pre;
+}
+
+@media (max-width: 640px) {
+    .code-block {
+        font-size: 0.8rem;
+        padding: 0.8rem;
+    }
 }
 
 /* Stage 1: 平面の四角形（色なし） */
