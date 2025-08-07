@@ -76,6 +76,9 @@ import { eventFestivalTemplate } from './data/event-festival'
 import { mediaNewsTemplate } from './data/media-news'
 import { mediaMagazineTemplate } from './data/media-magazine'
 import { mediaBlogTemplate } from './data/media-blog'
+// 3D Graphicsカテゴリ
+import { threeJsCubeEvolutionTemplate } from './data/three-js-cube-evolution'
+import { threeJsSphereEvolutionTemplate } from './data/three-js-sphere-evolution'
 import { itCorporateProTemplate } from './data/it-corporate-pro'
 
 /**
@@ -159,7 +162,10 @@ export const templates: WebTemplate[] = [
   // メディア・出版カテゴリ（3個）
   mediaNewsTemplate,
   mediaMagazineTemplate,
-  mediaBlogTemplate
+  mediaBlogTemplate,
+  // 3D Graphics（2個）
+  threeJsCubeEvolutionTemplate,
+  threeJsSphereEvolutionTemplate
 ]
 
 /**

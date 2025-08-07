@@ -42,7 +42,8 @@ export const TEMPLATE_CATEGORIES = {
   IT: 'IT・テクノロジー',
   MEDICAL: '医療・ヘルスケア',
   EVENT: 'イベント・エンタメ',
-  MEDIA: 'メディア・出版'
+  MEDIA: 'メディア・出版',
+  GRAPHICS_3D: '3D Graphics'
 } as const
 
 export type TemplateCategory = typeof TEMPLATE_CATEGORIES[keyof typeof TEMPLATE_CATEGORIES]
