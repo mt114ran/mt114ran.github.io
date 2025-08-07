@@ -1,4 +1,14 @@
+# mt114ran.github.io
+
+技術ブログと実験的なWebアプリケーションのポートフォリオサイトです。
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## 最近の更新
+- Claude Code Hooksガイド記事を追加
+- Gemini CLIセットアップガイドを追加  
+- GitHub Actions Claude Code Reviewガイドを追加
+- Three.js 3Dテンプレートを追加
 
 ## Getting Started
 
