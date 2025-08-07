@@ -1162,7 +1162,7 @@ input:checked + .slider:before {
 
 .pricing-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin-bottom: 80px;
 }
@@ -1350,7 +1350,7 @@ input:checked + .slider:before {
 
 .testimonials {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 40px;
     margin-bottom: 80px;
 }
@@ -1408,7 +1408,7 @@ input:checked + .slider:before {
 
 .case-study-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 40px;
 }
 

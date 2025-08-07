@@ -52,8 +52,9 @@ export const threeJsSphereEvolutionTemplate: WebTemplate = {
 
 &lt;style&gt;
 .plain-circle {
-    width: 150px;
-    height: 150px;
+    width: min(150px, 100%);
+    height: min(150px, 100%);
+    aspect-ratio: 1;
     border-radius: 50%;
     border: 2px solid #333;
 }
@@ -84,8 +85,9 @@ export const threeJsSphereEvolutionTemplate: WebTemplate = {
 
 &lt;style&gt;
 .gradient-circle {
-    width: 150px;
-    height: 150px;
+    width: min(150px, 100%);
+    height: min(150px, 100%);
+    aspect-ratio: 1;
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%,
         #a78bfa 0%,
@@ -119,10 +121,12 @@ export const threeJsSphereEvolutionTemplate: WebTemplate = {
 
 &lt;style&gt;
 .shadow-sphere {
-    width: 150px;
-    height: 150px;
+    width: min(150px, 100%);
+    height: min(150px, 100%);
+    aspect-ratio: 1;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%,
+    background: radial-gradient(
+        circle at 30% 30%,
         #c4b5fd 0%,
         #8b5cf6 40%,
         #6d28d9 100%);
@@ -293,12 +297,24 @@ body {
     padding: 2rem;
 }
 
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+}
+
 h1 {
     text-align: center;
     color: white;
     font-size: 2.5rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 640px) {
+    h1 {
+        font-size: 1.8rem;
+    }
 }
 
 .intro {
@@ -311,9 +327,29 @@ h1 {
 
 .evolution-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
+    min-width: 0;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .evolution-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 420px) {
+    .evolution-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .three-canvas {
+        width: calc(100% + 1rem);
+        margin: 0 -0.5rem;
+    }
 }
 
 .stage {
@@ -322,6 +358,14 @@ h1 {
     padding: 1.5rem;
     box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
+    min-width: 0;
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    .stage {
+        padding: 1rem;
+    }
 }
 
 .stage:hover {
@@ -366,10 +410,19 @@ h1 {
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: visible;
+}
+
+@media (max-width: 420px) {
+    .preview-container {
+        padding: 1rem;
+    }
 }
 
 .code-container {
     margin-top: 1rem;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .code-header {
@@ -409,20 +462,32 @@ h1 {
     line-height: 1.5;
     max-height: 300px;
     overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-width: 100%;
+}
+
+@media (max-width: 640px) {
+    .code-block {
+        font-size: 0.8rem;
+        padding: 0.8rem;
+    }
 }
 
 /* Stage 1: 平面の円（色なし） */
 .plain-circle {
-    width: 150px;
-    height: 150px;
+    width: min(150px, 100%);
+    height: min(150px, 100%);
+    aspect-ratio: 1;
     border-radius: 50%;
     border: 2px solid #333;
 }
 
 /* Stage 2: グラデーション円 */
 .gradient-circle {
-    width: 150px;
-    height: 150px;
+    width: min(150px, 100%);
+    height: min(150px, 100%);
+    aspect-ratio: 1;
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%,
         #a78bfa 0%,
@@ -432,8 +497,9 @@ h1 {
 
 /* Stage 3: 影付き球体風 */
 .shadow-sphere {
-    width: 150px;
-    height: 150px;
+    width: min(150px, 100%);
+    height: min(150px, 100%);
+    aspect-ratio: 1;
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%,
         #c4b5fd 0%,
@@ -459,7 +525,8 @@ h1 {
 
 /* Three.js Canvas */
 .three-canvas {
-    width: 100%;
+    width: calc(100% + 2rem);
+    margin: 0 -1rem;
     height: 300px;
     border-radius: 8px;
 }
@@ -501,8 +568,8 @@ setTimeout(() => {
     const height = 300;
 
     // Camera setup
-    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    camera.position.set(3, 3, 5);
+    const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+    camera.position.set(4, 4, 6);
 
     // Renderer setup
     const renderer = new THREE.WebGLRenderer({

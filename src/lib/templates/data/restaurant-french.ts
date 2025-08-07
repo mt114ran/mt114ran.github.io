@@ -678,7 +678,7 @@ section {
 
 .menu-collection {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3rem;
 }
 
@@ -962,7 +962,7 @@ section {
 
 .salon-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3rem;
 }
 

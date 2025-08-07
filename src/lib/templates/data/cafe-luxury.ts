@@ -616,7 +616,7 @@ body {
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 3rem;
     margin-top: 3rem;
 }
@@ -676,7 +676,7 @@ body {
 
 .private-services {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 4rem;
     margin-top: 4rem;
 }

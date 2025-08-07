@@ -1,0 +1,5 @@
+{
+  "hooks": {
+    "tool-post-hook": "/Users/kometomo/mt114ran.github.io/.claude/hooks/task-complete-notifier.sh"
+  }
+}
