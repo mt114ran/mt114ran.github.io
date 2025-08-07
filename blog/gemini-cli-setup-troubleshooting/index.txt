@@ -1,0 +1,319 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/21fca20b31fba572.css","style"]
+0:{"P":null,"b":"VlEj4PoQPKmYWwwGA_1uI","p":"","c":["","blog","gemini-cli-setup-troubleshooting",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","gemini-cli-setup-troubleshooting","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/21fca20b31fba572.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","gemini-cli-setup-troubleshooting","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","SoFfOnv9NWxfThQRbgfJ-",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
+13:T31ff,<p>Gemini CLIのセットアップで認証エラーに遭遇したり、Claude Codeとの連携がうまくいかなかったりした経験はありませんか？今回は、実際に遭遇した問題とその解決方法を詳しく解説します。</p>
+<h2>はじめに</h2>
+<p>Gemini CLIは、Googleがオープンソースとしてリリースしたコマンドラインツールで、Geminiモデルの能力をターミナルから直接利用できます。しかし、初期設定や他のツールとの連携で様々な問題に遭遇することがあります。</p>
+<p>この記事では、実際のセットアップ過程で遭遇した問題と、それらの解決方法を順を追って説明します。</p>
+<h2>対応した内容</h2>
+<ol>
+<li>Gemini CLIの初期インストール</li>
+<li>認証エラーの解決</li>
+<li>APIキーの設定方法</li>
+<li>Claude Codeとの連携設定</li>
+<li>hooks機能の調査と実装</li>
+</ol>
+<h2>ぶつかった問題点</h2>
+<h3>問題1: 初回実行時の認証エラー</h3>
+<h4>エラーメッセージ</h4>
+<pre><code>Please set an Auth method in your /Users/kometomo/.gemini/settings.json or specify one of the following environment variables before running: GEMINI_API_KEY, GOOGLE_GENAI_USE_VERTEXAI, GOOGLE_GENAI_USE_GCA
+</code></pre>
+<h4>原因</h4>
+<p>Gemini CLIを初めて実行する際、認証情報が設定されていないため発生します。Gemini CLIがGoogle AIサービスにアクセスするには、ユーザーの認証が必要です。</p>
+<h4>解決方法</h4>
+<p><strong>方法1: 対話型セットアップ（推奨）</strong></p>
+<p>最も簡単な方法は、Gemini CLIを対話モードで起動することです：</p>
+<pre><code class="language-bash">gemini
+</code></pre>
+<p>初回起動時に以下の選択肢が表示されます：</p>
+<ol>
+<li>テーマの選択（お好みで）</li>
+<li>認証方法の選択で「Login with Google」を選択</li>
+<li>ブラウザが自動的に開き、Googleアカウントでログイン</li>
+</ol>
+<p><strong>方法2: APIキーを使用した設定</strong></p>
+<p><a href="https://aistudio.google.com/">Google AI Studio</a>でAPIキーを取得し、設定ファイルに追加：</p>
+<ol>
+<li>Google AI StudioでAPIキーを生成</li>
+<li><code>~/.gemini/settings.json</code>を作成または編集：</li>
+</ol>
+<pre><code class="language-json">{
+  "authMethod": "API_KEY",
+  "apiKey": "your-api-key-here",
+  "selectedAuthType": "gemini-api-key"
+}
+</code></pre>
+<p><strong>方法3: 環境変数での設定</strong></p>
+<p>一時的な使用の場合：</p>
+<pre><code class="language-bash">export GEMINI_API_KEY="your-api-key-here"
+</code></pre>
+<p>永続的に設定する場合（<code>.bashrc</code>または<code>.zshrc</code>に追加）：</p>
+<pre><code class="language-bash">echo 'export GEMINI_API_KEY="your-api-key-here"' >> ~/.zshrc
+source ~/.zshrc
+</code></pre>
+<h3>問題2: Node.jsバージョンの不整合</h3>
+<h4>エラーメッセージ</h4>
+<pre><code>SyntaxError: The requested module 'node:events' does not provide an export named 'addAbortListener'
+</code></pre>
+<h4>原因</h4>
+<p>Gemini CLIはNode.js v20以上を要求しますが、古いバージョンのNode.jsを使用している場合に発生します。</p>
+<h4>解決方法</h4>
+<p>nvmを使用してNode.jsのバージョンを管理：</p>
+<pre><code class="language-bash"># Node.js v20.5.0をインストール
+nvm install 20.5.0
+
+# 使用するバージョンを切り替え
+nvm use 20.5.0
+
+# デフォルトバージョンとして設定
+nvm alias default 20.5.0
+</code></pre>
+<p>プロジェクトごとに<code>.nvmrc</code>ファイルを作成：</p>
+<pre><code class="language-bash">echo "20.5.0" > .nvmrc
+</code></pre>
+<h3>問題3: 日本語対応の設定</h3>
+<h4>問題</h4>
+<p>デフォルトでは、Geminiが英語で応答することがあります。</p>
+<h4>解決方法</h4>
+<p>プロンプトに明示的に日本語での応答を要求：</p>
+<pre><code class="language-bash">gemini -p "以下の質問に日本語で答えてください: [質問内容]"
+</code></pre>
+<p>または、エイリアスを設定して常に日本語で応答するように：</p>
+<pre><code class="language-bash"># .bashrcまたは.zshrcに追加
+alias gemini-ja='gemini -p "必ず日本語で応答してください。"'
+</code></pre>
+<h2>Claude Codeとの連携設定</h2>
+<h3>連携の目的</h3>
+<p>Claude CodeとGemini CLIを連携させることで、異なるAIモデルの視点を活用できます。実際に、Claude Code経由でGemini CLIにhooks機能について調査を依頼し、詳細な技術情報を取得することができました。</p>
+<h3>設定手順</h3>
+<h4>1. ディレクトリ構造の準備</h4>
+<pre><code class="language-bash"># 連携用ディレクトリの作成
+mkdir -p ~/.claude/gemini-consultations
+mkdir -p ~/.claude/gemini-responses
+</code></pre>
+<h4>2. グローバル設定ファイルの更新</h4>
+<p><code>~/.claude/CLAUDE.md</code>に連携ルールを追加：</p>
+<pre><code class="language-markdown">## Gemini CLIとの連携ルール
+
+### 連携方法
+1. 相談内容を `.claude/gemini-consultations/` ディレクトリに保存
+2. Geminiからの回答を `.claude/gemini-responses/` に保存
+3. ファイル名形式: `YYYY-MM-DD-HH-mm-ss-topic.md`
+
+### 相談すべきケース
+- アーキテクチャの設計判断
+- 複雑なアルゴリズムの実装方法
+- パフォーマンス最適化
+- セキュリティ上の懸念事項
+</code></pre>
+<h4>3. 連携スクリプトの作成（オプション）</h4>
+<p>簡単な連携スクリプトを作成することで、より効率的に相談できます：</p>
+<pre><code class="language-bash">#!/bin/bash
+# consult-gemini.sh
+
+TOPIC=$1
+QUESTION=$2
+TIMESTAMP=$(date +"%Y-%m-%d-%H-%M-%S")
+CONSULT_FILE="$HOME/.claude/gemini-consultations/${TIMESTAMP}-${TOPIC}.md"
+RESPONSE_FILE="$HOME/.claude/gemini-responses/${TIMESTAMP}-${TOPIC}.md"
+
+# 相談内容の作成
+cat > "$CONSULT_FILE" &#x3C;&#x3C; EOF
+# 相談内容: $TOPIC
+
+## 質問
+$QUESTION
+
+## 期待する回答
+技術的に正確で実装可能な解決策を日本語で提供してください。
+EOF
+
+# Geminiに相談
+export GEMINI_API_KEY="your-api-key"
+gemini -p "$(cat $CONSULT_FILE)" > "$RESPONSE_FILE"
+
+echo "相談完了: $RESPONSE_FILE"
+</code></pre>
+<h2>実際の連携テスト結果</h2>
+<h3>Claude Code Hooks機能の調査</h3>
+<p>実際にClaude Code経由でGemini CLIにhooks機能について調査を依頼した結果、以下の詳細な情報を取得できました：</p>
+<h4>Geminiからの回答概要</h4>
+<ol>
+<li>
+<p><strong>Hooks機能の種類</strong></p>
+<ul>
+<li><code>user-prompt-submit-hook</code>: プロンプト送信前に実行</li>
+<li><code>tool-pre-hook</code>: ツール実行前に実行</li>
+<li><code>tool-post-hook</code>: ツール実行後に実行</li>
+</ul>
+</li>
+<li>
+<p><strong>設定方法</strong></p>
+<pre><code class="language-json">{
+  "hooks": {
+    "user-prompt-submit-hook": "/path/to/script.sh",
+    "tool-pre-hook": "/path/to/script.js",
+    "tool-post-hook": "/path/to/script.sh"
+  }
+}
+</code></pre>
+</li>
+<li>
+<p><strong>実装例</strong></p>
+<ul>
+<li>プロンプトへの自動コンテキスト追加</li>
+<li>危険なコマンドのブロック</li>
+<li>実行履歴のログ記録</li>
+</ul>
+</li>
+</ol>
+<p>この連携により、Claude Codeだけでは得られない詳細な技術情報を取得することができました。</p>
+<h2>トラブルシューティングのチェックリスト</h2>
+<p>問題が発生した場合、以下の項目を確認してください：</p>
+<ul>
+<li>
+<p>[ ] Node.js v20以上がインストールされているか</p>
+<pre><code class="language-bash">node --version
+</code></pre>
+</li>
+<li>
+<p>[ ] Gemini CLIが正しくインストールされているか</p>
+<pre><code class="language-bash">which gemini
+gemini --version
+</code></pre>
+</li>
+<li>
+<p>[ ] 認証情報が設定されているか</p>
+<pre><code class="language-bash">cat ~/.gemini/settings.json
+echo $GEMINI_API_KEY
+</code></pre>
+</li>
+<li>
+<p>[ ] APIキーが有効か</p>
+<pre><code class="language-bash">gemini -p "Hello" 2>&#x26;1 | head -5
+</code></pre>
+</li>
+<li>
+<p>[ ] 連携用ディレクトリが作成されているか</p>
+<pre><code class="language-bash">ls -la ~/.claude/gemini-consultations
+ls -la ~/.claude/gemini-responses
+</code></pre>
+</li>
+</ul>
+<h2>セキュリティに関する注意事項</h2>
+<h3>APIキーの管理</h3>
+<p><strong>重要</strong>: APIキーは絶対に公開リポジトリにコミットしないでください。</p>
+<p><code>.gitignore</code>に追加すべきファイル：</p>
+<pre><code># Gemini CLI
+.gemini/
+.env
+*.log
+
+# Claude Code
+.claude/settings.json
+.claude/gemini-consultations/
+.claude/gemini-responses/
+</code></pre>
+<h3>環境変数の安全な管理</h3>
+<p>開発環境では<code>.env</code>ファイルを使用：</p>
+<pre><code class="language-bash"># .env
+GEMINI_API_KEY=your-api-key-here
+</code></pre>
+<p>スクリプトでの読み込み：</p>
+<pre><code class="language-bash">#!/bin/bash
+source .env
+gemini -p "your prompt"
+</code></pre>
+<h2>ベストプラクティス</h2>
+<h3>1. エラーハンドリングの実装</h3>
+<p>スクリプトには必ずエラーハンドリングを含める：</p>
+<pre><code class="language-bash">#!/bin/bash
+set -e  # エラー時に即座に終了
+
+if [ -z "$GEMINI_API_KEY" ]; then
+    echo "Error: GEMINI_API_KEY is not set"
+    exit 1
+fi
+</code></pre>
+<h3>2. ログの記録</h3>
+<p>すべての相談と回答を記録：</p>
+<pre><code class="language-bash">LOG_DIR="$HOME/.claude/logs"
+mkdir -p "$LOG_DIR"
+echo "$(date): $QUERY" >> "$LOG_DIR/gemini.log"
+</code></pre>
+<h3>3. タイムアウトの設定</h3>
+<p>長時間実行を防ぐ：</p>
+<pre><code class="language-bash">timeout 30 gemini -p "your prompt" || echo "Timeout occurred"
+</code></pre>
+<h2>実際の使用例</h2>
+<h3>基本的な質問</h3>
+<pre><code class="language-bash">gemini -p "React HooksのuseEffectとuseLayoutEffectの違いを説明してください"
+</code></pre>
+<h3>ファイルの内容を含めた質問</h3>
+<pre><code class="language-bash">cat src/app.js | gemini -p "このコードのパフォーマンスを改善する方法を提案してください"
+</code></pre>
+<h3>Claude Codeとの連携使用例</h3>
+<p>Claude Code内で以下のような処理を実行：</p>
+<pre><code class="language-bash"># 相談内容をファイルに保存
+cat > ~/.claude/gemini-consultations/2025-08-07-18-26-00-claude-hooks.md &#x3C;&#x3C; EOF
+# 相談内容: Claude Code Hooks機能の調査
+
+## 質問
+Claude Codeのhooks機能について詳しく教えてください
+EOF
+
+# Geminiに送信
+export GEMINI_API_KEY="your-api-key"
+gemini -p "$(cat ~/.claude/gemini-consultations/2025-08-07-18-26-00-claude-hooks.md)" > ~/.claude/gemini-responses/2025-08-07-18-26-00-claude-hooks.md
+</code></pre>
+<h2>まとめ</h2>
+<p>Gemini CLIのセットアップで遭遇する主な問題は：</p>
+<ol>
+<li><strong>認証エラー</strong>: APIキーまたはGoogleログインで解決</li>
+<li><strong>Node.jsバージョン</strong>: v20以上にアップグレード</li>
+<li><strong>日本語対応</strong>: プロンプトで明示的に指定</li>
+<li><strong>Claude Codeとの連携</strong>: グローバル設定とディレクトリ構造の準備</li>
+</ol>
+<p>これらの解決方法を理解していれば、スムーズにセットアップを完了し、Claude Codeとの強力な連携環境を構築できます。</p>
+<h3>今回学んだこと</h3>
+<ul>
+<li>Gemini CLIの認証には複数の方法があり、用途に応じて選択できる</li>
+<li>Node.jsのバージョン管理（nvm）の重要性</li>
+<li>Claude Codeとの連携により、複数のAIモデルを効果的に活用できる</li>
+<li>APIキーの安全な管理方法</li>
+<li>グローバル設定だけで十分な連携が可能</li>
+</ul>
+<h3>次のステップ</h3>
+<ol>
+<li>Gemini CLIのカスタムプロンプトテンプレートの作成</li>
+<li>自動化スクリプトの拡張</li>
+<li>他のAIツールとの連携強化</li>
+<li>hooks機能を使った開発ワークフローの自動化</li>
+</ol>
+<h2>参考リンク</h2>
+<ul>
+<li><a href="https://github.com/google/gemini-cli">Gemini CLI 公式リポジトリ</a></li>
+<li><a href="https://aistudio.google.com/">Google AI Studio</a></li>
+<li><a href="https://github.com/nvm-sh/nvm">Node Version Manager (nvm)</a></li>
+<li><a href="https://docs.anthropic.com/claude-code">Claude Code ドキュメント</a></li>
+<li><a href="https://docs.anthropic.com/claude-code/hooks">Claude Code Hooks機能解説</a></li>
+</ul>
+4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",25]}]," ","Gemini CLIのセットアップとClaude Code連携のトラブルシューティング完全ガイド"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-07 19:10"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Gemini CLI"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Claude Code"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Google AI"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"AI開発"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"環境構築"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"トラブルシューティング"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}

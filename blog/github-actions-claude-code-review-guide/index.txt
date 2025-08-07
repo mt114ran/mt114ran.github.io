@@ -1,0 +1,551 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/21fca20b31fba572.css","style"]
+0:{"P":null,"b":"VlEj4PoQPKmYWwwGA_1uI","p":"","c":["","blog","github-actions-claude-code-review-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","github-actions-claude-code-review-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/21fca20b31fba572.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","github-actions-claude-code-review-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","gV6g73BmOw3Hfi0pLtd_f",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
+13:T5a2c,<p>プルリクエストを作成するたびに、自動でAIがコードレビューしてくれたら便利だと思いませんか？今回は、GitHub ActionsとClaude Codeを組み合わせて、自動コードレビューシステムを構築する方法を解説します。</p>
+<h2>前提知識チェックリスト</h2>
+<p>この記事を読む前に、以下の知識があるとスムーズに理解できます：</p>
+<ul>
+<li>[ ] <strong>Git基本操作</strong>: branch作成、commit、push、pull requestの概念</li>
+<li>[ ] <strong>GitHub基本機能</strong>: リポジトリ、Issues、Pull Requestsタブの場所</li>
+<li>[ ] <strong>YAMLファイル</strong>: インデントによる階層構造の基本</li>
+<li>[ ] <strong>環境変数</strong>: システムに設定される変数の概念</li>
+<li>[ ] <strong>APIトークン</strong>: 外部サービスとの認証に使う秘密の文字列</li>
+</ul>
+<p>不安な方は、まず<a href="https://docs.github.com/ja/get-started">GitHub公式の入門ガイド</a>を参照してください。</p>
+<h2>はじめに</h2>
+<p>コードレビューは、ソフトウェア開発において品質を保つための重要なプロセスです。しかし、レビュアーの時間は限られており、すべてのPR（プルリクエスト：コードの変更提案）を詳細にレビューすることは困難です。</p>
+<p>GitHub ActionsとClaude Codeを使えば、PRが作成されると同時に自動的にコードレビューが実行され、潜在的な問題や改善点を指摘してくれます。</p>
+<h2>重要な用語解説</h2>
+<h3>基本用語</h3>
+<ul>
+<li><strong>CI/CD</strong>: Continuous Integration（継続的統合）/ Continuous Delivery（継続的配信）の略。コードの変更を自動的にテスト・デプロイする仕組み</li>
+<li><strong>PR（Pull Request）</strong>: 自分の変更を本番コードに取り込んでもらうための提案</li>
+<li><strong>ワークフロー</strong>: GitHub Actionsで実行される一連の自動処理</li>
+<li><strong>OAuth トークン</strong>: アプリケーション間の安全な認証に使われる一時的な認証情報（パスワードより安全）</li>
+<li><strong>YAML</strong>: 設定ファイルによく使われる、人間が読みやすいデータ記述言語</li>
+</ul>
+<h2>claude-code-review.ymlとは？</h2>
+<p><code>.github/workflows/claude-code-review.yml</code>は、GitHub Actionsのワークフロー定義ファイルです。このファイルが、PRの自動レビューを実現する心臓部となります。</p>
+<h3>GitHub Actionsの基本的な流れ</h3>
+<pre><code>1. 開発者がPRを作成
+     ↓
+2. GitHubがワークフローを検知
+     ↓
+3. 仮想マシン（Ubuntu）が起動
+     ↓
+4. Claude Codeが呼び出される
+     ↓
+5. AIがコードをレビュー
+     ↓
+6. PRにコメントが自動投稿
+</code></pre>
+<h3>ワークフローの全体像</h3>
+<pre><code class="language-yaml">name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  claude-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Run Claude Code Review
+        uses: anthropics/claude-code-action@beta
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          direct_prompt: |
+            このPRをレビューしてください
+</code></pre>
+<h2>基本的な構成要素の解説</h2>
+<h3>1. トリガー（on）</h3>
+<pre><code class="language-yaml">on:
+  pull_request:
+    types: [opened, synchronize]
+</code></pre>
+<p><strong>解説</strong>：</p>
+<ul>
+<li><code>opened</code>: 新しいPRが作成されたとき</li>
+<li><code>synchronize</code>: 既存のPRに新しいコミットがプッシュされたとき</li>
+</ul>
+<p>つまり、PRを作成または更新するたびに自動レビューが実行されます。</p>
+<h3>YAMLの<code>${{ }}</code>記法について</h3>
+<pre><code class="language-yaml">${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+</code></pre>
+<p>この<code>${{ }}</code>は、GitHub Actionsの特殊な記法で、「変数を展開する」という意味です。</p>
+<ul>
+<li><code>secrets.</code>：GitHubに安全に保存された秘密情報にアクセス</li>
+<li>JavaScriptのテンプレート文字列<code>${}</code>に似た機能</li>
+</ul>
+<h3>2. ジョブ（jobs）</h3>
+<pre><code class="language-yaml">jobs:
+  claude-review:
+    runs-on: ubuntu-latest
+</code></pre>
+<p><strong>解説</strong>：</p>
+<ul>
+<li><code>claude-review</code>: ジョブの名前（任意）</li>
+<li><code>runs-on: ubuntu-latest</code>: 実行環境（Ubuntuの最新版）</li>
+</ul>
+<h3>3. 認証（secrets）</h3>
+<pre><code class="language-yaml">claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+</code></pre>
+<p><strong>解説</strong>：</p>
+<ul>
+<li>GitHubのSecretsに保存された認証トークンを使用</li>
+<li>セキュアにAPIキーを管理</li>
+</ul>
+<h2>日本語化対応の実装方法</h2>
+<h3>実装前の課題</h3>
+<p>デフォルトでは、Claude Codeは英語でコメントを返すことがありました。日本のチームで使用する場合、これは読みやすさの観点で課題となります。</p>
+<h3>実装した解決策</h3>
+<pre><code class="language-yaml"># カスタム指示を追加
+custom_instructions: |
+  すべての応答を日本語で行ってください。
+  コードレビューのコメントも日本語で記載してください。
+  技術用語は適切な日本語訳を使用するか、カタカナ表記にしてください。
+
+# 日本語でのレビュープロンプト
+direct_prompt: |
+  このプルリクエストを日本語でレビューし、以下の観点からフィードバックを提供してください：
+  - コード品質とベストプラクティス
+  - 潜在的なバグや問題
+  - パフォーマンスの考慮事項
+  - セキュリティ上の懸念
+  - テストカバレッジ
+  
+  建設的で役立つフィードバックを心がけてください。
+  すべての回答は日本語で行ってください。
+</code></pre>
+<h3>設定のポイント</h3>
+<ol>
+<li><strong>custom_instructions</strong>: すべての対話に適用される基本指示</li>
+<li><strong>direct_prompt</strong>: 自動レビュー時の具体的な指示</li>
+<li><strong>明示的な日本語指定</strong>: 複数箇所で日本語を指定することで確実性を高める</li>
+</ol>
+<h2>実務でよくある使用ケース</h2>
+<h3>ケース1: 新人エンジニアのサポート</h3>
+<pre><code class="language-yaml"># 新人向けの詳細なレビュー設定
+direct_prompt: |
+  このPRは新人エンジニアによるものです。
+  以下の点を特に丁寧に説明してください：
+  - なぜその修正が必要なのか
+  - より良い書き方の具体例
+  - 参考になるドキュメントやリンク
+  
+  励ましのコメントも含めてください。
+</code></pre>
+<p><strong>使用場面</strong>：</p>
+<ul>
+<li>新卒エンジニアの最初のPR</li>
+<li>インターンの成果物レビュー</li>
+<li>ジュニアエンジニアの学習支援</li>
+</ul>
+<h3>ケース2: 特定ファイルのみレビュー</h3>
+<pre><code class="language-yaml">on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - "src/**/*.ts"
+      - "src/**/*.tsx"
+      - "!src/**/*.test.ts"  # テストファイルは除外
+</code></pre>
+<p><strong>使用場面</strong>：</p>
+<ul>
+<li>フロントエンドコードのみレビュー</li>
+<li>APIエンドポイントの変更を重点チェック</li>
+<li>設定ファイルの変更は自動レビュー不要</li>
+</ul>
+<h3>ケース3: 緊急リリース時のスキップ</h3>
+<pre><code class="language-yaml">jobs:
+  claude-review:
+    if: |
+      !contains(github.event.pull_request.title, '[skip-review]') &#x26;&#x26;
+      !contains(github.event.pull_request.title, '[HOTFIX]')
+</code></pre>
+<p><strong>使用場面</strong>：</p>
+<ul>
+<li>緊急バグ修正</li>
+<li>本番障害対応</li>
+<li>既にレビュー済みのチェリーピック</li>
+</ul>
+<h3>ケース4: チーム別のレビュー基準</h3>
+<pre><code class="language-yaml">direct_prompt: |
+  ${{ github.event.pull_request.author_association == 'FIRST_TIME_CONTRIBUTOR' &#x26;&#x26; 
+  '初めての貢献者です。歓迎のメッセージと共に、丁寧なフィードバックをお願いします。' ||
+  github.event.pull_request.labels.*.name contains 'backend' &#x26;&#x26;
+  'バックエンドの変更です。パフォーマンスとセキュリティを重点的にレビューしてください。' ||
+  'スタンダードなコードレビューをお願いします。' }}
+</code></pre>
+<p><strong>使用場面</strong>：</p>
+<ul>
+<li>オープンソースプロジェクトの外部貢献者対応</li>
+<li>フロントエンド/バックエンドチームの異なる基準</li>
+<li>セキュリティ重視のプロジェクト</li>
+</ul>
+<h3>ケース5: テスト実行を含むレビュー</h3>
+<pre><code class="language-yaml">- name: Run Claude Code Review
+  uses: anthropics/claude-code-action@beta
+  with:
+    claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+    allowed_tools: "Bash(npm run test),Bash(npm run lint),Bash(npm run typecheck)"
+    direct_prompt: |
+      PRをレビューし、以下を実行してください：
+      1. コードの静的解析（lint）
+      2. 型チェック（typecheck）
+      3. テストの実行
+      4. 結果を踏まえたフィードバック
+</code></pre>
+<p><strong>使用場面</strong>：</p>
+<ul>
+<li>CI/CDパイプラインの一部として</li>
+<li>テストカバレッジの確認</li>
+<li>リファクタリング時の回帰テスト</li>
+</ul>
+<h2>高度な設定例</h2>
+<h3>1. モデルの選択</h3>
+<pre><code class="language-yaml"># より高度な分析が必要な場合
+model: "claude-opus-4-20250514"  # デフォルトはSonnet 4
+</code></pre>
+<h3>2. スティッキーコメント</h3>
+<pre><code class="language-yaml">use_sticky_comment: true  # 同じPRへの追加コミットで既存コメントを更新
+</code></pre>
+<h3>3. 条件付き実行</h3>
+<pre><code class="language-yaml">jobs:
+  claude-review:
+    if: |
+      github.event.pull_request.user.login == 'external-contributor' ||
+      github.event.pull_request.author_association == 'FIRST_TIME_CONTRIBUTOR'
+</code></pre>
+<h2>最小構成から始める</h2>
+<p>まずは最もシンプルな設定から始めましょう：</p>
+<pre><code class="language-yaml"># .github/workflows/claude-code-review.yml
+name: Simple Claude Review
+on:
+  pull_request:
+    types: [opened]
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@beta
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          direct_prompt: "このPRを簡単にレビューしてください"
+</code></pre>
+<p>この最小構成で動作確認してから、徐々に機能を追加していきます。</p>
+<h2>セットアップ手順（画像付き解説）</h2>
+<h3>ステップ1: トークンの取得</h3>
+<h4>1-1. Claude Codeへアクセス</h4>
+<ol>
+<li>ブラウザで<a href="https://claude.ai/code">Claude Code</a>を開く</li>
+<li>アカウントがない場合は新規登録（メールアドレスが必要）</li>
+</ol>
+<h4>1-2. GitHub連携の設定</h4>
+<ol>
+<li>画面右上のアイコンをクリック → 「Settings」を選択</li>
+<li>「Integrations」タブを開く</li>
+<li>「GitHub」セクションで「Connect」ボタンをクリック</li>
+<li>GitHubの認証画面が表示されるので、権限を確認して「Authorize」</li>
+</ol>
+<h4>1-3. OAuthトークンの取得</h4>
+<ol>
+<li>連携完了後、「Generate OAuth Token」ボタンが表示される</li>
+<li>クリックしてトークンを生成</li>
+<li>表示されたトークンをコピー（この画面を閉じると二度と表示されません！）</li>
+</ol>
+<h3>ステップ2: GitHubシークレットの設定</h3>
+<h4>2-1. Settings画面への移動</h4>
+<ol>
+<li>GitHubでリポジトリを開く</li>
+<li>上部メニューの「Settings」タブをクリック（歯車アイコン）
+<ul>
+<li><strong>注意</strong>: Settingsが表示されない場合は、リポジトリの管理者権限が必要です</li>
+</ul>
+</li>
+</ol>
+<h4>2-2. Secretsの設定</h4>
+<ol>
+<li>左サイドバーの「Secrets and variables」をクリック</li>
+<li>展開されたメニューから「Actions」を選択</li>
+<li>「New repository secret」ボタンをクリック（緑色のボタン）</li>
+</ol>
+<h4>2-3. トークンの保存</h4>
+<ol>
+<li><strong>Name欄</strong>: <code>CLAUDE_CODE_OAUTH_TOKEN</code>と入力（大文字で正確に！）</li>
+<li><strong>Value欄</strong>: コピーしたトークンを貼り付け</li>
+<li>「Add secret」ボタンをクリック</li>
+</ol>
+<p>成功すると、トークンは<code>***</code>として表示されます（セキュリティのため内容は見えません）。</p>
+<h3>ステップ3: ワークフローファイルの作成</h3>
+<h4>3-1. ファイル作成方法（3つの選択肢）</h4>
+<p><strong>方法A: GitHub Web UIで作成（初心者推奨）</strong></p>
+<ol>
+<li>リポジトリのトップページで「Add file」→「Create new file」</li>
+<li>ファイル名に<code>.github/workflows/claude-code-review.yml</code>と入力</li>
+<li>自動的にフォルダが作成される</li>
+</ol>
+<p><strong>方法B: コマンドラインで作成</strong></p>
+<pre><code class="language-bash"># プロジェクトのルートディレクトリで実行
+mkdir -p .github/workflows
+touch .github/workflows/claude-code-review.yml
+</code></pre>
+<p><strong>方法C: VSCodeなどのエディタで作成</strong></p>
+<ol>
+<li><code>.github</code>フォルダを作成</li>
+<li>その中に<code>workflows</code>フォルダを作成</li>
+<li><code>claude-code-review.yml</code>ファイルを新規作成</li>
+</ol>
+<h3>ステップ4: 基本設定の記述</h3>
+<pre><code class="language-yaml">name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  claude-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      id-token: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run Claude Code Review
+        uses: anthropics/claude-code-action@beta
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          custom_instructions: |
+            すべての応答を日本語で行ってください。
+          direct_prompt: |
+            このPRをレビューしてください。
+</code></pre>
+<h2>トラブルシューティング（詳細版）</h2>
+<h3>問題1: レビューが実行されない</h3>
+<h4>確認手順</h4>
+<ol>
+<li>
+<p><strong>Actionsタブの確認</strong></p>
+<ul>
+<li>リポジトリ上部の「Actions」タブをクリック</li>
+<li>ワークフローが表示されているか確認</li>
+<li>表示されない場合：YAMLファイルの配置が間違っている可能性</li>
+</ul>
+</li>
+<li>
+<p><strong>YAMLファイルの構文チェック</strong></p>
+<pre><code class="language-bash"># オンラインツールでチェック
+# https://www.yamllint.com/ にアクセスして内容を貼り付け
+</code></pre>
+</li>
+<li>
+<p><strong>実行ログの確認方法</strong></p>
+<ul>
+<li>Actionsタブ → 失敗したワークフローをクリック</li>
+<li>赤い×マークの箇所を展開</li>
+<li>エラーメッセージを確認</li>
+</ul>
+</li>
+</ol>
+<h4>よくあるエラーと対処法</h4>
+<p><strong>エラー: "Bad credentials"</strong></p>
+<ul>
+<li>原因：トークンが無効または期限切れ</li>
+<li>解決：新しいトークンを生成して再設定</li>
+</ul>
+<p><strong>エラー: "Workflow not found"</strong></p>
+<ul>
+<li>原因：YAMLファイルの配置ミス</li>
+<li>解決：<code>.github/workflows/</code>ディレクトリにあることを確認</li>
+</ul>
+<p><strong>エラー: "Permission denied"</strong></p>
+<ul>
+<li>原因：リポジトリの権限不足</li>
+<li>解決：Settings → Actions → General → Workflow permissionsを確認</li>
+</ul>
+<h3>問題2: 英語でコメントされる</h3>
+<p><strong>原因と解決策</strong>：</p>
+<ul>
+<li><code>custom_instructions</code>に日本語指定を追加</li>
+<li><code>direct_prompt</code>でも明示的に日本語を要求</li>
+</ul>
+<h3>問題3: レビューが表面的</h3>
+<p><strong>原因と解決策</strong>：</p>
+<ul>
+<li>より具体的なプロンプトを記述</li>
+<li>レビュー観点を明確に指定</li>
+<li>必要に応じてOpusモデルを使用</li>
+</ul>
+<h2>ベストプラクティス</h2>
+<h3>1. プロンプトの最適化</h3>
+<pre><code class="language-yaml">direct_prompt: |
+  ## レビュー対象
+  - 変更されたファイル全体
+  - 新規追加されたコード
+  
+  ## 重点チェック項目
+  1. エラーハンドリングの適切性
+  2. 非同期処理の正確性
+  3. メモリリークの可能性
+  4. SQLインジェクションなどのセキュリティリスク
+  
+  ## フィードバック形式
+  - 問題がある場合：具体的な修正案を提示
+  - 改善提案：なぜその方が良いか説明
+  - 良い点：積極的に褒める
+</code></pre>
+<h3>2. チーム文化への配慮</h3>
+<pre><code class="language-yaml">custom_instructions: |
+  フィードバックは以下の原則に従ってください：
+  - 建設的で前向きな表現を使用
+  - 「〜すべき」より「〜することをお勧めします」
+  - 良い点も必ず言及
+  - 学習機会として位置づける
+</code></pre>
+<h3>3. 段階的な導入</h3>
+<ol>
+<li><strong>第1段階</strong>: 特定のファイルタイプのみ</li>
+<li><strong>第2段階</strong>: 新人のPRのみ</li>
+<li><strong>第3段階</strong>: 全PRに適用</li>
+<li><strong>第4段階</strong>: テスト実行も含める</li>
+</ol>
+<h2>セキュリティ上の注意点</h2>
+<h3>1. トークンの管理</h3>
+<ul>
+<li>GitHub Secretsを必ず使用</li>
+<li>トークンをコードに直接記載しない</li>
+<li>定期的にトークンを更新</li>
+</ul>
+<h3>2. 権限の最小化</h3>
+<pre><code class="language-yaml">permissions:
+  contents: read      # リポジトリの読み取りのみ
+  pull-requests: read # PRの読み取りのみ
+  issues: read        # Issueの読み取りのみ
+</code></pre>
+<h3>3. 実行環境の制限</h3>
+<pre><code class="language-yaml">allowed_tools: "Bash(npm run test)"  # 特定のコマンドのみ許可
+</code></pre>
+<h2>費用対効果の考察</h2>
+<h3>コスト</h3>
+<ul>
+<li>Claude API使用料（PRあたり約$0.01-0.05）</li>
+<li>GitHub Actions実行時間（無料枠内で十分）</li>
+</ul>
+<h3>効果</h3>
+<ul>
+<li>レビュー時間の短縮（約30-50%）</li>
+<li>バグの早期発見</li>
+<li>コード品質の向上</li>
+<li>新人教育の効率化</li>
+</ul>
+<h3>ROI計算例</h3>
+<pre><code>月間PR数: 100
+レビュー時間短縮: 30分/PR
+エンジニア時給: 5,000円
+
+月間削減時間: 100 × 0.5時間 = 50時間
+月間削減コスト: 50時間 × 5,000円 = 250,000円
+月間APIコスト: 100 × $0.03 × 150円 = 450円
+
+ROI = (250,000 - 450) / 450 = 約555倍
+</code></pre>
+<h2>よくある質問（FAQ）</h2>
+<h3>Q1: 既存のレビュープロセスと併用できる？</h3>
+<p><strong>A</strong>: はい、人間のレビューと並行して使用できます。AIは補助的な役割として、見落としがちな問題を指摘します。</p>
+<h3>Q2: レビューコメントを無視したい場合は？</h3>
+<p><strong>A</strong>: PRタイトルに<code>[skip-review]</code>を含めることでスキップできます（設定が必要）。</p>
+<h3>Q3: 特定のファイルだけレビューさせるには？</h3>
+<p><strong>A</strong>: <code>paths</code>フィルターを使用して、対象ファイルを指定できます。</p>
+<h3>Q4: 無料枠はどれくらい？</h3>
+<p><strong>A</strong>: GitHub Actions は月2,000分まで無料。Claude APIは使用量に応じた従量課金です。</p>
+<h3>Q5: プライベートリポジトリでも使える？</h3>
+<p><strong>A</strong>: はい、使用できます。ただし、GitHub Actionsの無料枠が異なります。</p>
+<h2>動作確認の方法</h2>
+<h3>正しく設定できたかの確認手順</h3>
+<ol>
+<li>
+<p><strong>テスト用PRの作成</strong></p>
+<pre><code class="language-bash">git checkout -b test-claude-review
+echo "test" > test.txt
+git add test.txt
+git commit -m "Test Claude Review"
+git push origin test-claude-review
+</code></pre>
+</li>
+<li>
+<p><strong>GitHubでPRを作成</strong></p>
+<ul>
+<li>「Compare &#x26; pull request」ボタンをクリック</li>
+<li>PRを作成</li>
+</ul>
+</li>
+<li>
+<p><strong>動作確認</strong></p>
+<ul>
+<li>Actionsタブで実行状況を確認</li>
+<li>1-2分待つ</li>
+<li>PRページにClaudeのコメントが表示されれば成功！</li>
+</ul>
+</li>
+</ol>
+<h2>まとめ</h2>
+<p>GitHub ActionsとClaude Codeを組み合わせることで、以下が実現できます：</p>
+<ol>
+<li><strong>自動化されたコードレビュー</strong>: PRごとに一貫した品質チェック</li>
+<li><strong>日本語対応</strong>: チーム全員が理解しやすいフィードバック</li>
+<li><strong>カスタマイズ性</strong>: プロジェクトに応じた柔軟な設定</li>
+<li><strong>教育的効果</strong>: 新人エンジニアの成長支援</li>
+<li><strong>時間削減</strong>: レビュアーの負担軽減</li>
+</ol>
+<h3>導入のステップ</h3>
+<ol>
+<li>まずは簡単な設定から始める</li>
+<li>チームのフィードバックを収集</li>
+<li>プロンプトを徐々に最適化</li>
+<li>必要に応じて高度な機能を追加</li>
+</ol>
+<h3>今後の展望</h3>
+<ul>
+<li>AIレビューの精度向上</li>
+<li>より高度なセキュリティチェック</li>
+<li>プロジェクト固有のルール学習</li>
+<li>他のCIツールとの連携強化</li>
+</ul>
+<p>これで、あなたのチームも自動コードレビューを始められます！</p>
+<h2>参考リンク</h2>
+<ul>
+<li><a href="https://docs.github.com/ja/actions">GitHub Actions ドキュメント</a></li>
+<li><a href="https://docs.anthropic.com/claude-code">Claude Code 公式ドキュメント</a></li>
+<li><a href="https://github.com/anthropics/claude-code-action">claude-code-action リポジトリ</a></li>
+<li><a href="https://docs.github.com/ja/actions/security-guides/encrypted-secrets">GitHub Secrets の使い方</a></li>
+</ul>
+4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",26]}]," ","GitHub ActionsでClaude Code Reviewを自動化：PRの品質を向上させる実践ガイド"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-07 19:39"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"GitHub Actions"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Claude Code"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"CI/CD"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"コードレビュー"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"自動化"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"品質管理"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}
