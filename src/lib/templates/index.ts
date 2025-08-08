@@ -79,6 +79,8 @@ import { mediaBlogTemplate } from './data/media-blog'
 // 3D Graphicsカテゴリ
 import { threeJsCubeEvolutionTemplate } from './data/three-js-cube-evolution'
 import { threeJsSphereEvolutionTemplate } from './data/three-js-sphere-evolution'
+// Gameカテゴリ
+import { pixelPetGameTemplate } from './data/pixel-pet-game'
 import { itCorporateProTemplate } from './data/it-corporate-pro'
 
 /**
@@ -165,7 +167,9 @@ export const templates: WebTemplate[] = [
   mediaBlogTemplate,
   // 3D Graphics（2個）
   threeJsCubeEvolutionTemplate,
-  threeJsSphereEvolutionTemplate
+  threeJsSphereEvolutionTemplate,
+  // Game（1個）
+  pixelPetGameTemplate
 ]
 
 /**
