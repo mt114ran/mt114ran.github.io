@@ -7,6 +7,56 @@ create: "2025-08-07 19:16"
 
 Claude Codeで作業していて、「コード保存時に自動でフォーマットしたい」「タスク完了時に通知が欲しい」と思ったことはありませんか？Hooks機能を使えば、これらの自動化が簡単に実現できます。
 
+## この記事で学べること
+
+- 🔰 **初級**: Hooksの基本概念と最初の設定
+- 🔥 **中級**: 8種類のイベントタイプと実践的な自動化
+- 💀 **上級**: セキュリティ対策とパフォーマンス最適化
+
+## 5分で試せるクイックスタート 🚀
+
+まずは動く例を試してみましょう！
+
+### 1. フォルダを作成（30秒）
+```bash
+mkdir -p ~/.claude/hooks
+```
+
+### 2. 簡単なHookスクリプトを作成（1分）
+```bash
+cat > ~/.claude/hooks/hello.sh << 'EOF'
+#!/bin/bash
+echo "🎉 Hook is working!" >&2
+cat  # 入力をそのまま出力（重要！）
+EOF
+
+chmod +x ~/.claude/hooks/hello.sh
+```
+
+### 3. 設定ファイルを作成（1分）
+```bash
+cat > ~/.claude/settings.json << 'EOF'
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {"type": "command", "command": "~/.claude/hooks/hello.sh"}
+        ]
+      }
+    ]
+  }
+}
+EOF
+```
+
+### 4. 動作確認（30秒）
+Claude Codeで何かファイルを読んだり、コマンドを実行すると「🎉 Hook is working!」が表示されます！
+
+**成功したら**: 下記の詳細な説明に進みましょう
+**うまくいかない場合**: トラブルシューティングセクションを参照
+
 ## 前提知識
 
 この記事を読むには、以下の基本的な知識があるとスムーズです：
@@ -129,9 +179,48 @@ touch ~/.claude/settings.json
 ```json
 {
   "hooks": {
-    "user-prompt-submit-hook": "./hooks/prompt-enhancer.sh",
-    "tool-pre-hook": "./hooks/safety-check.sh",
-    "tool-post-hook": "./hooks/logger.sh"
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/my-hooks/prompt-enhancer.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/my-hooks/bash-safety-check.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/my-hooks/file-safety-check.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/my-hooks/logger.sh"
+          }
+        ]
+      }
+    ]
   }
 }
 ```
