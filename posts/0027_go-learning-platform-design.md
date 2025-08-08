@@ -1,5 +1,5 @@
 ---
-id: 25
+id: 27
 title: "Go言語学習プラットフォーム設計書：ブラウザで動くコード実行環境の構築"
 tags: ["Go", "WebAssembly", "教育", "システム設計", "Docker", "Kubernetes"]
 create: "2025-08-09 05:56"
