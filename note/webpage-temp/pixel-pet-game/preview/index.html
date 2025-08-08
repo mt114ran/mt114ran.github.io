@@ -1,0 +1,1092 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/21fca20b31fba572.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-d8f047cced1b4886.js" async=""></script><script src="/_next/static/chunks/684-8e4d9e1e4139006e.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-c637f07cf63693d8.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ドット絵ペット育成ゲーム&lt;/title&gt;
+    
+    &lt;style&gt;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: &#x27;Courier New&#x27;, monospace;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.game-device {
+    background: #2d2d2d;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 3px solid #444;
+    flex: 1;
+    max-width: 400px;
+}
+
+/* ステータスバー */
+.status-bar {
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.pet-info {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.pet-name {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.pet-level {
+    color: #00ff00;
+}
+
+.pet-exp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.exp-bar {
+    flex: 1;
+    height: 8px;
+    background: #444;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.exp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ff00, #00aa00);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.exp-text {
+    color: #888;
+    font-size: 10px;
+}
+
+/* ペット画面 */
+.pet-screen {
+    background: #e8f4f8;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 2px solid #000;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#petCanvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+.speech-bubble {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    display: none;
+    animation: bounce 0.5s ease;
+}
+
+.speech-bubble::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #000;
+}
+
+.speech-bubble.show {
+    display: block;
+}
+
+/* エフェクトレイヤー */
+.effects-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.effect {
+    position: absolute;
+    font-size: 24px;
+    animation: floatUp 1s ease forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ステータスバー */
+.stats-container {
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.stat-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.stat-bar:last-child {
+    margin-bottom: 0;
+}
+
+.stat-icon {
+    font-size: 16px;
+}
+
+.stat-label {
+    width: 50px;
+    font-size: 12px;
+}
+
+.stat-gauge {
+    flex: 1;
+    height: 12px;
+    background: #444;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #666;
+}
+
+.stat-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.stat-fill.hunger {
+    background: linear-gradient(90deg, #ff9800, #ff5722);
+}
+
+.stat-fill.happiness {
+    background: linear-gradient(90deg, #ffd700, #ffb300);
+}
+
+.stat-fill.health {
+    background: linear-gradient(90deg, #ff69b4, #ff1493);
+}
+
+.stat-value {
+    width: 40px;
+    text-align: right;
+    font-size: 11px;
+    color: #aaa;
+}
+
+/* アクションボタン */
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.action-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.action-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-icon {
+    font-size: 24px;
+}
+
+.btn-label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 進化段階 */
+.evolution-stage {
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stage-label {
+    color: #888;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.stage-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.stage-icon {
+    font-size: 20px;
+    opacity: 0.3;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.stage-icon.active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* サイドパネル */
+.side-panel {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.side-panel h3 {
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.pet-details {
+    margin-bottom: 20px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-label {
+    color: #666;
+    font-size: 14px;
+}
+
+.detail-value {
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 実績 */
+.achievements {
+    margin-bottom: 20px;
+}
+
+.achievement {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    margin-bottom: 8px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    opacity: 0.5;
+}
+
+.achievement.unlocked {
+    opacity: 1;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+}
+
+.achievement-icon {
+    font-size: 20px;
+}
+
+/* コントロールボタン */
+.control-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #4a5568;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.control-btn:hover {
+    background: #2d3748;
+}
+
+/* モーダル */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-close {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .side-panel {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;game-container&quot;&gt;
+    &lt;div class=&quot;game-device&quot;&gt;
+        &lt;!-- 画面上部: ステータスバー --&gt;
+        &lt;div class=&quot;status-bar&quot;&gt;
+            &lt;div class=&quot;pet-info&quot;&gt;
+                &lt;span class=&quot;pet-name&quot;&gt;ピクセル&lt;/span&gt;
+                &lt;span class=&quot;pet-level&quot;&gt;Lv.&lt;span id=&quot;level&quot;&gt;1&lt;/span&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;pet-exp&quot;&gt;
+                &lt;div class=&quot;exp-bar&quot;&gt;
+                    &lt;div class=&quot;exp-fill&quot; id=&quot;exp-bar&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;exp-text&quot;&gt;EXP: &lt;span id=&quot;exp&quot;&gt;0&lt;/span&gt;/100&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- メイン画面: ペット表示エリア --&gt;
+        &lt;div class=&quot;pet-screen&quot;&gt;
+            &lt;canvas id=&quot;petCanvas&quot; width=&quot;320&quot; height=&quot;240&quot;&gt;&lt;/canvas&gt;
+            
+            &lt;!-- 吹き出し --&gt;
+            &lt;div class=&quot;speech-bubble&quot; id=&quot;speechBubble&quot;&gt;
+                &lt;span id=&quot;speechText&quot;&gt;こんにちは！&lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;!-- エフェクトレイヤー --&gt;
+            &lt;div class=&quot;effects-layer&quot; id=&quot;effectsLayer&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- ステータスバー --&gt;
+        &lt;div class=&quot;stats-container&quot;&gt;
+            &lt;div class=&quot;stat-bar&quot;&gt;
+                &lt;div class=&quot;stat-icon&quot;&gt;🍖&lt;/div&gt;
+                &lt;div class=&quot;stat-label&quot;&gt;空腹&lt;/div&gt;
+                &lt;div class=&quot;stat-gauge&quot;&gt;
+                    &lt;div class=&quot;stat-fill hunger&quot; id=&quot;hungerBar&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;stat-value&quot; id=&quot;hungerValue&quot;&gt;100%&lt;/span&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;stat-bar&quot;&gt;
+                &lt;div class=&quot;stat-icon&quot;&gt;😊&lt;/div&gt;
+                &lt;div class=&quot;stat-label&quot;&gt;幸福&lt;/div&gt;
+                &lt;div class=&quot;stat-gauge&quot;&gt;
+                    &lt;div class=&quot;stat-fill happiness&quot; id=&quot;happinessBar&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;stat-value&quot; id=&quot;happinessValue&quot;&gt;100%&lt;/span&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;stat-bar&quot;&gt;
+                &lt;div class=&quot;stat-icon&quot;&gt;❤️&lt;/div&gt;
+                &lt;div class=&quot;stat-label&quot;&gt;健康&lt;/div&gt;
+                &lt;div class=&quot;stat-gauge&quot;&gt;
+                    &lt;div class=&quot;stat-fill health&quot; id=&quot;healthBar&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;stat-value&quot; id=&quot;healthValue&quot;&gt;100%&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- アクションボタン --&gt;
+        &lt;div class=&quot;action-buttons&quot;&gt;
+            &lt;button class=&quot;action-btn&quot; id=&quot;feedBtn&quot; data-action=&quot;feed&quot;&gt;
+                &lt;span class=&quot;btn-icon&quot;&gt;🍖&lt;/span&gt;
+                &lt;span class=&quot;btn-label&quot;&gt;餌やり&lt;/span&gt;
+            &lt;/button&gt;
+            
+            &lt;button class=&quot;action-btn&quot; id=&quot;playBtn&quot; data-action=&quot;play&quot;&gt;
+                &lt;span class=&quot;btn-icon&quot;&gt;🎮&lt;/span&gt;
+                &lt;span class=&quot;btn-label&quot;&gt;遊ぶ&lt;/span&gt;
+            &lt;/button&gt;
+            
+            &lt;button class=&quot;action-btn&quot; id=&quot;trainBtn&quot; data-action=&quot;train&quot;&gt;
+                &lt;span class=&quot;btn-icon&quot;&gt;💪&lt;/span&gt;
+                &lt;span class=&quot;btn-label&quot;&gt;訓練&lt;/span&gt;
+            &lt;/button&gt;
+            
+            &lt;button class=&quot;action-btn&quot; id=&quot;sleepBtn&quot; data-action=&quot;sleep&quot;&gt;
+                &lt;span class=&quot;btn-icon&quot;&gt;😴&lt;/span&gt;
+                &lt;span class=&quot;btn-label&quot;&gt;休憩&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;!-- 進化段階表示 --&gt;
+        &lt;div class=&quot;evolution-stage&quot;&gt;
+            &lt;span class=&quot;stage-label&quot;&gt;進化段階:&lt;/span&gt;
+            &lt;div class=&quot;stage-icons&quot;&gt;
+                &lt;span class=&quot;stage-icon active&quot;&gt;🥚&lt;/span&gt;
+                &lt;span class=&quot;stage-icon&quot; id=&quot;stage2&quot;&gt;🐣&lt;/span&gt;
+                &lt;span class=&quot;stage-icon&quot; id=&quot;stage3&quot;&gt;🐥&lt;/span&gt;
+                &lt;span class=&quot;stage-icon&quot; id=&quot;stage4&quot;&gt;🐓&lt;/span&gt;
+                &lt;span class=&quot;stage-icon&quot; id=&quot;stage5&quot;&gt;🦅&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- サイドパネル: 詳細情報 --&gt;
+    &lt;div class=&quot;side-panel&quot;&gt;
+        &lt;h3&gt;ペット情報&lt;/h3&gt;
+        &lt;div class=&quot;pet-details&quot;&gt;
+            &lt;div class=&quot;detail-row&quot;&gt;
+                &lt;span class=&quot;detail-label&quot;&gt;年齢:&lt;/span&gt;
+                &lt;span class=&quot;detail-value&quot; id=&quot;petAge&quot;&gt;0日&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;detail-row&quot;&gt;
+                &lt;span class=&quot;detail-label&quot;&gt;強さ:&lt;/span&gt;
+                &lt;span class=&quot;detail-value&quot; id=&quot;petStrength&quot;&gt;10&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;detail-row&quot;&gt;
+                &lt;span class=&quot;detail-label&quot;&gt;知能:&lt;/span&gt;
+                &lt;span class=&quot;detail-value&quot; id=&quot;petIntelligence&quot;&gt;10&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;detail-row&quot;&gt;
+                &lt;span class=&quot;detail-label&quot;&gt;素早さ:&lt;/span&gt;
+                &lt;span class=&quot;detail-value&quot; id=&quot;petAgility&quot;&gt;10&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;h3&gt;実績&lt;/h3&gt;
+        &lt;div class=&quot;achievements&quot;&gt;
+            &lt;div class=&quot;achievement unlocked&quot;&gt;
+                &lt;span class=&quot;achievement-icon&quot;&gt;🏆&lt;/span&gt;
+                &lt;span&gt;初めての餌やり&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;achievement&quot;&gt;
+                &lt;span class=&quot;achievement-icon&quot;&gt;🎯&lt;/span&gt;
+                &lt;span&gt;レベル10到達&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;achievement&quot;&gt;
+                &lt;span class=&quot;achievement-icon&quot;&gt;⭐&lt;/span&gt;
+                &lt;span&gt;初めての進化&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;control-buttons&quot;&gt;
+            &lt;button class=&quot;control-btn&quot; id=&quot;saveBtn&quot;&gt;💾 セーブ&lt;/button&gt;
+            &lt;button class=&quot;control-btn&quot; id=&quot;resetBtn&quot;&gt;🔄 リセット&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 設定モーダル --&gt;
+&lt;div class=&quot;modal&quot; id=&quot;settingsModal&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+        &lt;h2&gt;設定&lt;/h2&gt;
+        &lt;div class=&quot;setting-item&quot;&gt;
+            &lt;label&gt;
+                &lt;input type=&quot;checkbox&quot; id=&quot;soundEnabled&quot; checked&gt;
+                サウンド有効
+            &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;setting-item&quot;&gt;
+            &lt;label&gt;
+                &lt;input type=&quot;checkbox&quot; id=&quot;autoSave&quot; checked&gt;
+                自動セーブ
+            &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;button class=&quot;modal-close&quot; id=&quot;closeSettings&quot;&gt;閉じる&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    // ゲーム状態管理
+class PixelPetGame {
+    constructor() {
+        this.canvas = document.getElementById(&#x27;petCanvas&#x27;);
+        this.ctx = this.canvas.getContext(&#x27;2d&#x27;);
+        this.ctx.imageSmoothingEnabled = false;
+        
+        // ペット状態
+        this.pet = {
+            name: &#x27;ピクセル&#x27;,
+            level: 1,
+            exp: 0,
+            maxExp: 100,
+            hunger: 100,
+            happiness: 100,
+            health: 100,
+            strength: 10,
+            intelligence: 10,
+            agility: 10,
+            evolutionStage: 1,
+            age: 0,
+            x: 160,
+            y: 180,
+            direction: 1,
+            currentAnimation: &#x27;idle&#x27;,
+            animationFrame: 0
+        };
+        
+        // アニメーション設定
+        this.animations = {
+            idle: { frames: 2, speed: 500 },
+            walk: { frames: 4, speed: 200 },
+            happy: { frames: 3, speed: 150 },
+            eat: { frames: 3, speed: 300 },
+            sleep: { frames: 2, speed: 1000 },
+            train: { frames: 3, speed: 250 }
+        };
+        
+        this.lastUpdate = Date.now();
+        this.lastAnimationUpdate = Date.now();
+        this.lastMovement = Date.now();
+        
+        this.init();
+    }
+    
+    init() {
+        this.loadGame();
+        this.setupEventListeners();
+        this.startGameLoop();
+        this.startAutoSave();
+        this.updateDisplay();
+    }
+    
+    setupEventListeners() {
+        // アクションボタン
+        document.getElementById(&#x27;feedBtn&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; this.feed());
+        document.getElementById(&#x27;playBtn&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; this.play());
+        document.getElementById(&#x27;trainBtn&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; this.train());
+        document.getElementById(&#x27;sleepBtn&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; this.sleep());
+        
+        // コントロールボタン
+        document.getElementById(&#x27;saveBtn&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; this.saveGame());
+        document.getElementById(&#x27;resetBtn&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
+            if (confirm(&#x27;本当にリセットしますか？&#x27;)) {
+                this.resetGame();
+            }
+        });
+    }
+    
+    startGameLoop() {
+        const gameLoop = () =&gt; {
+            const now = Date.now();
+            const deltaTime = now - this.lastUpdate;
+            
+            // ステータス減少（10秒ごと）
+            if (deltaTime &gt; 10000) {
+                this.pet.hunger = Math.max(0, this.pet.hunger - 2);
+                this.pet.happiness = Math.max(0, this.pet.happiness - 1);
+                
+                if (this.pet.hunger &lt; 30) {
+                    this.pet.health = Math.max(0, this.pet.health - 1);
+                    this.showSpeech(&#x27;お腹すいた...&#x27;);
+                }
+                
+                if (this.pet.happiness &lt; 30) {
+                    this.showSpeech(&#x27;遊んでほしいな...&#x27;);
+                }
+                
+                this.pet.age++;
+                this.lastUpdate = now;
+                this.updateDisplay();
+            }
+            
+            // ランダム移動（3秒ごと）
+            if (now - this.lastMovement &gt; 3000 &amp;&amp; this.pet.currentAnimation === &#x27;idle&#x27;) {
+                if (Math.random() &gt; 0.5) {
+                    this.moveRandomly();
+                }
+                this.lastMovement = now;
+            }
+            
+            // アニメーション更新
+            if (now - this.lastAnimationUpdate &gt; this.animations[this.pet.currentAnimation].speed) {
+                this.updateAnimation();
+                this.lastAnimationUpdate = now;
+            }
+            
+            this.render();
+            requestAnimationFrame(gameLoop);
+        };
+        
+        gameLoop();
+    }
+    
+    updateAnimation() {
+        const anim = this.animations[this.pet.currentAnimation];
+        this.pet.animationFrame = (this.pet.animationFrame + 1) % anim.frames;
+    }
+    
+    moveRandomly() {
+        const direction = Math.random() &gt; 0.5 ? 1 : -1;
+        const distance = Math.random() * 50 + 20;
+        const targetX = this.pet.x + (distance * direction);
+        
+        if (targetX &gt; 40 &amp;&amp; targetX &lt; 280) {
+            this.pet.direction = direction;
+            this.pet.currentAnimation = &#x27;walk&#x27;;
+            
+            const moveInterval = setInterval(() =&gt; {
+                this.pet.x += direction * 2;
+                if (Math.abs(this.pet.x - targetX) &lt; 2) {
+                    clearInterval(moveInterval);
+                    this.pet.currentAnimation = &#x27;idle&#x27;;
+                }
+            }, 50);
+        }
+    }
+    
+    render() {
+        // 背景をクリア
+        this.ctx.fillStyle = &#x27;#e8f4f8&#x27;;
+        this.ctx.fillRect(0, 0, 320, 240);
+        
+        // 地面を描画
+        this.ctx.fillStyle = &#x27;#8bc34a&#x27;;
+        this.ctx.fillRect(0, 200, 320, 40);
+        
+        // ドット絵でペットを描画
+        this.drawPixelPet();
+    }
+    
+    drawPixelPet() {
+        const size = 32;
+        const x = this.pet.x - size/2;
+        const y = this.pet.y - size;
+        
+        // 進化段階に応じた色
+        const colors = {
+            1: &#x27;#ffeb3b&#x27;, // 黄色（ひよこ）
+            2: &#x27;#ff9800&#x27;, // オレンジ
+            3: &#x27;#ff5722&#x27;, // 赤
+            4: &#x27;#e91e63&#x27;, // ピンク
+            5: &#x27;#9c27b0&#x27;  // 紫
+        };
+        
+        const color = colors[this.pet.evolutionStage];
+        
+        // シンプルなドット絵キャラクター（8x8ピクセルを4倍拡大）
+        const pixelSize = 4;
+        const pattern = this.getPixelPattern();
+        
+        for (let row = 0; row &lt; pattern.length; row++) {
+            for (let col = 0; col &lt; pattern[row].length; col++) {
+                if (pattern[row][col] === 1) {
+                    this.ctx.fillStyle = color;
+                } else if (pattern[row][col] === 2) {
+                    this.ctx.fillStyle = &#x27;#000&#x27;;
+                } else {
+                    continue;
+                }
+                
+                const px = x + col * pixelSize;
+                const py = y + row * pixelSize;
+                this.ctx.fillRect(px, py, pixelSize, pixelSize);
+            }
+        }
+    }
+    
+    getPixelPattern() {
+        // アニメーションフレームに応じたパターンを返す
+        const frame = this.pet.animationFrame;
+        
+        if (this.pet.currentAnimation === &#x27;idle&#x27;) {
+            const patterns = [
+                [
+                    [0,0,1,1,1,1,0,0],
+                    [0,1,1,1,1,1,1,0],
+                    [0,1,2,1,1,2,1,0],
+                    [0,1,1,1,1,1,1,0],
+                    [0,0,1,1,1,1,0,0],
+                    [0,0,1,1,1,1,0,0],
+                    [0,1,1,0,0,1,1,0],
+                    [0,1,1,0,0,1,1,0]
+                ],
+                [
+                    [0,0,1,1,1,1,0,0],
+                    [0,1,1,1,1,1,1,0],
+                    [0,1,2,1,1,2,1,0],
+                    [0,1,1,1,1,1,1,0],
+                    [0,0,1,1,1,1,0,0],
+                    [0,0,1,1,1,1,0,0],
+                    [0,0,1,1,1,1,0,0],
+                    [0,1,1,0,0,1,1,0]
+                ]
+            ];
+            return patterns[frame % patterns.length];
+        }
+        
+        // デフォルトパターン
+        return [
+            [0,0,1,1,1,1,0,0],
+            [0,1,1,1,1,1,1,0],
+            [0,1,2,1,1,2,1,0],
+            [0,1,1,1,1,1,1,0],
+            [0,0,1,1,1,1,0,0],
+            [0,0,1,1,1,1,0,0],
+            [0,1,1,0,0,1,1,0],
+            [0,1,1,0,0,1,1,0]
+        ];
+    }
+    
+    feed() {
+        if (this.pet.hunger &gt;= 100) {
+            this.showSpeech(&#x27;お腹いっぱい！&#x27;);
+            return;
+        }
+        
+        this.pet.currentAnimation = &#x27;eat&#x27;;
+        this.pet.hunger = Math.min(100, this.pet.hunger + 30);
+        this.pet.happiness = Math.min(100, this.pet.happiness + 10);
+        this.gainExp(10);
+        
+        this.showEffect(&#x27;🍖&#x27;, this.pet.x, this.pet.y - 40);
+        this.showSpeech(&#x27;おいしい！&#x27;);
+        
+        setTimeout(() =&gt; {
+            this.pet.currentAnimation = &#x27;idle&#x27;;
+        }, 1000);
+        
+        this.updateDisplay();
+    }
+    
+    play() {
+        if (this.pet.happiness &gt;= 100) {
+            this.showSpeech(&#x27;楽しい〜！&#x27;);
+            return;
+        }
+        
+        this.pet.currentAnimation = &#x27;happy&#x27;;
+        this.pet.happiness = Math.min(100, this.pet.happiness + 25);
+        this.pet.health = Math.min(100, this.pet.health + 5);
+        this.gainExp(15);
+        
+        this.showEffect(&#x27;❤️&#x27;, this.pet.x, this.pet.y - 40);
+        this.showSpeech(&#x27;やったー！&#x27;);
+        
+        // ジャンプアニメーション
+        const originalY = this.pet.y;
+        let jumpHeight = 0;
+        const jumpInterval = setInterval(() =&gt; {
+            jumpHeight += 10;
+            this.pet.y = originalY - Math.sin(jumpHeight * Math.PI / 180) * 30;
+            if (jumpHeight &gt;= 180) {
+                clearInterval(jumpInterval);
+                this.pet.y = originalY;
+                this.pet.currentAnimation = &#x27;idle&#x27;;
+            }
+        }, 30);
+        
+        this.updateDisplay();
+    }
+    
+    train() {
+        if (this.pet.hunger &lt; 20) {
+            this.showSpeech(&#x27;お腹すいてて無理...&#x27;);
+            return;
+        }
+        
+        this.pet.currentAnimation = &#x27;train&#x27;;
+        this.pet.hunger = Math.max(0, this.pet.hunger - 20);
+        this.pet.strength += Math.floor(Math.random() * 3) + 1;
+        this.pet.agility += Math.floor(Math.random() * 2) + 1;
+        this.gainExp(25);
+        
+        this.showEffect(&#x27;💪&#x27;, this.pet.x, this.pet.y - 40);
+        this.showSpeech(&#x27;強くなった！&#x27;);
+        
+        setTimeout(() =&gt; {
+            this.pet.currentAnimation = &#x27;idle&#x27;;
+        }, 1500);
+        
+        this.updateDisplay();
+    }
+    
+    sleep() {
+        this.pet.currentAnimation = &#x27;sleep&#x27;;
+        this.pet.health = Math.min(100, this.pet.health + 30);
+        this.pet.happiness = Math.min(100, this.pet.happiness + 15);
+        
+        this.showEffect(&#x27;💤&#x27;, this.pet.x + 20, this.pet.y - 30);
+        this.showSpeech(&#x27;Zzz...&#x27;);
+        
+        setTimeout(() =&gt; {
+            this.pet.currentAnimation = &#x27;idle&#x27;;
+            this.showSpeech(&#x27;すっきり！&#x27;);
+        }, 3000);
+        
+        this.updateDisplay();
+    }
+    
+    gainExp(amount) {
+        this.pet.exp += amount;
+        
+        while (this.pet.exp &gt;= this.pet.maxExp) {
+            this.levelUp();
+        }
+        
+        this.updateDisplay();
+    }
+    
+    levelUp() {
+        this.pet.exp -= this.pet.maxExp;
+        this.pet.level++;
+        this.pet.maxExp = Math.floor(this.pet.maxExp * 1.5);
+        
+        // ステータス上昇
+        this.pet.strength += 2;
+        this.pet.intelligence += 2;
+        this.pet.agility += 2;
+        
+        this.showEffect(&#x27;⭐&#x27;, this.pet.x, this.pet.y - 40);
+        this.showSpeech(&#x27;レベルアップ！&#x27;);
+        
+        // 進化チェック
+        this.checkEvolution();
+    }
+    
+    checkEvolution() {
+        const evolutionLevels = [1, 10, 25, 50, 100];
+        const currentStage = this.pet.evolutionStage;
+        
+        for (let i = 0; i &lt; evolutionLevels.length; i++) {
+            if (this.pet.level &gt;= evolutionLevels[i]) {
+                this.pet.evolutionStage = i + 1;
+            }
+        }
+        
+        if (this.pet.evolutionStage &gt; currentStage) {
+            this.showSpeech(&#x27;進化した！&#x27;);
+            this.updateEvolutionDisplay();
+        }
+    }
+    
+    updateEvolutionDisplay() {
+        const stages = [&#x27;&#x27;, &#x27;stage2&#x27;, &#x27;stage3&#x27;, &#x27;stage4&#x27;, &#x27;stage5&#x27;];
+        stages.forEach((stage, index) =&gt; {
+            if (stage) {
+                const element = document.getElementById(stage);
+                if (element) {
+                    if (index &lt;= this.pet.evolutionStage - 1) {
+                        element.classList.add(&#x27;active&#x27;);
+                    } else {
+                        element.classList.remove(&#x27;active&#x27;);
+                    }
+                }
+            }
+        });
+    }
+    
+    showSpeech(text) {
+        const bubble = document.getElementById(&#x27;speechBubble&#x27;);
+        const speechText = document.getElementById(&#x27;speechText&#x27;);
+        
+        speechText.textContent = text;
+        bubble.classList.add(&#x27;show&#x27;);
+        
+        clearTimeout(this.speechTimeout);
+        this.speechTimeout = setTimeout(() =&gt; {
+            bubble.classList.remove(&#x27;show&#x27;);
+        }, 2000);
+    }
+    
+    showEffect(emoji, x, y) {
+        const effectsLayer = document.getElementById(&#x27;effectsLayer&#x27;);
+        const effect = document.createElement(&#x27;div&#x27;);
+        effect.className = &#x27;effect&#x27;;
+        effect.textContent = emoji;
+        effect.style.left = x + &#x27;px&#x27;;
+        effect.style.top = y + &#x27;px&#x27;;
+        
+        effectsLayer.appendChild(effect);
+        
+        setTimeout(() =&gt; {
+            effect.remove();
+        }, 1000);
+    }
+    
+    updateDisplay() {
+        // レベルと経験値
+        document.getElementById(&#x27;level&#x27;).textContent = this.pet.level;
+        document.getElementById(&#x27;exp&#x27;).textContent = this.pet.exp;
+        document.getElementById(&#x27;exp-bar&#x27;).style.width = (this.pet.exp / this.pet.maxExp * 100) + &#x27;%&#x27;;
+        
+        // ステータスバー
+        document.getElementById(&#x27;hungerBar&#x27;).style.width = this.pet.hunger + &#x27;%&#x27;;
+        document.getElementById(&#x27;hungerValue&#x27;).textContent = this.pet.hunger + &#x27;%&#x27;;
+        
+        document.getElementById(&#x27;happinessBar&#x27;).style.width = this.pet.happiness + &#x27;%&#x27;;
+        document.getElementById(&#x27;happinessValue&#x27;).textContent = this.pet.happiness + &#x27;%&#x27;;
+        
+        document.getElementById(&#x27;healthBar&#x27;).style.width = this.pet.health + &#x27;%&#x27;;
+        document.getElementById(&#x27;healthValue&#x27;).textContent = this.pet.health + &#x27;%&#x27;;
+        
+        // 詳細情報
+        document.getElementById(&#x27;petAge&#x27;).textContent = Math.floor(this.pet.age / 60) + &#x27;日&#x27;;
+        document.getElementById(&#x27;petStrength&#x27;).textContent = this.pet.strength;
+        document.getElementById(&#x27;petIntelligence&#x27;).textContent = this.pet.intelligence;
+        document.getElementById(&#x27;petAgility&#x27;).textContent = this.pet.agility;
+        
+        // 進化段階
+        this.updateEvolutionDisplay();
+    }
+    
+    saveGame() {
+        const saveData = {
+            pet: this.pet,
+            timestamp: Date.now()
+        };
+        
+        localStorage.setItem(&#x27;pixelPetSave&#x27;, JSON.stringify(saveData));
+        this.showSpeech(&#x27;セーブ完了！&#x27;);
+    }
+    
+    loadGame() {
+        const saveData = localStorage.getItem(&#x27;pixelPetSave&#x27;);
+        
+        if (saveData) {
+            const data = JSON.parse(saveData);
+            this.pet = { ...this.pet, ...data.pet };
+            
+            // 時間経過を計算
+            const timePassed = Date.now() - data.timestamp;
+            const minutesPassed = Math.floor(timePassed / 60000);
+            
+            // オフライン時の変化を適用
+            this.pet.hunger = Math.max(0, this.pet.hunger - minutesPassed * 2);
+            this.pet.happiness = Math.max(0, this.pet.happiness - minutesPassed);
+            this.pet.age += minutesPassed;
+            
+            this.showSpeech(&#x27;おかえり！&#x27;);
+        }
+    }
+    
+    resetGame() {
+        localStorage.removeItem(&#x27;pixelPetSave&#x27;);
+        location.reload();
+    }
+    
+    startAutoSave() {
+        setInterval(() =&gt; {
+            if (document.getElementById(&#x27;autoSave&#x27;)?.checked) {
+                this.saveGame();
+            }
+        }, 30000); // 30秒ごと
+    }
+}
+
+// ゲーム開始
+const game = new PixelPetGame();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;" class="w-full h-screen" title="ドット絵ペット育成ゲーム" sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups"></iframe><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[894,[],\"ClientPageRoot\"]\n5:I[3264,[\"395\",\"static/chunks/app/note/webpage-temp/%5Bid%5D/preview/page-c637f07cf63693d8.js\"],\"default\"]\n8:I[9665,[],\"MetadataBoundary\"]\na:I[9665,[],\"OutletBoundary\"]\nd:I[4911,[],\"AsyncMetadataOutlet\"]\nf:I[9665,[],\"ViewportBoundary\"]\n11:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/21fca20b31fba572.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"h8nVJqgG2LdrtDCd0TWQX\",\"p\":\"\",\"c\":[\"\",\"note\",\"webpage-temp\",\"pixel-pet-game\",\"preview\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"note\",{\"children\":[\"webpage-temp\",{\"children\":[[\"id\",\"pixel-pet-game\",\"d\"],{\"children\":[\"preview\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/21fca20b31fba572.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"note\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"webpage-temp\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"id\",\"pixel-pet-game\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"preview\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"searchParams\":{},\"params\":{\"id\":\"pixel-pet-game\"},\"promises\":[\"$@6\",\"$@7\"]}],[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"uX_nYhAh-GAFGzI1sysqv\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"12:\"$Sreact.suspense\"\n13:I[4911,[],\"AsyncMetadata\"]\n6:{}\n7:{\"id\":\"pixel-pet-game\"}\n9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\n"])</script><script>self.__next_f.push([1,"c:null\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

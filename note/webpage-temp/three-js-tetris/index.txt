@@ -1,0 +1,915 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/21fca20b31fba572.css","style"]
+0:{"P":null,"b":"h8nVJqgG2LdrtDCd0TWQX","p":"","c":["","note","webpage-temp","three-js-tetris",""],"i":false,"f":[[["",{"children":["note",{"children":["webpage-temp",{"children":[["id","three-js-tetris","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/21fca20b31fba572.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["note",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["webpage-temp",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["id","three-js-tetris","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","p6BwyiivUAtHihV_2Saoy",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-4b841b09f124fe29.js"],""]
+13:I[8863,["874","static/chunks/874-8d3839f72fd80c3c.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-4b841b09f124fe29.js"],"default"]
+14:I[9320,["874","static/chunks/874-8d3839f72fd80c3c.js","588","static/chunks/app/note/webpage-temp/%5Bid%5D/page-4b841b09f124fe29.js"],"default"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+15:T9da,<!-- Three.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<div class="game-container">
+    <div class="game-header">
+        <h1>🎮 3D TETRIS</h1>
+        <p class="subtitle">Classic Game in 3D Space</p>
+    </div>
+
+    <div class="game-layout">
+        <div class="side-panel left">
+            <div class="info-box">
+                <h3>スコア</h3>
+                <div class="score" id="score">0</div>
+            </div>
+            
+            <div class="info-box">
+                <h3>レベル</h3>
+                <div class="level" id="level">1</div>
+            </div>
+            
+            <div class="info-box">
+                <h3>ライン</h3>
+                <div class="lines" id="lines">0</div>
+            </div>
+        </div>
+
+        <div class="game-board">
+            <canvas id="tetrisCanvas"></canvas>
+            
+            <div class="game-overlay" id="gameOverlay">
+                <div class="overlay-content">
+                    <h2 id="overlayTitle">3D TETRIS</h2>
+                    <p id="overlayMessage">スペースキーでスタート</p>
+                    <button id="startBtn">▶️ PLAY</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-panel right">
+            <div class="info-box">
+                <h3>次のブロック</h3>
+                <canvas id="nextBlockCanvas" width="150" height="150"></canvas>
+            </div>
+            
+            <div class="info-box controls">
+                <h3>操作方法</h3>
+                <div class="control-item">
+                    <span class="key">←→</span>
+                    <span>移動</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">↑</span>
+                    <span>回転</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">↓</span>
+                    <span>落下</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">Space</span>
+                    <span>即落下</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">P</span>
+                    <span>一時停止</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>16:T1151,* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 2rem;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: slideDown 0.5s ease;
+}
+
+.game-header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    background: linear-gradient(45deg, #00ff88, #00bbff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.game-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.side-panel {
+    flex: 0 0 200px;
+}
+
+.game-board {
+    flex: 1;
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+#tetrisCanvas {
+    width: 100%;
+    height: 600px;
+    display: block;
+    border-radius: 10px;
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s;
+}
+
+.game-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.overlay-content {
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+.overlay-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.overlay-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+#startBtn {
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #00ff88, #00bbff);
+    border: none;
+    border-radius: 50px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px 20px rgba(0,255,136,0.4);
+}
+
+#startBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0,255,136,0.6);
+}
+
+.info-box {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-box h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+}
+
+.score, .level, .lines {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ffaa00, #ff00aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#nextBlockCanvas {
+    width: 100%;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.controls {
+    font-size: 0.85rem;
+}
+
+.control-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+.key {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+    min-width: 60px;
+    text-align: center;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@media (max-width: 1024px) {
+    .game-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .side-panel {
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .side-panel.left {
+        order: 2;
+    }
+    
+    .side-panel.right {
+        order: 3;
+    }
+    
+    .game-board {
+        order: 1;
+        width: 100%;
+        max-width: 600px;
+    }
+    
+    .info-box {
+        flex: 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .game-header h1 {
+        font-size: 2rem;
+    }
+    
+    #tetrisCanvas {
+        height: 400px;
+    }
+    
+    .side-panel {
+        flex-direction: column;
+    }
+}17:T49b1,// 3D Tetris Game
+class Tetris3D {
+    constructor() {
+        this.canvas = document.getElementById('tetrisCanvas');
+        this.nextCanvas = document.getElementById('nextBlockCanvas');
+        this.scene = null;
+        this.camera = null;
+        this.renderer = null;
+        this.nextRenderer = null;
+        
+        // Game state
+        this.board = [];
+        this.currentPiece = null;
+        this.nextPiece = null;
+        this.score = 0;
+        this.level = 1;
+        this.lines = 0;
+        this.gameRunning = false;
+        this.gamePaused = false;
+        this.dropTimer = 0;
+        this.dropInterval = 1000;
+        
+        // Board dimensions
+        this.BOARD_WIDTH = 10;
+        this.BOARD_HEIGHT = 20;
+        this.BOARD_DEPTH = 1;
+        
+        // Tetromino shapes
+        this.shapes = {
+            I: { shape: [[1,1,1,1]], color: 0x00ffff },
+            O: { shape: [[1,1],[1,1]], color: 0xffff00 },
+            T: { shape: [[0,1,0],[1,1,1]], color: 0xff00ff },
+            S: { shape: [[0,1,1],[1,1,0]], color: 0x00ff00 },
+            Z: { shape: [[1,1,0],[0,1,1]], color: 0xff0000 },
+            J: { shape: [[1,0,0],[1,1,1]], color: 0x0000ff },
+            L: { shape: [[0,0,1],[1,1,1]], color: 0xffa500 }
+        };
+        
+        this.init();
+        this.setupEventListeners();
+    }
+    
+    init() {
+        // Initialize board
+        this.board = Array(this.BOARD_HEIGHT).fill(null).map(() => 
+            Array(this.BOARD_WIDTH).fill(0)
+        );
+        
+        // Main scene setup
+        this.scene = new THREE.Scene();
+        this.scene.background = new THREE.Color(0x0a0a0a);
+        
+        // Camera setup
+        const aspect = this.canvas.clientWidth / this.canvas.clientHeight;
+        this.camera = new THREE.PerspectiveCamera(45, aspect, 0.1, 1000);
+        this.camera.position.set(0, 10, 25);
+        this.camera.lookAt(0, 0, 0);
+        
+        // Renderer setup
+        this.renderer = new THREE.WebGLRenderer({
+            canvas: this.canvas,
+            antialias: true
+        });
+        this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
+        this.renderer.shadowMap.enabled = true;
+        
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+        this.scene.add(ambientLight);
+        
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+        directionalLight.position.set(5, 10, 5);
+        directionalLight.castShadow = true;
+        this.scene.add(directionalLight);
+        
+        // Create game board
+        this.createBoard();
+        
+        // Setup next block preview
+        this.setupNextBlockPreview();
+        
+        // Start animation loop
+        this.lastTime = 0;
+        this.animate(0);
+    }
+    
+    createBoard() {
+        // Board outline
+        const boardGeometry = new THREE.BoxGeometry(
+            this.BOARD_WIDTH + 0.2,
+            this.BOARD_HEIGHT + 0.2,
+            this.BOARD_DEPTH
+        );
+        const boardMaterial = new THREE.MeshBasicMaterial({
+            color: 0x222222,
+            wireframe: true
+        });
+        const boardMesh = new THREE.Mesh(boardGeometry, boardMaterial);
+        this.scene.add(boardMesh);
+        
+        // Grid lines
+        const gridMaterial = new THREE.LineBasicMaterial({
+            color: 0x333333,
+            transparent: true,
+            opacity: 0.3
+        });
+        
+        // Vertical lines
+        for (let x = -this.BOARD_WIDTH/2 + 1; x < this.BOARD_WIDTH/2; x++) {
+            const points = [];
+            points.push(new THREE.Vector3(x, -this.BOARD_HEIGHT/2, 0));
+            points.push(new THREE.Vector3(x, this.BOARD_HEIGHT/2, 0));
+            const geometry = new THREE.BufferGeometry().setFromPoints(points);
+            const line = new THREE.Line(geometry, gridMaterial);
+            this.scene.add(line);
+        }
+        
+        // Horizontal lines
+        for (let y = -this.BOARD_HEIGHT/2 + 1; y < this.BOARD_HEIGHT/2; y++) {
+            const points = [];
+            points.push(new THREE.Vector3(-this.BOARD_WIDTH/2, y, 0));
+            points.push(new THREE.Vector3(this.BOARD_WIDTH/2, y, 0));
+            const geometry = new THREE.BufferGeometry().setFromPoints(points);
+            const line = new THREE.Line(geometry, gridMaterial);
+            this.scene.add(line);
+        }
+    }
+    
+    setupNextBlockPreview() {
+        // Scene for next block
+        this.nextScene = new THREE.Scene();
+        this.nextScene.background = new THREE.Color(0x0a0a0a);
+        
+        // Camera for next block
+        this.nextCamera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+        this.nextCamera.position.set(0, 0, 8);
+        this.nextCamera.lookAt(0, 0, 0);
+        
+        // Renderer for next block
+        this.nextRenderer = new THREE.WebGLRenderer({
+            canvas: this.nextCanvas,
+            antialias: true
+        });
+        this.nextRenderer.setSize(150, 150);
+        
+        // Lighting for next block
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+        this.nextScene.add(ambientLight);
+    }
+    
+    createPiece(type) {
+        const shapeData = this.shapes[type];
+        const shape = shapeData.shape;
+        const color = shapeData.color;
+        
+        return {
+            type: type,
+            shape: shape,
+            color: color,
+            x: Math.floor(this.BOARD_WIDTH / 2) - Math.floor(shape[0].length / 2),
+            y: this.BOARD_HEIGHT - 1,
+            rotation: 0,
+            mesh: null
+        };
+    }
+    
+    spawnPiece() {
+        if (!this.nextPiece) {
+            const types = Object.keys(this.shapes);
+            const randomType = types[Math.floor(Math.random() * types.length)];
+            this.nextPiece = this.createPiece(randomType);
+        }
+        
+        this.currentPiece = this.nextPiece;
+        
+        // Generate next piece
+        const types = Object.keys(this.shapes);
+        const randomType = types[Math.floor(Math.random() * types.length)];
+        this.nextPiece = this.createPiece(randomType);
+        
+        // Display next piece
+        this.displayNextPiece();
+        
+        // Check if game over
+        if (!this.isValidPosition(this.currentPiece)) {
+            this.gameOver();
+            return false;
+        }
+        
+        return true;
+    }
+    
+    displayNextPiece() {
+        // Clear previous mesh
+        while(this.nextScene.children.length > 1) {
+            const child = this.nextScene.children[1];
+            this.nextScene.remove(child);
+            if (child.geometry) child.geometry.dispose();
+            if (child.material) child.material.dispose();
+        }
+        
+        // Create mesh for next piece
+        const shape = this.nextPiece.shape;
+        const color = this.nextPiece.color;
+        const group = new THREE.Group();
+        
+        const geometry = new THREE.BoxGeometry(0.9, 0.9, 0.9);
+        const material = new THREE.MeshPhongMaterial({
+            color: color,
+            emissive: color,
+            emissiveIntensity: 0.2
+        });
+        
+        for (let y = 0; y < shape.length; y++) {
+            for (let x = 0; x < shape[y].length; x++) {
+                if (shape[y][x]) {
+                    const cube = new THREE.Mesh(geometry, material);
+                    cube.position.set(
+                        x - shape[y].length / 2 + 0.5,
+                        -y + shape.length / 2 - 0.5,
+                        0
+                    );
+                    group.add(cube);
+                }
+            }
+        }
+        
+        this.nextScene.add(group);
+        
+        // Rotate preview
+        group.rotation.y = Math.PI / 6;
+        group.rotation.x = Math.PI / 8;
+    }
+    
+    rotatePiece() {
+        if (!this.currentPiece) return;
+        
+        const rotated = this.rotate(this.currentPiece.shape);
+        const testPiece = {...this.currentPiece, shape: rotated};
+        
+        if (this.isValidPosition(testPiece)) {
+            this.currentPiece.shape = rotated;
+            this.currentPiece.rotation += 90;
+        }
+    }
+    
+    rotate(matrix) {
+        const N = matrix.length;
+        const M = matrix[0].length;
+        const rotated = Array(M).fill(null).map(() => Array(N).fill(0));
+        
+        for (let i = 0; i < N; i++) {
+            for (let j = 0; j < M; j++) {
+                rotated[j][N - 1 - i] = matrix[i][j];
+            }
+        }
+        
+        return rotated;
+    }
+    
+    movePiece(dx, dy) {
+        if (!this.currentPiece) return;
+        
+        const testPiece = {
+            ...this.currentPiece,
+            x: this.currentPiece.x + dx,
+            y: this.currentPiece.y + dy
+        };
+        
+        if (this.isValidPosition(testPiece)) {
+            this.currentPiece.x += dx;
+            this.currentPiece.y += dy;
+            return true;
+        }
+        
+        return false;
+    }
+    
+    isValidPosition(piece) {
+        const shape = piece.shape;
+        
+        for (let y = 0; y < shape.length; y++) {
+            for (let x = 0; x < shape[y].length; x++) {
+                if (shape[y][x]) {
+                    const boardX = piece.x + x;
+                    const boardY = piece.y - y;
+                    
+                    // Check boundaries
+                    if (boardX < 0 || boardX >= this.BOARD_WIDTH ||
+                        boardY < 0 || boardY >= this.BOARD_HEIGHT) {
+                        return false;
+                    }
+                    
+                    // Check collision with placed pieces
+                    if (this.board[boardY][boardX]) {
+                        return false;
+                    }
+                }
+            }
+        }
+        
+        return true;
+    }
+    
+    lockPiece() {
+        const shape = this.currentPiece.shape;
+        const color = this.currentPiece.color;
+        
+        for (let y = 0; y < shape.length; y++) {
+            for (let x = 0; x < shape[y].length; x++) {
+                if (shape[y][x]) {
+                    const boardX = this.currentPiece.x + x;
+                    const boardY = this.currentPiece.y - y;
+                    
+                    if (boardY >= 0 && boardY < this.BOARD_HEIGHT) {
+                        this.board[boardY][boardX] = color;
+                    }
+                }
+            }
+        }
+        
+        // Check for completed lines
+        this.checkLines();
+        
+        // Spawn new piece
+        this.spawnPiece();
+    }
+    
+    checkLines() {
+        let linesCleared = 0;
+        
+        for (let y = 0; y < this.BOARD_HEIGHT; y++) {
+            if (this.board[y].every(cell => cell !== 0)) {
+                // Remove line
+                this.board.splice(y, 1);
+                // Add empty line at top
+                this.board.push(Array(this.BOARD_WIDTH).fill(0));
+                linesCleared++;
+                y--; // Check same line again
+            }
+        }
+        
+        if (linesCleared > 0) {
+            this.lines += linesCleared;
+            this.score += linesCleared * 100 * this.level;
+            
+            // Level up every 10 lines
+            this.level = Math.floor(this.lines / 10) + 1;
+            this.dropInterval = Math.max(100, 1000 - (this.level - 1) * 100);
+            
+            this.updateDisplay();
+        }
+    }
+    
+    dropPiece() {
+        if (!this.movePiece(0, -1)) {
+            this.lockPiece();
+        }
+    }
+    
+    hardDrop() {
+        while (this.movePiece(0, -1)) {
+            this.score += 2;
+        }
+        this.lockPiece();
+        this.updateDisplay();
+    }
+    
+    updateDisplay() {
+        document.getElementById('score').textContent = this.score;
+        document.getElementById('level').textContent = this.level;
+        document.getElementById('lines').textContent = this.lines;
+    }
+    
+    render() {
+        // Clear previous blocks
+        const blocksToRemove = [];
+        this.scene.traverse((child) => {
+            if (child.userData.isBlock) {
+                blocksToRemove.push(child);
+            }
+        });
+        blocksToRemove.forEach(block => {
+            this.scene.remove(block);
+            if (block.geometry) block.geometry.dispose();
+            if (block.material) block.material.dispose();
+        });
+        
+        // Render board
+        const geometry = new THREE.BoxGeometry(0.9, 0.9, 0.9);
+        
+        for (let y = 0; y < this.BOARD_HEIGHT; y++) {
+            for (let x = 0; x < this.BOARD_WIDTH; x++) {
+                if (this.board[y][x]) {
+                    const material = new THREE.MeshPhongMaterial({
+                        color: this.board[y][x],
+                        emissive: this.board[y][x],
+                        emissiveIntensity: 0.2
+                    });
+                    const cube = new THREE.Mesh(geometry, material);
+                    cube.position.set(
+                        x - this.BOARD_WIDTH / 2 + 0.5,
+                        y - this.BOARD_HEIGHT / 2 + 0.5,
+                        0
+                    );
+                    cube.userData.isBlock = true;
+                    cube.castShadow = true;
+                    cube.receiveShadow = true;
+                    this.scene.add(cube);
+                }
+            }
+        }
+        
+        // Render current piece
+        if (this.currentPiece) {
+            const shape = this.currentPiece.shape;
+            const color = this.currentPiece.color;
+            const material = new THREE.MeshPhongMaterial({
+                color: color,
+                emissive: color,
+                emissiveIntensity: 0.3,
+                transparent: true,
+                opacity: 0.9
+            });
+            
+            for (let y = 0; y < shape.length; y++) {
+                for (let x = 0; x < shape[y].length; x++) {
+                    if (shape[y][x]) {
+                        const cube = new THREE.Mesh(geometry, material);
+                        cube.position.set(
+                            this.currentPiece.x + x - this.BOARD_WIDTH / 2 + 0.5,
+                            this.currentPiece.y - y - this.BOARD_HEIGHT / 2 + 0.5,
+                            0
+                        );
+                        cube.userData.isBlock = true;
+                        cube.castShadow = true;
+                        this.scene.add(cube);
+                    }
+                }
+            }
+        }
+    }
+    
+    animate(currentTime) {
+        requestAnimationFrame((time) => this.animate(time));
+        
+        const deltaTime = currentTime - this.lastTime;
+        this.lastTime = currentTime;
+        
+        // Game logic
+        if (this.gameRunning && !this.gamePaused) {
+            this.dropTimer += deltaTime;
+            
+            if (this.dropTimer >= this.dropInterval) {
+                this.dropPiece();
+                this.dropTimer = 0;
+            }
+        }
+        
+        // Render
+        this.render();
+        this.renderer.render(this.scene, this.camera);
+        
+        // Render next piece
+        if (this.nextRenderer) {
+            this.nextRenderer.render(this.nextScene, this.nextCamera);
+        }
+    }
+    
+    startGame() {
+        // Reset game state
+        this.board = Array(this.BOARD_HEIGHT).fill(null).map(() => 
+            Array(this.BOARD_WIDTH).fill(0)
+        );
+        this.score = 0;
+        this.level = 1;
+        this.lines = 0;
+        this.dropTimer = 0;
+        this.updateDisplay();
+        
+        // Start game
+        this.gameRunning = true;
+        this.gamePaused = false;
+        this.spawnPiece();
+        
+        // Hide overlay
+        document.getElementById('gameOverlay').classList.add('hidden');
+    }
+    
+    pauseGame() {
+        if (this.gameRunning) {
+            this.gamePaused = !this.gamePaused;
+            
+            if (this.gamePaused) {
+                document.getElementById('overlayTitle').textContent = 'PAUSED';
+                document.getElementById('overlayMessage').textContent = 'Pキーで再開';
+                document.getElementById('startBtn').style.display = 'none';
+                document.getElementById('gameOverlay').classList.remove('hidden');
+            } else {
+                document.getElementById('gameOverlay').classList.add('hidden');
+                document.getElementById('startBtn').style.display = 'block';
+            }
+        }
+    }
+    
+    gameOver() {
+        this.gameRunning = false;
+        document.getElementById('overlayTitle').textContent = 'GAME OVER';
+        document.getElementById('overlayMessage').textContent = `スコア: ${this.score}`;
+        document.getElementById('startBtn').textContent = '🔄 RETRY';
+        document.getElementById('startBtn').style.display = 'block';
+        document.getElementById('gameOverlay').classList.remove('hidden');
+    }
+    
+    setupEventListeners() {
+        // Keyboard controls
+        document.addEventListener('keydown', (e) => {
+            if (!this.gameRunning || this.gamePaused) return;
+            
+            switch(e.key) {
+                case 'ArrowLeft':
+                    this.movePiece(-1, 0);
+                    break;
+                case 'ArrowRight':
+                    this.movePiece(1, 0);
+                    break;
+                case 'ArrowDown':
+                    this.dropPiece();
+                    this.score += 1;
+                    this.updateDisplay();
+                    break;
+                case 'ArrowUp':
+                    this.rotatePiece();
+                    break;
+                case ' ':
+                    e.preventDefault();
+                    this.hardDrop();
+                    break;
+            }
+        });
+        
+        // Pause
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'p' || e.key === 'P') {
+                this.pauseGame();
+            }
+        });
+        
+        // Start button
+        document.getElementById('startBtn').addEventListener('click', () => {
+            this.startGame();
+        });
+        
+        // Space to start
+        document.addEventListener('keydown', (e) => {
+            if (e.key === ' ' && !this.gameRunning) {
+                e.preventDefault();
+                this.startGame();
+            }
+        });
+        
+        // Window resize
+        window.addEventListener('resize', () => {
+            const aspect = this.canvas.clientWidth / this.canvas.clientHeight;
+            this.camera.aspect = aspect;
+            this.camera.updateProjectionMatrix();
+            this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
+        });
+    }
+}
+
+// Initialize game
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        new Tetris3D();
+    });
+} else {
+    new Tetris3D();
+}4:["$","div",null,{"className":"min-h-screen bg-gray-900 text-gray-100","children":["$","div",null,{"className":"max-w-7xl mx-auto py-10 px-4","children":[["$","nav",null,{"className":"mb-6 flex gap-4","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"ホーム"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","$L12",null,{"href":"/note/webpage-temp","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"テンプレート一覧"}],["$","span",null,{"className":"text-gray-500","children":"/"}],["$","span",null,{"className":"text-gray-400","children":"3D テトリスゲーム"}]]}],["$","div",null,{"className":"mb-8","children":[["$","div",null,{"className":"flex items-center gap-4 mb-4","children":[["$","h1",null,{"className":"text-3xl font-bold","children":"3D テトリスゲーム"}],["$","span",null,{"className":"px-3 py-1 bg-blue-600 text-white rounded text-sm","children":"3D Graphics"}]]}],["$","p",null,{"className":"text-gray-300 text-lg mb-4","children":"Three.jsで作る立体的なテトリス。クラシックなゲームを3D空間で楽しもう！"}],["$","div",null,{"className":"flex flex-wrap gap-2 mb-4","children":[["$","span","0",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","3D空間でのテトリス"]}],["$","span","1",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","キーボード操作（矢印キー、スペース）"]}],["$","span","2",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","スコアとレベルシステム"]}],["$","span","3",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","次のブロック表示"]}],["$","span","4",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","ゲームオーバー判定"]}],["$","span","5",{"className":"px-3 py-1 bg-gray-800 text-gray-300 rounded text-sm","children":["✓ ","パーティクルエフェクト"]}]]}],["$","div",null,{"className":"flex flex-wrap gap-2 mb-6","children":[["$","span","0",{"className":"text-sm text-gray-500","children":["#","three.js"]}],["$","span","1",{"className":"text-sm text-gray-500","children":["#","3D"]}],["$","span","2",{"className":"text-sm text-gray-500","children":["#","game"]}],["$","span","3",{"className":"text-sm text-gray-500","children":["#","tetris"]}],["$","span","4",{"className":"text-sm text-gray-500","children":["#","interactive"]}]]}],["$","$L13",null,{"templateId":"three-js-tetris"}]]}],["$","$L14",null,{"template":{"id":"three-js-tetris","title":"3D テトリスゲーム","description":"Three.jsで作る立体的なテトリス。クラシックなゲームを3D空間で楽しもう！","category":"3D Graphics","thumbnail":"/templates/three-js-tetris.png","tags":["three.js","3D","game","tetris","interactive"],"features":["3D空間でのテトリス","キーボード操作（矢印キー、スペース）","スコアとレベルシステム","次のブロック表示","ゲームオーバー判定","パーティクルエフェクト"],"isPro":true,"code":{"html":"$15","css":"$16","js":"$17"}}}],["$","div",null,{"className":"mt-12 bg-gray-800 rounded-lg p-6","children":[["$","h2",null,{"className":"text-xl font-bold mb-4","children":"使用方法"}],["$","ol",null,{"className":"space-y-3 text-gray-300","children":[["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"1."}],["$","span",null,{"children":"上のタブからHTML、CSS、JavaScriptのコードをそれぞれコピーします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"2."}],["$","span",null,{"children":"新しいHTMLファイルを作成し、HTMLコードを貼り付けます。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"3."}],["$","span",null,{"children":"CSSコードを<style>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"4."}],["$","span",null,{"children":"JavaScriptコードを<script>タグ内に貼り付けるか、別ファイルとして保存してリンクします。"}]]}],["$","li",null,{"className":"flex gap-3","children":[["$","span",null,{"className":"text-blue-400 font-bold","children":"5."}],["$","span",null,{"children":"必要に応じて、テキストや画像、色などをカスタマイズしてご使用ください。"}]]}]]}],["$","div",null,{"className":"mt-6 p-4 bg-blue-900/30 border border-blue-600 rounded","children":[["$","p",null,{"className":"text-blue-400 mb-2","children":"📚 初めての方へ"}],["$","p",null,{"className":"text-gray-300 text-sm","children":["HTMLやCSSが初めての方は、",["$","$L12",null,{"href":"/note/webpage-temp/guide","className":"text-blue-400 hover:text-blue-300 underline","children":"初心者向けWeb制作学習ガイド"}],"をご覧ください。実際に手を動かしながら学べる詳しい手順を解説しています。"]}]]}]]}],["$","div",null,{"className":"mt-8 bg-yellow-900/30 border border-yellow-600 rounded-lg p-6","children":[["$","h3",null,{"className":"text-yellow-400 font-bold mb-2","children":"注意事項"}],["$","ul",null,{"className":"space-y-2 text-gray-300 text-sm","children":[["$","li",null,{"children":"• このテンプレートは学習・参考用として提供されています。"}],["$","li",null,{"children":"• 実際のプロジェクトで使用する際は、セキュリティやパフォーマンスの最適化を行ってください。"}],["$","li",null,{"children":"• 画像やアイコンは実際のものに置き換えてご使用ください。"}],["$","li",null,{"children":"• レスポンシブ対応していますが、実機でのテストを推奨します。"}]]}]]}],["$","div",null,{"className":"mt-8 text-center","children":["$","$L12",null,{"href":"/note/webpage-temp","className":"inline-block px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors","children":"テンプレート一覧へ戻る"}]}]]}]}]
+9:null
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}
