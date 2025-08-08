@@ -1,0 +1,949 @@
+import { WebTemplate } from '../types';
+
+export const threeJsTriangleEvolutionTemplate: WebTemplate = {
+  id: 'three-js-triangle-evolution',
+  title: 'Three.js 三角形進化デモ',
+  description: '基本的な三角形から複雑な3D三角形まで段階的に進化する実装例',
+  category: '3D Graphics',
+  thumbnail: '/templates/three-js-triangle.png',
+  tags: ['three.js', '3D', 'WebGL', 'animation', 'triangle'],
+  features: [
+    '段階的な実装例（基本三角形→グラデーション→アニメーション→3D三角形）',
+    'Three.jsによる3D三角形',
+    'パーティクルエフェクト',
+    '各ステージのコード例',
+    'リアルタイムプレビュー',
+    'レスポンシブデザイン'
+  ],
+  isPro: true,
+  code: {
+    html: `<!-- Three.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<div class="container">
+    <h1>🔺 Three.js 三角形進化デモ</h1>
+    <p class="intro">
+        基本的な三角形から始まり、段階的に3D三角形へと進化する過程を体験してください。
+        各ステージのコードと実装例を確認できます。
+    </p>
+
+    <div class="evolution-grid">
+        <!-- Stage 1: 基本的な三角形 -->
+        <div class="stage">
+            <div class="stage-header">
+                <span class="stage-number">STAGE 1</span>
+                <h2 class="stage-title">基本的な三角形</h2>
+                <p class="stage-description">
+                    CSSのborderを使った最もシンプルな三角形。
+                </p>
+            </div>
+
+            <div class="preview-container">
+                <div class="basic-triangle"></div>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span>HTML + CSS</span>
+                    <button class="copy-button" onclick="copyCode('stage1')">コピー</button>
+                </div>
+                <pre><code id="stage1">&lt;div class="triangle"&gt;&lt;/div&gt;
+
+&lt;style&gt;
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 86px solid #007bff;
+}
+&lt;/style&gt;</code></pre>
+            </div>
+        </div>
+
+        <!-- Stage 2: グラデーション三角形 -->
+        <div class="stage">
+            <div class="stage-header">
+                <span class="stage-number">STAGE 2</span>
+                <h2 class="stage-title">グラデーション三角形</h2>
+                <p class="stage-description">
+                    clip-pathとグラデーションを使った美しい三角形。
+                </p>
+            </div>
+
+            <div class="preview-container">
+                <div class="gradient-triangle"></div>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span>HTML + CSS</span>
+                    <button class="copy-button" onclick="copyCode('stage2')">コピー</button>
+                </div>
+                <pre><code id="stage2">&lt;div class="gradient-triangle"&gt;&lt;/div&gt;
+
+&lt;style&gt;
+.gradient-triangle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+&lt;/style&gt;</code></pre>
+            </div>
+        </div>
+
+        <!-- Stage 3: アニメーション三角形 -->
+        <div class="stage">
+            <div class="stage-header">
+                <span class="stage-number">STAGE 3</span>
+                <h2 class="stage-title">アニメーション三角形</h2>
+                <p class="stage-description">
+                    CSSアニメーションによる回転とパルスエフェクト。
+                </p>
+            </div>
+
+            <div class="preview-container">
+                <div class="animated-triangle"></div>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span>HTML + CSS</span>
+                    <button class="copy-button" onclick="copyCode('stage3')">コピー</button>
+                </div>
+                <pre><code id="stage3">&lt;div class="animated-triangle"&gt;&lt;/div&gt;
+
+&lt;style&gt;
+.animated-triangle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation: rotate 3s linear infinite,
+               pulse 2s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(180deg); }
+}
+&lt;/style&gt;</code></pre>
+            </div>
+        </div>
+
+        <!-- Stage 4: 3D三角形（Three.js） -->
+        <div class="stage">
+            <div class="stage-header">
+                <span class="stage-number">STAGE 4</span>
+                <h2 class="stage-title">3D三角形（Three.js）</h2>
+                <p class="stage-description">
+                    Three.jsを使った本格的な3D三角形。マウスで操作可能。
+                </p>
+            </div>
+
+            <div class="preview-container">
+                <canvas id="triangleCanvas"></canvas>
+                <div class="controls">
+                    <button id="toggleParticles">✨ パーティクル切替</button>
+                    <button id="changeColors">🎨 色を変更</button>
+                    <button id="resetView">🔄 リセット</button>
+                </div>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span>JavaScript (Three.js)</span>
+                    <button class="copy-button" onclick="copyCode('stage4')">コピー</button>
+                </div>
+                <pre><code id="stage4">// Three.jsシーンの初期化
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(
+    75, 1, 0.1, 1000
+);
+const renderer = new THREE.WebGLRenderer({
+    canvas: document.getElementById('triangleCanvas'),
+    antialias: true
+});
+
+// 三角形ジオメトリの作成
+const geometry = new THREE.BufferGeometry();
+const vertices = new Float32Array([
+    0, 1.5, 0,     // 頂点
+    -1.3, -0.75, 0, // 左下
+    1.3, -0.75, 0   // 右下
+]);
+geometry.setAttribute('position', 
+    new THREE.BufferAttribute(vertices, 3)
+);
+
+// 頂点カラーの設定
+const colors = new Float32Array([
+    1.0, 0.0, 0.0,  // 赤
+    0.0, 1.0, 0.0,  // 緑
+    0.0, 0.0, 1.0   // 青
+]);
+geometry.setAttribute('color', 
+    new THREE.BufferAttribute(colors, 3)
+);
+
+// マテリアルとメッシュの作成
+const material = new THREE.MeshPhongMaterial({
+    vertexColors: true,
+    side: THREE.DoubleSide
+});
+const triangle = new THREE.Mesh(geometry, material);
+scene.add(triangle);
+
+// ライティング
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+const pointLight = new THREE.PointLight(0xffffff, 1);
+scene.add(ambientLight);
+scene.add(pointLight);
+
+// OrbitControlsの追加
+const controls = new THREE.OrbitControls(camera, canvas);
+
+// アニメーションループ
+function animate() {
+    requestAnimationFrame(animate);
+    triangle.rotation.x += 0.01;
+    triangle.rotation.y += 0.01;
+    controls.update();
+    renderer.render(scene, camera);
+}
+animate();</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="comparison-section">
+        <h2>🎯 実装方法の比較</h2>
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ステージ</th>
+                        <th>技術</th>
+                        <th>難易度</th>
+                        <th>インタラクティブ性</th>
+                        <th>パフォーマンス</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>STAGE 1</td>
+                        <td>CSS Border</td>
+                        <td>⭐</td>
+                        <td>なし</td>
+                        <td>⚡⚡⚡</td>
+                    </tr>
+                    <tr>
+                        <td>STAGE 2</td>
+                        <td>CSS Clip-path</td>
+                        <td>⭐⭐</td>
+                        <td>Hover効果可能</td>
+                        <td>⚡⚡⚡</td>
+                    </tr>
+                    <tr>
+                        <td>STAGE 3</td>
+                        <td>CSS Animation</td>
+                        <td>⭐⭐⭐</td>
+                        <td>アニメーション</td>
+                        <td>⚡⚡</td>
+                    </tr>
+                    <tr>
+                        <td>STAGE 4</td>
+                        <td>Three.js</td>
+                        <td>⭐⭐⭐⭐</td>
+                        <td>マウス操作</td>
+                        <td>⚡</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="tips-section">
+        <h2>💡 実装のポイント</h2>
+        <div class="tips-grid">
+            <div class="tip-card">
+                <h3>🎨 頂点カラー</h3>
+                <p>Three.jsでは各頂点に異なる色を割り当てることで、美しいグラデーション効果を作れます。</p>
+            </div>
+            <div class="tip-card">
+                <h3>✨ パーティクル</h3>
+                <p>THREE.Pointsを使用して、三角形の周りにパーティクルエフェクトを追加できます。</p>
+            </div>
+            <div class="tip-card">
+                <h3>🎮 インタラクション</h3>
+                <p>OrbitControlsを使うことで、マウスやタッチでの操作を簡単に実装できます。</p>
+            </div>
+            <div class="tip-card">
+                <h3>⚡ パフォーマンス</h3>
+                <p>requestAnimationFrameを使用して、ブラウザの描画と同期したアニメーションを実現します。</p>
+            </div>
+        </div>
+    </div>
+</div>`,
+    css: `* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 2rem;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.evolution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stage {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 0;
+    width: 100%;
+}
+
+.stage:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.stage-header {
+    margin-bottom: 1.5rem;
+}
+
+.stage-number {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stage-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.stage-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.preview-container {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Stage 1: 基本的な三角形 */
+.basic-triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 86px solid #007bff;
+}
+
+/* Stage 2: グラデーション三角形 */
+.gradient-triangle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* Stage 3: アニメーション三角形 */
+.animated-triangle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation: rotateTriangle 3s linear infinite,
+               pulseTriangle 2s ease-in-out infinite;
+}
+
+@keyframes rotateTriangle {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulseTriangle {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(180deg); }
+}
+
+/* Stage 4: Three.js Canvas */
+#triangleCanvas {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.controls button {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.controls button:active {
+    transform: translateY(0);
+}
+
+.code-container {
+    background: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.code-header {
+    background: #2d2d2d;
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.code-header span {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.copy-button {
+    background: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+    background: #5a5a5a;
+}
+
+.copy-button:active {
+    background: #3a3a3a;
+}
+
+pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+code {
+    color: #f8f8f2;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.comparison-section {
+    margin-bottom: 3rem;
+}
+
+.comparison-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.comparison-table {
+    overflow-x: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+}
+
+th {
+    font-weight: 600;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.tips-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.tip-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tip-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.tip-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .evolution-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stage {
+        margin-bottom: 1rem;
+    }
+    
+    #triangleCanvas {
+        height: 200px;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .controls button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .intro {
+        font-size: 1rem;
+    }
+    
+    .stage-title {
+        font-size: 1.2rem;
+    }
+    
+    .preview-container {
+        padding: 1rem;
+        min-height: 150px;
+    }
+    
+    .basic-triangle {
+        border-left-width: 40px;
+        border-right-width: 40px;
+        border-bottom-width: 69px;
+    }
+    
+    .gradient-triangle,
+    .animated-triangle {
+        width: 80px;
+        height: 80px;
+    }
+}`,
+    js: `// Three.js Triangle Evolution Demo
+class TriangleEvolution {
+    constructor() {
+        this.canvas = document.getElementById('triangleCanvas');
+        this.scene = null;
+        this.camera = null;
+        this.renderer = null;
+        this.triangle = null;
+        this.particles = null;
+        this.controls = null;
+        this.particlesEnabled = true;
+        this.clock = new THREE.Clock();
+        
+        this.init();
+        this.setupEventListeners();
+    }
+    
+    init() {
+        // Scene setup
+        this.scene = new THREE.Scene();
+        this.scene.background = new THREE.Color(0xf8f9fa);
+        
+        // Canvas dimensions
+        const rect = this.canvas.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        
+        // Camera setup
+        this.camera = new THREE.PerspectiveCamera(
+            75,
+            width / height,
+            0.1,
+            1000
+        );
+        this.camera.position.z = 5;
+        
+        // Renderer setup
+        this.renderer = new THREE.WebGLRenderer({
+            canvas: this.canvas,
+            antialias: true,
+            alpha: true
+        });
+        this.renderer.setSize(width, height);
+        this.renderer.setPixelRatio(window.devicePixelRatio);
+        
+        // Create triangle
+        this.createTriangle();
+        
+        // Create particles
+        this.createParticles();
+        
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        this.scene.add(ambientLight);
+        
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+        directionalLight.position.set(5, 5, 5);
+        this.scene.add(directionalLight);
+        
+        const pointLight = new THREE.PointLight(0xffffff, 0.5);
+        pointLight.position.set(-5, 5, 0);
+        this.scene.add(pointLight);
+        
+        // Controls
+        this.controls = new THREE.OrbitControls(this.camera, this.canvas);
+        this.controls.enableDamping = true;
+        this.controls.dampingFactor = 0.05;
+        this.controls.minDistance = 2;
+        this.controls.maxDistance = 10;
+        this.controls.enablePan = false;
+        
+        // Start animation
+        this.animate();
+        
+        // Handle resize
+        window.addEventListener('resize', () => this.onResize());
+    }
+    
+    createTriangle() {
+        // Custom triangle geometry
+        const geometry = new THREE.BufferGeometry();
+        
+        // Vertices
+        const vertices = new Float32Array([
+            0, 1.5, 0,      // top
+            -1.3, -0.75, 0, // bottom left
+            1.3, -0.75, 0   // bottom right
+        ]);
+        
+        geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+        
+        // Colors for each vertex
+        const colors = new Float32Array([
+            1.0, 0.0, 0.0,  // red
+            0.0, 1.0, 0.0,  // green
+            0.0, 0.0, 1.0   // blue
+        ]);
+        
+        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+        
+        // Compute normals for lighting
+        geometry.computeVertexNormals();
+        
+        // Material with vertex colors
+        const material = new THREE.MeshPhongMaterial({
+            vertexColors: true,
+            side: THREE.DoubleSide,
+            shininess: 100,
+            specular: 0xffffff,
+            emissive: 0x111111,
+            emissiveIntensity: 0.1
+        });
+        
+        // Create mesh
+        this.triangle = new THREE.Mesh(geometry, material);
+        this.scene.add(this.triangle);
+        
+        // Add wireframe overlay
+        const wireframeGeometry = new THREE.WireframeGeometry(geometry);
+        const wireframeMaterial = new THREE.LineBasicMaterial({
+            color: 0x000000,
+            transparent: true,
+            opacity: 0.1
+        });
+        const wireframe = new THREE.LineSegments(wireframeGeometry, wireframeMaterial);
+        this.triangle.add(wireframe);
+    }
+    
+    createParticles() {
+        const particleCount = 100;
+        const geometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+        const colors = new Float32Array(particleCount * 3);
+        
+        for (let i = 0; i < particleCount * 3; i += 3) {
+            // Random positions in a sphere
+            const radius = 8;
+            const theta = Math.random() * Math.PI * 2;
+            const phi = Math.random() * Math.PI;
+            
+            positions[i] = radius * Math.sin(phi) * Math.cos(theta);
+            positions[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
+            positions[i + 2] = radius * Math.cos(phi);
+            
+            // Purple-ish colors
+            colors[i] = 0.4 + Math.random() * 0.3;
+            colors[i + 1] = 0.3 + Math.random() * 0.2;
+            colors[i + 2] = 0.6 + Math.random() * 0.4;
+        }
+        
+        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+        
+        const material = new THREE.PointsMaterial({
+            size: 0.05,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.6,
+            blending: THREE.AdditiveBlending
+        });
+        
+        this.particles = new THREE.Points(geometry, material);
+        this.scene.add(this.particles);
+    }
+    
+    toggleParticles() {
+        this.particlesEnabled = !this.particlesEnabled;
+        this.particles.visible = this.particlesEnabled;
+    }
+    
+    changeColors() {
+        const colors = new Float32Array([
+            Math.random(), Math.random(), Math.random(),
+            Math.random(), Math.random(), Math.random(),
+            Math.random(), Math.random(), Math.random()
+        ]);
+        
+        this.triangle.geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    }
+    
+    resetView() {
+        this.camera.position.set(0, 0, 5);
+        this.controls.reset();
+        
+        // Reset colors to original
+        const colors = new Float32Array([
+            1.0, 0.0, 0.0,  // red
+            0.0, 1.0, 0.0,  // green
+            0.0, 0.0, 1.0   // blue
+        ]);
+        
+        this.triangle.geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    }
+    
+    animate() {
+        requestAnimationFrame(() => this.animate());
+        
+        const delta = this.clock.getDelta();
+        
+        // Rotate triangle
+        this.triangle.rotation.x += 0.005;
+        this.triangle.rotation.y += 0.01;
+        
+        // Rotate particles
+        if (this.particles && this.particlesEnabled) {
+            this.particles.rotation.x += 0.001;
+            this.particles.rotation.y += 0.002;
+        }
+        
+        // Update controls
+        this.controls.update();
+        
+        // Render
+        this.renderer.render(this.scene, this.camera);
+    }
+    
+    onResize() {
+        const rect = this.canvas.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        
+        this.camera.aspect = width / height;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(width, height);
+    }
+    
+    setupEventListeners() {
+        document.getElementById('toggleParticles').addEventListener('click', () => {
+            this.toggleParticles();
+        });
+        
+        document.getElementById('changeColors').addEventListener('click', () => {
+            this.changeColors();
+        });
+        
+        document.getElementById('resetView').addEventListener('click', () => {
+            this.resetView();
+        });
+    }
+}
+
+// Copy code function
+function copyCode(stageId) {
+    const codeElement = document.getElementById(stageId);
+    const textArea = document.createElement('textarea');
+    textArea.value = codeElement.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    
+    // Show feedback
+    const button = event.target;
+    const originalText = button.textContent;
+    button.textContent = 'コピーしました!';
+    button.style.background = '#4caf50';
+    
+    setTimeout(() => {
+        button.textContent = originalText;
+        button.style.background = '';
+    }, 2000);
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        new TriangleEvolution();
+    });
+} else {
+    new TriangleEvolution();
+}`
+  }
+};
