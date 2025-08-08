@@ -79,7 +79,7 @@ import { mediaBlogTemplate } from './data/media-blog'
 // 3D Graphicsカテゴリ
 import { threeJsCubeEvolutionTemplate } from './data/three-js-cube-evolution'
 import { threeJsSphereEvolutionTemplate } from './data/three-js-sphere-evolution'
-import { threeJsTriangleTemplate } from './data/three-js-triangle'
+import { threeJsTriangleEvolutionTemplate } from './data/three-js-triangle-evolution'
 import { threeJsTetrisTemplate } from './data/three-js-tetris'
 // Gameカテゴリ
 import { pixelPetGameTemplate } from './data/pixel-pet-game'
@@ -170,7 +170,7 @@ export const templates: WebTemplate[] = [
   // 3D Graphics（4個）
   threeJsCubeEvolutionTemplate,
   threeJsSphereEvolutionTemplate,
-  threeJsTriangleTemplate,
+  threeJsTriangleEvolutionTemplate,
   threeJsTetrisTemplate,
   // Game（1個）
   pixelPetGameTemplate

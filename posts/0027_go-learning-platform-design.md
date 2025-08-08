@@ -1236,6 +1236,319 @@ jobs:
 
 これらの要素を組み合わせることで、安全で効率的、かつ教育効果の高い学習プラットフォームを構築できます。
 
+## インフラストラクチャと運用
+
+### データベースの選定
+
+#### 1. メインデータベース: PostgreSQL
+- **選定理由**:
+  - ACIDトランザクションによる高い信頼性
+  - JSONBサポートによる柔軟なデータ構造
+  - 豊富なインデックス機能（B-tree, Hash, GiST, GIN）
+  - パーティショニングによる大規模データ対応
+  
+- **利用サービス**: Amazon RDS for PostgreSQL
+  - マルチAZ構成で高可用性を実現
+  - 自動バックアップとポイントインタイムリカバリ
+  - Read Replicaによる読み取り性能の向上
+
+```sql
+-- テーブル設計例
+CREATE TABLE users (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    email VARCHAR(255) UNIQUE NOT NULL,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE challenges (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    difficulty VARCHAR(20) CHECK (difficulty IN ('beginner', 'intermediate', 'advanced')),
+    test_cases JSONB NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE submissions (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES users(id),
+    challenge_id UUID REFERENCES challenges(id),
+    code TEXT NOT NULL,
+    status VARCHAR(20) CHECK (status IN ('pending', 'running', 'success', 'failure')),
+    output TEXT,
+    execution_time_ms INTEGER,
+    memory_usage_bytes BIGINT,
+    submitted_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_user_challenge (user_id, challenge_id)
+) PARTITION BY RANGE (submitted_at);
+
+-- パーティション作成（月次）
+CREATE TABLE submissions_2025_01 PARTITION OF submissions
+    FOR VALUES FROM ('2025-01-01') TO ('2025-02-01');
+```
+
+#### 2. キャッシュデータベース: Redis
+- **選定理由**:
+  - インメモリによる高速アクセス
+  - Pub/Sub機能によるリアルタイム通信
+  - セッション管理に最適
+  
+- **利用サービス**: Amazon ElastiCache for Redis
+  - クラスターモードで自動スケーリング
+  - 自動フェイルオーバー
+
+#### 3. 時系列データ: TimescaleDB
+- **用途**: メトリクス、ログ、実行履歴の保存
+- **選定理由**:
+  - PostgreSQLの拡張で既存インフラと統合しやすい
+  - 自動パーティショニングと圧縮
+
+### ホスティングサービス
+
+#### AWS構成
+
+```yaml
+# インフラストラクチャ構成
+Infrastructure:
+  Region: ap-northeast-1 (東京)
+  
+  Compute:
+    - Service: Amazon EKS
+      NodeGroups:
+        - Name: api-servers
+          InstanceType: t3.medium
+          MinSize: 2
+          MaxSize: 10
+          DesiredSize: 3
+        - Name: code-executors
+          InstanceType: c5.large
+          MinSize: 1
+          MaxSize: 20
+          DesiredSize: 5
+          
+  Database:
+    - Service: Amazon RDS (PostgreSQL)
+      InstanceClass: db.t3.medium
+      MultiAZ: true
+      Storage: 100GB (gp3)
+      
+    - Service: Amazon ElastiCache (Redis)
+      NodeType: cache.t3.micro
+      NumNodes: 2
+      
+  Storage:
+    - Service: Amazon S3
+      Buckets:
+        - user-code-storage
+        - submission-logs
+        - static-assets
+        
+  CDN:
+    - Service: Amazon CloudFront
+      Origins:
+        - S3 (static assets)
+        - ALB (API)
+        
+  Container Registry:
+    - Service: Amazon ECR
+      Repositories:
+        - go-learning-api
+        - code-executor
+        
+  Monitoring:
+    - CloudWatch
+    - Prometheus + Grafana (EKS上)
+    - ELK Stack (Elasticsearch, Logstash, Kibana)
+```
+
+### 運用コスト試算（月額）
+
+#### 小規模（〜1,000ユーザー）
+```
+Amazon EKS:
+  - Control Plane: $72
+  - t3.medium × 2: $60
+  - c5.large × 1: $62
+  
+Amazon RDS:
+  - db.t3.medium (Multi-AZ): $140
+  - Storage 100GB: $25
+  
+Amazon ElastiCache:
+  - cache.t3.micro × 2: $25
+  
+Amazon S3 + CloudFront:
+  - Storage & Transfer: $20
+  
+Amazon ECR:
+  - Storage: $10
+  
+その他（ALB, NAT Gateway等）: $50
+
+合計: 約$464/月（約7万円/月）
+```
+
+#### 中規模（〜10,000ユーザー）
+```
+Amazon EKS:
+  - Control Plane: $72
+  - t3.medium × 4: $120
+  - c5.large × 3: $186
+  
+Amazon RDS:
+  - db.r5.large (Multi-AZ): $460
+  - Storage 500GB: $125
+  - Read Replica: $230
+  
+Amazon ElastiCache:
+  - cache.r5.large × 2: $340
+  
+Amazon S3 + CloudFront:
+  - Storage & Transfer: $150
+  
+Amazon ECR:
+  - Storage: $30
+  
+その他: $200
+
+合計: 約$1,913/月（約29万円/月）
+```
+
+#### 大規模（〜100,000ユーザー）
+```
+Amazon EKS:
+  - Control Plane × 2: $144
+  - t3.large × 10: $600
+  - c5.xlarge × 10: $1,240
+  
+Amazon RDS:
+  - db.r5.2xlarge (Multi-AZ): $1,840
+  - Storage 2TB: $500
+  - Read Replica × 3: $2,760
+  
+Amazon ElastiCache:
+  - cache.r5.xlarge × 4: $1,360
+  
+Amazon S3 + CloudFront:
+  - Storage & Transfer: $1,000
+  
+Amazon ECR:
+  - Storage: $100
+  
+その他: $500
+
+合計: 約$10,044/月（約150万円/月）
+```
+
+### コスト最適化戦略
+
+#### 1. Reserved Instances / Savings Plans
+- 1年または3年契約で最大72%割引
+- 予測可能なワークロードに適用
+
+#### 2. Spot Instances
+- コード実行用のワーカーノードに利用
+- 最大90%のコスト削減
+
+#### 3. Auto Scaling
+```yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: api-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: go-learning-api
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+```
+
+#### 4. コンテナ最適化
+```dockerfile
+# マルチステージビルドでイメージサイズ削減
+FROM golang:1.21-alpine AS builder
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
+
+FROM alpine:latest
+RUN apk --no-cache add ca-certificates
+WORKDIR /root/
+COPY --from=builder /app/main .
+CMD ["./main"]
+```
+
+### 災害復旧計画（DRP）
+
+#### バックアップ戦略
+```yaml
+BackupStrategy:
+  Database:
+    - Type: Automated Backup
+      Frequency: Daily
+      Retention: 30 days
+    - Type: Manual Snapshot
+      Frequency: Weekly
+      Retention: 90 days
+      
+  CodeRepository:
+    - Type: S3 Cross-Region Replication
+      Target: us-west-2
+      
+  Configurations:
+    - Type: AWS Backup
+      Frequency: Daily
+      Retention: 7 days
+```
+
+#### 復旧目標
+- **RPO (Recovery Point Objective)**: 1時間
+- **RTO (Recovery Time Objective)**: 4時間
+
+### 監視とアラート
+
+```yaml
+Monitoring:
+  Metrics:
+    - API Response Time: < 200ms (p95)
+    - Code Execution Time: < 5s (p95)
+    - Error Rate: < 1%
+    - Availability: > 99.9%
+    
+  Alerts:
+    Critical:
+      - Service Down
+      - Database Connection Failed
+      - Error Rate > 5%
+    Warning:
+      - Response Time > 500ms
+      - CPU Usage > 80%
+      - Memory Usage > 90%
+    Info:
+      - New Deployment
+      - Scaling Event
+      - Backup Completed
+```
+
 ## 次のステップ
 
 1. **MVP開発**: 基本機能の実装とテスト
