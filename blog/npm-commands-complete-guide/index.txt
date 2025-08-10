@@ -1,0 +1,459 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/21fca20b31fba572.css","style"]
+0:{"P":null,"b":"Zb9UEww6MIBJFMzVM4AIy","p":"","c":["","blog","npm-commands-complete-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","npm-commands-complete-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/21fca20b31fba572.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","npm-commands-complete-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","ZeOmVch0K3OevyApHwvrq",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
+13:T3de7,<p>JavaScriptプロジェクトを開発する際、必ず遭遇するのが<code>npm</code>コマンドです。「とりあえず<code>npm install</code>を実行して」と言われても、実際に何が起きているのか分からないまま使っている方も多いのではないでしょうか。本記事では、npmの基本コマンドが裏側で何をしているのか、どんなファイルが作成されるのかを詳しく解説します。</p>
+<h2>npmとは何か？</h2>
+<p>npm（Node Package Manager）は、JavaScriptのパッケージ管理ツールです。以下の3つの意味があります：</p>
+<ol>
+<li><strong>コマンドラインツール</strong>：<code>npm</code>コマンドそのもの</li>
+<li><strong>パッケージレジストリ</strong>：npmjs.comで公開されているパッケージのデータベース</li>
+<li><strong>パッケージ管理システム</strong>：依存関係の解決とバージョン管理の仕組み</li>
+</ol>
+<h2>重要なファイルの役割</h2>
+<p>npmを理解するには、まず関連するファイルを知る必要があります。</p>
+<h3>package.json</h3>
+<p>プロジェクトの設定ファイルです。以下の情報が含まれます：</p>
+<pre><code class="language-json">{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "プロジェクトの説明",
+  "scripts": {
+    "start": "node index.js",
+    "build": "webpack --mode production",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "axios": "^1.5.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.0",
+    "jest": "^29.6.0"
+  }
+}
+</code></pre>
+<h4>各セクションの意味：</h4>
+<ul>
+<li><strong>name/version</strong>: パッケージの識別情報</li>
+<li><strong>scripts</strong>: カスタムコマンドの定義</li>
+<li><strong>dependencies</strong>: 本番環境で必要なパッケージ</li>
+<li><strong>devDependencies</strong>: 開発時のみ必要なパッケージ</li>
+</ul>
+<h3>package-lock.json</h3>
+<p>依存関係の正確なバージョンを記録するファイルです。</p>
+<pre><code class="language-json">{
+  "name": "my-project",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "packages": {
+    "": {
+      "name": "my-project",
+      "version": "1.0.0",
+      "dependencies": {
+        "express": "^4.18.0"
+      }
+    },
+    "node_modules/express": {
+      "version": "4.18.2",
+      "resolved": "https://registry.npmjs.org/express/-/express-4.18.2.tgz",
+      "integrity": "sha512-...",
+      "dependencies": {
+        "accepts": "~1.3.8",
+        "body-parser": "1.20.1"
+      }
+    }
+  }
+}
+</code></pre>
+<p><strong>重要な特徴：</strong></p>
+<ul>
+<li>正確なバージョンを固定（4.18.2など）</li>
+<li>依存関係の依存関係も記録</li>
+<li>チーム全員が同じバージョンを使用できる</li>
+</ul>
+<h3>node_modules/</h3>
+<p>実際のパッケージコードが保存されるディレクトリです。</p>
+<pre><code>node_modules/
+├── express/
+│   ├── package.json
+│   ├── index.js
+│   └── lib/
+├── axios/
+│   ├── package.json
+│   ├── dist/
+│   └── lib/
+└── ... (数百〜数千のパッケージ)
+</code></pre>
+<h2>基本コマンドの詳細解説</h2>
+<h3>1. npm init</h3>
+<p><strong>目的：</strong> 新しいプロジェクトを初期化</p>
+<p><strong>実行内容：</strong></p>
+<pre><code class="language-bash">$ npm init
+</code></pre>
+<p><strong>何が起きるか：</strong></p>
+<ol>
+<li>対話形式で質問が表示される</li>
+<li>package.jsonファイルが作成される</li>
+</ol>
+<p><strong>実際の動作を見てみましょう：</strong></p>
+<pre><code class="language-bash"># 対話形式での初期化
+$ npm init
+package name: (my-project) 
+version: (1.0.0) 
+description: サンプルプロジェクト
+entry point: (index.js) 
+test command: jest
+git repository: 
+keywords: 
+author: Taro Yamada
+license: (ISC) MIT
+
+# 結果：package.jsonが作成される
+</code></pre>
+<p><strong>便利なオプション：</strong></p>
+<pre><code class="language-bash"># 質問をスキップしてデフォルト値で作成
+$ npm init -y
+
+# ESモジュール対応のプロジェクトとして初期化
+$ npm init -y &#x26;&#x26; npm pkg set type="module"
+</code></pre>
+<h3>2. npm install</h3>
+<p><strong>目的：</strong> 依存パッケージをインストール</p>
+<p><strong>パターン1：すべての依存関係をインストール</strong></p>
+<pre><code class="language-bash">$ npm install
+# または省略形
+$ npm i
+</code></pre>
+<p><strong>何が起きるか：</strong></p>
+<ol>
+<li>package.jsonの<code>dependencies</code>と<code>devDependencies</code>を読み取る</li>
+<li>package-lock.jsonがあればそのバージョンを使用</li>
+<li>node_modulesディレクトリにパッケージをダウンロード</li>
+<li>package-lock.jsonを作成/更新</li>
+</ol>
+<p><strong>実行過程の詳細：</strong></p>
+<pre><code class="language-bash">$ npm install
+
+# 1. パッケージ情報の取得
+# → npmレジストリにアクセス
+
+# 2. 依存関係の解決
+# → 各パッケージが必要とするパッケージも計算
+
+# 3. ダウンロード
+added 523 packages, and audited 524 packages in 15s
+
+# 4. 脆弱性チェック
+found 0 vulnerabilities
+</code></pre>
+<p><strong>パターン2：特定のパッケージをインストール</strong></p>
+<pre><code class="language-bash"># 本番用の依存関係として追加
+$ npm install express
+# → package.jsonのdependenciesに追加
+# → node_modules/express/にインストール
+
+# 開発用の依存関係として追加
+$ npm install --save-dev webpack
+# または
+$ npm install -D webpack
+# → package.jsonのdevDependenciesに追加
+</code></pre>
+<p><strong>パターン3：グローバルインストール</strong></p>
+<pre><code class="language-bash">$ npm install -g typescript
+# → システム全体で使用可能
+# → /usr/local/lib/node_modules/にインストール（macOS/Linux）
+# → %AppData%\npm\node_modules\にインストール（Windows）
+</code></pre>
+<h3>3. npm ci</h3>
+<p><strong>目的：</strong> CIや本番環境向けの確実なインストール</p>
+<pre><code class="language-bash">$ npm ci
+</code></pre>
+<p><strong>npm installとの違い：</strong></p>
+<p>| 項目 | npm install | npm ci |
+|------|------------|---------|
+| package-lock.json | 更新する可能性あり | 絶対に更新しない |
+| node_modules | 部分更新 | 完全削除して再作成 |
+| 速度 | やや遅い | 高速 |
+| 用途 | 開発時 | CI/本番デプロイ |</p>
+<p><strong>実行例：</strong></p>
+<pre><code class="language-bash"># node_modulesを削除してから実行
+$ rm -rf node_modules
+$ npm ci
+
+# 以下のような場合はエラーになる
+# - package-lock.jsonが存在しない
+# - package.jsonとpackage-lock.jsonが一致しない
+</code></pre>
+<h3>4. npm run</h3>
+<p><strong>目的：</strong> package.jsonに定義されたスクリプトを実行</p>
+<p><strong>基本的な使い方：</strong></p>
+<pre><code class="language-json">// package.json
+{
+  "scripts": {
+    "start": "node server.js",
+    "build": "webpack --mode production",
+    "test": "jest",
+    "dev": "nodemon server.js",
+    "lint": "eslint src/**/*.js"
+  }
+}
+</code></pre>
+<pre><code class="language-bash"># スクリプトの実行
+$ npm run start   # node server.jsが実行される
+$ npm run build   # webpack --mode productionが実行される
+$ npm run test    # jestが実行される
+</code></pre>
+<p><strong>特別な省略形：</strong></p>
+<pre><code class="language-bash"># start, test, stopは"run"を省略可能
+$ npm start   # npm run startと同じ
+$ npm test    # npm run testと同じ
+</code></pre>
+<p><strong>実行時に何が起きるか：</strong></p>
+<ol>
+<li><strong>PATH環境変数の拡張</strong></li>
+</ol>
+<pre><code class="language-bash"># npm runを実行すると、一時的にPATHが拡張される
+PATH=$PATH:./node_modules/.bin
+
+# これにより、ローカルにインストールしたツールが使える
+$ npm run build
+# → ./node_modules/.bin/webpackが実行される
+</code></pre>
+<ol start="2">
+<li><strong>環境変数の設定</strong></li>
+</ol>
+<pre><code class="language-json">{
+  "scripts": {
+    "build:prod": "NODE_ENV=production webpack",
+    "build:dev": "NODE_ENV=development webpack"
+  }
+}
+</code></pre>
+<ol start="3">
+<li><strong>複数コマンドの連結</strong></li>
+</ol>
+<pre><code class="language-json">{
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "webpack",
+    "deploy": "npm run clean &#x26;&#x26; npm run build &#x26;&#x26; aws s3 sync dist/ s3://my-bucket"
+  }
+}
+</code></pre>
+<h3>5. npm run build（よくある例）</h3>
+<p><strong>目的：</strong> プロジェクトをビルド（本番用に最適化）</p>
+<p><strong>一般的な設定例：</strong></p>
+<pre><code class="language-json">{
+  "scripts": {
+    "build": "webpack --mode production"
+  }
+}
+</code></pre>
+<p><strong>実行時に何が起きるか：</strong></p>
+<pre><code class="language-bash">$ npm run build
+
+# 1. webpackが起動
+# 2. すべてのJavaScriptファイルを解析
+# 3. 依存関係を解決
+# 4. バンドル（結合）
+# 5. 最小化（minify）
+# 6. distディレクトリに出力
+
+# 実行結果の例
+asset main.js 125 KiB [emitted] [minimized] (name: main)
+asset index.html 267 bytes [emitted]
+webpack 5.88.0 compiled successfully in 3251 ms
+</code></pre>
+<p><strong>ビルド前後の比較：</strong></p>
+<pre><code># ビルド前（開発用）
+src/
+├── index.js (10KB)
+├── components/
+│   ├── Header.js (5KB)
+│   └── Footer.js (3KB)
+└── utils/
+    └── api.js (8KB)
+
+# ビルド後（本番用）
+dist/
+├── main.js (15KB) # 最小化済み
+├── main.js.map    # ソースマップ
+└── index.html
+</code></pre>
+<h2>その他の重要なコマンド</h2>
+<h3>npm update</h3>
+<p><strong>依存パッケージを更新：</strong></p>
+<pre><code class="language-bash"># すべてのパッケージを更新
+$ npm update
+
+# 特定のパッケージを更新
+$ npm update express
+
+# 更新可能なパッケージを確認
+$ npm outdated
+Package    Current  Wanted  Latest
+express    4.17.1   4.18.2  5.0.0
+</code></pre>
+<h3>npm uninstall</h3>
+<p><strong>パッケージを削除：</strong></p>
+<pre><code class="language-bash"># パッケージを削除
+$ npm uninstall express
+
+# 省略形
+$ npm un express
+$ npm rm express
+
+# グローバルパッケージを削除
+$ npm uninstall -g typescript
+</code></pre>
+<h3>npm list</h3>
+<p><strong>インストール済みパッケージを確認：</strong></p>
+<pre><code class="language-bash"># すべての依存関係をツリー表示
+$ npm list
+
+# 第1階層のみ表示
+$ npm list --depth=0
+
+# グローバルパッケージを表示
+$ npm list -g --depth=0
+</code></pre>
+<h3>npm audit</h3>
+<p><strong>セキュリティ脆弱性をチェック：</strong></p>
+<pre><code class="language-bash"># 脆弱性をチェック
+$ npm audit
+
+# 自動修正
+$ npm audit fix
+
+# 破壊的変更も含めて修正
+$ npm audit fix --force
+</code></pre>
+<h2>よくあるトラブルと解決方法</h2>
+<h3>1. パッケージのバージョン不一致</h3>
+<p><strong>問題：</strong> チームメンバー間で異なるバージョンがインストールされる</p>
+<p><strong>解決方法：</strong></p>
+<pre><code class="language-bash"># package-lock.jsonをコミット
+$ git add package-lock.json
+$ git commit -m "Lock dependency versions"
+
+# チームメンバーはnpm ciを使用
+$ npm ci
+</code></pre>
+<h3>2. node_modulesが巨大になる</h3>
+<p><strong>問題：</strong> node_modulesが数百MB〜数GBになる</p>
+<p><strong>解決方法：</strong></p>
+<pre><code class="language-bash"># 不要なパッケージを削除
+$ npm prune
+
+# キャッシュをクリア
+$ npm cache clean --force
+
+# node_modulesを削除して再インストール
+$ rm -rf node_modules package-lock.json
+$ npm install
+</code></pre>
+<h3>3. パーミッションエラー（グローバルインストール時）</h3>
+<p><strong>問題：</strong> <code>EACCES: permission denied</code>エラー</p>
+<p><strong>解決方法：</strong></p>
+<pre><code class="language-bash"># npmのデフォルトディレクトリを変更
+$ mkdir ~/.npm-global
+$ npm config set prefix '~/.npm-global'
+$ echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
+$ source ~/.bashrc
+</code></pre>
+<h2>ベストプラクティス</h2>
+<h3>1. package-lock.jsonは必ずコミットする</h3>
+<pre><code class="language-bash"># .gitignoreの設定例
+node_modules/
+*.log
+.env
+# package-lock.jsonは除外しない！
+</code></pre>
+<h3>2. 本番環境では--productionフラグを使用</h3>
+<pre><code class="language-bash"># 本番環境でのインストール（devDependenciesを除外）
+$ npm ci --production
+</code></pre>
+<h3>3. スクリプトの命名規則を統一</h3>
+<pre><code class="language-json">{
+  "scripts": {
+    "dev": "開発サーバー起動",
+    "build": "本番ビルド",
+    "test": "テスト実行",
+    "lint": "コード品質チェック",
+    "format": "コード整形"
+  }
+}
+</code></pre>
+<h3>4. npxを活用する</h3>
+<pre><code class="language-bash"># パッケージをインストールせずに実行
+$ npx create-react-app my-app
+
+# 特定バージョンを実行
+$ npx webpack@4 --version
+</code></pre>
+<h2>実践例：新規プロジェクトの立ち上げ</h2>
+<p>実際にReactプロジェクトを立ち上げる流れを見てみましょう：</p>
+<pre><code class="language-bash"># 1. プロジェクトディレクトリを作成
+$ mkdir my-react-app
+$ cd my-react-app
+
+# 2. package.jsonを初期化
+$ npm init -y
+
+# 3. 必要なパッケージをインストール
+$ npm install react react-dom
+$ npm install -D webpack webpack-cli webpack-dev-server
+$ npm install -D @babel/core @babel/preset-react babel-loader
+
+# 4. スクリプトを追加
+$ npm pkg set scripts.start="webpack-dev-server --mode development"
+$ npm pkg set scripts.build="webpack --mode production"
+
+# 5. 開発開始
+$ npm start
+
+# 6. ビルド
+$ npm run build
+</code></pre>
+<h2>まとめ</h2>
+<p>npmコマンドは単にパッケージをインストールするだけでなく、以下の重要な役割があります：</p>
+<ol>
+<li><strong>依存関係の管理</strong>：必要なパッケージとそのバージョンを管理</li>
+<li><strong>スクリプトの実行</strong>：開発に必要な様々なタスクを自動化</li>
+<li><strong>チーム開発の標準化</strong>：全員が同じ環境で開発できる</li>
+</ol>
+<p>最初は<code>npm install</code>と<code>npm run</code>だけでも十分ですが、各コマンドが何をしているかを理解することで、トラブルシューティングやより効率的な開発が可能になります。</p>
+<h2>次のステップ</h2>
+<ul>
+<li><strong>yarn</strong>や<strong>pnpm</strong>などの代替パッケージマネージャーを試す</li>
+<li><strong>npm workspace</strong>でモノレポ管理を学ぶ</li>
+<li><strong>npm publish</strong>で自作パッケージを公開する</li>
+<li><strong>GitHub Actions</strong>でCI/CDパイプラインを構築する</li>
+</ul>
+<p>これらの基本を押さえることで、JavaScriptプロジェクトの開発がよりスムーズになるはずです。</p>
+<h2>参考リンク</h2>
+<ul>
+<li><a href="https://docs.npmjs.com/">npm公式ドキュメント</a></li>
+<li><a href="https://docs.npmjs.com/cli/v9/configuring-npm/package-json">package.jsonの仕様</a></li>
+<li><a href="https://semver.npmjs.com/">npm semver calculator</a></li>
+<li><a href="https://nodejs.org/">Node.js公式サイト</a></li>
+</ul>
+4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",28]}]," ","npm基本コマンド完全ガイド：初心者が知るべきnpmの仕組みと実行内容"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-10 16:45"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"npm"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Node.js"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"JavaScript"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"初心者向け"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"パッケージ管理"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}
