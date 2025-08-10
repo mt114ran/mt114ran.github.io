@@ -9,13 +9,52 @@ e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/ce87a0c8fce915ba.css","style"]
-0:{"P":null,"b":"QOvJaiPppaeiYyUwgA32K","p":"","c":["","blog","remark-markdown-processor-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","remark-markdown-processor-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","remark-markdown-processor-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","7zUBOonJqXCFmZUhvULul",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"97EeGPQ7Pm0-ACgRl5RTY","p":"","c":["","blog","remark-markdown-processor-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","remark-markdown-processor-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","remark-markdown-processor-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","j-JJfS3mNQgj5MIDZDe-T",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
 12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
-13:T398c,<p>Markdownで書かれたブログ記事やドキュメントをWebサイトで表示するには、HTMLに変換する必要があります。本記事では、JavaScriptで最も人気のあるMarkdownプロセッサー「remark」の仕組みと使い方を、初心者にも分かりやすく解説します。</p>
+13:T586a,<p>Markdownで書かれたブログ記事やドキュメントをWebサイトで表示するには、HTMLに変換する必要があります。本記事では、JavaScriptで最も人気のあるMarkdownプロセッサー「remark」の仕組みと使い方を、初心者にも分かりやすく解説します。</p>
+<h2>📚 目次</h2>
+<ul>
+<li><a href="#remark%E3%81%A8%E3%81%AF">remarkとは？</a></li>
+<li><a href="#markdown%E5%A4%89%E6%8F%9B%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF">Markdown変換の仕組み</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9">基本的な使い方</a></li>
+<li><a href="#nextjs%E3%81%A7%E3%81%AE%E5%AE%9F%E8%A3%85%E4%BE%8B">Next.jsでの実装例</a></li>
+<li><a href="#%E4%B8%BB%E8%A6%81%E3%81%AAremark%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3">主要なremarkプラグイン</a></li>
+<li><a href="#%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AE%E4%BD%9C%E6%88%90">カスタムプラグインの作成</a></li>
+<li><a href="#%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E6%9C%80%E9%81%A9%E5%8C%96">パフォーマンス最適化</a></li>
+<li><a href="#%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0">トラブルシューティング</a></li>
+</ul>
+<h2>Markdownの基礎知識</h2>
+<h3>Markdownとは？</h3>
+<p>Markdownは、テキストファイルに簡単な記号を付けることで、文書の構造を表現できるマークアップ言語です。</p>
+<p><strong>基本的なMarkdown記法：</strong></p>
+<pre><code class="language-markdown"># 見出し1
+## 見出し2
+
+**太字** *斜体*
+
+- リスト項目
+- リスト項目
+
+[リンク](https://example.com)
+![画像](image.jpg)
+
+`インラインコード`
+
+\`\`\`javascript
+// コードブロック
+const hello = "world";
+\`\`\`
+</code></pre>
+<h3>なぜHTML変換が必要か？</h3>
+<ul>
+<li><strong>ブラウザ表示</strong>: ブラウザはHTMLしか理解できない</li>
+<li><strong>スタイリング</strong>: CSSでデザインを適用できる</li>
+<li><strong>インタラクティブ</strong>: JavaScriptで動的な機能を追加できる</li>
+</ul>
 <h2>remarkとは？</h2>
 <p>remarkは、Markdownを処理するためのプラグイン可能なツールです。unifiedエコシステムの一部として、以下の特徴があります：</p>
 <ul>
@@ -446,6 +485,244 @@ import { slugify } from 'transliteration';
 </ul>
 </li>
 </ul>
+<h2>ステップバイステップチュートリアル</h2>
+<h3>Step 1: 最小限の実装</h3>
+<pre><code class="language-javascript">// 1. 必要なパッケージをインポート
+const { remark } = require('remark');
+const html = require('remark-html');
+
+// 2. Markdownを準備
+const markdown = '# Hello World\n\nこれは**Markdown**です。';
+
+// 3. 変換して表示
+remark()
+  .use(html)
+  .process(markdown)
+  .then(result => {
+    console.log(result.toString());
+    // 出力: &#x3C;h1>Hello World&#x3C;/h1>\n&#x3C;p>これは&#x3C;strong>Markdown&#x3C;/strong>です。&#x3C;/p>
+  });
+</code></pre>
+<h3>Step 2: ファイルから読み込む</h3>
+<pre><code class="language-javascript">const fs = require('fs');
+const { remark } = require('remark');
+const html = require('remark-html');
+
+// Markdownファイルを読み込む
+const markdown = fs.readFileSync('article.md', 'utf8');
+
+// HTMLに変換
+async function convertToHtml() {
+  const result = await remark()
+    .use(html)
+    .process(markdown);
+  
+  // HTMLファイルに保存
+  fs.writeFileSync('article.html', result.toString());
+  console.log('✅ 変換完了！');
+}
+
+convertToHtml();
+</code></pre>
+<h3>Step 3: プラグインを追加</h3>
+<pre><code class="language-javascript">const { remark } = require('remark');
+const html = require('remark-html');
+const remarkGfm = require('remark-gfm');
+
+const markdown = `
+# TODOリスト
+
+- [x] remarkをインストール
+- [ ] プラグインを追加
+- [ ] カスタマイズ
+
+| 機能 | 状態 |
+|------|------|
+| 表 | ✅ |
+| チェックボックス | ✅ |
+`;
+
+async function convertWithPlugins() {
+  const result = await remark()
+    .use(remarkGfm)  // GitHub Flavored Markdownを有効化
+    .use(html)
+    .process(markdown);
+  
+  console.log(result.toString());
+}
+
+convertWithPlugins();
+</code></pre>
+<h2>パフォーマンスベンチマーク</h2>
+<h3>remark vs 他のMarkdownプロセッサー</h3>
+<table>
+<thead>
+<tr>
+<th>プロセッサー</th>
+<th>速度</th>
+<th>プラグイン</th>
+<th>AST</th>
+<th>ファイルサイズ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>remark</td>
+<td>速い</td>
+<td>非常に豊富</td>
+<td>✅</td>
+<td>中</td>
+</tr>
+<tr>
+<td>marked</td>
+<td>最速</td>
+<td>少ない</td>
+<td>❌</td>
+<td>小</td>
+</tr>
+<tr>
+<td>markdown-it</td>
+<td>速い</td>
+<td>豊富</td>
+<td>❌</td>
+<td>中</td>
+</tr>
+<tr>
+<td>showdown</td>
+<td>普通</td>
+<td>普通</td>
+<td>❌</td>
+<td>大</td>
+</tr>
+</tbody>
+</table>
+<h3>大規模ファイルの処理最適化</h3>
+<pre><code class="language-javascript">const { unified } = require('unified');
+const remarkParse = require('remark-parse');
+const remarkRehype = require('remark-rehype');
+const rehypeStringify = require('rehype-stringify');
+const stream = require('stream');
+const { promisify } = require('util');
+
+const pipeline = promisify(stream.pipeline);
+
+// ストリーム処理でメモリ効率を最適化
+async function processLargeFile(inputPath, outputPath) {
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeStringify);
+  
+  await pipeline(
+    fs.createReadStream(inputPath),
+    processor.stream(),
+    fs.createWriteStream(outputPath)
+  );
+  
+  console.log('✅ 大規模ファイルの処理完了');
+}
+</code></pre>
+<h2>CI/CDでの活用</h2>
+<h3>GitHub Actionsでのドキュメント自動生成</h3>
+<pre><code class="language-yaml">name: Generate Documentation
+
+on:
+  push:
+    paths:
+      - 'docs/**/*.md'
+      - 'README.md'
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build documentation
+        run: |
+          npm run build:docs
+          
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+</code></pre>
+<h3>MarkdownのLinting</h3>
+<pre><code class="language-javascript">// .remarkrc.js
+module.exports = {
+  plugins: [
+    'remark-preset-lint-consistent',
+    'remark-preset-lint-recommended',
+    'remark-preset-lint-markdown-style-guide',
+    ['remark-lint-list-item-indent', 'space'],
+    ['remark-lint-no-heading-punctuation', ':.']
+  ]
+};
+</code></pre>
+<pre><code class="language-bash"># Lintの実行
+npx remark . --quiet --frail
+</code></pre>
+<h2>MDXとの統合</h2>
+<h3>Reactコンポーネントの埋め込み</h3>
+<pre><code class="language-jsx">// components/Counter.jsx
+export function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    &#x3C;button onClick={() => setCount(count + 1)}>
+      クリック数: {count}
+    &#x3C;/button>
+  );
+}
+</code></pre>
+<pre><code class="language-mdx"># MDXの例
+
+import { Counter } from './components/Counter';
+
+これは通常のMarkdownです。
+
+&#x3C;Counter />
+
+上にインタラクティブなカウンターが表示されます！
+</code></pre>
+<pre><code class="language-javascript">// MDXの処理
+import { compile } from '@mdx-js/mdx';
+import remarkGfm from 'remark-gfm';
+
+const compiled = await compile(mdxContent, {
+  remarkPlugins: [remarkGfm],
+  rehypePlugins: []
+});
+</code></pre>
+<h2>よくあるエラーと対処法</h2>
+<h3>エラー1: Cannot find module 'remark'</h3>
+<pre><code class="language-bash"># 解決方法
+npm install remark remark-html
+</code></pre>
+<h3>エラー2: TypeError: remark is not a function</h3>
+<pre><code class="language-javascript">// ❌ 間違ったインポート
+const remark = require('remark');
+
+// ✅ 正しいインポート
+const { remark } = require('remark');
+// または
+import { remark } from 'remark';
+</code></pre>
+<h3>エラー3: 表が表示されない</h3>
+<pre><code class="language-javascript">// ❌ GFMプラグインがない
+.use(html)
+
+// ✅ GFMプラグインを追加
+.use(remarkGfm)
+.use(html)
+</code></pre>
 <h2>まとめ</h2>
 <p>remarkは、Markdownを扱うJavaScriptプロジェクトにおいて非常に強力なツールです：</p>
 <ol>

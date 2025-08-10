@@ -1,0 +1,553 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/ce87a0c8fce915ba.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-d8f047cced1b4886.js" async=""></script><script src="/_next/static/chunks/684-8e4d9e1e4139006e.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/874-8d3839f72fd80c3c.js" async=""></script><script src="/_next/static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><div class="max-w-2xl mx-auto py-10 px-4"><h1 class="text-3xl font-bold mb-2"><span class="text-green-600">#<!-- -->29</span> <!-- -->GitHub IssueコメントでClaude AIを呼び出す自動開発システムの構築</h1><ul class="list-none border-b border-gray-600 pb-4 mb-6"><li class="text-gray-500 text-sm">作成日時: <!-- -->2025-08-11 00:59</li><li class="flex flex-wrap gap-2 mt-2"><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">GitHub Actions</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Claude AI</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">自動化</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">CI/CD</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">開発効率化</span></li></ul><nav class="mb-6 pb-4 border-b border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav><article class="prose dark:prose-invert"><p>開発作業を効率化するため、GitHub Issueのコメントに<code>/claude</code>と入力するだけでAIが自動的にコードを生成し、Pull Requestを作成するシステムを構築しました。本記事では、その実装方法と活用例を詳しく解説します。</p>
+<h2>前提知識</h2>
+<p>本記事を理解するために必要な基礎知識：</p>
+<h3>必須知識</h3>
+<ul>
+<li><strong>Git/GitHub</strong>の基本操作（clone、commit、push、pull request）</li>
+<li><strong>JavaScript/Node.js</strong>の基礎（npmコマンド、package.json）</li>
+<li><strong>YAML</strong>ファイルの基本構文</li>
+</ul>
+<h3>あると理解が深まる知識</h3>
+<ul>
+<li><strong>GitHub Actions</strong>: GitHubが提供する自動化プラットフォーム。コードのビルド、テスト、デプロイを自動化</li>
+<li><strong>CI/CD</strong>: 継続的インテグレーション/デリバリー。コードの変更を自動的にテスト・デプロイするプロセス</li>
+<li><strong>API（Application Programming Interface）</strong>: ソフトウェア間でデータをやり取りするためのインターフェース</li>
+<li><strong>Webhook</strong>: 特定のイベントが発生した際に、自動的に他のサービスに通知を送る仕組み</li>
+</ul>
+<h3>用語解説</h3>
+<ul>
+<li><strong>トリガー</strong>: 自動処理を開始するきっかけとなるイベント</li>
+<li><strong>パーミッション（権限）</strong>: ユーザーが実行できる操作の範囲</li>
+<li><strong>トークン</strong>: APIアクセスのための認証情報</li>
+<li><strong>ブランチ</strong>: Gitで並行して開発を進めるための機能</li>
+</ul>
+<h2>なぜこのシステムが必要か？</h2>
+<h3>開発現場の課題</h3>
+<p>日々の開発作業において、以下のような繰り返し作業に時間を取られることがあります：</p>
+<ul>
+<li>簡単な機能追加やバグ修正</li>
+<li>ボイラープレートコードの生成</li>
+<li>テストコードの作成</li>
+<li>リファクタリング作業</li>
+</ul>
+<p>これらの作業を効率化するため、AIアシスタントを活用した自動開発システムを構築しました。</p>
+<h2>システム概要</h2>
+<h3>動作の流れ（5分で理解）</h3>
+<ol>
+<li><strong>開発者がIssueにコメント</strong>: <code>/claude ログイン機能を実装して</code></li>
+<li><strong>GitHub Actionsが起動</strong>: コメントを検知して処理開始</li>
+<li><strong>Claude AIがコード生成</strong>: 指示を解析してコードを作成</li>
+<li><strong>Pull Request作成</strong>: 生成されたコードでPRを自動作成</li>
+<li><strong>レビューとマージ</strong>: 人間が確認してマージ</li>
+</ol>
+<h3>アーキテクチャ</h3>
+<pre><code class="language-mermaid">graph LR
+    A[GitHub Issue] --> B[コメント: /claude]
+    B --> C[GitHub Actions]
+    C --> D[Claude API]
+    D --> E[コード生成]
+    E --> F[Pull Request作成]
+    F --> G[レビュー・マージ]
+</code></pre>
+<h3>主な機能</h3>
+<ol>
+<li><strong>コマンドベースの実行</strong>: Issueコメントで<code>/claude</code>を使用</li>
+<li><strong>権限管理</strong>: Write権限以上のユーザーのみ実行可能</li>
+<li><strong>自動PR作成</strong>: 生成されたコードを含むPRを自動作成</li>
+<li><strong>エラーハンドリング</strong>: 失敗時の詳細なフィードバック</li>
+</ol>
+<h2>実装詳細</h2>
+<h3>1. GitHub Actionsワークフローの設計</h3>
+<h4>GitHub Actionsとは？</h4>
+<p>GitHub Actionsは、GitHubリポジトリ内で直接実行できる自動化ツールです。コードのプッシュやIssueの作成など、様々なイベントをトリガーに処理を実行できます。</p>
+<h4>ワークフローの基本構造</h4>
+<p>ワークフローは<code>.github/workflows/</code>ディレクトリにYAMLファイルとして配置します。<code>issue_comment</code>イベントをトリガーとして動作するよう設定します。</p>
+<pre><code class="language-yaml">name: Claude Development Bot
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+</code></pre>
+<h4>トリガー条件の設定</h4>
+<p>コメントが<code>/claude</code>で始まる場合のみ実行するよう条件を設定：</p>
+<pre><code class="language-yaml">jobs:
+  claude-development:
+    if: |
+      github.event.issue.pull_request == null &#x26;&#x26;
+      startsWith(github.event.comment.body, '/claude')
+</code></pre>
+<h3>2. 権限チェックの実装</h3>
+<h4>なぜ権限チェックが必要か？</h4>
+<p>誰でもコードを生成できてしまうと、悪意のあるコードが混入するリスクがあります。そのため、信頼できるメンバーのみが使用できるよう制限します。</p>
+<h4>実装方法</h4>
+<p>GitHub APIを使用して、コメント投稿者の権限レベルを確認します：</p>
+<pre><code class="language-javascript">const { data: permission } = await github.rest.repos.getCollaboratorPermissionLevel({
+  owner,
+  repo,
+  username: commenter
+});
+
+if (!['admin', 'write'].includes(permission.permission)) {
+  // エラーメッセージを表示
+  await github.rest.issues.createComment({
+    owner,
+    repo,
+    issue_number: context.issue.number,
+    body: '❌ 権限が不足しています'
+  });
+  return;
+}
+</code></pre>
+<h3>3. Claude APIとの連携</h3>
+<h4>Claude APIとは？</h4>
+<p>Claude APIは、Anthropic社が提供するAIアシスタントのAPIです。自然言語での指示を理解し、コードを生成できます。</p>
+<h4>APIキーの取得方法</h4>
+<ol>
+<li><a href="https://console.anthropic.com/">Anthropic Console</a>にアクセス</li>
+<li>アカウントを作成（無料トライアルあり）</li>
+<li>API Keysセクションで新規キーを生成</li>
+<li>キーを安全に保管（一度しか表示されません）</li>
+</ol>
+<h4>プロンプトエンジニアリング</h4>
+<p>効果的なコード生成のため、構造化されたプロンプトを作成：</p>
+<pre><code class="language-javascript">const systemPrompt = `
+あなたは優秀なソフトウェアエンジニアです。
+与えられたタスクを分析し、具体的なコード変更を提案してください。
+
+出力形式:
+1. 実装計画の説明
+2. 具体的なコード（ファイルパスを明記）
+3. テストコード（必要に応じて）
+`;
+
+const userPrompt = `
+Issue #${issueNumber}: ${issueTitle}
+
+Issue詳細: ${issueBody}
+ユーザーからの指示: ${instruction}
+プロジェクト情報: ${projectInfo}
+`;
+</code></pre>
+<h4>APIコールの実装</h4>
+<pre><code class="language-javascript">const response = await anthropic.messages.create({
+  model: 'claude-3-5-sonnet-20241022',
+  max_tokens: 8000,
+  temperature: 0,
+  system: systemPrompt,
+  messages: [
+    {
+      role: 'user',
+      content: userPrompt
+    }
+  ]
+});
+</code></pre>
+<h3>4. コード変更の適用</h3>
+<p>生成されたコードを解析し、実際のファイルに適用：</p>
+<pre><code class="language-javascript">async function applyCodeChanges(response) {
+  // ファイルパスとコードブロックを抽出
+  const fileRegex = /### ファイル: ([^\n]+)/g;
+  const codeBlockRegex = /```[\w]*\n([\s\S]*?)```/g;
+  
+  const filePaths = [];
+  let match;
+  while ((match = fileRegex.exec(response)) !== null) {
+    filePaths.push(match[1].trim());
+  }
+  
+  const codeBlocks = [];
+  while ((match = codeBlockRegex.exec(response)) !== null) {
+    codeBlocks.push(match[1]);
+  }
+  
+  // ファイルを作成/更新
+  for (let i = 0; i &#x3C; Math.min(filePaths.length, codeBlocks.length); i++) {
+    const filePath = filePaths[i];
+    const code = codeBlocks[i];
+    
+    // ディレクトリを作成
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
+    
+    // ファイルを書き込み
+    await fs.writeFile(filePath, code);
+    console.log(`✅ Updated: ${filePath}`);
+  }
+}
+</code></pre>
+<h3>5. Pull Request の自動作成</h3>
+<p>変更をコミットし、PRを作成：</p>
+<pre><code class="language-javascript">// ブランチ作成とコミット
+const branchName = `claude/issue-${issueNumber}-${timestamp}`;
+execSync(`git checkout -b ${branchName}`);
+execSync('git add -A');
+execSync(`git commit -m "feat: Implement changes for issue #${issueNumber}"`);
+execSync(`git push -u origin ${branchName}`);
+
+// PR作成
+const pr = await github.rest.pulls.create({
+  owner,
+  repo,
+  title: `🤖 [Claude Bot] ${issueTitle}`,
+  body: prBody,
+  head: branchName,
+  base: 'main'
+});
+</code></pre>
+<h2>実践：ステップバイステップガイド</h2>
+<h3>準備編（初回のみ）</h3>
+<h4>Step 1: リポジトリの準備</h4>
+<pre><code class="language-bash"># リポジトリをクローン
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+
+# .github/workflowsディレクトリを作成
+mkdir -p .github/workflows
+</code></pre>
+<h4>Step 2: ワークフローファイルの作成</h4>
+<p><code>.github/workflows/claude-bot.yml</code>を作成し、本記事のコードをコピー</p>
+<h4>Step 3: APIキーの設定</h4>
+<ol>
+<li>GitHubリポジトリの<strong>Settings</strong>タブを開く</li>
+<li>左メニューの<strong>Secrets and variables</strong> → <strong>Actions</strong></li>
+<li><strong>New repository secret</strong>をクリック</li>
+<li>Name: <code>ANTHROPIC_API_KEY</code></li>
+<li>Value: 取得したAPIキー</li>
+<li><strong>Add secret</strong>をクリック</li>
+</ol>
+<h3>使用編</h3>
+<h4>基本的な使い方</h4>
+<ol>
+<li><strong>Issueを作成</strong></li>
+</ol>
+<pre><code class="language-markdown">Title: ダークモードの実装
+Body: アプリケーションにダークモード機能を追加したい
+</code></pre>
+<ol start="2">
+<li><strong>コメントでClaudeを呼び出し</strong></li>
+</ol>
+<pre><code>/claude React Contextを使用してダークモードを実装してください。
+トグルボタンも含めてください。
+</code></pre>
+<ol start="3">
+<li><strong>自動実行される処理</strong></li>
+</ol>
+<ul>
+<li>🚀 処理開始の通知</li>
+<li>💬 Claudeの応答</li>
+<li>🔀 Pull Request作成</li>
+<li>✅ 完了通知</li>
+</ul>
+<h3>実際の活用例</h3>
+<h4>例1: 新機能の実装</h4>
+<pre><code>/claude ユーザープロフィール編集機能を実装してください。
+フォームバリデーションも含めてください。
+</code></pre>
+<h4>例2: バグ修正</h4>
+<pre><code>/claude このエラーメッセージを分析して修正してください：
+TypeError: Cannot read property 'map' of undefined
+</code></pre>
+<h4>例3: リファクタリング</h4>
+<pre><code>/claude このコンポーネントをTypeScriptに変換してください
+</code></pre>
+<h4>例4: テスト作成</h4>
+<pre><code>/claude UserService クラスのユニットテストを作成してください
+</code></pre>
+<h2>セキュリティ考慮事項</h2>
+<h3>🔴 重要：必ず守るべきセキュリティルール</h3>
+<h3>1. APIキーの管理</h3>
+<h4>❌ 絶対にやってはいけないこと</h4>
+<pre><code class="language-javascript">// 絶対ダメ！APIキーを直接記載
+const apiKey = 'sk-ant-api03-xxxxx';
+</code></pre>
+<h4>✅ 正しい方法</h4>
+<p>APIキーは<strong>GitHub Secrets</strong>で安全に管理：</p>
+<pre><code class="language-yaml">env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+</code></pre>
+<p><strong>重要</strong>: APIキーを直接コードに記載しない</p>
+<h3>2. 権限制御</h3>
+<p>リポジトリの権限レベルでアクセスを制御：</p>
+<ul>
+<li><strong>Read権限</strong>: 使用不可</li>
+<li><strong>Write権限</strong>: 使用可能</li>
+<li><strong>Admin権限</strong>: 使用可能</li>
+</ul>
+<h3>3. コードレビューの必要性</h3>
+<p>AIが生成したコードは必ず人間がレビュー：</p>
+<ul>
+<li>セキュリティホールの確認</li>
+<li>ビジネスロジックの妥当性検証</li>
+<li>コーディング規約の準拠確認</li>
+</ul>
+<h2>パフォーマンスと制限</h2>
+<h3>処理時間</h3>
+<p>典型的な処理時間：</p>
+<table>
+<thead>
+<tr>
+<th>処理内容</th>
+<th>所要時間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>権限チェック</td>
+<td>1-2秒</td>
+</tr>
+<tr>
+<td>Claude API呼び出し</td>
+<td>5-15秒</td>
+</tr>
+<tr>
+<td>コード生成・適用</td>
+<td>2-5秒</td>
+</tr>
+<tr>
+<td>PR作成</td>
+<td>3-5秒</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td><strong>15-30秒</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>API制限</h3>
+<ul>
+<li><strong>Anthropic API</strong>: レート制限とトークン制限あり</li>
+<li><strong>GitHub Actions</strong>:
+<ul>
+<li>パブリックリポジトリ: 無制限</li>
+<li>プライベートリポジトリ: 月2,000分の無料枠</li>
+</ul>
+</li>
+</ul>
+<h3>コスト見積もり</h3>
+<p>月間使用量に応じたコスト目安：</p>
+<table>
+<thead>
+<tr>
+<th>使用回数/月</th>
+<th>Anthropic API</th>
+<th>GitHub Actions</th>
+<th>合計</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100回</td>
+<td>$5-10</td>
+<td>$0（パブリック）</td>
+<td>$5-10</td>
+</tr>
+<tr>
+<td>500回</td>
+<td>$25-50</td>
+<td>$0（パブリック）</td>
+<td>$25-50</td>
+</tr>
+<tr>
+<td>1000回</td>
+<td>$50-100</td>
+<td>$0（パブリック）</td>
+<td>$50-100</td>
+</tr>
+</tbody>
+</table>
+<h2>トラブルシューティング</h2>
+<h3>デバッグの基本手順</h3>
+<ol>
+<li>
+<p><strong>ワークフローのログを確認</strong></p>
+<ul>
+<li>Actions タブ → 該当のワークフロー実行 → ログを展開</li>
+</ul>
+</li>
+<li>
+<p><strong>エラーメッセージを読む</strong></p>
+<ul>
+<li>エラーの行番号とメッセージを確認</li>
+<li>スタックトレースから原因を特定</li>
+</ul>
+</li>
+<li>
+<p><strong>ローカルでテスト</strong></p>
+<pre><code class="language-bash"># ワークフローの構文チェック
+npm install -g @actions/core
+node -e "console.log('Workflow syntax is valid')"
+</code></pre>
+</li>
+</ol>
+<h3>よくある問題と解決方法</h3>
+<h4>1. 権限エラー</h4>
+<p><strong>症状</strong>: "Permission denied"エラー
+<strong>解決策</strong>:</p>
+<ul>
+<li>ユーザーの権限を確認</li>
+<li>リポジトリのCollaboratorとして追加</li>
+</ul>
+<h4>2. API キーエラー</h4>
+<p><strong>症状</strong>: "Invalid API key"
+<strong>解決策</strong>:</p>
+<ul>
+<li>GitHub Secretsの設定を確認</li>
+<li>APIキーの有効期限を確認</li>
+</ul>
+<h4>3. PR作成失敗</h4>
+<p><strong>症状</strong>: PRが作成されない
+<strong>解決策</strong>:</p>
+<ul>
+<li>GitHub Actionsの権限設定を確認</li>
+<li>ワークフローのログを確認</li>
+</ul>
+<h4>4. コード適用失敗</h4>
+<p><strong>症状</strong>: 生成されたコードが適用されない
+<strong>解決策</strong>:</p>
+<ul>
+<li>Claudeの応答形式を確認</li>
+<li>ファイルパスの正確性を確認</li>
+</ul>
+<h2>ベストプラクティス</h2>
+<h3>1. 明確な指示の記載</h3>
+<p><strong>良い例</strong>:</p>
+<pre><code>/claude UserAuthenticationコンポーネントを作成してください。
+以下の機能を含めてください：
+- メールとパスワードのフォーム
+- バリデーション（メール形式、パスワード8文字以上）
+- エラーメッセージの表示
+- TypeScriptで実装
+</code></pre>
+<p><strong>悪い例</strong>:</p>
+<pre><code>/claude ログイン機能を作って
+</code></pre>
+<h3>2. 段階的な実装</h3>
+<p>大きな機能は複数のIssueに分割：</p>
+<ol>
+<li>Issue #1: 基本的なUIコンポーネント</li>
+<li>Issue #2: ビジネスロジック</li>
+<li>Issue #3: テスト</li>
+<li>Issue #4: ドキュメント</li>
+</ol>
+<h3>3. レビューフローの確立</h3>
+<pre><code class="language-mermaid">graph LR
+    A[Claude生成PR] --> B[自動テスト]
+    B --> C[コードレビュー]
+    C --> D[修正依頼]
+    D --> E[承認]
+    E --> F[マージ]
+</code></pre>
+<h2>実装の応用例</h2>
+<h3>ミドルエンジニア向け：高度な実装パターン</h3>
+<h4>1. マルチモデル対応</h4>
+<pre><code class="language-javascript">// 複数のAIモデルを切り替え
+const models = {
+  'claude': new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY }),
+  'gpt4': new OpenAI({ apiKey: process.env.OPENAI_API_KEY }),
+  'gemini': new GoogleAI({ apiKey: process.env.GOOGLE_API_KEY })
+};
+
+// コマンドに応じてモデルを選択
+const model = command.startsWith('/gpt') ? models.gpt4 : models.claude;
+</code></pre>
+<h4>2. プラグインシステム</h4>
+<pre><code class="language-javascript">// プラグインインターフェース
+class Plugin {
+  async beforeGenerate(context) {}
+  async afterGenerate(context, code) {}
+  async beforePR(context, changes) {}
+}
+
+// ESLintプラグイン例
+class ESLintPlugin extends Plugin {
+  async afterGenerate(context, code) {
+    const { ESLint } = require('eslint');
+    const eslint = new ESLint({ fix: true });
+    const results = await eslint.lintText(code);
+    return results[0].output || code;
+  }
+}
+</code></pre>
+<h4>3. 監視とアラート</h4>
+<pre><code class="language-yaml"># Prometheusメトリクス収集
+- name: Record metrics
+  run: |
+    echo "claude_bot_executions_total{status='$STATUS'} 1" >> metrics.txt
+    echo "claude_bot_duration_seconds $DURATION" >> metrics.txt
+    curl -X POST http://prometheus-pushgateway:9091/metrics/job/claude-bot &#x3C; metrics.txt
+</code></pre>
+<h2>今後の改善案</h2>
+<h3>1. 機能拡張</h3>
+<ul>
+<li><strong>マルチモデル対応</strong>: GPT-4やGeminiとの統合</li>
+<li><strong>カスタムコマンド</strong>: <code>/claude-test</code>、<code>/claude-docs</code>など</li>
+<li><strong>インタラクティブモード</strong>: 対話形式での開発</li>
+</ul>
+<h3>2. 品質向上</h3>
+<ul>
+<li><strong>自動テスト強化</strong>: 生成コードの自動テスト実行</li>
+<li><strong>静的解析</strong>: ESLint、Prettierの自動適用</li>
+<li><strong>セキュリティスキャン</strong>: 脆弱性の自動検出</li>
+</ul>
+<h3>3. 効率化</h3>
+<ul>
+<li><strong>キャッシング</strong>: 類似リクエストのキャッシュ</li>
+<li><strong>並列処理</strong>: 複数ファイルの同時処理</li>
+<li><strong>増分更新</strong>: 差分のみの更新</li>
+</ul>
+<h2>パフォーマンスとコスト最適化</h2>
+<h3>処理速度の改善</h3>
+<h4>キャッシング戦略</h4>
+<pre><code class="language-javascript">// 類似リクエストのキャッシュ
+const cache = new Map();
+const cacheKey = crypto.createHash('md5').update(instruction).digest('hex');
+
+if (cache.has(cacheKey)) {
+  console.log('Cache hit!');
+  return cache.get(cacheKey);
+}
+
+const result = await generateCode(instruction);
+cache.set(cacheKey, result);
+</code></pre>
+<h4>並列処理</h4>
+<pre><code class="language-javascript">// 複数ファイルの並列生成
+const files = await Promise.all(
+  fileList.map(async (file) => {
+    return await generateFileContent(file);
+  })
+);
+</code></pre>
+<h3>コスト削減のテクニック</h3>
+<ol>
+<li><strong>プロンプトの最適化</strong>: 不要な情報を削除して トークン数を削減</li>
+<li><strong>モデルの使い分け</strong>: 簡単なタスクは小さいモデルを使用</li>
+<li><strong>バッチ処理</strong>: 複数の小さなリクエストをまとめて処理</li>
+</ol>
+<h2>まとめ</h2>
+<p>GitHub IssueコメントでClaudeを呼び出す自動開発システムにより、以下の効果が得られました：</p>
+<ol>
+<li><strong>開発速度の向上</strong>: 単純作業の自動化で30-50%の時間短縮</li>
+<li><strong>品質の安定化</strong>: AIによる一貫したコード生成</li>
+<li><strong>知識の共有</strong>: Issueでの開発過程の可視化</li>
+</ol>
+<p>このシステムは、人間の創造性とAIの効率性を組み合わせた、次世代の開発フローの一例です。適切に活用することで、開発チームの生産性を大幅に向上させることができます。</p>
+<h2>参考リンク</h2>
+<ul>
+<li><a href="https://docs.github.com/actions">GitHub Actions ドキュメント</a></li>
+<li><a href="https://docs.anthropic.com/">Anthropic API ドキュメント</a></li>
+<li><a href="https://docs.github.com/rest">GitHub REST API</a></li>
+<li><a href="https://nodejs.org/api/child_process.html">Node.js Child Process</a></li>
+</ul>
+<h2>注意事項</h2>
+<ul>
+<li>本記事で紹介したコードは簡略化されています</li>
+<li>実際の運用では適切なエラーハンドリングが必要です</li>
+<li>APIキーなどの秘匿情報は必ず環境変数で管理してください</li>
+<li>AIが生成したコードは必ず人間がレビューしてください</li>
+</ul>
+</article><nav class="mt-8 pt-4 border-t border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n5:I[9665,[],\"MetadataBoundary\"]\n7:I[9665,[],\"OutletBoundary\"]\na:I[4911,[],\"AsyncMetadataOutlet\"]\nc:I[9665,[],\"ViewportBoundary\"]\ne:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/ce87a0c8fce915ba.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"97EeGPQ7Pm0-ACgRl5RTY\",\"p\":\"\",\"c\":[\"\",\"blog\",\"claude-development-automation\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"claude-development-automation\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/ce87a0c8fce915ba.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"blog\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"claude-development-automation\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",[\"$\",\"$L5\",null,{\"children\":\"$L6\"}],null,[\"$\",\"$L7\",null,{\"children\":[\"$L8\",\"$L9\",[\"$\",\"$La\",null,{\"promise\":\"$@b\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"V3jIN8t0hM82g9AObAkNe\",{\"children\":[[\"$\",\"$Lc\",null,{\"children\":\"$Ld\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$e\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"f:\"$Sreact.suspense\"\n10:I[4911,[],\"AsyncMetadata\"]\n6:[\"$\",\"$f\",null,{\"fallback\":null,\"children\":[\"$\",\"$L10\",null,{\"promise\":\"$@11\"}]}]\n"])</script><script>self.__next_f.push([1,"9:null\n"])</script><script>self.__next_f.push([1,"12:I[6874,[\"874\",\"static/chunks/874-8d3839f72fd80c3c.js\",\"953\",\"static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js\"],\"\"]\n13:T523f,"])</script><script>self.__next_f.push([1,"\u003cp\u003e開発作業を効率化するため、GitHub Issueのコメントに\u003ccode\u003e/claude\u003c/code\u003eと入力するだけでAIが自動的にコードを生成し、Pull Requestを作成するシステムを構築しました。本記事では、その実装方法と活用例を詳しく解説します。\u003c/p\u003e\n\u003ch2\u003e前提知識\u003c/h2\u003e\n\u003cp\u003e本記事を理解するために必要な基礎知識：\u003c/p\u003e\n\u003ch3\u003e必須知識\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eGit/GitHub\u003c/strong\u003eの基本操作（clone、commit、push、pull request）\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eJavaScript/Node.js\u003c/strong\u003eの基礎（npmコマンド、package.json）\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eYAML\u003c/strong\u003eファイルの基本構文\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eあると理解が深まる知識\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eGitHub Actions\u003c/strong\u003e: GitHubが提供する自動化プラットフォーム。コードのビルド、テスト、デプロイを自動化\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eCI/CD\u003c/strong\u003e: 継続的インテグレーション/デリバリー。コードの変更を自動的にテスト・デプロイするプロセス\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eAPI（Application Programming Interface）\u003c/strong\u003e: ソフトウェア間でデータをやり取りするためのインターフェース\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eWebhook\u003c/strong\u003e: 特定のイベントが発生した際に、自動的に他のサービスに通知を送る仕組み\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e用語解説\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eトリガー\u003c/strong\u003e: 自動処理を開始するきっかけとなるイベント\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eパーミッション（権限）\u003c/strong\u003e: ユーザーが実行できる操作の範囲\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eトークン\u003c/strong\u003e: APIアクセスのための認証情報\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eブランチ\u003c/strong\u003e: Gitで並行して開発を進めるための機能\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eなぜこのシステムが必要か？\u003c/h2\u003e\n\u003ch3\u003e開発現場の課題\u003c/h3\u003e\n\u003cp\u003e日々の開発作業において、以下のような繰り返し作業に時間を取られることがあります：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e簡単な機能追加やバグ修正\u003c/li\u003e\n\u003cli\u003eボイラープレートコードの生成\u003c/li\u003e\n\u003cli\u003eテストコードの作成\u003c/li\u003e\n\u003cli\u003eリファクタリング作業\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eこれらの作業を効率化するため、AIアシスタントを活用した自動開発システムを構築しました。\u003c/p\u003e\n\u003ch2\u003eシステム概要\u003c/h2\u003e\n\u003ch3\u003e動作の流れ（5分で理解）\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003e開発者がIssueにコメント\u003c/strong\u003e: \u003ccode\u003e/claude ログイン機能を実装して\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eGitHub Actionsが起動\u003c/strong\u003e: コメントを検知して処理開始\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eClaude AIがコード生成\u003c/strong\u003e: 指示を解析してコードを作成\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ePull Request作成\u003c/strong\u003e: 生成されたコードでPRを自動作成\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eレビューとマージ\u003c/strong\u003e: 人間が確認してマージ\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3\u003eアーキテクチャ\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-mermaid\"\u003egraph LR\n    A[GitHub Issue] --\u003e B[コメント: /claude]\n    B --\u003e C[GitHub Actions]\n    C --\u003e D[Claude API]\n    D --\u003e E[コード生成]\n    E --\u003e F[Pull Request作成]\n    F --\u003e G[レビュー・マージ]\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e主な機能\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003eコマンドベースの実行\u003c/strong\u003e: Issueコメントで\u003ccode\u003e/claude\u003c/code\u003eを使用\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e権限管理\u003c/strong\u003e: Write権限以上のユーザーのみ実行可能\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e自動PR作成\u003c/strong\u003e: 生成されたコードを含むPRを自動作成\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eエラーハンドリング\u003c/strong\u003e: 失敗時の詳細なフィードバック\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch2\u003e実装詳細\u003c/h2\u003e\n\u003ch3\u003e1. GitHub Actionsワークフローの設計\u003c/h3\u003e\n\u003ch4\u003eGitHub Actionsとは？\u003c/h4\u003e\n\u003cp\u003eGitHub Actionsは、GitHubリポジトリ内で直接実行できる自動化ツールです。コードのプッシュやIssueの作成など、様々なイベントをトリガーに処理を実行できます。\u003c/p\u003e\n\u003ch4\u003eワークフローの基本構造\u003c/h4\u003e\n\u003cp\u003eワークフローは\u003ccode\u003e.github/workflows/\u003c/code\u003eディレクトリにYAMLファイルとして配置します。\u003ccode\u003eissue_comment\u003c/code\u003eイベントをトリガーとして動作するよう設定します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-yaml\"\u003ename: Claude Development Bot\n\non:\n  issue_comment:\n    types: [created]\n\npermissions:\n  contents: write\n  issues: write\n  pull-requests: write\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003eトリガー条件の設定\u003c/h4\u003e\n\u003cp\u003eコメントが\u003ccode\u003e/claude\u003c/code\u003eで始まる場合のみ実行するよう条件を設定：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-yaml\"\u003ejobs:\n  claude-development:\n    if: |\n      github.event.issue.pull_request == null \u0026#x26;\u0026#x26;\n      startsWith(github.event.comment.body, '/claude')\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e2. 権限チェックの実装\u003c/h3\u003e\n\u003ch4\u003eなぜ権限チェックが必要か？\u003c/h4\u003e\n\u003cp\u003e誰でもコードを生成できてしまうと、悪意のあるコードが混入するリスクがあります。そのため、信頼できるメンバーのみが使用できるよう制限します。\u003c/p\u003e\n\u003ch4\u003e実装方法\u003c/h4\u003e\n\u003cp\u003eGitHub APIを使用して、コメント投稿者の権限レベルを確認します：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003econst { data: permission } = await github.rest.repos.getCollaboratorPermissionLevel({\n  owner,\n  repo,\n  username: commenter\n});\n\nif (!['admin', 'write'].includes(permission.permission)) {\n  // エラーメッセージを表示\n  await github.rest.issues.createComment({\n    owner,\n    repo,\n    issue_number: context.issue.number,\n    body: '❌ 権限が不足しています'\n  });\n  return;\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e3. Claude APIとの連携\u003c/h3\u003e\n\u003ch4\u003eClaude APIとは？\u003c/h4\u003e\n\u003cp\u003eClaude APIは、Anthropic社が提供するAIアシスタントのAPIです。自然言語での指示を理解し、コードを生成できます。\u003c/p\u003e\n\u003ch4\u003eAPIキーの取得方法\u003c/h4\u003e\n\u003col\u003e\n\u003cli\u003e\u003ca href=\"https://console.anthropic.com/\"\u003eAnthropic Console\u003c/a\u003eにアクセス\u003c/li\u003e\n\u003cli\u003eアカウントを作成（無料トライアルあり）\u003c/li\u003e\n\u003cli\u003eAPI Keysセクションで新規キーを生成\u003c/li\u003e\n\u003cli\u003eキーを安全に保管（一度しか表示されません）\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch4\u003eプロンプトエンジニアリング\u003c/h4\u003e\n\u003cp\u003e効果的なコード生成のため、構造化されたプロンプトを作成：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003econst systemPrompt = `\nあなたは優秀なソフトウェアエンジニアです。\n与えられたタスクを分析し、具体的なコード変更を提案してください。\n\n出力形式:\n1. 実装計画の説明\n2. 具体的なコード（ファイルパスを明記）\n3. テストコード（必要に応じて）\n`;\n\nconst userPrompt = `\nIssue #${issueNumber}: ${issueTitle}\n\nIssue詳細: ${issueBody}\nユーザーからの指示: ${instruction}\nプロジェクト情報: ${projectInfo}\n`;\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003eAPIコールの実装\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003econst response = await anthropic.messages.create({\n  model: 'claude-3-5-sonnet-20241022',\n  max_tokens: 8000,\n  temperature: 0,\n  system: systemPrompt,\n  messages: [\n    {\n      role: 'user',\n      content: userPrompt\n    }\n  ]\n});\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e4. コード変更の適用\u003c/h3\u003e\n\u003cp\u003e生成されたコードを解析し、実際のファイルに適用：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003easync function applyCodeChanges(response) {\n  // ファイルパスとコードブロックを抽出\n  const fileRegex = /### ファイル: ([^\\n]+)/g;\n  const codeBlockRegex = /```[\\w]*\\n([\\s\\S]*?)```/g;\n  \n  const filePaths = [];\n  let match;\n  while ((match = fileRegex.exec(response)) !== null) {\n    filePaths.push(match[1].trim());\n  }\n  \n  const codeBlocks = [];\n  while ((match = codeBlockRegex.exec(response)) !== null) {\n    codeBlocks.push(match[1]);\n  }\n  \n  // ファイルを作成/更新\n  for (let i = 0; i \u0026#x3C; Math.min(filePaths.length, codeBlocks.length); i++) {\n    const filePath = filePaths[i];\n    const code = codeBlocks[i];\n    \n    // ディレクトリを作成\n    await fs.mkdir(path.dirname(filePath), { recursive: true });\n    \n    // ファイルを書き込み\n    await fs.writeFile(filePath, code);\n    console.log(`✅ Updated: ${filePath}`);\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e5. Pull Request の自動作成\u003c/h3\u003e\n\u003cp\u003e変更をコミットし、PRを作成：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// ブランチ作成とコミット\nconst branchName = `claude/issue-${issueNumber}-${timestamp}`;\nexecSync(`git checkout -b ${branchName}`);\nexecSync('git add -A');\nexecSync(`git commit -m \"feat: Implement changes for issue #${issueNumber}\"`);\nexecSync(`git push -u origin ${branchName}`);\n\n// PR作成\nconst pr = await github.rest.pulls.create({\n  owner,\n  repo,\n  title: `🤖 [Claude Bot] ${issueTitle}`,\n  body: prBody,\n  head: branchName,\n  base: 'main'\n});\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003e実践：ステップバイステップガイド\u003c/h2\u003e\n\u003ch3\u003e準備編（初回のみ）\u003c/h3\u003e\n\u003ch4\u003eStep 1: リポジトリの準備\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# リポジトリをクローン\ngit clone https://github.com/your-username/your-repo.git\ncd your-repo\n\n# .github/workflowsディレクトリを作成\nmkdir -p .github/workflows\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003eStep 2: ワークフローファイルの作成\u003c/h4\u003e\n\u003cp\u003e\u003ccode\u003e.github/workflows/claude-bot.yml\u003c/code\u003eを作成し、本記事のコードをコピー\u003c/p\u003e\n\u003ch4\u003eStep 3: APIキーの設定\u003c/h4\u003e\n\u003col\u003e\n\u003cli\u003eGitHubリポジトリの\u003cstrong\u003eSettings\u003c/strong\u003eタブを開く\u003c/li\u003e\n\u003cli\u003e左メニューの\u003cstrong\u003eSecrets and variables\u003c/strong\u003e → \u003cstrong\u003eActions\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eNew repository secret\u003c/strong\u003eをクリック\u003c/li\u003e\n\u003cli\u003eName: \u003ccode\u003eANTHROPIC_API_KEY\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eValue: 取得したAPIキー\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eAdd secret\u003c/strong\u003eをクリック\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3\u003e使用編\u003c/h3\u003e\n\u003ch4\u003e基本的な使い方\u003c/h4\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003eIssueを作成\u003c/strong\u003e\u003c/li\u003e\n\u003c/ol\u003e\n\u003cpre\u003e\u003ccode class=\"language-markdown\"\u003eTitle: ダークモードの実装\nBody: アプリケーションにダークモード機能を追加したい\n\u003c/code\u003e\u003c/pre\u003e\n\u003col start=\"2\"\u003e\n\u003cli\u003e\u003cstrong\u003eコメントでClaudeを呼び出し\u003c/strong\u003e\u003c/li\u003e\n\u003c/ol\u003e\n\u003cpre\u003e\u003ccode\u003e/claude React Contextを使用してダークモードを実装してください。\nトグルボタンも含めてください。\n\u003c/code\u003e\u003c/pre\u003e\n\u003col start=\"3\"\u003e\n\u003cli\u003e\u003cstrong\u003e自動実行される処理\u003c/strong\u003e\u003c/li\u003e\n\u003c/ol\u003e\n\u003cul\u003e\n\u003cli\u003e🚀 処理開始の通知\u003c/li\u003e\n\u003cli\u003e💬 Claudeの応答\u003c/li\u003e\n\u003cli\u003e🔀 Pull Request作成\u003c/li\u003e\n\u003cli\u003e✅ 完了通知\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e実際の活用例\u003c/h3\u003e\n\u003ch4\u003e例1: 新機能の実装\u003c/h4\u003e\n\u003cpre\u003e\u003ccode\u003e/claude ユーザープロフィール編集機能を実装してください。\nフォームバリデーションも含めてください。\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003e例2: バグ修正\u003c/h4\u003e\n\u003cpre\u003e\u003ccode\u003e/claude このエラーメッセージを分析して修正してください：\nTypeError: Cannot read property 'map' of undefined\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003e例3: リファクタリング\u003c/h4\u003e\n\u003cpre\u003e\u003ccode\u003e/claude このコンポーネントをTypeScriptに変換してください\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003e例4: テスト作成\u003c/h4\u003e\n\u003cpre\u003e\u003ccode\u003e/claude UserService クラスのユニットテストを作成してください\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eセキュリティ考慮事項\u003c/h2\u003e\n\u003ch3\u003e🔴 重要：必ず守るべきセキュリティルール\u003c/h3\u003e\n\u003ch3\u003e1. APIキーの管理\u003c/h3\u003e\n\u003ch4\u003e❌ 絶対にやってはいけないこと\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 絶対ダメ！APIキーを直接記載\nconst apiKey = 'sk-ant-api03-xxxxx';\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003e✅ 正しい方法\u003c/h4\u003e\n\u003cp\u003eAPIキーは\u003cstrong\u003eGitHub Secrets\u003c/strong\u003eで安全に管理：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-yaml\"\u003eenv:\n  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e重要\u003c/strong\u003e: APIキーを直接コードに記載しない\u003c/p\u003e\n\u003ch3\u003e2. 権限制御\u003c/h3\u003e\n\u003cp\u003eリポジトリの権限レベルでアクセスを制御：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eRead権限\u003c/strong\u003e: 使用不可\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eWrite権限\u003c/strong\u003e: 使用可能\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eAdmin権限\u003c/strong\u003e: 使用可能\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e3. コードレビューの必要性\u003c/h3\u003e\n\u003cp\u003eAIが生成したコードは必ず人間がレビュー：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eセキュリティホールの確認\u003c/li\u003e\n\u003cli\u003eビジネスロジックの妥当性検証\u003c/li\u003e\n\u003cli\u003eコーディング規約の準拠確認\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eパフォーマンスと制限\u003c/h2\u003e\n\u003ch3\u003e処理時間\u003c/h3\u003e\n\u003cp\u003e典型的な処理時間：\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e処理内容\u003c/th\u003e\n\u003cth\u003e所要時間\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e権限チェック\u003c/td\u003e\n\u003ctd\u003e1-2秒\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eClaude API呼び出し\u003c/td\u003e\n\u003ctd\u003e5-15秒\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eコード生成・適用\u003c/td\u003e\n\u003ctd\u003e2-5秒\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ePR作成\u003c/td\u003e\n\u003ctd\u003e3-5秒\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e合計\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003e15-30秒\u003c/strong\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eAPI制限\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eAnthropic API\u003c/strong\u003e: レート制限とトークン制限あり\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eGitHub Actions\u003c/strong\u003e:\n\u003cul\u003e\n\u003cli\u003eパブリックリポジトリ: 無制限\u003c/li\u003e\n\u003cli\u003eプライベートリポジトリ: 月2,000分の無料枠\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eコスト見積もり\u003c/h3\u003e\n\u003cp\u003e月間使用量に応じたコスト目安：\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e使用回数/月\u003c/th\u003e\n\u003cth\u003eAnthropic API\u003c/th\u003e\n\u003cth\u003eGitHub Actions\u003c/th\u003e\n\u003cth\u003e合計\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e100回\u003c/td\u003e\n\u003ctd\u003e$5-10\u003c/td\u003e\n\u003ctd\u003e$0（パブリック）\u003c/td\u003e\n\u003ctd\u003e$5-10\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e500回\u003c/td\u003e\n\u003ctd\u003e$25-50\u003c/td\u003e\n\u003ctd\u003e$0（パブリック）\u003c/td\u003e\n\u003ctd\u003e$25-50\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e1000回\u003c/td\u003e\n\u003ctd\u003e$50-100\u003c/td\u003e\n\u003ctd\u003e$0（パブリック）\u003c/td\u003e\n\u003ctd\u003e$50-100\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch2\u003eトラブルシューティング\u003c/h2\u003e\n\u003ch3\u003eデバッグの基本手順\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eワークフローのログを確認\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eActions タブ → 該当のワークフロー実行 → ログを展開\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eエラーメッセージを読む\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eエラーの行番号とメッセージを確認\u003c/li\u003e\n\u003cli\u003eスタックトレースから原因を特定\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eローカルでテスト\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# ワークフローの構文チェック\nnpm install -g @actions/core\nnode -e \"console.log('Workflow syntax is valid')\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3\u003eよくある問題と解決方法\u003c/h3\u003e\n\u003ch4\u003e1. 権限エラー\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e症状\u003c/strong\u003e: \"Permission denied\"エラー\n\u003cstrong\u003e解決策\u003c/strong\u003e:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eユーザーの権限を確認\u003c/li\u003e\n\u003cli\u003eリポジトリのCollaboratorとして追加\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4\u003e2. API キーエラー\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e症状\u003c/strong\u003e: \"Invalid API key\"\n\u003cstrong\u003e解決策\u003c/strong\u003e:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eGitHub Secretsの設定を確認\u003c/li\u003e\n\u003cli\u003eAPIキーの有効期限を確認\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4\u003e3. PR作成失敗\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e症状\u003c/strong\u003e: PRが作成されない\n\u003cstrong\u003e解決策\u003c/strong\u003e:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eGitHub Actionsの権限設定を確認\u003c/li\u003e\n\u003cli\u003eワークフローのログを確認\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4\u003e4. コード適用失敗\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e症状\u003c/strong\u003e: 生成されたコードが適用されない\n\u003cstrong\u003e解決策\u003c/strong\u003e:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eClaudeの応答形式を確認\u003c/li\u003e\n\u003cli\u003eファイルパスの正確性を確認\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eベストプラクティス\u003c/h2\u003e\n\u003ch3\u003e1. 明確な指示の記載\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e良い例\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e/claude UserAuthenticationコンポーネントを作成してください。\n以下の機能を含めてください：\n- メールとパスワードのフォーム\n- バリデーション（メール形式、パスワード8文字以上）\n- エラーメッセージの表示\n- TypeScriptで実装\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e悪い例\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e/claude ログイン機能を作って\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e2. 段階的な実装\u003c/h3\u003e\n\u003cp\u003e大きな機能は複数のIssueに分割：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eIssue #1: 基本的なUIコンポーネント\u003c/li\u003e\n\u003cli\u003eIssue #2: ビジネスロジック\u003c/li\u003e\n\u003cli\u003eIssue #3: テスト\u003c/li\u003e\n\u003cli\u003eIssue #4: ドキュメント\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3\u003e3. レビューフローの確立\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-mermaid\"\u003egraph LR\n    A[Claude生成PR] --\u003e B[自動テスト]\n    B --\u003e C[コードレビュー]\n    C --\u003e D[修正依頼]\n    D --\u003e E[承認]\n    E --\u003e F[マージ]\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003e実装の応用例\u003c/h2\u003e\n\u003ch3\u003eミドルエンジニア向け：高度な実装パターン\u003c/h3\u003e\n\u003ch4\u003e1. マルチモデル対応\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 複数のAIモデルを切り替え\nconst models = {\n  'claude': new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY }),\n  'gpt4': new OpenAI({ apiKey: process.env.OPENAI_API_KEY }),\n  'gemini': new GoogleAI({ apiKey: process.env.GOOGLE_API_KEY })\n};\n\n// コマンドに応じてモデルを選択\nconst model = command.startsWith('/gpt') ? models.gpt4 : models.claude;\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003e2. プラグインシステム\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// プラグインインターフェース\nclass Plugin {\n  async beforeGenerate(context) {}\n  async afterGenerate(context, code) {}\n  async beforePR(context, changes) {}\n}\n\n// ESLintプラグイン例\nclass ESLintPlugin extends Plugin {\n  async afterGenerate(context, code) {\n    const { ESLint } = require('eslint');\n    const eslint = new ESLint({ fix: true });\n    const results = await eslint.lintText(code);\n    return results[0].output || code;\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003e3. 監視とアラート\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-yaml\"\u003e# Prometheusメトリクス収集\n- name: Record metrics\n  run: |\n    echo \"claude_bot_executions_total{status='$STATUS'} 1\" \u003e\u003e metrics.txt\n    echo \"claude_bot_duration_seconds $DURATION\" \u003e\u003e metrics.txt\n    curl -X POST http://prometheus-pushgateway:9091/metrics/job/claude-bot \u0026#x3C; metrics.txt\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003e今後の改善案\u003c/h2\u003e\n\u003ch3\u003e1. 機能拡張\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eマルチモデル対応\u003c/strong\u003e: GPT-4やGeminiとの統合\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eカスタムコマンド\u003c/strong\u003e: \u003ccode\u003e/claude-test\u003c/code\u003e、\u003ccode\u003e/claude-docs\u003c/code\u003eなど\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eインタラクティブモード\u003c/strong\u003e: 対話形式での開発\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e2. 品質向上\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e自動テスト強化\u003c/strong\u003e: 生成コードの自動テスト実行\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e静的解析\u003c/strong\u003e: ESLint、Prettierの自動適用\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eセキュリティスキャン\u003c/strong\u003e: 脆弱性の自動検出\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e3. 効率化\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eキャッシング\u003c/strong\u003e: 類似リクエストのキャッシュ\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e並列処理\u003c/strong\u003e: 複数ファイルの同時処理\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e増分更新\u003c/strong\u003e: 差分のみの更新\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eパフォーマンスとコスト最適化\u003c/h2\u003e\n\u003ch3\u003e処理速度の改善\u003c/h3\u003e\n\u003ch4\u003eキャッシング戦略\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 類似リクエストのキャッシュ\nconst cache = new Map();\nconst cacheKey = crypto.createHash('md5').update(instruction).digest('hex');\n\nif (cache.has(cacheKey)) {\n  console.log('Cache hit!');\n  return cache.get(cacheKey);\n}\n\nconst result = await generateCode(instruction);\ncache.set(cacheKey, result);\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003e並列処理\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 複数ファイルの並列生成\nconst files = await Promise.all(\n  fileList.map(async (file) =\u003e {\n    return await generateFileContent(file);\n  })\n);\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eコスト削減のテクニック\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003eプロンプトの最適化\u003c/strong\u003e: 不要な情報を削除して トークン数を削減\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eモデルの使い分け\u003c/strong\u003e: 簡単なタスクは小さいモデルを使用\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eバッチ処理\u003c/strong\u003e: 複数の小さなリクエストをまとめて処理\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch2\u003eまとめ\u003c/h2\u003e\n\u003cp\u003eGitHub IssueコメントでClaudeを呼び出す自動開発システムにより、以下の効果が得られました：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003e開発速度の向上\u003c/strong\u003e: 単純作業の自動化で30-50%の時間短縮\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e品質の安定化\u003c/strong\u003e: AIによる一貫したコード生成\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e知識の共有\u003c/strong\u003e: Issueでの開発過程の可視化\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eこのシステムは、人間の創造性とAIの効率性を組み合わせた、次世代の開発フローの一例です。適切に活用することで、開発チームの生産性を大幅に向上させることができます。\u003c/p\u003e\n\u003ch2\u003e参考リンク\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://docs.github.com/actions\"\u003eGitHub Actions ドキュメント\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://docs.anthropic.com/\"\u003eAnthropic API ドキュメント\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://docs.github.com/rest\"\u003eGitHub REST API\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://nodejs.org/api/child_process.html\"\u003eNode.js Child Process\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e注意事項\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e本記事で紹介したコードは簡略化されています\u003c/li\u003e\n\u003cli\u003e実際の運用では適切なエラーハンドリングが必要です\u003c/li\u003e\n\u003cli\u003eAPIキーなどの秘匿情報は必ず環境変数で管理してください\u003c/li\u003e\n\u003cli\u003eAIが生成したコードは必ず人間がレビューしてください\u003c/li\u003e\n\u003c/ul\u003e\n"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto py-10 px-4\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold mb-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-green-600\",\"children\":[\"#\",29]}],\" \",\"GitHub IssueコメントでClaude AIを呼び出す自動開発システムの構築\"]}],[\"$\",\"ul\",null,{\"className\":\"list-none border-b border-gray-600 pb-4 mb-6\",\"children\":[[\"$\",\"li\",null,{\"className\":\"text-gray-500 text-sm\",\"children\":[\"作成日時: \",\"2025-08-11 00:59\"]}],\"$undefined\",[\"$\",\"li\",null,{\"className\":\"flex flex-wrap gap-2 mt-2\",\"children\":[[\"$\",\"span\",\"0\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"GitHub Actions\"}],[\"$\",\"span\",\"1\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Claude AI\"}],[\"$\",\"span\",\"2\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"自動化\"}],[\"$\",\"span\",\"3\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"CI/CD\"}],[\"$\",\"span\",\"4\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"開発効率化\"}]]}]]}],[\"$\",\"nav\",null,{\"className\":\"mb-6 pb-4 border-b border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"article\",null,{\"className\":\"prose dark:prose-invert\",\"dangerouslySetInnerHTML\":{\"__html\":\"$13\"}}],[\"$\",\"nav\",null,{\"className\":\"mt-8 pt-4 border-t border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}]]}]\n"])</script><script>self.__next_f.push([1,"d:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n8:null\n"])</script><script>self.__next_f.push([1,"11:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\nb:{\"metadata\":\"$11:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>
