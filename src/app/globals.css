@@ -72,3 +72,28 @@ body {
   @apply text-blue-400 hover:text-blue-300;
 }
 
+/* テーブルのスタイル */
+.prose table {
+  @apply w-full text-gray-100;
+}
+
+.prose thead {
+  @apply bg-gray-800 border-b border-gray-600;
+}
+
+.prose thead th {
+  @apply text-white font-semibold px-4 py-2 text-left;
+}
+
+.prose tbody tr {
+  @apply border-b border-gray-700;
+}
+
+.prose tbody td {
+  @apply px-4 py-2 text-gray-100;
+}
+
+.prose tbody tr:hover {
+  @apply bg-gray-900;
+}
+
