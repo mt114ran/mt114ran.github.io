@@ -1,0 +1,254 @@
+name: Claude Development Bot
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  claude-development:
+    # /claudeコメントが投稿された時のみ実行
+    if: |
+      github.event.issue.pull_request == null &&
+      startsWith(github.event.comment.body, '/claude')
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check permissions
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const commenter = context.payload.comment.user.login;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            
+            // コメント投稿者の権限をチェック
+            try {
+              const { data: permission } = await github.rest.repos.getCollaboratorPermissionLevel({
+                owner,
+                repo,
+                username: commenter
+              });
+              
+              if (!['admin', 'write'].includes(permission.permission)) {
+                await github.rest.issues.createComment({
+                  owner,
+                  repo,
+                  issue_number: context.issue.number,
+                  body: '❌ You do not have permission to use Claude bot.'
+                });
+                core.setFailed('Insufficient permissions');
+              }
+            } catch (error) {
+              core.setFailed(`Permission check failed: ${error.message}`);
+            }
+      
+      - name: React to comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.reactions.createForIssueComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              comment_id: context.payload.comment.id,
+              content: 'rocket'
+            });
+      
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Parse command and execute with Claude
+        id: claude
+        uses: actions/github-script@v7
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        with:
+          script: |
+            const fs = require('fs');
+            const { Anthropic } = require('@anthropic-ai/sdk');
+            
+            // Claude APIクライアントを初期化
+            const anthropic = new Anthropic({
+              apiKey: process.env.ANTHROPIC_API_KEY,
+            });
+            
+            // コメントから指示を抽出
+            const comment = context.payload.comment.body;
+            const instruction = comment.replace('/claude', '').trim();
+            
+            // Issueの情報を取得
+            const issue = context.payload.issue;
+            const issueTitle = issue.title;
+            const issueBody = issue.body || '';
+            
+            // プロジェクトのコンテキストを収集
+            const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+            const projectStructure = require('child_process')
+              .execSync('find . -type f -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx" | head -20')
+              .toString();
+            
+            // Claudeにリクエスト
+            const systemPrompt = `あなたはGitHubリポジトリの開発アシスタントです。
+            リポジトリ: ${context.repo.owner}/${context.repo.repo}
+            プロジェクトタイプ: ${packageJson.name}
+            
+            以下のルールに従ってください：
+            1. コードの変更は具体的なファイルパスと変更内容を提示
+            2. 新しいファイルを作成する場合は完全なコードを提供
+            3. 既存ファイルの変更は差分形式で提示
+            4. コマンド実行が必要な場合は明示的に記載
+            5. 日本語で説明`;
+            
+            const userPrompt = `
+            Issue #${issue.number}: ${issueTitle}
+            
+            Issue内容:
+            ${issueBody}
+            
+            ユーザーからの指示:
+            ${instruction}
+            
+            プロジェクト構造の一部:
+            ${projectStructure}
+            
+            この指示に基づいて、必要な開発タスクを実行してください。
+            `;
+            
+            try {
+              const response = await anthropic.messages.create({
+                model: 'claude-3-5-sonnet-20241022',
+                max_tokens: 4000,
+                temperature: 0,
+                system: systemPrompt,
+                messages: [
+                  {
+                    role: 'user',
+                    content: userPrompt
+                  }
+                ]
+              });
+              
+              const claudeResponse = response.content[0].text;
+              core.setOutput('response', claudeResponse);
+              
+              // 応答をIssueにコメント
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: `## 🤖 Claude Response\n\n${claudeResponse}\n\n---\n*Triggered by @${context.payload.comment.user.login}*`
+              });
+              
+            } catch (error) {
+              console.error('Claude API error:', error);
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: `❌ Error executing Claude: ${error.message}`
+              });
+              core.setFailed(error.message);
+            }
+      
+      - name: Apply code changes
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const claudeResponse = '${{ steps.claude.outputs.response }}';
+            const fs = require('fs');
+            const path = require('path');
+            
+            // コードブロックを抽出して適用
+            const codeBlockRegex = /```(?:[\w]+)?\n([\s\S]*?)```/g;
+            const filePathRegex = /(?:File|ファイル):\s*([^\n]+)/gi;
+            
+            let match;
+            const codeBlocks = [];
+            while ((match = codeBlockRegex.exec(claudeResponse)) !== null) {
+              codeBlocks.push(match[1]);
+            }
+            
+            // ファイルパスとコードをマッチング
+            const fileMatches = [...claudeResponse.matchAll(filePathRegex)];
+            
+            for (let i = 0; i < Math.min(codeBlocks.length, fileMatches.length); i++) {
+              const filePath = fileMatches[i][1].trim();
+              const code = codeBlocks[i];
+              
+              try {
+                // ディレクトリが存在しない場合は作成
+                const dir = path.dirname(filePath);
+                if (!fs.existsSync(dir)) {
+                  fs.mkdirSync(dir, { recursive: true });
+                }
+                
+                // ファイルを書き込み
+                fs.writeFileSync(filePath, code);
+                console.log(`Updated: ${filePath}`);
+              } catch (error) {
+                console.error(`Failed to update ${filePath}:`, error);
+              }
+            }
+      
+      - name: Create Pull Request
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { execSync } = require('child_process');
+            
+            // 変更があるかチェック
+            const status = execSync('git status --porcelain').toString();
+            if (!status) {
+              console.log('No changes to commit');
+              return;
+            }
+            
+            // ブランチ名を生成
+            const branchName = `claude-bot/issue-${context.issue.number}-${Date.now()}`;
+            
+            // Git設定
+            execSync('git config user.name "Claude Bot"');
+            execSync('git config user.email "claude-bot@github.com"');
+            
+            // ブランチを作成してコミット
+            execSync(`git checkout -b ${branchName}`);
+            execSync('git add -A');
+            execSync(`git commit -m "feat: Apply Claude suggestions for issue #${context.issue.number}"`);
+            
+            // プッシュ
+            execSync(`git push origin ${branchName}`);
+            
+            // Pull Requestを作成
+            const pr = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🤖 Claude Bot: ${context.payload.issue.title}`,
+              body: `## Related Issue\nCloses #${context.issue.number}\n\n## Changes Made by Claude\n\nThis PR was automatically created by Claude Bot based on the discussion in issue #${context.issue.number}.\n\n### Triggered by\n@${context.payload.comment.user.login}\n\n### Command\n\`\`\`\n${context.payload.comment.body}\n\`\`\`\n\n---\n*Please review the changes carefully before merging.*`,
+              head: branchName,
+              base: 'main'
+            });
+            
+            // IssueにPRリンクをコメント
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `✅ Pull Request created: #${pr.data.number}`
+            });
