@@ -9,13 +9,13 @@ e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/21fca20b31fba572.css","style"]
-0:{"P":null,"b":"h8nVJqgG2LdrtDCd0TWQX","p":"","c":["","blog","go-learning-platform-design",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","go-learning-platform-design","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/21fca20b31fba572.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","go-learning-platform-design","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","uUtRKNk6cVKHvkdtLlisB",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"KCqdnwsJN_QnWYlI6PBFt","p":"","c":["","blog","go-learning-platform-design",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","go-learning-platform-design","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/21fca20b31fba572.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","go-learning-platform-design","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","iFpGZqCaG3MbtqBy90CKZ",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
 12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
-13:T8a40,<p>プログラミング学習において「書いたコードをすぐに実行できる」環境は非常に重要です。本記事では、Go言語の学習に特化したWebベースの学習プラットフォームの設計について詳しく解説します。</p>
+13:Ta9c8,<p>プログラミング学習において「書いたコードをすぐに実行できる」環境は非常に重要です。本記事では、Go言語の学習に特化したWebベースの学習プラットフォームの設計について詳しく解説します。</p>
 <h2>プロジェクト概要</h2>
 <h3>ビジョン</h3>
 <p>「Go言語を段階的に、実践的に学べるインタラクティブな学習環境」を提供し、初心者から中級者まで効率的にGo言語をマスターできるプラットフォームを構築します。</p>
@@ -1169,6 +1169,316 @@ jobs:
 <li><strong>教育的価値</strong>: 段階的な学習パス、実践的な課題、詳細な解説</li>
 </ol>
 <p>これらの要素を組み合わせることで、安全で効率的、かつ教育効果の高い学習プラットフォームを構築できます。</p>
+<h2>インフラストラクチャと運用</h2>
+<h3>データベースの選定</h3>
+<h4>1. メインデータベース: PostgreSQL</h4>
+<ul>
+<li>
+<p><strong>選定理由</strong>:</p>
+<ul>
+<li>ACIDトランザクションによる高い信頼性</li>
+<li>JSONBサポートによる柔軟なデータ構造</li>
+<li>豊富なインデックス機能（B-tree, Hash, GiST, GIN）</li>
+<li>パーティショニングによる大規模データ対応</li>
+</ul>
+</li>
+<li>
+<p><strong>利用サービス</strong>: Amazon RDS for PostgreSQL</p>
+<ul>
+<li>マルチAZ構成で高可用性を実現</li>
+<li>自動バックアップとポイントインタイムリカバリ</li>
+<li>Read Replicaによる読み取り性能の向上</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">-- テーブル設計例
+CREATE TABLE users (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    email VARCHAR(255) UNIQUE NOT NULL,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE challenges (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    difficulty VARCHAR(20) CHECK (difficulty IN ('beginner', 'intermediate', 'advanced')),
+    test_cases JSONB NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE submissions (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES users(id),
+    challenge_id UUID REFERENCES challenges(id),
+    code TEXT NOT NULL,
+    status VARCHAR(20) CHECK (status IN ('pending', 'running', 'success', 'failure')),
+    output TEXT,
+    execution_time_ms INTEGER,
+    memory_usage_bytes BIGINT,
+    submitted_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_user_challenge (user_id, challenge_id)
+) PARTITION BY RANGE (submitted_at);
+
+-- パーティション作成（月次）
+CREATE TABLE submissions_2025_01 PARTITION OF submissions
+    FOR VALUES FROM ('2025-01-01') TO ('2025-02-01');
+</code></pre>
+<h4>2. キャッシュデータベース: Redis</h4>
+<ul>
+<li>
+<p><strong>選定理由</strong>:</p>
+<ul>
+<li>インメモリによる高速アクセス</li>
+<li>Pub/Sub機能によるリアルタイム通信</li>
+<li>セッション管理に最適</li>
+</ul>
+</li>
+<li>
+<p><strong>利用サービス</strong>: Amazon ElastiCache for Redis</p>
+<ul>
+<li>クラスターモードで自動スケーリング</li>
+<li>自動フェイルオーバー</li>
+</ul>
+</li>
+</ul>
+<h4>3. 時系列データ: TimescaleDB</h4>
+<ul>
+<li><strong>用途</strong>: メトリクス、ログ、実行履歴の保存</li>
+<li><strong>選定理由</strong>:
+<ul>
+<li>PostgreSQLの拡張で既存インフラと統合しやすい</li>
+<li>自動パーティショニングと圧縮</li>
+</ul>
+</li>
+</ul>
+<h3>ホスティングサービス</h3>
+<h4>AWS構成</h4>
+<pre><code class="language-yaml"># インフラストラクチャ構成
+Infrastructure:
+  Region: ap-northeast-1 (東京)
+  
+  Compute:
+    - Service: Amazon EKS
+      NodeGroups:
+        - Name: api-servers
+          InstanceType: t3.medium
+          MinSize: 2
+          MaxSize: 10
+          DesiredSize: 3
+        - Name: code-executors
+          InstanceType: c5.large
+          MinSize: 1
+          MaxSize: 20
+          DesiredSize: 5
+          
+  Database:
+    - Service: Amazon RDS (PostgreSQL)
+      InstanceClass: db.t3.medium
+      MultiAZ: true
+      Storage: 100GB (gp3)
+      
+    - Service: Amazon ElastiCache (Redis)
+      NodeType: cache.t3.micro
+      NumNodes: 2
+      
+  Storage:
+    - Service: Amazon S3
+      Buckets:
+        - user-code-storage
+        - submission-logs
+        - static-assets
+        
+  CDN:
+    - Service: Amazon CloudFront
+      Origins:
+        - S3 (static assets)
+        - ALB (API)
+        
+  Container Registry:
+    - Service: Amazon ECR
+      Repositories:
+        - go-learning-api
+        - code-executor
+        
+  Monitoring:
+    - CloudWatch
+    - Prometheus + Grafana (EKS上)
+    - ELK Stack (Elasticsearch, Logstash, Kibana)
+</code></pre>
+<h3>運用コスト試算（月額）</h3>
+<h4>小規模（〜1,000ユーザー）</h4>
+<pre><code>Amazon EKS:
+  - Control Plane: $72
+  - t3.medium × 2: $60
+  - c5.large × 1: $62
+  
+Amazon RDS:
+  - db.t3.medium (Multi-AZ): $140
+  - Storage 100GB: $25
+  
+Amazon ElastiCache:
+  - cache.t3.micro × 2: $25
+  
+Amazon S3 + CloudFront:
+  - Storage &#x26; Transfer: $20
+  
+Amazon ECR:
+  - Storage: $10
+  
+その他（ALB, NAT Gateway等）: $50
+
+合計: 約$464/月（約7万円/月）
+</code></pre>
+<h4>中規模（〜10,000ユーザー）</h4>
+<pre><code>Amazon EKS:
+  - Control Plane: $72
+  - t3.medium × 4: $120
+  - c5.large × 3: $186
+  
+Amazon RDS:
+  - db.r5.large (Multi-AZ): $460
+  - Storage 500GB: $125
+  - Read Replica: $230
+  
+Amazon ElastiCache:
+  - cache.r5.large × 2: $340
+  
+Amazon S3 + CloudFront:
+  - Storage &#x26; Transfer: $150
+  
+Amazon ECR:
+  - Storage: $30
+  
+その他: $200
+
+合計: 約$1,913/月（約29万円/月）
+</code></pre>
+<h4>大規模（〜100,000ユーザー）</h4>
+<pre><code>Amazon EKS:
+  - Control Plane × 2: $144
+  - t3.large × 10: $600
+  - c5.xlarge × 10: $1,240
+  
+Amazon RDS:
+  - db.r5.2xlarge (Multi-AZ): $1,840
+  - Storage 2TB: $500
+  - Read Replica × 3: $2,760
+  
+Amazon ElastiCache:
+  - cache.r5.xlarge × 4: $1,360
+  
+Amazon S3 + CloudFront:
+  - Storage &#x26; Transfer: $1,000
+  
+Amazon ECR:
+  - Storage: $100
+  
+その他: $500
+
+合計: 約$10,044/月（約150万円/月）
+</code></pre>
+<h3>コスト最適化戦略</h3>
+<h4>1. Reserved Instances / Savings Plans</h4>
+<ul>
+<li>1年または3年契約で最大72%割引</li>
+<li>予測可能なワークロードに適用</li>
+</ul>
+<h4>2. Spot Instances</h4>
+<ul>
+<li>コード実行用のワーカーノードに利用</li>
+<li>最大90%のコスト削減</li>
+</ul>
+<h4>3. Auto Scaling</h4>
+<pre><code class="language-yaml">apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: api-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: go-learning-api
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+</code></pre>
+<h4>4. コンテナ最適化</h4>
+<pre><code class="language-dockerfile"># マルチステージビルドでイメージサイズ削減
+FROM golang:1.21-alpine AS builder
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
+
+FROM alpine:latest
+RUN apk --no-cache add ca-certificates
+WORKDIR /root/
+COPY --from=builder /app/main .
+CMD ["./main"]
+</code></pre>
+<h3>災害復旧計画（DRP）</h3>
+<h4>バックアップ戦略</h4>
+<pre><code class="language-yaml">BackupStrategy:
+  Database:
+    - Type: Automated Backup
+      Frequency: Daily
+      Retention: 30 days
+    - Type: Manual Snapshot
+      Frequency: Weekly
+      Retention: 90 days
+      
+  CodeRepository:
+    - Type: S3 Cross-Region Replication
+      Target: us-west-2
+      
+  Configurations:
+    - Type: AWS Backup
+      Frequency: Daily
+      Retention: 7 days
+</code></pre>
+<h4>復旧目標</h4>
+<ul>
+<li><strong>RPO (Recovery Point Objective)</strong>: 1時間</li>
+<li><strong>RTO (Recovery Time Objective)</strong>: 4時間</li>
+</ul>
+<h3>監視とアラート</h3>
+<pre><code class="language-yaml">Monitoring:
+  Metrics:
+    - API Response Time: &#x3C; 200ms (p95)
+    - Code Execution Time: &#x3C; 5s (p95)
+    - Error Rate: &#x3C; 1%
+    - Availability: > 99.9%
+    
+  Alerts:
+    Critical:
+      - Service Down
+      - Database Connection Failed
+      - Error Rate > 5%
+    Warning:
+      - Response Time > 500ms
+      - CPU Usage > 80%
+      - Memory Usage > 90%
+    Info:
+      - New Deployment
+      - Scaling Event
+      - Backup Completed
+</code></pre>
 <h2>次のステップ</h2>
 <ol>
 <li><strong>MVP開発</strong>: 基本機能の実装とテスト</li>
@@ -1178,7 +1488,7 @@ jobs:
 <li><strong>コミュニティ機能</strong>: フォーラム、コード共有、メンタリング</li>
 </ol>
 <p>このプラットフォームを通じて、多くの開発者がGo言語を効率的に学び、実践的なスキルを身につけることができるでしょう。</p>
-4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",25]}]," ","Go言語学習プラットフォーム設計書：ブラウザで動くコード実行環境の構築"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-09 05:56"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Go"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"WebAssembly"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"教育"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"システム設計"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Docker"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Kubernetes"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",27]}]," ","Go言語学習プラットフォーム設計書：ブラウザで動くコード実行環境の構築"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-09 05:56"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Go"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"WebAssembly"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"教育"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"システム設計"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Docker"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Kubernetes"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
 11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
