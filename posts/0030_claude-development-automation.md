@@ -1,5 +1,5 @@
 ---
-id: 29
+id: 30
 title: "GitHub IssueコメントでClaude AIを呼び出す自動開発システムの構築"
 tags: ["GitHub Actions", "Claude AI", "自動化", "CI/CD", "開発効率化"]
 create: "2025-08-11 00:59"
