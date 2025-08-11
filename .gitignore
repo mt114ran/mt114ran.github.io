@@ -24,6 +24,11 @@
 .DS_Store
 *.pem
 
+# Gemini logs (moved to global location)
+.claude/gemini-consultations/
+.claude/gemini-responses/
+.claude/gemini*
+
 # debug
 npm-debug.log*
 yarn-debug.log*
