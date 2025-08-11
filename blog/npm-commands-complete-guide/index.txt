@@ -9,39 +9,13 @@ e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/ce87a0c8fce915ba.css","style"]
-0:{"P":null,"b":"c3-THRkVeQg09qgmhNUB9","p":"","c":["","blog","npm-commands-complete-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","npm-commands-complete-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","npm-commands-complete-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","F__MOKYq60JfA0SKXyg8z",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"Ktu6YydJwxMRnMjINckFG","p":"","c":["","blog","npm-commands-complete-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","npm-commands-complete-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","npm-commands-complete-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","JK2Rz1J9H-Ixj0vyGDuYO",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
 12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
-13:T5d2a,<p>JavaScriptプロジェクトを開発する際、必ず遭遇するのが<code>npm</code>コマンドです。「とりあえず<code>npm install</code>を実行して」と言われても、実際に何が起きているのか分からないまま使っている方も多いのではないでしょうか。本記事では、npmの基本コマンドが裏側で何をしているのか、どんなファイルが作成されるのかを詳しく解説します。</p>
-<h2>📚 目次</h2>
-<ul>
-<li><a href="#npm%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%8B">npmとは何か？</a></li>
-<li><a href="#%E9%87%8D%E8%A6%81%E3%81%AA%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%BD%B9%E5%89%B2">重要なファイルの役割</a></li>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E8%A9%B3%E7%B4%B0%E8%A7%A3%E8%AA%AC">基本コマンドの詳細解説</a></li>
-<li><a href="#%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E9%87%8D%E8%A6%81%E3%81%AA%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89">その他の重要なコマンド</a></li>
-<li><a href="#%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%81%A8%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95">よくあるトラブルと解決方法</a></li>
-<li><a href="#%E3%83%99%E3%82%B9%E3%83%88%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9">ベストプラクティス</a></li>
-<li><a href="#%E5%AE%9F%E8%B7%B5%E4%BE%8B%E6%96%B0%E8%A6%8F%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E7%AB%8B%E3%81%A1%E4%B8%8A%E3%81%92">実践例：新規プロジェクトの立ち上げ</a></li>
-</ul>
-<h2>前提条件</h2>
-<h3>Node.jsとnpmのインストール確認</h3>
-<pre><code class="language-bash"># Node.jsのバージョン確認
-$ node --version
-v20.10.0  # 例：バージョンが表示されればOK
-
-# npmのバージョン確認
-$ npm --version
-10.2.3  # 例：バージョンが表示されればOK
-</code></pre>
-<p>💡 <strong>Tip</strong>: Node.jsがインストールされていない場合は、<a href="https://nodejs.org/">Node.js公式サイト</a>からダウンロードするか、nvm（Node Version Manager）を使用してインストールしてください。</p>
-<pre><code class="language-bash"># nvmを使ったNode.jsのインストール（Mac/Linux）
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-nvm install --lts
-nvm use --lts
-</code></pre>
+13:T3e84,<p>JavaScriptプロジェクトを開発する際、必ず遭遇するのが<code>npm</code>コマンドです。「とりあえず<code>npm install</code>を実行して」と言われても、実際に何が起きているのか分からないまま使っている方も多いのではないでしょうか。本記事では、npmの基本コマンドが裏側で何をしているのか、どんなファイルが作成されるのかを詳しく解説します。</p>
 <h2>npmとは何か？</h2>
 <p>npm（Node Package Manager）は、JavaScriptのパッケージ管理ツールです。以下の3つの意味があります：</p>
 <ol>
@@ -49,15 +23,6 @@ nvm use --lts
 <li><strong>パッケージレジストリ</strong>：npmjs.comで公開されているパッケージのデータベース</li>
 <li><strong>パッケージ管理システム</strong>：依存関係の解決とバージョン管理の仕組み</li>
 </ol>
-<h3>npmの処理フロー図</h3>
-<pre><code>開発者 → npm install → npmレジストリ
-           ↓              ↓
-      package.json    パッケージダウンロード
-           ↓              ↓
-    package-lock.json  node_modules/
-           ↓              ↓
-       依存関係固定    コード実行可能
-</code></pre>
 <h2>重要なファイルの役割</h2>
 <p>npmを理解するには、まず関連するファイルを知る必要があります。</p>
 <h3>package.json</h3>
@@ -147,13 +112,13 @@ nvm use --lts
 <p><strong>実際の動作を見てみましょう：</strong></p>
 <pre><code class="language-bash"># 対話形式での初期化
 $ npm init
-package name: (my-project) 
-version: (1.0.0) 
+package name: (my-project)
+version: (1.0.0)
 description: サンプルプロジェクト
-entry point: (index.js) 
+entry point: (index.js)
 test command: jest
-git repository: 
-keywords: 
+git repository:
+keywords:
 author: Taro Yamada
 license: (ISC) MIT
 
@@ -214,7 +179,6 @@ $ npm install -D webpack
 # → %AppData%\npm\node_modules\にインストール（Windows）
 </code></pre>
 <h3>3. npm ci</h3>
-<p>⚠️ <strong>重要</strong>: 本番環境やCI/CDでは<code>npm install</code>ではなく<code>npm ci</code>を使用しましょう。</p>
 <p><strong>目的：</strong> CIや本番環境向けの確実なインストール</p>
 <pre><code class="language-bash">$ npm ci
 </code></pre>
@@ -490,204 +454,6 @@ $ npm start
 # 6. ビルド
 $ npm run build
 </code></pre>
-<h2>npmスクリプトの高度な使い方</h2>
-<h3>pre/postスクリプト</h3>
-<p>npmは特定のスクリプトの前後に自動実行されるスクリプトをサポートしています。</p>
-<pre><code class="language-json">{
-  "scripts": {
-    "pretest": "npm run lint",
-    "test": "jest",
-    "posttest": "npm run coverage",
-    "prebuild": "rm -rf dist",
-    "build": "webpack",
-    "postbuild": "npm run optimize"
-  }
-}
-</code></pre>
-<pre><code class="language-bash"># npm run testを実行すると以下の順序で実行される
-1. pretest (lint)
-2. test (jest)
-3. posttest (coverage)
-</code></pre>
-<h3>環境変数の活用</h3>
-<pre><code class="language-json">{
-  "scripts": {
-    "dev": "NODE_ENV=development webpack serve",
-    "build": "NODE_ENV=production webpack",
-    "build:staging": "NODE_ENV=staging webpack"
-  }
-}
-</code></pre>
-<h3>cross-envで環境依存を解消</h3>
-<p>WindowsとMac/Linuxで環境変数の設定方法が異なる問題を解決：</p>
-<pre><code class="language-bash">npm install --save-dev cross-env
-</code></pre>
-<pre><code class="language-json">{
-  "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
-    "dev": "cross-env NODE_ENV=development webpack serve"
-  }
-}
-</code></pre>
-<h3>npm-run-allで並列実行</h3>
-<pre><code class="language-bash">npm install --save-dev npm-run-all
-</code></pre>
-<pre><code class="language-json">{
-  "scripts": {
-    "lint:js": "eslint src/**/*.js",
-    "lint:css": "stylelint src/**/*.css",
-    "lint": "run-p lint:*",  // 並列実行
-    "build:js": "webpack",
-    "build:css": "postcss",
-    "build": "run-s clean build:*"  // 順次実行
-  }
-}
-</code></pre>
-<h2>パフォーマンス最適化テクニック</h2>
-<h3>1. npm ci の高速化</h3>
-<pre><code class="language-bash"># オフラインモードを優先（キャッシュから取得）
-$ npm ci --prefer-offline
-
-# ログ出力を削減
-$ npm ci --silent
-
-# 監査をスキップ（CI環境で有効）
-$ npm ci --no-audit
-</code></pre>
-<h3>2. .npmrcの最適化</h3>
-<pre><code class="language-ini"># .npmrc
-# レジストリの設定
-registry=https://registry.npmjs.org/
-
-# キャッシュ設定
-cache-min=3600
-
-# インストール時の設定
-save-exact=true
-engine-strict=true
-
-# ログレベル
-loglevel=warn
-
-# 監査の設定
-audit-level=moderate
-</code></pre>
-<h3>3. キャッシュの活用</h3>
-<pre><code class="language-bash"># キャッシュの場所を確認
-$ npm config get cache
-/Users/username/.npm
-
-# キャッシュの内容を確認
-$ npm cache ls
-
-# キャッシュの検証
-$ npm cache verify
-
-# CI環境でのキャッシュ設定例（GitHub Actions）
-- name: Cache node modules
-  uses: actions/cache@v3
-  with:
-    path: ~/.npm
-    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-    restore-keys: |
-      ${{ runner.os }}-node-
-</code></pre>
-<h2>セキュリティ対策の詳細</h2>
-<h3>npm auditの活用</h3>
-<pre><code class="language-bash"># 脆弱性の詳細レポート
-$ npm audit --json > audit-report.json
-
-# 特定レベル以上の脆弱性のみ表示
-$ npm audit --audit-level=high
-
-# 本番依存のみチェック
-$ npm audit --production
-</code></pre>
-<h3>package-lock.jsonの重要性</h3>
-<pre><code class="language-bash"># package-lock.jsonの整合性チェック
-$ npm ls
-
-# 不整合を修正
-$ npm install --package-lock-only
-</code></pre>
-<h3>スコープ付きパッケージのセキュリティ</h3>
-<pre><code class="language-bash"># 企業内レジストリの設定
-$ npm config set @mycompany:registry https://npm.mycompany.com
-
-# 認証トークンの設定
-$ npm config set //npm.mycompany.com/:_authToken YOUR_TOKEN
-</code></pre>
-<h2>よくある質問（FAQ）</h2>
-<h3>Q: npm installが遅い</h3>
-<p><strong>A:</strong> 以下の方法を試してください：</p>
-<ol>
-<li>npm ciを使用する</li>
-<li>キャッシュをクリアする: <code>npm cache clean --force</code></li>
-<li>レジストリを変更する</li>
-<li>.npmrcで並列ダウンロード数を増やす: <code>maxsockets=10</code></li>
-</ol>
-<h3>Q: package-lock.jsonは削除してもいい？</h3>
-<p><strong>A:</strong> <strong>削除しないでください</strong>。package-lock.jsonは以下の理由で重要です：</p>
-<ul>
-<li>チーム全員が同じバージョンを使用できる</li>
-<li>本番環境での再現性を保証</li>
-<li>セキュリティ脆弱性の追跡が可能</li>
-</ul>
-<h3>Q: npm installとnpm updateの違いは？</h3>
-<p><strong>A:</strong></p>
-<ul>
-<li><code>npm install</code>: package.jsonの範囲内でインストール</li>
-<li><code>npm update</code>: package.jsonの範囲内で最新版に更新</li>
-</ul>
-<h2>他のパッケージマネージャーとの比較</h2>
-<table>
-<thead>
-<tr>
-<th>機能</th>
-<th>npm</th>
-<th>yarn</th>
-<th>pnpm</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>速度</td>
-<td>普通</td>
-<td>速い</td>
-<td>最速</td>
-</tr>
-<tr>
-<td>ディスク使用量</td>
-<td>大</td>
-<td>大</td>
-<td>小（シンボリックリンク）</td>
-</tr>
-<tr>
-<td>ワークスペース</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>ゼロインストール</td>
-<td>❌</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>自動インストール</td>
-<td>❌</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>セキュリティ</td>
-<td>npm audit</td>
-<td>yarn audit</td>
-<td>pnpm audit</td>
-</tr>
-</tbody>
-</table>
 <h2>まとめ</h2>
 <p>npmコマンドは単にパッケージをインストールするだけでなく、以下の重要な役割があります：</p>
 <ol>
