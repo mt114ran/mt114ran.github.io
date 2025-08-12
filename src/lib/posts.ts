@@ -74,13 +74,39 @@ export async function getPostData(slug: string) {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   const matterResult = matter(fileContents);
+  
+  // Mermaidブロックを処理
+  let content = matterResult.content;
+  const mermaidRegex = /```mermaid\n([\s\S]*?)```/g;
+  const mermaidBlocks: string[] = [];
+  let match;
+  
+  while ((match = mermaidRegex.exec(content)) !== null) {
+    mermaidBlocks.push(match[1]);
+  }
+  
+  // Mermaidブロックを一時的なプレースホルダーに置換
+  let index = 0;
+  content = content.replace(mermaidRegex, () => {
+    return `<div class="mermaid-placeholder" data-index="${index++}"></div>`;
+  });
+  
   const processedContent = await remark()
     .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypeSlug)
     .use(rehypeStringify)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+    .process(content);
+  let contentHtml = processedContent.toString();
+  
+  // プレースホルダーをMermaid divに置換
+  mermaidBlocks.forEach((block, i) => {
+    const mermaidDiv = `<div class="mermaid">${block}</div>`;
+    contentHtml = contentHtml.replace(
+      `<div class="mermaid-placeholder" data-index="${i}"></div>`,
+      mermaidDiv
+    );
+  });
 
   return {
     slug,
