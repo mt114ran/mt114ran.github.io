@@ -25,7 +25,7 @@ export default function MermaidClientWrapper() {
       const mermaidElements = document.querySelectorAll('.mermaid');
       if (mermaidElements.length > 0) {
         mermaid.run({
-          nodes: Array.from(mermaidElements),
+          nodes: Array.from(mermaidElements) as HTMLElement[],
         });
       }
     };

@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
+import rehypeRaw from 'rehype-raw';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 export const POSTS_PER_PAGE = 10;
@@ -77,36 +78,30 @@ export async function getPostData(slug: string) {
   
   // Mermaidブロックを処理
   let content = matterResult.content;
-  const mermaidRegex = /```mermaid\n([\s\S]*?)```/g;
+  const mermaidRegex = /```mermaid\r?\n([\s\S]*?)\r?\n```/g;
   const mermaidBlocks: string[] = [];
-  let match;
   
-  while ((match = mermaidRegex.exec(content)) !== null) {
-    mermaidBlocks.push(match[1]);
+  // すべてのMermaidブロックを収集
+  const matches = content.matchAll(mermaidRegex);
+  for (const m of matches) {
+    mermaidBlocks.push(m[1]);
   }
   
-  // Mermaidブロックを一時的なプレースホルダーに置換
-  let index = 0;
-  content = content.replace(mermaidRegex, () => {
-    return `<div class="mermaid-placeholder" data-index="${index++}"></div>`;
+  console.log(`Found ${mermaidBlocks.length} mermaid blocks in ${slug}`);
+  
+  // Mermaidブロックをdivタグに直接置換
+  content = content.replace(mermaidRegex, (_, code) => {
+    return `\n<div class="mermaid">${code}</div>\n`;
   });
   
   const processedContent = await remark()
     .use(remarkGfm)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
     .use(rehypeSlug)
     .use(rehypeStringify)
     .process(content);
-  let contentHtml = processedContent.toString();
-  
-  // プレースホルダーをMermaid divに置換
-  mermaidBlocks.forEach((block, i) => {
-    const mermaidDiv = `<div class="mermaid">${block}</div>`;
-    contentHtml = contentHtml.replace(
-      `<div class="mermaid-placeholder" data-index="${i}"></div>`,
-      mermaidDiv
-    );
-  });
+  const contentHtml = processedContent.toString();
 
   return {
     slug,

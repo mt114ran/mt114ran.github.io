@@ -1,7 +1,6 @@
 'use client'
 
 import { getPostData } from '@/lib/posts'
-import { notFound } from 'next/navigation'
 import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 
