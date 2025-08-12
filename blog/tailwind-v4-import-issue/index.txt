@@ -9,15 +9,15 @@ e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/ce87a0c8fce915ba.css","style"]
-0:{"P":null,"b":"ug3f9LepbVd0lT5MBbbSR","p":"","c":["","blog","tailwind-v4-import-issue",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","tailwind-v4-import-issue","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","tailwind-v4-import-issue","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","DyJgihcjdN9YZJ5qEyEih",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"rDTXMpKruKQ49B_bWbVp4","p":"","c":["","blog","tailwind-v4-import-issue",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","tailwind-v4-import-issue","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","tailwind-v4-import-issue","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","atJQgDAnS3G7-luzG6P17",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
 12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
-13:Tf50,<h1>Tailwind CSS v4の@import構文でスタイルが適用されない問題と解決方法</h1>
+13:T10dc,<h1 id="tailwind-css-v4のimport構文でスタイルが適用されない問題と解決方法">Tailwind CSS v4の@import構文でスタイルが適用されない問題と解決方法</h1>
 <p>Next.js 15.3.3とTailwind CSS v4を使用していて、スタイルが正しく適用されない問題に遭遇しました。この記事では、その原因と解決方法について説明します。</p>
-<h2>問題の症状</h2>
+<h2 id="問題の症状">問題の症状</h2>
 <p>以下のような構成でTailwindのスタイルが全く適用されませんでした：</p>
 <pre><code class="language-css">/* globals.css - 問題のあるコード */
 @import "tailwindcss";
@@ -32,9 +32,9 @@ body {
   color: var(--foreground);
 }
 </code></pre>
-<h2>原因</h2>
+<h2 id="原因">原因</h2>
 <p>Tailwind CSS v4では新しい<code>@import</code>構文が導入されましたが、Next.jsのビルドプロセスとの互換性に問題がある場合があります。特に静的エクスポート（<code>output: 'export'</code>）を使用している場合、この新しい構文が正しく処理されないことがあります。</p>
-<h2>解決方法</h2>
+<h2 id="解決方法">解決方法</h2>
 <p>従来の<code>@tailwind</code>ディレクティブを使用することで問題を解決できます：</p>
 <pre><code class="language-css">/* globals.css - 修正後 */
 @tailwind base;
@@ -55,9 +55,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 </code></pre>
-<h2>ダークテーマの実装</h2>
+<h2 id="ダークテーマの実装">ダークテーマの実装</h2>
 <p>今回は背景を黒、テキストを白にするダークテーマも同時に実装しました。</p>
-<h3>1. グローバルスタイルの設定</h3>
+<h3 id="1-グローバルスタイルの設定">1. グローバルスタイルの設定</h3>
 <pre><code class="language-css">/* ダークモードを強制適用 */
 html {
   color-scheme: dark;
@@ -67,7 +67,7 @@ body {
   @apply bg-black text-white;
 }
 </code></pre>
-<h3>2. コンポーネントのカラー調整</h3>
+<h3 id="2-コンポーネントのカラー調整">2. コンポーネントのカラー調整</h3>
 <p>各コンポーネントで使用している色も調整が必要です：</p>
 <pre><code class="language-tsx">// リンクの色を調整
 &#x3C;Link href="/blog" className="text-blue-400 hover:text-blue-300 hover:underline">
@@ -84,8 +84,8 @@ body {
   {/* コンテンツ */}
 &#x3C;/li>
 </code></pre>
-<h2>ベストプラクティス</h2>
-<h3>1. Tailwind設定の確認</h3>
+<h2 id="ベストプラクティス">ベストプラクティス</h2>
+<h3 id="1-tailwind設定の確認">1. Tailwind設定の確認</h3>
 <p><code>tailwind.config.ts</code>でコンテンツパスが正しく設定されているか確認：</p>
 <pre><code class="language-typescript">const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -95,7 +95,7 @@ body {
   plugins: [],
 }
 </code></pre>
-<h3>2. PostCSSの設定</h3>
+<h3 id="2-postcssの設定">2. PostCSSの設定</h3>
 <p><code>postcss.config.mjs</code>でTailwindが正しく設定されているか確認：</p>
 <pre><code class="language-javascript">export default {
   plugins: {
@@ -104,11 +104,11 @@ body {
   },
 }
 </code></pre>
-<h3>3. ビルドの確認</h3>
+<h3 id="3-ビルドの確認">3. ビルドの確認</h3>
 <p>変更後は必ずビルドを実行して、エラーがないことを確認：</p>
 <pre><code class="language-bash">npm run build
 </code></pre>
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p>Tailwind CSS v4の新しい<code>@import</code>構文は、まだすべての環境で完全にサポートされていない可能性があります。問題が発生した場合は、従来の<code>@tailwind</code>ディレクティブを使用することで解決できます。</p>
 <p>また、ダークテーマを実装する際は、以下の点に注意が必要です：</p>
 <ol>
@@ -116,8 +116,7 @@ body {
 <li>各コンポーネントで使用している色クラスを調整</li>
 <li>ボーダーや背景色も忘れずに調整</li>
 </ol>
-<p>これらの対応により、美しいダークテーマのサイトを実現できます。</p>
-4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",9]}]," ","Tailwind CSS v4の@import構文でスタイルが適用されない問題と解決方法"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-02 12:45"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Tailwind CSS"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Next.js"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"CSS"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Troubleshooting"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+<p>これらの対応により、美しいダークテーマのサイトを実現できます。</p>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",9]}]," ","Tailwind CSS v4の@import構文でスタイルが適用されない問題と解決方法"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-02 12:45"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Tailwind CSS"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Next.js"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"CSS"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Troubleshooting"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
 11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}

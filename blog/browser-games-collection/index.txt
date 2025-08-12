@@ -9,13 +9,13 @@ e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/ce87a0c8fce915ba.css","style"]
-0:{"P":null,"b":"ug3f9LepbVd0lT5MBbbSR","p":"","c":["","blog","browser-games-collection",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","browser-games-collection","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","browser-games-collection","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","AFgD7Za6xE5ZkDKTW3dT-",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"rDTXMpKruKQ49B_bWbVp4","p":"","c":["","blog","browser-games-collection",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","browser-games-collection","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","browser-games-collection","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","wgN3s7yC2GcY3pY87PYFY",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
 12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
-13:T2204,<h2>はじめに：なぜゲーム開発が学習に最適なのか？</h2>
+13:T265c,<h2 id="はじめになぜゲーム開発が学習に最適なのか">はじめに：なぜゲーム開発が学習に最適なのか？</h2>
 <p>プログラミング学習において「楽しみながら学ぶ」ことは継続の鍵です。今回、HTML/CSS/JavaScriptの基礎を楽しく学べる教材として、ブラウザで動作するミニゲーム集を作成しました。</p>
 <p><strong>ゲーム開発がWeb開発の学習に最適な3つの理由：</strong></p>
 <ol>
@@ -23,16 +23,16 @@ f:"$Sreact.suspense"
 <li>🎮 <strong>モチベーションが続く</strong> - 自分で作ったゲームで遊べる喜び</li>
 <li>📚 <strong>実践的なスキルが身につく</strong> - イベント処理、アニメーション、状態管理など</li>
 </ol>
-<h2>🎮 作成したゲームコレクション</h2>
+<h2 id="-作成したゲームコレクション">🎮 作成したゲームコレクション</h2>
 <p><strong><a href="/note/game">→ ゲームコレクションをプレイする</a></strong></p>
-<h3>実装した3つのゲーム</h3>
+<h3 id="実装した3つのゲーム">実装した3つのゲーム</h3>
 <ol>
 <li><strong>テトリス</strong> - 配列操作とゲームループの基礎</li>
 <li><strong>スネークゲーム</strong> - 座標計算と衝突判定</li>
 <li><strong>2048</strong> - 配列の操作とアルゴリズム</li>
 </ol>
-<h2>学習できるWeb開発の基礎技術</h2>
-<h3>HTML5の基礎</h3>
+<h2 id="学習できるweb開発の基礎技術">学習できるWeb開発の基礎技術</h2>
+<h3 id="html5の基礎">HTML5の基礎</h3>
 <pre><code class="language-html">&#x3C;!-- Canvas要素でゲーム画面を作成 -->
 &#x3C;canvas id="gameCanvas" width="400" height="600">&#x3C;/canvas>
 
@@ -42,7 +42,7 @@ f:"$Sreact.suspense"
   &#x3C;button onclick="startGame()">Start&#x3C;/button>
 &#x3C;/div>
 </code></pre>
-<h3>CSSでのレスポンシブデザイン</h3>
+<h3 id="cssでのレスポンシブデザイン">CSSでのレスポンシブデザイン</h3>
 <pre><code class="language-css">/* モバイル対応のレスポンシブデザイン */
 .game-container {
   max-width: 100%;
@@ -56,7 +56,7 @@ f:"$Sreact.suspense"
   }
 }
 </code></pre>
-<h3>JavaScriptの実践的な使い方</h3>
+<h3 id="javascriptの実践的な使い方">JavaScriptの実践的な使い方</h3>
 <pre><code class="language-javascript">// ゲームループの基本構造
 function gameLoop() {
   update();    // ゲーム状態の更新
@@ -72,8 +72,8 @@ document.addEventListener('keydown', (e) => {
   }
 });
 </code></pre>
-<h2>開発で直面した問題と解決策</h2>
-<h3>問題1: モバイル対応の難しさ</h3>
+<h2 id="開発で直面した問題と解決策">開発で直面した問題と解決策</h2>
+<h3 id="問題1-モバイル対応の難しさ">問題1: モバイル対応の難しさ</h3>
 <p><strong>課題</strong>: PCのキーボード操作をモバイルでどう実現するか
 <strong>解決策</strong>: タッチイベントとスワイプ検出を実装</p>
 <pre><code class="language-javascript">// スワイプ検出の実装
@@ -89,7 +89,7 @@ canvas.addEventListener('touchend', (e) => {
   }
 });
 </code></pre>
-<h3>問題2: パフォーマンスの最適化</h3>
+<h3 id="問題2-パフォーマンスの最適化">問題2: パフォーマンスの最適化</h3>
 <p><strong>課題</strong>: スムーズなアニメーションの実現
 <strong>解決策</strong>: requestAnimationFrameを使用したフレームレート制御</p>
 <pre><code class="language-javascript">let lastTime = 0;
@@ -106,7 +106,7 @@ function gameLoop(currentTime) {
   requestAnimationFrame(gameLoop);
 }
 </code></pre>
-<h3>問題3: 状態管理の複雑さ</h3>
+<h3 id="問題3-状態管理の複雑さ">問題3: 状態管理の複雑さ</h3>
 <p><strong>課題</strong>: ゲームの状態（スコア、レベル、ゲームオーバー）の管理
 <strong>解決策</strong>: シンプルな状態管理パターンの採用</p>
 <pre><code class="language-javascript">const gameState = {
@@ -123,15 +123,15 @@ function updateScore(points) {
   }
 }
 </code></pre>
-<h2>工夫したポイント</h2>
-<h3>1. 段階的な難易度設計</h3>
+<h2 id="工夫したポイント">工夫したポイント</h2>
+<h3 id="1-段階的な難易度設計">1. 段階的な難易度設計</h3>
 <p>初心者でも理解しやすいよう、シンプルなゲームから複雑なゲームへと段階的に実装</p>
-<h3>2. コードの可読性</h3>
+<h3 id="2-コードの可読性">2. コードの可読性</h3>
 <p>学習教材として使えるよう、わかりやすい変数名とコメントを心がけた</p>
-<h3>3. エラーハンドリング</h3>
+<h3 id="3-エラーハンドリング">3. エラーハンドリング</h3>
 <p>初心者が陥りやすいエラーを想定し、適切なエラー処理を実装</p>
-<h2>学習のロードマップ</h2>
-<h3>🎯 初級者向け（1-2週間）</h3>
+<h2 id="学習のロードマップ">学習のロードマップ</h2>
+<h3 id="-初級者向け1-2週間">🎯 初級者向け（1-2週間）</h3>
 <ol>
 <li><strong>スネークゲーム</strong>から始める
 <ul>
@@ -141,7 +141,7 @@ function updateScore(points) {
 </ul>
 </li>
 </ol>
-<h3>🚀 中級者向け（3-4週間）</h3>
+<h3 id="-中級者向け3-4週間">🚀 中級者向け（3-4週間）</h3>
 <ol start="2">
 <li><strong>テトリス</strong>に挑戦
 <ul>
@@ -151,7 +151,7 @@ function updateScore(points) {
 </ul>
 </li>
 </ol>
-<h3>💪 上級者向け（1ヶ月以上）</h3>
+<h3 id="-上級者向け1ヶ月以上">💪 上級者向け（1ヶ月以上）</h3>
 <ol start="3">
 <li><strong>2048</strong>で応用力を磨く
 <ul>
@@ -161,19 +161,19 @@ function updateScore(points) {
 </ul>
 </li>
 </ol>
-<h2>なぜゲーム開発が効果的な学習方法なのか</h2>
-<h3>1. 実践的なプログラミングスキルが身につく</h3>
+<h2 id="なぜゲーム開発が効果的な学習方法なのか">なぜゲーム開発が効果的な学習方法なのか</h2>
+<h3 id="1-実践的なプログラミングスキルが身につく">1. 実践的なプログラミングスキルが身につく</h3>
 <ul>
 <li><strong>変数と関数</strong>: スコアの管理、ゲーム状態の更新</li>
 <li><strong>条件分岐</strong>: ゲームオーバー判定、衝突検出</li>
 <li><strong>ループ処理</strong>: ゲームループ、配列の走査</li>
 <li><strong>イベント処理</strong>: キーボード、マウス、タッチ操作</li>
 </ul>
-<h3>2. デバッグ能力が向上する</h3>
+<h3 id="2-デバッグ能力が向上する">2. デバッグ能力が向上する</h3>
 <p>ゲームのバグは視覚的にすぐわかるため、デバッグの練習に最適</p>
-<h3>3. 完成品を共有できる喜び</h3>
+<h3 id="3-完成品を共有できる喜び">3. 完成品を共有できる喜び</h3>
 <p>作ったゲームをすぐに友人や家族と共有でき、フィードバックがもらえる</p>
-<h2>今後の発展課題</h2>
+<h2 id="今後の発展課題">今後の発展課題</h2>
 <p>学習を続けたい方向けの発展課題：</p>
 <ul class="contains-task-list">
 <li class="task-list-item"><input type="checkbox" disabled> <strong>音響効果の追加</strong> - Web Audio APIの学習</li>
@@ -181,7 +181,7 @@ function updateScore(points) {
 <li class="task-list-item"><input type="checkbox" disabled> <strong>マルチプレイヤー</strong> - WebSocketの学習</li>
 <li class="task-list-item"><input type="checkbox" disabled> <strong>AIの実装</strong> - 簡単なゲームAIアルゴリズムの学習</li>
 </ul>
-<h2>まとめ：楽しく学ぶことの重要性</h2>
+<h2 id="まとめ楽しく学ぶことの重要性">まとめ：楽しく学ぶことの重要性</h2>
 <p>プログラミング学習において最も重要なのは「継続」です。ゲーム開発は、楽しみながら実践的なスキルを身につけられる最高の学習方法の一つです。</p>
 <p><strong>今すぐ始められる3つのステップ：</strong></p>
 <ol>
@@ -190,14 +190,14 @@ function updateScore(points) {
 <li>🔧 小さな改造から始めてみる（色を変える、速度を調整するなど）</li>
 </ol>
 <p>プログラミングは「作りながら学ぶ」が一番効果的です。ぜひ、ゲーム開発を通じてWeb開発の楽しさを体験してください！</p>
-<h2>参考リソース</h2>
-<h3>初心者向け学習リソース</h3>
+<h2 id="参考リソース">参考リソース</h2>
+<h3 id="初心者向け学習リソース">初心者向け学習リソース</h3>
 <ul>
 <li><a href="https://developer.mozilla.org/ja/docs/Games">MDN Web Docs - ゲーム開発</a></li>
 <li><a href="https://ja.javascript.info/events">JavaScript.info - ブラウザイベント</a></li>
 <li><a href="https://developer.mozilla.org/ja/docs/Web/API/Canvas_API/Tutorial">Canvas API チュートリアル</a></li>
 </ul>
-<h3>より深く学びたい方へ</h3>
+<h3 id="より深く学びたい方へ">より深く学びたい方へ</h3>
 <ul>
 <li><a href="https://gameprogrammingpatterns.com/">Game Programming Patterns</a> - ゲームプログラミングのデザインパターン</li>
 <li><a href="https://eloquentjavascript.net/">Eloquent JavaScript</a> - JavaScriptの基礎から応用まで</li>
@@ -205,8 +205,7 @@ function updateScore(points) {
 </ul>
 <hr>
 <p><strong>質問やフィードバックはGitHubのIssueまで！</strong>
-初心者の方の質問も大歓迎です。一緒に楽しくプログラミングを学びましょう！</p>
-4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",14]}]," ","ゲーム開発でHTML/CSS/JSを楽しく学ぼう！ミニゲーム集を作ってみた"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-01-05 15:00"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Web開発"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"JavaScript"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ゲーム開発"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"HTML5"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Canvas"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"学習"}],["$","span","6",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"初心者向け"}],["$","span","7",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"BookMark"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+初心者の方の質問も大歓迎です。一緒に楽しくプログラミングを学びましょう！</p>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",14]}]," ","ゲーム開発でHTML/CSS/JSを楽しく学ぼう！ミニゲーム集を作ってみた"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-01-05 15:00"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Web開発"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"JavaScript"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ゲーム開発"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"HTML5"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Canvas"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"学習"}],["$","span","6",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"初心者向け"}],["$","span","7",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"BookMark"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
 11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}

@@ -9,14 +9,14 @@ e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/ce87a0c8fce915ba.css","style"]
-0:{"P":null,"b":"ug3f9LepbVd0lT5MBbbSR","p":"","c":["","blog","nvm-basic-usage-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","nvm-basic-usage-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","nvm-basic-usage-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","6mHhqVoZ8SwF9RuBaYwus",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"rDTXMpKruKQ49B_bWbVp4","p":"","c":["","blog","nvm-basic-usage-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","nvm-basic-usage-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","nvm-basic-usage-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","SnrlFps4Ehw1VrTpVf20b",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
 12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
-13:T381c,<p>Node.jsのバージョン管理で困ったことはありませんか？プロジェクトによって異なるNode.jsのバージョンが必要になることはよくあることです。今回は、Node.jsのバージョン管理ツール「nvm」の基本的な使い方と、プロジェクトごとに自動でバージョンを切り替える方法について解説します。</p>
-<h2>はじめに：なぜnvmが必要なのか</h2>
+13:T3e87,<p>Node.jsのバージョン管理で困ったことはありませんか？プロジェクトによって異なるNode.jsのバージョンが必要になることはよくあることです。今回は、Node.jsのバージョン管理ツール「nvm」の基本的な使い方と、プロジェクトごとに自動でバージョンを切り替える方法について解説します。</p>
+<h2 id="はじめになぜnvmが必要なのか">はじめに：なぜnvmが必要なのか</h2>
 <p>Node.jsを使った開発では、以下のような問題に直面することがあります：</p>
 <ul>
 <li>プロジェクトAではNode.js v18が必要だが、プロジェクトBではv20が必要</li>
@@ -24,16 +24,16 @@ f:"$Sreact.suspense"
 <li>チームメンバー全員で同じNode.jsバージョンを使いたい</li>
 </ul>
 <p>これらの問題を解決するのが**nvm（Node Version Manager）**です。</p>
-<h2>nvmとは？</h2>
+<h2 id="nvmとは">nvmとは？</h2>
 <p>nvmは、複数のNode.jsバージョンを管理し、簡単に切り替えることができるツールです。macOSやLinuxで動作し、プロジェクトごとに異なるNode.jsバージョンを使い分けることができます。</p>
-<h3>nvmの主な特徴</h3>
+<h3 id="nvmの主な特徴">nvmの主な特徴</h3>
 <ul>
 <li><strong>複数バージョンの管理</strong>: 複数のNode.jsバージョンを同時にインストール可能</li>
 <li><strong>簡単な切り替え</strong>: コマンド一つでバージョンを切り替え</li>
 <li><strong>プロジェクト単位の管理</strong>: プロジェクトごとに異なるバージョンを指定可能</li>
 </ul>
-<h2>nvmのインストール方法</h2>
-<h3>macOS/Linuxの場合</h3>
+<h2 id="nvmのインストール方法">nvmのインストール方法</h2>
+<h3 id="macoslinuxの場合">macOS/Linuxの場合</h3>
 <pre><code class="language-bash"># インストールスクリプトを実行
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 </code></pre>
@@ -41,19 +41,19 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 <pre><code class="language-bash">export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] &#x26;&#x26; \. "$NVM_DIR/nvm.sh"
 </code></pre>
-<h3>インストールの確認</h3>
+<h3 id="インストールの確認">インストールの確認</h3>
 <pre><code class="language-bash">nvm --version
 # 0.39.0のようなバージョン番号が表示されれば成功
 </code></pre>
-<h2>基本的な使い方</h2>
-<h3>1. 利用可能なNode.jsバージョンを確認</h3>
+<h2 id="基本的な使い方">基本的な使い方</h2>
+<h3 id="1-利用可能なnodejsバージョンを確認">1. 利用可能なNode.jsバージョンを確認</h3>
 <pre><code class="language-bash"># インストール可能なバージョン一覧を表示
 nvm ls-remote
 
 # LTS（長期サポート）バージョンのみ表示
 nvm ls-remote --lts
 </code></pre>
-<h3>2. Node.jsのインストール</h3>
+<h3 id="2-nodejsのインストール">2. Node.jsのインストール</h3>
 <pre><code class="language-bash"># 特定バージョンをインストール
 nvm install 20.5.0
 
@@ -63,7 +63,7 @@ nvm install --lts
 # 最新版をインストール
 nvm install node
 </code></pre>
-<h3>3. インストール済みバージョンの確認</h3>
+<h3 id="3-インストール済みバージョンの確認">3. インストール済みバージョンの確認</h3>
 <pre><code class="language-bash">nvm ls
 # または
 nvm list
@@ -75,22 +75,22 @@ nvm list
 default -> 20.5.0 (-> v20.5.0)
 </code></pre>
 <p>矢印（<code>-></code>）が現在使用中のバージョンを示します。</p>
-<h3>4. バージョンの切り替え</h3>
+<h3 id="4-バージョンの切り替え">4. バージョンの切り替え</h3>
 <pre><code class="language-bash"># 特定バージョンに切り替え
 nvm use 18.17.0
 
 # デフォルトバージョンの設定
 nvm alias default 20.5.0
 </code></pre>
-<h3>5. 現在のバージョンを確認</h3>
+<h3 id="5-現在のバージョンを確認">5. 現在のバージョンを確認</h3>
 <pre><code class="language-bash">node --version
 # または
 nvm current
 </code></pre>
-<h2>プロジェクトごとのバージョン管理</h2>
-<h3>.nvmrcファイルを使った管理</h3>
+<h2 id="プロジェクトごとのバージョン管理">プロジェクトごとのバージョン管理</h2>
+<h3 id="nvmrcファイルを使った管理">.nvmrcファイルを使った管理</h3>
 <p><code>.nvmrc</code>ファイルは<strong>プロジェクトごとに作成する</strong>のが一般的です。各プロジェクトのルートディレクトリに配置することで、そのプロジェクトで使用するNode.jsバージョンを指定できます。</p>
-<h4>.nvmrcの配置パターン</h4>
+<h4 id="nvmrcの配置パターン">.nvmrcの配置パターン</h4>
 <p><strong>1. プロジェクトごとに作成（最も一般的）</strong></p>
 <pre><code>~/projects/
   ├── project-a/
@@ -123,23 +123,23 @@ nvm current
 └── legacy-api/
     └── .nvmrc (14.21.0)  # レガシーAPI用
 </code></pre>
-<h4>なぜプロジェクトごとに作成するのか</h4>
+<h4 id="なぜプロジェクトごとに作成するのか">なぜプロジェクトごとに作成するのか</h4>
 <ol>
 <li><strong>依存関係の互換性</strong>: プロジェクトのパッケージが特定のNode.jsバージョンでのみ動作する</li>
 <li><strong>チーム開発の統一</strong>: 全員が同じバージョンを使用することでバグを防ぐ</li>
 <li><strong>CI/CDとの一致</strong>: 本番環境と同じバージョンで開発</li>
 <li><strong>レガシープロジェクト対応</strong>: 古いプロジェクトは古いNode.jsバージョンが必要</li>
 </ol>
-<h4>.nvmrcファイルの作成</h4>
+<h4 id="nvmrcファイルの作成">.nvmrcファイルの作成</h4>
 <pre><code class="language-bash"># プロジェクトディレクトリで実行
 echo "20.5.0" > .nvmrc
 </code></pre>
-<h4>.nvmrcを使ったバージョン切り替え</h4>
+<h4 id="nvmrcを使ったバージョン切り替え">.nvmrcを使ったバージョン切り替え</h4>
 <pre><code class="language-bash"># .nvmrcに記載されたバージョンに切り替え
 nvm use
 </code></pre>
 <p><code>.nvmrc</code>ファイルがあれば、バージョン番号を指定する必要がなくなります。</p>
-<h3>実際のエラー例と解決方法</h3>
+<h3 id="実際のエラー例と解決方法">実際のエラー例と解決方法</h3>
 <p>以下のようなエラーに遭遇することがあります：</p>
 <pre><code>SyntaxError: The requested module 'node:events' does not provide an export named 'addAbortListener'
     at ModuleJob._instantiate (node:internal/modules/esm/module_job:123:21)
@@ -149,9 +149,9 @@ Node.js v19.9.0
 <pre><code class="language-bash"># より新しいバージョンに切り替え
 nvm use 20.5.0
 </code></pre>
-<h2>自動バージョン切り替えの設定</h2>
+<h2 id="自動バージョン切り替えの設定">自動バージョン切り替えの設定</h2>
 <p>毎回手動で<code>nvm use</code>を実行するのは面倒です。ディレクトリ移動時に自動でバージョンを切り替える設定を紹介します。</p>
-<h3>Zshの場合（macOSデフォルト）</h3>
+<h3 id="zshの場合macosデフォルト">Zshの場合（macOSデフォルト）</h3>
 <p><code>.zshrc</code>に以下を追加：</p>
 <pre><code class="language-bash"># nvmの自動切り替え設定
 autoload -U add-zsh-hook
@@ -175,7 +175,7 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 </code></pre>
-<h3>Bashの場合</h3>
+<h3 id="bashの場合">Bashの場合</h3>
 <p><code>.bashrc</code>に以下を追加：</p>
 <pre><code class="language-bash"># nvmの自動切り替え設定
 enter_directory() {
@@ -199,8 +199,8 @@ source ~/.zshrc
 # Bashの場合
 source ~/.bashrc
 </code></pre>
-<h2>実務でよく使うnvmコマンド</h2>
-<h3>プロジェクト開始時のワークフロー</h3>
+<h2 id="実務でよく使うnvmコマンド">実務でよく使うnvmコマンド</h2>
+<h3 id="プロジェクト開始時のワークフロー">プロジェクト開始時のワークフロー</h3>
 <pre><code class="language-bash"># 1. プロジェクトディレクトリに移動
 cd my-project
 
@@ -216,7 +216,7 @@ nvm use
 # 5. package.jsonに記載
 npm init -y
 </code></pre>
-<h3>チーム開発での使い方</h3>
+<h3 id="チーム開発での使い方">チーム開発での使い方</h3>
 <ol>
 <li><strong><code>.nvmrc</code>をGitで管理</strong></li>
 </ol>
@@ -244,11 +244,11 @@ git commit -m "Add .nvmrc for Node.js version management"
 # シェル設定を再読み込み
 source ~/.zshrc  # または source ~/.bashrc
 </code></pre>
-<h4>パーミッションエラーが出る場合</h4>
+<h4 id="パーミッションエラーが出る場合">パーミッションエラーが出る場合</h4>
 <pre><code class="language-bash"># nvmディレクトリの権限を修正
 chmod -R 755 ~/.nvm
 </code></pre>
-<h4>グローバルパッケージが見つからない場合</h4>
+<h4 id="グローバルパッケージが見つからない場合">グローバルパッケージが見つからない場合</h4>
 <p>Node.jsバージョンごとにグローバルパッケージは分離されています：</p>
 <pre><code class="language-bash"># 現在のバージョンにインストール
 npm install -g typescript
@@ -257,9 +257,9 @@ npm install -g typescript
 nvm use 18.17.0
 npm install -g typescript
 </code></pre>
-<h2>PC全体のデフォルトバージョン設定</h2>
+<h2 id="pc全体のデフォルトバージョン設定">PC全体のデフォルトバージョン設定</h2>
 <p>「PC全体に特定のNode.jsバージョンを適用したい」という質問をよく受けます。この場合、<strong><code>.nvmrc</code>をホームディレクトリに置くのではなく、<code>nvm alias default</code>を使います</strong>。</p>
-<h3>デフォルトバージョンの正しい設定方法</h3>
+<h3 id="デフォルトバージョンの正しい設定方法">デフォルトバージョンの正しい設定方法</h3>
 <pre><code class="language-bash"># PC全体のデフォルトバージョンを設定
 nvm alias default 20.5.0
 
@@ -268,7 +268,7 @@ nvm alias
 # default -> 20.5.0 (-> v20.5.0)
 </code></pre>
 <p>これで新しいターミナルを開いたときに自動的にv20.5.0が使われます。</p>
-<h3>ホームディレクトリの.nvmrcについて</h3>
+<h3 id="ホームディレクトリのnvmrcについて">ホームディレクトリの.nvmrcについて</h3>
 <pre><code class="language-bash"># ホームディレクトリに.nvmrcを置いても
 echo "20.5.0" > ~/.nvmrc
 
@@ -282,7 +282,7 @@ nvm use  # これで初めて適用される
 <li><strong>プロジェクトの独立性</strong>: 各プロジェクトの<code>.nvmrc</code>を優先すべき</li>
 <li><strong>nvmの設計思想</strong>: グローバル設定は<code>alias default</code>で管理する</li>
 </ol>
-<h3>バージョンの優先順位</h3>
+<h3 id="バージョンの優先順位">バージョンの優先順位</h3>
 <p>nvmは以下の優先順位でNode.jsバージョンを決定します：</p>
 <ol>
 <li>現在のディレクトリの<code>.nvmrc</code></li>
@@ -290,7 +290,7 @@ nvm use  # これで初めて適用される
 <li><code>nvm alias default</code>で設定したバージョン</li>
 <li>システムのNode.js</li>
 </ol>
-<h3>実際の運用例</h3>
+<h3 id="実際の運用例">実際の運用例</h3>
 <pre><code class="language-bash"># PC全体のデフォルト設定
 nvm alias default 20.5.0
 
@@ -306,24 +306,24 @@ cd ~/projects/project-b
 # 新規ターミナルを開く
 # → どこでも20.5.0から始まる
 </code></pre>
-<h2>ベストプラクティス</h2>
-<h3>1. プロジェクトには必ず.nvmrcを作成</h3>
+<h2 id="ベストプラクティス">ベストプラクティス</h2>
+<h3 id="1-プロジェクトには必ずnvmrcを作成">1. プロジェクトには必ず.nvmrcを作成</h3>
 <p>チーム全員が同じNode.jsバージョンを使えるようになります。</p>
-<h3>2. PC全体のデフォルトは安定版に設定</h3>
+<h3 id="2-pc全体のデフォルトは安定版に設定">2. PC全体のデフォルトは安定版に設定</h3>
 <pre><code class="language-bash"># LTSバージョンをインストール
 nvm install --lts
 
 # LTSをデフォルトに設定
 nvm alias default lts/*
 </code></pre>
-<h3>3. 定期的に不要なバージョンを削除</h3>
+<h3 id="3-定期的に不要なバージョンを削除">3. 定期的に不要なバージョンを削除</h3>
 <pre><code class="language-bash"># 不要なバージョンを削除
 nvm uninstall 16.20.0
 
 # キャッシュをクリア
 nvm cache clear
 </code></pre>
-<h3>4. package.jsonにenginesフィールドを追加</h3>
+<h3 id="4-packagejsonにenginesフィールドを追加">4. package.jsonにenginesフィールドを追加</h3>
 <pre><code class="language-json">{
   "engines": {
     "node": ">=20.5.0",
@@ -332,7 +332,7 @@ nvm cache clear
 }
 </code></pre>
 <p>これにより、npmが要求バージョンをチェックしてくれます。</p>
-<h3>5. チーム開発では.nvmrcをGitで管理</h3>
+<h3 id="5-チーム開発ではnvmrcをgitで管理">5. チーム開発では.nvmrcをGitで管理</h3>
 <pre><code class="language-bash"># .nvmrcをリポジトリに追加
 git add .nvmrc
 git commit -m "Add .nvmrc for Node.js v20.5.0"
@@ -342,7 +342,7 @@ echo "## Setup
 nvm install
 nvm use" >> README.md
 </code></pre>
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p>nvmを使うことで、Node.jsのバージョン管理が格段に楽になります。特に以下の点が重要です：</p>
 <ol>
 <li><strong>プロジェクトごとのバージョン管理</strong>: <code>.nvmrc</code>ファイルで簡単に管理</li>
@@ -350,14 +350,13 @@ nvm use" >> README.md
 <li><strong>チーム開発での統一</strong>: 全員が同じ環境で開発可能</li>
 </ol>
 <p>最初は手動で<code>nvm use</code>を実行することから始めて、慣れてきたら自動切り替えの設定を追加していくのがおすすめです。これにより、「動かない！」というバージョン起因のトラブルを大幅に減らすことができます。</p>
-<h2>参考リンク</h2>
+<h2 id="参考リンク">参考リンク</h2>
 <ul>
 <li><a href="https://github.com/nvm-sh/nvm">nvm公式リポジトリ</a></li>
 <li><a href="https://nodejs.org/">Node.js公式サイト</a></li>
 <li><a href="https://nodejs.org/en/about/releases/">Node.jsリリーススケジュール</a></li>
 <li><a href="https://docs.npmjs.com/cli/v9/configuring-npm/package-json#engines">npm公式ドキュメント - engines</a></li>
-</ul>
-4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",23]}]," ","nvmの基本的な使い方とプロジェクトごとのNode.jsバージョン管理"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-07 17:32"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Node.js"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"nvm"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"開発環境"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"JavaScript"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"環境構築"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",23]}]," ","nvmの基本的な使い方とプロジェクトごとのNode.jsバージョン管理"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-07 17:32"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Node.js"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"nvm"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"開発環境"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"JavaScript"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"環境構築"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
 11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}

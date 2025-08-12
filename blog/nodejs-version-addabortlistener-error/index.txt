@@ -9,14 +9,14 @@ e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/ce87a0c8fce915ba.css","style"]
-0:{"P":null,"b":"ug3f9LepbVd0lT5MBbbSR","p":"","c":["","blog","nodejs-version-addabortlistener-error",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","nodejs-version-addabortlistener-error","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","nodejs-version-addabortlistener-error","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","W6CxDXJPPP89-LcC_PU0U",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"rDTXMpKruKQ49B_bWbVp4","p":"","c":["","blog","nodejs-version-addabortlistener-error",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","nodejs-version-addabortlistener-error","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","nodejs-version-addabortlistener-error","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","Q6LSln2AmVePczQw4wrub",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
 12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
-13:T2d67,<h1>Node.js v19からv20へ：addAbortListenerエラーの解決と最新APIの重要性</h1>
-<h2>はじめに</h2>
+13:T32a9,<h1 id="nodejs-v19からv20へaddabortlistenerエラーの解決と最新apiの重要性">Node.js v19からv20へ：addAbortListenerエラーの解決と最新APIの重要性</h1>
+<h2 id="はじめに">はじめに</h2>
 <p>最近、Claude CLIを実行しようとしたところ、以下のエラーに遭遇しました：</p>
 <pre><code class="language-bash">$ claude
 SyntaxError: The requested module 'node:events' does not provide an export named 'addAbortListener'
@@ -26,8 +26,8 @@ SyntaxError: The requested module 'node:events' does not provide an export named
 Node.js v19.9.0
 </code></pre>
 <p>このエラーは、<strong>Node.jsのバージョンが古い</strong>ことが原因です。今回は、このエラーの詳細な解説と、Node.jsのバージョン管理の重要性について解説します。</p>
-<h2>エラーの原因：addAbortListenerとは</h2>
-<h3>addAbortListenerの概要</h3>
+<h2 id="エラーの原因addabortlistenerとは">エラーの原因：addAbortListenerとは</h2>
+<h3 id="addabortlistenerの概要">addAbortListenerの概要</h3>
 <p><code>addAbortListener</code>は、Node.js v20.5.0で追加された新しいAPIです。このAPIは、<strong>AbortSignalのイベントリスナーを管理する</strong>ための便利な関数です。</p>
 <pre><code class="language-javascript">// Node.js v20.5.0以降で利用可能
 import { addAbortListener } from 'node:events';
@@ -43,8 +43,8 @@ const removeListener = addAbortListener(signal, () => {
 // 後でリスナーを削除
 removeListener();
 </code></pre>
-<h3>なぜaddAbortListenerが必要なのか</h3>
-<h4>従来の方法（v20.5.0以前）</h4>
+<h3 id="なぜaddabortlistenerが必要なのか">なぜaddAbortListenerが必要なのか</h3>
+<h4 id="従来の方法v2050以前">従来の方法（v20.5.0以前）</h4>
 <pre><code class="language-javascript">const controller = new AbortController();
 const { signal } = controller;
 
@@ -58,7 +58,7 @@ signal.addEventListener('abort', listener);
 // リスナーを削除する際は明示的に
 signal.removeEventListener('abort', listener);
 </code></pre>
-<h4>新しい方法（v20.5.0以降）</h4>
+<h4 id="新しい方法v2050以降">新しい方法（v20.5.0以降）</h4>
 <pre><code class="language-javascript">import { addAbortListener } from 'node:events';
 
 // より簡潔で、メモリリークを防ぎやすい
@@ -69,7 +69,7 @@ const removeListener = addAbortListener(signal, () => {
 // 返り値の関数を呼ぶだけで削除
 removeListener();
 </code></pre>
-<h3>AbortSignalの実用例</h3>
+<h3 id="abortsignalの実用例">AbortSignalの実用例</h3>
 <pre><code class="language-javascript">// ファイルのダウンロード処理
 async function downloadFile(url, signal) {
   const removeListener = addAbortListener(signal, () => {
@@ -96,9 +96,9 @@ setTimeout(() => {
   controller.abort();
 }, 5000);
 </code></pre>
-<h2>Node.jsのバージョン間の主な違い</h2>
-<h3>Node.js v19 → v20の主要な変更点</h3>
-<h4>1. <strong>Stable Test Runner</strong></h4>
+<h2 id="nodejsのバージョン間の主な違い">Node.jsのバージョン間の主な違い</h2>
+<h3 id="nodejs-v19--v20の主要な変更点">Node.js v19 → v20の主要な変更点</h3>
+<h4 id="1-stable-test-runner">1. <strong>Stable Test Runner</strong></h4>
 <pre><code class="language-javascript">// Node.js v20でテストランナーが安定版に
 import { test, describe } from 'node:test';
 
@@ -108,15 +108,15 @@ describe('数学関数', () => {
   });
 });
 </code></pre>
-<h4>2. <strong>Permission Model（実験的）</strong></h4>
+<h4 id="2-permission-model実験的">2. <strong>Permission Model（実験的）</strong></h4>
 <pre><code class="language-bash"># ファイルシステムへのアクセスを制限
 node --experimental-permission --allow-fs-read=/home/user/project index.js
 </code></pre>
-<h4>3. <strong>Single Executable Applications（SEA）</strong></h4>
+<h4 id="3-single-executable-applicationssea">3. <strong>Single Executable Applications（SEA）</strong></h4>
 <pre><code class="language-bash"># Node.jsアプリを単一の実行可能ファイルに
 node --experimental-sea-config sea-config.json
 </code></pre>
-<h4>4. <strong>Web Crypto API の改善</strong></h4>
+<h4 id="4-web-crypto-api-の改善">4. <strong>Web Crypto API の改善</strong></h4>
 <pre><code class="language-javascript">// より多くの暗号化アルゴリズムをサポート
 const subtle = globalThis.crypto.subtle;
 const key = await subtle.generateKey(
@@ -125,8 +125,8 @@ const key = await subtle.generateKey(
   ['encrypt', 'decrypt']
 );
 </code></pre>
-<h2>バージョンエラーの解決方法</h2>
-<h3>方法1: Homebrewを使用（macOS）</h3>
+<h2 id="バージョンエラーの解決方法">バージョンエラーの解決方法</h2>
+<h3 id="方法1-homebrewを使用macos">方法1: Homebrewを使用（macOS）</h3>
 <pre><code class="language-bash"># Homebrewのアップデート
 brew update
 
@@ -137,7 +137,7 @@ brew upgrade node
 node --version
 # v20.x.x または v21.x.x が表示されるはず
 </code></pre>
-<h3>方法2: Node Version Manager (nvm) を使用</h3>
+<h3 id="方法2-node-version-manager-nvm-を使用">方法2: Node Version Manager (nvm) を使用</h3>
 <pre><code class="language-bash"># nvmのインストール（まだの場合）
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 
@@ -156,7 +156,7 @@ nvm alias default node
 # 確認
 node --version
 </code></pre>
-<h3>方法3: n を使用（シンプルなバージョン管理）</h3>
+<h3 id="方法3-n-を使用シンプルなバージョン管理">方法3: n を使用（シンプルなバージョン管理）</h3>
 <pre><code class="language-bash"># n のインストール
 npm install -g n
 
@@ -172,7 +172,7 @@ n ls
 # バージョンの切り替え（インタラクティブ）
 n
 </code></pre>
-<h3>方法4: asdf を使用（多言語対応）</h3>
+<h3 id="方法4-asdf-を使用多言語対応">方法4: asdf を使用（多言語対応）</h3>
 <pre><code class="language-bash"># asdfのインストール
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 
@@ -188,8 +188,8 @@ asdf global nodejs latest:20
 # プロジェクト固有の設定
 echo "nodejs 20.11.0" > .tool-versions
 </code></pre>
-<h2>バージョン管理のベストプラクティス</h2>
-<h3>1. プロジェクトごとのバージョン固定</h3>
+<h2 id="バージョン管理のベストプラクティス">バージョン管理のベストプラクティス</h2>
+<h3 id="1-プロジェクトごとのバージョン固定">1. プロジェクトごとのバージョン固定</h3>
 <p><strong>.nvmrc</strong>ファイルを作成：</p>
 <pre><code class="language-bash">echo "20.11.0" > .nvmrc
 
@@ -204,7 +204,7 @@ nvm use
   }
 }
 </code></pre>
-<h3>2. CI/CDでのバージョン統一</h3>
+<h3 id="2-cicdでのバージョン統一">2. CI/CDでのバージョン統一</h3>
 <p><strong>GitHub Actions</strong>の例：</p>
 <pre><code class="language-yaml">name: CI
 
@@ -227,7 +227,7 @@ jobs:
     - run: npm ci
     - run: npm test
 </code></pre>
-<h3>3. 自動バージョンチェック</h3>
+<h3 id="3-自動バージョンチェック">3. 自動バージョンチェック</h3>
 <p><strong>スクリプトでバージョンを確認</strong>：</p>
 <pre><code class="language-javascript">// check-node-version.js
 const requiredVersion = '20.5.0';
@@ -252,9 +252,9 @@ if (!compareVersions(currentVersion, requiredVersion)) {
 
 console.log(`✅ Node.js v${currentVersion} - 要件を満たしています`);
 </code></pre>
-<h2>トラブルシューティング</h2>
-<h3>よくある問題と解決策</h3>
-<h4>1. nvmコマンドが見つからない</h4>
+<h2 id="トラブルシューティング">トラブルシューティング</h2>
+<h3 id="よくある問題と解決策">よくある問題と解決策</h3>
+<h4 id="1-nvmコマンドが見つからない">1. nvmコマンドが見つからない</h4>
 <pre><code class="language-bash"># ~/.bashrcまたは~/.zshrcに追加
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] &#x26;&#x26; \. "$NVM_DIR/nvm.sh"
@@ -263,22 +263,22 @@ export NVM_DIR="$HOME/.nvm"
 # 設定を再読み込み
 source ~/.bashrc  # または source ~/.zshrc
 </code></pre>
-<h4>2. 権限エラー（Windowsの場合）</h4>
+<h4 id="2-権限エラーwindowsの場合">2. 権限エラー（Windowsの場合）</h4>
 <pre><code class="language-powershell"># 管理者権限でPowerShellを開く
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 # nvm-windowsをインストール
 choco install nvm
 </code></pre>
-<h4>3. グローバルパッケージの移行</h4>
+<h4 id="3-グローバルパッケージの移行">3. グローバルパッケージの移行</h4>
 <pre><code class="language-bash"># 古いバージョンのグローバルパッケージをリスト
 npm list -g --depth=0
 
 # 新しいバージョンに切り替え後、再インストール
 npm install -g claude typescript eslint prettier
 </code></pre>
-<h2>Node.jsバージョンアップの影響</h2>
-<h3>パフォーマンスの向上</h3>
+<h2 id="nodejsバージョンアップの影響">Node.jsバージョンアップの影響</h2>
+<h3 id="パフォーマンスの向上">パフォーマンスの向上</h3>
 <p>Node.js v20では、V8エンジンのアップデートにより：</p>
 <ul>
 <li><strong>起動時間が20%高速化</strong></li>
@@ -293,20 +293,20 @@ console.timeEnd('regex');
 // v19: regex: 45ms
 // v20: regex: 38ms
 </code></pre>
-<h3>セキュリティの強化</h3>
+<h3 id="セキュリティの強化">セキュリティの強化</h3>
 <ul>
 <li><strong>OpenSSL 3.0</strong>のサポート</li>
 <li>**HTTP Strict Transport Security (HSTS)**の改善</li>
 <li><strong>依存関係の脆弱性修正</strong></li>
 </ul>
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p><code>addAbortListener</code>エラーは、単なるバージョンの問題ですが、これを機に以下の重要性を認識できます：</p>
 <ol>
 <li><strong>最新APIの活用</strong> - より効率的で安全なコードが書ける</li>
 <li><strong>バージョン管理の重要性</strong> - プロジェクトの安定性を保つ</li>
 <li><strong>定期的なアップデート</strong> - セキュリティとパフォーマンスの向上</li>
 </ol>
-<h3>推奨アクション</h3>
+<h3 id="推奨アクション">推奨アクション</h3>
 <ol>
 <li><strong>即座に対応</strong>：Node.js v20.5.0以降にアップデート</li>
 <li><strong>バージョン管理ツール導入</strong>：nvm、n、asdfなど</li>
@@ -314,7 +314,7 @@ console.timeEnd('regex');
 <li><strong>CI/CD統合</strong>：自動テストでバージョン互換性を確認</li>
 </ol>
 <p>小さなエラーから学ぶことで、より堅牢な開発環境を構築できます。定期的なNode.jsのアップデートを心がけ、最新の機能を活用していきましょう。</p>
-<h2>参考資料</h2>
+<h2 id="参考資料">参考資料</h2>
 <ul>
 <li><a href="https://nodejs.org/en/blog/release/v20.0.0">Node.js v20.0.0 Release Notes</a></li>
 <li><a href="https://nodejs.org/api/events.html#eventsaddabortlistenersignal-listener">Node.js API Documentation - addAbortListener</a></li>
@@ -322,8 +322,7 @@ console.timeEnd('regex');
 <li><a href="https://nodejs.org/en/about/previous-releases">Node.js Release Schedule</a></li>
 <li><a href="https://v8.dev/blog">V8 JavaScript Engine Blog</a></li>
 <li><a href="https://github.com/goldbergyoni/nodebestpractices">Node.js Best Practices</a></li>
-</ul>
-4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",20]}]," ","Node.js v19からv20へ：addAbortListenerエラーの解決と最新APIの重要性"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-05 00:45"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Node.js"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"JavaScript"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"エラー解決"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"バージョン管理"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"API"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Claude CLI"}],["$","span","6",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"開発環境"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",20]}]," ","Node.js v19からv20へ：addAbortListenerエラーの解決と最新APIの重要性"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-05 00:45"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Node.js"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"JavaScript"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"エラー解決"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"バージョン管理"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"API"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Claude CLI"}],["$","span","6",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"開発環境"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
 11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}

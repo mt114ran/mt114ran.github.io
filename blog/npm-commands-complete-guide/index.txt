@@ -9,23 +9,23 @@ e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/ce87a0c8fce915ba.css","style"]
-0:{"P":null,"b":"ug3f9LepbVd0lT5MBbbSR","p":"","c":["","blog","npm-commands-complete-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","npm-commands-complete-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","npm-commands-complete-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","1h41WNVm7QCO3fBAncQnw",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"rDTXMpKruKQ49B_bWbVp4","p":"","c":["","blog","npm-commands-complete-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","npm-commands-complete-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","npm-commands-complete-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","Y9AukXXqkFD-baEEkqdKx",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
 12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
-13:T3e84,<p>JavaScriptプロジェクトを開発する際、必ず遭遇するのが<code>npm</code>コマンドです。「とりあえず<code>npm install</code>を実行して」と言われても、実際に何が起きているのか分からないまま使っている方も多いのではないでしょうか。本記事では、npmの基本コマンドが裏側で何をしているのか、どんなファイルが作成されるのかを詳しく解説します。</p>
-<h2>npmとは何か？</h2>
+13:T421e,<p>JavaScriptプロジェクトを開発する際、必ず遭遇するのが<code>npm</code>コマンドです。「とりあえず<code>npm install</code>を実行して」と言われても、実際に何が起きているのか分からないまま使っている方も多いのではないでしょうか。本記事では、npmの基本コマンドが裏側で何をしているのか、どんなファイルが作成されるのかを詳しく解説します。</p>
+<h2 id="npmとは何か">npmとは何か？</h2>
 <p>npm（Node Package Manager）は、JavaScriptのパッケージ管理ツールです。以下の3つの意味があります：</p>
 <ol>
 <li><strong>コマンドラインツール</strong>：<code>npm</code>コマンドそのもの</li>
 <li><strong>パッケージレジストリ</strong>：npmjs.comで公開されているパッケージのデータベース</li>
 <li><strong>パッケージ管理システム</strong>：依存関係の解決とバージョン管理の仕組み</li>
 </ol>
-<h2>重要なファイルの役割</h2>
+<h2 id="重要なファイルの役割">重要なファイルの役割</h2>
 <p>npmを理解するには、まず関連するファイルを知る必要があります。</p>
-<h3>package.json</h3>
+<h3 id="packagejson">package.json</h3>
 <p>プロジェクトの設定ファイルです。以下の情報が含まれます：</p>
 <pre><code class="language-json">{
   "name": "my-project",
@@ -46,14 +46,14 @@ f:"$Sreact.suspense"
   }
 }
 </code></pre>
-<h4>各セクションの意味：</h4>
+<h4 id="各セクションの意味">各セクションの意味：</h4>
 <ul>
 <li><strong>name/version</strong>: パッケージの識別情報</li>
 <li><strong>scripts</strong>: カスタムコマンドの定義</li>
 <li><strong>dependencies</strong>: 本番環境で必要なパッケージ</li>
 <li><strong>devDependencies</strong>: 開発時のみ必要なパッケージ</li>
 </ul>
-<h3>package-lock.json</h3>
+<h3 id="package-lockjson">package-lock.json</h3>
 <p>依存関係の正確なバージョンを記録するファイルです。</p>
 <pre><code class="language-json">{
   "name": "my-project",
@@ -85,7 +85,7 @@ f:"$Sreact.suspense"
 <li>依存関係の依存関係も記録</li>
 <li>チーム全員が同じバージョンを使用できる</li>
 </ul>
-<h3>node_modules/</h3>
+<h3 id="node_modules">node_modules/</h3>
 <p>実際のパッケージコードが保存されるディレクトリです。</p>
 <pre><code>node_modules/
 ├── express/
@@ -98,8 +98,8 @@ f:"$Sreact.suspense"
 │   └── lib/
 └── ... (数百〜数千のパッケージ)
 </code></pre>
-<h2>基本コマンドの詳細解説</h2>
-<h3>1. npm init</h3>
+<h2 id="基本コマンドの詳細解説">基本コマンドの詳細解説</h2>
+<h3 id="1-npm-init">1. npm init</h3>
 <p><strong>目的：</strong> 新しいプロジェクトを初期化</p>
 <p><strong>実行内容：</strong></p>
 <pre><code class="language-bash">$ npm init
@@ -131,7 +131,7 @@ $ npm init -y
 # ESモジュール対応のプロジェクトとして初期化
 $ npm init -y &#x26;&#x26; npm pkg set type="module"
 </code></pre>
-<h3>2. npm install</h3>
+<h3 id="2-npm-install">2. npm install</h3>
 <p><strong>目的：</strong> 依存パッケージをインストール</p>
 <p><strong>パターン1：すべての依存関係をインストール</strong></p>
 <pre><code class="language-bash">$ npm install
@@ -178,7 +178,7 @@ $ npm install -D webpack
 # → /usr/local/lib/node_modules/にインストール（macOS/Linux）
 # → %AppData%\npm\node_modules\にインストール（Windows）
 </code></pre>
-<h3>3. npm ci</h3>
+<h3 id="3-npm-ci">3. npm ci</h3>
 <p><strong>目的：</strong> CIや本番環境向けの確実なインストール</p>
 <pre><code class="language-bash">$ npm ci
 </code></pre>
@@ -223,7 +223,7 @@ $ npm ci
 # - package-lock.jsonが存在しない
 # - package.jsonとpackage-lock.jsonが一致しない
 </code></pre>
-<h3>4. npm run</h3>
+<h3 id="4-npm-run">4. npm run</h3>
 <p><strong>目的：</strong> package.jsonに定義されたスクリプトを実行</p>
 <p><strong>基本的な使い方：</strong></p>
 <pre><code class="language-json">// package.json
@@ -279,7 +279,7 @@ $ npm run build
   }
 }
 </code></pre>
-<h3>5. npm run build（よくある例）</h3>
+<h3 id="5-npm-run-buildよくある例">5. npm run build（よくある例）</h3>
 <p><strong>目的：</strong> プロジェクトをビルド（本番用に最適化）</p>
 <p><strong>一般的な設定例：</strong></p>
 <pre><code class="language-json">{
@@ -319,8 +319,8 @@ dist/
 ├── main.js.map    # ソースマップ
 └── index.html
 </code></pre>
-<h2>その他の重要なコマンド</h2>
-<h3>npm update</h3>
+<h2 id="その他の重要なコマンド">その他の重要なコマンド</h2>
+<h3 id="npm-update">npm update</h3>
 <p><strong>依存パッケージを更新：</strong></p>
 <pre><code class="language-bash"># すべてのパッケージを更新
 $ npm update
@@ -333,7 +333,7 @@ $ npm outdated
 Package    Current  Wanted  Latest
 express    4.17.1   4.18.2  5.0.0
 </code></pre>
-<h3>npm uninstall</h3>
+<h3 id="npm-uninstall">npm uninstall</h3>
 <p><strong>パッケージを削除：</strong></p>
 <pre><code class="language-bash"># パッケージを削除
 $ npm uninstall express
@@ -345,7 +345,7 @@ $ npm rm express
 # グローバルパッケージを削除
 $ npm uninstall -g typescript
 </code></pre>
-<h3>npm list</h3>
+<h3 id="npm-list">npm list</h3>
 <p><strong>インストール済みパッケージを確認：</strong></p>
 <pre><code class="language-bash"># すべての依存関係をツリー表示
 $ npm list
@@ -356,7 +356,7 @@ $ npm list --depth=0
 # グローバルパッケージを表示
 $ npm list -g --depth=0
 </code></pre>
-<h3>npm audit</h3>
+<h3 id="npm-audit">npm audit</h3>
 <p><strong>セキュリティ脆弱性をチェック：</strong></p>
 <pre><code class="language-bash"># 脆弱性をチェック
 $ npm audit
@@ -367,8 +367,8 @@ $ npm audit fix
 # 破壊的変更も含めて修正
 $ npm audit fix --force
 </code></pre>
-<h2>よくあるトラブルと解決方法</h2>
-<h3>1. パッケージのバージョン不一致</h3>
+<h2 id="よくあるトラブルと解決方法">よくあるトラブルと解決方法</h2>
+<h3 id="1-パッケージのバージョン不一致">1. パッケージのバージョン不一致</h3>
 <p><strong>問題：</strong> チームメンバー間で異なるバージョンがインストールされる</p>
 <p><strong>解決方法：</strong></p>
 <pre><code class="language-bash"># package-lock.jsonをコミット
@@ -378,7 +378,7 @@ $ git commit -m "Lock dependency versions"
 # チームメンバーはnpm ciを使用
 $ npm ci
 </code></pre>
-<h3>2. node_modulesが巨大になる</h3>
+<h3 id="2-node_modulesが巨大になる">2. node_modulesが巨大になる</h3>
 <p><strong>問題：</strong> node_modulesが数百MB〜数GBになる</p>
 <p><strong>解決方法：</strong></p>
 <pre><code class="language-bash"># 不要なパッケージを削除
@@ -391,7 +391,7 @@ $ npm cache clean --force
 $ rm -rf node_modules package-lock.json
 $ npm install
 </code></pre>
-<h3>3. パーミッションエラー（グローバルインストール時）</h3>
+<h3 id="3-パーミッションエラーグローバルインストール時">3. パーミッションエラー（グローバルインストール時）</h3>
 <p><strong>問題：</strong> <code>EACCES: permission denied</code>エラー</p>
 <p><strong>解決方法：</strong></p>
 <pre><code class="language-bash"># npmのデフォルトディレクトリを変更
@@ -400,19 +400,19 @@ $ npm config set prefix '~/.npm-global'
 $ echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
 $ source ~/.bashrc
 </code></pre>
-<h2>ベストプラクティス</h2>
-<h3>1. package-lock.jsonは必ずコミットする</h3>
+<h2 id="ベストプラクティス">ベストプラクティス</h2>
+<h3 id="1-package-lockjsonは必ずコミットする">1. package-lock.jsonは必ずコミットする</h3>
 <pre><code class="language-bash"># .gitignoreの設定例
 node_modules/
 *.log
 .env
 # package-lock.jsonは除外しない！
 </code></pre>
-<h3>2. 本番環境では--productionフラグを使用</h3>
+<h3 id="2-本番環境では--productionフラグを使用">2. 本番環境では--productionフラグを使用</h3>
 <pre><code class="language-bash"># 本番環境でのインストール（devDependenciesを除外）
 $ npm ci --production
 </code></pre>
-<h3>3. スクリプトの命名規則を統一</h3>
+<h3 id="3-スクリプトの命名規則を統一">3. スクリプトの命名規則を統一</h3>
 <pre><code class="language-json">{
   "scripts": {
     "dev": "開発サーバー起動",
@@ -423,14 +423,14 @@ $ npm ci --production
   }
 }
 </code></pre>
-<h3>4. npxを活用する</h3>
+<h3 id="4-npxを活用する">4. npxを活用する</h3>
 <pre><code class="language-bash"># パッケージをインストールせずに実行
 $ npx create-react-app my-app
 
 # 特定バージョンを実行
 $ npx webpack@4 --version
 </code></pre>
-<h2>実践例：新規プロジェクトの立ち上げ</h2>
+<h2 id="実践例新規プロジェクトの立ち上げ">実践例：新規プロジェクトの立ち上げ</h2>
 <p>実際にReactプロジェクトを立ち上げる流れを見てみましょう：</p>
 <pre><code class="language-bash"># 1. プロジェクトディレクトリを作成
 $ mkdir my-react-app
@@ -454,7 +454,7 @@ $ npm start
 # 6. ビルド
 $ npm run build
 </code></pre>
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p>npmコマンドは単にパッケージをインストールするだけでなく、以下の重要な役割があります：</p>
 <ol>
 <li><strong>依存関係の管理</strong>：必要なパッケージとそのバージョンを管理</li>
@@ -462,7 +462,7 @@ $ npm run build
 <li><strong>チーム開発の標準化</strong>：全員が同じ環境で開発できる</li>
 </ol>
 <p>最初は<code>npm install</code>と<code>npm run</code>だけでも十分ですが、各コマンドが何をしているかを理解することで、トラブルシューティングやより効率的な開発が可能になります。</p>
-<h2>次のステップ</h2>
+<h2 id="次のステップ">次のステップ</h2>
 <ul>
 <li><strong>yarn</strong>や<strong>pnpm</strong>などの代替パッケージマネージャーを試す</li>
 <li><strong>npm workspace</strong>でモノレポ管理を学ぶ</li>
@@ -470,14 +470,13 @@ $ npm run build
 <li><strong>GitHub Actions</strong>でCI/CDパイプラインを構築する</li>
 </ul>
 <p>これらの基本を押さえることで、JavaScriptプロジェクトの開発がよりスムーズになるはずです。</p>
-<h2>参考リンク</h2>
+<h2 id="参考リンク">参考リンク</h2>
 <ul>
 <li><a href="https://docs.npmjs.com/">npm公式ドキュメント</a></li>
 <li><a href="https://docs.npmjs.com/cli/v9/configuring-npm/package-json">package.jsonの仕様</a></li>
 <li><a href="https://semver.npmjs.com/">npm semver calculator</a></li>
 <li><a href="https://nodejs.org/">Node.js公式サイト</a></li>
-</ul>
-4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",28]}]," ","npm基本コマンド完全ガイド：初心者が知るべきnpmの仕組みと実行内容"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-10 16:45"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"npm"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Node.js"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"JavaScript"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"初心者向け"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"パッケージ管理"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",28]}]," ","npm基本コマンド完全ガイド：初心者が知るべきnpmの仕組みと実行内容"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-10 16:45"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"npm"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Node.js"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"JavaScript"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"初心者向け"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"パッケージ管理"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
 11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}

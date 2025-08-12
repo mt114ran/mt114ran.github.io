@@ -9,14 +9,14 @@ e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/ce87a0c8fce915ba.css","style"]
-0:{"P":null,"b":"ug3f9LepbVd0lT5MBbbSR","p":"","c":["","blog","tailwind-css-version-downgrade-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","tailwind-css-version-downgrade-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","tailwind-css-version-downgrade-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","KWDdtIwoof-LJ1vhypyrP",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"rDTXMpKruKQ49B_bWbVp4","p":"","c":["","blog","tailwind-css-version-downgrade-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","tailwind-css-version-downgrade-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","tailwind-css-version-downgrade-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","v29f4igO5gDa3n9H8hT8v",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
 12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
-13:T3029,<h1>Tailwind CSS v4からv3へのダウングレード完全ガイド</h1>
-<h2>はじめに：なぜこの記事を書いたのか</h2>
+13:T376b,<h1 id="tailwind-css-v4からv3へのダウングレード完全ガイド">Tailwind CSS v4からv3へのダウングレード完全ガイド</h1>
+<h2 id="はじめになぜこの記事を書いたのか">はじめに：なぜこの記事を書いたのか</h2>
 <p>最新技術を使いたい気持ちは開発者なら誰でも持っています。しかし、「最新＝最良」とは限りません。今回、Tailwind CSS v4を導入したプロジェクトで発生した問題と、その解決過程を共有します。</p>
 <p>この記事は、以下のような方に役立ちます：</p>
 <ul>
@@ -24,8 +24,8 @@ f:"$Sreact.suspense"
 <li>ライブラリのダウングレード方法を学びたい初心者エンジニア</li>
 <li>本番環境と開発環境で異なる挙動に悩んでいる方</li>
 </ul>
-<h2>発生した問題：症状の詳細</h2>
-<h3>環境による挙動の違い</h3>
+<h2 id="発生した問題症状の詳細">発生した問題：症状の詳細</h2>
+<h3 id="環境による挙動の違い">環境による挙動の違い</h3>
 <p>私のNext.jsプロジェクトで、以下の症状が発生しました：</p>
 <p><strong>ローカル環境（開発環境）</strong></p>
 <ul>
@@ -38,7 +38,7 @@ f:"$Sreact.suspense"
 <li>❌ Tailwind CSS自体が全く適用されない</li>
 <li>❌ サイト全体のスタイルが崩れる</li>
 </ul>
-<h3>なぜ環境によって違いが出たのか？</h3>
+<h3 id="なぜ環境によって違いが出たのか">なぜ環境によって違いが出たのか？</h3>
 <pre><code class="language-mermaid">graph TD
     A[開発環境] --> B[webpack-dev-server]
     B --> C[動的にCSSを生成]
@@ -49,8 +49,8 @@ f:"$Sreact.suspense"
     G --> H[スタイル未適用]
 </code></pre>
 <p>開発環境では動的にCSSが生成されるため部分的に動作していましたが、本番ビルドでは静的ファイル生成時に問題が発生していました。</p>
-<h2>問題の原因：Tailwind CSS v4の互換性</h2>
-<h3>1. Tailwind CSS v4の変更点</h3>
+<h2 id="問題の原因tailwind-css-v4の互換性">問題の原因：Tailwind CSS v4の互換性</h2>
+<h3 id="1-tailwind-css-v4の変更点">1. Tailwind CSS v4の変更点</h3>
 <p>Tailwind CSS v4は2024年にリリースされた大幅アップデートで、以下の変更がありました：</p>
 <pre><code class="language-css">/* v3の書き方 */
 @tailwind base;
@@ -60,7 +60,7 @@ f:"$Sreact.suspense"
 /* v4の新しい書き方 */
 @import "tailwindcss";
 </code></pre>
-<h3>2. プラグインの互換性問題</h3>
+<h3 id="2-プラグインの互換性問題">2. プラグインの互換性問題</h3>
 <p>特に問題となったのは<code>@tailwindcss/typography</code>プラグインです：</p>
 <pre><code class="language-json">{
   "devDependencies": {
@@ -70,7 +70,7 @@ f:"$Sreact.suspense"
 }
 </code></pre>
 <p>このプラグインはMarkdownコンテンツに<code>prose</code>クラスでスタイルを適用しますが、v4との互換性がまだ完全ではありませんでした。</p>
-<h3>3. PostCSS設定の変更</h3>
+<h3 id="3-postcss設定の変更">3. PostCSS設定の変更</h3>
 <p>v4では新しいPostCSS設定方法が導入されました：</p>
 <pre><code class="language-javascript">// v4の新しい設定（問題あり）
 const config = {
@@ -85,8 +85,8 @@ export default {
   },
 }
 </code></pre>
-<h2>解決策の検討：3つの選択肢</h2>
-<h3>選択肢1：Tailwind CSS v3へのダウングレード（採用）</h3>
+<h2 id="解決策の検討3つの選択肢">解決策の検討：3つの選択肢</h2>
+<h3 id="選択肢1tailwind-css-v3へのダウングレード採用">選択肢1：Tailwind CSS v3へのダウングレード（採用）</h3>
 <p><strong>メリット</strong></p>
 <ul>
 <li>✅ 安定性が高い</li>
@@ -99,7 +99,7 @@ export default {
 <li>❌ 最新機能が使えない</li>
 <li>❌ 将来的に再度アップグレードが必要</li>
 </ul>
-<h3>選択肢2：v4を維持して手動でスタイル追加</h3>
+<h3 id="選択肢2v4を維持して手動でスタイル追加">選択肢2：v4を維持して手動でスタイル追加</h3>
 <p><strong>メリット</strong></p>
 <ul>
 <li>✅ 最新版を使い続けられる</li>
@@ -111,7 +111,7 @@ export default {
 <li>❌ メンテナンスコストが高い</li>
 <li>❌ プラグインの恩恵を受けられない</li>
 </ul>
-<h3>選択肢3：v4対応を待つ</h3>
+<h3 id="選択肢3v4対応を待つ">選択肢3：v4対応を待つ</h3>
 <p><strong>メリット</strong></p>
 <ul>
 <li>✅ 将来的に最良の解決策になる可能性</li>
@@ -122,24 +122,24 @@ export default {
 <li>❌ 現在の問題が解決しない</li>
 <li>❌ プロジェクトの進行に影響</li>
 </ul>
-<h3>なぜダウングレードを選んだか</h3>
+<h3 id="なぜダウングレードを選んだか">なぜダウングレードを選んだか</h3>
 <p>プロジェクトの要件と状況を考慮した結果：</p>
 <ol>
 <li><strong>安定性重視</strong>：ブログサイトは安定稼働が最優先</li>
 <li><strong>時間的制約</strong>：すぐに問題を解決する必要があった</li>
 <li><strong>リスク最小化</strong>：v3は実績があり、問題が少ない</li>
 </ol>
-<h2>実装手順：ステップバイステップガイド</h2>
-<h3>Step 1：パッケージのアンインストール</h3>
+<h2 id="実装手順ステップバイステップガイド">実装手順：ステップバイステップガイド</h2>
+<h3 id="step-1パッケージのアンインストール">Step 1：パッケージのアンインストール</h3>
 <pre><code class="language-bash"># v4関連パッケージを削除
 npm uninstall tailwindcss @tailwindcss/postcss
 </code></pre>
-<h3>Step 2：v3系パッケージのインストール</h3>
+<h3 id="step-2v3系パッケージのインストール">Step 2：v3系パッケージのインストール</h3>
 <pre><code class="language-bash"># v3系と必要な依存関係をインストール
 npm install -D tailwindcss@^3.4.0 postcss autoprefixer
 </code></pre>
 <p><strong>ポイント</strong>：<code>^3.4.0</code>のように範囲指定することで、v3系の最新パッチは受け取れます。</p>
-<h3>Step 3：PostCSS設定の更新</h3>
+<h3 id="step-3postcss設定の更新">Step 3：PostCSS設定の更新</h3>
 <pre><code class="language-javascript">// postcss.config.mjs
 export default {
   plugins: {
@@ -148,7 +148,7 @@ export default {
   },
 }
 </code></pre>
-<h3>Step 4：Tailwind設定ファイルの確認</h3>
+<h3 id="step-4tailwind設定ファイルの確認">Step 4：Tailwind設定ファイルの確認</h3>
 <pre><code class="language-typescript">// tailwind.config.ts
 import { type Config } from 'tailwindcss'
 import typography from '@tailwindcss/typography'
@@ -166,7 +166,7 @@ const config: Config = {
 
 export default config
 </code></pre>
-<h3>Step 5：CSSファイルの修正</h3>
+<h3 id="step-5cssファイルの修正">Step 5：CSSファイルの修正</h3>
 <pre><code class="language-css">/* src/app/globals.css */
 @tailwind base;
 @tailwind components;
@@ -177,7 +177,7 @@ body {
   @apply bg-black text-white;
 }
 </code></pre>
-<h3>Step 6：ビルドとテスト</h3>
+<h3 id="step-6ビルドとテスト">Step 6：ビルドとテスト</h3>
 <pre><code class="language-bash"># ビルドを実行
 npm run build
 
@@ -187,8 +187,8 @@ npm run dev
 # 本番ビルドのプレビュー
 npm run start
 </code></pre>
-<h2>実務で役立つTips：ダウングレード時の注意点</h2>
-<h3>1. バージョン管理の重要性</h3>
+<h2 id="実務で役立つtipsダウングレード時の注意点">実務で役立つTips：ダウングレード時の注意点</h2>
+<h3 id="1-バージョン管理の重要性">1. バージョン管理の重要性</h3>
 <pre><code class="language-json">// package.json
 {
   "devDependencies": {
@@ -203,7 +203,7 @@ npm run start
   }
 }
 </code></pre>
-<h3>2. 変更前のバックアップ</h3>
+<h3 id="2-変更前のバックアップ">2. 変更前のバックアップ</h3>
 <pre><code class="language-bash"># ブランチを作成して作業
 git checkout -b fix/downgrade-tailwind
 
@@ -211,7 +211,7 @@ git checkout -b fix/downgrade-tailwind
 cp package.json package.json.backup
 cp package-lock.json package-lock.json.backup
 </code></pre>
-<h3>3. 段階的な確認</h3>
+<h3 id="3-段階的な確認">3. 段階的な確認</h3>
 <pre><code class="language-bash"># 1. 依存関係の確認
 npm list tailwindcss
 
@@ -223,15 +223,15 @@ npm run build 2>&#x26;1 | tee build.log
 # - ステージング環境
 # - 本番環境
 </code></pre>
-<h3>4. チーム内での情報共有</h3>
+<h3 id="4-チーム内での情報共有">4. チーム内での情報共有</h3>
 <pre><code class="language-markdown">## 変更内容
 - Tailwind CSS: v4.0.0 → v3.4.17
 - 理由：v4とtypographyプラグインの互換性問題
 - 影響：なし（v3で全機能カバー）
 - TODO：v4対応完了後に再アップグレード検討
 </code></pre>
-<h2>よくあるトラブルと解決方法</h2>
-<h3>Q1：ダウングレード後もスタイルが適用されない</h3>
+<h2 id="よくあるトラブルと解決方法">よくあるトラブルと解決方法</h2>
+<h3 id="q1ダウングレード後もスタイルが適用されない">Q1：ダウングレード後もスタイルが適用されない</h3>
 <p><strong>確認ポイント</strong></p>
 <ol>
 <li><code>node_modules</code>を削除して再インストール</li>
@@ -244,13 +244,13 @@ npm install
 </ol>
 <pre><code class="language-bash">npm cache clean --force
 </code></pre>
-<h3>Q2：ビルド時に警告が出る</h3>
+<h3 id="q2ビルド時に警告が出る">Q2：ビルド時に警告が出る</h3>
 <p><strong>対処法</strong></p>
 <pre><code class="language-bash"># PostCSSの設定ファイル名を確認
 # .mjs, .js, .cjs のいずれかに統一
 mv postcss.config.js postcss.config.mjs
 </code></pre>
-<h3>Q3：特定の機能が使えなくなった</h3>
+<h3 id="q3特定の機能が使えなくなった">Q3：特定の機能が使えなくなった</h3>
 <p><strong>解決策</strong></p>
 <pre><code class="language-javascript">// v4の新機能を使っていた場合
 // 代替手段を検討
@@ -261,23 +261,23 @@ mv postcss.config.js postcss.config.mjs
   /* v3でサポートされていないスタイル */
 }
 </code></pre>
-<h2>ダウングレードの判断基準</h2>
-<h3>ダウングレードすべき時</h3>
+<h2 id="ダウングレードの判断基準">ダウングレードの判断基準</h2>
+<h3 id="ダウングレードすべき時">ダウングレードすべき時</h3>
 <ul>
 <li>✅ プラグインの互換性問題がある</li>
 <li>✅ 本番環境で重大な問題が発生</li>
 <li>✅ 早急な対応が必要</li>
 <li>✅ 安定性が最優先</li>
 </ul>
-<h3>アップグレードを待つべき時</h3>
+<h3 id="アップグレードを待つべき時">アップグレードを待つべき時</h3>
 <ul>
 <li>⏸ 新機能が必須要件</li>
 <li>⏸ 開発環境のみの使用</li>
 <li>⏸ 時間的余裕がある</li>
 <li>⏸ カスタム実装で対応可能</li>
 </ul>
-<h2>まとめ：学んだこと</h2>
-<h3>1. 最新版＝最良ではない</h3>
+<h2 id="まとめ学んだこと">まとめ：学んだこと</h2>
+<h3 id="1-最新版最良ではない">1. 最新版＝最良ではない</h3>
 <p>新しいバージョンには以下のリスクがあります：</p>
 <ul>
 <li>プラグインの未対応</li>
@@ -285,27 +285,27 @@ mv postcss.config.js postcss.config.mjs
 <li>バグの存在</li>
 <li>コミュニティサポートの不足</li>
 </ul>
-<h3>2. 段階的なアップグレードの重要性</h3>
+<h3 id="2-段階的なアップグレードの重要性">2. 段階的なアップグレードの重要性</h3>
 <pre><code class="language-mermaid">graph LR
     A[現行版] --> B[開発環境でテスト]
     B --> C[ステージング環境]
     C --> D[本番環境]
     B -.->|問題発生| E[ロールバック]
 </code></pre>
-<h3>3. バージョン管理の重要性</h3>
+<h3 id="3-バージョン管理の重要性">3. バージョン管理の重要性</h3>
 <ul>
 <li><code>package-lock.json</code>を必ずコミット</li>
 <li>バージョン範囲を適切に設定</li>
 <li>変更履歴を記録</li>
 </ul>
-<h2>実務での応用：今後のために</h2>
-<h3>プロジェクト開始時のチェックリスト</h3>
+<h2 id="実務での応用今後のために">実務での応用：今後のために</h2>
+<h3 id="プロジェクト開始時のチェックリスト">プロジェクト開始時のチェックリスト</h3>
 <pre><code class="language-markdown">- [ ] 使用するライブラリのバージョン確認
 - [ ] 依存関係の互換性チェック
 - [ ] LTS（長期サポート）版の検討
 - [ ] アップグレードパスの確認
 </code></pre>
-<h3>CI/CDパイプラインでの対策</h3>
+<h3 id="cicdパイプラインでの対策">CI/CDパイプラインでの対策</h3>
 <pre><code class="language-yaml"># GitHub Actionsの例
 - name: Version Check
   run: |
@@ -313,14 +313,14 @@ mv postcss.config.js postcss.config.mjs
     npm audit
     npm run build
 </code></pre>
-<h3>ドキュメント化</h3>
+<h3 id="ドキュメント化">ドキュメント化</h3>
 <pre><code class="language-markdown"># 技術スタック
 | ライブラリ | バージョン | 理由 | 更新予定 |
 |----------|----------|------|---------|
 | Tailwind CSS | 3.4.17 | 安定性重視 | v4対応待ち |
 | Next.js | 15.3.3 | 最新安定版 | 継続更新 |
 </code></pre>
-<h2>さいごに</h2>
+<h2 id="さいごに">さいごに</h2>
 <p>バージョン管理は開発者にとって避けて通れない課題です。今回の経験から学んだのは：</p>
 <ol>
 <li><strong>問題を正確に把握する</strong>：環境による違いを理解</li>
@@ -329,14 +329,13 @@ mv postcss.config.js postcss.config.mjs
 <li><strong>知見を共有する</strong>：チームや コミュニティに還元</li>
 </ol>
 <p>この記事が、同じような問題に直面した方の助けになれば幸いです。</p>
-<h2>参考リンク</h2>
+<h2 id="参考リンク">参考リンク</h2>
 <ul>
 <li><a href="https://v3.tailwindcss.com/">Tailwind CSS v3 Documentation</a></li>
 <li><a href="https://tailwindcss.com/docs/v4">Tailwind CSS v4 Breaking Changes</a></li>
 <li><a href="https://docs.npmjs.com/about-semantic-versioning">npm Semantic Versioning</a></li>
 <li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Git Branching Strategies</a></li>
-</ul>
-4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",7]}]," ","Tailwind CSS v4からv3へのダウングレード完全ガイド：バージョン互換性問題の解決"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-02 07:00"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日時: ","2025-08-02 19:30"]}],["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Tailwind CSS"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"トラブルシューティング"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"初心者向け"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Next.js"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"CSS"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",7]}]," ","Tailwind CSS v4からv3へのダウングレード完全ガイド：バージョン互換性問題の解決"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-02 07:00"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日時: ","2025-08-02 19:30"]}],["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Tailwind CSS"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"トラブルシューティング"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"初心者向け"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Next.js"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"CSS"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
 11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}

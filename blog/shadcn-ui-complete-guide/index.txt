@@ -9,13 +9,13 @@ e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/ce87a0c8fce915ba.css","style"]
-0:{"P":null,"b":"ug3f9LepbVd0lT5MBbbSR","p":"","c":["","blog","shadcn-ui-complete-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","shadcn-ui-complete-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","shadcn-ui-complete-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","zx7s1ywcVTon0Vh_A5nRQ",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"rDTXMpKruKQ49B_bWbVp4","p":"","c":["","blog","shadcn-ui-complete-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","shadcn-ui-complete-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","shadcn-ui-complete-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","om2dTJ0MIvFPi9bi6QljA",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
 12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
-13:Tb215,<h2>はじめに：なぜshadcn/uiが注目されているのか？</h2>
+13:Tba3f,<h2 id="はじめになぜshadcnuiが注目されているのか">はじめに：なぜshadcn/uiが注目されているのか？</h2>
 <p>2023年、JavaScriptエコシステムで異例の現象が起きました。「<strong>shadcn/ui</strong>」が、<a href="https://risingstars.js.org/2023/ja">JavaScript Rising Stars</a>で総合1位を獲得。2位のBunに10,000スター以上の差をつけての圧勝でした。さらに2024年も連続で1位を獲得し、その勢いは止まりません。</p>
 <p>なぜこれほどまでに注目されているのでしょうか？</p>
 <p>その答えは、<a href="https://ui.shadcn.com/">shadcn/uiの公式サイト</a>に明確に示されています：</p>
@@ -24,11 +24,11 @@ f:"$Sreact.suspense"
 （これはコンポーネントライブラリではありません。アプリにコピー＆ペーストできる再利用可能なコンポーネントのコレクションです。）</p>
 </blockquote>
 <p>今回は、このshadcn/uiが従来のUIライブラリとどう違うのか、なぜ開発者から支持されているのか、そして実際にどう使うのかを、初心者エンジニアにもわかりやすく解説していきます。</p>
-<h2>shadcn/uiとは何か？基本概念の理解</h2>
-<h3>読み方と名前の由来</h3>
+<h2 id="shadcnuiとは何か基本概念の理解">shadcn/uiとは何か？基本概念の理解</h2>
+<h3 id="読み方と名前の由来">読み方と名前の由来</h3>
 <p>まず、「shadcn/ui」は「<strong>シャドシーエヌ・ユーアイ</strong>」と読みます。開発者のShad氏（@shadcn）の名前から取られています。</p>
-<h3>従来のUIライブラリとの決定的な違い</h3>
-<h4>従来のUIライブラリ（Material-UI、Ant Design、Chakra UIなど）の仕組み</h4>
+<h3 id="従来のuiライブラリとの決定的な違い">従来のUIライブラリとの決定的な違い</h3>
+<h4 id="従来のuiライブラリmaterial-uiant-designchakra-uiなどの仕組み">従来のUIライブラリ（Material-UI、Ant Design、Chakra UIなど）の仕組み</h4>
 <pre><code class="language-bash"># 従来のUIライブラリのインストール
 npm install @mui/material @emotion/react @emotion/styled
 </code></pre>
@@ -62,7 +62,7 @@ function App() {
 <li>これらの基盤となるコードが約30-40KBある</li>
 <li>結果として、1つのコンポーネントを使うだけでも相当なサイズになる</li>
 </ul>
-<h4>shadcn/uiの仕組み</h4>
+<h4 id="shadcnuiの仕組み">shadcn/uiの仕組み</h4>
 <pre><code class="language-bash"># shadcn/uiのコンポーネント追加
 npx shadcn-ui@latest add button
 </code></pre>
@@ -158,8 +158,8 @@ function App() {
 <li>必要なコンポーネントだけを追加</li>
 <li>バンドルサイズを最小限に抑えられる</li>
 </ul>
-<h2>shadcn/uiの技術スタック</h2>
-<h3>1. Radix UI（ラディックス・ユーアイ）</h3>
+<h2 id="shadcnuiの技術スタック">shadcn/uiの技術スタック</h2>
+<h3 id="1-radix-uiラディックスユーアイ">1. Radix UI（ラディックス・ユーアイ）</h3>
 <p><strong><a href="https://www.radix-ui.com/">Radix UI</a>とは？</strong></p>
 <ul>
 <li>スタイルを持たない（Unstyled/Headless）UIコンポーネントライブラリ</li>
@@ -194,7 +194,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 <li><strong>スクリーンリーダー対応</strong>: 視覚障害者向けの読み上げソフトへの対応</li>
 </ul>
 <p>これらを自分で実装すると非常に複雑になりますが、Radix UIを使えば自動的に対応されます。</p>
-<h3>2. Tailwind CSS（テイルウィンド・シーエスエス）</h3>
+<h3 id="2-tailwind-cssテイルウィンドシーエスエス">2. Tailwind CSS（テイルウィンド・シーエスエス）</h3>
 <p><strong><a href="https://tailwindcss.com/">Tailwind CSS</a>とは？</strong></p>
 <ul>
 <li>ユーティリティファーストのCSSフレームワーク</li>
@@ -210,7 +210,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 &#x3C;!-- Tailwind CSS -->
 &#x3C;button class="px-4 py-2 rounded bg-blue-500 text-white">Click&#x3C;/button>
 </code></pre>
-<h3>3. Class Variance Authority (CVA)</h3>
+<h3 id="3-class-variance-authority-cva">3. Class Variance Authority (CVA)</h3>
 <p><strong><a href="https://cva.style/docs">CVA</a>とは？</strong></p>
 <ul>
 <li>コンポーネントのバリアント（種類）を管理するライブラリ</li>
@@ -240,8 +240,8 @@ import * as Dialog from '@radix-ui/react-dialog';
   }
 )
 </code></pre>
-<h2>なぜshadcn/uiを使うのか？解決される問題と恩恵</h2>
-<h3>問題1：カスタマイズの制限</h3>
+<h2 id="なぜshadcnuiを使うのか解決される問題と恩恵">なぜshadcn/uiを使うのか？解決される問題と恩恵</h2>
+<h3 id="問題1カスタマイズの制限">問題1：カスタマイズの制限</h3>
 <p><strong>従来のUIライブラリの問題点：</strong></p>
 <pre><code class="language-javascript">// Material-UIでボタンをカスタマイズしたい場合
 import { Button } from '@mui/material';
@@ -281,7 +281,7 @@ const buttonVariants = cva(
 <li><strong>TypeScript対応</strong>: 新しいバリアントを追加すると、自動的に型定義も更新される</li>
 <li><strong>バージョン依存なし</strong>: ライブラリのアップデートでカスタマイズが壊れる心配がない</li>
 </ul>
-<h3>問題2：バンドルサイズの肥大化</h3>
+<h3 id="問題2バンドルサイズの肥大化">問題2：バンドルサイズの肥大化</h3>
 <p><strong>従来のUIライブラリ：</strong></p>
 <ul>
 <li>Material-UI：約100KB</li>
@@ -294,7 +294,7 @@ const buttonVariants = cva(
 <li>Button componentのみ：約2-3KB</li>
 <li>使わない機能は含まれない</li>
 </ul>
-<h3>問題3：デザインの画一化</h3>
+<h3 id="問題3デザインの画一化">問題3：デザインの画一化</h3>
 <p><strong>従来の問題：</strong></p>
 <pre><code class="language-javascript">// どのサイトも似たようなMaterial Designに...
 import { Button, Card, TextField } from '@mui/material';
@@ -310,8 +310,8 @@ import { Button, Card, TextField } from '@mui/material';
   // 完全にオリジナルのデザインシステムを構築可能
 }
 </code></pre>
-<h2>実践！shadcn/uiの導入とカスタマイズ</h2>
-<h3>Step 1: プロジェクトのセットアップ</h3>
+<h2 id="実践shadcnuiの導入とカスタマイズ">実践！shadcn/uiの導入とカスタマイズ</h2>
+<h3 id="step-1-プロジェクトのセットアップ">Step 1: プロジェクトのセットアップ</h3>
 <pre><code class="language-bash"># Next.jsプロジェクトの作成
 npx create-next-app@latest my-app --typescript --tailwind --app
 
@@ -356,7 +356,7 @@ npx shadcn-ui@latest init
 ✔ Configure the import alias for utils? … @/lib/utils
 # ユーティリティ関数のインポートエイリアス
 </code></pre>
-<h3>Step 2: コンポーネントの追加</h3>
+<h3 id="step-2-コンポーネントの追加">Step 2: コンポーネントの追加</h3>
 <pre><code class="language-bash"># よく使うコンポーネントを追加
 npx shadcn-ui@latest add button
 npx shadcn-ui@latest add card
@@ -382,8 +382,8 @@ npx shadcn-ui@latest add input
     input.tsx
 </code></pre>
 <p>重要な点は、これらのファイルは<strong>あなたのプロジェクトの一部</strong>になることです。外部ライブラリへの依存ではなく、プロジェクト内のソースコードとして存在します。</p>
-<h3>Step 3: 実際のコンポーネント作成例</h3>
-<h4>例1：ログインフォームの作成</h4>
+<h3 id="step-3-実際のコンポーネント作成例">Step 3: 実際のコンポーネント作成例</h3>
+<h4 id="例1ログインフォームの作成">例1：ログインフォームの作成</h4>
 <pre><code class="language-tsx">// app/login/page.tsx
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -426,7 +426,7 @@ export default function LoginPage() {
   )
 }
 </code></pre>
-<h4>例2：ダークモード対応のダッシュボード</h4>
+<h4 id="例2ダークモード対応のダッシュボード">例2：ダークモード対応のダッシュボード</h4>
 <pre><code class="language-tsx">// components/Dashboard.tsx
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -499,8 +499,8 @@ export default function Dashboard() {
   )
 }
 </code></pre>
-<h3>Step 4: カスタマイズ例</h3>
-<h4>カスタムボタンバリアントの追加</h4>
+<h3 id="step-4-カスタマイズ例">Step 4: カスタマイズ例</h3>
+<h4 id="カスタムボタンバリアントの追加">カスタムボタンバリアントの追加</h4>
 <pre><code class="language-tsx">// components/ui/button.tsx を編集
 const buttonVariants = cva(
   "...",
@@ -525,7 +525,7 @@ const buttonVariants = cva(
 &#x3C;Button variant="gradient">グラデーションボタン&#x3C;/Button>
 &#x3C;Button variant="neon">ネオンボタン&#x3C;/Button>
 </code></pre>
-<h4>カスタムカラーテーマの作成</h4>
+<h4 id="カスタムカラーテーマの作成">カスタムカラーテーマの作成</h4>
 <pre><code class="language-css">/* app/globals.css */
 @layer base {
   :root {
@@ -552,7 +552,7 @@ const buttonVariants = cva(
   }
 }
 </code></pre>
-<h2>高度な使い方：フォームとバリデーション</h2>
+<h2 id="高度な使い方フォームとバリデーション">高度な使い方：フォームとバリデーション</h2>
 <p>shadcn/uiは、React Hook FormとZodと組み合わせて、型安全なフォームを作成できます。</p>
 <p><strong>React Hook Formとは？</strong>
 <a href="https://react-hook-form.com/">React Hook Form</a>は、Reactでフォームを扱うためのライブラリです。以下の特徴があります：</p>
@@ -691,7 +691,7 @@ export function ProfileForm() {
   )
 }
 </code></pre>
-<h2>AI時代の開発：v0.devとの連携</h2>
+<h2 id="ai時代の開発v0devとの連携">AI時代の開発：v0.devとの連携</h2>
 <p>Vercel社が開発した「<strong><a href="https://v0.dev">v0.dev</a></strong>」は、shadcn/uiを使用したUI生成に特化したAIツールです。</p>
 <p><strong>v0.devとは？</strong>
 v0.devは、自然言語（普通の文章）でUIの要望を伝えると、それに応じたReactコンポーネントを自動生成するAIサービスです。特徴：</p>
@@ -706,7 +706,7 @@ v0.devは、自然言語（普通の文章）でUIの要望を伝えると、そ
 <li>無料プラン：月10回まで生成可能</li>
 <li>有料プラン（$20/月）：無制限の生成、プライベートプロジェクト</li>
 </ul>
-<h3>v0.devの使い方</h3>
+<h3 id="v0devの使い方">v0.devの使い方</h3>
 <ol>
 <li><a href="https://v0.dev">v0.dev</a>にアクセス</li>
 <li>作りたいUIを自然言語で説明</li>
@@ -744,8 +744,8 @@ Basic、Pro、Enterpriseの3つのプランで、それぞれ価格と機能リ�
   )
 }
 </code></pre>
-<h2>shadcn/uiを選ぶべきケース vs 選ばないべきケース</h2>
-<h3>shadcn/uiが適している場合</h3>
+<h2 id="shadcnuiを選ぶべきケース-vs-選ばないべきケース">shadcn/uiを選ぶべきケース vs 選ばないべきケース</h2>
+<h3 id="shadcnuiが適している場合">shadcn/uiが適している場合</h3>
 <p>✅ <strong>カスタマイズ性を重視する場合</strong></p>
 <ul>
 <li>独自のデザインシステムを構築したい</li>
@@ -774,7 +774,7 @@ Material-UIなどの外部ライブラリを使用していると、以下のよ
 <ul>
 <li>既存のTailwindプロジェクトとの親和性が高い</li>
 </ul>
-<h3>shadcn/uiが適さない場合</h3>
+<h3 id="shadcnuiが適さない場合">shadcn/uiが適さない場合</h3>
 <p>❌ <strong>すぐに使えるデザインが欲しい場合</strong></p>
 <ul>
 <li>Material DesignやAnt Designのような完成されたデザインシステムが必要</li>
@@ -789,8 +789,8 @@ Material-UIなどの外部ライブラリを使用していると、以下のよ
 <ul>
 <li>学習コストを考慮する必要がある</li>
 </ul>
-<h2>よくある質問と回答</h2>
-<h3>Q1: shadcn/uiは無料ですか？</h3>
+<h2 id="よくある質問と回答">よくある質問と回答</h2>
+<h3 id="q1-shadcnuiは無料ですか">Q1: shadcn/uiは無料ですか？</h3>
 <p><strong>A:</strong> はい、完全に無料でオープンソースです。MITライセンスで提供されています。</p>
 <p><strong>MITライセンスとは？</strong>
 MITライセンスは最も制限の少ないオープンソースライセンスの1つです：</p>
@@ -802,9 +802,9 @@ MITライセンスは最も制限の少ないオープンソースライセン�
 <li><strong>保証なし</strong>: 作者は一切の責任を負わない</li>
 </ul>
 <p>つまり、ほぼ何でも自由にできるライセンスです。</p>
-<h3>Q2: React以外でも使えますか？</h3>
+<h3 id="q2-react以外でも使えますか">Q2: React以外でも使えますか？</h3>
 <p><strong>A:</strong> 現在はReact専用です。ただし、Vue版の「shadcn-vue」やSvelte版の開発も進んでいます。</p>
-<h3>Q3: 既存のプロジェクトに導入できますか？</h3>
+<h3 id="q3-既存のプロジェクトに導入できますか">Q3: 既存のプロジェクトに導入できますか？</h3>
 <p><strong>A:</strong> はい、可能です。ただし、Tailwind CSSの設定が必要です。</p>
 <p><strong>なぜTailwind CSSの設定が必要なのか？</strong>
 shadcn/uiのコンポーネントは、Tailwind CSSのクラス名を使ってスタイリングされているためです。例えば：</p>
@@ -826,12 +826,12 @@ npx tailwindcss init -p  # tailwind.config.jsとpostcss.config.jsを生成
 # その後、shadcn/uiを初期化
 npx shadcn-ui@latest init
 </code></pre>
-<h3>Q4: コンポーネントの更新はどうすればいいですか？</h3>
+<h3 id="q4-コンポーネントの更新はどうすればいいですか">Q4: コンポーネントの更新はどうすればいいですか？</h3>
 <p><strong>A:</strong> shadcn/uiはコピー＆ペースト方式なので、自動更新はありません。必要に応じて手動で最新版をコピーするか、gitで差分を確認して更新します。</p>
-<h3>Q5: TypeScriptは必須ですか？</h3>
+<h3 id="q5-typescriptは必須ですか">Q5: TypeScriptは必須ですか？</h3>
 <p><strong>A:</strong> 必須ではありませんが、強く推奨されています。型安全性のメリットが大きいためです。</p>
-<h2>パフォーマンス比較</h2>
-<h3>バンドルサイズの実測値</h3>
+<h2 id="パフォーマンス比較">パフォーマンス比較</h2>
+<h3 id="バンドルサイズの実測値">バンドルサイズの実測値</h3>
 <pre><code class="language-javascript">// 実際のプロジェクトでの計測結果
 {
   "Material-UI (全体)": "約300KB (gzip: 90KB)",
@@ -840,7 +840,7 @@ npx shadcn-ui@latest init
   "shadcn/ui (Button + Card + Dialog)": "約15KB (gzip: 5KB)"
 }
 </code></pre>
-<h3>Lighthouse スコアの比較</h3>
+<h3 id="lighthouse-スコアの比較">Lighthouse スコアの比較</h3>
 <p><strong>Lighthouseとは？</strong>
 Lighthouseは、Googleが提供するWebページの品質測定ツールです。Chrome DevToolsに組み込まれており、以下の項目を0-100点で評価します（高いほど良い）：</p>
 <ul>
@@ -897,8 +897,8 @@ Lighthouseは、Googleが提供するWebページの品質測定ツールです�
   }
 }
 </code></pre>
-<h2>実践的なTips集</h2>
-<h3>Tip 1: エイリアスの設定</h3>
+<h2 id="実践的なtips集">実践的なTips集</h2>
+<h3 id="tip-1-エイリアスの設定">Tip 1: エイリアスの設定</h3>
 <pre><code class="language-json">// tsconfig.json
 {
   "compilerOptions": {
@@ -910,7 +910,7 @@ Lighthouseは、Googleが提供するWebページの品質測定ツールです�
   }
 }
 </code></pre>
-<h3>Tip 2: カスタムフックの作成</h3>
+<h3 id="tip-2-カスタムフックの作成">Tip 2: カスタムフックの作成</h3>
 <pre><code class="language-typescript">// hooks/use-theme.ts
 import { useEffect, useState } from 'react'
 
@@ -935,7 +935,7 @@ export function useTheme() {
   return { theme, toggleTheme }
 }
 </code></pre>
-<h3>Tip 3: コンポーネントの組み合わせパターン</h3>
+<h3 id="tip-3-コンポーネントの組み合わせパターン">Tip 3: コンポーネントの組み合わせパターン</h3>
 <pre><code class="language-tsx">// components/composite/DataTable.tsx
 import {
   Table,
@@ -1036,9 +1036,9 @@ export function DataTable&#x3C;T>({ data, columns }: DataTableProps&#x3C;T>) {
   )
 }
 </code></pre>
-<h2>まとめ：shadcn/uiがもたらす新しい開発体験</h2>
+<h2 id="まとめshadcnuiがもたらす新しい開発体験">まとめ：shadcn/uiがもたらす新しい開発体験</h2>
 <p>shadcn/uiは、従来のUIライブラリとは全く異なるアプローチで、開発者に次のような価値を提供しています：</p>
-<h3>🎯 <strong>主なメリット</strong></h3>
+<h3 id="-主なメリット">🎯 <strong>主なメリット</strong></h3>
 <ol>
 <li><strong>完全な制御権</strong> - コードを直接所有し、自由にカスタマイズ</li>
 <li><strong>最小限のバンドルサイズ</strong> - 必要なものだけを含める</li>
@@ -1053,14 +1053,14 @@ export function DataTable&#x3C;T>({ data, columns }: DataTableProps&#x3C;T>) {
 <li><strong>型安全性</strong> - TypeScriptファーストな設計</li>
 <li><strong>モダンな開発体験</strong> - Tailwind CSSとの完璧な統合</li>
 </ol>
-<h3>🚀 <strong>これからの展望</strong></h3>
+<h3 id="-これからの展望">🚀 <strong>これからの展望</strong></h3>
 <ul>
 <li>AI（v0.dev）との統合がさらに進化</li>
 <li>Vue、Svelte版の充実</li>
 <li>コンポーネントの種類がさらに増加</li>
 <li>エンタープライズ向け機能の充実</li>
 </ul>
-<h3>💡 <strong>導入を検討すべきタイミング</strong></h3>
+<h3 id="-導入を検討すべきタイミング">💡 <strong>導入を検討すべきタイミング</strong></h3>
 <ul>
 <li>新規プロジェクトの立ち上げ時</li>
 <li>デザインシステムの刷新時</li>
@@ -1069,7 +1069,7 @@ export function DataTable&#x3C;T>({ data, columns }: DataTableProps&#x3C;T>) {
 </ul>
 <p>shadcn/uiは「ライブラリ」ではなく「哲学」です。コンポーネントを「使う」のではなく「所有する」という考え方は、長期的なプロジェクトの保守性と拡張性を大きく向上させます。</p>
 <p>2025年のフロントエンド開発において、shadcn/uiは単なるトレンドではなく、新しいスタンダードになりつつあります。この記事を参考に、ぜひあなたのプロジェクトでもshadcn/uiを試してみてください。</p>
-<h2>参考リンク</h2>
+<h2 id="参考リンク">参考リンク</h2>
 <ul>
 <li><a href="https://ui.shadcn.com/">shadcn/ui 公式サイト</a></li>
 <li><a href="https://www.radix-ui.com/">Radix UI</a></li>
@@ -1079,8 +1079,7 @@ export function DataTable&#x3C;T>({ data, columns }: DataTableProps&#x3C;T>) {
 <li><a href="https://risingstars.js.org/2023/ja">JavaScript Rising Stars 2023</a></li>
 </ul>
 <hr>
-<p><strong>Happy Coding with shadcn/ui! 🎨✨</strong></p>
-4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",16]}]," ","shadcn/uiが変えるフロントエンド開発！従来のUIライブラリとは一線を画す新アプローチの全貌"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-04 21:00"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"React"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"shadcn/ui"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Tailwind CSS"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"UI Components"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"フロントエンド"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Web開発"}],["$","span","6",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"デザインシステム"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+<p><strong>Happy Coding with shadcn/ui! 🎨✨</strong></p>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",16]}]," ","shadcn/uiが変えるフロントエンド開発！従来のUIライブラリとは一線を画す新アプローチの全貌"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-04 21:00"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"React"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"shadcn/ui"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Tailwind CSS"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"UI Components"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"フロントエンド"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Web開発"}],["$","span","6",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"デザインシステム"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
 11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}

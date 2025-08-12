@@ -1,16 +1,16 @@
 <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/ce87a0c8fce915ba.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js"/><script src="/_next/static/chunks/4bd1b696-d8f047cced1b4886.js" async=""></script><script src="/_next/static/chunks/684-8e4d9e1e4139006e.js" async=""></script><script src="/_next/static/chunks/main-app-d1c324b32b03123c.js" async=""></script><script src="/_next/static/chunks/874-8d3839f72fd80c3c.js" async=""></script><script src="/_next/static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><div class="max-w-2xl mx-auto py-10 px-4"><h1 class="text-3xl font-bold mb-2"><span class="text-green-600">#<!-- -->24</span> <!-- -->Claude Code Hooks完全ガイド：開発ワークフローを自動化する魔法の仕組み</h1><ul class="list-none border-b border-gray-600 pb-4 mb-6"><li class="text-gray-500 text-sm">作成日時: <!-- -->2025-08-07 19:16</li><li class="flex flex-wrap gap-2 mt-2"><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Claude Code</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Hooks</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">自動化</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">開発効率化</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">macOS</span></li></ul><nav class="mb-6 pb-4 border-b border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav><article class="prose dark:prose-invert"><p>Claude Codeで作業していて、「コード保存時に自動でフォーマットしたい」「タスク完了時に通知が欲しい」と思ったことはありませんか？Hooks機能を使えば、これらの自動化が簡単に実現できます。</p>
-<h2>この記事で学べること</h2>
+<h2 id="この記事で学べること">この記事で学べること</h2>
 <ul>
 <li>🔰 <strong>初級</strong>: Hooksの基本概念と最初の設定</li>
 <li>🔥 <strong>中級</strong>: 8種類のイベントタイプと実践的な自動化</li>
 <li>💀 <strong>上級</strong>: セキュリティ対策とパフォーマンス最適化</li>
 </ul>
-<h2>5分で試せるクイックスタート 🚀</h2>
+<h2 id="5分で試せるクイックスタート-">5分で試せるクイックスタート 🚀</h2>
 <p>まずは動く例を試してみましょう！</p>
-<h3>1. フォルダを作成（30秒）</h3>
+<h3 id="1-フォルダを作成30秒">1. フォルダを作成（30秒）</h3>
 <pre><code class="language-bash">mkdir -p ~/.claude/hooks
 </code></pre>
-<h3>2. 簡単なHookスクリプトを作成（1分）</h3>
+<h3 id="2-簡単なhookスクリプトを作成1分">2. 簡単なHookスクリプトを作成（1分）</h3>
 <pre><code class="language-bash">cat > ~/.claude/hooks/hello.sh &#x3C;&#x3C; 'EOF'
 #!/bin/bash
 echo "🎉 Hook is working!" >&#x26;2
@@ -19,7 +19,7 @@ EOF
 
 chmod +x ~/.claude/hooks/hello.sh
 </code></pre>
-<h3>3. 設定ファイルを作成（1分）</h3>
+<h3 id="3-設定ファイルを作成1分">3. 設定ファイルを作成（1分）</h3>
 <pre><code class="language-bash">cat > ~/.claude/settings.json &#x3C;&#x3C; 'EOF'
 {
   "hooks": {
@@ -35,28 +35,28 @@ chmod +x ~/.claude/hooks/hello.sh
 }
 EOF
 </code></pre>
-<h3>4. 動作確認（30秒）</h3>
+<h3 id="4-動作確認30秒">4. 動作確認（30秒）</h3>
 <p>Claude Codeで何かファイルを読んだり、コマンドを実行すると「🎉 Hook is working!」が表示されます！</p>
 <p><strong>成功したら</strong>: 下記の詳細な説明に進みましょう
 <strong>うまくいかない場合</strong>: トラブルシューティングセクションを参照</p>
-<h2>前提知識</h2>
+<h2 id="前提知識">前提知識</h2>
 <p>この記事を読むには、以下の基本的な知識があるとスムーズです：</p>
 <ul>
 <li>基本的なシェルコマンド（<code>cd</code>, <code>ls</code>, <code>echo</code>, <code>cat</code>など）</li>
 <li>ファイルのパーミッション（実行権限）の概念</li>
 <li>JSONフォーマットの基本</li>
 </ul>
-<h2>はじめに：Hooksとは何か？</h2>
+<h2 id="はじめにhooksとは何か">はじめに：Hooksとは何か？</h2>
 <p>Hooks（フック）は、特定のイベントが発生したときに自動的に実行されるスクリプトやコマンドのことです。釣り針（hook）のように、イベントを「引っ掛けて」処理を実行するイメージです。</p>
-<h3>身近な例で理解するHooks</h3>
+<h3 id="身近な例で理解するhooks">身近な例で理解するHooks</h3>
 <ul>
 <li><strong>Gitのフック</strong>: コミット前にテストを自動実行</li>
 <li><strong>Webフック</strong>: GitHubにプッシュしたらSlackに通知</li>
 <li><strong>Claude Code Hooks</strong>: AIがツールを使う前後に独自の処理を挿入</li>
 </ul>
-<h2>Claude Code Hooksの3つの種類</h2>
+<h2 id="claude-code-hooksの3つの種類">Claude Code Hooksの3つの種類</h2>
 <p>Claude Codeには、主に3種類のHooksがあります：</p>
-<h3>処理の流れ図</h3>
+<h3 id="処理の流れ図">処理の流れ図</h3>
 <pre><code>ユーザーの入力
     ↓
 [1. user-prompt-submit-hook] ← プロンプトを拡張
@@ -73,33 +73,33 @@ Claude Codeが処理
     ↓
 ユーザーへの返信
 </code></pre>
-<h3>1. user-prompt-submit-hook</h3>
+<h3 id="1-user-prompt-submit-hook">1. user-prompt-submit-hook</h3>
 <p><strong>いつ動く？</strong>: プロンプトを送信する直前</p>
 <p><strong>何ができる？</strong>: プロンプトの内容を自動的に拡張・修正</p>
 <p><strong>失敗した場合</strong>: エラーは無視され、元のプロンプトが送信される</p>
-<h3>2. tool-pre-hook</h3>
+<h3 id="2-tool-pre-hook">2. tool-pre-hook</h3>
 <p><strong>いつ動く？</strong>: Claude Codeがツール（ファイル編集、コマンド実行など）を使う直前</p>
 <p><strong>何ができる？</strong>: 危険な操作をブロック、パラメータの修正</p>
 <p><strong>失敗した場合</strong>: 終了コード0以外でツール実行がキャンセルされる</p>
-<h3>3. tool-post-hook</h3>
+<h3 id="3-tool-post-hook">3. tool-post-hook</h3>
 <p><strong>いつ動く？</strong>: ツールの実行が完了した直後</p>
 <p><strong>何ができる？</strong>: 実行結果のログ記録、後処理の実行</p>
 <p><strong>失敗した場合</strong>: エラーは無視され、Claude Codeの処理は継続される</p>
-<h2>実装手順：ゼロから始めるHooks設定</h2>
-<h3>グローバル設定とプロジェクト設定の違い</h3>
-<h4>グローバル設定（すべてのプロジェクトに適用）</h4>
+<h2 id="実装手順ゼロから始めるhooks設定">実装手順：ゼロから始めるHooks設定</h2>
+<h3 id="グローバル設定とプロジェクト設定の違い">グローバル設定とプロジェクト設定の違い</h3>
+<h4 id="グローバル設定すべてのプロジェクトに適用">グローバル設定（すべてのプロジェクトに適用）</h4>
 <ul>
 <li><strong>設定場所</strong>: <code>~/.claude/settings.json</code></li>
 <li><strong>用途</strong>: すべてのプロジェクトで共通して使いたいHooks</li>
 <li><strong>例</strong>: タスク完了通知、危険コマンドのブロック</li>
 </ul>
-<h4>プロジェクト設定（特定プロジェクトのみ）</h4>
+<h4 id="プロジェクト設定特定プロジェクトのみ">プロジェクト設定（特定プロジェクトのみ）</h4>
 <ul>
 <li><strong>設定場所</strong>: <code>{プロジェクトルート}/.claude/settings.json</code></li>
 <li><strong>用途</strong>: そのプロジェクト固有のHooks</li>
 <li><strong>例</strong>: プロジェクト固有のフォーマッタ、テスト実行</li>
 </ul>
-<h3>ディレクトリ構造の例</h3>
+<h3 id="ディレクトリ構造の例">ディレクトリ構造の例</h3>
 <pre><code># グローバル設定の場合
 ~/
 ├── .claude/
@@ -120,7 +120,7 @@ my-project/
 ├── package.json
 └── README.md
 </code></pre>
-<h3>ステップ1: 設定ファイルの作成</h3>
+<h3 id="ステップ1-設定ファイルの作成">ステップ1: 設定ファイルの作成</h3>
 <p>プロジェクトのルートディレクトリに<code>.claude</code>フォルダを作成し、<code>settings.json</code>を配置します：</p>
 <pre><code class="language-bash"># プロジェクト設定の場合
 mkdir -p .claude/hooks
@@ -130,7 +130,7 @@ touch .claude/settings.json
 mkdir -p ~/.claude/hooks
 touch ~/.claude/settings.json
 </code></pre>
-<h3>ステップ2: 基本的な設定の記述</h3>
+<h3 id="ステップ2-基本的な設定の記述">ステップ2: 基本的な設定の記述</h3>
 <p><code>.claude/settings.json</code>に以下の内容を記述：</p>
 <pre><code class="language-json">{
   "hooks": {
@@ -180,9 +180,9 @@ touch ~/.claude/settings.json
 }
 </code></pre>
 <p><strong>注意</strong>: パスは<code>settings.json</code>からの相対パスで指定します。</p>
-<h3>複数のスクリプトを同じHookに登録する方法</h3>
+<h3 id="複数のスクリプトを同じhookに登録する方法">複数のスクリプトを同じHookに登録する方法</h3>
 <p>Claude Code Hooksには<strong>新旧2つの設定形式</strong>があり、新しい形式では複数のスクリプトを登録できます。</p>
-<h4>新しい形式（推奨） - 複数スクリプト対応</h4>
+<h4 id="新しい形式推奨---複数スクリプト対応">新しい形式（推奨） - 複数スクリプト対応</h4>
 <p><strong>特徴</strong>：</p>
 <ul>
 <li>イベント名: <code>PreToolUse</code>、<code>PostToolUse</code>、<code>Notification</code>、<code>Stop</code></li>
@@ -214,7 +214,7 @@ touch ~/.claude/settings.json
 }
 </code></pre>
 <p>この設定では、Write、Edit、MultiEditツールの実行後に3つのスクリプトが順番に実行されます。</p>
-<h4>旧い形式（廃止予定） - 単一スクリプトのみ</h4>
+<h4 id="旧い形式廃止予定---単一スクリプトのみ">旧い形式（廃止予定） - 単一スクリプトのみ</h4>
 <p><strong>特徴</strong>：</p>
 <ul>
 <li>イベント名: <code>tool-post-hook</code>、<code>tool-pre-hook</code>、<code>user-prompt-submit-hook</code></li>
@@ -226,8 +226,8 @@ touch ~/.claude/settings.json
   }
 }
 </code></pre>
-<h4>旧形式で複数処理を実現する方法</h4>
-<h5>方法1: ラッパースクリプトを作成</h5>
+<h4 id="旧形式で複数処理を実現する方法">旧形式で複数処理を実現する方法</h4>
+<h5 id="方法1-ラッパースクリプトを作成">方法1: ラッパースクリプトを作成</h5>
 <pre><code class="language-bash">#!/bin/bash
 # 入力を変数に保存（複数のスクリプトで使用するため）
 input_data=$(cat)
@@ -244,7 +244,7 @@ result=$(echo "$input_data" | ./hooks/formatter.sh)
 # 最後のスクリプトの結果を返す
 echo "$result"
 </code></pre>
-<h5>方法2: 1つのスクリプトに複数の機能を統合</h5>
+<h5 id="方法2-1つのスクリプトに複数の機能を統合">方法2: 1つのスクリプトに複数の機能を統合</h5>
 <pre><code class="language-bash">#!/bin/bash
 input_data=$(cat)
 
@@ -264,7 +264,7 @@ fi
 # 元のデータを返す
 echo "$input_data"
 </code></pre>
-<h3>新形式への移行方法</h3>
+<h3 id="新形式への移行方法">新形式への移行方法</h3>
 <p>現在プロジェクトで使用中の旧形式を新形式に移行する例：</p>
 <p><strong>旧形式</strong>：</p>
 <pre><code class="language-json">{
@@ -290,7 +290,7 @@ echo "$input_data"
   }
 }
 </code></pre>
-<h3>Matcherの指定方法</h3>
+<h3 id="matcherの指定方法">Matcherの指定方法</h3>
 <p><strong>特定のツールのみ</strong>：</p>
 <pre><code class="language-json">"matcher": "Write"  // Writeツールのみ
 "matcher": "Bash"   // Bashコマンドのみ
@@ -302,7 +302,7 @@ echo "$input_data"
 <p><strong>全ツール</strong>：</p>
 <pre><code class="language-json">"matcher": "*"  // すべてのツール
 </code></pre>
-<h3>グローバルとプロジェクトHookの併用</h3>
+<h3 id="グローバルとプロジェクトhookの併用">グローバルとプロジェクトHookの併用</h3>
 <p>新形式では、グローバル設定とプロジェクト設定の<strong>両方のHookが実行</strong>されます。設定ファイルは以下の順序で読み込まれ、すべての一致するフックが実行されます：</p>
 <ol>
 <li><strong>グローバル設定</strong>: <code>~/.claude/settings.json</code></li>
@@ -339,9 +339,9 @@ echo "$input_data"
   }
 }
 </code></pre>
-<h3>ステップ3: Hookスクリプトの作成</h3>
+<h3 id="ステップ3-hookスクリプトの作成">ステップ3: Hookスクリプトの作成</h3>
 <p>各Hookスクリプトを<code>.claude/hooks/</code>ディレクトリに作成します。</p>
-<h2>実践例1: プロンプト自動拡張Hook</h2>
+<h2 id="実践例1-プロンプト自動拡張hook">実践例1: プロンプト自動拡張Hook</h2>
 <p>現在のGitブランチ名やタスク情報を自動的にプロンプトに追加する例です。</p>
 <p><strong><code>hooks/prompt-enhancer.sh</code></strong>:</p>
 <pre><code class="language-bash">#!/bin/bash
@@ -371,17 +371,17 @@ $task_content}
 $original_prompt
 EOF
 </code></pre>
-<h3>このHookが受け取るデータ</h3>
+<h3 id="このhookが受け取るデータ">このHookが受け取るデータ</h3>
 <pre><code># 標準入力から受け取る内容の例：
 "バグを修正して"
 </code></pre>
-<h3>動作の仕組み</h3>
+<h3 id="動作の仕組み">動作の仕組み</h3>
 <ol>
 <li>ユーザーが「バグを修正して」と入力</li>
 <li>Hookが自動的にGitブランチ名とタスク情報を追加</li>
 <li>Claude Codeは拡張された情報を受け取って、より的確な対応が可能に</li>
 </ol>
-<h2>実践例2: 危険コマンドブロックHook</h2>
+<h2 id="実践例2-危険コマンドブロックhook">実践例2: 危険コマンドブロックHook</h2>
 <p><code>rm -rf</code>などの危険なコマンドをブロックする例です。</p>
 <p><strong><code>hooks/safety-check.sh</code></strong>:</p>
 <pre><code class="language-bash">#!/bin/bash
@@ -415,7 +415,7 @@ fi
 echo "$tool_info"
 exit 0  # 終了コード0 = ツール実行を許可
 </code></pre>
-<h3>このHookが受け取るJSONデータの例</h3>
+<h3 id="このhookが受け取るjsonデータの例">このHookが受け取るJSONデータの例</h3>
 <pre><code class="language-json">{
   "tool_name": "run_shell_command",
   "tool_input": {
@@ -423,13 +423,13 @@ exit 0  # 終了コード0 = ツール実行を許可
   }
 }
 </code></pre>
-<h3>ブロックされるコマンド例</h3>
+<h3 id="ブロックされるコマンド例">ブロックされるコマンド例</h3>
 <ul>
 <li><code>rm -rf /</code>: システム全体を削除する危険なコマンド</li>
 <li><code>dd if=/dev/zero of=/dev/sda</code>: ディスクを完全に消去</li>
 <li><code>> important_file.txt</code>: ファイルを空にする</li>
 </ul>
-<h2>実践例3: 実行ログ記録Hook</h2>
+<h2 id="実践例3-実行ログ記録hook">実践例3: 実行ログ記録Hook</h2>
 <p>すべてのツール実行を記録する例です。</p>
 <p><strong><code>hooks/logger.sh</code></strong>:</p>
 <pre><code class="language-bash">#!/bin/bash
@@ -467,7 +467,7 @@ fi
 # 結果をそのまま標準出力に返す（Claude Codeの処理を妨げない）
 echo "$execution_result"
 </code></pre>
-<h3>このHookが受け取るJSONデータの例</h3>
+<h3 id="このhookが受け取るjsonデータの例-1">このHookが受け取るJSONデータの例</h3>
 <pre><code class="language-json">{
   "tool_name": "write_file",
   "tool_input": {
@@ -477,8 +477,8 @@ echo "$execution_result"
   "tool_output": "File written successfully"
 }
 </code></pre>
-<h2>より実践的な使用例</h2>
-<h3>1. コード保存時の自動フォーマット</h3>
+<h2 id="より実践的な使用例">より実践的な使用例</h2>
+<h3 id="1-コード保存時の自動フォーマット">1. コード保存時の自動フォーマット</h3>
 <p><strong><code>hooks/auto-format.sh</code></strong>:</p>
 <pre><code class="language-bash">#!/bin/bash
 
@@ -504,7 +504,7 @@ fi
 
 echo "$tool_info"
 </code></pre>
-<h3>2. テスト自動実行</h3>
+<h3 id="2-テスト自動実行">2. テスト自動実行</h3>
 <p>ファイル変更時に関連テストを自動実行：</p>
 <pre><code class="language-bash">#!/bin/bash
 
@@ -523,8 +523,8 @@ fi
 
 echo "$tool_info"
 </code></pre>
-<h2>Hooksが受け取るデータのまとめ</h2>
-<h3>各Hookの入出力仕様</h3>
+<h2 id="hooksが受け取るデータのまとめ">Hooksが受け取るデータのまとめ</h2>
+<h3 id="各hookの入出力仕様">各Hookの入出力仕様</h3>
 <p><strong>user-prompt-submit-hook</strong></p>
 <ul>
 <li>標準入力で受け取る: プロンプト文字列</li>
@@ -543,9 +543,9 @@ echo "$tool_info"
 <li>標準出力に返すべき内容: 任意（通常は元のまま）</li>
 <li>エラー時の動作: 無視される</li>
 </ul>
-<h2>トラブルシューティング</h2>
-<h3>よくある問題と解決方法</h3>
-<h4>1. Hookが実行されない</h4>
+<h2 id="トラブルシューティング">トラブルシューティング</h2>
+<h3 id="よくある問題と解決方法">よくある問題と解決方法</h3>
+<h4 id="1-hookが実行されない">1. Hookが実行されない</h4>
 <p><strong>原因</strong>: 実行権限がない</p>
 <p><strong>解決方法</strong>:</p>
 <pre><code class="language-bash"># ⚠️ 警告: スクリプトの内容を確認してから実行権限を付与してください
@@ -557,7 +557,7 @@ cat hooks/*.sh
 # 内容が安全であることを確認してから実行権限を付与
 chmod +x hooks/*.sh
 </code></pre>
-<h4>2. JSONの解析でエラー</h4>
+<h4 id="2-jsonの解析でエラー">2. JSONの解析でエラー</h4>
 <p><strong>原因</strong>: <code>jq</code>コマンドがインストールされていない</p>
 <p><strong>解決方法</strong>:</p>
 <pre><code class="language-bash"># macOS
@@ -569,7 +569,7 @@ choco install jq
 # または、grepとsedで代替
 echo "$json" | grep -o '"key":"[^"]*"' | cut -d'"' -f4
 </code></pre>
-<h4>3. パスが見つからない</h4>
+<h4 id="3-パスが見つからない">3. パスが見つからない</h4>
 <p><strong>原因</strong>: 相対パスが正しくない
 <strong>解決方法</strong>: 絶対パスを使用</p>
 <pre><code class="language-json">{
@@ -578,7 +578,7 @@ echo "$json" | grep -o '"key":"[^"]*"' | cut -d'"' -f4
   }
 }
 </code></pre>
-<h4>4. デバッグ方法</h4>
+<h4 id="4-デバッグ方法">4. デバッグ方法</h4>
 <p>Hookが正しく動作しているか確認するには：</p>
 <pre><code class="language-bash"># デバッグメッセージをエラー出力に表示
 echo "デバッグ: ここまで実行されました" >&#x26;2
@@ -587,13 +587,13 @@ echo "受け取ったデータ: $data" >&#x26;2
 # デバッグログファイルに出力
 echo "$(date): Hook実行" >> /tmp/hook-debug.log
 </code></pre>
-<h2>セキュリティ上の注意点</h2>
-<h3>1. スクリプトの権限管理</h3>
+<h2 id="セキュリティ上の注意点">セキュリティ上の注意点</h2>
+<h3 id="1-スクリプトの権限管理">1. スクリプトの権限管理</h3>
 <p>Hookスクリプトには最小限の権限のみを付与：</p>
 <pre><code class="language-bash"># 所有者のみ実行可能
 chmod 700 hooks/*.sh
 </code></pre>
-<h3>2. 入力値の検証</h3>
+<h3 id="2-入力値の検証">2. 入力値の検証</h3>
 <p>外部入力は必ず検証：</p>
 <pre><code class="language-bash"># 悪意のあるコマンドインジェクションを防ぐ
 if [[ "$input" =~ ^[a-zA-Z0-9_-]+$ ]]; then
@@ -601,38 +601,38 @@ if [[ "$input" =~ ^[a-zA-Z0-9_-]+$ ]]; then
     process_input "$input"
 fi
 </code></pre>
-<h3>3. ログの保護</h3>
+<h3 id="3-ログの保護">3. ログの保護</h3>
 <p>機密情報をログに記録しない：</p>
 <pre><code class="language-bash"># パスワードやトークンをマスク
 echo "$result" | sed 's/password=.*/password=****/g' >> log.txt
 </code></pre>
-<h2>ベストプラクティス</h2>
-<h3>1. Hookは軽量に保つ</h3>
+<h2 id="ベストプラクティス">ベストプラクティス</h2>
+<h3 id="1-hookは軽量に保つ">1. Hookは軽量に保つ</h3>
 <p>Hookの処理は高速に：</p>
 <ul>
 <li>重い処理は非同期で実行</li>
 <li>タイムアウトを設定</li>
 <li>必要最小限の処理のみ</li>
 </ul>
-<h3>2. エラーハンドリング</h3>
+<h3 id="2-エラーハンドリング">2. エラーハンドリング</h3>
 <pre><code class="language-bash">#!/bin/bash
 set -e  # エラー時に即座に終了
 trap 'echo "Error occurred at line $LINENO"' ERR
 </code></pre>
-<h3>3. デバッグモード</h3>
+<h3 id="3-デバッグモード">3. デバッグモード</h3>
 <pre><code class="language-bash"># DEBUG環境変数でデバッグモードを切り替え
 if [ "$DEBUG" = "1" ]; then
     set -x  # コマンドを表示
     exec 2>hooks-debug.log  # エラーをログファイルに
 fi
 </code></pre>
-<h2>ハンズオン：タスク完了通知Hookを作ってみよう</h2>
+<h2 id="ハンズオンタスク完了通知hookを作ってみよう">ハンズオン：タスク完了通知Hookを作ってみよう</h2>
 <p>実際にHookを作成して動作を体験してみましょう。ここでは、タスクが完了したときにmacOSで通知を表示するHookを作成します。</p>
-<h3>ステップ1: プロジェクトディレクトリに設定を作成</h3>
+<h3 id="ステップ1-プロジェクトディレクトリに設定を作成">ステップ1: プロジェクトディレクトリに設定を作成</h3>
 <pre><code class="language-bash"># プロジェクトのルートディレクトリで実行
 mkdir -p .claude/hooks
 </code></pre>
-<h3>ステップ2: 通知スクリプトを作成</h3>
+<h3 id="ステップ2-通知スクリプトを作成">ステップ2: 通知スクリプトを作成</h3>
 <p><code>.claude/hooks/task-notifier.sh</code>を作成：</p>
 <pre><code class="language-bash">#!/bin/bash
 # tool-post-hook: タスク完了時に通知を送る
@@ -657,7 +657,7 @@ fi
 # 結果をそのまま標準出力に返す（重要！）
 echo "$execution_result"
 </code></pre>
-<h3>ステップ3: settings.jsonを設定</h3>
+<h3 id="ステップ3-settingsjsonを設定">ステップ3: settings.jsonを設定</h3>
 <p><code>.claude/settings.json</code>を作成：</p>
 <pre><code class="language-json">{
   "hooks": {
@@ -665,19 +665,19 @@ echo "$execution_result"
   }
 }
 </code></pre>
-<h3>ステップ4: 実行権限を付与</h3>
+<h3 id="ステップ4-実行権限を付与">ステップ4: 実行権限を付与</h3>
 <pre><code class="language-bash"># スクリプトの内容を確認
 cat .claude/hooks/task-notifier.sh
 
 # 安全であることを確認してから権限付与
 chmod +x .claude/hooks/task-notifier.sh
 </code></pre>
-<h3>ステップ5: 動作確認</h3>
+<h3 id="ステップ5-動作確認">ステップ5: 動作確認</h3>
 <p>Claude Codeでタスクを完了させて、通知が表示されることを確認：</p>
 <pre><code>「README.mdを更新して」
 </code></pre>
 <p>タスクが完了すると、macOSの通知センターに「タスクが完了しました！🎉」と表示されます。</p>
-<h3>トラブルシューティング</h3>
+<h3 id="トラブルシューティング-1">トラブルシューティング</h3>
 <p><strong>通知が表示されない場合：</strong></p>
 <ol>
 <li>システム環境設定 → 通知とフォーカス → ターミナルの通知が有効か確認</li>
@@ -687,7 +687,7 @@ chmod +x .claude/hooks/task-notifier.sh
 </code></pre>
 </li>
 </ol>
-<h3>Windows版の代替実装</h3>
+<h3 id="windows版の代替実装">Windows版の代替実装</h3>
 <p>Windowsの場合は、PowerShellを使用：</p>
 <pre><code class="language-bash">#!/bin/bash
 execution_result=$(cat)
@@ -707,7 +707,7 @@ fi
 
 echo "$execution_result"
 </code></pre>
-<h3>実装のポイント</h3>
+<h3 id="実装のポイント">実装のポイント</h3>
 <ol>
 <li><strong>標準入力から読み込む</strong>: <code>$(cat)</code>でJSONデータを受け取る</li>
 <li><strong>条件判定</strong>: <code>grep</code>でキーワードを検索</li>
@@ -715,7 +715,7 @@ echo "$execution_result"
 <li><strong>元データを返す</strong>: 必ず<code>echo "$execution_result"</code>で返す</li>
 </ol>
 <p>これで、あなたも独自のHookを作成できるようになりました！</p>
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p>Claude Code Hooksを使えば：</p>
 <ol>
 <li><strong>プロンプトの自動拡張</strong>で、コンテキストを自動追加</li>
@@ -725,13 +725,13 @@ echo "$execution_result"
 <li><strong>通知機能</strong>で、作業の進捗を把握</li>
 </ol>
 <p>これらの機能により、開発効率が大幅に向上します。</p>
-<h3>次のステップ</h3>
+<h3 id="次のステップ">次のステップ</h3>
 <ol>
 <li>基本的なHookから始める（まずはログ記録から）</li>
 <li>チーム固有のニーズに合わせてカスタマイズ</li>
 <li>複数のHookを組み合わせて高度な自動化を実現</li>
 </ol>
-<h3>学習のポイント</h3>
+<h3 id="学習のポイント">学習のポイント</h3>
 <ul>
 <li>Hooksは「イベント駆動」の自動化</li>
 <li>標準入出力を使った情報の受け渡し</li>
@@ -739,24 +739,23 @@ echo "$execution_result"
 <li>シェルスクリプトの基本が重要</li>
 </ul>
 <p>これでClaude Code Hooksの基本から実践まで理解できたはずです。さあ、あなたの開発ワークフローを自動化してみましょう！</p>
-<h2>参考リンク</h2>
-<h3>公式ドキュメント</h3>
+<h2 id="参考リンク">参考リンク</h2>
+<h3 id="公式ドキュメント">公式ドキュメント</h3>
 <ul>
 <li><a href="https://docs.anthropic.com/claude-code">Claude Code 公式ドキュメント</a></li>
 <li><a href="https://docs.anthropic.com/en/docs/claude-code/hooks">Claude Code Hooks詳細ドキュメント</a></li>
 <li><a href="https://docs.anthropic.com/en/docs/claude-code/settings">Claude Code Settings仕様</a></li>
 </ul>
-<h3>参考にした情報源</h3>
+<h3 id="参考にした情報源">参考にした情報源</h3>
 <p>本記事の新形式に関する情報は、以下の調査により確認しました：</p>
 <ul>
 <li>Claude Code公式ドキュメントのHooksページ（WebFetch APIで確認）</li>
 <li>グローバル設定ファイル（<code>~/.claude/settings.json</code>）の実例確認</li>
 <li>Claude Code内部のTaskツールによる詳細調査</li>
 </ul>
-<h3>関連技術ドキュメント</h3>
+<h3 id="関連技術ドキュメント">関連技術ドキュメント</h3>
 <ul>
 <li><a href="https://www.gnu.org/software/bash/manual/">Bash スクリプティングガイド</a></li>
 <li><a href="https://stedolan.github.io/jq/manual/">jq マニュアル</a></li>
 <li><a href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA-Git-%E3%83%95%E3%83%83%E3%82%AF">Git Hooks ドキュメント</a></li>
-</ul>
-</article><nav class="mt-8 pt-4 border-t border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n5:I[9665,[],\"MetadataBoundary\"]\n7:I[9665,[],\"OutletBoundary\"]\na:I[4911,[],\"AsyncMetadataOutlet\"]\nc:I[9665,[],\"ViewportBoundary\"]\ne:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/ce87a0c8fce915ba.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"ug3f9LepbVd0lT5MBbbSR\",\"p\":\"\",\"c\":[\"\",\"blog\",\"claude-code-hooks-guide\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"claude-code-hooks-guide\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/ce87a0c8fce915ba.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"blog\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"claude-code-hooks-guide\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",[\"$\",\"$L5\",null,{\"children\":\"$L6\"}],null,[\"$\",\"$L7\",null,{\"children\":[\"$L8\",\"$L9\",[\"$\",\"$La\",null,{\"promise\":\"$@b\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"WK_RFA6684Hn4RPdkltwk\",{\"children\":[[\"$\",\"$Lc\",null,{\"children\":\"$Ld\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$e\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"f:\"$Sreact.suspense\"\n10:I[4911,[],\"AsyncMetadata\"]\n6:[\"$\",\"$f\",null,{\"fallback\":null,\"children\":[\"$\",\"$L10\",null,{\"promise\":\"$@11\"}]}]\n"])</script><script>self.__next_f.push([1,"9:null\n"])</script><script>self.__next_f.push([1,"12:I[6874,[\"874\",\"static/chunks/874-8d3839f72fd80c3c.js\",\"953\",\"static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js\"],\"\"]\n13:T74cc,"])</script><script>self.__next_f.push([1,"\u003cp\u003eClaude Codeで作業していて、「コード保存時に自動でフォーマットしたい」「タスク完了時に通知が欲しい」と思ったことはありませんか？Hooks機能を使えば、これらの自動化が簡単に実現できます。\u003c/p\u003e\n\u003ch2\u003eこの記事で学べること\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e🔰 \u003cstrong\u003e初級\u003c/strong\u003e: Hooksの基本概念と最初の設定\u003c/li\u003e\n\u003cli\u003e🔥 \u003cstrong\u003e中級\u003c/strong\u003e: 8種類のイベントタイプと実践的な自動化\u003c/li\u003e\n\u003cli\u003e💀 \u003cstrong\u003e上級\u003c/strong\u003e: セキュリティ対策とパフォーマンス最適化\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e5分で試せるクイックスタート 🚀\u003c/h2\u003e\n\u003cp\u003eまずは動く例を試してみましょう！\u003c/p\u003e\n\u003ch3\u003e1. フォルダを作成（30秒）\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003emkdir -p ~/.claude/hooks\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e2. 簡単なHookスクリプトを作成（1分）\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003ecat \u003e ~/.claude/hooks/hello.sh \u0026#x3C;\u0026#x3C; 'EOF'\n#!/bin/bash\necho \"🎉 Hook is working!\" \u003e\u0026#x26;2\ncat  # 入力をそのまま出力（重要！）\nEOF\n\nchmod +x ~/.claude/hooks/hello.sh\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e3. 設定ファイルを作成（1分）\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003ecat \u003e ~/.claude/settings.json \u0026#x3C;\u0026#x3C; 'EOF'\n{\n  \"hooks\": {\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"*\",\n        \"hooks\": [\n          {\"type\": \"command\", \"command\": \"~/.claude/hooks/hello.sh\"}\n        ]\n      }\n    ]\n  }\n}\nEOF\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e4. 動作確認（30秒）\u003c/h3\u003e\n\u003cp\u003eClaude Codeで何かファイルを読んだり、コマンドを実行すると「🎉 Hook is working!」が表示されます！\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e成功したら\u003c/strong\u003e: 下記の詳細な説明に進みましょう\n\u003cstrong\u003eうまくいかない場合\u003c/strong\u003e: トラブルシューティングセクションを参照\u003c/p\u003e\n\u003ch2\u003e前提知識\u003c/h2\u003e\n\u003cp\u003eこの記事を読むには、以下の基本的な知識があるとスムーズです：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e基本的なシェルコマンド（\u003ccode\u003ecd\u003c/code\u003e, \u003ccode\u003els\u003c/code\u003e, \u003ccode\u003eecho\u003c/code\u003e, \u003ccode\u003ecat\u003c/code\u003eなど）\u003c/li\u003e\n\u003cli\u003eファイルのパーミッション（実行権限）の概念\u003c/li\u003e\n\u003cli\u003eJSONフォーマットの基本\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eはじめに：Hooksとは何か？\u003c/h2\u003e\n\u003cp\u003eHooks（フック）は、特定のイベントが発生したときに自動的に実行されるスクリプトやコマンドのことです。釣り針（hook）のように、イベントを「引っ掛けて」処理を実行するイメージです。\u003c/p\u003e\n\u003ch3\u003e身近な例で理解するHooks\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eGitのフック\u003c/strong\u003e: コミット前にテストを自動実行\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eWebフック\u003c/strong\u003e: GitHubにプッシュしたらSlackに通知\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eClaude Code Hooks\u003c/strong\u003e: AIがツールを使う前後に独自の処理を挿入\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eClaude Code Hooksの3つの種類\u003c/h2\u003e\n\u003cp\u003eClaude Codeには、主に3種類のHooksがあります：\u003c/p\u003e\n\u003ch3\u003e処理の流れ図\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003eユーザーの入力\n    ↓\n[1. user-prompt-submit-hook] ← プロンプトを拡張\n    ↓\nClaude Codeが処理\n    ↓\nツール実行が必要な場合\n    ↓\n[2. tool-pre-hook] ← 危険な操作をチェック\n    ↓\nツール実行（ファイル編集、コマンド実行など）\n    ↓\n[3. tool-post-hook] ← 結果をログに記録\n    ↓\nユーザーへの返信\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e1. user-prompt-submit-hook\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eいつ動く？\u003c/strong\u003e: プロンプトを送信する直前\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e何ができる？\u003c/strong\u003e: プロンプトの内容を自動的に拡張・修正\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e失敗した場合\u003c/strong\u003e: エラーは無視され、元のプロンプトが送信される\u003c/p\u003e\n\u003ch3\u003e2. tool-pre-hook\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eいつ動く？\u003c/strong\u003e: Claude Codeがツール（ファイル編集、コマンド実行など）を使う直前\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e何ができる？\u003c/strong\u003e: 危険な操作をブロック、パラメータの修正\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e失敗した場合\u003c/strong\u003e: 終了コード0以外でツール実行がキャンセルされる\u003c/p\u003e\n\u003ch3\u003e3. tool-post-hook\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eいつ動く？\u003c/strong\u003e: ツールの実行が完了した直後\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e何ができる？\u003c/strong\u003e: 実行結果のログ記録、後処理の実行\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e失敗した場合\u003c/strong\u003e: エラーは無視され、Claude Codeの処理は継続される\u003c/p\u003e\n\u003ch2\u003e実装手順：ゼロから始めるHooks設定\u003c/h2\u003e\n\u003ch3\u003eグローバル設定とプロジェクト設定の違い\u003c/h3\u003e\n\u003ch4\u003eグローバル設定（すべてのプロジェクトに適用）\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e設定場所\u003c/strong\u003e: \u003ccode\u003e~/.claude/settings.json\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e用途\u003c/strong\u003e: すべてのプロジェクトで共通して使いたいHooks\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e例\u003c/strong\u003e: タスク完了通知、危険コマンドのブロック\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4\u003eプロジェクト設定（特定プロジェクトのみ）\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e設定場所\u003c/strong\u003e: \u003ccode\u003e{プロジェクトルート}/.claude/settings.json\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e用途\u003c/strong\u003e: そのプロジェクト固有のHooks\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e例\u003c/strong\u003e: プロジェクト固有のフォーマッタ、テスト実行\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eディレクトリ構造の例\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003e# グローバル設定の場合\n~/\n├── .claude/\n│   ├── settings.json          # グローバル設定ファイル\n│   └── hooks/                 # グローバルHooksスクリプト\n│       ├── prompt-enhancer.sh\n│       ├── safety-check.sh\n│       └── logger.sh\n\n# プロジェクト設定の場合\nmy-project/\n├── .claude/\n│   ├── settings.json          # プロジェクト設定ファイル\n│   └── hooks/                 # プロジェクトHooksスクリプト\n│       ├── format-code.sh\n│       └── run-tests.sh\n├── src/\n├── package.json\n└── README.md\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eステップ1: 設定ファイルの作成\u003c/h3\u003e\n\u003cp\u003eプロジェクトのルートディレクトリに\u003ccode\u003e.claude\u003c/code\u003eフォルダを作成し、\u003ccode\u003esettings.json\u003c/code\u003eを配置します：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# プロジェクト設定の場合\nmkdir -p .claude/hooks\ntouch .claude/settings.json\n\n# グローバル設定の場合\nmkdir -p ~/.claude/hooks\ntouch ~/.claude/settings.json\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eステップ2: 基本的な設定の記述\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003e.claude/settings.json\u003c/code\u003eに以下の内容を記述：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"UserPromptSubmit\": [\n      {\n        \"matcher\": \"*\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"~/my-hooks/prompt-enhancer.sh\"\n          }\n        ]\n      }\n    ],\n    \"PreToolUse\": [\n      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"~/my-hooks/bash-safety-check.sh\"\n          }\n        ]\n      },\n      {\n        \"matcher\": \"Write|Edit|MultiEdit\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"~/my-hooks/file-safety-check.sh\"\n          }\n        ]\n      }\n    ],\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"*\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"~/my-hooks/logger.sh\"\n          }\n        ]\n      }\n    ]\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e注意\u003c/strong\u003e: パスは\u003ccode\u003esettings.json\u003c/code\u003eからの相対パスで指定します。\u003c/p\u003e\n\u003ch3\u003e複数のスクリプトを同じHookに登録する方法\u003c/h3\u003e\n\u003cp\u003eClaude Code Hooksには\u003cstrong\u003e新旧2つの設定形式\u003c/strong\u003eがあり、新しい形式では複数のスクリプトを登録できます。\u003c/p\u003e\n\u003ch4\u003e新しい形式（推奨） - 複数スクリプト対応\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e特徴\u003c/strong\u003e：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eイベント名: \u003ccode\u003ePreToolUse\u003c/code\u003e、\u003ccode\u003ePostToolUse\u003c/code\u003e、\u003ccode\u003eNotification\u003c/code\u003e、\u003ccode\u003eStop\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e配列形式で複数のスクリプトを登録可能\u003c/li\u003e\n\u003cli\u003ematcherでツールを指定可能\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"Write|Edit|MultiEdit\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"./hooks/format-code.sh\"\n          },\n          {\n            \"type\": \"command\",\n            \"command\": \"./hooks/validate-syntax.sh\"\n          },\n          {\n            \"type\": \"command\",\n            \"command\": \"./hooks/notify-changes.sh\"\n          }\n        ]\n      }\n    ]\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eこの設定では、Write、Edit、MultiEditツールの実行後に3つのスクリプトが順番に実行されます。\u003c/p\u003e\n\u003ch4\u003e旧い形式（廃止予定） - 単一スクリプトのみ\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e特徴\u003c/strong\u003e：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eイベント名: \u003ccode\u003etool-post-hook\u003c/code\u003e、\u003ccode\u003etool-pre-hook\u003c/code\u003e、\u003ccode\u003euser-prompt-submit-hook\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e1つのスクリプトパスのみ指定可能\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"tool-post-hook\": \"./hooks/single-script.sh\"\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003e旧形式で複数処理を実現する方法\u003c/h4\u003e\n\u003ch5\u003e方法1: ラッパースクリプトを作成\u003c/h5\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n# 入力を変数に保存（複数のスクリプトで使用するため）\ninput_data=$(cat)\n\n# スクリプト1: ログ記録\necho \"$input_data\" | ./hooks/logger.sh \u003e /tmp/result1.txt\n\n# スクリプト2: 通知\necho \"$input_data\" | ./hooks/notifier.sh \u003e /tmp/result2.txt\n\n# スクリプト3: フォーマッタ\nresult=$(echo \"$input_data\" | ./hooks/formatter.sh)\n\n# 最後のスクリプトの結果を返す\necho \"$result\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch5\u003e方法2: 1つのスクリプトに複数の機能を統合\u003c/h5\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\ninput_data=$(cat)\n\n# 機能1: ログ記録\necho \"$(date): $input_data\" \u003e\u003e .claude/logs/activity.log\n\n# 機能2: 危険コマンドチェック\nif echo \"$input_data\" | grep -q \"rm -rf\"; then\n    echo \"危険なコマンドを検出\" \u003e\u0026#x26;2\nfi\n\n# 機能3: 通知\nif echo \"$input_data\" | grep -q \"completed\"; then\n    osascript -e 'display notification \"タスク完了\" with title \"Claude Code\"'\nfi\n\n# 元のデータを返す\necho \"$input_data\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e新形式への移行方法\u003c/h3\u003e\n\u003cp\u003e現在プロジェクトで使用中の旧形式を新形式に移行する例：\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e旧形式\u003c/strong\u003e：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"tool-post-hook\": \"./hooks/task-notifier.sh\"\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e新形式\u003c/strong\u003e：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"*\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"./hooks/task-notifier.sh\"\n          }\n        ]\n      }\n    ]\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eMatcherの指定方法\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e特定のツールのみ\u003c/strong\u003e：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e\"matcher\": \"Write\"  // Writeツールのみ\n\"matcher\": \"Bash\"   // Bashコマンドのみ\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e複数ツール\u003c/strong\u003e：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e\"matcher\": \"Write|Edit|MultiEdit\"  // ファイル編集系\n\"matcher\": \"Read|Grep|LS\"          // ファイル読み取り系\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e全ツール\u003c/strong\u003e：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e\"matcher\": \"*\"  // すべてのツール\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eグローバルとプロジェクトHookの併用\u003c/h3\u003e\n\u003cp\u003e新形式では、グローバル設定とプロジェクト設定の\u003cstrong\u003e両方のHookが実行\u003c/strong\u003eされます。設定ファイルは以下の順序で読み込まれ、すべての一致するフックが実行されます：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003eグローバル設定\u003c/strong\u003e: \u003ccode\u003e~/.claude/settings.json\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eローカル設定\u003c/strong\u003e: \u003ccode\u003e~/.claude/settings.local.json\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eプロジェクト設定\u003c/strong\u003e: \u003ccode\u003e.claude/settings.json\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eプロジェクトローカル設定\u003c/strong\u003e: \u003ccode\u003e.claude/settings.local.json\u003c/code\u003e\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cstrong\u003e例\u003c/strong\u003e: グローバルで汎用的なログ、プロジェクトで固有の通知を設定\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e// ~/.claude/settings.json（グローバル）\n{\n  \"hooks\": {\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"*\",\n        \"hooks\": [\n          {\"type\": \"command\", \"command\": \"~/.claude/hooks/global-logger.sh\"}\n        ]\n      }\n    ]\n  }\n}\n\n// .claude/settings.json（プロジェクト）\n{\n  \"hooks\": {\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"TodoWrite\",\n        \"hooks\": [\n          {\"type\": \"command\", \"command\": \"./hooks/task-notifier.sh\"}\n        ]\n      }\n    ]\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eステップ3: Hookスクリプトの作成\u003c/h3\u003e\n\u003cp\u003e各Hookスクリプトを\u003ccode\u003e.claude/hooks/\u003c/code\u003eディレクトリに作成します。\u003c/p\u003e\n\u003ch2\u003e実践例1: プロンプト自動拡張Hook\u003c/h2\u003e\n\u003cp\u003e現在のGitブランチ名やタスク情報を自動的にプロンプトに追加する例です。\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ehooks/prompt-enhancer.sh\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n# このスクリプトはプロンプト送信前に実行されます\n\n# 元のプロンプトを標準入力から読み込む\noriginal_prompt=$(cat)\n\n# 現在のGitブランチを取得（エラーの場合は\"main\"を使用）\nbranch=$(git branch --show-current 2\u003e/dev/null || echo \"main\")\n\n# タスクファイルの内容を取得\ntask_content=\"\"\nif [ -f \".tmp/task.md\" ]; then\n    task_content=$(cat .tmp/task.md)\nfi\n\n# 拡張したプロンプトを標準出力に出力\n# EOFまでの内容がそのまま出力される（ヒアドキュメント）\ncat \u0026#x3C;\u0026#x3C; EOF\n=== コンテキスト情報 ===\n現在のブランチ: $branch\n${task_content:+現在のタスク:\n$task_content}\n===================\n\n$original_prompt\nEOF\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eこのHookが受け取るデータ\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003e# 標準入力から受け取る内容の例：\n\"バグを修正して\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e動作の仕組み\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003eユーザーが「バグを修正して」と入力\u003c/li\u003e\n\u003cli\u003eHookが自動的にGitブランチ名とタスク情報を追加\u003c/li\u003e\n\u003cli\u003eClaude Codeは拡張された情報を受け取って、より的確な対応が可能に\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch2\u003e実践例2: 危険コマンドブロックHook\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003erm -rf\u003c/code\u003eなどの危険なコマンドをブロックする例です。\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ehooks/safety-check.sh\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n# tool-pre-hook: ツール実行前にチェックを行う\n\n# ツール情報をJSONとして標準入力から読み込む\ntool_info=$(cat)\n\n# デバッグ用：受け取ったJSONをエラー出力に表示（本番では削除）\n# echo \"受信したJSON: $tool_info\" \u003e\u0026#x26;2\n\n# jqがインストールされている場合（推奨）\nif command -v jq \u0026#x26;\u003e /dev/null; then\n    command=$(echo \"$tool_info\" | jq -r '.tool_input.command // \"\"')\nelse\n    # jqがない場合の代替方法（正規表現でコマンドを抽出）\n    # grep -o: マッチした部分のみ出力\n    # cut -d'\"' -f4: ダブルクォートで区切って4番目のフィールドを取得\n    command=$(echo \"$tool_info\" | grep -o '\"command\":\"[^\"]*\"' | cut -d'\"' -f4)\nfi\n\n# 危険なコマンドパターンをチェック\nif echo \"$command\" | grep -qE \"rm -rf|dd if=|mkfs|\u003e\" ; then\n    # \u003e\u0026#x26;2 はエラー出力への出力（Claude Codeの画面に表示される）\n    echo \"⚠️ 危険なコマンドが検出されました: $command\" \u003e\u0026#x26;2\n    echo \"実行をブロックしました。\" \u003e\u0026#x26;2\n    exit 1  # 終了コード1（0以外）= ツール実行をキャンセル\nfi\n\n# 問題なければ元の情報をそのまま標準出力に返す\necho \"$tool_info\"\nexit 0  # 終了コード0 = ツール実行を許可\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eこのHookが受け取るJSONデータの例\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"tool_name\": \"run_shell_command\",\n  \"tool_input\": {\n    \"command\": \"rm -rf /important_folder\"\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eブロックされるコマンド例\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003erm -rf /\u003c/code\u003e: システム全体を削除する危険なコマンド\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003edd if=/dev/zero of=/dev/sda\u003c/code\u003e: ディスクを完全に消去\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e\u003e important_file.txt\u003c/code\u003e: ファイルを空にする\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e実践例3: 実行ログ記録Hook\u003c/h2\u003e\n\u003cp\u003eすべてのツール実行を記録する例です。\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ehooks/logger.sh\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n# tool-post-hook: ツール実行後の処理\n\n# ログディレクトリを作成（存在しない場合のみ）\nLOG_DIR=\".claude/logs\"\nmkdir -p \"$LOG_DIR\"\n\n# 実行結果を標準入力から読み込む\nexecution_result=$(cat)\n\n# タイムスタンプ付きでログに記録\ntimestamp=$(date '+%Y-%m-%d %H:%M:%S')\nlog_file=\"$LOG_DIR/$(date '+%Y%m%d').log\"\n\n# ログエントリを作成（\u003e\u003eは追記モード）\n{\n    echo \"[$timestamp]\"\n    echo \"$execution_result\"\n    echo \"---\"\n} \u003e\u003e \"$log_file\"\n\n# macOS通知を送信（タスク完了時）\n# osascriptはmacOSのAppleScriptを実行するコマンド\nif echo \"$execution_result\" | grep -q \"task.*complete\"; then\n    osascript -e 'display notification \"タスクが完了しました！\" with title \"Claude Code\"'\nfi\n\n# Windows環境の場合（PowerShell使用）\n# if echo \"$execution_result\" | grep -q \"task.*complete\"; then\n#     powershell -Command \"New-BurntToastNotification -Text 'Claude Code', 'タスクが完了しました！'\"\n# fi\n\n# 結果をそのまま標準出力に返す（Claude Codeの処理を妨げない）\necho \"$execution_result\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eこのHookが受け取るJSONデータの例\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"tool_name\": \"write_file\",\n  \"tool_input\": {\n    \"file_path\": \"/path/to/file.js\",\n    \"content\": \"console.log('Hello');\"\n  },\n  \"tool_output\": \"File written successfully\"\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eより実践的な使用例\u003c/h2\u003e\n\u003ch3\u003e1. コード保存時の自動フォーマット\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ehooks/auto-format.sh\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n\ntool_info=$(cat)\n\n# ファイル書き込みツールの場合\nif echo \"$tool_info\" | grep -q '\"tool_name\":\"write_file\"'; then\n    # ファイルパスを抽出\n    file_path=$(echo \"$tool_info\" | grep -o '\"file_path\":\"[^\"]*\"' | cut -d'\"' -f4)\n\n    # 拡張子に応じてフォーマッタを実行\n    case \"$file_path\" in\n        *.js|*.ts|*.jsx|*.tsx)\n            # Prettierでフォーマット（後で実行）\n            echo \"prettier --write $file_path\" \u003e\u003e .claude/post-commands.sh\n            ;;\n        *.py)\n            # Blackでフォーマット\n            echo \"black $file_path\" \u003e\u003e .claude/post-commands.sh\n            ;;\n    esac\nfi\n\necho \"$tool_info\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e2. テスト自動実行\u003c/h3\u003e\n\u003cp\u003eファイル変更時に関連テストを自動実行：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n\ntool_info=$(cat)\n\n# ソースファイルが変更された場合\nif echo \"$tool_info\" | grep -qE '\"file_path\":\".*\\.(js|ts|py)\"'; then\n    file_path=$(echo \"$tool_info\" | grep -o '\"file_path\":\"[^\"]*\"' | cut -d'\"' -f4)\n\n    # テストファイルを探して実行\n    test_file=\"${file_path%.js}.test.js\"\n    if [ -f \"$test_file\" ]; then\n        npm test \"$test_file\" 2\u003e\u0026#x26;1 | tail -5\n    fi\nfi\n\necho \"$tool_info\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eHooksが受け取るデータのまとめ\u003c/h2\u003e\n\u003ch3\u003e各Hookの入出力仕様\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003euser-prompt-submit-hook\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e標準入力で受け取る: プロンプト文字列\u003c/li\u003e\n\u003cli\u003e標準出力に返すべき内容: 拡張されたプロンプト\u003c/li\u003e\n\u003cli\u003eエラー時の動作: 無視される\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003etool-pre-hook\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e標準入力で受け取る: ツール情報JSON\u003c/li\u003e\n\u003cli\u003e標準出力に返すべき内容: 同じまたは修正されたJSON\u003c/li\u003e\n\u003cli\u003eエラー時の動作: exit 1でキャンセル\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003etool-post-hook\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e標準入力で受け取る: 実行結果JSON\u003c/li\u003e\n\u003cli\u003e標準出力に返すべき内容: 任意（通常は元のまま）\u003c/li\u003e\n\u003cli\u003eエラー時の動作: 無視される\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eトラブルシューティング\u003c/h2\u003e\n\u003ch3\u003eよくある問題と解決方法\u003c/h3\u003e\n\u003ch4\u003e1. Hookが実行されない\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e原因\u003c/strong\u003e: 実行権限がない\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e解決方法\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# ⚠️ 警告: スクリプトの内容を確認してから実行権限を付与してください\n# 不明なスクリプトに実行権限を与えるとセキュリティリスクがあります\n\n# まずスクリプトの内容を確認\ncat hooks/*.sh\n\n# 内容が安全であることを確認してから実行権限を付与\nchmod +x hooks/*.sh\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003e2. JSONの解析でエラー\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e原因\u003c/strong\u003e: \u003ccode\u003ejq\u003c/code\u003eコマンドがインストールされていない\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e解決方法\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# macOS\nbrew install jq\n\n# Windows (Chocolatey)\nchoco install jq\n\n# または、grepとsedで代替\necho \"$json\" | grep -o '\"key\":\"[^\"]*\"' | cut -d'\"' -f4\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003e3. パスが見つからない\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e原因\u003c/strong\u003e: 相対パスが正しくない\n\u003cstrong\u003e解決方法\u003c/strong\u003e: 絶対パスを使用\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"tool-post-hook\": \"/Users/yourname/project/hooks/logger.sh\"\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4\u003e4. デバッグ方法\u003c/h4\u003e\n\u003cp\u003eHookが正しく動作しているか確認するには：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# デバッグメッセージをエラー出力に表示\necho \"デバッグ: ここまで実行されました\" \u003e\u0026#x26;2\necho \"受け取ったデータ: $data\" \u003e\u0026#x26;2\n\n# デバッグログファイルに出力\necho \"$(date): Hook実行\" \u003e\u003e /tmp/hook-debug.log\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eセキュリティ上の注意点\u003c/h2\u003e\n\u003ch3\u003e1. スクリプトの権限管理\u003c/h3\u003e\n\u003cp\u003eHookスクリプトには最小限の権限のみを付与：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 所有者のみ実行可能\nchmod 700 hooks/*.sh\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e2. 入力値の検証\u003c/h3\u003e\n\u003cp\u003e外部入力は必ず検証：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 悪意のあるコマンドインジェクションを防ぐ\nif [[ \"$input\" =~ ^[a-zA-Z0-9_-]+$ ]]; then\n    # 安全な入力のみ処理\n    process_input \"$input\"\nfi\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e3. ログの保護\u003c/h3\u003e\n\u003cp\u003e機密情報をログに記録しない：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# パスワードやトークンをマスク\necho \"$result\" | sed 's/password=.*/password=****/g' \u003e\u003e log.txt\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eベストプラクティス\u003c/h2\u003e\n\u003ch3\u003e1. Hookは軽量に保つ\u003c/h3\u003e\n\u003cp\u003eHookの処理は高速に：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e重い処理は非同期で実行\u003c/li\u003e\n\u003cli\u003eタイムアウトを設定\u003c/li\u003e\n\u003cli\u003e必要最小限の処理のみ\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e2. エラーハンドリング\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\nset -e  # エラー時に即座に終了\ntrap 'echo \"Error occurred at line $LINENO\"' ERR\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e3. デバッグモード\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# DEBUG環境変数でデバッグモードを切り替え\nif [ \"$DEBUG\" = \"1\" ]; then\n    set -x  # コマンドを表示\n    exec 2\u003ehooks-debug.log  # エラーをログファイルに\nfi\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eハンズオン：タスク完了通知Hookを作ってみよう\u003c/h2\u003e\n\u003cp\u003e実際にHookを作成して動作を体験してみましょう。ここでは、タスクが完了したときにmacOSで通知を表示するHookを作成します。\u003c/p\u003e\n\u003ch3\u003eステップ1: プロジェクトディレクトリに設定を作成\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# プロジェクトのルートディレクトリで実行\nmkdir -p .claude/hooks\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eステップ2: 通知スクリプトを作成\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003e.claude/hooks/task-notifier.sh\u003c/code\u003eを作成：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n# tool-post-hook: タスク完了時に通知を送る\n\n# 実行結果を標準入力から読み込む\nexecution_result=$(cat)\n\n# TodoWriteツールの実行を検知\nif echo \"$execution_result\" | grep -q '\"tool_name\":\"TodoWrite\"'; then\n    # completedステータスへの変更を検知\n    if echo \"$execution_result\" | grep -q '\"status\":\"completed\"'; then\n        # macOSの通知を送信\n        osascript -e 'display notification \"タスクが完了しました！🎉\" with title \"Claude Code\" sound name \"Glass\"'\n    fi\nfi\n\n# タスク関連のキーワードで通知\nif echo \"$execution_result\" | grep -qi \"task.*complet\\|完了\\|finished\"; then\n    osascript -e 'display notification \"作業が完了しました！\" with title \"Claude Code\"'\nfi\n\n# 結果をそのまま標準出力に返す（重要！）\necho \"$execution_result\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eステップ3: settings.jsonを設定\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003e.claude/settings.json\u003c/code\u003eを作成：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"tool-post-hook\": \"./hooks/task-notifier.sh\"\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eステップ4: 実行権限を付与\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# スクリプトの内容を確認\ncat .claude/hooks/task-notifier.sh\n\n# 安全であることを確認してから権限付与\nchmod +x .claude/hooks/task-notifier.sh\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eステップ5: 動作確認\u003c/h3\u003e\n\u003cp\u003eClaude Codeでタスクを完了させて、通知が表示されることを確認：\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e「README.mdを更新して」\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eタスクが完了すると、macOSの通知センターに「タスクが完了しました！🎉」と表示されます。\u003c/p\u003e\n\u003ch3\u003eトラブルシューティング\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e通知が表示されない場合：\u003c/strong\u003e\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eシステム環境設定 → 通知とフォーカス → ターミナルの通知が有効か確認\u003c/li\u003e\n\u003cli\u003eスクリプトの実行権限を確認: \u003ccode\u003els -la .claude/hooks/\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eデバッグ出力を追加して確認：\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003eecho \"Hook実行中: $(date)\" \u003e\u003e /tmp/hook-debug.log\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3\u003eWindows版の代替実装\u003c/h3\u003e\n\u003cp\u003eWindowsの場合は、PowerShellを使用：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\nexecution_result=$(cat)\n\nif echo \"$execution_result\" | grep -qi \"task.*complet\\|完了\"; then\n    # Windows通知\n    powershell -Command \"\n        Add-Type -AssemblyName System.Windows.Forms\n        \\$notification = New-Object System.Windows.Forms.NotifyIcon\n        \\$notification.Icon = [System.Drawing.SystemIcons]::Information\n        \\$notification.BalloonTipTitle = 'Claude Code'\n        \\$notification.BalloonTipText = 'タスクが完了しました！'\n        \\$notification.Visible = \\$true\n        \\$notification.ShowBalloonTip(5000)\n    \"\nfi\n\necho \"$execution_result\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e実装のポイント\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003e標準入力から読み込む\u003c/strong\u003e: \u003ccode\u003e$(cat)\u003c/code\u003eでJSONデータを受け取る\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e条件判定\u003c/strong\u003e: \u003ccode\u003egrep\u003c/code\u003eでキーワードを検索\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e通知の実行\u003c/strong\u003e: OS固有のコマンドを使用\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e元データを返す\u003c/strong\u003e: 必ず\u003ccode\u003eecho \"$execution_result\"\u003c/code\u003eで返す\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eこれで、あなたも独自のHookを作成できるようになりました！\u003c/p\u003e\n\u003ch2\u003eまとめ\u003c/h2\u003e\n\u003cp\u003eClaude Code Hooksを使えば：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003eプロンプトの自動拡張\u003c/strong\u003eで、コンテキストを自動追加\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e危険操作のブロック\u003c/strong\u003eで、安全性を確保\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e実行ログの記録\u003c/strong\u003eで、作業履歴を管理\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e自動フォーマット\u003c/strong\u003eで、コード品質を維持\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e通知機能\u003c/strong\u003eで、作業の進捗を把握\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eこれらの機能により、開発効率が大幅に向上します。\u003c/p\u003e\n\u003ch3\u003e次のステップ\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e基本的なHookから始める（まずはログ記録から）\u003c/li\u003e\n\u003cli\u003eチーム固有のニーズに合わせてカスタマイズ\u003c/li\u003e\n\u003cli\u003e複数のHookを組み合わせて高度な自動化を実現\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3\u003e学習のポイント\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eHooksは「イベント駆動」の自動化\u003c/li\u003e\n\u003cli\u003e標準入出力を使った情報の受け渡し\u003c/li\u003e\n\u003cli\u003e終了コードで実行の可否を制御\u003c/li\u003e\n\u003cli\u003eシェルスクリプトの基本が重要\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eこれでClaude Code Hooksの基本から実践まで理解できたはずです。さあ、あなたの開発ワークフローを自動化してみましょう！\u003c/p\u003e\n\u003ch2\u003e参考リンク\u003c/h2\u003e\n\u003ch3\u003e公式ドキュメント\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://docs.anthropic.com/claude-code\"\u003eClaude Code 公式ドキュメント\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://docs.anthropic.com/en/docs/claude-code/hooks\"\u003eClaude Code Hooks詳細ドキュメント\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://docs.anthropic.com/en/docs/claude-code/settings\"\u003eClaude Code Settings仕様\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e参考にした情報源\u003c/h3\u003e\n\u003cp\u003e本記事の新形式に関する情報は、以下の調査により確認しました：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eClaude Code公式ドキュメントのHooksページ（WebFetch APIで確認）\u003c/li\u003e\n\u003cli\u003eグローバル設定ファイル（\u003ccode\u003e~/.claude/settings.json\u003c/code\u003e）の実例確認\u003c/li\u003e\n\u003cli\u003eClaude Code内部のTaskツールによる詳細調査\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e関連技術ドキュメント\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://www.gnu.org/software/bash/manual/\"\u003eBash スクリプティングガイド\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://stedolan.github.io/jq/manual/\"\u003ejq マニュアル\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA-Git-%E3%83%95%E3%83%83%E3%82%AF\"\u003eGit Hooks ドキュメント\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto py-10 px-4\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold mb-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-green-600\",\"children\":[\"#\",24]}],\" \",\"Claude Code Hooks完全ガイド：開発ワークフローを自動化する魔法の仕組み\"]}],[\"$\",\"ul\",null,{\"className\":\"list-none border-b border-gray-600 pb-4 mb-6\",\"children\":[[\"$\",\"li\",null,{\"className\":\"text-gray-500 text-sm\",\"children\":[\"作成日時: \",\"2025-08-07 19:16\"]}],\"$undefined\",[\"$\",\"li\",null,{\"className\":\"flex flex-wrap gap-2 mt-2\",\"children\":[[\"$\",\"span\",\"0\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Claude Code\"}],[\"$\",\"span\",\"1\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Hooks\"}],[\"$\",\"span\",\"2\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"自動化\"}],[\"$\",\"span\",\"3\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"開発効率化\"}],[\"$\",\"span\",\"4\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"macOS\"}]]}]]}],[\"$\",\"nav\",null,{\"className\":\"mb-6 pb-4 border-b border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"article\",null,{\"className\":\"prose dark:prose-invert\",\"dangerouslySetInnerHTML\":{\"__html\":\"$13\"}}],[\"$\",\"nav\",null,{\"className\":\"mt-8 pt-4 border-t border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}]]}]\n"])</script><script>self.__next_f.push([1,"d:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n8:null\n"])</script><script>self.__next_f.push([1,"11:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\nb:{\"metadata\":\"$11:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>
+</ul></article><nav class="mt-8 pt-4 border-t border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-29ebadaebe2fcb3f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n5:I[9665,[],\"MetadataBoundary\"]\n7:I[9665,[],\"OutletBoundary\"]\na:I[4911,[],\"AsyncMetadataOutlet\"]\nc:I[9665,[],\"ViewportBoundary\"]\ne:I[6614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/ce87a0c8fce915ba.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"rDTXMpKruKQ49B_bWbVp4\",\"p\":\"\",\"c\":[\"\",\"blog\",\"claude-code-hooks-guide\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"claude-code-hooks-guide\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/ce87a0c8fce915ba.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"blog\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"claude-code-hooks-guide\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",[\"$\",\"$L5\",null,{\"children\":\"$L6\"}],null,[\"$\",\"$L7\",null,{\"children\":[\"$L8\",\"$L9\",[\"$\",\"$La\",null,{\"promise\":\"$@b\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"NdRWFuRw0XlHvx5KVwYGQ\",{\"children\":[[\"$\",\"$Lc\",null,{\"children\":\"$Ld\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$e\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"f:\"$Sreact.suspense\"\n10:I[4911,[],\"AsyncMetadata\"]\n6:[\"$\",\"$f\",null,{\"fallback\":null,\"children\":[\"$\",\"$L10\",null,{\"promise\":\"$@11\"}]}]\n"])</script><script>self.__next_f.push([1,"9:null\n"])</script><script>self.__next_f.push([1,"12:I[6874,[\"874\",\"static/chunks/874-8d3839f72fd80c3c.js\",\"953\",\"static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js\"],\"\"]\n13:T8033,"])</script><script>self.__next_f.push([1,"\u003cp\u003eClaude Codeで作業していて、「コード保存時に自動でフォーマットしたい」「タスク完了時に通知が欲しい」と思ったことはありませんか？Hooks機能を使えば、これらの自動化が簡単に実現できます。\u003c/p\u003e\n\u003ch2 id=\"この記事で学べること\"\u003eこの記事で学べること\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e🔰 \u003cstrong\u003e初級\u003c/strong\u003e: Hooksの基本概念と最初の設定\u003c/li\u003e\n\u003cli\u003e🔥 \u003cstrong\u003e中級\u003c/strong\u003e: 8種類のイベントタイプと実践的な自動化\u003c/li\u003e\n\u003cli\u003e💀 \u003cstrong\u003e上級\u003c/strong\u003e: セキュリティ対策とパフォーマンス最適化\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"5分で試せるクイックスタート-\"\u003e5分で試せるクイックスタート 🚀\u003c/h2\u003e\n\u003cp\u003eまずは動く例を試してみましょう！\u003c/p\u003e\n\u003ch3 id=\"1-フォルダを作成30秒\"\u003e1. フォルダを作成（30秒）\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003emkdir -p ~/.claude/hooks\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-簡単なhookスクリプトを作成1分\"\u003e2. 簡単なHookスクリプトを作成（1分）\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003ecat \u003e ~/.claude/hooks/hello.sh \u0026#x3C;\u0026#x3C; 'EOF'\n#!/bin/bash\necho \"🎉 Hook is working!\" \u003e\u0026#x26;2\ncat  # 入力をそのまま出力（重要！）\nEOF\n\nchmod +x ~/.claude/hooks/hello.sh\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"3-設定ファイルを作成1分\"\u003e3. 設定ファイルを作成（1分）\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003ecat \u003e ~/.claude/settings.json \u0026#x3C;\u0026#x3C; 'EOF'\n{\n  \"hooks\": {\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"*\",\n        \"hooks\": [\n          {\"type\": \"command\", \"command\": \"~/.claude/hooks/hello.sh\"}\n        ]\n      }\n    ]\n  }\n}\nEOF\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"4-動作確認30秒\"\u003e4. 動作確認（30秒）\u003c/h3\u003e\n\u003cp\u003eClaude Codeで何かファイルを読んだり、コマンドを実行すると「🎉 Hook is working!」が表示されます！\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e成功したら\u003c/strong\u003e: 下記の詳細な説明に進みましょう\n\u003cstrong\u003eうまくいかない場合\u003c/strong\u003e: トラブルシューティングセクションを参照\u003c/p\u003e\n\u003ch2 id=\"前提知識\"\u003e前提知識\u003c/h2\u003e\n\u003cp\u003eこの記事を読むには、以下の基本的な知識があるとスムーズです：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e基本的なシェルコマンド（\u003ccode\u003ecd\u003c/code\u003e, \u003ccode\u003els\u003c/code\u003e, \u003ccode\u003eecho\u003c/code\u003e, \u003ccode\u003ecat\u003c/code\u003eなど）\u003c/li\u003e\n\u003cli\u003eファイルのパーミッション（実行権限）の概念\u003c/li\u003e\n\u003cli\u003eJSONフォーマットの基本\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"はじめにhooksとは何か\"\u003eはじめに：Hooksとは何か？\u003c/h2\u003e\n\u003cp\u003eHooks（フック）は、特定のイベントが発生したときに自動的に実行されるスクリプトやコマンドのことです。釣り針（hook）のように、イベントを「引っ掛けて」処理を実行するイメージです。\u003c/p\u003e\n\u003ch3 id=\"身近な例で理解するhooks\"\u003e身近な例で理解するHooks\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eGitのフック\u003c/strong\u003e: コミット前にテストを自動実行\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eWebフック\u003c/strong\u003e: GitHubにプッシュしたらSlackに通知\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eClaude Code Hooks\u003c/strong\u003e: AIがツールを使う前後に独自の処理を挿入\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"claude-code-hooksの3つの種類\"\u003eClaude Code Hooksの3つの種類\u003c/h2\u003e\n\u003cp\u003eClaude Codeには、主に3種類のHooksがあります：\u003c/p\u003e\n\u003ch3 id=\"処理の流れ図\"\u003e処理の流れ図\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003eユーザーの入力\n    ↓\n[1. user-prompt-submit-hook] ← プロンプトを拡張\n    ↓\nClaude Codeが処理\n    ↓\nツール実行が必要な場合\n    ↓\n[2. tool-pre-hook] ← 危険な操作をチェック\n    ↓\nツール実行（ファイル編集、コマンド実行など）\n    ↓\n[3. tool-post-hook] ← 結果をログに記録\n    ↓\nユーザーへの返信\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"1-user-prompt-submit-hook\"\u003e1. user-prompt-submit-hook\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eいつ動く？\u003c/strong\u003e: プロンプトを送信する直前\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e何ができる？\u003c/strong\u003e: プロンプトの内容を自動的に拡張・修正\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e失敗した場合\u003c/strong\u003e: エラーは無視され、元のプロンプトが送信される\u003c/p\u003e\n\u003ch3 id=\"2-tool-pre-hook\"\u003e2. tool-pre-hook\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eいつ動く？\u003c/strong\u003e: Claude Codeがツール（ファイル編集、コマンド実行など）を使う直前\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e何ができる？\u003c/strong\u003e: 危険な操作をブロック、パラメータの修正\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e失敗した場合\u003c/strong\u003e: 終了コード0以外でツール実行がキャンセルされる\u003c/p\u003e\n\u003ch3 id=\"3-tool-post-hook\"\u003e3. tool-post-hook\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eいつ動く？\u003c/strong\u003e: ツールの実行が完了した直後\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e何ができる？\u003c/strong\u003e: 実行結果のログ記録、後処理の実行\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e失敗した場合\u003c/strong\u003e: エラーは無視され、Claude Codeの処理は継続される\u003c/p\u003e\n\u003ch2 id=\"実装手順ゼロから始めるhooks設定\"\u003e実装手順：ゼロから始めるHooks設定\u003c/h2\u003e\n\u003ch3 id=\"グローバル設定とプロジェクト設定の違い\"\u003eグローバル設定とプロジェクト設定の違い\u003c/h3\u003e\n\u003ch4 id=\"グローバル設定すべてのプロジェクトに適用\"\u003eグローバル設定（すべてのプロジェクトに適用）\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e設定場所\u003c/strong\u003e: \u003ccode\u003e~/.claude/settings.json\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e用途\u003c/strong\u003e: すべてのプロジェクトで共通して使いたいHooks\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e例\u003c/strong\u003e: タスク完了通知、危険コマンドのブロック\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"プロジェクト設定特定プロジェクトのみ\"\u003eプロジェクト設定（特定プロジェクトのみ）\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e設定場所\u003c/strong\u003e: \u003ccode\u003e{プロジェクトルート}/.claude/settings.json\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e用途\u003c/strong\u003e: そのプロジェクト固有のHooks\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e例\u003c/strong\u003e: プロジェクト固有のフォーマッタ、テスト実行\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"ディレクトリ構造の例\"\u003eディレクトリ構造の例\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003e# グローバル設定の場合\n~/\n├── .claude/\n│   ├── settings.json          # グローバル設定ファイル\n│   └── hooks/                 # グローバルHooksスクリプト\n│       ├── prompt-enhancer.sh\n│       ├── safety-check.sh\n│       └── logger.sh\n\n# プロジェクト設定の場合\nmy-project/\n├── .claude/\n│   ├── settings.json          # プロジェクト設定ファイル\n│   └── hooks/                 # プロジェクトHooksスクリプト\n│       ├── format-code.sh\n│       └── run-tests.sh\n├── src/\n├── package.json\n└── README.md\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"ステップ1-設定ファイルの作成\"\u003eステップ1: 設定ファイルの作成\u003c/h3\u003e\n\u003cp\u003eプロジェクトのルートディレクトリに\u003ccode\u003e.claude\u003c/code\u003eフォルダを作成し、\u003ccode\u003esettings.json\u003c/code\u003eを配置します：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# プロジェクト設定の場合\nmkdir -p .claude/hooks\ntouch .claude/settings.json\n\n# グローバル設定の場合\nmkdir -p ~/.claude/hooks\ntouch ~/.claude/settings.json\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"ステップ2-基本的な設定の記述\"\u003eステップ2: 基本的な設定の記述\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003e.claude/settings.json\u003c/code\u003eに以下の内容を記述：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"UserPromptSubmit\": [\n      {\n        \"matcher\": \"*\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"~/my-hooks/prompt-enhancer.sh\"\n          }\n        ]\n      }\n    ],\n    \"PreToolUse\": [\n      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"~/my-hooks/bash-safety-check.sh\"\n          }\n        ]\n      },\n      {\n        \"matcher\": \"Write|Edit|MultiEdit\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"~/my-hooks/file-safety-check.sh\"\n          }\n        ]\n      }\n    ],\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"*\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"~/my-hooks/logger.sh\"\n          }\n        ]\n      }\n    ]\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e注意\u003c/strong\u003e: パスは\u003ccode\u003esettings.json\u003c/code\u003eからの相対パスで指定します。\u003c/p\u003e\n\u003ch3 id=\"複数のスクリプトを同じhookに登録する方法\"\u003e複数のスクリプトを同じHookに登録する方法\u003c/h3\u003e\n\u003cp\u003eClaude Code Hooksには\u003cstrong\u003e新旧2つの設定形式\u003c/strong\u003eがあり、新しい形式では複数のスクリプトを登録できます。\u003c/p\u003e\n\u003ch4 id=\"新しい形式推奨---複数スクリプト対応\"\u003e新しい形式（推奨） - 複数スクリプト対応\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e特徴\u003c/strong\u003e：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eイベント名: \u003ccode\u003ePreToolUse\u003c/code\u003e、\u003ccode\u003ePostToolUse\u003c/code\u003e、\u003ccode\u003eNotification\u003c/code\u003e、\u003ccode\u003eStop\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e配列形式で複数のスクリプトを登録可能\u003c/li\u003e\n\u003cli\u003ematcherでツールを指定可能\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"Write|Edit|MultiEdit\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"./hooks/format-code.sh\"\n          },\n          {\n            \"type\": \"command\",\n            \"command\": \"./hooks/validate-syntax.sh\"\n          },\n          {\n            \"type\": \"command\",\n            \"command\": \"./hooks/notify-changes.sh\"\n          }\n        ]\n      }\n    ]\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eこの設定では、Write、Edit、MultiEditツールの実行後に3つのスクリプトが順番に実行されます。\u003c/p\u003e\n\u003ch4 id=\"旧い形式廃止予定---単一スクリプトのみ\"\u003e旧い形式（廃止予定） - 単一スクリプトのみ\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e特徴\u003c/strong\u003e：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eイベント名: \u003ccode\u003etool-post-hook\u003c/code\u003e、\u003ccode\u003etool-pre-hook\u003c/code\u003e、\u003ccode\u003euser-prompt-submit-hook\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e1つのスクリプトパスのみ指定可能\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"tool-post-hook\": \"./hooks/single-script.sh\"\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\"旧形式で複数処理を実現する方法\"\u003e旧形式で複数処理を実現する方法\u003c/h4\u003e\n\u003ch5 id=\"方法1-ラッパースクリプトを作成\"\u003e方法1: ラッパースクリプトを作成\u003c/h5\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n# 入力を変数に保存（複数のスクリプトで使用するため）\ninput_data=$(cat)\n\n# スクリプト1: ログ記録\necho \"$input_data\" | ./hooks/logger.sh \u003e /tmp/result1.txt\n\n# スクリプト2: 通知\necho \"$input_data\" | ./hooks/notifier.sh \u003e /tmp/result2.txt\n\n# スクリプト3: フォーマッタ\nresult=$(echo \"$input_data\" | ./hooks/formatter.sh)\n\n# 最後のスクリプトの結果を返す\necho \"$result\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch5 id=\"方法2-1つのスクリプトに複数の機能を統合\"\u003e方法2: 1つのスクリプトに複数の機能を統合\u003c/h5\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\ninput_data=$(cat)\n\n# 機能1: ログ記録\necho \"$(date): $input_data\" \u003e\u003e .claude/logs/activity.log\n\n# 機能2: 危険コマンドチェック\nif echo \"$input_data\" | grep -q \"rm -rf\"; then\n    echo \"危険なコマンドを検出\" \u003e\u0026#x26;2\nfi\n\n# 機能3: 通知\nif echo \"$input_data\" | grep -q \"completed\"; then\n    osascript -e 'display notification \"タスク完了\" with title \"Claude Code\"'\nfi\n\n# 元のデータを返す\necho \"$input_data\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"新形式への移行方法\"\u003e新形式への移行方法\u003c/h3\u003e\n\u003cp\u003e現在プロジェクトで使用中の旧形式を新形式に移行する例：\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e旧形式\u003c/strong\u003e：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"tool-post-hook\": \"./hooks/task-notifier.sh\"\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e新形式\u003c/strong\u003e：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"*\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"./hooks/task-notifier.sh\"\n          }\n        ]\n      }\n    ]\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"matcherの指定方法\"\u003eMatcherの指定方法\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e特定のツールのみ\u003c/strong\u003e：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e\"matcher\": \"Write\"  // Writeツールのみ\n\"matcher\": \"Bash\"   // Bashコマンドのみ\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e複数ツール\u003c/strong\u003e：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e\"matcher\": \"Write|Edit|MultiEdit\"  // ファイル編集系\n\"matcher\": \"Read|Grep|LS\"          // ファイル読み取り系\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e全ツール\u003c/strong\u003e：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e\"matcher\": \"*\"  // すべてのツール\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"グローバルとプロジェクトhookの併用\"\u003eグローバルとプロジェクトHookの併用\u003c/h3\u003e\n\u003cp\u003e新形式では、グローバル設定とプロジェクト設定の\u003cstrong\u003e両方のHookが実行\u003c/strong\u003eされます。設定ファイルは以下の順序で読み込まれ、すべての一致するフックが実行されます：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003eグローバル設定\u003c/strong\u003e: \u003ccode\u003e~/.claude/settings.json\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eローカル設定\u003c/strong\u003e: \u003ccode\u003e~/.claude/settings.local.json\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eプロジェクト設定\u003c/strong\u003e: \u003ccode\u003e.claude/settings.json\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eプロジェクトローカル設定\u003c/strong\u003e: \u003ccode\u003e.claude/settings.local.json\u003c/code\u003e\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cstrong\u003e例\u003c/strong\u003e: グローバルで汎用的なログ、プロジェクトで固有の通知を設定\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e// ~/.claude/settings.json（グローバル）\n{\n  \"hooks\": {\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"*\",\n        \"hooks\": [\n          {\"type\": \"command\", \"command\": \"~/.claude/hooks/global-logger.sh\"}\n        ]\n      }\n    ]\n  }\n}\n\n// .claude/settings.json（プロジェクト）\n{\n  \"hooks\": {\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"TodoWrite\",\n        \"hooks\": [\n          {\"type\": \"command\", \"command\": \"./hooks/task-notifier.sh\"}\n        ]\n      }\n    ]\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"ステップ3-hookスクリプトの作成\"\u003eステップ3: Hookスクリプトの作成\u003c/h3\u003e\n\u003cp\u003e各Hookスクリプトを\u003ccode\u003e.claude/hooks/\u003c/code\u003eディレクトリに作成します。\u003c/p\u003e\n\u003ch2 id=\"実践例1-プロンプト自動拡張hook\"\u003e実践例1: プロンプト自動拡張Hook\u003c/h2\u003e\n\u003cp\u003e現在のGitブランチ名やタスク情報を自動的にプロンプトに追加する例です。\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ehooks/prompt-enhancer.sh\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n# このスクリプトはプロンプト送信前に実行されます\n\n# 元のプロンプトを標準入力から読み込む\noriginal_prompt=$(cat)\n\n# 現在のGitブランチを取得（エラーの場合は\"main\"を使用）\nbranch=$(git branch --show-current 2\u003e/dev/null || echo \"main\")\n\n# タスクファイルの内容を取得\ntask_content=\"\"\nif [ -f \".tmp/task.md\" ]; then\n    task_content=$(cat .tmp/task.md)\nfi\n\n# 拡張したプロンプトを標準出力に出力\n# EOFまでの内容がそのまま出力される（ヒアドキュメント）\ncat \u0026#x3C;\u0026#x3C; EOF\n=== コンテキスト情報 ===\n現在のブランチ: $branch\n${task_content:+現在のタスク:\n$task_content}\n===================\n\n$original_prompt\nEOF\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"このhookが受け取るデータ\"\u003eこのHookが受け取るデータ\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003e# 標準入力から受け取る内容の例：\n\"バグを修正して\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"動作の仕組み\"\u003e動作の仕組み\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003eユーザーが「バグを修正して」と入力\u003c/li\u003e\n\u003cli\u003eHookが自動的にGitブランチ名とタスク情報を追加\u003c/li\u003e\n\u003cli\u003eClaude Codeは拡張された情報を受け取って、より的確な対応が可能に\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch2 id=\"実践例2-危険コマンドブロックhook\"\u003e実践例2: 危険コマンドブロックHook\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003erm -rf\u003c/code\u003eなどの危険なコマンドをブロックする例です。\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ehooks/safety-check.sh\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n# tool-pre-hook: ツール実行前にチェックを行う\n\n# ツール情報をJSONとして標準入力から読み込む\ntool_info=$(cat)\n\n# デバッグ用：受け取ったJSONをエラー出力に表示（本番では削除）\n# echo \"受信したJSON: $tool_info\" \u003e\u0026#x26;2\n\n# jqがインストールされている場合（推奨）\nif command -v jq \u0026#x26;\u003e /dev/null; then\n    command=$(echo \"$tool_info\" | jq -r '.tool_input.command // \"\"')\nelse\n    # jqがない場合の代替方法（正規表現でコマンドを抽出）\n    # grep -o: マッチした部分のみ出力\n    # cut -d'\"' -f4: ダブルクォートで区切って4番目のフィールドを取得\n    command=$(echo \"$tool_info\" | grep -o '\"command\":\"[^\"]*\"' | cut -d'\"' -f4)\nfi\n\n# 危険なコマンドパターンをチェック\nif echo \"$command\" | grep -qE \"rm -rf|dd if=|mkfs|\u003e\" ; then\n    # \u003e\u0026#x26;2 はエラー出力への出力（Claude Codeの画面に表示される）\n    echo \"⚠️ 危険なコマンドが検出されました: $command\" \u003e\u0026#x26;2\n    echo \"実行をブロックしました。\" \u003e\u0026#x26;2\n    exit 1  # 終了コード1（0以外）= ツール実行をキャンセル\nfi\n\n# 問題なければ元の情報をそのまま標準出力に返す\necho \"$tool_info\"\nexit 0  # 終了コード0 = ツール実行を許可\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"このhookが受け取るjsonデータの例\"\u003eこのHookが受け取るJSONデータの例\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"tool_name\": \"run_shell_command\",\n  \"tool_input\": {\n    \"command\": \"rm -rf /important_folder\"\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"ブロックされるコマンド例\"\u003eブロックされるコマンド例\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003erm -rf /\u003c/code\u003e: システム全体を削除する危険なコマンド\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003edd if=/dev/zero of=/dev/sda\u003c/code\u003e: ディスクを完全に消去\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e\u003e important_file.txt\u003c/code\u003e: ファイルを空にする\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"実践例3-実行ログ記録hook\"\u003e実践例3: 実行ログ記録Hook\u003c/h2\u003e\n\u003cp\u003eすべてのツール実行を記録する例です。\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ehooks/logger.sh\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n# tool-post-hook: ツール実行後の処理\n\n# ログディレクトリを作成（存在しない場合のみ）\nLOG_DIR=\".claude/logs\"\nmkdir -p \"$LOG_DIR\"\n\n# 実行結果を標準入力から読み込む\nexecution_result=$(cat)\n\n# タイムスタンプ付きでログに記録\ntimestamp=$(date '+%Y-%m-%d %H:%M:%S')\nlog_file=\"$LOG_DIR/$(date '+%Y%m%d').log\"\n\n# ログエントリを作成（\u003e\u003eは追記モード）\n{\n    echo \"[$timestamp]\"\n    echo \"$execution_result\"\n    echo \"---\"\n} \u003e\u003e \"$log_file\"\n\n# macOS通知を送信（タスク完了時）\n# osascriptはmacOSのAppleScriptを実行するコマンド\nif echo \"$execution_result\" | grep -q \"task.*complete\"; then\n    osascript -e 'display notification \"タスクが完了しました！\" with title \"Claude Code\"'\nfi\n\n# Windows環境の場合（PowerShell使用）\n# if echo \"$execution_result\" | grep -q \"task.*complete\"; then\n#     powershell -Command \"New-BurntToastNotification -Text 'Claude Code', 'タスクが完了しました！'\"\n# fi\n\n# 結果をそのまま標準出力に返す（Claude Codeの処理を妨げない）\necho \"$execution_result\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"このhookが受け取るjsonデータの例-1\"\u003eこのHookが受け取るJSONデータの例\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"tool_name\": \"write_file\",\n  \"tool_input\": {\n    \"file_path\": \"/path/to/file.js\",\n    \"content\": \"console.log('Hello');\"\n  },\n  \"tool_output\": \"File written successfully\"\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"より実践的な使用例\"\u003eより実践的な使用例\u003c/h2\u003e\n\u003ch3 id=\"1-コード保存時の自動フォーマット\"\u003e1. コード保存時の自動フォーマット\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ehooks/auto-format.sh\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n\ntool_info=$(cat)\n\n# ファイル書き込みツールの場合\nif echo \"$tool_info\" | grep -q '\"tool_name\":\"write_file\"'; then\n    # ファイルパスを抽出\n    file_path=$(echo \"$tool_info\" | grep -o '\"file_path\":\"[^\"]*\"' | cut -d'\"' -f4)\n\n    # 拡張子に応じてフォーマッタを実行\n    case \"$file_path\" in\n        *.js|*.ts|*.jsx|*.tsx)\n            # Prettierでフォーマット（後で実行）\n            echo \"prettier --write $file_path\" \u003e\u003e .claude/post-commands.sh\n            ;;\n        *.py)\n            # Blackでフォーマット\n            echo \"black $file_path\" \u003e\u003e .claude/post-commands.sh\n            ;;\n    esac\nfi\n\necho \"$tool_info\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-テスト自動実行\"\u003e2. テスト自動実行\u003c/h3\u003e\n\u003cp\u003eファイル変更時に関連テストを自動実行：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n\ntool_info=$(cat)\n\n# ソースファイルが変更された場合\nif echo \"$tool_info\" | grep -qE '\"file_path\":\".*\\.(js|ts|py)\"'; then\n    file_path=$(echo \"$tool_info\" | grep -o '\"file_path\":\"[^\"]*\"' | cut -d'\"' -f4)\n\n    # テストファイルを探して実行\n    test_file=\"${file_path%.js}.test.js\"\n    if [ -f \"$test_file\" ]; then\n        npm test \"$test_file\" 2\u003e\u0026#x26;1 | tail -5\n    fi\nfi\n\necho \"$tool_info\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"hooksが受け取るデータのまとめ\"\u003eHooksが受け取るデータのまとめ\u003c/h2\u003e\n\u003ch3 id=\"各hookの入出力仕様\"\u003e各Hookの入出力仕様\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003euser-prompt-submit-hook\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e標準入力で受け取る: プロンプト文字列\u003c/li\u003e\n\u003cli\u003e標準出力に返すべき内容: 拡張されたプロンプト\u003c/li\u003e\n\u003cli\u003eエラー時の動作: 無視される\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003etool-pre-hook\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e標準入力で受け取る: ツール情報JSON\u003c/li\u003e\n\u003cli\u003e標準出力に返すべき内容: 同じまたは修正されたJSON\u003c/li\u003e\n\u003cli\u003eエラー時の動作: exit 1でキャンセル\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003etool-post-hook\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e標準入力で受け取る: 実行結果JSON\u003c/li\u003e\n\u003cli\u003e標準出力に返すべき内容: 任意（通常は元のまま）\u003c/li\u003e\n\u003cli\u003eエラー時の動作: 無視される\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"トラブルシューティング\"\u003eトラブルシューティング\u003c/h2\u003e\n\u003ch3 id=\"よくある問題と解決方法\"\u003eよくある問題と解決方法\u003c/h3\u003e\n\u003ch4 id=\"1-hookが実行されない\"\u003e1. Hookが実行されない\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e原因\u003c/strong\u003e: 実行権限がない\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e解決方法\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# ⚠️ 警告: スクリプトの内容を確認してから実行権限を付与してください\n# 不明なスクリプトに実行権限を与えるとセキュリティリスクがあります\n\n# まずスクリプトの内容を確認\ncat hooks/*.sh\n\n# 内容が安全であることを確認してから実行権限を付与\nchmod +x hooks/*.sh\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\"2-jsonの解析でエラー\"\u003e2. JSONの解析でエラー\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e原因\u003c/strong\u003e: \u003ccode\u003ejq\u003c/code\u003eコマンドがインストールされていない\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e解決方法\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# macOS\nbrew install jq\n\n# Windows (Chocolatey)\nchoco install jq\n\n# または、grepとsedで代替\necho \"$json\" | grep -o '\"key\":\"[^\"]*\"' | cut -d'\"' -f4\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\"3-パスが見つからない\"\u003e3. パスが見つからない\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e原因\u003c/strong\u003e: 相対パスが正しくない\n\u003cstrong\u003e解決方法\u003c/strong\u003e: 絶対パスを使用\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"tool-post-hook\": \"/Users/yourname/project/hooks/logger.sh\"\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\"4-デバッグ方法\"\u003e4. デバッグ方法\u003c/h4\u003e\n\u003cp\u003eHookが正しく動作しているか確認するには：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# デバッグメッセージをエラー出力に表示\necho \"デバッグ: ここまで実行されました\" \u003e\u0026#x26;2\necho \"受け取ったデータ: $data\" \u003e\u0026#x26;2\n\n# デバッグログファイルに出力\necho \"$(date): Hook実行\" \u003e\u003e /tmp/hook-debug.log\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"セキュリティ上の注意点\"\u003eセキュリティ上の注意点\u003c/h2\u003e\n\u003ch3 id=\"1-スクリプトの権限管理\"\u003e1. スクリプトの権限管理\u003c/h3\u003e\n\u003cp\u003eHookスクリプトには最小限の権限のみを付与：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 所有者のみ実行可能\nchmod 700 hooks/*.sh\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-入力値の検証\"\u003e2. 入力値の検証\u003c/h3\u003e\n\u003cp\u003e外部入力は必ず検証：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 悪意のあるコマンドインジェクションを防ぐ\nif [[ \"$input\" =~ ^[a-zA-Z0-9_-]+$ ]]; then\n    # 安全な入力のみ処理\n    process_input \"$input\"\nfi\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"3-ログの保護\"\u003e3. ログの保護\u003c/h3\u003e\n\u003cp\u003e機密情報をログに記録しない：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# パスワードやトークンをマスク\necho \"$result\" | sed 's/password=.*/password=****/g' \u003e\u003e log.txt\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"ベストプラクティス\"\u003eベストプラクティス\u003c/h2\u003e\n\u003ch3 id=\"1-hookは軽量に保つ\"\u003e1. Hookは軽量に保つ\u003c/h3\u003e\n\u003cp\u003eHookの処理は高速に：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e重い処理は非同期で実行\u003c/li\u003e\n\u003cli\u003eタイムアウトを設定\u003c/li\u003e\n\u003cli\u003e必要最小限の処理のみ\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"2-エラーハンドリング\"\u003e2. エラーハンドリング\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\nset -e  # エラー時に即座に終了\ntrap 'echo \"Error occurred at line $LINENO\"' ERR\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"3-デバッグモード\"\u003e3. デバッグモード\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# DEBUG環境変数でデバッグモードを切り替え\nif [ \"$DEBUG\" = \"1\" ]; then\n    set -x  # コマンドを表示\n    exec 2\u003ehooks-debug.log  # エラーをログファイルに\nfi\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"ハンズオンタスク完了通知hookを作ってみよう\"\u003eハンズオン：タスク完了通知Hookを作ってみよう\u003c/h2\u003e\n\u003cp\u003e実際にHookを作成して動作を体験してみましょう。ここでは、タスクが完了したときにmacOSで通知を表示するHookを作成します。\u003c/p\u003e\n\u003ch3 id=\"ステップ1-プロジェクトディレクトリに設定を作成\"\u003eステップ1: プロジェクトディレクトリに設定を作成\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# プロジェクトのルートディレクトリで実行\nmkdir -p .claude/hooks\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"ステップ2-通知スクリプトを作成\"\u003eステップ2: 通知スクリプトを作成\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003e.claude/hooks/task-notifier.sh\u003c/code\u003eを作成：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\n# tool-post-hook: タスク完了時に通知を送る\n\n# 実行結果を標準入力から読み込む\nexecution_result=$(cat)\n\n# TodoWriteツールの実行を検知\nif echo \"$execution_result\" | grep -q '\"tool_name\":\"TodoWrite\"'; then\n    # completedステータスへの変更を検知\n    if echo \"$execution_result\" | grep -q '\"status\":\"completed\"'; then\n        # macOSの通知を送信\n        osascript -e 'display notification \"タスクが完了しました！🎉\" with title \"Claude Code\" sound name \"Glass\"'\n    fi\nfi\n\n# タスク関連のキーワードで通知\nif echo \"$execution_result\" | grep -qi \"task.*complet\\|完了\\|finished\"; then\n    osascript -e 'display notification \"作業が完了しました！\" with title \"Claude Code\"'\nfi\n\n# 結果をそのまま標準出力に返す（重要！）\necho \"$execution_result\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"ステップ3-settingsjsonを設定\"\u003eステップ3: settings.jsonを設定\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003e.claude/settings.json\u003c/code\u003eを作成：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"hooks\": {\n    \"tool-post-hook\": \"./hooks/task-notifier.sh\"\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"ステップ4-実行権限を付与\"\u003eステップ4: 実行権限を付与\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# スクリプトの内容を確認\ncat .claude/hooks/task-notifier.sh\n\n# 安全であることを確認してから権限付与\nchmod +x .claude/hooks/task-notifier.sh\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"ステップ5-動作確認\"\u003eステップ5: 動作確認\u003c/h3\u003e\n\u003cp\u003eClaude Codeでタスクを完了させて、通知が表示されることを確認：\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e「README.mdを更新して」\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eタスクが完了すると、macOSの通知センターに「タスクが完了しました！🎉」と表示されます。\u003c/p\u003e\n\u003ch3 id=\"トラブルシューティング-1\"\u003eトラブルシューティング\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e通知が表示されない場合：\u003c/strong\u003e\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eシステム環境設定 → 通知とフォーカス → ターミナルの通知が有効か確認\u003c/li\u003e\n\u003cli\u003eスクリプトの実行権限を確認: \u003ccode\u003els -la .claude/hooks/\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eデバッグ出力を追加して確認：\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003eecho \"Hook実行中: $(date)\" \u003e\u003e /tmp/hook-debug.log\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"windows版の代替実装\"\u003eWindows版の代替実装\u003c/h3\u003e\n\u003cp\u003eWindowsの場合は、PowerShellを使用：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e#!/bin/bash\nexecution_result=$(cat)\n\nif echo \"$execution_result\" | grep -qi \"task.*complet\\|完了\"; then\n    # Windows通知\n    powershell -Command \"\n        Add-Type -AssemblyName System.Windows.Forms\n        \\$notification = New-Object System.Windows.Forms.NotifyIcon\n        \\$notification.Icon = [System.Drawing.SystemIcons]::Information\n        \\$notification.BalloonTipTitle = 'Claude Code'\n        \\$notification.BalloonTipText = 'タスクが完了しました！'\n        \\$notification.Visible = \\$true\n        \\$notification.ShowBalloonTip(5000)\n    \"\nfi\n\necho \"$execution_result\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"実装のポイント\"\u003e実装のポイント\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003e標準入力から読み込む\u003c/strong\u003e: \u003ccode\u003e$(cat)\u003c/code\u003eでJSONデータを受け取る\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e条件判定\u003c/strong\u003e: \u003ccode\u003egrep\u003c/code\u003eでキーワードを検索\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e通知の実行\u003c/strong\u003e: OS固有のコマンドを使用\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e元データを返す\u003c/strong\u003e: 必ず\u003ccode\u003eecho \"$execution_result\"\u003c/code\u003eで返す\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eこれで、あなたも独自のHookを作成できるようになりました！\u003c/p\u003e\n\u003ch2 id=\"まとめ\"\u003eまとめ\u003c/h2\u003e\n\u003cp\u003eClaude Code Hooksを使えば：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003eプロンプトの自動拡張\u003c/strong\u003eで、コンテキストを自動追加\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e危険操作のブロック\u003c/strong\u003eで、安全性を確保\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e実行ログの記録\u003c/strong\u003eで、作業履歴を管理\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e自動フォーマット\u003c/strong\u003eで、コード品質を維持\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e通知機能\u003c/strong\u003eで、作業の進捗を把握\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eこれらの機能により、開発効率が大幅に向上します。\u003c/p\u003e\n\u003ch3 id=\"次のステップ\"\u003e次のステップ\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e基本的なHookから始める（まずはログ記録から）\u003c/li\u003e\n\u003cli\u003eチーム固有のニーズに合わせてカスタマイズ\u003c/li\u003e\n\u003cli\u003e複数のHookを組み合わせて高度な自動化を実現\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"学習のポイント\"\u003e学習のポイント\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eHooksは「イベント駆動」の自動化\u003c/li\u003e\n\u003cli\u003e標準入出力を使った情報の受け渡し\u003c/li\u003e\n\u003cli\u003e終了コードで実行の可否を制御\u003c/li\u003e\n\u003cli\u003eシェルスクリプトの基本が重要\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eこれでClaude Code Hooksの基本から実践まで理解できたはずです。さあ、あなたの開発ワークフローを自動化してみましょう！\u003c/p\u003e\n\u003ch2 id=\"参考リンク\"\u003e参考リンク\u003c/h2\u003e\n\u003ch3 id=\"公式ドキュメント\"\u003e公式ドキュメント\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://docs.anthropic.com/claude-code\"\u003eClaude Code 公式ドキュメント\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://docs.anthropic.com/en/docs/claude-code/hooks\"\u003eClaude Code Hooks詳細ドキュメント\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://docs.anthropic.com/en/docs/claude-code/settings\"\u003eClaude Code Settings仕様\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"参考にした情報源\"\u003e参考にした情報源\u003c/h3\u003e\n\u003cp\u003e本記事の新形式に関する情報は、以下の調査により確認しました：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eClaude Code公式ドキュメントのHooksページ（WebFetch APIで確認）\u003c/li\u003e\n\u003cli\u003eグローバル設定ファイル（\u003ccode\u003e~/.claude/settings.json\u003c/code\u003e）の実例確認\u003c/li\u003e\n\u003cli\u003eClaude Code内部のTaskツールによる詳細調査\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"関連技術ドキュメント\"\u003e関連技術ドキュメント\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://www.gnu.org/software/bash/manual/\"\u003eBash スクリプティングガイド\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://stedolan.github.io/jq/manual/\"\u003ejq マニュアル\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA-Git-%E3%83%95%E3%83%83%E3%82%AF\"\u003eGit Hooks ドキュメント\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto py-10 px-4\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold mb-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-green-600\",\"children\":[\"#\",24]}],\" \",\"Claude Code Hooks完全ガイド：開発ワークフローを自動化する魔法の仕組み\"]}],[\"$\",\"ul\",null,{\"className\":\"list-none border-b border-gray-600 pb-4 mb-6\",\"children\":[[\"$\",\"li\",null,{\"className\":\"text-gray-500 text-sm\",\"children\":[\"作成日時: \",\"2025-08-07 19:16\"]}],\"$undefined\",[\"$\",\"li\",null,{\"className\":\"flex flex-wrap gap-2 mt-2\",\"children\":[[\"$\",\"span\",\"0\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Claude Code\"}],[\"$\",\"span\",\"1\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Hooks\"}],[\"$\",\"span\",\"2\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"自動化\"}],[\"$\",\"span\",\"3\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"開発効率化\"}],[\"$\",\"span\",\"4\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"macOS\"}]]}]]}],[\"$\",\"nav\",null,{\"className\":\"mb-6 pb-4 border-b border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"article\",null,{\"className\":\"prose dark:prose-invert\",\"dangerouslySetInnerHTML\":{\"__html\":\"$13\"}}],[\"$\",\"nav\",null,{\"className\":\"mt-8 pt-4 border-t border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}]]}]\n"])</script><script>self.__next_f.push([1,"d:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n8:null\n"])</script><script>self.__next_f.push([1,"11:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\nb:{\"metadata\":\"$11:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>
