@@ -1,6 +1,7 @@
 import { getAllPostSlugs, getPostData } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import ScrollToTopButton from '@/components/ScrollToTopButton'
 
 // 各記事の詳細ページのviewファイルです。
 
@@ -59,6 +60,7 @@ export default async function BlogPostPage(props: any) {
           記事一覧へ →
         </Link>
       </nav>
+      <ScrollToTopButton />
     </div>
   )
 }
