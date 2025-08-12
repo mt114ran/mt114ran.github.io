@@ -125,16 +125,8 @@ project/
 - 様々な図に対応
 
 **1. フローチャート**
-```mermaid
-graph TD
-    A[開始] --> B{エラー?}
-    B -->|Yes| C[エラー処理]
-    B -->|No| D[正常処理]
-    C --> E[終了]
-    D --> E[終了]
-```
 
-**Markdownでの記述：**
+以下のコードを書くと：
 ````markdown
 ```mermaid
 graph TD
@@ -146,7 +138,37 @@ graph TD
 ```
 ````
 
+このような図が生成されます：
+```mermaid
+graph TD
+    A[開始] --> B{エラー?}
+    B -->|Yes| C[エラー処理]
+    B -->|No| D[正常処理]
+    C --> E[終了]
+    D --> E[終了]
+```
+
 **2. シーケンス図**
+
+以下のコードを書くと：
+````markdown
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant F as Frontend
+    participant A as API
+    participant D as Database
+    
+    U->>F: ログインボタンクリック
+    F->>A: POST /login
+    A->>D: ユーザー情報取得
+    D-->>A: ユーザーデータ
+    A-->>F: JWT token
+    F-->>U: ホーム画面表示
+```
+````
+
+このようなシーケンス図が生成されます：
 ```mermaid
 sequenceDiagram
     participant U as User
@@ -163,6 +185,24 @@ sequenceDiagram
 ```
 
 **3. ガントチャート**
+
+以下のコードを書くと：
+````markdown
+```mermaid
+gantt
+    title プロジェクトスケジュール
+    dateFormat  YYYY-MM-DD
+    section 開発
+    設計           :2024-01-01, 7d
+    実装           :2024-01-08, 14d
+    テスト         :2024-01-22, 7d
+    section リリース
+    デプロイ準備    :2024-01-29, 2d
+    本番リリース    :2024-01-31, 1d
+```
+````
+
+このようなガントチャートが生成されます：
 ```mermaid
 gantt
     title プロジェクトスケジュール
@@ -491,6 +531,45 @@ module.exports = {
 ### 🎨 実際のMermaid図例（このブログで動作）
 
 **システムアーキテクチャ図**
+
+以下のコードを書くと：
+````markdown
+```mermaid
+graph TB
+    subgraph "ユーザー層"
+        U1[PCユーザー]
+        U2[スマホユーザー]
+    end
+    
+    subgraph "フロントエンド"
+        FE[Next.js App]
+    end
+    
+    subgraph "バックエンド"
+        API[API Server]
+        AUTH[認証サービス]
+    end
+    
+    subgraph "データ層"
+        DB[(PostgreSQL)]
+        CACHE[(Redis)]
+    end
+    
+    U1 --> FE
+    U2 --> FE
+    FE --> API
+    FE --> AUTH
+    API --> DB
+    API --> CACHE
+    AUTH --> DB
+    
+    style FE fill:#e1f5fe
+    style API fill:#fff3e0
+    style DB fill:#f3e5f5
+```
+````
+
+このようなアーキテクチャ図が生成されます：
 ```mermaid
 graph TB
     subgraph "ユーザー層"
@@ -526,6 +605,28 @@ graph TB
 ```
 
 **開発フロー図**
+
+以下のコードを書くと：
+````markdown
+```mermaid
+gitGraph
+    commit id: "Initial commit"
+    branch develop
+    checkout develop
+    commit id: "Add feature A"
+    commit id: "Add feature B"
+    branch feature/new-ui
+    checkout feature/new-ui
+    commit id: "Update UI"
+    commit id: "Fix styles"
+    checkout develop
+    merge feature/new-ui
+    checkout main
+    merge develop tag: "v1.0.0"
+```
+````
+
+このようなGitフロー図が生成されます：
 ```mermaid
 gitGraph
     commit id: "Initial commit"
@@ -544,6 +645,27 @@ gitGraph
 ```
 
 **処理シーケンス図**
+
+以下のコードを書くと：
+````markdown
+```mermaid
+sequenceDiagram
+    autonumber
+    participant User as ユーザー
+    participant Blog as ブログ
+    participant Remark as Remark
+    participant Mermaid as Mermaid
+    
+    User->>Blog: 記事を閲覧
+    Blog->>Remark: Markdown処理
+    Remark->>Mermaid: Mermaidブロック検出
+    Mermaid-->>Remark: SVG生成
+    Remark-->>Blog: HTML出力
+    Blog-->>User: 図付き記事表示
+```
+````
+
+このようなシーケンス図が生成されます：
 ```mermaid
 sequenceDiagram
     autonumber
@@ -705,6 +827,51 @@ graph TD
 ### 🏗️ マイクロサービス構成図
 
 **Mermaidでの実装：**
+
+以下のコードを書くと：
+````markdown
+```mermaid
+graph TB
+    subgraph "Frontend"
+        WEB[Web App]
+        MOB[Mobile App]
+    end
+    
+    subgraph "API Gateway"
+        GW[Gateway]
+    end
+    
+    subgraph "Microservices"
+        AUTH[Auth Service]
+        USER[User Service]
+        PROD[Product Service]
+        ORDER[Order Service]
+    end
+    
+    subgraph "Data Layer"
+        AUTHDB[(Auth DB)]
+        USERDB[(User DB)]
+        PRODDB[(Product DB)]
+        ORDERDB[(Order DB)]
+        CACHE[(Redis Cache)]
+    end
+    
+    WEB --> GW
+    MOB --> GW
+    GW --> AUTH
+    GW --> USER
+    GW --> PROD
+    GW --> ORDER
+    AUTH --> AUTHDB
+    USER --> USERDB
+    PROD --> PRODDB
+    ORDER --> ORDERDB
+    USER --> CACHE
+    PROD --> CACHE
+```
+````
+
+このようなマイクロサービス構成図が生成されます：
 ```mermaid
 graph TB
     subgraph "Frontend"
@@ -800,6 +967,41 @@ graph TB
 
 ## ツール選択フローチャート
 
+以下のコードを書くと：
+````markdown
+```mermaid
+graph TD
+    Start[図を作成したい] --> Q1{バージョン管理<br/>必要？}
+    
+    Q1 -->|Yes| Q2{複雑な図？}
+    Q1 -->|No| Q3{見た目重視？}
+    
+    Q2 -->|Yes| PlantUML[PlantUML]
+    Q2 -->|No| Q4{GitHub使用？}
+    
+    Q4 -->|Yes| Mermaid[Mermaid]
+    Q4 -->|No| ASCII[ASCIIアート]
+    
+    Q3 -->|Yes| Q5{予算あり？}
+    Q3 -->|No| DrawIO[draw.io]
+    
+    Q5 -->|Yes| Lucid[Lucidchart]
+    Q5 -->|No| Q6{手書き風？}
+    
+    Q6 -->|Yes| Excal[Excalidraw]
+    Q6 -->|No| DrawIO2[draw.io]
+    
+    style Mermaid fill:#e1f5fe
+    style PlantUML fill:#e1f5fe
+    style ASCII fill:#e1f5fe
+    style DrawIO fill:#fff3e0
+    style DrawIO2 fill:#fff3e0
+    style Excal fill:#fff3e0
+    style Lucid fill:#fce4ec
+```
+````
+
+このようなツール選択フローチャートが生成されます：
 ```mermaid
 graph TD
     Start[図を作成したい] --> Q1{バージョン管理<br/>必要？}
