@@ -76,24 +76,29 @@ export async function getPostData(slug: string) {
 
   const matterResult = matter(fileContents);
   
-  // Mermaidブロックを処理
+  // Mermaidブロックを一時的にプレースホルダーに置換
   let content = matterResult.content;
   const mermaidRegex = /```mermaid\r?\n([\s\S]*?)\r?\n```/g;
   const mermaidBlocks: string[] = [];
+  let mermaidIndex = 0;
   
-  // すべてのMermaidブロックを収集
-  const matches = content.matchAll(mermaidRegex);
-  for (const m of matches) {
-    mermaidBlocks.push(m[1]);
-  }
+  // Mermaidブロックを収集してプレースホルダーに置換
+  content = content.replace(mermaidRegex, (_, code) => {
+    // HTMLエンティティをエスケープ
+    const escapedCode = code
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+    mermaidBlocks.push(escapedCode);
+    // 一時的なプレースホルダーを使用
+    return `\n<!-- MERMAID_PLACEHOLDER_${mermaidIndex++} -->\n`;
+  });
   
   console.log(`Found ${mermaidBlocks.length} mermaid blocks in ${slug}`);
   
-  // Mermaidブロックをdivタグに直接置換
-  content = content.replace(mermaidRegex, (_, code) => {
-    return `\n<div class="mermaid">${code}</div>\n`;
-  });
-  
+  // Markdownを処理
   const processedContent = await remark()
     .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
@@ -101,7 +106,14 @@ export async function getPostData(slug: string) {
     .use(rehypeSlug)
     .use(rehypeStringify)
     .process(content);
-  const contentHtml = processedContent.toString();
+  let contentHtml = processedContent.toString();
+  
+  // プレースホルダーをMermaidブロックに戻す
+  mermaidBlocks.forEach((code, index) => {
+    const placeholder = `<!-- MERMAID_PLACEHOLDER_${index} -->`;
+    const mermaidDiv = `<div class="mermaid">${code}</div>`;
+    contentHtml = contentHtml.replace(placeholder, mermaidDiv);
+  });
 
   return {
     slug,
