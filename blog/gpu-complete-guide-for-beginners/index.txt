@@ -1,0 +1,413 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"MetadataBoundary"]
+7:I[9665,[],"OutletBoundary"]
+a:I[4911,[],"AsyncMetadataOutlet"]
+c:I[9665,[],"ViewportBoundary"]
+e:I[6614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/ce87a0c8fce915ba.css","style"]
+0:{"P":null,"b":"ug3f9LepbVd0lT5MBbbSR","p":"","c":["","blog","gpu-complete-guide-for-beginners",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","gpu-complete-guide-for-beginners","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","gpu-complete-guide-for-beginners","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","hI8qwaATgB-alqxNXut_i",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[4911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
+13:T3e0f,<p>パソコンやスマホの性能表で「GPU」という言葉を見かけたことはありませんか？「なんとなくグラフィックに関係してそう」というイメージはあっても、実際に何をしているのか、なぜ重要なのかを説明できる人は意外と少ないかもしれません。本記事では、GPUの基本から最新の活用事例まで、身近な例を使ってわかりやすく解説します。</p>
+<h2>📚 目次</h2>
+<ul>
+<li><a href="#gpu%E3%81%A8%E3%81%AF%E8%BA%AB%E8%BF%91%E3%81%AA%E4%BE%8B%E3%81%A7%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B">GPUとは？身近な例で理解する</a></li>
+<li><a href="#cpu%E3%81%A8gpu%E3%81%AE%E9%81%95%E3%81%84%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E3%81%A7%E4%BE%8B%E3%81%88%E3%82%8B%E3%81%A8">CPUとGPUの違い：レストランで例えると</a></li>
+<li><a href="#gpu%E3%81%8C%E5%BE%97%E6%84%8F%E3%81%AA%E3%81%93%E3%81%A8%E8%8B%A6%E6%89%8B%E3%81%AA%E3%81%93%E3%81%A8">GPUが得意なこと・苦手なこと</a></li>
+<li><a href="#%E8%BA%AB%E3%81%AE%E5%9B%9E%E3%82%8A%E3%81%AEgpu%E3%81%A9%E3%81%93%E3%81%A7%E4%BD%BF%E3%82%8F%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B">身の回りのGPU：どこで使われている？</a></li>
+<li><a href="#gpu%E3%81%AE%E7%A8%AE%E9%A1%9E%E3%81%A8%E9%81%B8%E3%81%B3%E6%96%B9">GPUの種類と選び方</a></li>
+<li><a href="#ai%E6%99%82%E4%BB%A3%E3%81%AEgpu%E3%81%AA%E3%81%9C%E6%B3%A8%E7%9B%AE%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%8B">AI時代のGPU：なぜ注目されているのか</a></li>
+<li><a href="#gpu%E3%81%AE%E6%80%A7%E8%83%BD%E3%82%92%E8%A6%8B%E3%82%8B%E6%8C%87%E6%A8%99">GPUの性能を見る指標</a></li>
+<li><a href="#%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E7%96%91%E5%95%8Fqa">よくある疑問Q&#x26;A</a></li>
+</ul>
+<h2>GPUとは？身近な例で理解する</h2>
+<p>GPU（Graphics Processing Unit）は、日本語で「画像処理装置」と呼ばれるコンピュータの部品です。でも、これだけでは何をするものかピンときませんよね。</p>
+<h3>🎨 絵を描く専門家として考える</h3>
+<p>GPUを理解する最も簡単な方法は、「大量の点を同時に描く専門家」として考えることです。</p>
+<p><strong>画面に表示される映像の正体</strong></p>
+<pre><code>あなたのモニター（フルHD）
+横1920個 × 縦1080個 = 約200万個の点（ピクセル）
+
+これを1秒間に60回更新 = 毎秒1億2000万個の点を処理！
+</code></pre>
+<p>想像してみてください。1つ1つの点の色を決めて、それを画面に表示する作業を、1秒間に1億回以上行う必要があるのです。これを効率的に行うのがGPUの仕事です。</p>
+<h3>🏭 工場のライン作業に例えると</h3>
+<p>GPUの動作原理は、工場の大量生産ラインに似ています：</p>
+<p><strong>CPU工場（少数精鋭型）</strong></p>
+<ul>
+<li>熟練工が1人～数人</li>
+<li>複雑な特注品も作れる</li>
+<li>1つずつ丁寧に作業</li>
+<li>様々な種類の製品に対応</li>
+</ul>
+<p><strong>GPU工場（大量生産型）</strong></p>
+<ul>
+<li>単純作業員が数千人</li>
+<li>同じ作業を同時進行</li>
+<li>シンプルな製品を大量生産</li>
+<li>決まったパターンの作業が得意</li>
+</ul>
+<h2>CPUとGPUの違い：レストランで例えると</h2>
+<p>コンピュータの中でCPUとGPUがどう協力しているか、レストランに例えて説明します。</p>
+<h3>🍳 CPU = シェフ（料理長）</h3>
+<p><strong>特徴：</strong></p>
+<ul>
+<li>複雑な判断ができる</li>
+<li>レシピを考える</li>
+<li>味見して調整する</li>
+<li>お客様の特別注文に対応</li>
+<li>スタッフに指示を出す</li>
+</ul>
+<p><strong>得意な仕事：</strong></p>
+<pre><code>・新メニューの開発（プログラムの実行）
+・在庫管理（メモリ管理）
+・予約の調整（タスクスケジューリング）
+・クレーム対応（エラー処理）
+</code></pre>
+<h3>🥘 GPU = 調理補助スタッフ軍団</h3>
+<p><strong>特徴：</strong></p>
+<ul>
+<li>単純作業を大量にこなす</li>
+<li>野菜を切る係が100人</li>
+<li>皿洗い係が100人</li>
+<li>盛り付け係が100人</li>
+<li>全員が同時に作業</li>
+</ul>
+<p><strong>得意な仕事：</strong></p>
+<pre><code>・100人分のサラダを同時に作る（画像処理）
+・1000個の餃子を同時に包む（並列計算）
+・大量の皿を一気に洗う（データ処理）
+</code></pre>
+<h3>協力プレイの例</h3>
+<p><strong>ゲームを動かす時：</strong></p>
+<ol>
+<li>CPU「今プレイヤーがジャンプボタンを押した」</li>
+<li>CPU「キャラクターの位置を計算して...」</li>
+<li>CPU→GPU「この位置にキャラクターを描いて！」</li>
+<li>GPU「了解！200万個のピクセルを更新します」</li>
+<li>GPU「背景も影もエフェクトも全部描きました！」</li>
+<li>画面「美しい映像が表示される」</li>
+</ol>
+<h2>GPUが得意なこと・苦手なこと</h2>
+<h3>✅ GPUが得意なこと</h3>
+<p><strong>1. 同じ処理の大量実行</strong></p>
+<pre><code class="language-python"># 例：100万個の数字を2倍にする
+# GPUなら全部同時に計算できる！
+numbers = [1, 2, 3, ..., 1000000]
+results = [n * 2 for n in numbers]  # GPU：一瞬
+                                     # CPU：1つずつ順番に
+</code></pre>
+<p><strong>2. 画像・動画処理</strong></p>
+<ul>
+<li>インスタグラムのフィルター</li>
+<li>動画のエンコード</li>
+<li>写真の拡大・縮小</li>
+<li>ぼかし効果</li>
+</ul>
+<p><strong>3. 3Dグラフィックス</strong></p>
+<ul>
+<li>ゲームの美しい風景</li>
+<li>建築CADの立体表示</li>
+<li>VR/ARの描画</li>
+</ul>
+<p><strong>4. AI・機械学習</strong></p>
+<ul>
+<li>ChatGPTのような言語モデル</li>
+<li>画像認識</li>
+<li>音声認識</li>
+<li>自動運転の計算</li>
+</ul>
+<h3>❌ GPUが苦手なこと</h3>
+<p><strong>1. 複雑な条件分岐</strong></p>
+<pre><code class="language-python"># こういう複雑な判断はCPUの方が得意
+if user.age > 18 and user.has_license:
+    if weather == "晴れ":
+        return "ドライブに行こう"
+    else:
+        return "映画を見よう"
+else:
+    return "勉強しよう"
+</code></pre>
+<p><strong>2. 順番が重要な処理</strong></p>
+<ul>
+<li>ファイルの読み書き</li>
+<li>データベースの更新</li>
+<li>1つの結果を使って次を計算</li>
+</ul>
+<p><strong>3. 少量のデータ処理</strong></p>
+<ul>
+<li>テキストエディタの文字入力</li>
+<li>エクセルの簡単な計算</li>
+<li>Webブラウジング</li>
+</ul>
+<h2>身の回りのGPU：どこで使われている？</h2>
+<h3>📱 スマートフォン</h3>
+<p><strong>使用例：</strong></p>
+<ul>
+<li>カメラの美肌補正（リアルタイム）</li>
+<li>顔認証のロック解除</li>
+<li>ARフィルター（SNOWやTikTok）</li>
+<li>ゲームアプリ</li>
+</ul>
+<p><strong>具体的な製品：</strong></p>
+<pre><code>iPhone: Apple A17 Pro（GPU内蔵）
+Android: Snapdragon 8 Gen 3（Adreno GPU）
+</code></pre>
+<h3>💻 ノートパソコン</h3>
+<p><strong>内蔵GPU（統合型）</strong></p>
+<ul>
+<li>YouTubeやNetflixの動画再生</li>
+<li>Zoomのバーチャル背景</li>
+<li>簡単な画像編集</li>
+<li>オフィスワーク</li>
+</ul>
+<p><strong>外付けGPU（独立型）</strong></p>
+<ul>
+<li>動画編集（Premiere Pro）</li>
+<li>3Dモデリング（Blender）</li>
+<li>ゲーミング</li>
+<li>AI開発</li>
+</ul>
+<h3>🚗 自動車</h3>
+<p><strong>最新の車載GPU活用：</strong></p>
+<pre><code>ダッシュボード
+├── デジタルメーター表示
+├── ナビゲーション3D表示
+└── 全周囲カメラ合成
+
+自動運転システム
+├── 物体認識（歩行者・車・信号）
+├── 車線認識
+└── 距離計算
+</code></pre>
+<h3>🏢 データセンター</h3>
+<p><strong>クラウドサービスの裏側：</strong></p>
+<ul>
+<li>Google Photos の顔認識</li>
+<li>Netflix の動画配信</li>
+<li>ChatGPT の文章生成</li>
+<li>Midjourney の画像生成</li>
+</ul>
+<h2>GPUの種類と選び方</h2>
+<h3>用途別GPU選択ガイド</h3>
+<p><strong>1. 一般用途（Web閲覧、動画視聴）</strong></p>
+<pre><code>推奨：CPU内蔵GPU
+理由：十分な性能＆省電力
+例：Intel UHD Graphics、AMD Radeon Graphics
+</code></pre>
+<p><strong>2. クリエイティブ作業</strong></p>
+<pre><code>写真編集 → エントリーGPU（GTX 1650など）
+動画編集 → ミドルレンジGPU（RTX 4060など）
+3D制作 → ハイエンドGPU（RTX 4080など）
+</code></pre>
+<p><strong>3. ゲーミング</strong></p>
+<pre><code>フルHD（1920×1080）
+├── 軽いゲーム → GTX 1650
+├── 標準的なゲーム → RTX 4060
+└── 最高設定 → RTX 4070
+
+4K（3840×2160）
+└── RTX 4080以上
+</code></pre>
+<p><strong>4. AI・機械学習</strong></p>
+<pre><code>学習用 → RTX 4090（VRAM 24GB）
+研究用 → NVIDIA A100（VRAM 80GB）
+趣味 → RTX 4060 Ti（VRAM 16GB）
+</code></pre>
+<h3>メーカー別の特徴</h3>
+<p><strong>NVIDIA（エヌビディア）</strong></p>
+<ul>
+<li>シェア約80%</li>
+<li>AI分野で圧倒的強さ</li>
+<li>RTXシリーズ、GeForceシリーズ</li>
+<li>高性能だが高価</li>
+</ul>
+<p><strong>AMD（エーエムディー）</strong></p>
+<ul>
+<li>コスパ重視</li>
+<li>Radeonシリーズ</li>
+<li>消費電力効率が良い</li>
+</ul>
+<p><strong>Intel（インテル）</strong></p>
+<ul>
+<li>新規参入（Arc シリーズ）</li>
+<li>価格競争力あり</li>
+<li>動画エンコードに強い</li>
+</ul>
+<h2>AI時代のGPU：なぜ注目されているのか</h2>
+<h3>🤖 AIにGPUが必要な理由</h3>
+<p><strong>ニューラルネットワークの計算</strong></p>
+<pre><code>1つの画像認識の裏側：
+入力画像（224×224ピクセル）
+↓
+第1層：1000万回の掛け算
+↓
+第2層：5000万回の掛け算
+↓
+第3層：2000万回の掛け算
+↓
+結果：「これは猫です（信頼度95%）」
+
+合計：約1億回の計算を0.01秒で完了！
+</code></pre>
+<h3>ChatGPTとGPU</h3>
+<p><strong>GPT-4の規模（推定）：</strong></p>
+<pre><code>パラメータ数：1.7兆個
+必要なGPU：約25,000個（A100）
+電力消費：小さな町1つ分
+処理速度：1秒で数万人の質問に回答
+</code></pre>
+<p><strong>なぜこんなにGPUが必要？</strong></p>
+<ol>
+<li>文章の各単語を数値化（ベクトル化）</li>
+<li>1兆個の重みと掛け算</li>
+<li>次の単語を予測</li>
+<li>これを文章が完成するまで繰り返す</li>
+</ol>
+<h3>画像生成AIとGPU</h3>
+<p><strong>Stable Diffusionの処理：</strong></p>
+<pre><code>「富士山の日の出」というテキスト
+↓
+ノイズ画像（ランダムな点）
+↓
+GPUが1秒間に数億回の計算
+↓
+少しずつノイズを除去（50回繰り返し）
+↓
+美しい富士山の画像が完成！
+
+所要時間：
+・RTX 4090：5秒
+・RTX 4060：20秒
+・CPUのみ：30分以上
+</code></pre>
+<h2>GPUの性能を見る指標</h2>
+<h3>📊 性能指標の読み方</h3>
+<p><strong>1. VRAM（ビデオメモリ）</strong></p>
+<pre><code>作業机の広さのようなもの
+4GB：簡単な作業
+8GB：ゲームや軽い編集
+16GB：本格的なクリエイティブ
+24GB以上：AI開発
+</code></pre>
+<p><strong>2. CUDAコア数/ストリームプロセッサ数</strong></p>
+<pre><code>作業員の数
+1000個：エントリーレベル
+3000個：ミドルレンジ
+10000個：ハイエンド
+</code></pre>
+<p><strong>3. クロック速度（MHz/GHz）</strong></p>
+<pre><code>作業員の動く速さ
+1500MHz：標準的
+2000MHz：高速
+2500MHz：超高速
+</code></pre>
+<p><strong>4. メモリ帯域</strong></p>
+<pre><code>材料を運ぶトラックの速さ
+200GB/s：エントリー
+400GB/s：ミドル
+1000GB/s：ハイエンド
+</code></pre>
+<h3>実際の性能比較例</h3>
+<p><strong>ゲーム（Cyberpunk 2077）フルHD最高設定：</strong></p>
+<pre><code>RTX 4090：150 FPS（超快適）
+RTX 4070：90 FPS（快適）
+RTX 4060：60 FPS（普通）
+GTX 1650：25 FPS（カクカク）
+内蔵GPU：5 FPS（プレイ不可）
+</code></pre>
+<h2>よくある疑問Q&#x26;A</h2>
+<h3>Q1：GPUは必ず必要？</h3>
+<p><strong>A：用途によります</strong></p>
+<pre><code>必要ない人：
+- メール、Web閲覧メイン
+- 事務作業中心
+- 動画視聴程度
+
+必要な人：
+- ゲームをする
+- 動画編集をする
+- 3D制作をする
+- AI開発をする
+</code></pre>
+<h3>Q2：GPUの寿命は？</h3>
+<p><strong>A：使い方次第で3〜7年</strong></p>
+<pre><code>長持ちさせるコツ：
+1. 適切な冷却（70度以下をキープ）
+2. 定期的な掃除（埃を除去）
+3. 適切な電源容量
+4. マイニングなど24時間稼働は避ける
+</code></pre>
+<h3>Q3：ノートPCのGPUは交換できる？</h3>
+<p><strong>A：基本的に不可能</strong></p>
+<ul>
+<li>ノートPCのGPUは基板に直付け</li>
+<li>外付けGPU（eGPU）という選択肢はある</li>
+<li>デスクトップPCなら簡単に交換可能</li>
+</ul>
+<h3>Q4：GPUの電気代は？</h3>
+<p><strong>計算例：</strong></p>
+<pre><code>RTX 4060（115W）でゲームを1日3時間
+115W × 3時間 × 30日 = 10.35kWh
+電気代：約280円/月
+
+RTX 4090（450W）で同じ条件
+450W × 3時間 × 30日 = 40.5kWh
+電気代：約1,100円/月
+</code></pre>
+<h3>Q5：CPUとGPU、どっちを優先すべき？</h3>
+<p><strong>用途別の優先順位：</strong></p>
+<pre><code>プログラミング：CPU ＞ GPU
+ゲーム：GPU ＞ CPU
+動画編集：GPU ≧ CPU
+配信：CPU ≧ GPU
+AI開発：GPU ＞＞ CPU
+</code></pre>
+<h2>未来のGPU技術</h2>
+<h3>🔮 今後の展望</h3>
+<p><strong>1. AI専用プロセッサの進化</strong></p>
+<ul>
+<li>より省電力で高性能</li>
+<li>スマホでもAI処理が当たり前に</li>
+<li>エッジAIの普及</li>
+</ul>
+<p><strong>2. クラウドGPUの普及</strong></p>
+<ul>
+<li>高性能GPUを必要な時だけレンタル</li>
+<li>初期投資不要</li>
+<li>GeForce NOWなどのゲームストリーミング</li>
+</ul>
+<p><strong>3. 量子コンピュータとの融合</strong></p>
+<ul>
+<li>特定の計算をさらに高速化</li>
+<li>新薬開発や気象予測への応用</li>
+</ul>
+<h2>まとめ：GPUは現代の魔法の道具</h2>
+<p>GPUは「大量の単純作業を同時にこなす専門家集団」です。もともとはゲームのきれいな画像を表示するために生まれましたが、今ではAIや科学計算など、私たちの生活を支える重要な技術となっています。</p>
+<h3>覚えておきたい3つのポイント</h3>
+<ol>
+<li><strong>GPUは並列処理の専門家</strong> - 同じ作業を大量に同時実行</li>
+<li><strong>CPUとGPUは役割分担</strong> - 複雑な判断はCPU、大量処理はGPU</li>
+<li><strong>用途に合わせて選ぶ</strong> - 必要以上の性能は無駄、用途を明確に</li>
+</ol>
+<p>テクノロジーの進化により、GPUの重要性はますます高まっています。この記事が、GPUという魔法の道具を理解する手助けになれば幸いです。</p>
+<h2>参考リンク</h2>
+<ul>
+<li><a href="https://www.nvidia.com/ja-jp/">NVIDIA公式サイト</a></li>
+<li><a href="https://www.amd.com/ja/graphics">AMD Radeon公式</a></li>
+<li><a href="https://www.intel.co.jp/content/www/jp/ja/products/discrete-gpus.html">Intel Arc Graphics</a></li>
+<li><a href="https://www.videocardbenchmark.net/">GPU性能比較表（PassMark）</a></li>
+<li><a href="https://www.techpowerup.com/gpu-specs/">TechPowerUp GPU Database</a></li>
+</ul>
+4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",33]}]," ","GPUって何？CPUとの違いから最新技術まで完全理解ガイド"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-12 23:49"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"GPU"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ハードウェア"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"AI"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"機械学習"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ゲーミング"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"初心者向け"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}
