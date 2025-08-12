@@ -8,14 +8,15 @@ c:I[9665,[],"ViewportBoundary"]
 e:I[6614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/css/ce87a0c8fce915ba.css","style"]
-0:{"P":null,"b":"rDTXMpKruKQ49B_bWbVp4","p":"","c":["","blog","gpu-complete-guide-for-beginners",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","gpu-complete-guide-for-beginners","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ce87a0c8fce915ba.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","gpu-complete-guide-for-beginners","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","SvVLCe-g9redOIqXl81qP",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+:HL["/_next/static/css/02b253edc89c9fad.css","style"]
+0:{"P":null,"b":"pkdKHHclo4VaH_aYBL_if","p":"","c":["","blog","gpu-complete-guide-for-beginners",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","gpu-complete-guide-for-beginners","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/02b253edc89c9fad.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","gpu-complete-guide-for-beginners","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","dZG1T_4qRZYLJi9fGOSK4",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[4911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
-12:I[6874,["874","static/chunks/874-8d3839f72fd80c3c.js","953","static/chunks/app/blog/%5Bslug%5D/page-677ab5ce4505fca7.js"],""]
-13:T43b9,<p>パソコンやスマホの性能表で「GPU」という言葉を見かけたことはありませんか？「なんとなくグラフィックに関係してそう」というイメージはあっても、実際に何をしているのか、なぜ重要なのかを説明できる人は意外と少ないかもしれません。本記事では、GPUの基本から最新の活用事例まで、身近な例を使ってわかりやすく解説します。</p>
+12:I[6874,["874","static/chunks/874-6d44df717ef1e402.js","953","static/chunks/app/blog/%5Bslug%5D/page-3b7c091bda807474.js"],""]
+14:I[4197,["874","static/chunks/874-6d44df717ef1e402.js","953","static/chunks/app/blog/%5Bslug%5D/page-3b7c091bda807474.js"],"default"]
+13:T556f,<p>パソコンやスマホの性能表で「GPU」という言葉を見かけたことはありませんか？「なんとなくグラフィックに関係してそう」というイメージはあっても、実際に何をしているのか、なぜ重要なのかを説明できる人は意外と少ないかもしれません。本記事では、GPUの基本から最新の活用事例まで、身近な例を使ってわかりやすく解説します。</p>
 <h2 id="-目次">📚 目次</h2>
 <ul>
 <li><a href="#gpu%E3%81%A8%E3%81%AF%E8%BA%AB%E8%BF%91%E3%81%AA%E4%BE%8B%E3%81%A7%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B">GPUとは？身近な例で理解する</a></li>
@@ -31,8 +32,30 @@ f:"$Sreact.suspense"
 </ul>
 <h2 id="gpuとは身近な例で理解する">GPUとは？身近な例で理解する</h2>
 <p>GPU（Graphics Processing Unit）は、日本語で「画像処理装置」と呼ばれるコンピュータの部品です。でも、これだけでは何をするものかピンときませんよね。</p>
+<h3 id="-gpuは実際に触れる物です">📦 GPUは実際に触れる「物」です</h3>
+<p>まず最初に重要なことをお伝えします。<strong>GPUは概念ではなく、実際に手で触れる物理的な部品</strong>です。</p>
+<p><strong>GPUの実物はこんな感じ：</strong></p>
+<pre><code>デスクトップPC用GPU（グラフィックボード）
+├── サイズ：約25cm × 12cm（大きめの定規くらい）
+├── 重さ：500g～2kg（ペットボトル1～4本分）
+├── 見た目：基板に冷却ファンが付いた機械
+└── 価格：1万円～30万円
+
+ノートPC/スマホ内蔵GPU
+├── サイズ：切手～消しゴムくらい（チップ）
+├── 場所：マザーボード（メイン基板）に直接取り付け
+├── 見た目：小さな黒い四角形のチップ
+└── 特徴：CPUと一体化していることも多い
+</code></pre>
+<p><strong>どこにあるの？</strong></p>
+<ul>
+<li><strong>デスクトップPC</strong>: ケースを開けると、マザーボードに挿さっている大きなカード</li>
+<li><strong>ノートPC</strong>: 分解しないと見えないが、内部の基板上にある</li>
+<li><strong>スマートフォン</strong>: 本体内部の基板上（米粒サイズのチップ）</li>
+<li><strong>ゲーム機</strong>: PS5やXboxの内部（専用設計のチップ）</li>
+</ul>
 <h3 id="-絵を描く専門家として考える">🎨 絵を描く専門家として考える</h3>
-<p>GPUを理解する最も簡単な方法は、「大量の点を同時に描く専門家」として考えることです。</p>
+<p>では、この物理的な部品が何をしているのか。GPUを理解する最も簡単な方法は、「大量の点を同時に描く専門家」として考えることです。</p>
 <p><strong>画面に表示される映像の正体</strong></p>
 <pre><code>あなたのモニター（フルHD）
 横1920個 × 縦1080個 = 約200万個の点（ピクセル）
@@ -58,6 +81,32 @@ f:"$Sreact.suspense"
 </ul>
 <h2 id="cpuとgpuの違いレストランで例えると">CPUとGPUの違い：レストランで例えると</h2>
 <p>コンピュータの中でCPUとGPUがどう協力しているか、レストランに例えて説明します。</p>
+<h3 id="️-cpuも物理的な部品です">🖥️ CPUも物理的な部品です</h3>
+<p><strong>CPU（Central Processing Unit = 中央処理装置）の実物：</strong></p>
+<pre><code>デスクトップPC用CPU
+├── サイズ：約4cm × 4cm（マッチ箱くらい）
+├── 見た目：金属の平たい四角形
+├── 場所：マザーボードの中央付近のソケット
+└── 価格：1万円～10万円
+
+ノートPC/スマホ用CPU
+├── サイズ：1cm × 1cm～2cm × 2cm
+├── 場所：マザーボードに直接固定
+└── 特徴：取り外し不可（はんだ付け）
+</code></pre>
+<p><strong>CPUとGPUの位置関係：</strong></p>
+<pre><code>パソコンの中身（簡略図）
+┌─────────────────────────┐
+│  電源ユニット          │
+│                        │
+│  マザーボード          │
+│  ┌──────┐  ┌────────┐ │
+│  │ CPU  │  │  GPU   │ │
+│  └──────┘  └────────┘ │
+│                        │
+│  メモリ    ストレージ  │
+└─────────────────────────┘
+</code></pre>
 <h3 id="-cpu--シェフ料理長">🍳 CPU = シェフ（料理長）</h3>
 <p><strong>特徴：</strong></p>
 <ul>
@@ -198,6 +247,49 @@ Android: Snapdragon 8 Gen 3（Adreno GPU）
 <li>Midjourney の画像生成</li>
 </ul>
 <h2 id="gpuの種類と選び方">GPUの種類と選び方</h2>
+<h3 id="-どこで買えるどうやって交換する">🛒 どこで買える？どうやって交換する？</h3>
+<p><strong>GPUの購入方法：</strong></p>
+<pre><code>新品で購入
+├── 家電量販店（ヨドバシ、ビックカメラなど）
+├── PCパーツショップ（ドスパラ、ツクモなど）
+├── Amazon、楽天などのECサイト
+└── メーカー直販サイト（NVIDIA、AMDなど）
+
+中古で購入
+├── 中古PCショップ
+├── メルカリ、ヤフオクなど
+└── 注意：マイニング使用品は寿命が短い可能性
+
+完成品PCで購入
+├── ゲーミングPC（GPU搭載済み）
+├── クリエイターPC（GPU搭載済み）
+└── BTOパソコン（カスタマイズ可能）
+</code></pre>
+<p><strong>交換・増設できる？できない？</strong></p>
+<pre><code>✅ 交換・増設できる
+├── デスクトップPC（タワー型）
+├── 一部のゲーミングノートPC（外付けGPU対応）
+└── 自作PC
+
+❌ 交換・増設できない
+├── 一般的なノートPC（はんだ付けされている）
+├── MacBook全モデル
+├── スマートフォン、タブレット
+├── 一体型デスクトップPC（iMacなど）
+└── ゲーム機（PS5、Switchなど）
+</code></pre>
+<p><strong>交換の難易度：</strong></p>
+<pre><code>簡単度：★★★☆☆（中級者向け）
+
+必要な作業：
+1. PCケースを開ける（ドライバー必要）
+2. 古いGPUを取り外す（レバーを押して引き抜く）
+3. 新しいGPUを挿す（カチッと音がするまで）
+4. 電源ケーブルを接続（高性能GPUの場合）
+5. ドライバーをインストール
+
+所要時間：15～30分
+</code></pre>
 <h3 id="用途別gpu選択ガイド">用途別GPU選択ガイド</h3>
 <p><strong>1. 一般用途（Web閲覧、動画視聴）</strong></p>
 <pre><code>推奨：CPU内蔵GPU
@@ -407,7 +499,7 @@ AI開発：GPU ＞＞ CPU
 <li><a href="https://www.intel.co.jp/content/www/jp/ja/products/discrete-gpus.html">Intel Arc Graphics</a></li>
 <li><a href="https://www.videocardbenchmark.net/">GPU性能比較表（PassMark）</a></li>
 <li><a href="https://www.techpowerup.com/gpu-specs/">TechPowerUp GPU Database</a></li>
-</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",32]}]," ","GPUって何？CPUとの違いから最新技術まで完全理解ガイド"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-12 23:49"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"GPU"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ハードウェア"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"AI"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"機械学習"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ゲーミング"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"初心者向け"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}]]}]
+</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",32]}]," ","GPUって何？CPUとの違いから最新技術まで完全理解ガイド"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-12 23:49"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"GPU"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ハードウェア"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"AI"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"機械学習"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ゲーミング"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"初心者向け"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L14",null,{}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
 11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
