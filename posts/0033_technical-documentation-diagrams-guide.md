@@ -15,6 +15,7 @@ create: "2025-08-13 01:55"
 - [GUIツールによる図解作成](#guiツールによる図解作成)
 - [スクリーンショットとGIF動画](#スクリーンショットとgif動画)
 - [図解作成のベストプラクティス](#図解作成のベストプラクティス)
+- [Remarkを使用したブログでのMermaid活用](#remarkを使用したブログでのmermaid活用)
 - [プラットフォーム別の実装方法](#プラットフォーム別の実装方法)
 - [実例で学ぶ図解テクニック](#実例で学ぶ図解テクニック)
 
@@ -404,6 +405,216 @@ Web:
 ✅ コードと同期して更新
 ✅ バージョン番号を記載
 ✅ 最終更新日を明記
+```
+
+## Remarkを使用したブログでのMermaid活用
+
+### 🎯 なぜRemarkブログにはMermaidが最適なのか
+
+Remarkベースのブログ（Next.js、Gatsby、Astroなど）では、**Mermaidが圧倒的におすすめ**です。
+
+**理由：**
+```
+1. プラグインが充実
+   └─ remark-mermaid
+   └─ gatsby-remark-mermaid
+   └─ @astrojs/markdown-remark
+
+2. メンテナンスが楽
+   └─ テキストベースでGit管理
+   └─ 画像の再生成不要
+   └─ 更新が即座に反映
+
+3. パフォーマンス
+   └─ 静的生成可能
+   └─ SEO対応（テキストベース）
+   └─ 軽量（画像より小さい）
+```
+
+### 📦 Remarkでの実装方法
+
+**1. 必要なパッケージのインストール**
+```bash
+# Next.jsの場合
+npm install remark-mermaid mermaid
+
+# Gatsbyの場合
+npm install gatsby-remark-mermaid
+
+# 基本的なremark環境
+npm install remark remark-html remark-mermaid
+```
+
+**2. 設定例（Next.js）**
+```javascript
+// next.config.js または lib/posts.ts
+import remarkMermaid from 'remark-mermaid';
+
+const processedContent = await remark()
+  .use(remarkGfm)
+  .use(remarkMermaid, {
+    // オプション設定
+    theme: 'default', // dark, forest, neutral など
+    backgroundColor: 'transparent',
+  })
+  .use(remarkRehype)
+  .use(rehypeStringify)
+  .process(matterResult.content);
+```
+
+**3. 設定例（Gatsby）**
+```javascript
+// gatsby-config.js
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-mermaid`,
+            options: {
+              theme: 'default',
+              viewport: {
+                width: 800,
+                height: 600
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+### 🎨 実際のMermaid図例（このブログで動作）
+
+**システムアーキテクチャ図**
+```mermaid
+graph TB
+    subgraph "ユーザー層"
+        U1[PCユーザー]
+        U2[スマホユーザー]
+    end
+    
+    subgraph "フロントエンド"
+        FE[Next.js App]
+    end
+    
+    subgraph "バックエンド"
+        API[API Server]
+        AUTH[認証サービス]
+    end
+    
+    subgraph "データ層"
+        DB[(PostgreSQL)]
+        CACHE[(Redis)]
+    end
+    
+    U1 --> FE
+    U2 --> FE
+    FE --> API
+    FE --> AUTH
+    API --> DB
+    API --> CACHE
+    AUTH --> DB
+    
+    style FE fill:#e1f5fe
+    style API fill:#fff3e0
+    style DB fill:#f3e5f5
+```
+
+**開発フロー図**
+```mermaid
+gitGraph
+    commit id: "Initial commit"
+    branch develop
+    checkout develop
+    commit id: "Add feature A"
+    commit id: "Add feature B"
+    branch feature/new-ui
+    checkout feature/new-ui
+    commit id: "Update UI"
+    commit id: "Fix styles"
+    checkout develop
+    merge feature/new-ui
+    checkout main
+    merge develop tag: "v1.0.0"
+```
+
+**処理シーケンス図**
+```mermaid
+sequenceDiagram
+    autonumber
+    participant User as ユーザー
+    participant Blog as ブログ
+    participant Remark as Remark
+    participant Mermaid as Mermaid
+    
+    User->>Blog: 記事を閲覧
+    Blog->>Remark: Markdown処理
+    Remark->>Mermaid: Mermaidブロック検出
+    Mermaid-->>Remark: SVG生成
+    Remark-->>Blog: HTML出力
+    Blog-->>User: 図付き記事表示
+```
+
+### 🔧 ダークモード対応
+
+```javascript
+// Mermaidのテーマを動的に切り替え
+const mermaidConfig = {
+  startOnLoad: true,
+  theme: window.matchMedia('(prefers-color-scheme: dark)').matches 
+    ? 'dark' 
+    : 'default',
+  themeVariables: {
+    // ブランドカラーに合わせる
+    primaryColor: '#0066cc',
+    primaryTextColor: '#ffffff',
+    primaryBorderColor: '#004499',
+    lineColor: '#5a5a5a',
+    secondaryColor: '#006644',
+    tertiaryColor: '#fff'
+  }
+};
+
+// 初期化
+mermaid.initialize(mermaidConfig);
+```
+
+### 📊 他の選択肢との比較表
+
+| ツール | Remarkとの相性 | メリット | デメリット | おすすめ度 |
+|--------|---------------|----------|------------|-----------|
+| **Mermaid** | ★★★★★ | プラグイン豊富、Git管理しやすい | 細かいデザイン調整が難しい | ⭐最推奨 |
+| **PlantUML** | ★★★☆☆ | 機能が豊富、詳細なUML図 | Java必要、ビルド時間長い | 特殊用途 |
+| **SVGインライン** | ★★☆☆☆ | 完全なデザイン制御 | 作成・更新が大変 | デザイン重視時 |
+| **ASCIIアート** | ★★★★☆ | 依存なし、超軽量 | 見た目が地味、複雑な図は困難 | シンプルな図 |
+| **draw.io埋め込み** | ★★☆☆☆ | GUI操作、美しい | 画像管理が必要、更新が面倒 | 最終手段 |
+
+### 🚀 パフォーマンス最適化
+
+```javascript
+// 遅延読み込みの実装
+const LazyMermaid = dynamic(
+  () => import('../components/MermaidRenderer'),
+  { 
+    loading: () => <div>図を読み込み中...</div>,
+    ssr: false 
+  }
+);
+
+// ビルド時に静的生成
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+  
+  // Mermaid図を含む記事を事前レンダリング
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 ```
 
 ## プラットフォーム別の実装方法
