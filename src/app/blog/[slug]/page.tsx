@@ -2,6 +2,7 @@ import { getAllPostSlugs, getPostData } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import ScrollToTopButton from '@/components/ScrollToTopButton'
+import MermaidClientWrapper from './MermaidClientWrapper'
 
 // 各記事の詳細ページのviewファイルです。
 
@@ -52,6 +53,7 @@ export default async function BlogPostPage(props: any) {
         className="prose dark:prose-invert"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}
       />
+      <MermaidClientWrapper />
       <nav className="mt-8 pt-4 border-t border-gray-700 flex justify-between">
         <Link href="/" className="text-blue-400 hover:text-blue-300 hover:underline">
           ← ホームへ

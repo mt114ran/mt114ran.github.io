@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
+import rehypeRaw from 'rehype-raw';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 export const POSTS_PER_PAGE = 10;
@@ -74,13 +75,45 @@ export async function getPostData(slug: string) {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   const matterResult = matter(fileContents);
+  
+  // Mermaidブロックを一時的にプレースホルダーに置換
+  let content = matterResult.content;
+  const mermaidRegex = /```mermaid\r?\n([\s\S]*?)\r?\n```/g;
+  const mermaidBlocks: string[] = [];
+  let mermaidIndex = 0;
+  
+  // Mermaidブロックを収集してプレースホルダーに置換
+  content = content.replace(mermaidRegex, (_, code) => {
+    // HTMLエンティティをエスケープ
+    const escapedCode = code
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+    mermaidBlocks.push(escapedCode);
+    // 一時的なプレースホルダーを使用
+    return `\n<!-- MERMAID_PLACEHOLDER_${mermaidIndex++} -->\n`;
+  });
+  
+  console.log(`Found ${mermaidBlocks.length} mermaid blocks in ${slug}`);
+  
+  // Markdownを処理
   const processedContent = await remark()
     .use(remarkGfm)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
     .use(rehypeSlug)
     .use(rehypeStringify)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+    .process(content);
+  let contentHtml = processedContent.toString();
+  
+  // プレースホルダーをMermaidブロックに戻す
+  mermaidBlocks.forEach((code, index) => {
+    const placeholder = `<!-- MERMAID_PLACEHOLDER_${index} -->`;
+    const mermaidDiv = `<div class="mermaid">${code}</div>`;
+    contentHtml = contentHtml.replace(placeholder, mermaidDiv);
+  });
 
   return {
     slug,
