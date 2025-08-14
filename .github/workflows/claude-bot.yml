@@ -131,8 +131,8 @@ jobs:
             
             try {
               const response = await anthropic.messages.create({
-                model: 'claude-3-5-sonnet-20241022',
-                max_tokens: 4000,
+                model: 'claude-3-haiku-20240307', // より安価なモデル
+                max_tokens: 2000, // トークン数を減らしてコスト削減
                 temperature: 0,
                 system: systemPrompt,
                 messages: [
