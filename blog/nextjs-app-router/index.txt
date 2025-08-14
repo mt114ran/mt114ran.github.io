@@ -9,7 +9,7 @@ e:I[26614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/19bdf9af4d1ae4d4.css","style"]
-0:{"P":null,"b":"CMxdg3PnUz1MVzpkS50wb","p":"","c":["","blog","nextjs-app-router",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","nextjs-app-router","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","nextjs-app-router","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","ZNce8tPKGgAWuzEjvW2TF",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"OZrK3Jxtp7vtpiJ1I66GM","p":"","c":["","blog","nextjs-app-router",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","nextjs-app-router","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","nextjs-app-router","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","esShQQPeaVfa_9mhXdowo",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[74911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
@@ -17,11 +17,63 @@ f:"$Sreact.suspense"
 12:I[6874,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],""]
 14:I[31203,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
 15:I[4197,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
-13:T1181,<h1 id="nextjs-app-routerの基本概念と実装パターン">Next.js App Routerの基本概念と実装パターン</h1>
+13:T22ff,<h1 id="nextjs-app-routerの基本概念と実装パターン">Next.js App Routerの基本概念と実装パターン</h1>
 <p><a href="https://nextjs.org/">Next.js</a> 13で導入された<strong>App Router</strong>は、従来のPages Routerとは異なるアプローチで<strong>ルーティング</strong>（URLとページの対応付け）を管理します。</p>
+<h2 id="フルスタックフレームワークとは">フルスタックフレームワークとは？</h2>
+<p><strong>フルスタックフレームワーク</strong>とは、フロントエンドからバックエンドまで、Webアプリケーション開発に必要な機能をすべて提供するフレームワークです。</p>
+<h3 id="フルスタックフレームワークが提供する機能">フルスタックフレームワークが提供する機能</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>領域</th><th>機能</th><th>Next.jsでの実現方法</th></tr></thead><tbody><tr><td>フロントエンド</td><td>UIコンポーネント</td><td>Reactコンポーネント</td></tr><tr><td>ルーティング</td><td>URL管理</td><td>App Router / Pages Router</td></tr><tr><td>サーバーサイド</td><td>APIエンドポイント</td><td>Route Handlers (API Routes)</td></tr><tr><td>レンダリング</td><td>SSR/SSG/ISR</td><td>ビルトインサポート</td></tr><tr><td>データベース</td><td>DB接続</td><td>Server Actions、ORM連携</td></tr><tr><td>認証</td><td>ユーザー管理</td><td>NextAuth.jsなど</td></tr><tr><td>デプロイ</td><td>ホスティング</td><td>Vercel、Netlify対応</td></tr></tbody></table>
 <h3 id="用語解説">用語解説</h3>
 <ul>
-<li><strong>Next.js</strong>: Reactベースのフルスタックフレームワーク。サーバーサイドレンダリング（SSR）や静的サイト生成（SSG）が簡単に実装できる</li>
+<li><strong>Next.js</strong>: Reactベースのフルスタックフレームワーク</li>
+<li><strong>SSR（Server-Side Rendering）</strong>: サーバー側でHTMLを生成してからブラウザに送る技術</li>
+<li><strong>SSG（Static Site Generation）</strong>: ビルド時に静的なHTMLを生成する技術</li>
+<li><strong>ISR（Incremental Static Regeneration）</strong>: 静的ページを段階的に更新する技術</li>
 <li><strong>ルーティング</strong>: URLパスとページコンポーネントを紐付ける仕組み</li>
 <li><strong>フレームワーク</strong>: アプリケーション開発の土台となるソフトウェアの枠組み</li>
 </ul>
@@ -70,6 +122,142 @@ export default function RootLayout({
 <li><strong>キャッシング</strong>: 一度読み込んだデータを保存して再利用する仕組み</li>
 <li><strong>ストリーミングSSR</strong>: ページの一部を順次送信して表示速度を向上させる技術</li>
 </ul>
+<h2 id="nextjsのメリットとデメリット">Next.jsのメリットとデメリット</h2>
+<h3 id="メリット-">メリット 👍</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>メリット</th><th>説明</th><th>具体例</th></tr></thead><tbody><tr><td><strong>開発効率</strong></td><td>フルスタック機能が統合済み</td><td>ルーティング、API、デプロイが一つのフレームワークで完結</td></tr><tr><td><strong>パフォーマンス</strong></td><td>自動最適化機能が豊富</td><td>画像最適化、コード分割、プリフェッチ</td></tr><tr><td><strong>SEO対応</strong></td><td>SSR/SSGによるSEO最適化</td><td>検索エンジンがコンテンツを読みやすい</td></tr><tr><td><strong>TypeScript</strong></td><td>標準でTypeScriptサポート</td><td>型安全な開発が可能</td></tr><tr><td><strong>エコシステム</strong></td><td>Vercelとの完璧な統合</td><td>ワンクリックデプロイ</td></tr></tbody></table>
+<h3 id="デメリット-">デメリット 👎</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>デメリット</th><th>説明</th><th>対策</th></tr></thead><tbody><tr><td><strong>学習コスト</strong></td><td>Reactの知識に加えNext.js特有の概念を学ぶ必要</td><td>公式ドキュメントやチュートリアルを活用</td></tr><tr><td><strong>柔軟性の制約</strong></td><td>Next.jsの約束に従う必要</td><td>ファイル構造や命名規則が固定</td></tr><tr><td><strong>ビルド時間</strong></td><td>大規模アプリではビルドが長い</td><td>ISRや動的ルートを活用</td></tr><tr><td><strong>ベンダーロックイン</strong></td><td>Vercel以外でのホスティングが複雑</td><td>セルフホスティング用の設定が必要</td></tr><tr><td><strong>ランタイムコスト</strong></td><td>サーバーサイド処理によるサーバー負荷</td><td>適切なキャッシュ戦略を実装</td></tr><tr><td><strong>バージョン更新</strong></td><td>メジャーアップデートで破壊的変更</td><td>慰意的なアップグレード計画</td></tr></tbody></table>
+<h3 id="他のフレームワークとの比較">他のフレームワークとの比較</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>機能</th><th>Next.js</th><th>Nuxt.js</th><th>SvelteKit</th><th>Remix</th></tr></thead><tbody><tr><td>ベース</td><td>React</td><td>Vue</td><td>Svelte</td><td>React</td></tr><tr><td>SSR/SSG</td><td>◎</td><td>◎</td><td>◎</td><td>◎</td></tr><tr><td>API Routes</td><td>◎</td><td>◎</td><td>◎</td><td>◎</td></tr><tr><td>TypeScript</td><td>◎</td><td>◎</td><td>◎</td><td>◎</td></tr><tr><td>学習曲線</td><td>中</td><td>低</td><td>低</td><td>中</td></tr><tr><td>エコシステム</td><td>大</td><td>中</td><td>小</td><td>小</td></tr></tbody></table>
 <p>App Routerを使いこなすことで、より高速で<strong>SEO</strong>フレンドリーなWebアプリケーションを構築できます。</p>
 <p>💡 <strong>SEO（Search Engine Optimization）</strong>: 検索エンジン最適化。GoogleやBingなどの検索結果で上位に表示されやすくする技術</p>
 <h2 id="参考リンク">参考リンク</h2>
