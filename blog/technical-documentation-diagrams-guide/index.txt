@@ -1,0 +1,929 @@
+1:"$Sreact.fragment"
+2:I[87555,[],""]
+3:I[31295,[],""]
+5:I[59665,[],"MetadataBoundary"]
+7:I[59665,[],"OutletBoundary"]
+a:I[74911,[],"AsyncMetadataOutlet"]
+c:I[59665,[],"ViewportBoundary"]
+e:I[26614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/19bdf9af4d1ae4d4.css","style"]
+0:{"P":null,"b":"CMxdg3PnUz1MVzpkS50wb","p":"","c":["","blog","technical-documentation-diagrams-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","technical-documentation-diagrams-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","technical-documentation-diagrams-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","mTnWDGetDFo_ExQD48wQS",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[74911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],""]
+14:I[31203,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+15:I[4197,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+13:T7bd5,<p>技術ドキュメントやブログ記事を書く時、「文字だけでは伝わりにくい」と感じたことはありませんか？適切な図解は、複雑な概念を一目で理解できるようにし、読者の理解度を大幅に向上させます。本記事では、READMEやブログ記事で使える図の作成方法を、初心者でも実践できるよう詳しく解説します。</p>
+<h2 id="-目次">📚 目次</h2>
+<ul>
+<li><a href="#%E3%81%AA%E3%81%9C%E5%9B%B3%E8%A7%A3%E3%81%8C%E9%87%8D%E8%A6%81%E3%81%AA%E3%81%AE%E3%81%8B">なぜ図解が重要なのか</a></li>
+<li><a href="#%E5%9B%B3%E8%A7%A3%E3%81%AE%E7%A8%AE%E9%A1%9E%E3%81%A8%E4%BD%BF%E3%81%84%E5%88%86%E3%81%91">図解の種類と使い分け</a></li>
+<li><a href="#%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E5%9B%B3%E8%A7%A3%E3%83%84%E3%83%BC%E3%83%AB">テキストベースの図解ツール</a></li>
+<li><a href="#gui%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AB%E3%82%88%E3%82%8B%E5%9B%B3%E8%A7%A3%E4%BD%9C%E6%88%90">GUIツールによる図解作成</a></li>
+<li><a href="#%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%E3%81%A8gif%E5%8B%95%E7%94%BB">スクリーンショットとGIF動画</a></li>
+<li><a href="#%E5%9B%B3%E8%A7%A3%E4%BD%9C%E6%88%90%E3%81%AE%E3%83%99%E3%82%B9%E3%83%88%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9">図解作成のベストプラクティス</a></li>
+<li><a href="#remark%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E3%83%96%E3%83%AD%E3%82%B0%E3%81%A7%E3%81%AEmermaid%E6%B4%BB%E7%94%A8">Remarkを使用したブログでのMermaid活用</a></li>
+<li><a href="#%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E5%88%A5%E3%81%AE%E5%AE%9F%E8%A3%85%E6%96%B9%E6%B3%95">プラットフォーム別の実装方法</a></li>
+<li><a href="#%E5%AE%9F%E4%BE%8B%E3%81%A7%E5%AD%A6%E3%81%B6%E5%9B%B3%E8%A7%A3%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF">実例で学ぶ図解テクニック</a></li>
+</ul>
+<h2 id="なぜ図解が重要なのか">なぜ図解が重要なのか</h2>
+<h3 id="-数字で見る図解の効果">📊 数字で見る図解の効果</h3>
+<pre><code>図解がある技術記事 vs 図解がない技術記事
+
+読了率：      65% vs 30%
+理解度：      85% vs 45%
+共有率：      3.2倍
+記憶定着率：   72時間後も60% vs 10%
+</code></pre>
+<h3 id="図解が特に有効な場面">図解が特に有効な場面</h3>
+<p><strong>1. システム構成の説明</strong></p>
+<pre><code>❌ 文章のみ：
+「フロントエンドがAPIサーバーにリクエストを送り、
+APIサーバーがデータベースからデータを取得して返す」
+
+✅ 図解あり：
+┌─────────┐     HTTP      ┌─────────┐     SQL      ┌─────────┐
+│Frontend │────────────>│   API   │────────────>│Database │
+└─────────┘&#x3C;────────────└─────────┘&#x3C;────────────└─────────┘
+            JSON Response          Query Result
+</code></pre>
+<p><strong>2. 処理フローの説明</strong></p>
+<pre><code>❌ 文章のみ：
+「ユーザーがログインボタンを押すと認証処理が始まり...」
+
+✅ 図解あり：
+[ユーザー] → [ログインボタン] → [認証API]
+                                    ↓
+[ホーム画面] ← [成功] ← [トークン発行]
+     ↑
+[エラー表示] ← [失敗]
+</code></pre>
+<h2 id="図解の種類と使い分け">図解の種類と使い分け</h2>
+<h3 id="-図解の種類マトリックス">📐 図解の種類マトリックス</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>図の種類</th><th>適した用途</th><th>作成難易度</th><th>おすすめツール</th></tr></thead><tbody><tr><td><strong>フローチャート</strong></td><td>処理の流れ、アルゴリズム</td><td>★★☆☆☆</td><td>Mermaid, draw.io</td></tr><tr><td><strong>シーケンス図</strong></td><td>API通信、時系列の処理</td><td>★★★☆☆</td><td>PlantUML, Mermaid</td></tr><tr><td><strong>ER図</strong></td><td>データベース設計</td><td>★★★☆☆</td><td>dbdiagram.io, PlantUML</td></tr><tr><td><strong>アーキテクチャ図</strong></td><td>システム全体像</td><td>★★★★☆</td><td>draw.io, Lucidchart</td></tr><tr><td><strong>マインドマップ</strong></td><td>アイデア整理、機能一覧</td><td>★☆☆☆☆</td><td>XMind, Mermaid</td></tr><tr><td><strong>ガントチャート</strong></td><td>スケジュール管理</td><td>★★☆☆☆</td><td>Mermaid, Excel</td></tr><tr><td><strong>グラフ・チャート</strong></td><td>データ可視化</td><td>★★☆☆☆</td><td>Chart.js, Python</td></tr><tr><td><strong>ワイヤーフレーム</strong></td><td>UI設計</td><td>★★★☆☆</td><td>Figma, draw.io</td></tr></tbody></table>
+<h2 id="テキストベースの図解ツール">テキストベースの図解ツール</h2>
+<h3 id="-asciiアート">🔤 ASCIIアート</h3>
+<p><strong>メリット：</strong></p>
+<ul>
+<li>特別なツール不要</li>
+<li>Markdownにそのまま記載可能</li>
+<li>バージョン管理しやすい</li>
+</ul>
+<p><strong>基本的な図形：</strong></p>
+<pre><code>箱：
+┌─────────────┐
+│   Content   │
+└─────────────┘
+
+矢印：
+→ ← ↑ ↓ ↔ ↕
+
+線：
+─ │ ┌ ┐ └ ┘ ├ ┤ ┬ ┴ ┼
+
+ツリー構造：
+project/
+├── src/
+│   ├── components/
+│   └── utils/
+└── tests/
+</code></pre>
+<p><strong>実用例：APIの流れ</strong></p>
+<pre><code>┌─────────┐      ┌─────────┐      ┌─────────┐
+│ Client  │─────>│  Nginx  │─────>│  Node   │
+└─────────┘      └─────────┘      └─────────┘
+     ↑                                  │
+     │                                  ↓
+     │           ┌─────────┐      ┌─────────┐
+     └───────────│  Redis  │&#x3C;─────│MongoDB  │
+                 └─────────┘      └─────────┘
+</code></pre>
+<h3 id="-mermaid">📊 Mermaid</h3>
+<p><strong>特徴：</strong></p>
+<ul>
+<li>GitHubのREADMEで直接レンダリング</li>
+<li>学習コストが低い</li>
+<li>様々な図に対応</li>
+</ul>
+<p><strong>1. フローチャート</strong></p>
+<p>以下のコードを書くと：</p>
+<pre><code class="language-markdown">
+&#x3C;!-- MERMAID_PLACEHOLDER_0 -->
+
+</code></pre>
+<p>このような図が生成されます：</p>
+<div class="mermaid">graph TD
+    A[開始] --&gt; B{エラー?}
+    B --&gt;|Yes| C[エラー処理]
+    B --&gt;|No| D[正常処理]
+    C --&gt; E[終了]
+    D --&gt; E[終了]</div>
+<p><strong>2. シーケンス図</strong></p>
+<p>以下のコードを書くと：</p>
+<pre><code class="language-markdown">
+&#x3C;!-- MERMAID_PLACEHOLDER_2 -->
+
+</code></pre>
+<p>このようなシーケンス図が生成されます：</p>
+<div class="mermaid">sequenceDiagram
+    participant U as User
+    participant F as Frontend
+    participant A as API
+    participant D as Database
+    
+    U-&gt;&gt;F: ログインボタンクリック
+    F-&gt;&gt;A: POST /login
+    A-&gt;&gt;D: ユーザー情報取得
+    D--&gt;&gt;A: ユーザーデータ
+    A--&gt;&gt;F: JWT token
+    F--&gt;&gt;U: ホーム画面表示</div>
+<p><strong>3. ガントチャート</strong></p>
+<p>以下のコードを書くと：</p>
+<pre><code class="language-markdown">
+&#x3C;!-- MERMAID_PLACEHOLDER_4 -->
+
+</code></pre>
+<p>このようなガントチャートが生成されます：</p>
+<div class="mermaid">gantt
+    title プロジェクトスケジュール
+    dateFormat  YYYY-MM-DD
+    section 開発
+    設計           :2024-01-01, 7d
+    実装           :2024-01-08, 14d
+    テスト         :2024-01-22, 7d
+    section リリース
+    デプロイ準備    :2024-01-29, 2d
+    本番リリース    :2024-01-31, 1d</div>
+<h3 id="-plantuml">🌱 PlantUML</h3>
+<p><strong>特徴：</strong></p>
+<ul>
+<li>より詳細な図が作成可能</li>
+<li>UML図に特化</li>
+<li>VSCodeで拡張機能あり</li>
+</ul>
+<p><strong>クラス図の例：</strong></p>
+<pre><code class="language-plantuml">@startuml
+class User {
+  +id: string
+  +name: string
+  +email: string
+  +login()
+  +logout()
+}
+
+class Post {
+  +id: string
+  +title: string
+  +content: string
+  +author: User
+  +publish()
+  +delete()
+}
+
+User "1" --> "*" Post : creates
+@enduml
+</code></pre>
+<h2 id="guiツールによる図解作成">GUIツールによる図解作成</h2>
+<h3 id="-drawio-diagramsnet">🎨 draw.io (diagrams.net)</h3>
+<p><strong>特徴：</strong></p>
+<ul>
+<li>完全無料</li>
+<li>ブラウザで動作</li>
+<li>豊富なテンプレート</li>
+</ul>
+<p><strong>使い方：</strong></p>
+<ol>
+<li><a href="https://app.diagrams.net">https://app.diagrams.net</a> にアクセス</li>
+<li>保存先を選択（Google Drive、ローカルなど）</li>
+<li>テンプレートを選択または新規作成</li>
+<li>ドラッグ&#x26;ドロップで図形配置</li>
+<li>エクスポート（PNG、SVG、PDF）</li>
+</ol>
+<p><strong>おすすめ設定：</strong></p>
+<pre><code>エクスポート設定：
+- 形式：PNG（ブログ用）、SVG（README用）
+- 背景：透明
+- 解像度：300dpi（印刷品質）
+- Border：10px（余白確保）
+</code></pre>
+<h3 id="-excalidraw">🎯 Excalidraw</h3>
+<p><strong>特徴：</strong></p>
+<ul>
+<li>手書き風のカジュアルな図</li>
+<li>リアルタイムコラボレーション</li>
+<li>シンプルな操作性</li>
+</ul>
+<p><strong>使用例：</strong></p>
+<pre><code>アイデアスケッチ、ブレインストーミング図、
+簡単なワイヤーフレーム、概念説明図
+</code></pre>
+<h3 id="-有料ツール">💎 有料ツール</h3>
+<p><strong>Lucidchart</strong></p>
+<ul>
+<li>料金：$7.95/月〜</li>
+<li>特徴：プロ向け機能、豊富なテンプレート</li>
+</ul>
+<p><strong>Figma</strong></p>
+<ul>
+<li>料金：無料〜$12/月</li>
+<li>特徴：UI/UXデザイン、プロトタイピング</li>
+</ul>
+<p><strong>Miro</strong></p>
+<ul>
+<li>料金：無料〜$8/月</li>
+<li>特徴：オンラインホワイトボード、チーム作業</li>
+</ul>
+<h2 id="スクリーンショットとgif動画">スクリーンショットとGIF動画</h2>
+<h3 id="-効果的なスクリーンショット">📸 効果的なスクリーンショット</h3>
+<p><strong>macOSの場合：</strong></p>
+<pre><code class="language-bash"># 全画面
+Cmd + Shift + 3
+
+# 選択範囲
+Cmd + Shift + 4
+
+# ウィンドウ単位（影付き）
+Cmd + Shift + 4 → Space
+
+# クリップボードに保存
+上記 + Control
+</code></pre>
+<p><strong>Windowsの場合：</strong></p>
+<pre><code class="language-bash"># 全画面
+Print Screen
+
+# アクティブウィンドウ
+Alt + Print Screen
+
+# 選択範囲（Windows 10以降）
+Win + Shift + S
+</code></pre>
+<p><strong>アノテーション（注釈）の追加：</strong></p>
+<pre><code>推奨ツール：
+- Skitch（Mac）
+- Greenshot（Windows）
+- Flameshot（Linux）
+
+追加すべき要素：
+✅ 矢印（注目ポイント）
+✅ 枠線（重要エリア）
+✅ テキスト（説明）
+✅ ぼかし（個人情報隠し）
+</code></pre>
+<h3 id="-gif動画の作成">🎬 GIF動画の作成</h3>
+<p><strong>作成ツール：</strong></p>
+<pre><code>Mac:
+- Gifox（$4.99）
+- GIPHY Capture（無料）
+- Kap（無料、オープンソース）
+
+Windows:
+- ScreenToGif（無料）
+- LICEcap（無料）
+
+Web:
+- CloudConvert（動画→GIF変換）
+</code></pre>
+<p><strong>最適な設定：</strong></p>
+<pre><code>解像度：800x600px以下
+フレームレート：10-15fps
+長さ：5-10秒
+ファイルサイズ：5MB以下
+ループ：有効
+</code></pre>
+<p><strong>使用例：</strong></p>
+<pre><code class="language-markdown">## デモ
+
+![アプリの動作デモ](./docs/demo.gif)
+
+### 操作手順
+1. ボタンをクリック
+2. フォームに入力
+3. 送信ボタンを押す
+</code></pre>
+<h2 id="図解作成のベストプラクティス">図解作成のベストプラクティス</h2>
+<h3 id="-やるべきこと">✅ やるべきこと</h3>
+<p><strong>1. 一貫性を保つ</strong></p>
+<pre><code class="language-yaml">色の使い分け:
+  primary: "#007ACC"    # メイン要素
+  secondary: "#6C757D"  # サブ要素
+  success: "#28A745"    # 成功・正常
+  danger: "#DC3545"     # エラー・警告
+  
+フォント:
+  見出し: "bold 14px"
+  本文: "normal 12px"
+  注釈: "italic 10px"
+</code></pre>
+<p><strong>2. シンプルに保つ</strong></p>
+<pre><code>❌ 悪い例：
+- 10色以上使用
+- 情報を詰め込みすぎ
+- 装飾過多
+
+✅ 良い例：
+- 3-5色に制限
+- 1図1メッセージ
+- 必要最小限の要素
+</code></pre>
+<p><strong>3. アクセシビリティを考慮</strong></p>
+<pre><code class="language-markdown">&#x3C;!-- 代替テキストを必ず設定 -->
+![システム構成図：フロントエンド、API、データベースの3層構造](./architecture.png)
+
+&#x3C;!-- 色だけに依存しない -->
+成功: ✅ 緑色 + チェックマーク
+失敗: ❌ 赤色 + バツマーク
+</code></pre>
+<h3 id="-避けるべきこと">❌ 避けるべきこと</h3>
+<p><strong>1. 解像度の問題</strong></p>
+<pre><code>❌ 低解像度でぼやけた画像
+❌ 巨大すぎるファイル（10MB以上）
+❌ 文字が読めないほど小さい
+
+✅ 適切な解像度（72-150dpi for web）
+✅ 最適化されたファイルサイズ
+✅ ズームしても読める文字サイズ
+</code></pre>
+<p><strong>2. 更新の問題</strong></p>
+<pre><code>❌ コードと図が不一致
+❌ 古いバージョンの図を使用
+❌ 更新履歴がない
+
+✅ コードと同期して更新
+✅ バージョン番号を記載
+✅ 最終更新日を明記
+</code></pre>
+<h2 id="remarkを使用したブログでのmermaid活用">Remarkを使用したブログでのMermaid活用</h2>
+<h3 id="-なぜremarkブログにはmermaidが最適なのか">🎯 なぜRemarkブログにはMermaidが最適なのか</h3>
+<p>Remarkベースのブログ（Next.js、Gatsby、Astroなど）では、<strong>Mermaidが圧倒的におすすめ</strong>です。</p>
+<p><strong>理由：</strong></p>
+<pre><code>1. プラグインが充実
+   └─ remark-mermaid
+   └─ gatsby-remark-mermaid
+   └─ @astrojs/markdown-remark
+
+2. メンテナンスが楽
+   └─ テキストベースでGit管理
+   └─ 画像の再生成不要
+   └─ 更新が即座に反映
+
+3. パフォーマンス
+   └─ 静的生成可能
+   └─ SEO対応（テキストベース）
+   └─ 軽量（画像より小さい）
+</code></pre>
+<h3 id="-remarkでの実装方法">📦 Remarkでの実装方法</h3>
+<p><strong>1. 必要なパッケージのインストール</strong></p>
+<pre><code class="language-bash"># Next.jsの場合
+npm install remark-mermaid mermaid
+
+# Gatsbyの場合
+npm install gatsby-remark-mermaid
+
+# 基本的なremark環境
+npm install remark remark-html remark-mermaid
+</code></pre>
+<p><strong>2. 設定例（Next.js）</strong></p>
+<pre><code class="language-javascript">// next.config.js または lib/posts.ts
+import remarkMermaid from 'remark-mermaid';
+
+const processedContent = await remark()
+  .use(remarkGfm)
+  .use(remarkMermaid, {
+    // オプション設定
+    theme: 'default', // dark, forest, neutral など
+    backgroundColor: 'transparent',
+  })
+  .use(remarkRehype)
+  .use(rehypeStringify)
+  .process(matterResult.content);
+</code></pre>
+<p><strong>3. 設定例（Gatsby）</strong></p>
+<pre><code class="language-javascript">// gatsby-config.js
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-mermaid`,
+            options: {
+              theme: 'default',
+              viewport: {
+                width: 800,
+                height: 600
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+</code></pre>
+<h3 id="-実際のmermaid図例このブログで動作">🎨 実際のMermaid図例（このブログで動作）</h3>
+<p><strong>システムアーキテクチャ図</strong></p>
+<p>以下のコードを書くと：</p>
+<pre><code class="language-markdown">
+&#x3C;!-- MERMAID_PLACEHOLDER_6 -->
+
+</code></pre>
+<p>このようなアーキテクチャ図が生成されます：</p>
+<div class="mermaid">graph TB
+    subgraph &quot;ユーザー層&quot;
+        U1[PCユーザー]
+        U2[スマホユーザー]
+    end
+    
+    subgraph &quot;フロントエンド&quot;
+        FE[Next.js App]
+    end
+    
+    subgraph &quot;バックエンド&quot;
+        API[API Server]
+        AUTH[認証サービス]
+    end
+    
+    subgraph &quot;データ層&quot;
+        DB[(PostgreSQL)]
+        CACHE[(Redis)]
+    end
+    
+    U1 --&gt; FE
+    U2 --&gt; FE
+    FE --&gt; API
+    FE --&gt; AUTH
+    API --&gt; DB
+    API --&gt; CACHE
+    AUTH --&gt; DB
+    
+    style FE fill:#e1f5fe
+    style API fill:#fff3e0
+    style DB fill:#f3e5f5</div>
+<p><strong>開発フロー図</strong></p>
+<p>以下のコードを書くと：</p>
+<pre><code class="language-markdown">
+&#x3C;!-- MERMAID_PLACEHOLDER_8 -->
+
+</code></pre>
+<p>このようなGitフロー図が生成されます：</p>
+<div class="mermaid">gitGraph
+    commit id: &quot;Initial commit&quot;
+    branch develop
+    checkout develop
+    commit id: &quot;Add feature A&quot;
+    commit id: &quot;Add feature B&quot;
+    branch feature/new-ui
+    checkout feature/new-ui
+    commit id: &quot;Update UI&quot;
+    commit id: &quot;Fix styles&quot;
+    checkout develop
+    merge feature/new-ui
+    checkout main
+    merge develop tag: &quot;v1.0.0&quot;</div>
+<p><strong>処理シーケンス図</strong></p>
+<p>以下のコードを書くと：</p>
+<pre><code class="language-markdown">
+&#x3C;!-- MERMAID_PLACEHOLDER_10 -->
+
+</code></pre>
+<p>このようなシーケンス図が生成されます：</p>
+<div class="mermaid">sequenceDiagram
+    autonumber
+    participant User as ユーザー
+    participant Blog as ブログ
+    participant Remark as Remark
+    participant Mermaid as Mermaid
+    
+    User-&gt;&gt;Blog: 記事を閲覧
+    Blog-&gt;&gt;Remark: Markdown処理
+    Remark-&gt;&gt;Mermaid: Mermaidブロック検出
+    Mermaid--&gt;&gt;Remark: SVG生成
+    Remark--&gt;&gt;Blog: HTML出力
+    Blog--&gt;&gt;User: 図付き記事表示</div>
+<h3 id="-ダークモード対応">🔧 ダークモード対応</h3>
+<pre><code class="language-javascript">// Mermaidのテーマを動的に切り替え
+const mermaidConfig = {
+  startOnLoad: true,
+  theme: window.matchMedia('(prefers-color-scheme: dark)').matches 
+    ? 'dark' 
+    : 'default',
+  themeVariables: {
+    // ブランドカラーに合わせる
+    primaryColor: '#0066cc',
+    primaryTextColor: '#ffffff',
+    primaryBorderColor: '#004499',
+    lineColor: '#5a5a5a',
+    secondaryColor: '#006644',
+    tertiaryColor: '#fff'
+  }
+};
+
+// 初期化
+mermaid.initialize(mermaidConfig);
+</code></pre>
+<h3 id="-他の選択肢との比較表">📊 他の選択肢との比較表</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ツール</th><th>Remarkとの相性</th><th>メリット</th><th>デメリット</th><th>おすすめ度</th></tr></thead><tbody><tr><td><strong>Mermaid</strong></td><td>★★★★★</td><td>プラグイン豊富、Git管理しやすい</td><td>細かいデザイン調整が難しい</td><td>⭐最推奨</td></tr><tr><td><strong>PlantUML</strong></td><td>★★★☆☆</td><td>機能が豊富、詳細なUML図</td><td>Java必要、ビルド時間長い</td><td>特殊用途</td></tr><tr><td><strong>SVGインライン</strong></td><td>★★☆☆☆</td><td>完全なデザイン制御</td><td>作成・更新が大変</td><td>デザイン重視時</td></tr><tr><td><strong>ASCIIアート</strong></td><td>★★★★☆</td><td>依存なし、超軽量</td><td>見た目が地味、複雑な図は困難</td><td>シンプルな図</td></tr><tr><td><strong>draw.io埋め込み</strong></td><td>★★☆☆☆</td><td>GUI操作、美しい</td><td>画像管理が必要、更新が面倒</td><td>最終手段</td></tr></tbody></table>
+<h3 id="-パフォーマンス最適化">🚀 パフォーマンス最適化</h3>
+<pre><code class="language-javascript">// 遅延読み込みの実装
+const LazyMermaid = dynamic(
+  () => import('../components/MermaidRenderer'),
+  { 
+    loading: () => &#x3C;div>図を読み込み中...&#x3C;/div>,
+    ssr: false 
+  }
+);
+
+// ビルド時に静的生成
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+  
+  // Mermaid図を含む記事を事前レンダリング
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+</code></pre>
+<h2 id="プラットフォーム別の実装方法">プラットフォーム別の実装方法</h2>
+<h3 id="-github-readme">📝 GitHub README</h3>
+<p><strong>Mermaidの埋め込み：</strong></p>
+<pre><code class="language-markdown">
+&#x3C;!-- MERMAID_PLACEHOLDER_12 -->
+
+</code></pre>
+<p><strong>画像の埋め込み：</strong></p>
+<pre><code class="language-markdown">&#x3C;!-- リポジトリ内の画像 -->
+![Architecture](./docs/images/architecture.png)
+
+&#x3C;!-- 外部URL -->
+![Badge](https://img.shields.io/badge/status-active-green)
+
+&#x3C;!-- サイズ指定（HTML） -->
+&#x3C;img src="./logo.png" width="200" alt="Logo">
+</code></pre>
+<h3 id="-ブログ記事各プラットフォーム">📰 ブログ記事（各プラットフォーム）</h3>
+<p><strong>Qiita/Zenn：</strong></p>
+<pre><code class="language-markdown"># Mermaid対応
+
+&#x3C;!-- MERMAID_PLACEHOLDER_13 -->
+
+
+# 画像アップロード
+ドラッグ&#x26;ドロップで自動アップロード
+</code></pre>
+<p><strong>はてなブログ：</strong></p>
+<pre><code class="language-markdown"># PlantUML対応
+[plantuml]
+（図の定義）
+[/plantuml]
+</code></pre>
+<p><strong>WordPress：</strong></p>
+<pre><code class="language-html">&#x3C;!-- プラグイン使用 -->
+[mermaid]
+graph TD
+    A --> B
+[/mermaid]
+
+&#x3C;!-- 画像の中央寄せ -->
+&#x3C;div style="text-align: center;">
+  &#x3C;img src="diagram.png" alt="図解">
+&#x3C;/div>
+</code></pre>
+<h3 id="-vscode-での作成">💻 VSCode での作成</h3>
+<p><strong>便利な拡張機能：</strong></p>
+<pre><code class="language-json">{
+  "recommendations": [
+    "bierner.markdown-mermaid",
+    "jebbs.plantuml",
+    "hediet.vscode-drawio",
+    "pomdtr.excalidraw-editor"
+  ]
+}
+</code></pre>
+<p><strong>設定例：</strong></p>
+<pre><code class="language-json">{
+  "markdown.mermaid.theme": "dark",
+  "plantuml.render": "PlantUMLServer",
+  "plantuml.server": "https://www.plantuml.com/plantuml"
+}
+</code></pre>
+<h2 id="実例で学ぶ図解テクニック">実例で学ぶ図解テクニック</h2>
+<h3 id="️-マイクロサービス構成図">🏗️ マイクロサービス構成図</h3>
+<p><strong>Mermaidでの実装：</strong></p>
+<p>以下のコードを書くと：</p>
+<pre><code class="language-markdown">
+&#x3C;!-- MERMAID_PLACEHOLDER_14 -->
+
+</code></pre>
+<p>このようなマイクロサービス構成図が生成されます：</p>
+<div class="mermaid">graph TB
+    subgraph &quot;Frontend&quot;
+        WEB[Web App]
+        MOB[Mobile App]
+    end
+    
+    subgraph &quot;API Gateway&quot;
+        GW[Gateway]
+    end
+    
+    subgraph &quot;Microservices&quot;
+        AUTH[Auth Service]
+        USER[User Service]
+        PROD[Product Service]
+        ORDER[Order Service]
+    end
+    
+    subgraph &quot;Data Layer&quot;
+        AUTHDB[(Auth DB)]
+        USERDB[(User DB)]
+        PRODDB[(Product DB)]
+        ORDERDB[(Order DB)]
+        CACHE[(Redis Cache)]
+    end
+    
+    WEB --&gt; GW
+    MOB --&gt; GW
+    GW --&gt; AUTH
+    GW --&gt; USER
+    GW --&gt; PROD
+    GW --&gt; ORDER
+    AUTH --&gt; AUTHDB
+    USER --&gt; USERDB
+    PROD --&gt; PRODDB
+    ORDER --&gt; ORDERDB
+    USER --&gt; CACHE
+    PROD --&gt; CACHE</div>
+<h3 id="-cicdパイプライン">🔄 CI/CDパイプライン</h3>
+<p><strong>ASCIIアートでの実装：</strong></p>
+<pre><code>開発者
+  │
+  ├─[git push]──> GitHub
+  │                  │
+  │                  ├─[webhook]──> GitHub Actions
+  │                  │                    │
+  │                  │                    ├─> Build
+  │                  │                    ├─> Test
+  │                  │                    ├─> Lint
+  │                  │                    │
+  │                  │                    └─[成功]──> Deploy
+  │                  │                                   │
+  │                  │                                   ├─> Staging
+  │                  │                                   │      │
+  │                  │                                   │      └─[承認]
+  │                  │                                   │           │
+  │                  │                                   └─────> Production
+  │
+  └─[通知]&#x3C;────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="-パフォーマンス比較">📊 パフォーマンス比較</h3>
+<p><strong>表とグラフの組み合わせ：</strong></p>
+<pre><code class="language-markdown">## 処理速度比較
+
+| 手法 | 1000件 | 10000件 | 100000件 |
+|------|--------|---------|----------|
+| 方法A | 10ms | 120ms | 1,500ms |
+| 方法B | 8ms | 95ms | 980ms |
+| 方法C | 15ms | 100ms | 850ms |
+
+</code></pre>
+<pre><code>処理時間（ミリ秒）
+1600 ┤
+1400 ┤     ╭─ 方法A
+1200 ┤    ╱
+1000 ┤   ╱╱── 方法B
+ 800 ┤  ╱╱─── 方法C
+ 600 ┤ ╱╱╱
+ 400 ┤╱╱╱
+ 200 ┼──────────
+     0  50K  100K
+        データ件数
+</code></pre>
+<pre><code>
+## ツール選択フローチャート
+
+以下のコードを書くと：
+````markdown
+
+&#x3C;!-- MERMAID_PLACEHOLDER_16 -->
+
+</code></pre>
+<p>このようなツール選択フローチャートが生成されます：</p>
+<div class="mermaid">graph TD
+    Start[図を作成したい] --&gt; Q1{バージョン管理&lt;br/&gt;必要？}
+    
+    Q1 --&gt;|Yes| Q2{複雑な図？}
+    Q1 --&gt;|No| Q3{見た目重視？}
+    
+    Q2 --&gt;|Yes| PlantUML[PlantUML]
+    Q2 --&gt;|No| Q4{GitHub使用？}
+    
+    Q4 --&gt;|Yes| Mermaid[Mermaid]
+    Q4 --&gt;|No| ASCII[ASCIIアート]
+    
+    Q3 --&gt;|Yes| Q5{予算あり？}
+    Q3 --&gt;|No| DrawIO[draw.io]
+    
+    Q5 --&gt;|Yes| Lucid[Lucidchart]
+    Q5 --&gt;|No| Q6{手書き風？}
+    
+    Q6 --&gt;|Yes| Excal[Excalidraw]
+    Q6 --&gt;|No| DrawIO2[draw.io]
+    
+    style Mermaid fill:#e1f5fe
+    style PlantUML fill:#e1f5fe
+    style ASCII fill:#e1f5fe
+    style DrawIO fill:#fff3e0
+    style DrawIO2 fill:#fff3e0
+    style Excal fill:#fff3e0
+    style Lucid fill:#fce4ec</div>
+<h2 id="よくある質問と解決策">よくある質問と解決策</h2>
+<h3 id="q1-図が更新されない">Q1: 図が更新されない</h3>
+<p><strong>原因と対策：</strong></p>
+<pre><code class="language-bash"># ブラウザキャッシュをクリア
+Ctrl + Shift + R (Windows/Linux)
+Cmd + Shift + R (Mac)
+
+# GitHubの場合：RAW URLを使用
+# ❌ https://github.com/user/repo/blob/main/image.png
+# ✅ https://raw.githubusercontent.com/user/repo/main/image.png
+
+# クエリパラメータを追加
+![diagram](./diagram.png?v=2)
+</code></pre>
+<h3 id="q2-mermaidが表示されない">Q2: Mermaidが表示されない</h3>
+<p><strong>チェックリスト：</strong></p>
+<pre><code class="language-markdown">1. ``` の後に mermaid を記載しているか
+2. GitHubの場合、READMEで使用しているか
+3. 構文エラーがないか（オンラインエディタで確認）
+4. ブラウザ拡張機能が干渉していないか
+</code></pre>
+<h3 id="q3-図のサイズが大きすぎる">Q3: 図のサイズが大きすぎる</h3>
+<p><strong>解決方法：</strong></p>
+<pre><code class="language-html">&#x3C;!-- HTMLタグでサイズ指定 -->
+&#x3C;img src="large-diagram.png" width="600" alt="図">
+
+&#x3C;!-- 詳細はモーダルで表示 -->
+&#x3C;details>
+&#x3C;summary>クリックして拡大&#x3C;/summary>
+&#x3C;img src="large-diagram.png" alt="詳細図">
+&#x3C;/details>
+
+&#x3C;!-- リンクで別ウィンドウ -->
+[拡大図を見る](./docs/detailed-diagram.png)
+</code></pre>
+<h2 id="まとめ">まとめ</h2>
+<h3 id="-図解作成チェックリスト">📋 図解作成チェックリスト</h3>
+<p>技術ドキュメントで図を作成する際の確認事項：</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> 目的が明確（何を伝えたいか）</li>
+<li class="task-list-item"><input type="checkbox" disabled> 適切なツールを選択</li>
+<li class="task-list-item"><input type="checkbox" disabled> シンプルで分かりやすい</li>
+<li class="task-list-item"><input type="checkbox" disabled> 色使いが統一されている</li>
+<li class="task-list-item"><input type="checkbox" disabled> 文字が読みやすいサイズ</li>
+<li class="task-list-item"><input type="checkbox" disabled> 代替テキストを設定</li>
+<li class="task-list-item"><input type="checkbox" disabled> ファイルサイズが適切</li>
+<li class="task-list-item"><input type="checkbox" disabled> バージョン管理できる形式</li>
+<li class="task-list-item"><input type="checkbox" disabled> 更新しやすい構造</li>
+<li class="task-list-item"><input type="checkbox" disabled> モバイルでも見やすい</li>
+</ul>
+<h3 id="-使い分けの指針">🎯 使い分けの指針</h3>
+<pre><code>クイック作成 → ASCIIアート
+GitHub README → Mermaid
+詳細なUML → PlantUML
+美しい図 → draw.io
+手書き風 → Excalidraw
+プロ仕様 → Lucidchart/Figma
+操作説明 → GIF動画
+</code></pre>
+<h3 id="-最後のアドバイス">💡 最後のアドバイス</h3>
+<ol>
+<li><strong>まずは簡単な図から始める</strong> - ASCIIアートやMermaidから</li>
+<li><strong>テンプレートを活用</strong> - 毎回ゼロから作らない</li>
+<li><strong>フィードバックを得る</strong> - 読者に伝わっているか確認</li>
+<li><strong>継続的に改善</strong> - より良い表現方法を探求</li>
+</ol>
+<p>図解は技術を伝える強力なツールです。この記事で紹介した方法を活用して、より分かりやすく魅力的なドキュメントを作成してください。</p>
+<h2 id="参考リンク">参考リンク</h2>
+<ul>
+<li><a href="https://mermaid.js.org/">Mermaid公式ドキュメント</a></li>
+<li><a href="https://plantuml.com/">PlantUML公式</a></li>
+<li><a href="https://app.diagrams.net/">draw.io</a></li>
+<li><a href="https://excalidraw.com/">Excalidraw</a></li>
+<li><a href="https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/">GitHub Mermaidサポート</a></li>
+<li><a href="https://asciiflow.com/">ASCIIアート生成ツール</a></li>
+</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",33]}]," ","技術ドキュメントの図解作成完全ガイド：README・ブログ記事を魅力的にする方法"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-13 01:55"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ドキュメント"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"図解"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"README"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Mermaid"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"PlantUML"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ブログ"}],["$","span","6",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"初心者向け"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L15",null,{}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}

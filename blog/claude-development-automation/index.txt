@@ -1,22 +1,23 @@
 1:"$Sreact.fragment"
-2:I[7555,[],""]
-3:I[1295,[],""]
-5:I[9665,[],"MetadataBoundary"]
-7:I[9665,[],"OutletBoundary"]
-a:I[4911,[],"AsyncMetadataOutlet"]
-c:I[9665,[],"ViewportBoundary"]
-e:I[6614,[],""]
+2:I[87555,[],""]
+3:I[31295,[],""]
+5:I[59665,[],"MetadataBoundary"]
+7:I[59665,[],"OutletBoundary"]
+a:I[74911,[],"AsyncMetadataOutlet"]
+c:I[59665,[],"ViewportBoundary"]
+e:I[26614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/css/02b253edc89c9fad.css","style"]
-0:{"P":null,"b":"pkdKHHclo4VaH_aYBL_if","p":"","c":["","blog","claude-development-automation",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","claude-development-automation","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/02b253edc89c9fad.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","claude-development-automation","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","h_RiZ34XAbAqWNwvXhBnA",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+:HL["/_next/static/css/19bdf9af4d1ae4d4.css","style"]
+0:{"P":null,"b":"CMxdg3PnUz1MVzpkS50wb","p":"","c":["","blog","claude-development-automation",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","claude-development-automation","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","claude-development-automation","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","ciqrA-2mW-Gx76V0Uec7E",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
-10:I[4911,[],"AsyncMetadata"]
+10:I[74911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
 9:null
-12:I[6874,["874","static/chunks/874-6d44df717ef1e402.js","953","static/chunks/app/blog/%5Bslug%5D/page-3b7c091bda807474.js"],""]
-14:I[4197,["874","static/chunks/874-6d44df717ef1e402.js","953","static/chunks/app/blog/%5Bslug%5D/page-3b7c091bda807474.js"],"default"]
-13:T5b30,<p>開発作業を効率化するため、GitHub Issueのコメントに<code>/claude</code>と入力するだけでAIが自動的にコードを生成し、Pull Requestを作成するシステムを構築しました。本記事では、その実装方法と活用例を詳しく解説します。</p>
+12:I[6874,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],""]
+14:I[31203,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+15:I[4197,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+13:T5b23,<p>開発作業を効率化するため、GitHub Issueのコメントに<code>/claude</code>と入力するだけでAIが自動的にコードを生成し、Pull Requestを作成するシステムを構築しました。本記事では、その実装方法と活用例を詳しく解説します。</p>
 <h2 id="前提知識">前提知識</h2>
 <p>本記事を理解するために必要な基礎知識：</p>
 <h3 id="必須知識">必須知識</h3>
@@ -59,14 +60,13 @@ f:"$Sreact.suspense"
 <li><strong>レビューとマージ</strong>: 人間が確認してマージ</li>
 </ol>
 <h3 id="アーキテクチャ">アーキテクチャ</h3>
-<pre><code class="language-mermaid">graph LR
-    A[GitHub Issue] --> B[コメント: /claude]
-    B --> C[GitHub Actions]
-    C --> D[Claude API]
-    D --> E[コード生成]
-    E --> F[Pull Request作成]
-    F --> G[レビュー・マージ]
-</code></pre>
+<div class="mermaid">graph LR
+    A[GitHub Issue] --&gt; B[コメント: /claude]
+    B --&gt; C[GitHub Actions]
+    C --&gt; D[Claude API]
+    D --&gt; E[コード生成]
+    E --&gt; F[Pull Request作成]
+    F --&gt; G[レビュー・マージ]</div>
 <h3 id="主な機能">主な機能</h3>
 <ol>
 <li><strong>コマンドベースの実行</strong>: Issueコメントで<code>/claude</code>を使用</li>
@@ -305,36 +305,36 @@ const apiKey = 'sk-ant-api03-xxxxx';
 <h2 id="パフォーマンスと制限">パフォーマンスと制限</h2>
 <h3 id="処理時間">処理時間</h3>
 <p>典型的な処理時間：</p>
-<table>
-<thead>
-<tr>
-<th>処理内容</th>
-<th>所要時間</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>権限チェック</td>
-<td>1-2秒</td>
-</tr>
-<tr>
-<td>Claude API呼び出し</td>
-<td>5-15秒</td>
-</tr>
-<tr>
-<td>コード生成・適用</td>
-<td>2-5秒</td>
-</tr>
-<tr>
-<td>PR作成</td>
-<td>3-5秒</td>
-</tr>
-<tr>
-<td><strong>合計</strong></td>
-<td><strong>15-30秒</strong></td>
-</tr>
-</tbody>
-</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>処理内容</th><th>所要時間</th></tr></thead><tbody><tr><td>権限チェック</td><td>1-2秒</td></tr><tr><td>Claude API呼び出し</td><td>5-15秒</td></tr><tr><td>コード生成・適用</td><td>2-5秒</td></tr><tr><td>PR作成</td><td>3-5秒</td></tr><tr><td><strong>合計</strong></td><td><strong>15-30秒</strong></td></tr></tbody></table>
 <h3 id="api制限">API制限</h3>
 <ul>
 <li><strong>Anthropic API</strong>: レート制限とトークン制限あり</li>
@@ -347,36 +347,36 @@ const apiKey = 'sk-ant-api03-xxxxx';
 </ul>
 <h3 id="コスト見積もり">コスト見積もり</h3>
 <p>月間使用量に応じたコスト目安：</p>
-<table>
-<thead>
-<tr>
-<th>使用回数/月</th>
-<th>Anthropic API</th>
-<th>GitHub Actions</th>
-<th>合計</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>100回</td>
-<td>$5-10</td>
-<td>$0（パブリック）</td>
-<td>$5-10</td>
-</tr>
-<tr>
-<td>500回</td>
-<td>$25-50</td>
-<td>$0（パブリック）</td>
-<td>$25-50</td>
-</tr>
-<tr>
-<td>1000回</td>
-<td>$50-100</td>
-<td>$0（パブリック）</td>
-<td>$50-100</td>
-</tr>
-</tbody>
-</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>使用回数/月</th><th>Anthropic API</th><th>GitHub Actions</th><th>合計</th></tr></thead><tbody><tr><td>100回</td><td>$5-10</td><td>$0（パブリック）</td><td>$5-10</td></tr><tr><td>500回</td><td>$25-50</td><td>$0（パブリック）</td><td>$25-50</td></tr><tr><td>1000回</td><td>$50-100</td><td>$0（パブリック）</td><td>$50-100</td></tr></tbody></table>
 <h2 id="トラブルシューティング">トラブルシューティング</h2>
 <h3 id="デバッグの基本手順">デバッグの基本手順</h3>
 <ol>
@@ -452,13 +452,12 @@ node -e "console.log('Workflow syntax is valid')"
 <li>Issue #4: ドキュメント</li>
 </ol>
 <h3 id="3-レビューフローの確立">3. レビューフローの確立</h3>
-<pre><code class="language-mermaid">graph LR
-    A[Claude生成PR] --> B[自動テスト]
-    B --> C[コードレビュー]
-    C --> D[修正依頼]
-    D --> E[承認]
-    E --> F[マージ]
-</code></pre>
+<div class="mermaid">graph LR
+    A[Claude生成PR] --&gt; B[自動テスト]
+    B --&gt; C[コードレビュー]
+    C --&gt; D[修正依頼]
+    D --&gt; E[承認]
+    E --&gt; F[マージ]</div>
 <h2 id="実装の応用例">実装の応用例</h2>
 <h3 id="ミドルエンジニア向け高度な実装パターン">ミドルエンジニア向け：高度な実装パターン</h3>
 <h4 id="1-マルチモデル対応">1. マルチモデル対応</h4>
@@ -567,7 +566,7 @@ const files = await Promise.all(
 <li>実際の運用では適切なエラーハンドリングが必要です</li>
 <li>APIキーなどの秘匿情報は必ず環境変数で管理してください</li>
 <li>AIが生成したコードは必ず人間がレビューしてください</li>
-</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",30]}]," ","GitHub IssueコメントでClaude AIを呼び出す自動開発システムの構築"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-11 00:59"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"GitHub Actions"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Claude AI"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"自動化"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"CI/CD"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"開発効率化"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L14",null,{}]]}]
+</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",30]}]," ","GitHub IssueコメントでClaude AIを呼び出す自動開発システムの構築"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-11 00:59"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"GitHub Actions"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Claude AI"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"自動化"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"CI/CD"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"開発効率化"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L15",null,{}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
 11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
