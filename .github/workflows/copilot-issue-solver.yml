@@ -51,12 +51,13 @@ jobs:
         id: generate
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
-          # コメントから指示を抽出
-          INSTRUCTION=$(echo "${{ github.event.comment.body }}" | sed 's/^\/[a-z]*//')
+          # コメントから指示を抽出（環境変数から安全に取得）
+          INSTRUCTION=$(echo "$COMMENT_BODY" | sed 's/^\/[a-z]*//')
           ISSUE_NUMBER=${{ github.event.issue.number }}
-          ISSUE_TITLE="${{ github.event.issue.title }}"
-          ISSUE_BODY="${{ github.event.issue.body }}"
           
           echo "📋 Processing Issue #$ISSUE_NUMBER: $ISSUE_TITLE"
           
@@ -83,11 +84,17 @@ jobs:
           \`\`\`
           EOF
           
-          # Copilot CLIで解決策を生成
-          gh copilot suggest < copilot_prompt.txt > solution.md 2>/dev/null || {
+          # Copilot CLIで解決策を生成（日本語対応）
+          export LANG=ja_JP.UTF-8
+          export LC_ALL=ja_JP.UTF-8
+          
+          # Copilot CLIを直接実行（より具体的なプロンプト）
+          gh copilot suggest "$(cat copilot_prompt.txt)" > solution.md 2>&1 || {
             echo "⚠️ Copilot CLI response failed, using alternative method..."
+            echo "Error output:"
+            cat solution.md
             
-            # 代替: テンプレートベースの解決策
+            # 代替: より具体的なテンプレートベースの解決策
             cat > solution.md << 'FALLBACK'
           ## 🤖 Solution Template
           
