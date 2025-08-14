@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+NOTE.md
 
 # Gemini logs (moved to global location)
 .claude/gemini-consultations/
