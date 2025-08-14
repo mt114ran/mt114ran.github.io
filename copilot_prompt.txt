@@ -1,0 +1,42 @@
+GitHub Issue #50: テスト: Claude Bot動作確認
+
+Issue Description:
+# テスト: Claude Bot動作確認
+
+## 背景
+Claude Bot（`.github/workflows/claude-bot.yml`）が正しく動作するかテストしたい。
+
+## テストしたい機能
+1. `/claude`コマンドの認識
+2. コード生成
+3. Pull Request作成
+
+## テストタスク
+簡単なユーティリティ関数を作成してもらう：
+- 文字列を逆順にする関数
+- TypeScriptで実装
+- テストコード付き
+
+このIssueにコメントで`/claude`コマンドを使って実装を依頼します。
+
+User Request:
+ 文字列を逆順にする関数を作成してください。
+
+要件:
+
+関数名: reverseString
+TypeScriptで実装
+src/utils/string-utils.ts に保存
+簡単なテストコードも含める
+
+Please provide:
+1. Complete implementation code
+2. File paths where code should be saved
+3. Any necessary tests
+4. Brief explanation of the solution
+
+Format the response with clear file paths like:
+### File: src/example.ts
+```typescript
+// code here
+```
