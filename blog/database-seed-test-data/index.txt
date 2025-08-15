@@ -1,0 +1,468 @@
+1:"$Sreact.fragment"
+2:I[87555,[],""]
+3:I[31295,[],""]
+5:I[59665,[],"MetadataBoundary"]
+7:I[59665,[],"OutletBoundary"]
+a:I[74911,[],"AsyncMetadataOutlet"]
+c:I[59665,[],"ViewportBoundary"]
+e:I[26614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/19bdf9af4d1ae4d4.css","style"]
+0:{"P":null,"b":"qepat1HgROqLjfWdf0ONn","p":"","c":["","blog","database-seed-test-data",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","database-seed-test-data","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","database-seed-test-data","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","eb5ru8UG_cx0TAHJnZU6j",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[74911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],""]
+14:I[31203,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+15:I[4197,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+13:T4fe7,<p>開発中のWebアプリケーションで「データが表示されない！」という問題に遭遇したことはありませんか？今回は、教材共有プラットフォーム「Drill Layer」の開発中に発生した<strong>テストデータ消失問題</strong>と、その解決方法である<code>npm run seed:test</code>コマンドの仕組みについて詳しく解説します。</p>
+<h2 id="-初心者向け解説">💡 初心者向け解説</h2>
+<h3 id="seedシードとは">seed（シード）とは？</h3>
+<p><strong>簡単に言うと</strong>: データベースに初期データやテストデータを投入する処理のことです。</p>
+<pre><code>農業で種（seed）をまくように、
+データベースに基礎となるデータを「まく」処理
+</code></pre>
+<h3 id="なぜ必要">なぜ必要？</h3>
+<pre><code>実際の開発現場でよくある問題：
+・「昨日まで表示されていたデータがない！」
+・「新しい機能をテストしたいけどデータがない」
+・「チームメンバーと同じデータで開発したい」
+
+→ seedコマンドで一発解決！
+</code></pre>
+<h2 id="-目次">📚 目次</h2>
+<ul>
+<li><a href="#%E5%95%8F%E9%A1%8C%E3%81%AE%E7%99%BA%E7%94%9F%E3%81%A8%E3%82%B7%E3%83%BC%E3%83%89%E3%81%AE%E5%BF%85%E8%A6%81%E6%80%A7">問題の発生とシードの必要性</a></li>
+<li><a href="#npm-run-seedtest%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF">npm run seed:testの仕組み</a></li>
+<li><a href="#%E5%AE%9F%E8%A3%85%E3%81%AE%E8%A9%B3%E7%B4%B0%E3%81%A8%E3%82%B3%E3%83%BC%E3%83%89%E8%A7%A3%E8%AA%AC">実装の詳細とコード解説</a></li>
+<li><a href="#postgresql%E9%85%8D%E5%88%97%E3%81%AE%E6%89%B1%E3%81%84%E6%96%B9">PostgreSQL配列の扱い方</a></li>
+<li><a href="#%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0">トラブルシューティング</a></li>
+<li><a href="#%E3%83%99%E3%82%B9%E3%83%88%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9">ベストプラクティス</a></li>
+<li><a href="#%E3%81%BE%E3%81%A8%E3%82%81">まとめ</a></li>
+</ul>
+<h2 id="問題の発生とシードの必要性">問題の発生とシードの必要性</h2>
+<h3 id="発生した問題">発生した問題</h3>
+<p>開発中、以下のような状況に遭遇しました：</p>
+<pre><code class="language-bash"># APIからデータを取得してみると...
+$ curl -s http://localhost:3000/api/materials | jq '. | length'
+3  # あれ？10件あったはずのテストデータが3件しかない！
+</code></pre>
+<p>ユーザーから「さきほどまでは表示されていたが今は表示されていない」という報告があり、調査したところ、テストデータが何らかの理由で削除されていたことが判明しました。</p>
+<h3 id="シードが必要な理由">シードが必要な理由</h3>
+<ol>
+<li><strong>開発環境の統一</strong>: チーム全員が同じテストデータで開発できる</li>
+<li><strong>動作確認の効率化</strong>: UIの見た目や機能を素早く確認できる</li>
+<li><strong>テストの再現性</strong>: 同じ条件でテストを繰り返し実行できる</li>
+<li><strong>デモ環境の構築</strong>: クライアントへのプレゼン用データを簡単に用意</li>
+</ol>
+<h2 id="npm-run-seedtestの仕組み">npm run seed:testの仕組み</h2>
+<h3 id="全体の流れ">全体の流れ</h3>
+<div class="mermaid">graph TD
+    A[npm run seed:test] --&gt; B[pnpm --filter @drill-layer/backend seed:test]
+    B --&gt; C[ts-node runTestSeeds.ts]
+    C --&gt; D[データベース接続確認]
+    D --&gt; E[既存テストデータ削除]
+    E --&gt; F[新規テストデータ挿入]
+    F --&gt; G[完了メッセージ表示]</div>
+<h3 id="1-packagejsonの設定">1. package.jsonの設定</h3>
+<pre><code class="language-json">{
+  "scripts": {
+    "seed:test": "pnpm --filter @drill-layer/backend seed:test"
+  }
+}
+</code></pre>
+<p>ルートディレクトリの<code>package.json</code>に定義されたコマンドは、monorepo構成でバックエンドパッケージのスクリプトを実行します。</p>
+<h3 id="2-バックエンド側のスクリプト">2. バックエンド側のスクリプト</h3>
+<pre><code class="language-json">// packages/backend/package.json
+{
+  "scripts": {
+    "seed:test": "ts-node src/infrastructure/db/seeds/runTestSeeds.ts"
+  }
+}
+</code></pre>
+<p>TypeScriptで書かれたシードスクリプトを直接実行します。</p>
+<h2 id="実装の詳細とコード解説">実装の詳細とコード解説</h2>
+<h3 id="データベース接続情報の管理">データベース接続情報の管理</h3>
+<p>データベースの接続情報（ホスト名、ユーザー名、パスワードなど）をコードに直接書き込むのはセキュリティ上危険です。<code>.env</code>ファイルを使って管理し、<code>dotenv</code>ライブラリで読み込むのが一般的です。</p>
+<pre><code class="language-bash"># .env ファイルの例
+DATABASE_URL="postgresql://user:password@localhost:5432/drill_layer_dev"
+</code></pre>
+<pre><code class="language-typescript">// connection.ts
+import { Pool } from 'pg';
+import * as dotenv from 'dotenv';
+
+dotenv.config(); // .envファイルを読み込む
+
+export const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+});
+</code></pre>
+<h3 id="メインのシード実行ファイル">メインのシード実行ファイル</h3>
+<pre><code class="language-typescript">// runTestSeeds.ts
+import seedTestMaterials from './seedTestMaterials';
+import { pool } from '../connection';
+
+const runTestSeeds = async () => {
+  try {
+    console.log('🚀 テストシードの実行を開始します...');
+    
+    // データベース接続テスト
+    await pool.query('SELECT NOW()');
+    console.log('✅ データベースに接続しました');
+
+    // テスト教材データを作成
+    await seedTestMaterials();
+
+    console.log('🎉 すべてのテストシードが完了しました！');
+    
+  } catch (error) {
+    console.error('❌ テストシード実行中にエラーが発生しました:', error);
+    process.exit(1);
+  } finally {
+    await pool.end();  // 接続プールを閉じる
+  }
+};
+
+runTestSeeds();
+</code></pre>
+<h3 id="テストデータの定義と挿入">テストデータの定義と挿入</h3>
+<pre><code class="language-typescript">// seedTestMaterials.ts
+const testMaterials = [
+  {
+    title: 'JavaScript基礎入門',
+    description: 'JavaScriptの基本的な文法と概念について解説した教材です。',
+    file_key: 'test-materials/javascript-basics.pdf',
+    file_type: 'pdf',
+    file_size: 2048576,  // 2MB
+    tags: ['JavaScript', 'プログラミング', '初心者'],
+    likes: 15,
+    downloads: 42
+  },
+  {
+    title: 'React Component 設計パターン',
+    description: 'React開発における再利用可能なコンポーネント設計手法を解説。',
+    file_key: 'test-materials/react-components.pdf',
+    file_type: 'pdf',
+    file_size: 3145728,  // 3MB
+    tags: ['React', 'TypeScript', 'コンポーネント設計'],
+    likes: 28,
+    downloads: 67
+  },
+  // ... 他の教材データ
+];
+
+const seedTestMaterials = async () => {
+  console.log('🌱 テストデータの作成を開始します...');
+  
+  // 既存のテストデータを削除（冪等性の確保）
+  await pool.query(`
+    DELETE FROM materials 
+    WHERE file_key LIKE 'test-materials/%'
+  `);
+  
+  let createdCount = 0;
+  
+  for (const material of testMaterials) {
+    const result = await pool.query(
+      `INSERT INTO materials (
+        title, description, file_key, file_type, 
+        file_size, tags, likes, downloads, 
+        created_at, updated_at
+      ) VALUES ($1, $2, $3, $4, $5, $6::text[], $7, $8, NOW(), NOW())
+      RETURNING id`,
+      [
+        material.title,
+        material.description,
+        material.file_key,
+        material.file_type,
+        material.file_size,
+        material.tags,  // PostgreSQL配列として直接渡す
+        material.likes,
+        material.downloads
+      ]
+    );
+    
+    console.log(`✅ 教材を登録しました: ${material.title} (ID: ${result.rows[0].id})`);
+    createdCount++;
+  }
+  
+  console.log(`📊 合計 ${createdCount} 件の教材データを作成しました`);
+};
+</code></pre>
+<h2 id="postgresql配列の扱い方">PostgreSQL配列の扱い方</h2>
+<h3 id="重要なポイントpostgresql配列の型キャスト">重要なポイント：PostgreSQL配列の型キャスト</h3>
+<pre><code class="language-typescript">// ❌ 間違い：JSON文字列として渡す
+JSON.stringify(material.tags)
+
+// ✅ 正解：配列として直接渡す + 型キャスト
+material.tags  // $6::text[] でPostgreSQL配列にキャスト
+</code></pre>
+<h3 id="配列操作の詳細">配列操作の詳細</h3>
+<pre><code class="language-sql">-- PostgreSQL側でのテーブル定義
+CREATE TABLE materials (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  title VARCHAR(255) NOT NULL,
+  tags TEXT[] NOT NULL,  -- 配列型
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 配列での検索例
+SELECT * FROM materials WHERE 'JavaScript' = ANY(tags);
+SELECT * FROM materials WHERE tags &#x26;&#x26; ARRAY['React', 'TypeScript'];
+</code></pre>
+<h3 id="nodejs側での配列操作">Node.js側での配列操作</h3>
+<pre><code class="language-typescript">// 配列データの安全な挿入
+const insertMaterial = async (materialData: any) => {
+  // 配列の検証
+  if (!Array.isArray(materialData.tags)) {
+    throw new Error('tagsは配列である必要があります');
+  }
+  
+  // 配列要素の検証
+  const validatedTags = materialData.tags
+    .filter(tag => typeof tag === 'string' &#x26;&#x26; tag.trim().length > 0)
+    .slice(0, 10); // 最大10個まで
+  
+  const result = await pool.query(
+    'INSERT INTO materials (title, tags) VALUES ($1, $2::text[]) RETURNING id',
+    [materialData.title, validatedTags]
+  );
+  
+  return result.rows[0];
+};
+</code></pre>
+<h2 id="トラブルシューティング">トラブルシューティング</h2>
+<h3 id="よくある問題と解決方法">よくある問題と解決方法</h3>
+<h4 id="1-データが表示されない">1. データが表示されない</h4>
+<p><strong>診断コマンド</strong>:</p>
+<pre><code class="language-bash"># データ件数を確認
+curl -s http://localhost:3000/api/materials | jq '. | length'
+
+# 直接データベースを確認
+psql -d drill_layer_dev -c "SELECT COUNT(*) FROM materials;"
+</code></pre>
+<p><strong>解決法</strong>:</p>
+<pre><code class="language-bash"># 0件の場合はシードを実行
+npm run seed:test
+</code></pre>
+<h4 id="2-cannot-read-properties-of-null-エラー">2. "Cannot read properties of null" エラー</h4>
+<p><strong>原因</strong>: フロントエンドでデータが空の状態を想定していない</p>
+<p><strong>解決法</strong>:</p>
+<pre><code class="language-javascript">// ❌ 危険なコード
+const materials = data.materials.map(material => ...)
+
+// ✅ 安全なコード
+const [materials, setMaterials] = useState&#x3C;Material[]>([]);
+const materialsList = data?.materials || [];
+</code></pre>
+<h4 id="3-postgresql配列エラー">3. PostgreSQL配列エラー</h4>
+<p><strong>エラーメッセージ</strong>:</p>
+<pre><code>error: malformed array literal
+</code></pre>
+<p><strong>解決法</strong>:</p>
+<pre><code class="language-typescript">// ❌ 間違い
+material.tags = JSON.stringify(['tag1', 'tag2']);
+
+// ✅ 正解
+material.tags = ['tag1', 'tag2'];  // 配列のまま渡す
+// SQL: $1::text[] で型キャスト
+</code></pre>
+<h4 id="4-接続プールのリークエラー">4. 接続プールのリークエラー</h4>
+<p><strong>解決法</strong>:</p>
+<pre><code class="language-typescript">const runTestSeeds = async () => {
+  try {
+    // シード処理
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  } finally {
+    await pool.end();  // 必ず接続を閉じる
+  }
+};
+</code></pre>
+<h2 id="ベストプラクティス">ベストプラクティス</h2>
+<h3 id="1-冪等性idempotencyの確保">1. 冪等性（Idempotency）の確保</h3>
+<p>シードスクリプトは何度実行しても同じ結果になるよう設計：</p>
+<pre><code class="language-sql">-- 既存のテストデータを削除してから新規挿入
+DELETE FROM materials WHERE file_key LIKE 'test-materials/%'
+</code></pre>
+<h3 id="2-環境ごとのシード分離">2. 環境ごとのシード分離</h3>
+<pre><code class="language-javascript">// 開発環境用
+npm run seed:dev
+
+// テスト環境用
+npm run seed:test
+
+// デモ環境用
+npm run seed:demo
+</code></pre>
+<h3 id="3-データの現実性">3. データの現実性</h3>
+<pre><code class="language-typescript">// 現実的なテストデータを作成
+const testMaterials = [
+  {
+    title: 'JavaScript基礎入門',
+    // 実際にありそうなファイルサイズ
+    file_size: 2048576,  // 2MB
+    // 実際にありそうなタグ
+    tags: ['JavaScript', 'プログラミング', '初心者'],
+    // 現実的な数値
+    likes: Math.floor(Math.random() * 50) + 1,
+    downloads: Math.floor(Math.random() * 100) + 1
+  }
+];
+</code></pre>
+<p><strong>テストデータ生成ライブラリの活用</strong>:
+<a href="https://fakerjs.dev/">Faker.js</a>のようなライブラリを導入すると、名前、住所、文章、日付など、より現実に近い多様なテストデータをプログラムで簡単に生成でき、テストの質を向上させることができます。</p>
+<pre><code class="language-typescript">import { faker } from '@faker-js/faker';
+
+const generateTestMaterials = (count: number) => {
+  return Array.from({ length: count }, () => ({
+    title: faker.lorem.words(3),
+    description: faker.lorem.paragraph(),
+    file_size: faker.number.int({ min: 1024, max: 50 * 1024 * 1024 }),
+    likes: faker.number.int({ min: 0, max: 100 }),
+    downloads: faker.number.int({ min: 0, max: 1000 })
+  }));
+};
+</code></pre>
+<h3 id="4-エラーハンドリング">4. エラーハンドリング</h3>
+<pre><code class="language-typescript">const seedWithTransaction = async () => {
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    
+    // データ挿入処理
+    for (const material of testMaterials) {
+      await client.query(insertQuery, values);
+    }
+    
+    await client.query('COMMIT');
+    console.log('トランザクション完了');
+  } catch (error) {
+    await client.query('ROLLBACK');
+    console.error('エラーによりロールバック:', error);
+    throw error;
+  } finally {
+    client.release();
+  }
+};
+</code></pre>
+<h3 id="5-大量データの効率的な挿入バルクインサート">5. 大量データの効率的な挿入（バルクインサート）</h3>
+<p>シードするデータが大量にある場合、1件ずつ<code>INSERT</code>するよりも、複数のデータをまとめて1回のクエリで挿入する「バルクインサート」が効率的です。</p>
+<pre><code class="language-typescript">// 大量データの効率的な挿入
+const seedMaterialsBulk = async () => {
+  console.log('🌱 バルクインサートでテストデータを作成中...');
+  
+  // 既存のテストデータを削除
+  await pool.query(`DELETE FROM materials WHERE file_key LIKE 'test-materials/%'`);
+  
+  // バルクインサート用のクエリを構築
+  const placeholders = testMaterials.map((_, index) => {
+    const offset = index * 8;
+    return `($${offset + 1}, $${offset + 2}, $${offset + 3}, $${offset + 4}, $${offset + 5}, $${offset + 6}::text[], $${offset + 7}, $${offset + 8}, NOW(), NOW())`;
+  }).join(',');
+  
+  const query = `
+    INSERT INTO materials (
+      title, description, file_key, file_type, 
+      file_size, tags, likes, downloads, 
+      created_at, updated_at
+    ) VALUES ${placeholders}
+    RETURNING id, title
+  `;
+  
+  // パラメータを平坦化
+  const params = testMaterials.flatMap(material => [
+    material.title,
+    material.description,
+    material.file_key,
+    material.file_type,
+    material.file_size,
+    material.tags,
+    material.likes,
+    material.downloads
+  ]);
+  
+  const result = await pool.query(query, params);
+  console.log(`📊 バルクインサートで ${result.rows.length} 件のデータを作成しました`);
+};
+</code></pre>
+<p><strong>パフォーマンス比較</strong>:</p>
+<ul>
+<li>1件ずつ挿入: 100件で約2-3秒</li>
+<li>バルクインサート: 100件で約0.1-0.2秒</li>
+</ul>
+<h3 id="6-実行結果の例">6. 実行結果の例</h3>
+<p>実際に<code>npm run seed:test</code>を実行すると、以下のような出力が得られます：</p>
+<pre><code class="language-bash">$ npm run seed:test
+
+> @drill-layer/backend@1.0.0 seed:test
+> ts-node src/infrastructure/db/seeds/runTestSeeds.ts
+
+🚀 テストシードの実行を開始します...
+✅ データベースに接続しました
+🌱 テストデータの作成を開始します...
+✅ 既存のテストデータを削除しました
+✅ 教材を登録しました: JavaScript基礎入門 (ID: dfb588c1-584c-4e4c-af74-f0602082dd6e)
+✅ 教材を登録しました: React Component 設計パターン (ID: bcb13974-1ad0-44c0-b998-19ded98050d4)
+✅ 教材を登録しました: データベース設計の基礎 (ID: 0add4528-b1ad-4771-be09-70d8b6c1b3c0)
+✅ 教材を登録しました: Python自動化スクリプト集 (ID: f8a234b7-9c8d-4e5f-b6a1-2345678901ab)
+✅ 教材を登録しました: AWS基礎サービス概要 (ID: 2ec83358-f95a-40a7-8708-4e36a85cc477)
+🎉 テストデータの作成が完了しました！
+📊 合計 10 件の教材データを作成しました
+🎉 すべてのテストシードが完了しました！
+</code></pre>
+<h2 id="まとめ">まとめ</h2>
+<p><code>npm run seed:test</code>は、開発効率を大幅に向上させる重要なツールです。主なメリットは：</p>
+<h3 id="-開発効率の向上">🎯 開発効率の向上</h3>
+<ol>
+<li><strong>即座にテストデータを復元</strong>できる</li>
+<li><strong>チーム全体で同じデータ</strong>を使える</li>
+<li><strong>UIの動作確認</strong>が簡単にできる</li>
+<li><strong>データベースの状態をリセット</strong>できる</li>
+</ol>
+<h3 id="-技術的なポイント">🔧 技術的なポイント</h3>
+<ul>
+<li>PostgreSQL配列は直接渡して<code>::text[]</code>で型キャスト</li>
+<li>冪等性を保つことで安全に何度でも実行可能</li>
+<li>エラーハンドリングとログ出力で問題を素早く特定</li>
+<li>トランザクションでデータの整合性を保証</li>
+</ul>
+<h3 id="-実践的な活用法">💡 実践的な活用法</h3>
+<pre><code class="language-bash"># 開発開始時
+npm run seed:test
+
+# データが消えた時
+npm run seed:test
+
+# 新機能テスト時
+npm run seed:test
+
+# デモ準備時
+npm run seed:demo
+</code></pre>
+<p>今回の経験から学んだこと：</p>
+<ul>
+<li>データが消えても慌てずに<code>seed</code>コマンドを実行</li>
+<li>PostgreSQL配列は直接渡して型キャストする</li>
+<li>冪等性を保つことで安全に何度でも実行可能</li>
+<li>エラーハンドリングとログ出力で問題を素早く特定</li>
+</ul>
+<p>開発環境でデータが表示されない問題に遭遇したら、まずは<code>npm run seed:test</code>を試してみてください。それだけで問題が解決することが多いです！</p>
+<h2 id="参考リンク">参考リンク</h2>
+<ul>
+<li><a href="https://www.postgresql.org/docs/current/arrays.html">PostgreSQL: Arrays</a></li>
+<li><a href="https://node-postgres.com/">Node.js: node-postgres</a></li>
+<li><a href="https://github.com/TypeStrong/ts-node">TypeScript: ts-node</a></li>
+<li><a href="https://docs.npmjs.com/cli/v9/using-npm/scripts">npm scripts</a></li>
+<li><a href="https://pnpm.io/workspaces">pnpm Workspaces</a></li>
+<li><a href="https://fakerjs.dev/">Faker.js - テストデータ生成ライブラリ</a></li>
+</ul>
+<hr>
+<p><em>この記事は、実際の開発中に発生した問題とその解決過程を基に作成されました。同様の問題に直面している開発者の参考になれば幸いです。</em></p>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",36]}]," ","データベースのテストデータ生成 - npm run seed:testの仕組みと実装"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-15 10:59"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Database"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Node.js"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"PostgreSQL"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"seed"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"test-data"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"TypeScript"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L15",null,{}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}

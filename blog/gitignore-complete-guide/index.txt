@@ -9,7 +9,7 @@ e:I[26614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/19bdf9af4d1ae4d4.css","style"]
-0:{"P":null,"b":"zbQcae7ZSCYbG12Yg4WYP","p":"","c":["","blog","gitignore-complete-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","gitignore-complete-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","gitignore-complete-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","-tq0VUoai-dR7fM_5SPMG",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"qepat1HgROqLjfWdf0ONn","p":"","c":["","blog","gitignore-complete-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","gitignore-complete-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","gitignore-complete-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","H1SSsyydQsiVgRinGEfRZ",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[74911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
@@ -17,7 +17,7 @@ f:"$Sreact.suspense"
 12:I[6874,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],""]
 14:I[31203,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
 15:I[4197,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
-13:T5b8f,<p>「あ、このファイルコミットしちゃった...」「秘密鍵をpushしてしまった！」そんな経験はありませんか？本記事では、.gitignoreの基本から実務でよく遭遇するケースまで、具体例を交えて徹底解説します。</p>
+13:T689a,<p>「あ、このファイルコミットしちゃった...」「秘密鍵をpushしてしまった！」そんな経験はありませんか？本記事では、.gitignoreの基本から実務でよく遭遇するケースまで、具体例を交えて徹底解説します。</p>
 <h2 id="️-重要な警告">⚠️ 重要な警告</h2>
 <p>本記事で紹介する<code>git rm --cached</code>コマンドは、<strong>チーム全体に影響を与える可能性があります</strong>。実行前に必ずチームメンバーと相談してください。また、秘密情報を誤ってコミットした場合は、<strong>即座にキーの無効化</strong>を行ってください。</p>
 <h2 id="-目次">📚 目次</h2>
@@ -174,6 +174,87 @@ personal/
 *.local
 local-config/
 </code></pre>
+<h2 id="gitignoreの変更が反映されるタイミング">.gitignoreの変更が反映されるタイミング</h2>
+<h3 id="-gitignoreはいつ効果を発揮するか">📅 .gitignoreはいつ効果を発揮するか？</h3>
+<p><code>.gitignore</code>の変更は<strong>即座に</strong>効果を発揮しますが、対象となるのは<strong>未追跡ファイルのみ</strong>です。</p>
+<pre><code class="language-bash"># 実例：.gitignoreの動作タイミング
+# 1. 新規ファイルを作成
+echo "test" > newfile.txt
+git status
+# → newfile.txt が Untracked files として表示される
+
+# 2. .gitignoreに追加
+echo "newfile.txt" >> .gitignore
+
+# 3. 即座に効果発揮（masterマージ不要）
+git status
+# → newfile.txt は表示されなくなる
+</code></pre>
+<h3 id="-gitignore変更の反映パターン">🔄 .gitignore変更の反映パターン</h3>
+<h4 id="パターン1新規ファイルの場合即座に反映">パターン1：新規ファイルの場合（即座に反映）</h4>
+<pre><code class="language-bash"># .gitignoreに「*.log」を追加
+echo "*.log" >> .gitignore
+
+# 新しいログファイルを作成
+touch debug.log
+
+# 確認
+git status
+# → debug.log は最初から無視される（表示されない）
+</code></pre>
+<h4 id="パターン2既に追跡中のファイルの場合手動対応が必要">パターン2：既に追跡中のファイルの場合（手動対応が必要）</h4>
+<pre><code class="language-bash"># 既存ファイルがある状態
+git add existing.log
+git commit -m "Add existing.log"
+
+# .gitignoreに追加しても...
+echo "*.log" >> .gitignore
+
+# まだ追跡される
+echo "update" >> existing.log
+git status
+# → existing.log の変更が表示される（.gitignoreが効かない）
+
+# 手動で追跡を解除する必要がある
+git rm --cached existing.log
+git commit -m "Stop tracking existing.log"
+</code></pre>
+<h3 id="-チーム開発でのgitignore変更の流れ">🌐 チーム開発での.gitignore変更の流れ</h3>
+<div class="mermaid">graph LR
+    A[開発者A: .gitignore変更] --&gt; B[ローカルで即座に効果]
+    B --&gt; C[git commit &amp; push]
+    C --&gt; D[masterマージ]
+    D --&gt; E[開発者B: git pull]
+    E --&gt; F[開発者Bでも効果発揮]</div>
+<h4 id="重要なポイント">重要なポイント：</h4>
+<ol>
+<li><strong>.gitignoreの変更自体</strong>: ローカルで即座に効果（コミット不要）</li>
+<li><strong>チームへの共有</strong>: masterマージ後、他メンバーがpullした時点で反映</li>
+<li><strong>既存ファイルの追跡解除</strong>: <code>git rm --cached</code>が必要（これは要注意）</li>
+</ol>
+<h3 id="️-よくある誤解と真実">⚠️ よくある誤解と真実</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>誤解</th><th>真実</th></tr></thead><tbody><tr><td>「.gitignoreはmasterマージしないと効かない」</td><td>❌ ローカルでは即座に効果を発揮</td></tr><tr><td>「.gitignoreに追加すれば全ファイルが無視される」</td><td>❌ 未追跡ファイルのみが対象</td></tr><tr><td>「git pullしたら.gitignoreが自動で既存ファイルに適用」</td><td>❌ 既存ファイルは手動で<code>git rm --cached</code>が必要</td></tr></tbody></table>
 <h2 id="既に追跡されているファイルを除外する方法">既に追跡されているファイルを除外する方法</h2>
 <h3 id="-よくある問題">🔴 よくある問題</h3>
 <p>「.gitignoreに追加したのに、まだgit statusに表示される！」</p>
