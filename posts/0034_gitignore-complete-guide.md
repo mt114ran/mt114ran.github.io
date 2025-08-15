@@ -200,6 +200,85 @@ personal/
 local-config/
 ```
 
+## .gitignoreの変更が反映されるタイミング
+
+### 📅 .gitignoreはいつ効果を発揮するか？
+
+`.gitignore`の変更は**即座に**効果を発揮しますが、対象となるのは**未追跡ファイルのみ**です。
+
+```bash
+# 実例：.gitignoreの動作タイミング
+# 1. 新規ファイルを作成
+echo "test" > newfile.txt
+git status
+# → newfile.txt が Untracked files として表示される
+
+# 2. .gitignoreに追加
+echo "newfile.txt" >> .gitignore
+
+# 3. 即座に効果発揮（masterマージ不要）
+git status
+# → newfile.txt は表示されなくなる
+```
+
+### 🔄 .gitignore変更の反映パターン
+
+#### パターン1：新規ファイルの場合（即座に反映）
+```bash
+# .gitignoreに「*.log」を追加
+echo "*.log" >> .gitignore
+
+# 新しいログファイルを作成
+touch debug.log
+
+# 確認
+git status
+# → debug.log は最初から無視される（表示されない）
+```
+
+#### パターン2：既に追跡中のファイルの場合（手動対応が必要）
+```bash
+# 既存ファイルがある状態
+git add existing.log
+git commit -m "Add existing.log"
+
+# .gitignoreに追加しても...
+echo "*.log" >> .gitignore
+
+# まだ追跡される
+echo "update" >> existing.log
+git status
+# → existing.log の変更が表示される（.gitignoreが効かない）
+
+# 手動で追跡を解除する必要がある
+git rm --cached existing.log
+git commit -m "Stop tracking existing.log"
+```
+
+### 🌐 チーム開発での.gitignore変更の流れ
+
+```mermaid
+graph LR
+    A[開発者A: .gitignore変更] --> B[ローカルで即座に効果]
+    B --> C[git commit & push]
+    C --> D[masterマージ]
+    D --> E[開発者B: git pull]
+    E --> F[開発者Bでも効果発揮]
+```
+
+#### 重要なポイント：
+1. **.gitignoreの変更自体**: ローカルで即座に効果（コミット不要）
+2. **チームへの共有**: masterマージ後、他メンバーがpullした時点で反映
+3. **既存ファイルの追跡解除**: `git rm --cached`が必要（これは要注意）
+
+### ⚠️ よくある誤解と真実
+
+| 誤解 | 真実 |
+|------|------|
+| 「.gitignoreはmasterマージしないと効かない」 | ❌ ローカルでは即座に効果を発揮 |
+| 「.gitignoreに追加すれば全ファイルが無視される」 | ❌ 未追跡ファイルのみが対象 |
+| 「git pullしたら.gitignoreが自動で既存ファイルに適用」 | ❌ 既存ファイルは手動で`git rm --cached`が必要 |
+
 ## 既に追跡されているファイルを除外する方法
 
 ### 🔴 よくある問題
