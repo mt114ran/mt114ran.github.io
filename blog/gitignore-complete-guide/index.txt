@@ -1,0 +1,734 @@
+1:"$Sreact.fragment"
+2:I[87555,[],""]
+3:I[31295,[],""]
+5:I[59665,[],"MetadataBoundary"]
+7:I[59665,[],"OutletBoundary"]
+a:I[74911,[],"AsyncMetadataOutlet"]
+c:I[59665,[],"ViewportBoundary"]
+e:I[26614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/19bdf9af4d1ae4d4.css","style"]
+0:{"P":null,"b":"zbQcae7ZSCYbG12Yg4WYP","p":"","c":["","blog","gitignore-complete-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","gitignore-complete-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","gitignore-complete-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","-tq0VUoai-dR7fM_5SPMG",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[74911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],""]
+14:I[31203,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+15:I[4197,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+13:T5b8f,<p>「あ、このファイルコミットしちゃった...」「秘密鍵をpushしてしまった！」そんな経験はありませんか？本記事では、.gitignoreの基本から実務でよく遭遇するケースまで、具体例を交えて徹底解説します。</p>
+<h2 id="️-重要な警告">⚠️ 重要な警告</h2>
+<p>本記事で紹介する<code>git rm --cached</code>コマンドは、<strong>チーム全体に影響を与える可能性があります</strong>。実行前に必ずチームメンバーと相談してください。また、秘密情報を誤ってコミットした場合は、<strong>即座にキーの無効化</strong>を行ってください。</p>
+<h2 id="-目次">📚 目次</h2>
+<ul>
+<li><a href="#gitignore%E3%81%A8%E3%81%AF">.gitignoreとは</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E6%9B%B8%E3%81%8D%E6%96%B9">基本的な書き方</a></li>
+<li><a href="#%E5%AE%9F%E5%8B%99%E3%81%A7%E3%82%88%E3%81%8F%E4%BD%BF%E3%81%86%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">実務でよく使うパターン</a></li>
+<li><a href="#%E6%97%A2%E3%81%AB%E8%BF%BD%E8%B7%A1%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E9%99%A4%E5%A4%96%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95">既に追跡されているファイルを除外する方法</a></li>
+<li><a href="#%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E5%A4%B1%E6%95%97%E3%81%A8%E5%AF%BE%E5%87%A6%E6%B3%95">よくある失敗と対処法</a></li>
+<li><a href="#%E8%A8%80%E8%AA%9E%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E5%88%A5%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88">言語・フレームワーク別テンプレート</a></li>
+<li><a href="#%E9%AB%98%E5%BA%A6%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9">高度な使い方</a></li>
+<li><a href="#%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0">トラブルシューティング</a></li>
+<li><a href="#%E3%83%99%E3%82%B9%E3%83%88%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9">ベストプラクティス</a></li>
+<li><a href="#%E3%81%BE%E3%81%A8%E3%82%81">まとめ</a></li>
+</ul>
+<h2 id="gitignoreとは">.gitignoreとは</h2>
+<p><code>.gitignore</code>は、Gitに無視してほしいファイルやディレクトリを指定するファイルです。</p>
+<h3 id="-初心者向けgitの追跡とは">🔰 初心者向け：Gitの「追跡」とは？</h3>
+<p>Gitでは、ファイルを「追跡対象」として認識すると、そのファイルの変更を監視し始めます。</p>
+<pre><code class="language-bash"># 新規ファイルの状態確認
+git status
+# Untracked files: (未追跡ファイル)
+#   newfile.txt
+
+# ファイルを追跡対象に追加
+git add newfile.txt
+
+# 追跡開始後の状態
+git status
+# Changes to be committed: (コミット予定の変更)
+#   new file: newfile.txt
+</code></pre>
+<p><strong>重要</strong>: .gitignoreは<strong>まだ追跡されていないファイル</strong>に対してのみ効果があります。</p>
+<h3 id="なぜ必要">なぜ必要？</h3>
+<pre><code>プロジェクトフォルダ/
+├── src/            # ← コミットしたい
+├── node_modules/   # ← コミットしたくない（巨大）
+├── .env           # ← コミットしたくない（秘密情報）
+├── build/         # ← コミットしたくない（自動生成）
+└── README.md      # ← コミットしたい
+</code></pre>
+<h3 id="gitignoreの効果">.gitignoreの効果</h3>
+<ul>
+<li><strong>リポジトリサイズの削減</strong>: node_modulesなどの巨大ファイルを除外</li>
+<li><strong>セキュリティ向上</strong>: APIキーや秘密鍵の誤公開を防ぐ</li>
+<li><strong>クリーンな履歴</strong>: 自動生成ファイルによる無駄なコミットを防ぐ</li>
+</ul>
+<h2 id="基本的な書き方">基本的な書き方</h2>
+<h3 id="1-コメント">1. コメント</h3>
+<pre><code class="language-gitignore"># これはコメントです
+# 開発環境
+.env
+
+# ビルド成果物
+/build/
+</code></pre>
+<h3 id="2-ファイルディレクトリの指定">2. ファイル・ディレクトリの指定</h3>
+<pre><code class="language-gitignore"># 特定のファイル
+secret.txt
+
+# 特定の拡張子
+*.log
+*.tmp
+
+# ディレクトリ
+node_modules/
+dist/
+
+# ルートディレクトリのみ
+/config.json    # ルートのconfig.jsonのみ
+config.json     # すべてのconfig.json
+</code></pre>
+<h3 id="3-パターンマッチング">3. パターンマッチング</h3>
+<pre><code class="language-gitignore"># ワイルドカード
+*.log           # すべての.logファイル
+temp-*          # temp-で始まるファイル
+
+# 複数階層
+**/*.tmp        # すべてのディレクトリの.tmpファイル
+**/logs         # すべてのlogsディレクトリ
+
+# 否定（除外の除外）
+*.log
+!important.log  # important.logは追跡する
+</code></pre>
+<h2 id="実務でよく使うパターン">実務でよく使うパターン</h2>
+<h3 id="ケース1-環境設定ファイル">ケース1: 環境設定ファイル</h3>
+<pre><code class="language-gitignore"># 環境変数
+.env
+.env.local
+.env.*.local
+.env.production
+
+# IDE設定
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+</code></pre>
+<p><strong>実例</strong>:</p>
+<pre><code class="language-bash"># .envファイルに秘密情報を記載
+echo "API_KEY=sk-xxxxxxxxxxxxx" > .env
+
+# .gitignoreに追加
+echo ".env" >> .gitignore
+
+# これでgit statusしても.envは表示されない
+git status
+</code></pre>
+<h3 id="ケース2-ビルド成果物依存関係">ケース2: ビルド成果物・依存関係</h3>
+<pre><code class="language-gitignore"># Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ビルド出力
+dist/
+build/
+out/
+.next/
+
+# キャッシュ
+.cache/
+.parcel-cache/
+.turbo/
+</code></pre>
+<h3 id="ケース3-os固有ファイル">ケース3: OS固有ファイル</h3>
+<pre><code class="language-gitignore"># macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.directory
+.Trash-*
+</code></pre>
+<h3 id="ケース4-個人用ファイル">ケース4: 個人用ファイル</h3>
+<pre><code class="language-gitignore"># 個人的なメモ
+NOTE.md
+TODO.md
+personal/
+
+# ローカル設定
+*.local
+local-config/
+</code></pre>
+<h2 id="既に追跡されているファイルを除外する方法">既に追跡されているファイルを除外する方法</h2>
+<h3 id="-よくある問題">🔴 よくある問題</h3>
+<p>「.gitignoreに追加したのに、まだgit statusに表示される！」</p>
+<p><strong>原因</strong>: すでにGitで追跡されているファイルは、.gitignoreに追加しても無視されません。</p>
+<h3 id="️-重要な注意事項">⚠️ 重要な注意事項</h3>
+<p><code>git rm --cached</code>は<strong>チーム全体に影響</strong>します。実行前に必ずチームメンバーと相談してください。</p>
+<pre><code>⚠️ 警告: git rm --cachedの影響
+• 他の開発者がgit pullすると、ローカルファイルが削除される
+• ファイルが必要な場合は、事前にバックアップを共有
+• チーム全体への周知が必要
+</code></pre>
+<h3 id="-解決方法">✅ 解決方法</h3>
+<h4 id="方法1-ローカルでのみ無視安全">方法1: ローカルでのみ無視（安全）</h4>
+<pre><code class="language-bash"># 他の開発者に影響しない方法
+git update-index --skip-worktree config/database.yml
+
+# 解除方法
+git update-index --no-skip-worktree config/database.yml
+</code></pre>
+<h4 id="方法2-チーム全体から除外注意が必要">方法2: チーム全体から除外（注意が必要）</h4>
+<pre><code class="language-bash"># 1. .gitignoreに追加
+echo "NOTE.md" >> .gitignore
+
+# 2. Gitの追跡から除外（ファイルは残る）
+git rm --cached NOTE.md
+
+# 3. コミット
+git commit -m "chore: NOTE.mdをGit管理から除外"
+
+# ⚠️ 他の開発者への影響:
+# git pullするとNOTE.mdが削除されるため、
+# 事前にファイルのバックアップを周知
+</code></pre>
+<h4 id="方法2-ディレクトリの場合">方法2: ディレクトリの場合</h4>
+<pre><code class="language-bash"># 1. .gitignoreに追加
+echo "temp/" >> .gitignore
+
+# 2. ディレクトリ全体を追跡から除外
+git rm -r --cached temp/
+
+# 3. コミット
+git commit -m "chore: tempディレクトリをGit管理から除外"
+</code></pre>
+<h4 id="方法3-複数ファイルを一括処理">方法3: 複数ファイルを一括処理</h4>
+<pre><code class="language-bash"># 1. .gitignoreを更新
+cat >> .gitignore &#x3C;&#x3C; EOF
+*.log
+*.tmp
+.cache/
+EOF
+
+# 2. .gitignoreに基づいて一括削除
+git rm --cached \$(git ls-files -i -c --exclude-from=.gitignore)
+
+# 3. コミット
+git commit -m "chore: 不要なファイルをGit管理から除外"
+</code></pre>
+<h3 id="-緊急対応秘密情報をコミットしてしまった場合">🚨 緊急対応：秘密情報をコミットしてしまった場合</h3>
+<h4 id="ケーススタディawsキーの漏洩">ケーススタディ：AWSキーの漏洩</h4>
+<pre><code class="language-bash"># 🔴 危険：このようなファイルがコミットされると...
+aws-credentials.json
+{
+  "accessKeyId": "AKIA...",
+  "secretAccessKey": "..."
+}
+
+# 結果：
+# - 不正アクセスで高額請求
+# - データベース内容の漏洩
+# - サービス停止
+</code></pre>
+<h4 id="即座に実行すべき対応">即座に実行すべき対応</h4>
+<ol>
+<li><strong>キーの無効化（最優先）</strong></li>
+</ol>
+<pre><code class="language-bash"># AWSの場合
+aws iam delete-access-key --access-key-id AKIA...
+
+# GitHubトークンの場合
+# Settings > Developer settings > Personal access tokensから削除
+</code></pre>
+<ol start="2">
+<li><strong>Git履歴からの完全削除</strong></li>
+</ol>
+<h3 id="実践例誤ってコミットしたenvファイルを除外">実践例：誤ってコミットした.envファイルを除外</h3>
+<pre><code class="language-bash"># 状況：.envファイルをコミットしてしまった
+$ git log --oneline
+a1b2c3d feat: 新機能追加（.envも含まれている）
+
+# 対処法
+# 1. .gitignoreに追加
+echo ".env" >> .gitignore
+
+# 2. 追跡から除外
+git rm --cached .env
+
+# 3. コミット
+git commit -m "security: .envファイルをGit管理から除外"
+
+# 4. 履歴からも完全に削除する場合（重要）
+git filter-branch --force --index-filter \
+  "git rm --cached --ignore-unmatch .env" \
+  --prune-empty --tag-name-filter cat -- --all
+
+# 5. 強制プッシュ（チーム開発の場合は要相談）
+git push origin --force --all
+</code></pre>
+<h2 id="よくある失敗と対処法">よくある失敗と対処法</h2>
+<h3 id="失敗1-node_modulesをコミットしてしまった">失敗1: node_modulesをコミットしてしまった</h3>
+<pre><code class="language-bash"># 😱 間違えてコミット
+git add .
+git commit -m "初回コミット"
+# → リポジトリが巨大に！
+
+# 🔧 対処法
+# 1. .gitignoreに追加
+echo "node_modules/" >> .gitignore
+
+# 2. 追跡から除外
+git rm -r --cached node_modules/
+
+# 3. コミット
+git commit -m "fix: node_modulesをGit管理から除外"
+</code></pre>
+<h3 id="失敗2-gitignoreが効かない">失敗2: .gitignoreが効かない</h3>
+<pre><code class="language-bash"># 😕 .gitignoreに追加したのに...
+echo "debug.log" >> .gitignore
+git status
+# → まだdebug.logが表示される
+
+# 🔍 原因確認
+git check-ignore -v debug.log
+# → 何も表示されない = すでに追跡されている
+
+# 🔧 対処法
+git rm --cached debug.log
+git commit -m "chore: debug.logを追跡から除外"
+</code></pre>
+<h3 id="失敗3-必要なファイルまで無視してしまった">失敗3: 必要なファイルまで無視してしまった</h3>
+<pre><code class="language-gitignore"># 😱 間違った設定
+*.config    # すべての.configファイルを無視
+
+# 🔧 修正版
+*.config
+!app.config    # app.configは追跡する
+!system.config # system.configも追跡する
+</code></pre>
+<h2 id="言語フレームワーク別テンプレート">言語・フレームワーク別テンプレート</h2>
+<h3 id="nodejs--javascript">Node.js / JavaScript</h3>
+<pre><code class="language-gitignore"># Dependencies
+node_modules/
+jspm_packages/
+
+# Build
+dist/
+build/
+*.js.map
+
+# Testing
+coverage/
+.nyc_output
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+</code></pre>
+<h3 id="python">Python</h3>
+<pre><code class="language-gitignore"># Byte-compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+</code></pre>
+<h3 id="java">Java</h3>
+<pre><code class="language-gitignore"># Compiled
+*.class
+target/
+out/
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# IDE
+.idea/
+*.iml
+.eclipse
+.project
+.settings/
+
+# Build tools
+.gradle/
+build/
+</code></pre>
+<h3 id="react--nextjs">React / Next.js</h3>
+<pre><code class="language-gitignore"># Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production
+/build
+/.next/
+/out/
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+</code></pre>
+<h2 id="高度な使い方">高度な使い方</h2>
+<h3 id="グローバルgitignore">グローバル.gitignore</h3>
+<p>個人環境固有のファイルは、グローバル設定で管理：</p>
+<pre><code class="language-bash"># グローバル.gitignoreを作成
+touch ~/.gitignore_global
+
+# 設定
+cat >> ~/.gitignore_global &#x3C;&#x3C; EOF
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# 個人用
+NOTE.md
+TODO.md
+EOF
+
+# Gitに登録
+git config --global core.excludesfile ~/.gitignore_global
+</code></pre>
+<h3 id="gitignoreの階層構造">.gitignoreの階層構造</h3>
+<pre><code>project/
+├── .gitignore          # プロジェクト全体
+├── src/
+│   └── .gitignore     # srcディレクトリ専用
+└── tests/
+    └── .gitignore     # testsディレクトリ専用
+</code></pre>
+<p>各.gitignoreは、そのディレクトリ以下に適用されます。</p>
+<h3 id="条件付き無視">条件付き無視</h3>
+<pre><code class="language-gitignore"># 開発環境のみ無視
+[Dd]ebug/
+[Rr]elease/
+
+# 特定の深さのみ
+/config/*
+!/config/default.json
+
+# 特定パターンの除外
+logs/*.log
+!logs/important-*.log
+</code></pre>
+<h2 id="トラブルシューティング">トラブルシューティング</h2>
+<h3 id="q1-gitignoreを追加したのに反映されない">Q1: .gitignoreを追加したのに反映されない</h3>
+<pre><code class="language-bash"># キャッシュをクリア
+git rm -r --cached .
+git add .
+git commit -m "fix: .gitignoreを反映"
+</code></pre>
+<h3 id="q2-どのルールで無視されているか確認したい">Q2: どのルールで無視されているか確認したい</h3>
+<pre><code class="language-bash"># ファイルが無視される理由を確認
+git check-ignore -v ファイル名
+
+# 例
+$ git check-ignore -v node_modules/
+.gitignore:3:node_modules/    node_modules/
+</code></pre>
+<h3 id="q3-一時的にgitignoreを無視したい">Q3: 一時的に.gitignoreを無視したい</h3>
+<pre><code class="language-bash"># 強制的に追加
+git add -f 通常は無視されるファイル
+
+# 例：設定ファイルのテンプレート
+git add -f .env.example
+</code></pre>
+<h3 id="q4-gitignore自体を無視したい">Q4: .gitignore自体を無視したい</h3>
+<pre><code class="language-bash"># ローカル専用の除外設定
+echo "personal-ignore.txt" >> .git/info/exclude
+
+# .git/info/excludeはリポジトリには含まれない
+</code></pre>
+<h2 id="cicd環境でのgitignore戦略">CI/CD環境での.gitignore戦略</h2>
+<h3 id="環境別設定ファイルの管理">環境別設定ファイルの管理</h3>
+<pre><code class="language-bash"># 本番環境用設定
+config/
+├── database.yml.example      # テンプレート（追跡する）
+├── database.yml              # 実際の設定（無視する）
+└── secrets.yml.enc           # 暗号化済み（追跡する）
+
+# .gitignore設定
+config/database.yml
+config/secrets.yml
+!config/secrets.yml.enc
+</code></pre>
+<h3 id="github-actionsでの活用">GitHub Actionsでの活用</h3>
+<pre><code class="language-yaml"># .github/workflows/ci.yml
+name: CI
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      # 環境変数から設定ファイルを生成
+      - name: Setup config files
+        run: |
+          echo "${{ secrets.DATABASE_YML }}" > config/database.yml
+          echo "${{ secrets.ENV_FILE }}" > .env
+</code></pre>
+<h2 id="ベストプラクティス">ベストプラクティス</h2>
+<h3 id="1-プロジェクト開始時に設定">1. プロジェクト開始時に設定</h3>
+<pre><code class="language-bash"># プロジェクト初期化と同時に.gitignore作成
+git init
+curl -o .gitignore https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
+git add .gitignore
+git commit -m "initial commit: add .gitignore"
+</code></pre>
+<h3 id="2-チーム共通-vs-個人設定の分離">2. チーム共通 vs 個人設定の分離</h3>
+<pre><code class="language-gitignore"># === チーム共通設定 ===
+# Dependencies
+node_modules/
+
+# Build
+dist/
+build/
+
+# Environment
+.env
+
+# === 個人設定はグローバル.gitignoreへ ===
+# IDE設定 → ~/.gitignore_global
+# OS固有ファイル → ~/.gitignore_global
+</code></pre>
+<h3 id="3-セキュリティファーストの設定">3. セキュリティファーストの設定</h3>
+<pre><code class="language-gitignore"># セキュリティ最優先
+*.key
+*.pem
+*.p12
+*.pfx
+.env*
+!.env.example  # サンプルのみ許可
+secrets/
+credentials/
+</code></pre>
+<h3 id="4-コメントで意図を明確に">4. コメントで意図を明確に</h3>
+<pre><code class="language-gitignore"># === Dependencies ===
+# npm/yarn packages - インストール可能なので除外
+node_modules/
+
+# === Build Outputs ===
+# ソースから生成可能なので除外
+dist/
+build/
+
+# === Sensitive Data ===
+# セキュリティのため絶対に除外
+.env
+*.key
+
+# === Temporary Files ===
+# 一時ファイルは不要
+*.tmp
+*.cache
+</code></pre>
+<h3 id="5-定期的な見直し">5. 定期的な見直し</h3>
+<pre><code class="language-bash"># 不要になった設定を整理
+# 1. 現在追跡されているファイルを確認
+git ls-files
+
+# 2. .gitignoreされているが存在するファイルを確認
+git status --ignored
+
+# 3. .gitignoreをクリーンアップ
+# 不要な行を削除、整理
+</code></pre>
+<h2 id="実践演習">実践演習</h2>
+<h3 id="演習1-新規プロジェクトのセットアップ">演習1: 新規プロジェクトのセットアップ</h3>
+<pre><code class="language-bash"># 1. プロジェクト作成
+mkdir my-app &#x26;&#x26; cd my-app
+git init
+
+# 2. .gitignore作成
+cat > .gitignore &#x3C;&#x3C; 'EOF'
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Build
+dist/
+build/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+EOF
+
+# 3. 確認
+git status
+</code></pre>
+<h3 id="演習2-既存ファイルの除外">演習2: 既存ファイルの除外</h3>
+<pre><code class="language-bash"># 状況：config.localを誤ってコミット済み
+
+# 1. 現状確認
+git ls-files | grep config
+
+# 2. .gitignoreに追加
+echo "*.local" >> .gitignore
+
+# 3. 追跡除外
+git rm --cached config.local
+
+# 4. コミット
+git commit -m "chore: ローカル設定ファイルを除外"
+
+# 5. 確認
+touch another.local
+git status  # another.localは表示されない
+</code></pre>
+<h2 id="チートシート">チートシート</h2>
+<h3 id="よく使うパターン一覧">よく使うパターン一覧</h3>
+<pre><code class="language-gitignore"># === ファイルパターン ===
+*.log           # 拡張子
+!important.log  # 除外の除外
+temp-*          # プレフィックス
+*-backup        # サフィックス
+
+# === ディレクトリパターン ===
+logs/           # ディレクトリ
+/logs/          # ルートのみ
+**/logs/        # すべての階層
+
+# === 複合パターン ===
+*.tmp
+!config/*.tmp   # configディレクトリは除外しない
+build/**/*.js   # build以下のすべてのjs
+</code></pre>
+<h3 id="コマンド早見表">コマンド早見表</h3>
+<pre><code class="language-bash"># 追跡状況確認
+git ls-files                     # 追跡中のファイル一覧
+git status --ignored             # 無視されているファイル表示
+git check-ignore -v ファイル名    # 無視理由を確認
+
+# 追跡から除外
+git rm --cached ファイル名       # ファイルを残して除外
+git rm -r --cached ディレクトリ/  # ディレクトリを除外
+
+# 強制操作
+git add -f ファイル名            # .gitignore無視して追加
+git clean -fdX                   # 無視ファイルを削除
+</code></pre>
+<h2 id="まとめ">まとめ</h2>
+<h3 id="-重要なポイント">📝 重要なポイント</h3>
+<ol>
+<li><strong>.gitignoreは予防策</strong>: 最初から設定することが重要</li>
+<li><strong>既存ファイルには<code>git rm --cached</code></strong>: 追跡済みファイルは別途対処が必要</li>
+<li><strong>チーム共通と個人設定を分離</strong>: グローバル.gitignoreを活用</li>
+<li><strong>セキュリティファースト</strong>: 秘密情報は必ず除外</li>
+<li><strong>定期的なメンテナンス</strong>: プロジェクトの成長に合わせて更新</li>
+</ol>
+<h3 id="-実務での心得">🎯 実務での心得</h3>
+<ul>
+<li><strong>プロジェクト開始時に必ず設定</strong></li>
+<li><strong>コミット前に<code>git status</code>で確認</strong></li>
+<li><strong>秘密情報は.env.exampleでテンプレート化</strong></li>
+<li><strong>IDEやOS固有ファイルはグローバル設定へ</strong></li>
+<li><strong>チームで.gitignoreルールを共有</strong></li>
+</ul>
+<h3 id="-次のステップ">🚀 次のステップ</h3>
+<ol>
+<li>自分のプロジェクトの.gitignoreを見直す</li>
+<li>グローバル.gitignoreを設定する</li>
+<li><a href="https://www.toptal.com/developers/gitignore">gitignore.io</a>でテンプレート生成</li>
+<li>チームで.gitignoreのルールを決める</li>
+</ol>
+<p>適切な.gitignore設定により、クリーンで安全なリポジトリ管理が可能になります。今すぐ実践してみましょう！</p>
+<h2 id="参考リンク">参考リンク</h2>
+<ul>
+<li><a href="https://git-scm.com/docs/gitignore">Git公式ドキュメント - gitignore</a></li>
+<li><a href="https://github.com/github/gitignore">GitHub - gitignoreテンプレート集</a></li>
+<li><a href="https://www.toptal.com/developers/gitignore">gitignore.io - カスタムテンプレート生成</a></li>
+</ul>
+<hr>
+<p><em>本記事で紹介した実例は、実際の開発現場でよく遭遇するケースを基にしています。</em></p>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",34]}]," ",".gitignore完全ガイド：実務でよく使うパターンと既存ファイルの除外方法"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-15 08:39"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Git"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":".gitignore"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"バージョン管理"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ベストプラクティス"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"開発効率化"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L15",null,{}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}
