@@ -9,6 +9,22 @@ create: "2025-08-16 00:24"
 
 ## 💡 初心者向け解説
 
+### JWT（ジェイ・ダブリュー・ティー）とは？
+
+**JWT (JSON Web Token)** は、ユーザー認証情報を安全に保存・伝送するためのトークン形式です。
+
+```javascript
+// JWTの構造例
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9. // ヘッダー
+eyJpZCI6IjEyMyIsIm5hbWUiOiJKb2huIn0.   // ペイロード（ユーザー情報）
+SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV     // 署名（改ざん防止）
+```
+
+**JWTのメリット**：
+- 🔒 改ざんを検出できる
+- 📦 サーバーレス認証が可能
+- ⏰ 有効期限を設定できる
+
 ### OAuth（オーオース）とは？
 
 **簡単に言うと**: 他のサービスのアカウントで安全にログインできる仕組みです。
@@ -83,17 +99,28 @@ Drill Layer
 # Google Cloud Console での手順
 1. https://console.cloud.google.com/ にアクセス
 2. 新しいプロジェクト作成
-3. プロジェクト名: "drill-layer-auth"
+3. プロジェクト名: "your-project-auth" (任意の名前)
 4. プロジェクトを選択
 ```
 
 ### 2. OAuth 2.0認証情報の設定
 
+認証情報は`.env`ファイルに保存します：
+
+```bash
+# .envファイル（プロジェクトルートディレクトリに配置）
+GOOGLE_CLIENT_ID="your-client-id.apps.googleusercontent.com"
+GOOGLE_CLIENT_SECRET="your-client-secret"
+GOOGLE_REDIRECT_URI="http://localhost:3000/api/auth/google/callback"
+```
+
+Google Cloud Consoleでの設定項目：
+
 ```javascript
 // 設定項目
 const OAUTH_CONFIG = {
   // アプリケーション名
-  applicationName: "Drill Layer",
+  applicationName: "Your App Name",
   
   // 承認済みのリダイレクト URI
   redirectURIs: [
@@ -111,7 +138,10 @@ const OAUTH_CONFIG = {
 
 ### 3. スコープ設定
 
+スコープ設定はコード内で指定します：
+
 ```javascript
+// src/config/auth.js または src/auth/passport.js
 // 取得する情報の範囲
 const OAUTH_SCOPES = [
   'profile', // 基本プロフィール情報
@@ -161,7 +191,8 @@ import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import jwt from 'jsonwebtoken';
 import { findUserByGoogleId, createUserFromGoogleProfile } from '../services/userService';
 
-// Google OAuth戦略の設定
+// Google OAuth戦略（Strategy）の設定
+// 戦略パターン: 認証方法を切り替え可能にする設計パターン
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID!,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
@@ -267,9 +298,16 @@ router.get('/google/callback', (req, res, next) => {
       
       // HTTPOnly Cookieにトークンを設定（セキュア）
       res.cookie('access_token', token, {
-        httpOnly: true, // XSS攻撃を防ぐ
+        httpOnly: true, // JavaScriptからアクセス不可にしてXSS攻撃を防ぐ
+        // XSS攻撃: 悪意のあるスクリプトがCookieを盗む攻撃
+        // httpOnly設定により、document.cookieでアクセスできなくなる
+        
         secure: process.env.NODE_ENV === 'production', // HTTPS必須（本番）
-        sameSite: 'strict', // CSRF攻撃を防ぐ
+        
+        sameSite: 'strict', // 異なるサイトからのリクエストでCookieを送信しない
+        // CSRF攻撃: 偽サイトから本物のサイトへ不正なリクエストを送る攻撃
+        // strictにより、外部サイトからのリクエストではCookieが送信されない
+        
         maxAge: 15 * 60 * 1000, // 15分
         path: '/'
       });

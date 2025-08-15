@@ -106,9 +106,16 @@ TypeScriptで書かれたシードスクリプトを直接実行します。
 データベースの接続情報（ホスト名、ユーザー名、パスワードなど）をコードに直接書き込むのはセキュリティ上危険です。`.env`ファイルを使って管理し、`dotenv`ライブラリで読み込むのが一般的です。
 
 ```bash
-# .env ファイルの例
-DATABASE_URL="postgresql://user:password@localhost:5432/drill_layer_dev"
+# .env ファイルの例（これはサンプルです。実際の値に置き換えてください）
+DATABASE_URL="postgresql://your_username:your_password@localhost:5432/your_database_name"
+
+# 具体的な例：
+# DATABASE_URL="postgresql://johndoe:secretpass123@localhost:5432/myapp_dev"
+#                          ↑ユーザー名 ↑パスワード     ↑データベース名
+# ※ これらはすべてサンプル値です
 ```
+
+⚠️ **重要**: 上記はexampleです。実際のプロジェクトでは自分の環境に合わせた値を設定してください。
 
 ```typescript
 // connection.ts
