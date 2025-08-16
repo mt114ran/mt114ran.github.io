@@ -5,7 +5,7 @@ tags: ["Google OAuth", "認証", "Node.js", "React", "JWT", "Passport.js"]
 create: "2025-08-16 00:24"
 ---
 
-教材共有プラットフォーム「Drill Layer」でのGoogle OAuth認証実装を通じて、セキュアで使いやすいログイン機能の構築方法を詳しく解説します。
+とある個人開発プロジェクトでのGoogle OAuth認証実装を通じて、セキュアで使いやすいログイン機能の構築方法を詳しく解説します。
 
 ## 💡 初心者向け解説
 
@@ -69,7 +69,7 @@ OAuth認証:
 ### アプリケーション構成
 
 ```
-Drill Layer
+プロジェクト構成
 ├── Backend: Node.js + Express + TypeScript
 ├── Frontend: React + TypeScript
 ├── Database: PostgreSQL
@@ -90,6 +90,27 @@ Drill Layer
 - パフォーマンス: 認証時間 < 3秒
 - ユーザビリティ: 直感的なUI
 ```
+
+### 🍪 HTTPOnly Cookieとは？
+
+**HTTPOnly Cookie**は、JavaScriptからアクセスできない特別なCookieです。
+
+```javascript
+// 通常のCookie（危険）
+document.cookie = "token=abc123"; // JavaScriptで読み書き可能
+console.log(document.cookie); // "token=abc123" が表示される
+
+// HTTPOnly Cookie（安全）
+// サーバー側でのみ設定可能
+res.cookie('token', 'abc123', { httpOnly: true });
+// JavaScriptからアクセス不可
+console.log(document.cookie); // 表示されない！
+```
+
+**なぜHTTPOnly Cookieが安全？**
+- 😈 XSS攻撃: 悪意のあるスクリプトがページに注入される攻撃
+- 🛡️ HTTPOnly: JavaScriptから読めないので、攻撃者もトークンを盗めない
+- ✅ サーバーのみ: HTTPリクエストヘッダーでのみ送信される
 
 ## Google Cloud Console設定
 
@@ -640,7 +661,7 @@ const LoginPage: React.FC = () => {
       <div className="max-w-md w-full space-y-8 p-8">
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Drill Layer
+            My App
           </h1>
           <p className="text-gray-600">
             教材共有プラットフォームにログイン
@@ -806,7 +827,7 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <h1 className="text-xl font-bold text-blue-600">Drill Layer</h1>
+            <h1 className="text-xl font-bold text-blue-600">My App</h1>
           </div>
 
           {user && (
@@ -1071,6 +1092,6 @@ Google OAuth認証は、ユーザビリティとセキュリティを両立す�
 
 ---
 
-*この記事は実際のプロジェクト「Drill Layer」でのOAuth実装経験に基づいて作成されました。*
+*この記事は実際の個人開発プロジェクトでのOAuth実装経験に基づいて作成されました。*
 
 *初心者の方へ：まずは開発環境で動作させてから、段階的にセキュリティ機能を追加することをお勧めします。*
