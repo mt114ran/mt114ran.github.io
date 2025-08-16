@@ -5,9 +5,59 @@ tags: ["Google OAuth", "認証", "Node.js", "React", "JWT", "Passport.js"]
 create: "2025-08-16 00:24"
 ---
 
-教材共有プラットフォーム「Drill Layer」でのGoogle OAuth認証実装を通じて、セキュアで使いやすいログイン機能の構築方法を詳しく解説します。
+とある個人開発プロジェクトでのGoogle OAuth認証実装を通じて、セキュアで使いやすいログイン機能の構築方法を詳しく解説します。
+
+## 🎯 Google OAuth実装で必要なこと
+
+Google OAuthを実装する際に必要な作業の全体像を最初に把握しておきましょう。
+
+### 実装に必要な作業
+
+1. **Google Cloud Consoleでの設定**（約30分）
+   - プロジェクトの作成
+   - OAuth 2.0クライアントIDの取得
+   - リダイレクトURIの設定
+
+2. **バックエンドの実装**（約2時間）
+   - Passport.jsのセットアップ
+   - Google Strategy の設定
+   - JWT トークンの生成・検証
+   - Cookie の安全な管理
+
+3. **フロントエンドの実装**（約1時間）
+   - ログインボタンの設置
+   - 認証後のリダイレクト処理
+   - ログイン状態の管理
+
+4. **セキュリティ対策**（約1時間）
+   - HTTPOnly Cookie の設定
+   - CSRF 対策
+   - XSS 対策
+
+### 事前に必要なもの
+
+- **Googleアカウント**（Google Cloud Console用）
+- **Node.js環境**（v14以上推奨）
+- **基本的なReactの知識**
+- **データベース**（ユーザー情報保存用）
 
 ## 💡 初心者向け解説
+
+### JWT（ジェイ・ダブリュー・ティー）とは？
+
+**JWT (JSON Web Token)** は、ユーザー認証情報を安全に保存・伝送するためのトークン形式です。
+
+```javascript
+// JWTの構造例
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9. // ヘッダー
+eyJpZCI6IjEyMyIsIm5hbWUiOiJKb2huIn0.   // ペイロード（ユーザー情報）
+SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV     // 署名（改ざん防止）
+```
+
+**JWTのメリット**：
+- 🔒 改ざんを検出できる
+- 📦 サーバーレス認証が可能
+- ⏰ 有効期限を設定できる
 
 ### OAuth（オーオース）とは？
 
@@ -53,7 +103,7 @@ OAuth認証:
 ### アプリケーション構成
 
 ```
-Drill Layer
+プロジェクト構成
 ├── Backend: Node.js + Express + TypeScript
 ├── Frontend: React + TypeScript
 ├── Database: PostgreSQL
@@ -75,6 +125,27 @@ Drill Layer
 - ユーザビリティ: 直感的なUI
 ```
 
+### 🍪 HTTPOnly Cookieとは？
+
+**HTTPOnly Cookie**は、JavaScriptからアクセスできない特別なCookieです。
+
+```javascript
+// 通常のCookie（危険）
+document.cookie = "token=abc123"; // JavaScriptで読み書き可能
+console.log(document.cookie); // "token=abc123" が表示される
+
+// HTTPOnly Cookie（安全）
+// サーバー側でのみ設定可能
+res.cookie('token', 'abc123', { httpOnly: true });
+// JavaScriptからアクセス不可
+console.log(document.cookie); // 表示されない！
+```
+
+**なぜHTTPOnly Cookieが安全？**
+- 😈 XSS攻撃: 悪意のあるスクリプトがページに注入される攻撃
+- 🛡️ HTTPOnly: JavaScriptから読めないので、攻撃者もトークンを盗めない
+- ✅ サーバーのみ: HTTPリクエストヘッダーでのみ送信される
+
 ## Google Cloud Console設定
 
 ### 1. プロジェクト作成
@@ -83,17 +154,28 @@ Drill Layer
 # Google Cloud Console での手順
 1. https://console.cloud.google.com/ にアクセス
 2. 新しいプロジェクト作成
-3. プロジェクト名: "drill-layer-auth"
+3. プロジェクト名: "your-project-auth" (任意の名前)
 4. プロジェクトを選択
 ```
 
 ### 2. OAuth 2.0認証情報の設定
 
+認証情報は`.env`ファイルに保存します：
+
+```bash
+# .envファイル（プロジェクトルートディレクトリに配置）
+GOOGLE_CLIENT_ID="your-client-id.apps.googleusercontent.com"
+GOOGLE_CLIENT_SECRET="your-client-secret"
+GOOGLE_REDIRECT_URI="http://localhost:3000/api/auth/google/callback"
+```
+
+Google Cloud Consoleでの設定項目：
+
 ```javascript
 // 設定項目
 const OAUTH_CONFIG = {
   // アプリケーション名
-  applicationName: "Drill Layer",
+  applicationName: "Your App Name",
   
   // 承認済みのリダイレクト URI
   redirectURIs: [
@@ -111,7 +193,10 @@ const OAUTH_CONFIG = {
 
 ### 3. スコープ設定
 
+スコープ設定はコード内で指定します：
+
 ```javascript
+// src/config/auth.js または src/auth/passport.js
 // 取得する情報の範囲
 const OAUTH_SCOPES = [
   'profile', // 基本プロフィール情報
@@ -161,7 +246,8 @@ import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import jwt from 'jsonwebtoken';
 import { findUserByGoogleId, createUserFromGoogleProfile } from '../services/userService';
 
-// Google OAuth戦略の設定
+// Google OAuth戦略（Strategy）の設定
+// 戦略パターン: 認証方法を切り替え可能にする設計パターン
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID!,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
@@ -267,9 +353,16 @@ router.get('/google/callback', (req, res, next) => {
       
       // HTTPOnly Cookieにトークンを設定（セキュア）
       res.cookie('access_token', token, {
-        httpOnly: true, // XSS攻撃を防ぐ
+        httpOnly: true, // JavaScriptからアクセス不可にしてXSS攻撃を防ぐ
+        // XSS攻撃: 悪意のあるスクリプトがCookieを盗む攻撃
+        // httpOnly設定により、document.cookieでアクセスできなくなる
+        
         secure: process.env.NODE_ENV === 'production', // HTTPS必須（本番）
-        sameSite: 'strict', // CSRF攻撃を防ぐ
+        
+        sameSite: 'strict', // 異なるサイトからのリクエストでCookieを送信しない
+        // CSRF攻撃: 偽サイトから本物のサイトへ不正なリクエストを送る攻撃
+        // strictにより、外部サイトからのリクエストではCookieが送信されない
+        
         maxAge: 15 * 60 * 1000, // 15分
         path: '/'
       });
@@ -602,7 +695,7 @@ const LoginPage: React.FC = () => {
       <div className="max-w-md w-full space-y-8 p-8">
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Drill Layer
+            My App
           </h1>
           <p className="text-gray-600">
             教材共有プラットフォームにログイン
@@ -768,7 +861,7 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <h1 className="text-xl font-bold text-blue-600">Drill Layer</h1>
+            <h1 className="text-xl font-bold text-blue-600">My App</h1>
           </div>
 
           {user && (
@@ -1033,6 +1126,6 @@ Google OAuth認証は、ユーザビリティとセキュリティを両立す�
 
 ---
 
-*この記事は実際のプロジェクト「Drill Layer」でのOAuth実装経験に基づいて作成されました。*
+*この記事は実際の個人開発プロジェクトでのOAuth実装経験に基づいて作成されました。*
 
 *初心者の方へ：まずは開発環境で動作させてから、段階的にセキュリティ機能を追加することをお勧めします。*
