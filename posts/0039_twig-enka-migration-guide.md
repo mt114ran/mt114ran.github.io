@@ -1,4 +1,5 @@
 ---
+id: 39
 title: "Twigテンプレートエンジンとenka移行ツール完全ガイド - <twig migrate>エラーの解決から実装まで"
 tags: ["Twig", "enka", "PHP", "テンプレートエンジン", "移行ツール", "Symfony"]
 create: "2025-08-20 01:48"
