@@ -1,0 +1,1591 @@
+1:"$Sreact.fragment"
+2:I[87555,[],""]
+3:I[31295,[],""]
+5:I[59665,[],"MetadataBoundary"]
+7:I[59665,[],"OutletBoundary"]
+a:I[74911,[],"AsyncMetadataOutlet"]
+c:I[59665,[],"ViewportBoundary"]
+e:I[26614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/19bdf9af4d1ae4d4.css","style"]
+0:{"P":null,"b":"_7bJRY6qUoW0OKfxXCT1j","p":"","c":["","blog","react-rendering-strategies-complete-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","react-rendering-strategies-complete-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","react-rendering-strategies-complete-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","MIe2K_hju9uzvQj9tGGZQ",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[74911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],""]
+14:I[31203,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+15:I[4197,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+13:Tc57d,<p>React開発において「CSRとSSRの違いを説明してください」という質問は、面接で必ず聞かれる定番の質問です。しかし、単に「クライアントサイドレンダリング」「サーバーサイドレンダリング」と答えるだけでは、3年以上の経験を持つエンジニアとしては不十分です。本記事では、各レンダリング戦略の本質的な理解から、実装の詳細、パフォーマンス最適化まで、実務で必要な知識を網羅的に解説します。</p>
+<h2 id="-初心者向け解説">💡 初心者向け解説</h2>
+<h3 id="レンダリングとは">レンダリングとは？</h3>
+<p><strong>簡単に言うと</strong>: ブラウザに表示されるHTMLを生成するプロセスです。</p>
+<pre><code>例：レストランの料理提供
+CSR：お客様のテーブルで調理（ブラウザで生成）
+SSR：厨房で調理して配膳（サーバーで生成）
+SSG：作り置き料理（事前に生成）
+ISR：人気メニューは作り置き、注文があれば新しく作る（ハイブリッド）
+</code></pre>
+<h2 id="-目次">📚 目次</h2>
+<ul>
+<li><a href="#%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0%E6%88%A6%E7%95%A5%E3%81%AE%E5%9F%BA%E7%A4%8E">レンダリング戦略の基礎</a></li>
+<li><a href="#csrclient-side-rendering%E3%81%AE%E6%B7%B1%E6%8E%98%E3%82%8A">CSR（Client-Side Rendering）の深掘り</a></li>
+<li><a href="#ssrserver-side-rendering%E3%81%AE%E6%B7%B1%E6%8E%98%E3%82%8A">SSR（Server-Side Rendering）の深掘り</a></li>
+<li><a href="#ssgstatic-site-generation%E3%81%AE%E6%B7%B1%E6%8E%98%E3%82%8A">SSG（Static Site Generation）の深掘り</a></li>
+<li><a href="#isrincremental-static-regeneration%E3%81%AE%E6%B7%B1%E6%8E%98%E3%82%8A">ISR（Incremental Static Regeneration）の深掘り</a></li>
+<li><a href="#%E5%AE%9F%E8%A3%85%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%A8%E6%9C%80%E9%81%A9%E5%8C%96%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF">実装パターンと最適化テクニック</a></li>
+<li><a href="#%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E6%B8%AC%E5%AE%9A%E3%81%A8%E6%94%B9%E5%96%84">パフォーマンス測定と改善</a></li>
+<li><a href="#%E5%AE%9F%E8%B7%B5%E7%9A%84%E3%81%AA%E9%81%B8%E6%8A%9E%E5%9F%BA%E6%BA%96">実践的な選択基準</a></li>
+<li><a href="#%E9%AB%98%E5%BA%A6%E3%81%AA%E3%83%88%E3%83%94%E3%83%83%E3%82%AF">高度なトピック</a></li>
+</ul>
+<h2 id="レンダリング戦略の基礎">レンダリング戦略の基礎</h2>
+<h3 id="各戦略の概要と特徴">各戦略の概要と特徴</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>戦略</th><th>HTML生成場所</th><th>データ取得タイミング</th><th>SEO</th><th>初期表示速度</th><th>インタラクティブ性</th><th>適用場面</th></tr></thead><tbody><tr><td><strong>CSR</strong></td><td>ブラウザ</td><td>ランタイム</td><td>△</td><td>遅い</td><td>高い</td><td>管理画面、SPA</td></tr><tr><td><strong>SSR</strong></td><td>サーバー</td><td>リクエスト時</td><td>◎</td><td>中間</td><td>中間</td><td>ECサイト、ニュース</td></tr><tr><td><strong>SSG</strong></td><td>ビルド時</td><td>ビルド時</td><td>◎</td><td>速い</td><td>中間</td><td>ブログ、LP</td></tr><tr><td><strong>ISR</strong></td><td>ビルド時+α</td><td>ビルド時+再検証時</td><td>◎</td><td>速い</td><td>中間</td><td>大規模ECサイト</td></tr></tbody></table>
+<h3 id="webパフォーマンスメトリクス">Webパフォーマンスメトリクス</h3>
+<p>理解すべき重要な指標：</p>
+<pre><code class="language-typescript">// Core Web Vitals
+interface WebVitals {
+  LCP: number;  // Largest Contentful Paint（最大コンテンツの描画）
+  FID: number;  // First Input Delay（初回入力遅延） ※INPに置き換わりつつある
+  CLS: number;  // Cumulative Layout Shift（累積レイアウトシフト）
+  FCP: number;  // First Contentful Paint（初回コンテンツ描画）
+  TTFB: number; // Time to First Byte（最初のバイトまでの時間）
+  TTI: number;  // Time to Interactive（インタラクティブになるまでの時間）
+  INP: number;  // Interaction to Next Paint（2024年3月からFIDに代わる新指標）
+}
+</code></pre>
+<h2 id="csrclient-side-renderingの深掘り">CSR（Client-Side Rendering）の深掘り</h2>
+<h3 id="csrの仕組み">CSRの仕組み</h3>
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+    participant API
+    
+    User-&gt;&gt;Browser: URLアクセス
+    Browser-&gt;&gt;Server: HTMLリクエスト
+    Server--&gt;&gt;Browser: 空のHTML + JSバンドル
+    Browser-&gt;&gt;Browser: JSダウンロード・パース
+    Browser-&gt;&gt;Browser: React App初期化
+    Browser-&gt;&gt;API: データフェッチ
+    API--&gt;&gt;Browser: JSONデータ
+    Browser-&gt;&gt;Browser: Virtual DOM生成
+    Browser-&gt;&gt;Browser: DOM更新
+    Browser--&gt;&gt;User: 画面表示</div>
+<h3 id="csrの実装例">CSRの実装例</h3>
+<pre><code class="language-tsx">// pages/products.tsx (CSR実装)
+import { useState, useEffect } from 'react';
+import { Product } from '@/types';
+
+export default function ProductsPage() {
+  const [products, setProducts] = useState&#x3C;Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState&#x3C;string | null>(null);
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch('/api/products');
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      setProducts(data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'エラーが発生しました');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      &#x3C;div className="skeleton-container">
+        {/* スケルトンスクリーン実装 */}
+        {[...Array(6)].map((_, i) => (
+          &#x3C;div key={i} className="skeleton-card">
+            &#x3C;div className="skeleton-image" />
+            &#x3C;div className="skeleton-text" />
+            &#x3C;div className="skeleton-text short" />
+          &#x3C;/div>
+        ))}
+      &#x3C;/div>
+    );
+  }
+
+  if (error) {
+    return (
+      &#x3C;div className="error-container">
+        &#x3C;h2>エラーが発生しました&#x3C;/h2>
+        &#x3C;p>{error}&#x3C;/p>
+        &#x3C;button onClick={fetchProducts}>再試行&#x3C;/button>
+      &#x3C;/div>
+    );
+  }
+
+  return (
+    &#x3C;div className="products-grid">
+      {products.map((product) => (
+        &#x3C;ProductCard key={product.id} product={product} />
+      ))}
+    &#x3C;/div>
+  );
+}
+</code></pre>
+<h3 id="csrの最適化テクニック">CSRの最適化テクニック</h3>
+<h4 id="1-code-splittingコード分割">1. Code Splitting（コード分割）</h4>
+<pre><code class="language-tsx">// 動的インポートによるコード分割
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+
+// 重いコンポーネントを遅延ロード
+const HeavyChart = dynamic(
+  () => import('@/components/HeavyChart'),
+  {
+    loading: () => &#x3C;div>グラフを読み込み中...&#x3C;/div>,
+    ssr: false // CSRのみで動作
+  }
+);
+
+export default function Dashboard() {
+  return (
+    &#x3C;div>
+      &#x3C;h1>ダッシュボード&#x3C;/h1>
+      &#x3C;Suspense fallback={&#x3C;div>Loading...&#x3C;/div>}>
+        &#x3C;HeavyChart />
+      &#x3C;/Suspense>
+    &#x3C;/div>
+  );
+}
+</code></pre>
+<h4 id="2-データフェッチの最適化">2. データフェッチの最適化</h4>
+<pre><code class="language-tsx">// React Query (TanStack Query)を使用した高度なデータ管理
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+}
+
+// カスタムフックでデータフェッチロジックを抽象化
+export function useProducts(options?: { 
+  enabled?: boolean; 
+  staleTime?: number; 
+}) {
+  return useQuery&#x3C;Product[]>({
+    queryKey: ['products'],
+    queryFn: async () => {
+      const response = await fetch('/api/products');
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.json();
+    },
+    staleTime: options?.staleTime ?? 5 * 60 * 1000, // 5分間キャッシュ
+    enabled: options?.enabled ?? true,
+    retry: 3, // 3回までリトライ
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+  });
+}
+
+// Optimistic Update実装
+export function useUpdateProduct() {
+  const queryClient = useQueryClient();
+  
+  return useMutation({
+    mutationFn: async (product: Product) => {
+      const response = await fetch(`/api/products/${product.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(product),
+      });
+      if (!response.ok) throw new Error('Update failed');
+      return response.json();
+    },
+    onMutate: async (newProduct) => {
+      // 楽観的更新
+      await queryClient.cancelQueries({ queryKey: ['products'] });
+      const previousProducts = queryClient.getQueryData(['products']);
+      
+      queryClient.setQueryData(['products'], (old: Product[]) => 
+        old.map(p => p.id === newProduct.id ? newProduct : p)
+      );
+      
+      return { previousProducts };
+    },
+    onError: (err, newProduct, context) => {
+      // エラー時はロールバック
+      queryClient.setQueryData(['products'], context?.previousProducts);
+    },
+    onSettled: () => {
+      // 最終的にサーバーと同期
+      queryClient.invalidateQueries({ queryKey: ['products'] });
+    },
+  });
+}
+</code></pre>
+<h3 id="csrのメリットデメリット">CSRのメリット・デメリット</h3>
+<p><strong>メリット</strong>:</p>
+<ul>
+<li>🚀 高いインタラクティブ性</li>
+<li>💾 サーバー負荷が低い</li>
+<li>📱 SPAとして動作可能</li>
+<li>🔄 リアルタイム更新が容易</li>
+</ul>
+<p><strong>デメリット</strong>:</p>
+<ul>
+<li>🐌 初期表示が遅い</li>
+<li>🔍 SEOに不利</li>
+<li>📦 大きなJSバンドルサイズ</li>
+<li>📱 低スペックデバイスで性能問題</li>
+</ul>
+<h2 id="ssrserver-side-renderingの深掘り">SSR（Server-Side Rendering）の深掘り</h2>
+<h3 id="ssrの仕組み">SSRの仕組み</h3>
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+    participant API
+    
+    User-&gt;&gt;Browser: URLアクセス
+    Browser-&gt;&gt;Server: ページリクエスト
+    Server-&gt;&gt;API: データフェッチ
+    API--&gt;&gt;Server: データ
+    Server-&gt;&gt;Server: React コンポーネントをレンダリング
+    Server-&gt;&gt;Server: HTMLを生成
+    Server--&gt;&gt;Browser: 完全なHTML + JSバンドル
+    Browser-&gt;&gt;Browser: HTMLパース・表示
+    Browser-&gt;&gt;Browser: JSダウンロード・実行（Hydration）
+    Browser--&gt;&gt;User: インタラクティブな画面</div>
+<h3 id="ssrの実装例nextjs-app-router">SSRの実装例（Next.js App Router）</h3>
+<pre><code class="language-tsx">// app/products/page.tsx (SSR with App Router)
+import { Suspense } from 'react';
+import { headers } from 'next/headers';
+
+// データフェッチング関数
+async function getProducts() {
+  const host = headers().get('host');
+  const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
+  
+  const res = await fetch(`${protocol}://${host}/api/products`, {
+    cache: 'no-store', // SSRを強制
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch products');
+  }
+
+  return res.json();
+}
+
+// Server Component
+export default async function ProductsPage() {
+  const products = await getProducts();
+
+  return (
+    &#x3C;div className="container mx-auto px-4">
+      &#x3C;h1 className="text-3xl font-bold mb-8">商品一覧&#x3C;/h1>
+      
+      &#x3C;Suspense fallback={&#x3C;ProductsSkeleton />}>
+        &#x3C;ProductGrid products={products} />
+      &#x3C;/Suspense>
+    &#x3C;/div>
+  );
+}
+
+// Client Component for interactivity
+'use client';
+
+import { useState } from 'react';
+
+function ProductGrid({ products }: { products: Product[] }) {
+  const [filter, setFilter] = useState('all');
+  
+  const filteredProducts = products.filter(product => {
+    if (filter === 'all') return true;
+    return product.category === filter;
+  });
+
+  return (
+    &#x3C;>
+      &#x3C;FilterBar onFilterChange={setFilter} />
+      &#x3C;div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {filteredProducts.map((product) => (
+          &#x3C;ProductCard key={product.id} product={product} />
+        ))}
+      &#x3C;/div>
+    &#x3C;/>
+  );
+}
+</code></pre>
+<h3 id="streaming-ssrストリーミングssr">Streaming SSR（ストリーミングSSR）</h3>
+<pre><code class="language-tsx">// app/dashboard/page.tsx
+import { Suspense } from 'react';
+
+// 遅いデータフェッチ
+async function getAnalytics() {
+  const res = await fetch('/api/analytics', {
+    cache: 'no-store'
+  });
+  // 意図的に遅延を追加（実際のAPIが遅い場合を想定）
+  await new Promise(resolve => setTimeout(resolve, 3000));
+  return res.json();
+}
+
+// 速いデータフェッチ
+async function getQuickStats() {
+  const res = await fetch('/api/quick-stats', {
+    cache: 'no-store'
+  });
+  return res.json();
+}
+
+// メインコンポーネント
+export default async function Dashboard() {
+  const quickStats = await getQuickStats();
+
+  return (
+    &#x3C;div className="dashboard">
+      &#x3C;h1>ダッシュボード&#x3C;/h1>
+      
+      {/* すぐに表示される部分 */}
+      &#x3C;QuickStats data={quickStats} />
+      
+      {/* ストリーミングで後から表示される部分 */}
+      &#x3C;Suspense fallback={&#x3C;AnalyticsSkeleton />}>
+        &#x3C;AnalyticsSection />
+      &#x3C;/Suspense>
+    &#x3C;/div>
+  );
+}
+
+// 遅延ロードされるコンポーネント
+async function AnalyticsSection() {
+  const analytics = await getAnalytics();
+  return &#x3C;Analytics data={analytics} />;
+}
+</code></pre>
+<h3 id="ssrのエッジケース処理">SSRのエッジケース処理</h3>
+<pre><code class="language-tsx">// SSRでの条件付きレンダリング
+'use client';
+
+import { useEffect, useState } from 'react';
+
+export function ClientOnlyComponent() {
+  const [isClient, setIsClient] = useState(false);
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // サーバーサイドでは何も表示しない
+  if (!isClient) {
+    return null;
+  }
+
+  // クライアントサイドのみで動作するコード
+  return (
+    &#x3C;div>
+      &#x3C;p>ブラウザの幅: {window.innerWidth}px&#x3C;/p>
+      &#x3C;p>現在のURL: {window.location.href}&#x3C;/p>
+    &#x3C;/div>
+  );
+}
+</code></pre>
+<h2 id="ssgstatic-site-generationの深掘り">SSG（Static Site Generation）の深掘り</h2>
+<h3 id="ssgの仕組み">SSGの仕組み</h3>
+<div class="mermaid">sequenceDiagram
+    participant Developer
+    participant BuildProcess
+    participant API
+    participant CDN
+    participant User
+    participant Browser
+    
+    Developer-&gt;&gt;BuildProcess: ビルド実行
+    BuildProcess-&gt;&gt;API: データフェッチ
+    API--&gt;&gt;BuildProcess: データ
+    BuildProcess-&gt;&gt;BuildProcess: HTMLファイル生成
+    BuildProcess-&gt;&gt;CDN: 静的ファイルをデプロイ
+    User-&gt;&gt;Browser: URLアクセス
+    Browser-&gt;&gt;CDN: HTMLリクエスト
+    CDN--&gt;&gt;Browser: キャッシュされたHTML
+    Browser--&gt;&gt;User: 即座に表示</div>
+<h3 id="ssgの実装例">SSGの実装例</h3>
+<pre><code class="language-tsx">// app/blog/[slug]/page.tsx
+import { notFound } from 'next/navigation';
+import { getBlogPost, getAllBlogSlugs } from '@/lib/blog';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+
+// 動的ルートパラメータの型定義
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+// ビルド時に生成するパスを定義
+export async function generateStaticParams() {
+  const slugs = await getAllBlogSlugs();
+  
+  return slugs.map((slug) => ({
+    slug: slug,
+  }));
+}
+
+// メタデータの生成
+export async function generateMetadata({ params }: PageProps) {
+  const post = await getBlogPost(params.slug);
+  
+  if (!post) {
+    return {};
+  }
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      images: [post.ogImage],
+      type: 'article',
+      publishedTime: post.publishedAt,
+      authors: [post.author],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.ogImage],
+    },
+  };
+}
+
+// ページコンポーネント
+export default async function BlogPostPage({ params }: PageProps) {
+  const post = await getBlogPost(params.slug);
+  
+  if (!post) {
+    notFound();
+  }
+
+  return (
+    &#x3C;article className="prose prose-lg mx-auto">
+      &#x3C;header>
+        &#x3C;h1>{post.title}&#x3C;/h1>
+        &#x3C;div className="meta">
+          &#x3C;time dateTime={post.publishedAt}>
+            {new Date(post.publishedAt).toLocaleDateString('ja-JP')}
+          &#x3C;/time>
+          &#x3C;span className="author">by {post.author}&#x3C;/span>
+        &#x3C;/div>
+      &#x3C;/header>
+      
+      &#x3C;MDXRemote source={post.content} />
+      
+      &#x3C;footer>
+        &#x3C;RelatedPosts currentSlug={params.slug} />
+      &#x3C;/footer>
+    &#x3C;/article>
+  );
+}
+</code></pre>
+<h3 id="ssgの最適化">SSGの最適化</h3>
+<pre><code class="language-tsx">// lib/blog.ts - 効率的なデータフェッチング
+import { cache } from 'react';
+import { unstable_cache } from 'next/cache';
+
+// React cacheでリクエスト中のメモ化
+export const getBlogPost = cache(async (slug: string) => {
+  const post = await db.post.findUnique({
+    where: { slug },
+    include: {
+      author: true,
+      tags: true,
+    },
+  });
+  
+  return post;
+});
+
+// Next.js cacheでビルド間のキャッシュ
+export const getPopularPosts = unstable_cache(
+  async () => {
+    const posts = await db.post.findMany({
+      where: { published: true },
+      orderBy: { views: 'desc' },
+      take: 10,
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        excerpt: true,
+        views: true,
+      },
+    });
+    
+    return posts;
+  },
+  ['popular-posts'],
+  {
+    revalidate: 3600, // 1時間キャッシュ
+    tags: ['posts'],
+  }
+);
+</code></pre>
+<h2 id="isrincremental-static-regenerationの深掘り">ISR（Incremental Static Regeneration）の深掘り</h2>
+<h3 id="isrの仕組み">ISRの仕組み</h3>
+<div class="mermaid">sequenceDiagram
+    participant User1
+    participant User2
+    participant CDN
+    participant Server
+    participant API
+    
+    Note over CDN: 初回リクエスト
+    User1-&gt;&gt;CDN: ページリクエスト
+    CDN-&gt;&gt;Server: キャッシュミス
+    Server-&gt;&gt;API: データフェッチ
+    API--&gt;&gt;Server: データ
+    Server-&gt;&gt;Server: HTML生成
+    Server--&gt;&gt;CDN: HTML（キャッシュ）
+    CDN--&gt;&gt;User1: HTML配信
+    
+    Note over CDN: 再検証前
+    User2-&gt;&gt;CDN: ページリクエスト
+    CDN--&gt;&gt;User2: キャッシュされたHTML（高速）
+    
+    Note over CDN: 再検証期間経過後
+    User1-&gt;&gt;CDN: ページリクエスト
+    CDN--&gt;&gt;User1: 古いHTML（即座に返す）
+    CDN-&gt;&gt;Server: バックグラウンドで再生成
+    Server-&gt;&gt;API: 最新データフェッチ
+    API--&gt;&gt;Server: データ
+    Server-&gt;&gt;Server: HTML再生成
+    Server--&gt;&gt;CDN: 新しいHTML（キャッシュ更新）</div>
+<h3 id="isrの実装例">ISRの実装例</h3>
+<pre><code class="language-tsx">// app/products/[id]/page.tsx
+import { Metadata } from 'next';
+
+interface PageProps {
+  params: { id: string };
+}
+
+// ISRの設定
+export const revalidate = 60; // 60秒ごとに再検証
+
+// または動的な再検証
+export const dynamicParams = true; // 事前生成されていないパスを許可
+
+export async function generateStaticParams() {
+  // ビルド時に人気商品のみ事前生成
+  const popularProducts = await fetch('https://api.example.com/products/popular')
+    .then(res => res.json());
+  
+  return popularProducts.map((product: any) => ({
+    id: product.id.toString(),
+  }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise&#x3C;Metadata> {
+  const product = await getProduct(params.id);
+  
+  return {
+    title: product.name,
+    description: product.description,
+  };
+}
+
+async function getProduct(id: string) {
+  const res = await fetch(`https://api.example.com/products/${id}`, {
+    next: { revalidate: 60 } // フェッチレベルでの再検証
+  });
+  
+  if (!res.ok) {
+    throw new Error('Failed to fetch product');
+  }
+  
+  return res.json();
+}
+
+export default async function ProductPage({ params }: PageProps) {
+  const product = await getProduct(params.id);
+  
+  return (
+    &#x3C;div className="product-detail">
+      &#x3C;h1>{product.name}&#x3C;/h1>
+      &#x3C;p className="price">¥{product.price.toLocaleString()}&#x3C;/p>
+      &#x3C;div className="description">{product.description}&#x3C;/div>
+      
+      {/* Client Component for dynamic features */}
+      &#x3C;ProductActions productId={product.id} />
+    &#x3C;/div>
+  );
+}
+</code></pre>
+<h3 id="on-demand-isrオンデマンド再検証">On-Demand ISR（オンデマンド再検証）</h3>
+<pre><code class="language-tsx">// app/api/revalidate/route.ts
+import { revalidatePath, revalidateTag } from 'next/cache';
+import { NextRequest, NextResponse } from 'next/server';
+
+export async function POST(request: NextRequest) {
+  const secret = request.nextUrl.searchParams.get('secret');
+  const path = request.nextUrl.searchParams.get('path');
+  const tag = request.nextUrl.searchParams.get('tag');
+
+  // シークレットトークンの検証
+  if (secret !== process.env.REVALIDATION_SECRET) {
+    return NextResponse.json({ message: 'Invalid secret' }, { status: 401 });
+  }
+
+  try {
+    if (path) {
+      // 特定のパスを再検証
+      revalidatePath(path);
+      return NextResponse.json({ revalidated: true, path, now: Date.now() });
+    }
+    
+    if (tag) {
+      // タグベースの再検証
+      revalidateTag(tag);
+      return NextResponse.json({ revalidated: true, tag, now: Date.now() });
+    }
+    
+    return NextResponse.json({ message: 'Missing path or tag' }, { status: 400 });
+  } catch (err) {
+    return NextResponse.json({ message: 'Error revalidating' }, { status: 500 });
+  }
+}
+
+// Webhookからの呼び出し例（CMSの更新時など）
+async function handleCMSUpdate(updatedContent: any) {
+  await fetch('https://your-app.com/api/revalidate', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      secret: process.env.REVALIDATION_SECRET,
+      path: `/blog/${updatedContent.slug}`,
+    }),
+  });
+}
+</code></pre>
+<h2 id="実装パターンと最適化テクニック">実装パターンと最適化テクニック</h2>
+<h3 id="ハイブリッドレンダリング">ハイブリッドレンダリング</h3>
+<pre><code class="language-tsx">// app/dashboard/page.tsx - 複数の戦略を組み合わせる
+import { Suspense } from 'react';
+import { headers } from 'next/headers';
+
+// 静的な部分（SSG）
+export default function DashboardLayout() {
+  return (
+    &#x3C;div className="dashboard">
+      &#x3C;StaticHeader />
+      
+      &#x3C;div className="dashboard-content">
+        {/* 動的な部分（SSR） */}
+        &#x3C;Suspense fallback={&#x3C;UserInfoSkeleton />}>
+          &#x3C;UserInfo />
+        &#x3C;/Suspense>
+        
+        {/* クライアントサイドの部分（CSR） */}
+        &#x3C;RealtimeMetrics />
+      &#x3C;/div>
+      
+      &#x3C;StaticFooter />
+    &#x3C;/div>
+  );
+}
+
+// SSR部分
+async function UserInfo() {
+  const session = await getServerSession();
+  const user = await getUserData(session.userId);
+  
+  return (
+    &#x3C;div className="user-info">
+      &#x3C;h2>こんにちは、{user.name}さん&#x3C;/h2>
+      &#x3C;p>最終ログイン: {user.lastLogin}&#x3C;/p>
+    &#x3C;/div>
+  );
+}
+
+// CSR部分
+'use client';
+
+import { useEffect, useState } from 'react';
+import { io } from 'socket.io-client';
+
+function RealtimeMetrics() {
+  const [metrics, setMetrics] = useState(null);
+  
+  useEffect(() => {
+    const socket = io('/metrics');
+    
+    socket.on('update', (data) => {
+      setMetrics(data);
+    });
+    
+    return () => socket.disconnect();
+  }, []);
+  
+  if (!metrics) return &#x3C;div>メトリクスを読み込み中...&#x3C;/div>;
+  
+  return (
+    &#x3C;div className="metrics">
+      &#x3C;MetricCard title="オンラインユーザー" value={metrics.onlineUsers} />
+      &#x3C;MetricCard title="今日の売上" value={metrics.todaySales} />
+      &#x3C;MetricCard title="処理中の注文" value={metrics.pendingOrders} />
+    &#x3C;/div>
+  );
+}
+</code></pre>
+<h3 id="progressive-enhancement段階的強化">Progressive Enhancement（段階的強化）</h3>
+<pre><code class="language-tsx">// components/SearchForm.tsx
+'use client';
+
+import { useRouter } from 'next/navigation';
+import { useTransition } from 'react';
+
+export function SearchForm() {
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+  
+  // JavaScript無効時でも動作するフォーム
+  return (
+    &#x3C;form 
+      action="/search" 
+      method="GET"
+      onSubmit={(e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const query = formData.get('q');
+        
+        startTransition(() => {
+          router.push(`/search?q=${encodeURIComponent(query)}`);
+        });
+      }}
+    >
+      &#x3C;input
+        type="search"
+        name="q"
+        placeholder="検索..."
+        required
+        disabled={isPending}
+      />
+      &#x3C;button type="submit" disabled={isPending}>
+        {isPending ? '検索中...' : '検索'}
+      &#x3C;/button>
+    &#x3C;/form>
+  );
+}
+</code></pre>
+<h3 id="データフェッチング最適化">データフェッチング最適化</h3>
+<pre><code class="language-tsx">// lib/data-fetching.ts
+import { unstable_cache } from 'next/cache';
+
+// Parallel Data Fetching（並列データフェッチ）
+export async function getPageData(slug: string) {
+  const [post, relatedPosts, comments] = await Promise.all([
+    getPost(slug),
+    getRelatedPosts(slug),
+    getComments(slug),
+  ]);
+  
+  return { post, relatedPosts, comments };
+}
+
+// Request Deduplication（リクエスト重複排除）
+const getPost = unstable_cache(
+  async (slug: string) => {
+    const response = await fetch(`/api/posts/${slug}`, {
+      next: { 
+        revalidate: 3600,
+        tags: ['post', `post-${slug}`]
+      }
+    });
+    return response.json();
+  },
+  ['post-by-slug'],
+  {
+    revalidate: 3600,
+    tags: ['posts']
+  }
+);
+
+// Waterfall Prevention（ウォーターフォール防止）
+export async function ProductPage({ id }: { id: string }) {
+  // ❌ 悪い例：順次実行（ウォーターフォール）
+  // const product = await getProduct(id);
+  // const reviews = await getReviews(id);
+  // const recommendations = await getRecommendations(id);
+  
+  // ✅ 良い例：並列実行
+  const dataPromise = Promise.all([
+    getProduct(id),
+    getReviews(id),
+    getRecommendations(id),
+  ]);
+  
+  const [product, reviews, recommendations] = await dataPromise;
+  
+  return (
+    &#x3C;div>
+      &#x3C;ProductInfo product={product} />
+      &#x3C;Reviews reviews={reviews} />
+      &#x3C;Recommendations items={recommendations} />
+    &#x3C;/div>
+  );
+}
+</code></pre>
+<h2 id="パフォーマンス測定と改善">パフォーマンス測定と改善</h2>
+<h3 id="core-web-vitalsの測定">Core Web Vitalsの測定</h3>
+<pre><code class="language-tsx">// hooks/useWebVitals.ts
+import { useEffect } from 'react';
+import { onCLS, onFID, onLCP, onFCP, onTTFB } from 'web-vitals';
+
+export function useWebVitals() {
+  useEffect(() => {
+    // Largest Contentful Paint
+    onLCP((metric) => {
+      console.log('LCP:', metric.value);
+      // Google Analyticsに送信
+      gtag('event', 'web_vitals', {
+        event_category: 'Web Vitals',
+        event_label: 'LCP',
+        value: Math.round(metric.value),
+        metric_id: metric.id,
+        metric_value: metric.value,
+        metric_delta: metric.delta,
+      });
+    });
+    
+    // First Input Delay
+    onFID((metric) => {
+      console.log('FID:', metric.value);
+    });
+    
+    // Cumulative Layout Shift
+    onCLS((metric) => {
+      console.log('CLS:', metric.value);
+    });
+    
+    // First Contentful Paint
+    onFCP((metric) => {
+      console.log('FCP:', metric.value);
+    });
+    
+    // Time to First Byte
+    onTTFB((metric) => {
+      console.log('TTFB:', metric.value);
+    });
+  }, []);
+}
+
+// app/layout.tsx
+export default function RootLayout({ children }) {
+  return (
+    &#x3C;html>
+      &#x3C;body>
+        &#x3C;WebVitalsReporter />
+        {children}
+      &#x3C;/body>
+    &#x3C;/html>
+  );
+}
+
+function WebVitalsReporter() {
+  useWebVitals();
+  return null;
+}
+</code></pre>
+<h3 id="バンドルサイズの最適化">バンドルサイズの最適化</h3>
+<pre><code class="language-javascript">// next.config.js
+module.exports = {
+  // Bundle Analyzer設定
+  webpack: (config, { isServer }) => {
+    if (process.env.ANALYZE === 'true') {
+      const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'static',
+          reportFilename: isServer ? '../analyze/server.html' : './analyze/client.html',
+        })
+      );
+    }
+    return config;
+  },
+  
+  // 画像最適化
+  images: {
+    domains: ['images.example.com'],
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
+  
+  // SWC minifier使用
+  swcMinify: true,
+  
+  // 実験的機能
+  experimental: {
+    optimizeCss: true,
+    legacyBrowsers: false,
+  },
+};
+</code></pre>
+<h3 id="画像最適化戦略">画像最適化戦略</h3>
+<pre><code class="language-tsx">// components/OptimizedImage.tsx
+import Image from 'next/image';
+import { useState } from 'react';
+
+interface OptimizedImageProps {
+  src: string;
+  alt: string;
+  priority?: boolean;
+  className?: string;
+}
+
+export function OptimizedImage({ 
+  src, 
+  alt, 
+  priority = false,
+  className 
+}: OptimizedImageProps) {
+  const [isLoading, setIsLoading] = useState(true);
+  
+  return (
+    &#x3C;div className={`image-container ${className}`}>
+      &#x3C;Image
+        src={src}
+        alt={alt}
+        fill
+        priority={priority}
+        quality={85}
+        sizes="(max-width: 640px) 100vw,
+               (max-width: 1024px) 50vw,
+               33vw"
+        placeholder="blur"
+        blurDataURL={`data:image/svg+xml;base64,...`} // 実際のblur画像
+        onLoadingComplete={() => setIsLoading(false)}
+        className={`
+          duration-700 ease-in-out
+          ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'}
+        `}
+      />
+    &#x3C;/div>
+  );
+}
+</code></pre>
+<h2 id="実践的な選択基準">実践的な選択基準</h2>
+<h3 id="レンダリング戦略の選択フローチャート">レンダリング戦略の選択フローチャート</h3>
+<div class="mermaid">flowchart TD
+    Start[開始] --&gt; Q1{コンテンツは頻繁に更新される？}
+    Q1 --&gt;|Yes| Q2{リアルタイム性が必要？}
+    Q1 --&gt;|No| Q3{SEOは重要？}
+    
+    Q2 --&gt;|Yes| CSR[CSR推奨]
+    Q2 --&gt;|No| Q4{更新頻度は？}
+    
+    Q3 --&gt;|Yes| SSG[SSG推奨]
+    Q3 --&gt;|No| Q5{ユーザー固有のコンテンツ？}
+    
+    Q4 --&gt;|毎分〜毎時| SSR[SSR推奨]
+    Q4 --&gt;|毎日〜毎週| ISR[ISR推奨]
+    
+    Q5 --&gt;|Yes| CSR
+    Q5 --&gt;|No| SSG
+    
+    CSR --&gt; End[終了]
+    SSR --&gt; End
+    SSG --&gt; End
+    ISR --&gt; End</div>
+<h3 id="実際のユースケースマッピング">実際のユースケースマッピング</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ユースケース</th><th>推奨戦略</th><th>理由</th></tr></thead><tbody><tr><td><strong>企業サイトのトップページ</strong></td><td>SSG + ISR</td><td>SEO重要、更新頻度低、高速表示必要</td></tr><tr><td><strong>ブログ記事</strong></td><td>SSG</td><td>コンテンツ固定、SEO最重要</td></tr><tr><td><strong>ECサイトの商品ページ</strong></td><td>ISR</td><td>在庫・価格の定期更新、SEO重要</td></tr><tr><td><strong>管理画面</strong></td><td>CSR</td><td>SEO不要、高インタラクティブ性</td></tr><tr><td><strong>ニュースサイト</strong></td><td>SSR + ISR</td><td>最新性重要、SEO必要</td></tr><tr><td><strong>SNSフィード</strong></td><td>CSR + SSR</td><td>初期表示速度とリアルタイム更新の両立</td></tr><tr><td><strong>ユーザープロフィール</strong></td><td>SSR</td><td>動的コンテンツ、SEO一部必要</td></tr><tr><td><strong>ランディングページ</strong></td><td>SSG</td><td>高速表示、SEO最重要、更新少ない</td></tr></tbody></table>
+<h2 id="高度なトピック">高度なトピック</h2>
+<h3 id="react-19とnextjs-15の新機能2024-2025">React 19とNext.js 15の新機能（2024-2025）</h3>
+<h4 id="react-19の主要アップデート">React 19の主要アップデート</h4>
+<pre><code class="language-tsx">// 1. use() Hook - プロミスやコンテキストを直接使用
+import { use } from 'react';
+
+function Comments({ commentsPromise }) {
+  // プロミスを直接使用（Suspenseと自動統合）
+  const comments = use(commentsPromise);
+  return &#x3C;div>{comments.map(c => &#x3C;p>{c.text}&#x3C;/p>)}&#x3C;/div>;
+}
+
+// 2. Server Components での async/await
+async function ProductDetails({ id }) {
+  const product = await fetch(`/api/products/${id}`).then(r => r.json());
+  return &#x3C;div>{product.name}&#x3C;/div>;
+}
+
+// 3. Actions - フォーム処理の簡素化
+function ContactForm() {
+  async function submitAction(formData: FormData) {
+    'use server';
+    await saveContact(formData);
+  }
+  
+  return (
+    &#x3C;form action={submitAction}>
+      &#x3C;input name="email" type="email" />
+      &#x3C;button type="submit">送信&#x3C;/button>
+    &#x3C;/form>
+  );
+}
+</code></pre>
+<h4 id="nextjs-15の新機能">Next.js 15の新機能</h4>
+<pre><code class="language-tsx">// 1. Turbopack (デフォルト有効化)
+// next.config.js
+module.exports = {
+  experimental: {
+    turbo: true, // Webpack比で最大10倍高速
+  },
+};
+
+// 2. 改善されたエラーハンドリング
+export default function ErrorBoundary({
+  error,
+  reset,
+}: {
+  error: Error &#x26; { digest?: string };
+  reset: () => void;
+}) {
+  return (
+    &#x3C;div>
+      &#x3C;h2>エラーが発生しました&#x3C;/h2>
+      &#x3C;details>
+        &#x3C;summary>詳細&#x3C;/summary>
+        &#x3C;pre>{error.message}&#x3C;/pre>
+      &#x3C;/details>
+      &#x3C;button onClick={reset}>再試行&#x3C;/button>
+    &#x3C;/div>
+  );
+}
+</code></pre>
+<h3 id="react-server-componentsrsc">React Server Components（RSC）</h3>
+<pre><code class="language-tsx">// app/products/ProductList.tsx - Server Component
+import { db } from '@/lib/db';
+
+// Server Componentはasync関数として定義可能
+export default async function ProductList({ category }: { category: string }) {
+  // サーバーサイドで直接DBアクセス
+  const products = await db.product.findMany({
+    where: { category },
+    include: { 
+      reviews: {
+        select: { rating: true }
+      }
+    }
+  });
+  
+  // サーバーサイドで集計処理
+  const productsWithRating = products.map(product => ({
+    ...product,
+    averageRating: product.reviews.reduce((acc, r) => acc + r.rating, 0) / product.reviews.length
+  }));
+  
+  return (
+    &#x3C;div className="product-list">
+      {productsWithRating.map(product => (
+        // Client Componentに必要最小限のデータを渡す
+        &#x3C;ProductCard 
+          key={product.id} 
+          product={product}
+          averageRating={product.averageRating}
+        />
+      ))}
+    &#x3C;/div>
+  );
+}
+
+// components/ProductCard.tsx - Client Component
+'use client';
+
+import { useState } from 'react';
+import { addToCart } from '@/actions/cart';
+
+export function ProductCard({ product, averageRating }) {
+  const [isAdding, setIsAdding] = useState(false);
+  
+  const handleAddToCart = async () => {
+    setIsAdding(true);
+    await addToCart(product.id);
+    setIsAdding(false);
+  };
+  
+  return (
+    &#x3C;div className="product-card">
+      &#x3C;h3>{product.name}&#x3C;/h3>
+      &#x3C;p>評価: {averageRating.toFixed(1)}&#x3C;/p>
+      &#x3C;button onClick={handleAddToCart} disabled={isAdding}>
+        {isAdding ? 'カートに追加中...' : 'カートに追加'}
+      &#x3C;/button>
+    &#x3C;/div>
+  );
+}
+</code></pre>
+<h3 id="edge-runtime最適化">Edge Runtime最適化</h3>
+<pre><code class="language-tsx">// app/api/geo/route.ts - Edge Runtime使用
+export const runtime = 'edge'; // Edge Runtimeを指定
+
+export async function GET(request: Request) {
+  // CloudflareやVercel Edge Functionsで実行
+  const country = request.headers.get('CF-IPCountry') || 'JP';
+  const city = request.headers.get('CF-City') || 'Tokyo';
+  
+  // 地域に基づいたコンテンツ配信
+  const content = await getLocalizedContent(country, city);
+  
+  return new Response(JSON.stringify(content), {
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'public, max-age=3600',
+      'CDN-Cache-Control': 'max-age=86400',
+    },
+  });
+}
+
+// middleware.ts - Edge Middlewareでルーティング
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+export function middleware(request: NextRequest) {
+  const country = request.geo?.country || 'JP';
+  
+  // 地域別リダイレクト
+  if (country === 'US' &#x26;&#x26; request.nextUrl.pathname === '/') {
+    return NextResponse.redirect(new URL('/us', request.url));
+  }
+  
+  // A/Bテスト
+  const bucket = Math.random() &#x3C; 0.5 ? 'a' : 'b';
+  const response = NextResponse.next();
+  response.cookies.set('ab-test', bucket);
+  
+  return response;
+}
+
+export const config = {
+  matcher: ['/((?!api|_next/static|favicon.ico).*)'],
+};
+</code></pre>
+<h3 id="partial-prerendering部分的事前レンダリング">Partial Prerendering（部分的事前レンダリング）</h3>
+<pre><code class="language-tsx">// app/dashboard/page.tsx - Partial Prerendering (実験的機能)
+import { Suspense } from 'react';
+
+export const experimental_ppr = true; // Partial Prerenderingを有効化
+
+export default function Dashboard() {
+  return (
+    &#x3C;div>
+      {/* 静的にプリレンダリングされる部分 */}
+      &#x3C;header>
+        &#x3C;h1>ダッシュボード&#x3C;/h1>
+        &#x3C;Navigation />
+      &#x3C;/header>
+      
+      {/* 動的な部分はSuspenseで囲む */}
+      &#x3C;Suspense fallback={&#x3C;div>Loading user data...&#x3C;/div>}>
+        &#x3C;UserDashboard />
+      &#x3C;/Suspense>
+      
+      {/* 静的な部分 */}
+      &#x3C;footer>
+        &#x3C;Copyright />
+      &#x3C;/footer>
+    &#x3C;/div>
+  );
+}
+
+async function UserDashboard() {
+  const session = await getSession();
+  const userData = await getUserData(session.userId);
+  
+  return &#x3C;DashboardContent data={userData} />;
+}
+</code></pre>
+<h2 id="セキュリティ考慮事項">セキュリティ考慮事項</h2>
+<h3 id="xss対策">XSS対策</h3>
+<pre><code class="language-tsx">// ❌ 危険な実装
+export function DangerousComponent({ htmlContent }: { htmlContent: string }) {
+  return &#x3C;div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+}
+
+// ✅ 安全な実装
+import DOMPurify from 'isomorphic-dompurify';
+
+export function SafeComponent({ htmlContent }: { htmlContent: string }) {
+  const cleanHTML = DOMPurify.sanitize(htmlContent, {
+    ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'p', 'br'],
+    ALLOWED_ATTR: ['href', 'target', 'rel'],
+  });
+  
+  return &#x3C;div dangerouslySetInnerHTML={{ __html: cleanHTML }} />;
+}
+
+// Server Actionsでの検証
+'use server';
+
+import { z } from 'zod';
+
+const formSchema = z.object({
+  name: z.string().min(1).max(100),
+  email: z.string().email(),
+  message: z.string().min(10).max(1000),
+});
+
+export async function submitForm(formData: FormData) {
+  const validatedFields = formSchema.safeParse({
+    name: formData.get('name'),
+    email: formData.get('email'),
+    message: formData.get('message'),
+  });
+  
+  if (!validatedFields.success) {
+    return { error: validatedFields.error.flatten().fieldErrors };
+  }
+  
+  // 安全に処理を続行
+  await saveToDatabase(validatedFields.data);
+}
+</code></pre>
+<h2 id="デバッグとトラブルシューティング">デバッグとトラブルシューティング</h2>
+<h3 id="hydrationエラーの対処">Hydrationエラーの対処</h3>
+<pre><code class="language-tsx">// ❌ Hydrationエラーが発生する例
+function BadComponent() {
+  return (
+    &#x3C;div>
+      現在時刻: {new Date().toLocaleTimeString()}
+    &#x3C;/div>
+  );
+}
+
+// ✅ Hydrationエラーを防ぐ実装
+'use client';
+
+import { useEffect, useState } from 'react';
+
+function GoodComponent() {
+  const [time, setTime] = useState&#x3C;string>('');
+  
+  useEffect(() => {
+    setTime(new Date().toLocaleTimeString());
+    const interval = setInterval(() => {
+      setTime(new Date().toLocaleTimeString());
+    }, 1000);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  // サーバーサイドでは空文字列、クライアントサイドで時刻表示
+  return (
+    &#x3C;div>
+      現在時刻: {time || 'Loading...'}
+    &#x3C;/div>
+  );
+}
+</code></pre>
+<h2 id="まとめ">まとめ</h2>
+<h3 id="重要なポイントのチェックリスト">重要なポイントのチェックリスト</h3>
+<p><strong>基本理解</strong>:</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> CSR/SSR/SSG/ISRの動作原理を説明できる</li>
+<li class="task-list-item"><input type="checkbox" disabled> 各戦略のメリット・デメリットを理解している</li>
+<li class="task-list-item"><input type="checkbox" disabled> Core Web Vitalsと各戦略の関係を説明できる</li>
+</ul>
+<p><strong>実装スキル</strong>:</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Next.js App Routerで各戦略を実装できる</li>
+<li class="task-list-item"><input type="checkbox" disabled> データフェッチングの最適化ができる</li>
+<li class="task-list-item"><input type="checkbox" disabled> Suspenseとストリーミングを活用できる</li>
+<li class="task-list-item"><input type="checkbox" disabled> React Server Componentsを適切に使える</li>
+</ul>
+<p><strong>パフォーマンス</strong>:</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> バンドルサイズの最適化ができる</li>
+<li class="task-list-item"><input type="checkbox" disabled> 画像最適化の実装ができる</li>
+<li class="task-list-item"><input type="checkbox" disabled> Core Web Vitalsの測定と改善ができる</li>
+</ul>
+<p><strong>応用力</strong>:</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> プロジェクトに適した戦略を選択できる</li>
+<li class="task-list-item"><input type="checkbox" disabled> ハイブリッドレンダリングを設計できる</li>
+<li class="task-list-item"><input type="checkbox" disabled> セキュリティを考慮した実装ができる</li>
+</ul>
+<h3 id="面接での回答例">面接での回答例</h3>
+<p><strong>Q1: CSRとSSRの違いを説明してください</strong></p>
+<pre><code>A: CSRとSSRの本質的な違いは、HTMLの生成場所とタイミングです。
+
+CSRはブラウザ上でJavaScriptを実行してHTMLを生成します。
+初期表示は遅いですが、その後のインタラクションは高速です。
+SPAやダッシュボードなど、SEOが不要でインタラクティブ性が
+重要な場面で使用します。
+
+SSRはサーバー側でHTMLを生成してブラウザに送信します。
+初期表示が速く、SEOに有利ですが、サーバー負荷が高くなります。
+ECサイトやニュースサイトなど、SEOとコンテンツの鮮度が
+重要な場面で使用します。
+
+実際のプロジェクトでは、React Server ComponentsやSuspenseを
+活用して、両者の利点を組み合わせたハイブリッドな実装を
+行うことが多いです。
+</code></pre>
+<p><strong>Q2: Hydrationとは何ですか？エラーが起きる原因は？</strong></p>
+<pre><code>A: Hydrationは、SSRで生成された静的HTMLに、クライアントサイドで
+JavaScriptのイベントハンドラーや状態管理を「注入」するプロセスです。
+
+エラーが起きる主な原因：
+1. サーバーとクライアントで異なるHTMLが生成される
+   - Math.random()や Date.now()の使用
+   - window/documentオブジェクトの参照
+2. 条件付きレンダリングの不整合
+3. 外部ライブラリの不適切な使用
+
+対策として、useEffectでクライアントサイドのみの処理を分離したり、
+dynamic importでSSRを無効化したりします。
+</code></pre>
+<p><strong>Q3: ISRとSSGの違いは？どう使い分ける？</strong></p>
+<pre><code>A: SSGはビルド時に全ページを生成し、ISRは必要に応じて
+ページを再生成できる点が違います。
+
+SSG：
+- ビルド時に全ページ生成
+- 更新にはリビルドが必要
+- 小規模サイト、更新頻度が低いコンテンツ向け
+
+ISR：
+- オンデマンドまたは定期的に再生成
+- revalidateで更新間隔を制御
+- 大規模ECサイト、ニュースサイト向け
+
+例：ブログは記事数が少なければSSG、
+数千記事以上ならISRを選択します。
+</code></pre>
+<p><strong>Q4: React Server Componentsの利点は？</strong></p>
+<pre><code>A: RSCの主な利点は3つあります：
+
+1. バンドルサイズの削減
+   - サーバー専用の依存関係はクライアントに送られない
+   - 大きなライブラリ（MDX、構文ハイライト等）をサーバーに隔離
+
+2. データフェッチの簡素化
+   - async/awaitで直接データベースアクセス可能
+   - ウォーターフォール問題の解消
+
+3. セキュリティの向上
+   - APIキーやDBアクセスをサーバーに隔離
+   - 機密データの露出リスク低減
+
+注意点として、Client ComponentsとのデータやPropsの
+受け渡しには制約があります。
+</code></pre>
+<h3 id="他のフレームワークとの比較">他のフレームワークとの比較</h3>
+<h4 id="nextjs-vs-remix-vs-astro">Next.js vs Remix vs Astro</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>特徴</th><th>Next.js</th><th>Remix</th><th>Astro</th></tr></thead><tbody><tr><td><strong>主な強み</strong></td><td>柔軟性、大規模エコシステム</td><td>データローディング、プログレッシブエンハンスメント</td><td>ゼロJSデフォルト、高速性</td></tr><tr><td><strong>デフォルト戦略</strong></td><td>SSG/ISR</td><td>SSR</td><td>SSG</td></tr><tr><td><strong>学習曲線</strong></td><td>中程度</td><td>やや高い</td><td>低い</td></tr><tr><td><strong>適用場面</strong></td><td>汎用的、大規模アプリ</td><td>動的コンテンツ中心</td><td>コンテンツサイト</td></tr><tr><td><strong>React Server Components</strong></td><td>✅ フル対応</td><td>❌ 未対応</td><td>⚠️ 部分対応</td></tr><tr><td><strong>エッジランタイム</strong></td><td>✅ 対応</td><td>✅ 対応</td><td>✅ 対応</td></tr></tbody></table>
+<pre><code class="language-tsx">// Remixのデータローディング例
+export async function loader({ params }) {
+  const product = await getProduct(params.id);
+  return json({ product });
+}
+
+export default function Product() {
+  const { product } = useLoaderData();
+  return &#x3C;div>{product.name}&#x3C;/div>;
+}
+
+// Astroのアイランドアーキテクチャ例
+---
+// .astro ファイル
+import ReactComponent from './ReactComponent.jsx';
+const data = await fetch('/api/data').then(r => r.json());
+---
+&#x3C;html>
+  &#x3C;body>
+    &#x3C;!-- 静的HTML -->
+    &#x3C;h1>{data.title}&#x3C;/h1>
+    &#x3C;!-- インタラクティブな部分のみReact -->
+    &#x3C;ReactComponent client:load data={data} />
+  &#x3C;/body>
+&#x3C;/html>
+</code></pre>
+<h3 id="継続的な学習のために">継続的な学習のために</h3>
+<ol>
+<li><strong>実践プロジェクト</strong>: 各戦略を使った小規模アプリを作成</li>
+<li><strong>パフォーマンス測定</strong>: Lighthouse、WebPageTestでの定期的な測定</li>
+<li><strong>最新動向</strong>: Next.js、React公式ドキュメントのチェック</li>
+<li><strong>コミュニティ</strong>: React/Next.jsコミュニティへの参加</li>
+<li><strong>他フレームワークの学習</strong>: Remix、Astro、SvelteKitなども触ってみる</li>
+</ol>
+<h2 id="参考リンク">参考リンク</h2>
+<ul>
+<li><a href="https://nextjs.org/docs">Next.js Documentation</a></li>
+<li><a href="https://react.dev/reference/react/use-server">React Server Components</a></li>
+<li><a href="https://web.dev/vitals/">Web Vitals</a></li>
+<li><a href="https://nextjs.org/docs/app">Next.js App Router</a></li>
+<li><a href="https://vercel.com/docs/functions/edge-functions">Vercel Edge Functions</a></li>
+</ul>
+<hr>
+<p><em>この記事は、React開発における実践的なレンダリング戦略の選択と実装に基づいて作成されました。</em></p>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",40]}]," ","React レンダリング戦略完全ガイド - CSR/SSR/SSG/ISRを本質から理解する"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-08-25 00:45"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日時: ","2025-08-25 00:54"]}],["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"React"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Next.js"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"CSR"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"SSR"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"SSG"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ISR"}],["$","span","6",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"レンダリング"}],["$","span","7",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"パフォーマンス"}],["$","span","8",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"SEO"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L15",null,{}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}
