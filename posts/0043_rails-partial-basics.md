@@ -3,7 +3,7 @@ id: 43
 title: "Rails初心者が混乱しがちなパーシャル（部分テンプレート）の命名ルールと使い方"
 tags: ["Rails", "View", "Template", "Partial", "HAML"]
 create: "2025-09-05 00:28"
-update: "2025-09-05 03:21"
+update: "2025-09-05 03:44"
 ---
 
 # Rails初心者が混乱しがちなパーシャル（部分テンプレート）の命名ルールと使い方
@@ -32,11 +32,11 @@ Railsでビューを作成していると必ず出会うのが「パーシャル
 パーシャルファイルは**必ずアンダースコア（`_`）から始める**必要があります。
 
 ```
-app/views/users/
+app/views/posts/
 ├── index.html.erb          # 通常のビューファイル
 ├── show.html.erb           # 通常のビューファイル
-├── _profile.html.erb       # パーシャルファイル
-└── _navigation.html.erb    # パーシャルファイル
+├── _card.html.erb          # パーシャルファイル
+└── _header.html.erb        # パーシャルファイル
 ```
 
 ### 2. パーシャルの呼び出し
@@ -44,13 +44,13 @@ app/views/users/
 パーシャルを呼び出す際は、**アンダースコアを外して**`render`メソッドを使います。
 
 ```erb
-<!-- app/views/users/index.html.erb -->
-<h1>ユーザー一覧</h1>
-<%= render 'navigation' %>  <!-- _navigation.html.erb を呼び出し -->
+<!-- app/views/posts/index.html.erb -->
+<h1>記事一覧</h1>
+<%= render 'header' %>  <!-- _header.html.erb を呼び出し -->
 
-<div class="users-list">
-  <% @users.each do |user| %>
-    <%= render 'profile', user: user %>  <!-- _profile.html.erb を呼び出し -->
+<div class="posts-list">
+  <% @posts.each do |post| %>
+    <%= render 'card', post: post %>  <!-- _card.html.erb を呼び出し -->
   <% end %>
 </div>
 ```
@@ -61,18 +61,19 @@ app/views/users/
 
 ```erb
 <!-- 方法1: localsオプションを使用 -->
-<%= render 'profile', locals: { user: @user, show_email: true } %>
+<%= render 'card', locals: { post: @post, show_author: true } %>
 
 <!-- 方法2: 直接指定（推奨） -->
-<%= render 'profile', user: @user, show_email: true %>
+<%= render 'card', post: @post, show_author: true %>
 ```
 
 ```erb
-<!-- _profile.html.erb -->
-<div class="user-profile">
-  <h3><%= user.name %></h3>
-  <% if show_email %>
-    <p>Email: <%= user.email %></p>
+<!-- _card.html.erb -->
+<div class="post-card">
+  <h3><%= post.title %></h3>
+  <p><%= post.content %></p>
+  <% if show_author %>
+    <p>Author: <%= post.author.name %></p>
   <% end %>
 </div>
 ```
@@ -86,7 +87,7 @@ Railsでは**ファイルの種類を一目で判別**できるよう、以下�
 | ファイルの種類 | 命名例 | 用途 |
 |---|---|---|
 | **通常のビュー** | `index.html.erb` | 独立したページとして表示 |
-| **パーシャル** | `_profile.html.erb` | 部品として他から呼び出される |
+| **パーシャル** | `_card.html.erb` | 部品として他から呼び出される |
 | **レイアウト** | `application.html.erb` | ページ全体の枠組み |
 
 ### Convention over Configuration
@@ -104,26 +105,26 @@ Railsでは**ファイルの種類を一目で判別**できるよう、以下�
 
 ```erb
 <!-- 間違い -->
-<%= render '_profile' %>
-<%= render '_navigation' %>
-<%= render 'shared/_header' %>
+<%= render '_card' %>
+<%= render '_header' %>
+<%= render 'shared/_footer' %>
 ```
 
 ```erb
 <!-- 正しい -->
-<%= render 'profile' %>
-<%= render 'navigation' %>
-<%= render 'shared/header' %>
+<%= render 'card' %>
+<%= render 'header' %>
+<%= render 'shared/footer' %>
 ```
 
 ### ❌ 間違いパターン2: ファイル名にアンダースコアを付け忘れる
 
 ```
 <!-- 間違い -->
-app/views/users/profile.html.erb
+app/views/posts/card.html.erb
 
 <!-- 正しい -->
-app/views/users/_profile.html.erb
+app/views/posts/_card.html.erb
 ```
 
 ### エラーメッセージの読み方
@@ -131,12 +132,12 @@ app/views/users/_profile.html.erb
 アンダースコアを付け忘れたり、間違った呼び出しをすると以下のようなエラーが表示されます。
 
 ```
-ActionView::MissingTemplate: Missing partial users/_profile
+ActionView::MissingTemplate: Missing partial posts/_card
 ```
 
 このエラーメッセージのポイント：
 - **`Missing partial`**: パーシャルが見つからない
-- **`users/_profile`**: 探しているファイルは `app/views/users/_profile.html.erb`
+- **`posts/_card`**: 探しているファイルは `app/views/posts/_card.html.erb`
 - エラーメッセージには**アンダースコア付き**で表示されるが、renderでは**アンダースコアなし**で書く
 
 ## パーシャルファイルから他のパーシャルを呼び出す
@@ -144,11 +145,11 @@ ActionView::MissingTemplate: Missing partial users/_profile
 パーシャルファイル内でも、他のパーシャルを呼び出すことができます。
 
 ```erb
-<!-- _user_card.html.erb -->
-<div class="user-card">
-  <%= render 'user_avatar', user: user %>     <!-- _user_avatar.html.erb -->
-  <%= render 'user_details', user: user %>    <!-- _user_details.html.erb -->
-  <%= render 'user_actions', user: user %>    <!-- _user_actions.html.erb -->
+<!-- _article_card.html.erb -->
+<div class="article-card">
+  <%= render 'article_image', post: post %>     <!-- _article_image.html.erb -->
+  <%= render 'article_content', post: post %>   <!-- _article_content.html.erb -->
+  <%= render 'article_meta', post: post %>      <!-- _article_meta.html.erb -->
 </div>
 ```
 
@@ -166,9 +167,9 @@ app/views/
 │   ├── _header.html.erb
 │   ├── _footer.html.erb
 │   └── _sidebar.html.erb
-├── users/
+├── posts/
 │   ├── index.html.erb
-│   └── _profile.html.erb
+│   └── _card.html.erb
 └── admin/
     ├── index.html.erb
     └── _dashboard.html.erb
@@ -177,21 +178,21 @@ app/views/
 ### 呼び出し方法
 
 ```erb
-<!-- app/views/users/index.html.erb から -->
+<!-- app/views/posts/index.html.erb から -->
 <%= render 'shared/header' %>          <!-- app/views/shared/_header.html.erb -->
-<%= render 'profile', user: @user %>   <!-- app/views/users/_profile.html.erb -->
+<%= render 'card', post: @post %>      <!-- app/views/posts/_card.html.erb -->
 
 <!-- app/views/admin/index.html.erb から -->
 <%= render 'shared/header' %>          <!-- app/views/shared/_header.html.erb -->
-<%= render 'users/profile', user: @user %>  <!-- app/views/users/_profile.html.erb -->
+<%= render 'posts/card', post: @post %> <!-- app/views/posts/_card.html.erb -->
 ```
 
 ## パーシャルのファイル検索順序
 
 Railsは以下の順序でパーシャルファイルを検索します。
 
-1. **同じディレクトリ**: `app/views/users/_profile.html.erb`
-2. **共通ディレクトリ**: `app/views/application/_profile.html.erb`
+1. **同じディレクトリ**: `app/views/posts/_card.html.erb`
+2. **共通ディレクトリ**: `app/views/application/_card.html.erb`
 3. **その他のビューパス**
 
 この検索順序により、特定のコントローラー専用のパーシャルがある場合はそれを優先し、なければ共通のパーシャルを使用するという柔軟な運用が可能です。
@@ -205,7 +206,7 @@ Railsは以下の順序でパーシャルファイルを検索します。
 <nav class="main-navigation">
   <ul>
     <li><%= link_to 'ホーム', root_path %></li>
-    <li><%= link_to 'ユーザー', users_path %></li>
+    <li><%= link_to '記事', posts_path %></li>
     <li><%= link_to 'お問い合わせ', contact_path %></li>
   </ul>
 </nav>
@@ -233,16 +234,16 @@ Railsは以下の順序でパーシャルファイルを検索します。
 ### フォーム部品の再利用
 
 ```erb
-<!-- app/views/users/_form.html.erb -->
-<%= form_with model: user do |form| %>
+<!-- app/views/posts/_form.html.erb -->
+<%= form_with model: post do |form| %>
   <div class="form-group">
-    <%= form.label :name, '名前' %>
-    <%= form.text_field :name, class: 'form-control' %>
+    <%= form.label :title, 'タイトル' %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
   
   <div class="form-group">
-    <%= form.label :email, 'メールアドレス' %>
-    <%= form.email_field :email, class: 'form-control' %>
+    <%= form.label :content, '内容' %>
+    <%= form.text_area :content, class: 'form-control' %>
   </div>
   
   <%= form.submit class: 'btn btn-primary' %>
@@ -250,13 +251,13 @@ Railsは以下の順序でパーシャルファイルを検索します。
 ```
 
 ```erb
-<!-- app/views/users/new.html.erb -->
-<h1>新規ユーザー登録</h1>
-<%= render 'form', user: @user %>
+<!-- app/views/posts/new.html.erb -->
+<h1>記事を書く</h1>
+<%= render 'form', post: @post %>
 
-<!-- app/views/users/edit.html.erb -->
-<h1>ユーザー情報編集</h1>
-<%= render 'form', user: @user %>
+<!-- app/views/posts/edit.html.erb -->
+<h1>記事を編集</h1>
+<%= render 'form', post: @post %>
 ```
 
 ## 覚え方のコツ
@@ -298,21 +299,22 @@ Railsが自動で補完してくれる部分：
 ERBの例をHAML記法で書くと以下のようになります。
 
 ```haml
--# app/views/users/index.html.haml
-%h1 ユーザー一覧
-= render 'navigation'
+-# app/views/posts/index.html.haml
+%h1 記事一覧
+= render 'header'
 
-.users-list
-  - @users.each do |user|
-    = render 'profile', user: user
+.posts-list
+  - @posts.each do |post|
+    = render 'card', post: post
 ```
 
 ```haml
--# app/views/users/_profile.html.haml
-.user-profile
-  %h3= user.name
-  - if show_email
-    %p= "Email: #{user.email}"
+-# app/views/posts/_card.html.haml
+.post-card
+  %h3= post.title
+  %p= post.content
+  - if show_author
+    %p= "Author: #{post.author.name}"
 ```
 
 ## まとめ
