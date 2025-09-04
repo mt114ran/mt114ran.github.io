@@ -3,7 +3,7 @@ id: 44
 title: "「1ファイルで済む」vs「正しい設計」- Railsアーキテクチャ原則が教える本当の価値"
 tags: ["Rails", "Architecture", "Design", "MVC", "Best Practices", "Refactoring"]
 create: "2025-09-05 01:58"
-update: "2025-09-05 03:21"
+update: "2025-09-05 03:44"
 ---
 
 # 「1ファイルで済む」vs「正しい設計」- Railsアーキテクチャ原則が教える本当の価値
@@ -25,10 +25,10 @@ update: "2025-09-05 03:21"
 
 ## 前提：実装すべき機能
 
-WEB版とスマートフォンアプリで**発送遅延通知を統一表示**する機能を実装する必要があります。
+WEB版とスマートフォンアプリで**メンテナンス通知を統一表示**する機能を実装する必要があります。
 
 ### 要件
-- **WEB側**: Railsビューで通知を表示
+- **WEB側**: Railsビューでメンテナンスバナーを表示
 - **APP側**: React Native経由でAPIから取得して表示
 - **表示条件**: 同じフラグで制御
 - **表示内容**: 同じテキストを使用
@@ -40,22 +40,22 @@ WEB版とスマートフォンアプリで**発送遅延通知を統一表示**�
 
 ### 実装方法
 ```ruby
-# app/controllers/api/app/v1/metadata_controller.rb（既存ファイル）
-class Api::App::V1::MetadataController < Api::App::V1::ApplicationController
+# app/controllers/api/v1/app_config_controller.rb（既存ファイル）
+class Api::V1::AppConfigController < Api::V1::BaseController
   def show
     render json: { 
-      minimumAppVersion: Device::MINIMUM_APP_VERSION,
-      showShippingNotice: true,  # ← 直接書く
-      shippingNoticeText: "現在、多くの発送申請をいただいており、お届けまでにお時間を要しております。順次発送を進めております。お客様には大変なご不便とご心配をおかけし、申し訳ございません。"  # ← 直接書く
+      appVersion: "1.0.0",
+      showMaintenanceBanner: true,  # ← 直接書く
+      maintenanceBannerText: "システムメンテナンスのため、2月15日の深夜2時〜4時にサービスを停止いたします。"  # ← 直接書く
     }
   end
 end
 ```
 
 ```haml
-<!-- app/views/shared/_shipping_notice.html.haml（既存ファイル） -->
-.shipping-notice
-  現在、多くの発送申請をいただいており、お届けまでにお時間を要しております。順次発送を進めております。お客様には大変なご不便とご心配をおかけし、申し訳ございません。
+<!-- app/views/shared/_maintenance_banner.html.haml（既存ファイル） -->
+.maintenance-banner
+  システムメンテナンスのため、2月15日の深夜2時〜4時にサービスを停止いたします。
 ```
 
 ### メリット
@@ -69,12 +69,12 @@ end
 #### 1. **同期の困難さ**
 ```ruby
 # APIコントローラー
-showShippingNotice: true,
-shippingNoticeText: "現在、多くの発送申請を..."
+showMaintenanceBanner: true,
+maintenanceBannerText: "システムメンテナンスのため..."
 
 # ビューファイル  
-.shipping-notice
-  現在、多くの発送申請を... <!-- 微妙に文言が違う！ -->
+.maintenance-banner
+  システムメンテナンスのため... <!-- 微妙に文言が違う！ -->
 ```
 
 #### 2. **変更時の手間**
@@ -110,23 +110,23 @@ Railsのアーキテクチャ原則に従い、以下を重視します：
 #### ステップ1: 通知設定の専用クラス作成
 
 ```ruby
-# app/lib/notification_config.rb（新規作成）
-class NotificationConfig
-  # 発送遅延通知
-  module ShippingDelay
+# app/lib/banner_config.rb（新規作成）
+class BannerConfig
+  # メンテナンス通知
+  module Maintenance
     ENABLED = true
-    TEXT = '現在、多くの発送申請をいただいており、お届けまでにお時間を要しております。順次発送を進めております。お客様には大変なご不便とご心配をおかけし、申し訳ございません。'
+    TEXT = 'システムメンテナンスのため、2月15日の深夜2時〜4時にサービスを停止いたします。'
   end
 
   # 将来的な拡張用
-  module Maintenance
+  module Emergency
     ENABLED = false
-    TEXT = 'システムメンテナンスのため、一部機能がご利用いただけません。'
+    TEXT = '緊急メンテナンスのため、一時的にサービスを停止しています。'
   end
 
   module Campaign
     ENABLED = false
-    TEXT = '期間限定キャンペーン実施中！'
+    TEXT = '新機能リリース記念キャンペーン実施中！'
   end
 end
 ```
@@ -145,13 +145,13 @@ end
 #### ステップ2: APIコントローラーの修正
 
 ```ruby
-# app/controllers/api/app/v1/metadata_controller.rb
-class Api::App::V1::MetadataController < Api::App::V1::ApplicationController
+# app/controllers/api/v1/app_config_controller.rb
+class Api::V1::AppConfigController < Api::V1::BaseController
   def show
     render json: { 
-      minimumAppVersion: Device::MINIMUM_APP_VERSION,
-      showShippingNotice: NotificationConfig::ShippingDelay::ENABLED,
-      shippingNoticeText: NotificationConfig::ShippingDelay::TEXT
+      appVersion: "1.0.0",
+      showMaintenanceBanner: BannerConfig::Maintenance::ENABLED,
+      maintenanceBannerText: BannerConfig::Maintenance::TEXT
     }
   end
 end
@@ -172,52 +172,52 @@ end
 # app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
   # サイト全体で必要な場合はbefore_actionが有効
-  before_action :set_shipping_notification
+  before_action :set_maintenance_banner
   
   private
   
-  def set_shipping_notification
-    @shipping_notice_enabled = NotificationConfig::ShippingDelay::ENABLED
-    @shipping_notice_text = NotificationConfig::ShippingDelay::TEXT
+  def set_maintenance_banner
+    @maintenance_banner_enabled = BannerConfig::Maintenance::ENABLED
+    @maintenance_banner_text = BannerConfig::Maintenance::TEXT
   end
   
   # 特定のページでのみ使用する場合の代替方法
-  # helper_method :shipping_notice_enabled?, :shipping_notice_text
+  # helper_method :maintenance_banner_enabled?, :maintenance_banner_text
   
-  # def shipping_notice_enabled?
-  #   NotificationConfig::ShippingDelay::ENABLED
+  # def maintenance_banner_enabled?
+  #   BannerConfig::Maintenance::ENABLED
   # end
   
-  # def shipping_notice_text
-  #   NotificationConfig::ShippingDelay::TEXT
+  # def maintenance_banner_text
+  #   BannerConfig::Maintenance::TEXT
   # end
 end
 ```
 
 ```haml
-<!-- app/views/shared/_shipping_notice.html.haml -->
-- if @shipping_notice_enabled
-  .shipping-notice
-    = @shipping_notice_text
+<!-- app/views/shared/_maintenance_banner.html.haml -->
+- if @maintenance_banner_enabled
+  .maintenance-banner
+    = @maintenance_banner_text
 ```
 
 #### ステップ4: テストの更新
 
 ```ruby
-# spec/requests/api/app/v1/metadata_controller_spec.rb
-RSpec.describe Api::App::V1::MetadataController do
+# spec/requests/api/v1/app_config_controller_spec.rb
+RSpec.describe Api::V1::AppConfigController do
   describe 'GET #show' do
-    context '発送通知が有効な場合' do
+    context 'メンテナンスバナーが有効な場合' do
       before do
-        stub_const('NotificationConfig::ShippingDelay::ENABLED', true)
-        stub_const('NotificationConfig::ShippingDelay::TEXT', 'テスト用メッセージ')
+        stub_const('BannerConfig::Maintenance::ENABLED', true)
+        stub_const('BannerConfig::Maintenance::TEXT', 'テスト用メッセージ')
       end
 
       it '適切なレスポンスを返す' do
-        get api_app_v1_metadata_path
+        get api_v1_app_config_path
         json = JSON.parse(response.body)
-        expect(json['showShippingNotice']).to be_truthy
-        expect(json['shippingNoticeText']).to eq('テスト用メッセージ')
+        expect(json['showMaintenanceBanner']).to be_truthy
+        expect(json['maintenanceBannerText']).to eq('テスト用メッセージ')
       end
     end
   end
@@ -228,13 +228,13 @@ end
 
 ```
 新規作成: 1ファイル
-├── app/lib/notification_config.rb
+├── app/lib/banner_config.rb
 
 修正: 4ファイル  
-├── app/controllers/api/app/v1/metadata_controller.rb
+├── app/controllers/api/v1/app_config_controller.rb
 ├── app/controllers/application_controller.rb
-├── app/views/shared/_shipping_notice.html.haml
-└── spec/requests/api/app/v1/metadata_controller_spec.rb
+├── app/views/shared/_maintenance_banner.html.haml
+└── spec/requests/api/v1/app_config_controller_spec.rb
 
 合計: 5ファイル
 ```
@@ -282,7 +282,7 @@ end
 ```ruby
 # 各ファイルを個別に修正が必要
 # APIコントローラー
-showShippingNotice: false,  # ← 手動変更
+showMaintenanceBanner: false,  # ← 手動変更
 
 # ビューファイル
 - if false  # ← 手動変更（しかもこれだと見た目が悪い）
@@ -291,7 +291,7 @@ showShippingNotice: false,  # ← 手動変更
 **アーキテクチャ原則の場合**
 ```ruby
 # 1箇所変更するだけ
-module ShippingDelay
+module Maintenance
   ENABLED = false  # ← この1行だけ
   TEXT = '...'
 end
@@ -303,26 +303,26 @@ end
 ```ruby
 # 各ファイルにバラバラに追加
 # APIコントローラー
-showMaintenanceNotice: true,
-maintenanceNoticeText: "...",
+showEmergencyBanner: true,
+emergencyBannerText: "...",
 
 # ビューファイル（別ファイルに）
 - if true
-  .maintenance-notice
-    メンテナンス中...
+  .emergency-banner
+    緒急メンテナンス中...
 ```
 
 **アーキテクチャ原則の場合**
 ```ruby
 # 設定クラスに追加するだけ
-module Maintenance
+module Emergency
   ENABLED = true
-  TEXT = 'メンテナンス中...'
+  TEXT = '緒急メンテナンス中...'
 end
 
 # 使用箇所では統一的に参照
-NotificationConfig::Maintenance::ENABLED
-NotificationConfig::Maintenance::TEXT
+BannerConfig::Emergency::ENABLED
+BannerConfig::Emergency::TEXT
 ```
 
 ### 長期的なコスト分析
@@ -363,26 +363,26 @@ ON/OFF切替（月1回）: 0.1時間 × 6ヶ月 = 0.6時間
 ```ruby
 # ❌ 情報が分散
 # APIコントローラー
-shippingNoticeText: "現在、多くの発送申請を..."
+maintenanceBannerText: "システムメンテナンスのため..."
 
 # ビューファイル  
-.notice 現在、多くの発送申請を...
+.banner システムメンテナンスのため...
 
 # 設定ファイル
-SHIPPING_NOTICE = "現在、多くの発送申請を..."
+MAINTENANCE_BANNER = "システムメンテナンスのため..."
 ```
 
 **解決**: 情報源を1箇所に集約
 ```ruby
 # ✅ 単一情報源
-class NotificationConfig
-  module ShippingDelay
-    TEXT = '現在、多くの発送申請を...'  # ← ここだけ
+class BannerConfig
+  module Maintenance
+    TEXT = 'システムメンテナンスのため...'  # ← ここだけ
   end
 end
 
 # どこからでもこの値を参照
-NotificationConfig::ShippingDelay::TEXT
+BannerConfig::Maintenance::TEXT
 ```
 
 ### 2. Separation of Concerns（関心の分離）
@@ -391,7 +391,7 @@ NotificationConfig::ShippingDelay::TEXT
 
 | コンポーネント | 責務 | 担当しないこと |
 |---|---|---|
-| **NotificationConfig** | 通知設定の管理 | HTTP処理、DB操作 |
+| **BannerConfig** | バナー設定の管理 | HTTP処理、DB操作 |
 | **Controller** | リクエスト処理、データ準備 | 設定値の決定、ビューロジック |
 | **View** | 表示 | データ取得、ビジネスロジック |
 
