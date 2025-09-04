@@ -9,7 +9,7 @@ e:I[26614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/19bdf9af4d1ae4d4.css","style"]
-0:{"P":null,"b":"1GSVQfZMy-Y54As9m79WM","p":"","c":["","blog","rails-architecture-design-principles",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","rails-architecture-design-principles","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","rails-architecture-design-principles","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","FqJIRx-Y3eQj7aEAtkbD4",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"XAGetg_fUqPEAt2Yh_57s","p":"","c":["","blog","rails-architecture-design-principles",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","rails-architecture-design-principles","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","rails-architecture-design-principles","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","bqFk86JYrm1Myg94em7Il",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[74911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
@@ -17,7 +17,7 @@ f:"$Sreact.suspense"
 12:I[6874,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],""]
 14:I[31203,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
 15:I[4197,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
-13:T7a19,<h1 id="1ファイルで済むvs正しい設計--railsアーキテクチャ原則が教える本当の価値">「1ファイルで済む」vs「正しい設計」- Railsアーキテクチャ原則が教える本当の価値</h1>
+13:T785b,<h1 id="1ファイルで済むvs正しい設計--railsアーキテクチャ原則が教える本当の価値">「1ファイルで済む」vs「正しい設計」- Railsアーキテクチャ原則が教える本当の価値</h1>
 <p>開発現場でよく聞く言葉があります。</p>
 <p>「この修正、1ファイル変更するだけで済むから簡単でしょ？」</p>
 <p>確かに、短期的には修正量が少なく見えます。しかし、<strong>本当に「簡単」なのでしょうか？</strong></p>
@@ -30,10 +30,10 @@ f:"$Sreact.suspense"
 <li>✅ <strong>チーム開発でのメンテナンス性向上とバグ削減手法</strong></li>
 </ul>
 <h2 id="前提実装すべき機能">前提：実装すべき機能</h2>
-<p>WEB版とスマートフォンアプリで<strong>発送遅延通知を統一表示</strong>する機能を実装する必要があります。</p>
+<p>WEB版とスマートフォンアプリで<strong>メンテナンス通知を統一表示</strong>する機能を実装する必要があります。</p>
 <h3 id="要件">要件</h3>
 <ul>
-<li><strong>WEB側</strong>: Railsビューで通知を表示</li>
+<li><strong>WEB側</strong>: Railsビューでメンテナンスバナーを表示</li>
 <li><strong>APP側</strong>: React Native経由でAPIから取得して表示</li>
 <li><strong>表示条件</strong>: 同じフラグで制御</li>
 <li><strong>表示内容</strong>: 同じテキストを使用</li>
@@ -42,20 +42,20 @@ f:"$Sreact.suspense"
 <p>この要件に対して、2つのアプローチが考えられます。</p>
 <h2 id="アプローチ1-1ファイル修正で済ます方法">アプローチ1: 「1ファイル修正」で済ます方法</h2>
 <h3 id="実装方法">実装方法</h3>
-<pre><code class="language-ruby"># app/controllers/api/app/v1/metadata_controller.rb（既存ファイル）
-class Api::App::V1::MetadataController &#x3C; Api::App::V1::ApplicationController
+<pre><code class="language-ruby"># app/controllers/api/v1/app_config_controller.rb（既存ファイル）
+class Api::V1::AppConfigController &#x3C; Api::V1::BaseController
   def show
     render json: { 
-      minimumAppVersion: Device::MINIMUM_APP_VERSION,
-      showShippingNotice: true,  # ← 直接書く
-      shippingNoticeText: "現在、多くの発送申請をいただいており、お届けまでにお時間を要しております。順次発送を進めております。お客様には大変なご不便とご心配をおかけし、申し訳ございません。"  # ← 直接書く
+      appVersion: "1.0.0",
+      showMaintenanceBanner: true,  # ← 直接書く
+      maintenanceBannerText: "システムメンテナンスのため、2月15日の深夜2時〜4時にサービスを停止いたします。"  # ← 直接書く
     }
   end
 end
 </code></pre>
-<pre><code class="language-haml">&#x3C;!-- app/views/shared/_shipping_notice.html.haml（既存ファイル） -->
-.shipping-notice
-  現在、多くの発送申請をいただいており、お届けまでにお時間を要しております。順次発送を進めております。お客様には大変なご不便とご心配をおかけし、申し訳ございません。
+<pre><code class="language-haml">&#x3C;!-- app/views/shared/_maintenance_banner.html.haml（既存ファイル） -->
+.maintenance-banner
+  システムメンテナンスのため、2月15日の深夜2時〜4時にサービスを停止いたします。
 </code></pre>
 <h3 id="メリット">メリット</h3>
 <ul>
@@ -67,12 +67,12 @@ end
 <p>しかし、運用が始まると問題が見えてきます：</p>
 <h4 id="1-同期の困難さ">1. <strong>同期の困難さ</strong></h4>
 <pre><code class="language-ruby"># APIコントローラー
-showShippingNotice: true,
-shippingNoticeText: "現在、多くの発送申請を..."
+showMaintenanceBanner: true,
+maintenanceBannerText: "システムメンテナンスのため..."
 
 # ビューファイル  
-.shipping-notice
-  現在、多くの発送申請を... &#x3C;!-- 微妙に文言が違う！ -->
+.maintenance-banner
+  システムメンテナンスのため... &#x3C;!-- 微妙に文言が違う！ -->
 </code></pre>
 <h4 id="2-変更時の手間">2. <strong>変更時の手間</strong></h4>
 <pre><code class="language-ruby"># テキスト変更時に必要な作業
@@ -98,23 +98,23 @@ shippingNoticeText: "現在、多くの発送申請を..."
 </ol>
 <h3 id="実装ステップ">実装ステップ</h3>
 <h4 id="ステップ1-通知設定の専用クラス作成">ステップ1: 通知設定の専用クラス作成</h4>
-<pre><code class="language-ruby"># app/lib/notification_config.rb（新規作成）
-class NotificationConfig
-  # 発送遅延通知
-  module ShippingDelay
+<pre><code class="language-ruby"># app/lib/banner_config.rb（新規作成）
+class BannerConfig
+  # メンテナンス通知
+  module Maintenance
     ENABLED = true
-    TEXT = '現在、多くの発送申請をいただいており、お届けまでにお時間を要しております。順次発送を進めております。お客様には大変なご不便とご心配をおかけし、申し訳ございません。'
+    TEXT = 'システムメンテナンスのため、2月15日の深夜2時〜4時にサービスを停止いたします。'
   end
 
   # 将来的な拡張用
-  module Maintenance
+  module Emergency
     ENABLED = false
-    TEXT = 'システムメンテナンスのため、一部機能がご利用いただけません。'
+    TEXT = '緊急メンテナンスのため、一時的にサービスを停止しています。'
   end
 
   module Campaign
     ENABLED = false
-    TEXT = '期間限定キャンペーン実施中！'
+    TEXT = '新機能リリース記念キャンペーン実施中！'
   end
 end
 </code></pre>
@@ -152,13 +152,13 @@ end
 <table><thead><tr><th>ディレクトリ</th><th>用途</th><th>今回の設定に適用？</th></tr></thead><tbody><tr><td><code>app/models/</code></td><td>ActiveRecordモデル（DB関連）</td><td>❌ DBテーブルではない</td></tr><tr><td><code>app/controllers/</code></td><td>リクエスト処理</td><td>❌ HTTP処理ではない</td></tr><tr><td><code>app/lib/</code></td><td>アプリ固有のライブラリ</td><td>✅ <strong>最適</strong></td></tr><tr><td><code>lib/</code></td><td>汎用ライブラリ</td><td>△ アプリ固有なので微妙</td></tr></tbody></table>
 <p><strong>Rails自動読み込み</strong>: Rails 6以降、<code>app/lib/</code>は<code>config.autoload_paths</code>に含まれるため、追加設定なしでクラスが自動読み込みされます。</p>
 <h4 id="ステップ2-apiコントローラーの修正">ステップ2: APIコントローラーの修正</h4>
-<pre><code class="language-ruby"># app/controllers/api/app/v1/metadata_controller.rb
-class Api::App::V1::MetadataController &#x3C; Api::App::V1::ApplicationController
+<pre><code class="language-ruby"># app/controllers/api/v1/app_config_controller.rb
+class Api::V1::AppConfigController &#x3C; Api::V1::BaseController
   def show
     render json: { 
-      minimumAppVersion: Device::MINIMUM_APP_VERSION,
-      showShippingNotice: NotificationConfig::ShippingDelay::ENABLED,
-      shippingNoticeText: NotificationConfig::ShippingDelay::TEXT
+      appVersion: "1.0.0",
+      showMaintenanceBanner: BannerConfig::Maintenance::ENABLED,
+      maintenanceBannerText: BannerConfig::Maintenance::TEXT
     }
   end
 end
@@ -174,47 +174,47 @@ end
 <pre><code class="language-ruby"># app/controllers/application_controller.rb
 class ApplicationController &#x3C; ActionController::Base
   # サイト全体で必要な場合はbefore_actionが有効
-  before_action :set_shipping_notification
+  before_action :set_maintenance_banner
   
   private
   
-  def set_shipping_notification
-    @shipping_notice_enabled = NotificationConfig::ShippingDelay::ENABLED
-    @shipping_notice_text = NotificationConfig::ShippingDelay::TEXT
+  def set_maintenance_banner
+    @maintenance_banner_enabled = BannerConfig::Maintenance::ENABLED
+    @maintenance_banner_text = BannerConfig::Maintenance::TEXT
   end
   
   # 特定のページでのみ使用する場合の代替方法
-  # helper_method :shipping_notice_enabled?, :shipping_notice_text
+  # helper_method :maintenance_banner_enabled?, :maintenance_banner_text
   
-  # def shipping_notice_enabled?
-  #   NotificationConfig::ShippingDelay::ENABLED
+  # def maintenance_banner_enabled?
+  #   BannerConfig::Maintenance::ENABLED
   # end
   
-  # def shipping_notice_text
-  #   NotificationConfig::ShippingDelay::TEXT
+  # def maintenance_banner_text
+  #   BannerConfig::Maintenance::TEXT
   # end
 end
 </code></pre>
-<pre><code class="language-haml">&#x3C;!-- app/views/shared/_shipping_notice.html.haml -->
-- if @shipping_notice_enabled
-  .shipping-notice
-    = @shipping_notice_text
+<pre><code class="language-haml">&#x3C;!-- app/views/shared/_maintenance_banner.html.haml -->
+- if @maintenance_banner_enabled
+  .maintenance-banner
+    = @maintenance_banner_text
 </code></pre>
 <h4 id="ステップ4-テストの更新">ステップ4: テストの更新</h4>
-<pre><code class="language-ruby"># spec/requests/api/app/v1/metadata_controller_spec.rb
-RSpec.describe Api::App::V1::MetadataController do
+<pre><code class="language-ruby"># spec/requests/api/v1/app_config_controller_spec.rb
+RSpec.describe Api::V1::AppConfigController do
   describe 'GET #show' do
-    context '発送通知が有効な場合' do
+    context 'メンテナンスバナーが有効な場合' do
       before do
-        stub_const('NotificationConfig::ShippingDelay::ENABLED', true)
-        stub_const('NotificationConfig::ShippingDelay::TEXT', 'テスト用メッセージ')
+        stub_const('BannerConfig::Maintenance::ENABLED', true)
+        stub_const('BannerConfig::Maintenance::TEXT', 'テスト用メッセージ')
       end
 
       it '適切なレスポンスを返す' do
-        get api_app_v1_metadata_path
+        get api_v1_app_config_path
         json = JSON.parse(response.body)
-        expect(json['showShippingNotice']).to be_truthy
-        expect(json['shippingNoticeText']).to eq('テスト用メッセージ')
+        expect(json['showMaintenanceBanner']).to be_truthy
+        expect(json['maintenanceBannerText']).to eq('テスト用メッセージ')
       end
     end
   end
@@ -222,13 +222,13 @@ end
 </code></pre>
 <h3 id="修正が必要なファイル数">修正が必要なファイル数</h3>
 <pre><code>新規作成: 1ファイル
-├── app/lib/notification_config.rb
+├── app/lib/banner_config.rb
 
 修正: 4ファイル  
-├── app/controllers/api/app/v1/metadata_controller.rb
+├── app/controllers/api/v1/app_config_controller.rb
 ├── app/controllers/application_controller.rb
-├── app/views/shared/_shipping_notice.html.haml
-└── spec/requests/api/app/v1/metadata_controller_spec.rb
+├── app/views/shared/_maintenance_banner.html.haml
+└── spec/requests/api/v1/app_config_controller_spec.rb
 
 合計: 5ファイル
 </code></pre>
@@ -287,14 +287,14 @@ end
 <p><strong>1ファイル修正の場合</strong></p>
 <pre><code class="language-ruby"># 各ファイルを個別に修正が必要
 # APIコントローラー
-showShippingNotice: false,  # ← 手動変更
+showMaintenanceBanner: false,  # ← 手動変更
 
 # ビューファイル
 - if false  # ← 手動変更（しかもこれだと見た目が悪い）
 </code></pre>
 <p><strong>アーキテクチャ原則の場合</strong></p>
 <pre><code class="language-ruby"># 1箇所変更するだけ
-module ShippingDelay
+module Maintenance
   ENABLED = false  # ← この1行だけ
   TEXT = '...'
 end
@@ -303,24 +303,24 @@ end
 <p><strong>1ファイル修正の場合</strong></p>
 <pre><code class="language-ruby"># 各ファイルにバラバラに追加
 # APIコントローラー
-showMaintenanceNotice: true,
-maintenanceNoticeText: "...",
+showEmergencyBanner: true,
+emergencyBannerText: "...",
 
 # ビューファイル（別ファイルに）
 - if true
-  .maintenance-notice
-    メンテナンス中...
+  .emergency-banner
+    緒急メンテナンス中...
 </code></pre>
 <p><strong>アーキテクチャ原則の場合</strong></p>
 <pre><code class="language-ruby"># 設定クラスに追加するだけ
-module Maintenance
+module Emergency
   ENABLED = true
-  TEXT = 'メンテナンス中...'
+  TEXT = '緒急メンテナンス中...'
 end
 
 # 使用箇所では統一的に参照
-NotificationConfig::Maintenance::ENABLED
-NotificationConfig::Maintenance::TEXT
+BannerConfig::Emergency::ENABLED
+BannerConfig::Emergency::TEXT
 </code></pre>
 <h3 id="長期的なコスト分析">長期的なコスト分析</h3>
 <h4 id="6ヶ月間の運用コスト仮定">6ヶ月間の運用コスト（仮定）</h4>
@@ -349,24 +349,24 @@ ON/OFF切替（月1回）: 0.1時間 × 6ヶ月 = 0.6時間
 <p><strong>問題</strong>: 同じ情報が複数箇所に散らばっている</p>
 <pre><code class="language-ruby"># ❌ 情報が分散
 # APIコントローラー
-shippingNoticeText: "現在、多くの発送申請を..."
+maintenanceBannerText: "システムメンテナンスのため..."
 
 # ビューファイル  
-.notice 現在、多くの発送申請を...
+.banner システムメンテナンスのため...
 
 # 設定ファイル
-SHIPPING_NOTICE = "現在、多くの発送申請を..."
+MAINTENANCE_BANNER = "システムメンテナンスのため..."
 </code></pre>
 <p><strong>解決</strong>: 情報源を1箇所に集約</p>
 <pre><code class="language-ruby"># ✅ 単一情報源
-class NotificationConfig
-  module ShippingDelay
-    TEXT = '現在、多くの発送申請を...'  # ← ここだけ
+class BannerConfig
+  module Maintenance
+    TEXT = 'システムメンテナンスのため...'  # ← ここだけ
   end
 end
 
 # どこからでもこの値を参照
-NotificationConfig::ShippingDelay::TEXT
+BannerConfig::Maintenance::TEXT
 </code></pre>
 <h3 id="2-separation-of-concerns関心の分離">2. Separation of Concerns（関心の分離）</h3>
 <p>各コンポーネントが適切な責務を持つように設計します：</p>
@@ -395,7 +395,7 @@ NotificationConfig::ShippingDelay::TEXT
 
 
 
-<table><thead><tr><th>コンポーネント</th><th>責務</th><th>担当しないこと</th></tr></thead><tbody><tr><td><strong>NotificationConfig</strong></td><td>通知設定の管理</td><td>HTTP処理、DB操作</td></tr><tr><td><strong>Controller</strong></td><td>リクエスト処理、データ準備</td><td>設定値の決定、ビューロジック</td></tr><tr><td><strong>View</strong></td><td>表示</td><td>データ取得、ビジネスロジック</td></tr></tbody></table>
+<table><thead><tr><th>コンポーネント</th><th>責務</th><th>担当しないこと</th></tr></thead><tbody><tr><td><strong>BannerConfig</strong></td><td>バナー設定の管理</td><td>HTTP処理、DB操作</td></tr><tr><td><strong>Controller</strong></td><td>リクエスト処理、データ準備</td><td>設定値の決定、ビューロジック</td></tr><tr><td><strong>View</strong></td><td>表示</td><td>データ取得、ビジネスロジック</td></tr></tbody></table>
 <p><strong>❌ 関心が混在した例</strong></p>
 <pre><code class="language-haml">&#x3C;!-- ビューでビジネスロジックを持っている -->
 - if Rails.env.production? &#x26;&#x26; Time.current.hour.between?(9, 17)
@@ -748,7 +748,7 @@ showShippingNotice: NotificationConfig::ShippingDelay.enabled?
 <li><a href="https://railsguides.jp/layouts_and_rendering.html">Rails Guides - レイアウトとレンダリング</a></li>
 <li><a href="https://api.rubyonrails.org/">Rails API Documentation</a></li>
 <li><a href="https://martinfowler.com/articles/microservices.html">Martin Fowler - Separation of Concerns</a></li>
-</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",44]}]," ","「1ファイルで済む」vs「正しい設計」- Railsアーキテクチャ原則が教える本当の価値"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-09-05 01:58"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日時: ","2025-09-05 03:21"]}],["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Rails"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Architecture"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Design"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"MVC"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Best Practices"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Refactoring"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L15",null,{}]]}]
+</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",44]}]," ","「1ファイルで済む」vs「正しい設計」- Railsアーキテクチャ原則が教える本当の価値"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-09-05 01:58"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日時: ","2025-09-05 03:44"]}],["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Rails"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Architecture"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Design"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"MVC"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Best Practices"}],["$","span","5",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Refactoring"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L15",null,{}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
 11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}

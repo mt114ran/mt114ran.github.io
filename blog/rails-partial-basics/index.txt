@@ -9,7 +9,7 @@ e:I[26614,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/19bdf9af4d1ae4d4.css","style"]
-0:{"P":null,"b":"1GSVQfZMy-Y54As9m79WM","p":"","c":["","blog","rails-partial-basics",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","rails-partial-basics","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","rails-partial-basics","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","G3aIZqMmVJnVkkv9t4PV0",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"XAGetg_fUqPEAt2Yh_57s","p":"","c":["","blog","rails-partial-basics",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","rails-partial-basics","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","rails-partial-basics","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","ivM865vRAvQCM0AC9pkG1",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 f:"$Sreact.suspense"
 10:I[74911,[],"AsyncMetadata"]
 6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
@@ -17,7 +17,7 @@ f:"$Sreact.suspense"
 12:I[6874,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],""]
 14:I[31203,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
 15:I[4197,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
-13:T3a65,<h1 id="rails初心者が混乱しがちなパーシャル部分テンプレートの命名ルールと使い方">Rails初心者が混乱しがちなパーシャル（部分テンプレート）の命名ルールと使い方</h1>
+13:T3a46,<h1 id="rails初心者が混乱しがちなパーシャル部分テンプレートの命名ルールと使い方">Rails初心者が混乱しがちなパーシャル（部分テンプレート）の命名ルールと使い方</h1>
 <p>Railsでビューを作成していると必ず出会うのが「パーシャル（部分テンプレート）」です。しかし、初心者の方が最も混乱しやすいのが<strong>ファイル名の命名ルール</strong>です。</p>
 <p>「なぜファイル名にはアンダースコア（<code>_</code>）が必要なのに、呼び出す時は外すの？」という疑問を持ったことがある方も多いのではないでしょうか。</p>
 <p>この記事では、Railsのパーシャルの基本的な使い方から、混乱しがちな命名ルールまでを初心者向けに詳しく解説します。</p>
@@ -33,37 +33,38 @@ f:"$Sreact.suspense"
 <h2 id="パーシャルの基本的な使い方">パーシャルの基本的な使い方</h2>
 <h3 id="1-パーシャルファイルの作成">1. パーシャルファイルの作成</h3>
 <p>パーシャルファイルは<strong>必ずアンダースコア（<code>_</code>）から始める</strong>必要があります。</p>
-<pre><code>app/views/users/
+<pre><code>app/views/posts/
 ├── index.html.erb          # 通常のビューファイル
 ├── show.html.erb           # 通常のビューファイル
-├── _profile.html.erb       # パーシャルファイル
-└── _navigation.html.erb    # パーシャルファイル
+├── _card.html.erb          # パーシャルファイル
+└── _header.html.erb        # パーシャルファイル
 </code></pre>
 <h3 id="2-パーシャルの呼び出し">2. パーシャルの呼び出し</h3>
 <p>パーシャルを呼び出す際は、<strong>アンダースコアを外して</strong><code>render</code>メソッドを使います。</p>
-<pre><code class="language-erb">&#x3C;!-- app/views/users/index.html.erb -->
-&#x3C;h1>ユーザー一覧&#x3C;/h1>
-&#x3C;%= render 'navigation' %>  &#x3C;!-- _navigation.html.erb を呼び出し -->
+<pre><code class="language-erb">&#x3C;!-- app/views/posts/index.html.erb -->
+&#x3C;h1>記事一覧&#x3C;/h1>
+&#x3C;%= render 'header' %>  &#x3C;!-- _header.html.erb を呼び出し -->
 
-&#x3C;div class="users-list">
-  &#x3C;% @users.each do |user| %>
-    &#x3C;%= render 'profile', user: user %>  &#x3C;!-- _profile.html.erb を呼び出し -->
+&#x3C;div class="posts-list">
+  &#x3C;% @posts.each do |post| %>
+    &#x3C;%= render 'card', post: post %>  &#x3C;!-- _card.html.erb を呼び出し -->
   &#x3C;% end %>
 &#x3C;/div>
 </code></pre>
 <h3 id="3-パーシャルでのデータの受け渡し">3. パーシャルでのデータの受け渡し</h3>
 <p>パーシャルにデータを渡すには、<code>locals</code>オプションまたは直接指定します。</p>
 <pre><code class="language-erb">&#x3C;!-- 方法1: localsオプションを使用 -->
-&#x3C;%= render 'profile', locals: { user: @user, show_email: true } %>
+&#x3C;%= render 'card', locals: { post: @post, show_author: true } %>
 
 &#x3C;!-- 方法2: 直接指定（推奨） -->
-&#x3C;%= render 'profile', user: @user, show_email: true %>
+&#x3C;%= render 'card', post: @post, show_author: true %>
 </code></pre>
-<pre><code class="language-erb">&#x3C;!-- _profile.html.erb -->
-&#x3C;div class="user-profile">
-  &#x3C;h3>&#x3C;%= user.name %>&#x3C;/h3>
-  &#x3C;% if show_email %>
-    &#x3C;p>Email: &#x3C;%= user.email %>&#x3C;/p>
+<pre><code class="language-erb">&#x3C;!-- _card.html.erb -->
+&#x3C;div class="post-card">
+  &#x3C;h3>&#x3C;%= post.title %>&#x3C;/h3>
+  &#x3C;p>&#x3C;%= post.content %>&#x3C;/p>
+  &#x3C;% if show_author %>
+    &#x3C;p>Author: &#x3C;%= post.author.name %>&#x3C;/p>
   &#x3C;% end %>
 &#x3C;/div>
 </code></pre>
@@ -95,7 +96,7 @@ f:"$Sreact.suspense"
 
 
 
-<table><thead><tr><th>ファイルの種類</th><th>命名例</th><th>用途</th></tr></thead><tbody><tr><td><strong>通常のビュー</strong></td><td><code>index.html.erb</code></td><td>独立したページとして表示</td></tr><tr><td><strong>パーシャル</strong></td><td><code>_profile.html.erb</code></td><td>部品として他から呼び出される</td></tr><tr><td><strong>レイアウト</strong></td><td><code>application.html.erb</code></td><td>ページ全体の枠組み</td></tr></tbody></table>
+<table><thead><tr><th>ファイルの種類</th><th>命名例</th><th>用途</th></tr></thead><tbody><tr><td><strong>通常のビュー</strong></td><td><code>index.html.erb</code></td><td>独立したページとして表示</td></tr><tr><td><strong>パーシャル</strong></td><td><code>_card.html.erb</code></td><td>部品として他から呼び出される</td></tr><tr><td><strong>レイアウト</strong></td><td><code>application.html.erb</code></td><td>ページ全体の枠組み</td></tr></tbody></table>
 <h3 id="convention-over-configuration">Convention over Configuration</h3>
 <p>これはRailsの基本思想である「<a href="https://ja.wikipedia.org/wiki/Convention_over_Configuration">Convention over Configuration</a>（設定より規約）」の一例です。</p>
 <ul>
@@ -106,39 +107,39 @@ f:"$Sreact.suspense"
 <h2 id="よくある間違いとその対処法">よくある間違いとその対処法</h2>
 <h3 id="-間違いパターン1-renderでアンダースコアを付けてしまう">❌ 間違いパターン1: renderでアンダースコアを付けてしまう</h3>
 <pre><code class="language-erb">&#x3C;!-- 間違い -->
-&#x3C;%= render '_profile' %>
-&#x3C;%= render '_navigation' %>
-&#x3C;%= render 'shared/_header' %>
+&#x3C;%= render '_card' %>
+&#x3C;%= render '_header' %>
+&#x3C;%= render 'shared/_footer' %>
 </code></pre>
 <pre><code class="language-erb">&#x3C;!-- 正しい -->
-&#x3C;%= render 'profile' %>
-&#x3C;%= render 'navigation' %>
-&#x3C;%= render 'shared/header' %>
+&#x3C;%= render 'card' %>
+&#x3C;%= render 'header' %>
+&#x3C;%= render 'shared/footer' %>
 </code></pre>
 <h3 id="-間違いパターン2-ファイル名にアンダースコアを付け忘れる">❌ 間違いパターン2: ファイル名にアンダースコアを付け忘れる</h3>
 <pre><code>&#x3C;!-- 間違い -->
-app/views/users/profile.html.erb
+app/views/posts/card.html.erb
 
 &#x3C;!-- 正しい -->
-app/views/users/_profile.html.erb
+app/views/posts/_card.html.erb
 </code></pre>
 <h3 id="エラーメッセージの読み方">エラーメッセージの読み方</h3>
 <p>アンダースコアを付け忘れたり、間違った呼び出しをすると以下のようなエラーが表示されます。</p>
-<pre><code>ActionView::MissingTemplate: Missing partial users/_profile
+<pre><code>ActionView::MissingTemplate: Missing partial posts/_card
 </code></pre>
 <p>このエラーメッセージのポイント：</p>
 <ul>
 <li><strong><code>Missing partial</code></strong>: パーシャルが見つからない</li>
-<li><strong><code>users/_profile</code></strong>: 探しているファイルは <code>app/views/users/_profile.html.erb</code></li>
+<li><strong><code>posts/_card</code></strong>: 探しているファイルは <code>app/views/posts/_card.html.erb</code></li>
 <li>エラーメッセージには<strong>アンダースコア付き</strong>で表示されるが、renderでは<strong>アンダースコアなし</strong>で書く</li>
 </ul>
 <h2 id="パーシャルファイルから他のパーシャルを呼び出す">パーシャルファイルから他のパーシャルを呼び出す</h2>
 <p>パーシャルファイル内でも、他のパーシャルを呼び出すことができます。</p>
-<pre><code class="language-erb">&#x3C;!-- _user_card.html.erb -->
-&#x3C;div class="user-card">
-  &#x3C;%= render 'user_avatar', user: user %>     &#x3C;!-- _user_avatar.html.erb -->
-  &#x3C;%= render 'user_details', user: user %>    &#x3C;!-- _user_details.html.erb -->
-  &#x3C;%= render 'user_actions', user: user %>    &#x3C;!-- _user_actions.html.erb -->
+<pre><code class="language-erb">&#x3C;!-- _article_card.html.erb -->
+&#x3C;div class="article-card">
+  &#x3C;%= render 'article_image', post: post %>     &#x3C;!-- _article_image.html.erb -->
+  &#x3C;%= render 'article_content', post: post %>   &#x3C;!-- _article_content.html.erb -->
+  &#x3C;%= render 'article_meta', post: post %>      &#x3C;!-- _article_meta.html.erb -->
 &#x3C;/div>
 </code></pre>
 <p>このように、<strong>パーシャルを小さな部品に分割</strong>することで、より保守性の高いコードを書くことができます。</p>
@@ -150,27 +151,27 @@ app/views/users/_profile.html.erb
 │   ├── _header.html.erb
 │   ├── _footer.html.erb
 │   └── _sidebar.html.erb
-├── users/
+├── posts/
 │   ├── index.html.erb
-│   └── _profile.html.erb
+│   └── _card.html.erb
 └── admin/
     ├── index.html.erb
     └── _dashboard.html.erb
 </code></pre>
 <h3 id="呼び出し方法">呼び出し方法</h3>
-<pre><code class="language-erb">&#x3C;!-- app/views/users/index.html.erb から -->
+<pre><code class="language-erb">&#x3C;!-- app/views/posts/index.html.erb から -->
 &#x3C;%= render 'shared/header' %>          &#x3C;!-- app/views/shared/_header.html.erb -->
-&#x3C;%= render 'profile', user: @user %>   &#x3C;!-- app/views/users/_profile.html.erb -->
+&#x3C;%= render 'card', post: @post %>      &#x3C;!-- app/views/posts/_card.html.erb -->
 
 &#x3C;!-- app/views/admin/index.html.erb から -->
 &#x3C;%= render 'shared/header' %>          &#x3C;!-- app/views/shared/_header.html.erb -->
-&#x3C;%= render 'users/profile', user: @user %>  &#x3C;!-- app/views/users/_profile.html.erb -->
+&#x3C;%= render 'posts/card', post: @post %> &#x3C;!-- app/views/posts/_card.html.erb -->
 </code></pre>
 <h2 id="パーシャルのファイル検索順序">パーシャルのファイル検索順序</h2>
 <p>Railsは以下の順序でパーシャルファイルを検索します。</p>
 <ol>
-<li><strong>同じディレクトリ</strong>: <code>app/views/users/_profile.html.erb</code></li>
-<li><strong>共通ディレクトリ</strong>: <code>app/views/application/_profile.html.erb</code></li>
+<li><strong>同じディレクトリ</strong>: <code>app/views/posts/_card.html.erb</code></li>
+<li><strong>共通ディレクトリ</strong>: <code>app/views/application/_card.html.erb</code></li>
 <li><strong>その他のビューパス</strong></li>
 </ol>
 <p>この検索順序により、特定のコントローラー専用のパーシャルがある場合はそれを優先し、なければ共通のパーシャルを使用するという柔軟な運用が可能です。</p>
@@ -180,7 +181,7 @@ app/views/users/_profile.html.erb
 &#x3C;nav class="main-navigation">
   &#x3C;ul>
     &#x3C;li>&#x3C;%= link_to 'ホーム', root_path %>&#x3C;/li>
-    &#x3C;li>&#x3C;%= link_to 'ユーザー', users_path %>&#x3C;/li>
+    &#x3C;li>&#x3C;%= link_to '記事', posts_path %>&#x3C;/li>
     &#x3C;li>&#x3C;%= link_to 'お問い合わせ', contact_path %>&#x3C;/li>
   &#x3C;/ul>
 &#x3C;/nav>
@@ -203,28 +204,28 @@ app/views/users/_profile.html.erb
 &#x3C;/html>
 </code></pre>
 <h3 id="フォーム部品の再利用">フォーム部品の再利用</h3>
-<pre><code class="language-erb">&#x3C;!-- app/views/users/_form.html.erb -->
-&#x3C;%= form_with model: user do |form| %>
+<pre><code class="language-erb">&#x3C;!-- app/views/posts/_form.html.erb -->
+&#x3C;%= form_with model: post do |form| %>
   &#x3C;div class="form-group">
-    &#x3C;%= form.label :name, '名前' %>
-    &#x3C;%= form.text_field :name, class: 'form-control' %>
+    &#x3C;%= form.label :title, 'タイトル' %>
+    &#x3C;%= form.text_field :title, class: 'form-control' %>
   &#x3C;/div>
   
   &#x3C;div class="form-group">
-    &#x3C;%= form.label :email, 'メールアドレス' %>
-    &#x3C;%= form.email_field :email, class: 'form-control' %>
+    &#x3C;%= form.label :content, '内容' %>
+    &#x3C;%= form.text_area :content, class: 'form-control' %>
   &#x3C;/div>
   
   &#x3C;%= form.submit class: 'btn btn-primary' %>
 &#x3C;% end %>
 </code></pre>
-<pre><code class="language-erb">&#x3C;!-- app/views/users/new.html.erb -->
-&#x3C;h1>新規ユーザー登録&#x3C;/h1>
-&#x3C;%= render 'form', user: @user %>
+<pre><code class="language-erb">&#x3C;!-- app/views/posts/new.html.erb -->
+&#x3C;h1>記事を書く&#x3C;/h1>
+&#x3C;%= render 'form', post: @post %>
 
-&#x3C;!-- app/views/users/edit.html.erb -->
-&#x3C;h1>ユーザー情報編集&#x3C;/h1>
-&#x3C;%= render 'form', user: @user %>
+&#x3C;!-- app/views/posts/edit.html.erb -->
+&#x3C;h1>記事を編集&#x3C;/h1>
+&#x3C;%= render 'form', post: @post %>
 </code></pre>
 <h2 id="覚え方のコツ">覚え方のコツ</h2>
 <h3 id="1-ファイル名の構成を理解する">1. ファイル名の構成を理解する</h3>
@@ -257,19 +258,20 @@ app/views/users/_profile.html.erb
 </ul>
 <h2 id="hamlでの使用方法">HAMLでの使用方法</h2>
 <p>ERBの例をHAML記法で書くと以下のようになります。</p>
-<pre><code class="language-haml">-# app/views/users/index.html.haml
-%h1 ユーザー一覧
-= render 'navigation'
+<pre><code class="language-haml">-# app/views/posts/index.html.haml
+%h1 記事一覧
+= render 'header'
 
-.users-list
-  - @users.each do |user|
-    = render 'profile', user: user
+.posts-list
+  - @posts.each do |post|
+    = render 'card', post: post
 </code></pre>
-<pre><code class="language-haml">-# app/views/users/_profile.html.haml
-.user-profile
-  %h3= user.name
-  - if show_email
-    %p= "Email: #{user.email}"
+<pre><code class="language-haml">-# app/views/posts/_card.html.haml
+.post-card
+  %h3= post.title
+  %p= post.content
+  - if show_author
+    %p= "Author: #{post.author.name}"
 </code></pre>
 <h2 id="まとめ">まとめ</h2>
 <p>Railsのパーシャルは、以下のルールを覚えておけば安心して使えます。</p>
@@ -292,7 +294,7 @@ app/views/users/_profile.html.erb
 <ul>
 <li><a href="https://railsguides.jp/layouts_and_rendering.html">Rails Guides - レイアウトとレンダリング</a></li>
 <li><a href="https://api.rubyonrails.org/classes/ActionView/PartialRenderer.html">Rails API Documentation - ActionView::PartialRenderer</a></li>
-</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",43]}]," ","Rails初心者が混乱しがちなパーシャル（部分テンプレート）の命名ルールと使い方"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-09-05 00:28"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日時: ","2025-09-05 03:21"]}],["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Rails"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"View"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Template"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Partial"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"HAML"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L15",null,{}]]}]
+</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",43]}]," ","Rails初心者が混乱しがちなパーシャル（部分テンプレート）の命名ルールと使い方"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-09-05 00:28"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日時: ","2025-09-05 03:44"]}],["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Rails"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"View"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Template"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Partial"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"HAML"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L15",null,{}]]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
 11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
