@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/19bdf9af4d1ae4d4.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-aa7deb192a774533.js"/><script src="/_next/static/chunks/4bd1b696-bc089769d60af88b.js" async=""></script><script src="/_next/static/chunks/1684-b369840b16e4c44b.js" async=""></script><script src="/_next/static/chunks/main-app-2ed07751e45c2a2f.js" async=""></script><script src="/_next/static/chunks/6874-6c1ddde525f3893c.js" async=""></script><script src="/_next/static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><div class="max-w-2xl mx-auto py-10 px-4"><h1 class="text-3xl font-bold mb-2"><span class="text-green-600">#</span> <!-- -->Ruby の .freeze メソッドを理解する：オブジェクトの不変性とメモリ効率</h1><ul class="list-none border-b border-gray-600 pb-4 mb-6"><li class="text-gray-500 text-sm">作成日時: <!-- -->2025-09-05 13:22</li><li class="text-gray-500 text-sm">更新日時: <!-- -->2025-09-05 13:22</li><li class="flex flex-wrap gap-2 mt-2"><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Ruby</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Rails</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">プログラミング</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">メモリ管理</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">定数</span></li></ul><nav class="mb-6 pb-4 border-b border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav><article class="prose dark:prose-invert"><p>Rubyのコードを読んでいると、文字列の末尾に<code>.freeze</code>が付いているのを見かけることがありませんか？この記事では、<code>.freeze</code>メソッドの役割や使い方について、初心者の方にも分かりやすく解説します。</p>
+<h2 id="freeze-メソッドとは">.freeze メソッドとは</h2>
+<p><code>.freeze</code>は、Rubyのオブジェクトを**不変（immutable）**にするメソッドです。一度<code>.freeze</code>を適用したオブジェクトは、その内容を変更することができなくなります。</p>
+<pre><code class="language-ruby"># 通常の文字列（変更可能）
+message = "Hello"
+puts message  # => "Hello"
+
+message &#x3C;&#x3C; " World"  # 文字列に追加
+puts message  # => "Hello World"
+
+# freeze された文字列（変更不可能）
+frozen_message = "Hello".freeze
+puts frozen_message  # => "Hello"
+
+frozen_message &#x3C;&#x3C; " World"  # エラーが発生！
+# FrozenError: can't modify frozen String
+</code></pre>
+<h2 id="なぜ-freeze-を使うのか">なぜ .freeze を使うのか</h2>
+<h3 id="1-安全性の向上">1. 安全性の向上</h3>
+<p>定数や重要なデータを意図しない変更から守ることができます。</p>
+<pre><code class="language-ruby"># 危険な例：定数が変更される可能性
+API_BASE_URL = "https://api.example.com"
+API_BASE_URL &#x3C;&#x3C; "/v2"  # 定数が変更されてしまう！
+
+# 安全な例：freeze で保護
+API_BASE_URL = "https://api.example.com".freeze
+API_BASE_URL &#x3C;&#x3C; "/v2"  # エラー：変更できない
+</code></pre>
+<h3 id="2-メモリ効率の向上">2. メモリ効率の向上</h3>
+<p>Rubyは同じ内容のfrozenオブジェクトを再利用するため、メモリ使用量を削減できます。</p>
+<pre><code class="language-ruby"># freeze なし：毎回新しいオブジェクトが作られる
+def get_status_pending
+  "pending"  # 毎回新しい文字列オブジェクト
+end
+
+# freeze あり：同じオブジェクトが再利用される
+def get_status_pending
+  "pending".freeze  # 同一のfrozenオブジェクトが再利用
+end
+</code></pre>
+<h3 id="3-rubocopの推奨事項">3. RuboCopの推奨事項</h3>
+<p>RuboCopの<code>Style/MutableConstant</code>ルールにより、定数には<code>.freeze</code>の使用が推奨されています。</p>
+<h2 id="実践的な使用例">実践的な使用例</h2>
+<h3 id="rails-の設定ファイルでの使用">Rails の設定ファイルでの使用</h3>
+<pre><code class="language-ruby">class ApplicationConfig
+  # エラーメッセージ定数
+  ERROR_MESSAGES = {
+    not_found: "指定されたリソースが見つかりません".freeze,
+    unauthorized: "認証が必要です".freeze,
+    server_error: "サーバーエラーが発生しました".freeze
+  }.freeze
+  
+  # APIエンドポイント
+  API_ENDPOINTS = [
+    "/api/v1/users".freeze,
+    "/api/v1/products".freeze,
+    "/api/v1/orders".freeze
+  ].freeze
+end
+</code></pre>
+<h3 id="設定値の保護">設定値の保護</h3>
+<pre><code class="language-ruby">class NotificationConfig
+  module ShippingDelay
+    ENABLED = false
+    TEXT = "現在、多くの発送申請をいただいており、お届けまでにお時間を要しております。".freeze
+  end
+end
+</code></pre>
+<h2 id="配列やハッシュでの-freeze">配列やハッシュでの .freeze</h2>
+<p>文字列以外のオブジェクトでも<code>.freeze</code>は使用できます。</p>
+<h3 id="配列の場合">配列の場合</h3>
+<pre><code class="language-ruby"># 配列をfreeze
+colors = ["red", "green", "blue"].freeze
+colors &#x3C;&#x3C; "yellow"  # エラー：配列に要素を追加できない
+
+# ただし、配列の要素自体はfreezeされない
+colors[0] &#x3C;&#x3C; "dish"  # "reddish" になる（要素の変更は可能）
+
+# 配列と要素の両方をfreezeする場合
+colors = ["red".freeze, "green".freeze, "blue".freeze].freeze
+</code></pre>
+<h3 id="ハッシュの場合">ハッシュの場合</h3>
+<pre><code class="language-ruby"># ハッシュをfreeze
+config = { host: "localhost", port: 3000 }.freeze
+config[:database] = "myapp"  # エラー：新しいキーを追加できない
+config[:host] = "example.com"  # エラー：既存の値を変更できない
+</code></pre>
+<h2 id="freeze-の確認方法">freeze の確認方法</h2>
+<p>オブジェクトがfreezeされているかどうかは<code>frozen?</code>メソッドで確認できます。</p>
+<pre><code class="language-ruby">text = "Hello"
+puts text.frozen?  # => false
+
+text.freeze
+puts text.frozen?  # => true
+</code></pre>
+<h2 id="パフォーマンスへの影響">パフォーマンスへの影響</h2>
+<h3 id="メモリ使用量の比較">メモリ使用量の比較</h3>
+<pre><code class="language-ruby"># freeze なし：毎回新しいオブジェクトが作成される
+1000.times do
+  status = "active"  # 1000個の異なるオブジェクト
+end
+
+# freeze あり：同じオブジェクトが再利用される
+1000.times do
+  status = "active".freeze  # 1個のfrozenオブジェクトが再利用
+end
+</code></pre>
+<h3 id="ベンチマーク例">ベンチマーク例</h3>
+<p>実際のパフォーマンスを計測してみましょう。</p>
+<pre><code class="language-ruby">require 'benchmark'
+
+# 10万回の文字列生成でのベンチマーク
+n = 100_000
+
+Benchmark.bm(15) do |x|
+  x.report("freeze なし:") do
+    n.times { "Hello World" }
+  end
+  
+  x.report("freeze あり:") do
+    n.times { "Hello World".freeze }
+  end
+end
+
+# 結果例：
+#                      user     system      total        real
+# freeze なし:      0.020000   0.000000   0.020000 (  0.023341)
+# freeze あり:      0.010000   0.000000   0.010000 (  0.012156)
+</code></pre>
+<h2 id="注意点とベストプラクティス">注意点とベストプラクティス</h2>
+<h3 id="1-深いfreezeはされない">1. 深いfreezeはされない</h3>
+<pre><code class="language-ruby">data = { users: ["alice", "bob"] }.freeze
+data[:users] &#x3C;&#x3C; "charlie"  # 成功：配列自体はfreezeされていない
+
+# 完全にfreezeする場合は各要素も個別にfreezeが必要
+data = { 
+  users: ["alice".freeze, "bob".freeze].freeze 
+}.freeze
+</code></pre>
+<h3 id="2-定数には積極的に使用">2. 定数には積極的に使用</h3>
+<pre><code class="language-ruby">class UserStatus
+  ACTIVE = "active".freeze
+  INACTIVE = "inactive".freeze
+  PENDING = "pending".freeze
+  
+  ALL_STATUSES = [ACTIVE, INACTIVE, PENDING].freeze
+end
+</code></pre>
+<h3 id="3-動的な値には使用しない">3. 動的な値には使用しない</h3>
+<pre><code class="language-ruby"># 良い例：固定値
+DEFAULT_MESSAGE = "Welcome to our service".freeze
+
+# 悪い例：動的な値
+current_time = Time.now.to_s.freeze  # 意味がない
+</code></pre>
+<h2 id="まとめ">まとめ</h2>
+<p><code>.freeze</code>メソッドは、Rubyにおいてオブジェクトの安全性とパフォーマンスを向上させる重要な機能です。</p>
+<p><strong>主な利点：</strong></p>
+<ul>
+<li>オブジェクトの意図しない変更を防止</li>
+<li>メモリ使用量の削減</li>
+<li>同一オブジェクトの再利用によるパフォーマンス向上</li>
+</ul>
+<p><strong>使用すべき場面：</strong></p>
+<ul>
+<li>定数の定義</li>
+<li>設定値やエラーメッセージ</li>
+<li>固定的なデータ構造</li>
+</ul>
+<p><strong>注意点：</strong></p>
+<ul>
+<li>深いfreezeは自動的に行われない</li>
+<li>動的な値には適用しない</li>
+<li>freezeされたオブジェクトは変更不可能</li>
+</ul>
+<p><code>.freeze</code>を適切に使用することで、より安全で効率的なRubyコードを書くことができます。定数を定義する際は、ぜひ<code>.freeze</code>の使用を検討してみてください。</p>
+<h2 id="参考リンク">参考リンク</h2>
+<ul>
+<li><a href="https://docs.ruby-lang.org/ja/latest/method/Object/i/freeze.html">Ruby公式ドキュメント - Object#freeze</a></li>
+<li><a href="https://docs.rubocop.org/rubocop/cops_style.html#stylemutableconstant">RuboCop Style/MutableConstant</a></li>
+<li><a href="https://docs.ruby-lang.org/ja/latest/method/Object/i/frozen=3f.html">Ruby公式ドキュメント - Object#frozen?</a></li>
+</ul></article><nav class="mt-8 pt-4 border-t border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-aa7deb192a774533.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[87555,[],\"\"]\n3:I[31295,[],\"\"]\n5:I[59665,[],\"MetadataBoundary\"]\n7:I[59665,[],\"OutletBoundary\"]\na:I[74911,[],\"AsyncMetadataOutlet\"]\nc:I[59665,[],\"ViewportBoundary\"]\ne:I[26614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"KZrMisSdXyu7FDjuS9HOy\",\"p\":\"\",\"c\":[\"\",\"blog\",\"ruby-freeze-method-explained\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"ruby-freeze-method-explained\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"blog\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"ruby-freeze-method-explained\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",[\"$\",\"$L5\",null,{\"children\":\"$L6\"}],null,[\"$\",\"$L7\",null,{\"children\":[\"$L8\",\"$L9\",[\"$\",\"$La\",null,{\"promise\":\"$@b\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"nRTDlS7-MSyD1fS4jrJfR\",{\"children\":[[\"$\",\"$Lc\",null,{\"children\":\"$Ld\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$e\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"f:\"$Sreact.suspense\"\n10:I[74911,[],\"AsyncMetadata\"]\n6:[\"$\",\"$f\",null,{\"fallback\":null,\"children\":[\"$\",\"$L10\",null,{\"promise\":\"$@11\"}]}]\n"])</script><script>self.__next_f.push([1,"9:null\n"])</script><script>self.__next_f.push([1,"12:I[6874,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"\"]\n14:I[31203,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n15:I[4197,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n13:T20ac,"])</script><script>self.__next_f.push([1,"\u003cp\u003eRubyのコードを読んでいると、文字列の末尾に\u003ccode\u003e.freeze\u003c/code\u003eが付いているのを見かけることがありませんか？この記事では、\u003ccode\u003e.freeze\u003c/code\u003eメソッドの役割や使い方について、初心者の方にも分かりやすく解説します。\u003c/p\u003e\n\u003ch2 id=\"freeze-メソッドとは\"\u003e.freeze メソッドとは\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003e.freeze\u003c/code\u003eは、Rubyのオブジェクトを**不変（immutable）**にするメソッドです。一度\u003ccode\u003e.freeze\u003c/code\u003eを適用したオブジェクトは、その内容を変更することができなくなります。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# 通常の文字列（変更可能）\nmessage = \"Hello\"\nputs message  # =\u003e \"Hello\"\n\nmessage \u0026#x3C;\u0026#x3C; \" World\"  # 文字列に追加\nputs message  # =\u003e \"Hello World\"\n\n# freeze された文字列（変更不可能）\nfrozen_message = \"Hello\".freeze\nputs frozen_message  # =\u003e \"Hello\"\n\nfrozen_message \u0026#x3C;\u0026#x3C; \" World\"  # エラーが発生！\n# FrozenError: can't modify frozen String\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"なぜ-freeze-を使うのか\"\u003eなぜ .freeze を使うのか\u003c/h2\u003e\n\u003ch3 id=\"1-安全性の向上\"\u003e1. 安全性の向上\u003c/h3\u003e\n\u003cp\u003e定数や重要なデータを意図しない変更から守ることができます。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# 危険な例：定数が変更される可能性\nAPI_BASE_URL = \"https://api.example.com\"\nAPI_BASE_URL \u0026#x3C;\u0026#x3C; \"/v2\"  # 定数が変更されてしまう！\n\n# 安全な例：freeze で保護\nAPI_BASE_URL = \"https://api.example.com\".freeze\nAPI_BASE_URL \u0026#x3C;\u0026#x3C; \"/v2\"  # エラー：変更できない\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-メモリ効率の向上\"\u003e2. メモリ効率の向上\u003c/h3\u003e\n\u003cp\u003eRubyは同じ内容のfrozenオブジェクトを再利用するため、メモリ使用量を削減できます。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# freeze なし：毎回新しいオブジェクトが作られる\ndef get_status_pending\n  \"pending\"  # 毎回新しい文字列オブジェクト\nend\n\n# freeze あり：同じオブジェクトが再利用される\ndef get_status_pending\n  \"pending\".freeze  # 同一のfrozenオブジェクトが再利用\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"3-rubocopの推奨事項\"\u003e3. RuboCopの推奨事項\u003c/h3\u003e\n\u003cp\u003eRuboCopの\u003ccode\u003eStyle/MutableConstant\u003c/code\u003eルールにより、定数には\u003ccode\u003e.freeze\u003c/code\u003eの使用が推奨されています。\u003c/p\u003e\n\u003ch2 id=\"実践的な使用例\"\u003e実践的な使用例\u003c/h2\u003e\n\u003ch3 id=\"rails-の設定ファイルでの使用\"\u003eRails の設定ファイルでの使用\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003eclass ApplicationConfig\n  # エラーメッセージ定数\n  ERROR_MESSAGES = {\n    not_found: \"指定されたリソースが見つかりません\".freeze,\n    unauthorized: \"認証が必要です\".freeze,\n    server_error: \"サーバーエラーが発生しました\".freeze\n  }.freeze\n  \n  # APIエンドポイント\n  API_ENDPOINTS = [\n    \"/api/v1/users\".freeze,\n    \"/api/v1/products\".freeze,\n    \"/api/v1/orders\".freeze\n  ].freeze\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"設定値の保護\"\u003e設定値の保護\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003eclass NotificationConfig\n  module ShippingDelay\n    ENABLED = false\n    TEXT = \"現在、多くの発送申請をいただいており、お届けまでにお時間を要しております。\".freeze\n  end\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"配列やハッシュでの-freeze\"\u003e配列やハッシュでの .freeze\u003c/h2\u003e\n\u003cp\u003e文字列以外のオブジェクトでも\u003ccode\u003e.freeze\u003c/code\u003eは使用できます。\u003c/p\u003e\n\u003ch3 id=\"配列の場合\"\u003e配列の場合\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# 配列をfreeze\ncolors = [\"red\", \"green\", \"blue\"].freeze\ncolors \u0026#x3C;\u0026#x3C; \"yellow\"  # エラー：配列に要素を追加できない\n\n# ただし、配列の要素自体はfreezeされない\ncolors[0] \u0026#x3C;\u0026#x3C; \"dish\"  # \"reddish\" になる（要素の変更は可能）\n\n# 配列と要素の両方をfreezeする場合\ncolors = [\"red\".freeze, \"green\".freeze, \"blue\".freeze].freeze\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"ハッシュの場合\"\u003eハッシュの場合\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# ハッシュをfreeze\nconfig = { host: \"localhost\", port: 3000 }.freeze\nconfig[:database] = \"myapp\"  # エラー：新しいキーを追加できない\nconfig[:host] = \"example.com\"  # エラー：既存の値を変更できない\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"freeze-の確認方法\"\u003efreeze の確認方法\u003c/h2\u003e\n\u003cp\u003eオブジェクトがfreezeされているかどうかは\u003ccode\u003efrozen?\u003c/code\u003eメソッドで確認できます。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003etext = \"Hello\"\nputs text.frozen?  # =\u003e false\n\ntext.freeze\nputs text.frozen?  # =\u003e true\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"パフォーマンスへの影響\"\u003eパフォーマンスへの影響\u003c/h2\u003e\n\u003ch3 id=\"メモリ使用量の比較\"\u003eメモリ使用量の比較\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# freeze なし：毎回新しいオブジェクトが作成される\n1000.times do\n  status = \"active\"  # 1000個の異なるオブジェクト\nend\n\n# freeze あり：同じオブジェクトが再利用される\n1000.times do\n  status = \"active\".freeze  # 1個のfrozenオブジェクトが再利用\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"ベンチマーク例\"\u003eベンチマーク例\u003c/h3\u003e\n\u003cp\u003e実際のパフォーマンスを計測してみましょう。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003erequire 'benchmark'\n\n# 10万回の文字列生成でのベンチマーク\nn = 100_000\n\nBenchmark.bm(15) do |x|\n  x.report(\"freeze なし:\") do\n    n.times { \"Hello World\" }\n  end\n  \n  x.report(\"freeze あり:\") do\n    n.times { \"Hello World\".freeze }\n  end\nend\n\n# 結果例：\n#                      user     system      total        real\n# freeze なし:      0.020000   0.000000   0.020000 (  0.023341)\n# freeze あり:      0.010000   0.000000   0.010000 (  0.012156)\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"注意点とベストプラクティス\"\u003e注意点とベストプラクティス\u003c/h2\u003e\n\u003ch3 id=\"1-深いfreezeはされない\"\u003e1. 深いfreezeはされない\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003edata = { users: [\"alice\", \"bob\"] }.freeze\ndata[:users] \u0026#x3C;\u0026#x3C; \"charlie\"  # 成功：配列自体はfreezeされていない\n\n# 完全にfreezeする場合は各要素も個別にfreezeが必要\ndata = { \n  users: [\"alice\".freeze, \"bob\".freeze].freeze \n}.freeze\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-定数には積極的に使用\"\u003e2. 定数には積極的に使用\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003eclass UserStatus\n  ACTIVE = \"active\".freeze\n  INACTIVE = \"inactive\".freeze\n  PENDING = \"pending\".freeze\n  \n  ALL_STATUSES = [ACTIVE, INACTIVE, PENDING].freeze\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"3-動的な値には使用しない\"\u003e3. 動的な値には使用しない\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# 良い例：固定値\nDEFAULT_MESSAGE = \"Welcome to our service\".freeze\n\n# 悪い例：動的な値\ncurrent_time = Time.now.to_s.freeze  # 意味がない\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"まとめ\"\u003eまとめ\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003e.freeze\u003c/code\u003eメソッドは、Rubyにおいてオブジェクトの安全性とパフォーマンスを向上させる重要な機能です。\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e主な利点：\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eオブジェクトの意図しない変更を防止\u003c/li\u003e\n\u003cli\u003eメモリ使用量の削減\u003c/li\u003e\n\u003cli\u003e同一オブジェクトの再利用によるパフォーマンス向上\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003e使用すべき場面：\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e定数の定義\u003c/li\u003e\n\u003cli\u003e設定値やエラーメッセージ\u003c/li\u003e\n\u003cli\u003e固定的なデータ構造\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003e注意点：\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e深いfreezeは自動的に行われない\u003c/li\u003e\n\u003cli\u003e動的な値には適用しない\u003c/li\u003e\n\u003cli\u003efreezeされたオブジェクトは変更不可能\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003e.freeze\u003c/code\u003eを適切に使用することで、より安全で効率的なRubyコードを書くことができます。定数を定義する際は、ぜひ\u003ccode\u003e.freeze\u003c/code\u003eの使用を検討してみてください。\u003c/p\u003e\n\u003ch2 id=\"参考リンク\"\u003e参考リンク\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://docs.ruby-lang.org/ja/latest/method/Object/i/freeze.html\"\u003eRuby公式ドキュメント - Object#freeze\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://docs.rubocop.org/rubocop/cops_style.html#stylemutableconstant\"\u003eRuboCop Style/MutableConstant\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://docs.ruby-lang.org/ja/latest/method/Object/i/frozen=3f.html\"\u003eRuby公式ドキュメント - Object#frozen?\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto py-10 px-4\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold mb-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-green-600\",\"children\":[\"#\",\"$undefined\"]}],\" \",\"Ruby の .freeze メソッドを理解する：オブジェクトの不変性とメモリ効率\"]}],[\"$\",\"ul\",null,{\"className\":\"list-none border-b border-gray-600 pb-4 mb-6\",\"children\":[[\"$\",\"li\",null,{\"className\":\"text-gray-500 text-sm\",\"children\":[\"作成日時: \",\"2025-09-05 13:22\"]}],[\"$\",\"li\",null,{\"className\":\"text-gray-500 text-sm\",\"children\":[\"更新日時: \",\"2025-09-05 13:22\"]}],[\"$\",\"li\",null,{\"className\":\"flex flex-wrap gap-2 mt-2\",\"children\":[[\"$\",\"span\",\"0\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Ruby\"}],[\"$\",\"span\",\"1\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Rails\"}],[\"$\",\"span\",\"2\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"プログラミング\"}],[\"$\",\"span\",\"3\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"メモリ管理\"}],[\"$\",\"span\",\"4\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"定数\"}]]}]]}],[\"$\",\"nav\",null,{\"className\":\"mb-6 pb-4 border-b border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"article\",null,{\"className\":\"prose dark:prose-invert\",\"dangerouslySetInnerHTML\":{\"__html\":\"$13\"}}],[\"$\",\"$L14\",null,{}],[\"$\",\"nav\",null,{\"className\":\"mt-8 pt-4 border-t border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"$L15\",null,{}]]}]\n"])</script><script>self.__next_f.push([1,"d:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n8:null\n"])</script><script>self.__next_f.push([1,"11:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\nb:{\"metadata\":\"$11:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

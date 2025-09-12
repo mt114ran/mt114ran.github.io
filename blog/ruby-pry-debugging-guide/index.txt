@@ -1,0 +1,584 @@
+1:"$Sreact.fragment"
+2:I[87555,[],""]
+3:I[31295,[],""]
+5:I[59665,[],"MetadataBoundary"]
+7:I[59665,[],"OutletBoundary"]
+a:I[74911,[],"AsyncMetadataOutlet"]
+c:I[59665,[],"ViewportBoundary"]
+e:I[26614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/19bdf9af4d1ae4d4.css","style"]
+0:{"P":null,"b":"KZrMisSdXyu7FDjuS9HOy","p":"","c":["","blog","ruby-pry-debugging-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","ruby-pry-debugging-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","ruby-pry-debugging-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","QNiFFWZeo6Ce2wKQ7ZR2x",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[74911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],""]
+14:I[31203,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+15:I[4197,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+13:T46a8,<h1 id="ruby-pry完全ガイドデバッグからreplまで開発効率を劇的に向上させる使い方">Ruby Pry完全ガイド！デバッグからREPLまで開発効率を劇的に向上させる使い方</h1>
+<p>Ruby開発において、<strong>Pry</strong>は標準のirbを大幅に拡張した強力なREPL（Read-Eval-Print Loop）ツールです。シンタックスハイライト、高度なデバッグ機能、ソースコードの閲覧など、開発効率を飛躍的に向上させる機能が満載です。この記事では、Pryの基本から応用まで、実用的な使い方を詳しく解説します。</p>
+<h2 id="pryとは">Pryとは</h2>
+<p><strong>Pry</strong>は、Rubyの標準REPLである<code>irb</code>を置き換える、より高機能な対話型Ruby実行環境です。2010年にJohn Mairによって開発され、現在では多くのRuby開発者に愛用されています。</p>
+<h3 id="irbとpryの違い">irbとPryの違い</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>機能</th><th>irb</th><th>Pry</th></tr></thead><tbody><tr><td>シンタックスハイライト</td><td>✗</td><td>✓</td></tr><tr><td>ソースコード表示</td><td>✗</td><td>✓</td></tr><tr><td>高度なデバッグ</td><td>✗</td><td>✓</td></tr><tr><td>履歴管理</td><td>基本的</td><td>高度</td></tr><tr><td>プラグインシステム</td><td>✗</td><td>✓</td></tr><tr><td>オブジェクトイントロスペクション</td><td>基本的</td><td>高度</td></tr></tbody></table>
+<h2 id="インストールと基本設定">インストールと基本設定</h2>
+<h3 id="インストール方法">インストール方法</h3>
+<p><strong>Gemfileに追加（Rails等）:</strong></p>
+<pre><code class="language-ruby"># Gemfile
+group :development, :test do
+  gem 'pry'
+  gem 'pry-rails'      # Rails統合
+  gem 'pry-byebug'     # デバッガ統合
+  gem 'pry-doc'        # ドキュメント表示
+end
+</code></pre>
+<p><strong>単体インストール:</strong></p>
+<pre><code class="language-bash">gem install pry pry-byebug pry-doc
+</code></pre>
+<h3 id="基本的な設定">基本的な設定</h3>
+<p><strong>~/.pryrcファイルの作成:</strong></p>
+<pre><code class="language-ruby"># ~/.pryrc
+Pry.config.editor = 'code'  # Visual Studio Code
+# Pry.config.editor = 'vim'  # Vim
+
+# プロンプトのカスタマイズ
+Pry.config.prompt = Pry::Prompt.new(
+  'custom',
+  'カスタムプロンプト',
+  [
+    proc { |context, nest_level, pry_instance| "[#{context}]> " },
+    proc { |context, nest_level, pry_instance| "[#{context}]* " }
+  ]
+)
+
+# エイリアスの設定
+Pry.commands.alias_command 'c', 'continue'
+Pry.commands.alias_command 's', 'step'
+Pry.commands.alias_command 'n', 'next'
+</code></pre>
+<h2 id="基本的な使い方">基本的な使い方</h2>
+<h3 id="1-replとしての基本操作">1. REPLとしての基本操作</h3>
+<pre><code class="language-bash"># Pryの起動
+pry
+
+# または、スクリプト内で
+binding.pry
+</code></pre>
+<pre><code class="language-ruby"># 基本的な計算とオブジェクト操作
+[1] pry(main)> 2 + 3
+=> 5
+
+[2] pry(main)> "Hello World".class
+=> String
+
+[3] pry(main)> [1, 2, 3].map(&#x26;:to_s)
+=> ["1", "2", "3"]
+</code></pre>
+<h3 id="2-オブジェクトのイントロスペクション">2. オブジェクトのイントロスペクション</h3>
+<pre><code class="language-ruby"># オブジェクトの詳細情報を表示
+[1] pry(main)> ls String
+String.methods:
+  try_convert
+String#methods:
+  ascii_only?  bytes       each_line    inspect      reverse!    
+  bytesize     capitalize  empty?       length       rstrip      
+  # ... (省略)
+
+# メソッドのソースコードを表示
+[2] pry(main)> show-source String#reverse
+
+From: string.c (C Method):
+Owner: String
+Visibility: public
+Number of lines: 1
+
+Returns a new string with the characters from str in reverse order.
+
+   "stressed".reverse   #=> "desserts"
+
+# メソッドのドキュメントを表示
+[3] pry(main)> show-doc String#reverse
+</code></pre>
+<h3 id="3-クラスモジュール内への移動">3. クラス・モジュール内への移動</h3>
+<pre><code class="language-ruby"># クラス内に「cd」で移動
+[1] pry(main)> cd String
+[2] pry(String):1> ls
+String.methods: try_convert
+String#methods: ascii_only? bytes capitalize ...
+
+# 戻る
+[3] pry(String):1> cd ..
+[4] pry(main)> 
+</code></pre>
+<h2 id="デバッグ機能">デバッグ機能</h2>
+<h3 id="1-bindingpryを使ったブレークポイント">1. binding.pryを使ったブレークポイント</h3>
+<p><strong>基本的な使い方:</strong></p>
+<pre><code class="language-ruby"># debug_example.rb
+class Calculator
+  def add(a, b)
+    binding.pry  # ← ここで実行が止まる
+    result = a + b
+    binding.pry  # ← 結果を確認したい場合
+    result
+  end
+end
+
+calc = Calculator.new
+puts calc.add(5, 3)
+</code></pre>
+<p><strong>実行結果:</strong></p>
+<pre><code class="language-bash">$ ruby debug_example.rb
+
+From: debug_example.rb @ line 3 Calculator#add:
+
+    2: def add(a, b)
+ => 3:   binding.pry
+    4:   result = a + b
+    5:   binding.pry
+    6:   result
+
+[1] pry(#&#x3C;Calculator>)> a
+=> 5
+[2] pry(#&#x3C;Calculator>)> b  
+=> 3
+[3] pry(#&#x3C;Calculator>)> continue
+
+From: debug_example.rb @ line 5 Calculator#add:
+
+    2: def add(a, b)
+    3:   binding.pry
+    4:   result = a + b
+ => 5:   binding.pry
+    6:   result
+
+[4] pry(#&#x3C;Calculator>)> result
+=> 8
+[5] pry(#&#x3C;Calculator>)> continue
+8
+</code></pre>
+<h3 id="2-pry-byebugを使った高度なデバッグ">2. pry-byebugを使った高度なデバッグ</h3>
+<pre><code class="language-ruby"># advanced_debug.rb
+require 'pry-byebug'
+
+class UserService
+  def initialize(users)
+    @users = users
+  end
+
+  def find_adult_users
+    binding.pry
+    adult_users = []
+    @users.each do |user|
+      if user[:age] >= 18
+        adult_users &#x3C;&#x3C; user
+      end
+    end
+    adult_users
+  end
+end
+
+users = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 17 },
+  { name: "Charlie", age: 30 }
+]
+
+service = UserService.new(users)
+result = service.find_adult_users
+puts result
+</code></pre>
+<p><strong>デバッグセッションの例:</strong></p>
+<pre><code class="language-bash">$ ruby advanced_debug.rb
+
+From: advanced_debug.rb @ line 8 UserService#find_adult_users:
+
+     7: def find_adult_users
+  => 8:   binding.pry
+     9:   adult_users = []
+    10:   @users.each do |user|
+    11:     if user[:age] >= 18
+    12:       adult_users &#x3C;&#x3C; user
+    13:     end
+    14:   end
+
+[1] pry(#&#x3C;UserService>)> next  # 次の行に進む
+
+From: advanced_debug.rb @ line 9 UserService#find_adult_users:
+
+     7: def find_adult_users
+     8:   binding.pry
+  => 9:   adult_users = []
+    10:   @users.each do |user|
+
+[2] pry(#&#x3C;UserService>)> step  # メソッド内に入る
+
+From: advanced_debug.rb @ line 10 UserService#find_adult_users:
+
+     8:   binding.pry
+     9:   adult_users = []
+  => 10:   @users.each do |user|
+    11:     if user[:age] >= 18
+
+[3] pry(#&#x3C;UserService>)> @users  # インスタンス変数を確認
+=> [{:name=>"Alice", :age=>25}, {:name=>"Bob", :age=>17}, {:name=>"Charlie", :age=>30}]
+</code></pre>
+<h3 id="3-条件付きブレークポイント">3. 条件付きブレークポイント</h3>
+<pre><code class="language-ruby">class DataProcessor
+  def process_items(items)
+    items.each_with_index do |item, index|
+      # 特定の条件でのみ止まる
+      binding.pry if item[:status] == 'error'
+      
+      # または、特定のインデックスで止まる  
+      binding.pry if index == 10
+      
+      process_item(item)
+    end
+  end
+
+  private
+
+  def process_item(item)
+    # アイテムの処理
+    puts "Processing: #{item[:name]}"
+  end
+end
+</code></pre>
+<h2 id="rails環境での活用">Rails環境での活用</h2>
+<h3 id="1-pry-railsの利用">1. pry-railsの利用</h3>
+<pre><code class="language-ruby"># Gemfile
+gem 'pry-rails', group: [:development, :test]
+</code></pre>
+<p><strong>rails consoleでPryを使用:</strong></p>
+<pre><code class="language-bash">$ rails console
+Loading development environment (Rails 7.0.0)
+[1] pry(main)> User.first
+  User Load (0.3ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+=> #&#x3C;User id: 1, name: "John", email: "john@example.com"...>
+
+[2] pry(main)> cd User
+[3] pry(User):1> ls
+User.methods:
+  all  create  find  find_by  where...
+User#methods:  
+  email  name  save  update...
+</code></pre>
+<h3 id="2-コントローラーでのデバッグ">2. コントローラーでのデバッグ</h3>
+<pre><code class="language-ruby">class UsersController &#x3C; ApplicationController
+  def show
+    @user = User.find(params[:id])
+    binding.pry  # リクエスト時にここで止まる
+    render :show
+  end
+
+  def create
+    @user = User.new(user_params)
+    
+    if @user.save
+      redirect_to @user
+    else
+      binding.pry  # バリデーションエラー時の状態を確認
+      render :new
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end
+end
+</code></pre>
+<h3 id="3-モデルでのデバッグ">3. モデルでのデバッグ</h3>
+<pre><code class="language-ruby">class User &#x3C; ApplicationRecord
+  before_save :normalize_email
+  
+  validates :email, presence: true, uniqueness: true
+
+  private
+
+  def normalize_email
+    binding.pry  # メールの正規化処理をデバッグ
+    self.email = email.downcase.strip if email.present?
+  end
+end
+</code></pre>
+<h2 id="高度な機能">高度な機能</h2>
+<h3 id="1-ヒストリー機能">1. ヒストリー機能</h3>
+<pre><code class="language-ruby"># ヒストリーの確認
+[1] pry(main)> hist
+1: 2 + 3
+2: "Hello".upcase  
+3: [1,2,3].sum
+
+# 特定の履歴を再実行
+[2] pry(main)> hist -r 2  # 2番目のコマンドを再実行
+=> "HELLO"
+
+# 履歴を保存
+[3] pry(main)> save-file /tmp/pry_session.rb 1..3
+</code></pre>
+<h3 id="2-シェルコマンドの実行">2. シェルコマンドの実行</h3>
+<pre><code class="language-ruby"># シェルコマンドを実行
+[1] pry(main)> .ls -la
+total 16
+drwxr-xr-x   4 user  staff   128  1 10 10:30 .
+drwxr-xr-x  20 user  staff   640  1 10 10:29 ..
+
+# 結果をRuby変数に取得
+[2] pry(main)> result = `ls -la`.split("\n")
+=> ["total 16", "drwxr-xr-x   4 user  staff   128  1 10 10:30 .", ...]
+</code></pre>
+<h3 id="3-ソースコード編集">3. ソースコード編集</h3>
+<pre><code class="language-ruby"># メソッドのソースを編集（エディタで開く）
+[1] pry(main)> edit User#full_name
+
+# ファイルを開く
+[2] pry(main)> edit app/models/user.rb
+
+# 新しいファイルを作成
+[3] pry(main)> edit -t temp  # 一時ファイルを作成
+</code></pre>
+<h3 id="4-カスタムコマンドの作成">4. カスタムコマンドの作成</h3>
+<pre><code class="language-ruby"># ~/.pryrc
+Pry::Commands.create_command "greet" do
+  description "挨拶をする"
+  
+  def options(opt)
+    opt.on :n, :name=, "名前を指定", argument: true
+  end
+  
+  def process
+    name = opts[:name] || "World"
+    output.puts "Hello, #{name}!"
+  end
+end
+
+# 使用例
+[1] pry(main)> greet
+Hello, World!
+[2] pry(main)> greet -n Alice
+Hello, Alice!
+</code></pre>
+<h2 id="テスト環境での活用">テスト環境での活用</h2>
+<h3 id="1-rspecとの組み合わせ">1. RSpecとの組み合わせ</h3>
+<pre><code class="language-ruby"># spec/models/user_spec.rb
+RSpec.describe User, type: :model do
+  describe '#full_name' do
+    it '姓名を結合して返すこと' do
+      user = User.new(first_name: "太郎", last_name: "田中")
+      binding.pry  # テスト実行時にここで止まる
+      expect(user.full_name).to eq "田中 太郎"
+    end
+  end
+end
+</code></pre>
+<p><strong>実行:</strong></p>
+<pre><code class="language-bash">$ bundle exec rspec spec/models/user_spec.rb
+
+From: spec/models/user_spec.rb @ line 5:
+
+     3: it '姓名を結合して返すこと' do
+     4:   user = User.new(first_name: "太郎", last_name: "田中")
+  => 5:   binding.pry
+     6:   expect(user.full_name).to eq "田中 太郎"
+
+[1] pry(#&#x3C;RSpec::ExampleGroups::User::FullName>)> user
+=> #&#x3C;User first_name: "太郎", last_name: "田中">
+[2] pry(#&#x3C;RSpec::ExampleGroups::User::FullName>)> user.full_name
+=> "田中 太郎"
+[3] pry(#&#x3C;RSpec::ExampleGroups::User::FullName>)> continue
+</code></pre>
+<h3 id="2-minitestとの組み合わせ">2. Minitestとの組み合わせ</h3>
+<pre><code class="language-ruby"># test/models/user_test.rb
+require 'test_helper'
+
+class UserTest &#x3C; ActiveSupport::TestCase
+  test "should create user with valid attributes" do
+    user = User.new(name: "Test User", email: "test@example.com")
+    binding.pry  # テスト中の状態を確認
+    assert user.save
+  end
+end
+</code></pre>
+<h2 id="パフォーマンス分析">パフォーマンス分析</h2>
+<h3 id="1-ベンチマーク測定">1. ベンチマーク測定</h3>
+<pre><code class="language-ruby">require 'benchmark'
+
+# Pry内でベンチマーク実行
+[1] pry(main)> benchmark do
+[1] pry(main)*   1000.times { "hello".upcase }
+[1] pry(main)* end
+       user     system      total        real
+   0.000123   0.000002   0.000125 (  0.000124)
+
+# メソッドの実行時間測定
+[2] pry(main)> time_taken = Benchmark.realtime { User.all.to_a }
+=> 0.023456789
+</code></pre>
+<h3 id="2-メモリ使用量の確認">2. メモリ使用量の確認</h3>
+<pre><code class="language-ruby"># メモリ使用量チェック用のヘルパー
+def memory_usage
+  `ps -o pid,rss -p #{Process.pid}`.strip.split("\n")[1].split[1].to_i
+end
+
+[1] pry(main)> before = memory_usage
+=> 45678
+
+[2] pry(main)> large_array = (1..1000000).to_a
+=> [1, 2, 3, ..., 1000000]
+
+[3] pry(main)> after = memory_usage  
+=> 67890
+
+[4] pry(main)> puts "Memory increased: #{after - before} KB"
+Memory increased: 22212 KB
+</code></pre>
+<h2 id="トラブルシューティング">トラブルシューティング</h2>
+<h3 id="1-よくある問題と解決法">1. よくある問題と解決法</h3>
+<p><strong>Pryが起動しない:</strong></p>
+<pre><code class="language-bash"># Gemの確認
+gem list | grep pry
+
+# 再インストール
+gem uninstall pry
+gem install pry
+</code></pre>
+<p><strong>Rails環境でPryが動かない:</strong></p>
+<pre><code class="language-ruby"># Gemfileに正しく記述されているか確認
+group :development, :test do
+  gem 'pry-rails'
+end
+
+# bundle installを実行
+bundle install
+
+# Spring使用時はリスタート
+bundle exec spring stop
+</code></pre>
+<h3 id="2-デバッグセッションからの脱出方法">2. デバッグセッションからの脱出方法</h3>
+<pre><code class="language-ruby"># 現在のPryセッションから抜ける
+[1] pry(main)> exit
+
+# 全てのPryセッションから抜ける（例外を発生）
+[2] pry(main)> exit-all
+
+# プログラムの実行を継続
+[3] pry(main)> continue
+
+# 一つ上のスコープに戻る
+[4] pry(main)> cd ..
+</code></pre>
+<h2 id="便利なtipsとトリック">便利なTipsとトリック</h2>
+<h3 id="1-よく使うエイリアス">1. よく使うエイリアス</h3>
+<pre><code class="language-ruby"># ~/.pryrc
+Pry.commands.alias_command 'c', 'continue'
+Pry.commands.alias_command 'n', 'next' 
+Pry.commands.alias_command 's', 'step'
+Pry.commands.alias_command 'ss', 'show-source'
+Pry.commands.alias_command 'sd', 'show-doc'
+</code></pre>
+<h3 id="2-カラーテーマのカスタマイズ">2. カラーテーマのカスタマイズ</h3>
+<pre><code class="language-ruby"># ~/.pryrc
+Pry.config.color = true
+Pry.config.theme = "monokai"
+
+# カスタムテーマ
+Pry.config.theme = {
+  "keyword" => [:blue],
+  "method" => [:yellow], 
+  "string" => [:green],
+  "symbol" => [:red]
+}
+</code></pre>
+<h3 id="3-プロジェクト固有の設定">3. プロジェクト固有の設定</h3>
+<pre><code class="language-ruby"># プロジェクトルートに .pryrc
+if defined?(Rails)
+  # Rails固有のヘルパーメソッド
+  def u(id = nil)
+    if id
+      User.find(id)
+    else  
+      User.first
+    end
+  end
+  
+  def reload!
+    Rails.application.reloader.reload!
+  end
+end
+</code></pre>
+<h2 id="まとめ">まとめ</h2>
+<p>Pryは単なるデバッグツールではなく、Ruby開発の生産性を大幅に向上させる多機能なREPL環境です。重要なポイント：</p>
+<h3 id="基本機能">基本機能</h3>
+<ul>
+<li><strong>シンタックスハイライト</strong> - コードが見やすく、入力ミスを減らす</li>
+<li><strong>オブジェクトイントロスペクション</strong> - <code>ls</code>, <code>show-source</code>でコードを深く理解</li>
+<li><strong>高度なヒストリー</strong> - 過去のセッションを効果的に活用</li>
+</ul>
+<h3 id="デバッグ機能-1">デバッグ機能</h3>
+<ul>
+<li><strong>binding.pry</strong> - 任意の箇所で実行を停止してデバッグ</li>
+<li><strong>ステップ実行</strong> - next, step, continueで細かい制御</li>
+<li><strong>条件付きブレークポイント</strong> - 効率的な問題の特定</li>
+</ul>
+<h3 id="開発環境統合">開発環境統合</h3>
+<ul>
+<li><strong>Rails統合</strong> - pry-railsでRailsプロジェクトを快適にデバッグ</li>
+<li><strong>テスト統合</strong> - RSpec, Minitestでのテスト駆動開発をサポート</li>
+<li><strong>エディタ連携</strong> - ソースコード編集の効率化</li>
+</ul>
+<p>Pryを日常的に使うことで、バグの発見が早くなり、コードの理解が深まり、結果として開発速度と品質が向上します。まずは<code>binding.pry</code>から始めて、徐々に高度な機能を習得していきましょう。</p>
+<h2 id="参考リンク">参考リンク</h2>
+<ul>
+<li><a href="https://github.com/pry/pry">Pry GitHub Repository</a></li>
+<li><a href="https://github.com/deivid-rodriguez/pry-byebug">pry-byebug GitHub</a></li>
+<li><a href="https://github.com/pry/pry-rails">pry-rails GitHub</a></li>
+<li><a href="https://github.com/pry/pry/wiki">Pry Wiki</a></li>
+</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",49]}]," ","Ruby Pry完全ガイド！デバッグからREPLまで開発効率を劇的に向上させる使い方"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-09-10 20:27"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日時: ","2025-09-10 20:27"]}],["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Ruby"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Pry"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Debugging"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"REPL"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Development"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L15",null,{}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}

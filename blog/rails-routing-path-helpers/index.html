@@ -1,0 +1,342 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/19bdf9af4d1ae4d4.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-aa7deb192a774533.js"/><script src="/_next/static/chunks/4bd1b696-bc089769d60af88b.js" async=""></script><script src="/_next/static/chunks/1684-b369840b16e4c44b.js" async=""></script><script src="/_next/static/chunks/main-app-2ed07751e45c2a2f.js" async=""></script><script src="/_next/static/chunks/6874-6c1ddde525f3893c.js" async=""></script><script src="/_next/static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><div class="max-w-2xl mx-auto py-10 px-4"><h1 class="text-3xl font-bold mb-2"><span class="text-green-600">#</span> <!-- -->Rails routingとPath Helperの仕組みを理解する</h1><ul class="list-none border-b border-gray-600 pb-4 mb-6"><li class="text-gray-500 text-sm">作成日時: <!-- -->2025-09-10 00:32</li><li class="flex flex-wrap gap-2 mt-2"><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Rails routing</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Path Helper</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">RESTful API</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Web Framework</span></li></ul><nav class="mb-6 pb-4 border-b border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav><article class="prose dark:prose-invert"><h1 id="rails-routingとpath-helperの仕組みを理解する">Rails routingとPath Helperの仕組みを理解する</h1>
+<p>Rails開発において、ルーティング（routing）は非常に重要な仕組みです。特にPath Helperがどのように生成されるかを理解することで、より効率的なRails開発ができるようになります。今回は、Railsのルーティングシステムとpath helper生成の仕組みについて詳しく解説します。</p>
+<h2 id="ルーティングとは何か">ルーティングとは何か</h2>
+<p>ルーティングとは、HTTPリクエストのURL（パス）とコントローラーのアクションを紐づける仕組みのことです。ユーザーがブラウザでURLにアクセスした際に、どのコントローラーのどのメソッドを実行するかを決定します。</p>
+<h3 id="基本的なルーティングの例">基本的なルーティングの例</h3>
+<pre><code class="language-ruby"># config/routes.rb
+Rails.application.routes.draw do
+  get '/articles', to: 'articles#index'
+  post '/articles', to: 'articles#create'
+  put '/articles/:id', to: 'articles#update'
+  delete '/articles/:id', to: 'articles#destroy'
+end
+</code></pre>
+<p>この設定により、以下のような対応関係が作られます：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>HTTPメソッド</th><th>URL</th><th>コントローラー#アクション</th></tr></thead><tbody><tr><td>GET</td><td>/articles</td><td>ArticlesController#index</td></tr><tr><td>POST</td><td>/articles</td><td>ArticlesController#create</td></tr><tr><td>PUT</td><td>/articles/1</td><td>ArticlesController#update</td></tr><tr><td>DELETE</td><td>/articles/1</td><td>ArticlesController#destroy</td></tr></tbody></table>
+<h2 id="resourcefulなルーティング">Resourcefulなルーティング</h2>
+<p>Railsでは、RESTful APIの設計思想に基づいた「Resourcefulなルーティング」が推奨されています。</p>
+<pre><code class="language-ruby"># config/routes.rb
+Rails.application.routes.draw do
+  resources :articles
+end
+</code></pre>
+<p>この1行だけで、以下の7つのルートが自動生成されます：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>HTTPメソッド</th><th>URL</th><th>アクション</th><th>目的</th></tr></thead><tbody><tr><td>GET</td><td>/articles</td><td>index</td><td>一覧表示</td></tr><tr><td>GET</td><td>/articles/new</td><td>new</td><td>新規作成フォーム</td></tr><tr><td>POST</td><td>/articles</td><td>create</td><td>新規作成</td></tr><tr><td>GET</td><td>/articles/:id</td><td>show</td><td>詳細表示</td></tr><tr><td>GET</td><td>/articles/:id/edit</td><td>edit</td><td>編集フォーム</td></tr><tr><td>PUT/PATCH</td><td>/articles/:id</td><td>update</td><td>更新</td></tr><tr><td>DELETE</td><td>/articles/:id</td><td>destroy</td><td>削除</td></tr></tbody></table>
+<h2 id="path-helperの自動生成">Path Helperの自動生成</h2>
+<p>Railsの大きな特徴の一つが、ルーティング設定から<strong>Path Helper</strong>が自動生成されることです。</p>
+<h3 id="path-helperとは">Path Helperとは</h3>
+<p>Path Helperは、URLを生成するためのRubyメソッドです。ハードコーディングでURLを書く代わりに、メソッドを呼び出すことでURLを生成できます。</p>
+<pre><code class="language-ruby"># ハードコーディング（推奨されない）
+redirect_to '/articles'
+
+# Path Helperを使用（推奨）
+redirect_to articles_path
+</code></pre>
+<h3 id="resources使用時の自動生成">resources使用時の自動生成</h3>
+<pre><code class="language-ruby">resources :articles
+</code></pre>
+<p>この設定により、以下のPath Helperが自動生成されます：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Path Helper</th><th>生成されるURL</th><th>用途</th></tr></thead><tbody><tr><td><code>articles_path</code></td><td>/articles</td><td>一覧ページ</td></tr><tr><td><code>new_article_path</code></td><td>/articles/new</td><td>新規作成フォーム</td></tr><tr><td><code>article_path(1)</code></td><td>/articles/1</td><td>詳細ページ</td></tr><tr><td><code>edit_article_path(1)</code></td><td>/articles/1/edit</td><td>編集フォーム</td></tr></tbody></table>
+<h3 id="url-helperも同時生成">URL Helperも同時生成</h3>
+<p>Path Helperと同時に、完全なURL（ドメイン付き）を生成するURL Helperも作られます：</p>
+<pre><code class="language-ruby">articles_url         # http://example.com/articles
+article_url(1)       # http://example.com/articles/1
+</code></pre>
+<h2 id="カスタムルーティングでのpath-helper生成">カスタムルーティングでのPath Helper生成</h2>
+<p>resourcesを使わない場合でも、Path Helperは生成されます。</p>
+<h3 id="基本的なカスタムルーティング">基本的なカスタムルーティング</h3>
+<pre><code class="language-ruby">get '/dashboard', to: 'home#dashboard'
+</code></pre>
+<p>この場合、<code>dashboard_path</code>というPath Helperが生成されます。</p>
+<h3 id="名前付きルーティング">名前付きルーティング</h3>
+<pre><code class="language-ruby">get '/admin/settings', to: 'admin#settings', as: 'admin_config'
+</code></pre>
+<p><code>as:</code>オプションを使うことで、Path Helperの名前を明示的に指定できます。この例では<code>admin_config_path</code>が生成されます。</p>
+<h2 id="collectionとmemberを使ったカスタムアクション">collectionとmemberを使ったカスタムアクション</h2>
+<p>resourcesを使いつつ、標準の7つ以外のアクションを追加する方法があります。</p>
+<h3 id="collectionの使用例">collectionの使用例</h3>
+<pre><code class="language-ruby">resources :users do
+  collection do
+    get :search
+    post :bulk_update
+  end
+end
+</code></pre>
+<p>これにより以下が生成されます：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Path Helper</th><th>URL</th><th>アクション</th></tr></thead><tbody><tr><td><code>search_users_path</code></td><td>/users/search</td><td>UsersController#search</td></tr><tr><td><code>bulk_update_users_path</code></td><td>/users/bulk_update</td><td>UsersController#bulk_update</td></tr></tbody></table>
+<h3 id="memberの使用例">memberの使用例</h3>
+<pre><code class="language-ruby">resources :users do
+  member do
+    put :activate
+    delete :deactivate
+  end
+end
+</code></pre>
+<p>これにより以下が生成されます：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Path Helper</th><th>URL</th><th>アクション</th></tr></thead><tbody><tr><td><code>activate_user_path(1)</code></td><td>/users/1/activate</td><td>UsersController#activate</td></tr><tr><td><code>deactivate_user_path(1)</code></td><td>/users/1/deactivate</td><td>UsersController#deactivate</td></tr></tbody></table>
+<h2 id="実際の開発での活用例">実際の開発での活用例</h2>
+<h3 id="viewでの使用">Viewでの使用</h3>
+<pre><code class="language-erb">&#x3C;!-- 記事一覧へのリンク -->
+&#x3C;%= link_to '記事一覧', articles_path %>
+
+&#x3C;!-- 記事詳細へのリンク -->
+&#x3C;%= link_to '詳細を見る', article_path(@article) %>
+
+&#x3C;!-- 編集フォーム -->
+&#x3C;%= form_with model: @article, url: article_path(@article), method: :patch do |f| %>
+  &#x3C;!-- フォーム内容 -->
+&#x3C;% end %>
+</code></pre>
+<h3 id="controllerでの使用">Controllerでの使用</h3>
+<pre><code class="language-ruby">class ArticlesController &#x3C; ApplicationController
+  def create
+    @article = Article.new(article_params)
+    
+    if @article.save
+      redirect_to article_path(@article), notice: '記事が作成されました'
+    else
+      render :new
+    end
+  end
+  
+  def update
+    if @article.update(article_params)
+      redirect_to articles_path, notice: '記事が更新されました'
+    else
+      render :edit
+    end
+  end
+end
+</code></pre>
+<h2 id="ルーティングの確認方法">ルーティングの確認方法</h2>
+<p>開発中にルーティングを確認したい場合は、以下のコマンドが便利です：</p>
+<pre><code class="language-bash"># 全てのルートを表示
+rails routes
+
+# 特定のコントローラーのルートのみ表示
+rails routes -c articles
+
+# 特定のPath Helperを検索
+rails routes -g article
+</code></pre>
+<p>出力例：</p>
+<pre><code>Prefix Verb   URI Pattern               Controller#Action
+articles GET    /articles(.:format)       articles#index
+         POST   /articles(.:format)       articles#create
+new_article GET    /articles/new(.:format)   articles#new
+edit_article GET    /articles/:id/edit(.:format) articles#edit
+article GET    /articles/:id(.:format)   articles#show
+        PATCH  /articles/:id(.:format)   articles#update
+        PUT    /articles/:id(.:format)   articles#update
+        DELETE /articles/:id(.:format)   articles#destroy
+</code></pre>
+<h2 id="path-helperのメリット">Path Helperのメリット</h2>
+<h3 id="1-保守性の向上">1. 保守性の向上</h3>
+<p>URLをハードコーディングしていると、ルーティングを変更した際に全てのViewやControllerを修正する必要があります。Path Helperを使っていれば、ルーティング設定を変更するだけで全体に反映されます。</p>
+<h3 id="2-タイポの防止">2. タイポの防止</h3>
+<p>Path Helperを使うことで、URLのタイポを防げます。存在しないPath Helperを使った場合、Railsがエラーを出してくれます。</p>
+<h3 id="3-可読性の向上">3. 可読性の向上</h3>
+<pre><code class="language-ruby"># URLの意図が分かりにくい
+redirect_to '/users/123/settings'
+
+# 意図が明確
+redirect_to user_settings_path(@user)
+</code></pre>
+<h2 id="よくある落とし穴と解決方法">よくある落とし穴と解決方法</h2>
+<h3 id="1-単数形と複数形の混同">1. 単数形と複数形の混同</h3>
+<pre><code class="language-ruby"># 間違い
+resources :user  # userは単数形
+
+# 正しい
+resources :users  # usersは複数形
+</code></pre>
+<p>Railsでは、リソース名は複数形を使用します。ただし、Path Helperは文脈により単数形・複数形が使い分けられます：</p>
+<pre><code class="language-ruby">users_path        # 複数形（一覧）
+user_path(@user)  # 単数形（個別）
+</code></pre>
+<h3 id="2-ネストしたリソースでのpath-helper">2. ネストしたリソースでのPath Helper</h3>
+<pre><code class="language-ruby">resources :users do
+  resources :posts
+end
+</code></pre>
+<p>この場合のPath Helperは：</p>
+<pre><code class="language-ruby">user_posts_path(@user)        # /users/1/posts
+user_post_path(@user, @post)  # /users/1/posts/1
+</code></pre>
+<h3 id="3-namespaceとpath-helper">3. namespaceとPath Helper</h3>
+<pre><code class="language-ruby">namespace :admin do
+  resources :users
+end
+</code></pre>
+<p>namespaceを使った場合：</p>
+<pre><code class="language-ruby">admin_users_path      # /admin/users
+admin_user_path(@user) # /admin/users/1
+</code></pre>
+<h2 id="まとめ">まとめ</h2>
+<p>RailsのルーティングシステムとPath Helperの仕組みを理解することで、以下のメリットが得られます：</p>
+<ol>
+<li><strong>効率的な開発</strong>：ルーティング設定から自動でPath Helperが生成される</li>
+<li><strong>保守性の向上</strong>：URLの変更が容易で、影響範囲を最小限に抑えられる</li>
+<li><strong>可読性の向上</strong>：コードの意図が明確になる</li>
+<li><strong>エラーの予防</strong>：タイポやルーティングの不整合を防げる</li>
+</ol>
+<p>特に大規模なWebアプリケーション開発では、適切なルーティング設計とPath Helperの活用が品質向上に大きく貢献します。</p>
+<p>Rails開発を始めたばかりの方は、まずは基本的な<code>resources</code>の使い方とPath Helperの生成ルールを覚えることから始めてみてください。慣れてきたら、<code>collection</code>、<code>member</code>、<code>namespace</code>などの応用的な機能を使って、より柔軟なルーティング設計にチャレンジしてみましょう。</p>
+<h2 id="参考リンク">参考リンク</h2>
+<ul>
+<li><a href="https://guides.rubyonrails.org/routing.html">Rails Guides - Routing</a></li>
+<li><a href="https://api.rubyonrails.org/">Rails API Documentation - ActionDispatch::Routing</a></li>
+</ul></article><nav class="mt-8 pt-4 border-t border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-aa7deb192a774533.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[87555,[],\"\"]\n3:I[31295,[],\"\"]\n5:I[59665,[],\"MetadataBoundary\"]\n7:I[59665,[],\"OutletBoundary\"]\na:I[74911,[],\"AsyncMetadataOutlet\"]\nc:I[59665,[],\"ViewportBoundary\"]\ne:I[26614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"KZrMisSdXyu7FDjuS9HOy\",\"p\":\"\",\"c\":[\"\",\"blog\",\"rails-routing-path-helpers\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"rails-routing-path-helpers\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"blog\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"rails-routing-path-helpers\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",[\"$\",\"$L5\",null,{\"children\":\"$L6\"}],null,[\"$\",\"$L7\",null,{\"children\":[\"$L8\",\"$L9\",[\"$\",\"$La\",null,{\"promise\":\"$@b\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"Yc62enIBJXBVFWqhKXymg\",{\"children\":[[\"$\",\"$Lc\",null,{\"children\":\"$Ld\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$e\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"f:\"$Sreact.suspense\"\n10:I[74911,[],\"AsyncMetadata\"]\n6:[\"$\",\"$f\",null,{\"fallback\":null,\"children\":[\"$\",\"$L10\",null,{\"promise\":\"$@11\"}]}]\n"])</script><script>self.__next_f.push([1,"9:null\n"])</script><script>self.__next_f.push([1,"12:I[6874,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"\"]\n14:I[31203,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n15:I[4197,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n13:T3165,"])</script><script>self.__next_f.push([1,"\u003ch1 id=\"rails-routingとpath-helperの仕組みを理解する\"\u003eRails routingとPath Helperの仕組みを理解する\u003c/h1\u003e\n\u003cp\u003eRails開発において、ルーティング（routing）は非常に重要な仕組みです。特にPath Helperがどのように生成されるかを理解することで、より効率的なRails開発ができるようになります。今回は、Railsのルーティングシステムとpath helper生成の仕組みについて詳しく解説します。\u003c/p\u003e\n\u003ch2 id=\"ルーティングとは何か\"\u003eルーティングとは何か\u003c/h2\u003e\n\u003cp\u003eルーティングとは、HTTPリクエストのURL（パス）とコントローラーのアクションを紐づける仕組みのことです。ユーザーがブラウザでURLにアクセスした際に、どのコントローラーのどのメソッドを実行するかを決定します。\u003c/p\u003e\n\u003ch3 id=\"基本的なルーティングの例\"\u003e基本的なルーティングの例\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# config/routes.rb\nRails.application.routes.draw do\n  get '/articles', to: 'articles#index'\n  post '/articles', to: 'articles#create'\n  put '/articles/:id', to: 'articles#update'\n  delete '/articles/:id', to: 'articles#destroy'\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eこの設定により、以下のような対応関係が作られます：\u003c/p\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003eHTTPメソッド\u003c/th\u003e\u003cth\u003eURL\u003c/th\u003e\u003cth\u003eコントローラー#アクション\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eGET\u003c/td\u003e\u003ctd\u003e/articles\u003c/td\u003e\u003ctd\u003eArticlesController#index\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003ePOST\u003c/td\u003e\u003ctd\u003e/articles\u003c/td\u003e\u003ctd\u003eArticlesController#create\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003ePUT\u003c/td\u003e\u003ctd\u003e/articles/1\u003c/td\u003e\u003ctd\u003eArticlesController#update\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eDELETE\u003c/td\u003e\u003ctd\u003e/articles/1\u003c/td\u003e\u003ctd\u003eArticlesController#destroy\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\n\u003ch2 id=\"resourcefulなルーティング\"\u003eResourcefulなルーティング\u003c/h2\u003e\n\u003cp\u003eRailsでは、RESTful APIの設計思想に基づいた「Resourcefulなルーティング」が推奨されています。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# config/routes.rb\nRails.application.routes.draw do\n  resources :articles\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eこの1行だけで、以下の7つのルートが自動生成されます：\u003c/p\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003eHTTPメソッド\u003c/th\u003e\u003cth\u003eURL\u003c/th\u003e\u003cth\u003eアクション\u003c/th\u003e\u003cth\u003e目的\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eGET\u003c/td\u003e\u003ctd\u003e/articles\u003c/td\u003e\u003ctd\u003eindex\u003c/td\u003e\u003ctd\u003e一覧表示\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eGET\u003c/td\u003e\u003ctd\u003e/articles/new\u003c/td\u003e\u003ctd\u003enew\u003c/td\u003e\u003ctd\u003e新規作成フォーム\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003ePOST\u003c/td\u003e\u003ctd\u003e/articles\u003c/td\u003e\u003ctd\u003ecreate\u003c/td\u003e\u003ctd\u003e新規作成\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eGET\u003c/td\u003e\u003ctd\u003e/articles/:id\u003c/td\u003e\u003ctd\u003eshow\u003c/td\u003e\u003ctd\u003e詳細表示\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eGET\u003c/td\u003e\u003ctd\u003e/articles/:id/edit\u003c/td\u003e\u003ctd\u003eedit\u003c/td\u003e\u003ctd\u003e編集フォーム\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003ePUT/PATCH\u003c/td\u003e\u003ctd\u003e/articles/:id\u003c/td\u003e\u003ctd\u003eupdate\u003c/td\u003e\u003ctd\u003e更新\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eDELETE\u003c/td\u003e\u003ctd\u003e/articles/:id\u003c/td\u003e\u003ctd\u003edestroy\u003c/td\u003e\u003ctd\u003e削除\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\n\u003ch2 id=\"path-helperの自動生成\"\u003ePath Helperの自動生成\u003c/h2\u003e\n\u003cp\u003eRailsの大きな特徴の一つが、ルーティング設定から\u003cstrong\u003ePath Helper\u003c/strong\u003eが自動生成されることです。\u003c/p\u003e\n\u003ch3 id=\"path-helperとは\"\u003ePath Helperとは\u003c/h3\u003e\n\u003cp\u003ePath Helperは、URLを生成するためのRubyメソッドです。ハードコーディングでURLを書く代わりに、メソッドを呼び出すことでURLを生成できます。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# ハードコーディング（推奨されない）\nredirect_to '/articles'\n\n# Path Helperを使用（推奨）\nredirect_to articles_path\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"resources使用時の自動生成\"\u003eresources使用時の自動生成\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003eresources :articles\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eこの設定により、以下のPath Helperが自動生成されます：\u003c/p\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003ePath Helper\u003c/th\u003e\u003cth\u003e生成されるURL\u003c/th\u003e\u003cth\u003e用途\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003earticles_path\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e/articles\u003c/td\u003e\u003ctd\u003e一覧ページ\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003enew_article_path\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e/articles/new\u003c/td\u003e\u003ctd\u003e新規作成フォーム\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003earticle_path(1)\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e/articles/1\u003c/td\u003e\u003ctd\u003e詳細ページ\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eedit_article_path(1)\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e/articles/1/edit\u003c/td\u003e\u003ctd\u003e編集フォーム\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\n\u003ch3 id=\"url-helperも同時生成\"\u003eURL Helperも同時生成\u003c/h3\u003e\n\u003cp\u003ePath Helperと同時に、完全なURL（ドメイン付き）を生成するURL Helperも作られます：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003earticles_url         # http://example.com/articles\narticle_url(1)       # http://example.com/articles/1\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"カスタムルーティングでのpath-helper生成\"\u003eカスタムルーティングでのPath Helper生成\u003c/h2\u003e\n\u003cp\u003eresourcesを使わない場合でも、Path Helperは生成されます。\u003c/p\u003e\n\u003ch3 id=\"基本的なカスタムルーティング\"\u003e基本的なカスタムルーティング\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003eget '/dashboard', to: 'home#dashboard'\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eこの場合、\u003ccode\u003edashboard_path\u003c/code\u003eというPath Helperが生成されます。\u003c/p\u003e\n\u003ch3 id=\"名前付きルーティング\"\u003e名前付きルーティング\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003eget '/admin/settings', to: 'admin#settings', as: 'admin_config'\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003ccode\u003eas:\u003c/code\u003eオプションを使うことで、Path Helperの名前を明示的に指定できます。この例では\u003ccode\u003eadmin_config_path\u003c/code\u003eが生成されます。\u003c/p\u003e\n\u003ch2 id=\"collectionとmemberを使ったカスタムアクション\"\u003ecollectionとmemberを使ったカスタムアクション\u003c/h2\u003e\n\u003cp\u003eresourcesを使いつつ、標準の7つ以外のアクションを追加する方法があります。\u003c/p\u003e\n\u003ch3 id=\"collectionの使用例\"\u003ecollectionの使用例\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003eresources :users do\n  collection do\n    get :search\n    post :bulk_update\n  end\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eこれにより以下が生成されます：\u003c/p\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003ePath Helper\u003c/th\u003e\u003cth\u003eURL\u003c/th\u003e\u003cth\u003eアクション\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003esearch_users_path\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e/users/search\u003c/td\u003e\u003ctd\u003eUsersController#search\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003ebulk_update_users_path\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e/users/bulk_update\u003c/td\u003e\u003ctd\u003eUsersController#bulk_update\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\n\u003ch3 id=\"memberの使用例\"\u003ememberの使用例\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003eresources :users do\n  member do\n    put :activate\n    delete :deactivate\n  end\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eこれにより以下が生成されます：\u003c/p\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003ePath Helper\u003c/th\u003e\u003cth\u003eURL\u003c/th\u003e\u003cth\u003eアクション\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eactivate_user_path(1)\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e/users/1/activate\u003c/td\u003e\u003ctd\u003eUsersController#activate\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003edeactivate_user_path(1)\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e/users/1/deactivate\u003c/td\u003e\u003ctd\u003eUsersController#deactivate\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\n\u003ch2 id=\"実際の開発での活用例\"\u003e実際の開発での活用例\u003c/h2\u003e\n\u003ch3 id=\"viewでの使用\"\u003eViewでの使用\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-erb\"\u003e\u0026#x3C;!-- 記事一覧へのリンク --\u003e\n\u0026#x3C;%= link_to '記事一覧', articles_path %\u003e\n\n\u0026#x3C;!-- 記事詳細へのリンク --\u003e\n\u0026#x3C;%= link_to '詳細を見る', article_path(@article) %\u003e\n\n\u0026#x3C;!-- 編集フォーム --\u003e\n\u0026#x3C;%= form_with model: @article, url: article_path(@article), method: :patch do |f| %\u003e\n  \u0026#x3C;!-- フォーム内容 --\u003e\n\u0026#x3C;% end %\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"controllerでの使用\"\u003eControllerでの使用\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003eclass ArticlesController \u0026#x3C; ApplicationController\n  def create\n    @article = Article.new(article_params)\n    \n    if @article.save\n      redirect_to article_path(@article), notice: '記事が作成されました'\n    else\n      render :new\n    end\n  end\n  \n  def update\n    if @article.update(article_params)\n      redirect_to articles_path, notice: '記事が更新されました'\n    else\n      render :edit\n    end\n  end\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"ルーティングの確認方法\"\u003eルーティングの確認方法\u003c/h2\u003e\n\u003cp\u003e開発中にルーティングを確認したい場合は、以下のコマンドが便利です：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 全てのルートを表示\nrails routes\n\n# 特定のコントローラーのルートのみ表示\nrails routes -c articles\n\n# 特定のPath Helperを検索\nrails routes -g article\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e出力例：\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ePrefix Verb   URI Pattern               Controller#Action\narticles GET    /articles(.:format)       articles#index\n         POST   /articles(.:format)       articles#create\nnew_article GET    /articles/new(.:format)   articles#new\nedit_article GET    /articles/:id/edit(.:format) articles#edit\narticle GET    /articles/:id(.:format)   articles#show\n        PATCH  /articles/:id(.:format)   articles#update\n        PUT    /articles/:id(.:format)   articles#update\n        DELETE /articles/:id(.:format)   articles#destroy\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"path-helperのメリット\"\u003ePath Helperのメリット\u003c/h2\u003e\n\u003ch3 id=\"1-保守性の向上\"\u003e1. 保守性の向上\u003c/h3\u003e\n\u003cp\u003eURLをハードコーディングしていると、ルーティングを変更した際に全てのViewやControllerを修正する必要があります。Path Helperを使っていれば、ルーティング設定を変更するだけで全体に反映されます。\u003c/p\u003e\n\u003ch3 id=\"2-タイポの防止\"\u003e2. タイポの防止\u003c/h3\u003e\n\u003cp\u003ePath Helperを使うことで、URLのタイポを防げます。存在しないPath Helperを使った場合、Railsがエラーを出してくれます。\u003c/p\u003e\n\u003ch3 id=\"3-可読性の向上\"\u003e3. 可読性の向上\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# URLの意図が分かりにくい\nredirect_to '/users/123/settings'\n\n# 意図が明確\nredirect_to user_settings_path(@user)\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"よくある落とし穴と解決方法\"\u003eよくある落とし穴と解決方法\u003c/h2\u003e\n\u003ch3 id=\"1-単数形と複数形の混同\"\u003e1. 単数形と複数形の混同\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# 間違い\nresources :user  # userは単数形\n\n# 正しい\nresources :users  # usersは複数形\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eRailsでは、リソース名は複数形を使用します。ただし、Path Helperは文脈により単数形・複数形が使い分けられます：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003eusers_path        # 複数形（一覧）\nuser_path(@user)  # 単数形（個別）\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-ネストしたリソースでのpath-helper\"\u003e2. ネストしたリソースでのPath Helper\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003eresources :users do\n  resources :posts\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eこの場合のPath Helperは：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003euser_posts_path(@user)        # /users/1/posts\nuser_post_path(@user, @post)  # /users/1/posts/1\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"3-namespaceとpath-helper\"\u003e3. namespaceとPath Helper\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003enamespace :admin do\n  resources :users\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003enamespaceを使った場合：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003eadmin_users_path      # /admin/users\nadmin_user_path(@user) # /admin/users/1\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"まとめ\"\u003eまとめ\u003c/h2\u003e\n\u003cp\u003eRailsのルーティングシステムとPath Helperの仕組みを理解することで、以下のメリットが得られます：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003e効率的な開発\u003c/strong\u003e：ルーティング設定から自動でPath Helperが生成される\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e保守性の向上\u003c/strong\u003e：URLの変更が容易で、影響範囲を最小限に抑えられる\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e可読性の向上\u003c/strong\u003e：コードの意図が明確になる\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eエラーの予防\u003c/strong\u003e：タイポやルーティングの不整合を防げる\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e特に大規模なWebアプリケーション開発では、適切なルーティング設計とPath Helperの活用が品質向上に大きく貢献します。\u003c/p\u003e\n\u003cp\u003eRails開発を始めたばかりの方は、まずは基本的な\u003ccode\u003eresources\u003c/code\u003eの使い方とPath Helperの生成ルールを覚えることから始めてみてください。慣れてきたら、\u003ccode\u003ecollection\u003c/code\u003e、\u003ccode\u003emember\u003c/code\u003e、\u003ccode\u003enamespace\u003c/code\u003eなどの応用的な機能を使って、より柔軟なルーティング設計にチャレンジしてみましょう。\u003c/p\u003e\n\u003ch2 id=\"参考リンク\"\u003e参考リンク\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://guides.rubyonrails.org/routing.html\"\u003eRails Guides - Routing\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://api.rubyonrails.org/\"\u003eRails API Documentation - ActionDispatch::Routing\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto py-10 px-4\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold mb-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-green-600\",\"children\":[\"#\",\"$undefined\"]}],\" \",\"Rails routingとPath Helperの仕組みを理解する\"]}],[\"$\",\"ul\",null,{\"className\":\"list-none border-b border-gray-600 pb-4 mb-6\",\"children\":[[\"$\",\"li\",null,{\"className\":\"text-gray-500 text-sm\",\"children\":[\"作成日時: \",\"2025-09-10 00:32\"]}],\"$undefined\",[\"$\",\"li\",null,{\"className\":\"flex flex-wrap gap-2 mt-2\",\"children\":[[\"$\",\"span\",\"0\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Rails routing\"}],[\"$\",\"span\",\"1\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Path Helper\"}],[\"$\",\"span\",\"2\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"RESTful API\"}],[\"$\",\"span\",\"3\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Web Framework\"}]]}]]}],[\"$\",\"nav\",null,{\"className\":\"mb-6 pb-4 border-b border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"article\",null,{\"className\":\"prose dark:prose-invert\",\"dangerouslySetInnerHTML\":{\"__html\":\"$13\"}}],[\"$\",\"$L14\",null,{}],[\"$\",\"nav\",null,{\"className\":\"mt-8 pt-4 border-t border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"$L15\",null,{}]]}]\n"])</script><script>self.__next_f.push([1,"d:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n8:null\n"])</script><script>self.__next_f.push([1,"11:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\nb:{\"metadata\":\"$11:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

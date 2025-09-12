@@ -1,0 +1,460 @@
+1:"$Sreact.fragment"
+2:I[87555,[],""]
+3:I[31295,[],""]
+5:I[59665,[],"MetadataBoundary"]
+7:I[59665,[],"OutletBoundary"]
+a:I[74911,[],"AsyncMetadataOutlet"]
+c:I[59665,[],"ViewportBoundary"]
+e:I[26614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/19bdf9af4d1ae4d4.css","style"]
+0:{"P":null,"b":"KZrMisSdXyu7FDjuS9HOy","p":"","c":["","blog","stimulus-mixins-pattern",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","stimulus-mixins-pattern","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","stimulus-mixins-pattern","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","areFkvuQOLB9bKi9SaMGp",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[74911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],""]
+14:I[31203,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+15:I[4197,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+13:T3fa9,<h1 id="stimulusjsでミックスインmixinパターンを活用してコードの再利用性を高める">Stimulus.jsでミックスイン（Mixin）パターンを活用してコードの再利用性を高める</h1>
+<p>Rails 7以降で標準となったStimulus.jsを使った開発において、複数のコントローラーで同じ機能を使いたい場面が頻繁に出てきます。そんな時に威力を発揮するのが「ミックスイン（Mixin）パターン」です。今回は、Stimulus.jsでミックスインを実装する方法と、実際のプロジェクトでの活用例について詳しく解説します。</p>
+<h2 id="ミックスインとは何か">ミックスインとは何か</h2>
+<p>ミックスイン（Mixin）とは、**複数のクラスで共通して使用したい機能を外部のモジュールとして切り出し、必要なクラスに「混ぜ込む（mix-in）」**設計パターンです。</p>
+<h3 id="従来のクラス継承との違い">従来のクラス継承との違い</h3>
+<pre><code class="language-javascript">// クラス継承の場合（制限が多い）
+class BaseController extends Controller {
+  commonMethod() { /* 共通処理 */ }
+}
+
+class UserController extends BaseController {
+  // BaseControllerの機能しか継承できない
+}
+
+// ミックスインの場合（柔軟性が高い）
+class UserController extends Controller {
+  connect() {
+    useCommonFeature(this)  // 必要な機能だけを取り込み
+    useAnotherFeature(this) // 複数のミックスインを組み合わせ可能
+  }
+}
+</code></pre>
+<p><strong>ミックスインのメリット：</strong></p>
+<ul>
+<li><strong>多重継承のような柔軟性</strong>：複数の機能を自由に組み合わせ</li>
+<li><strong>コードの再利用</strong>：同じ処理を複数のコントローラーで共有</li>
+<li><strong>保守性の向上</strong>：共通処理の修正が一箇所で済む</li>
+</ul>
+<h2 id="stimulusjsでのミックスイン実装パターン">Stimulus.jsでのミックスイン実装パターン</h2>
+<h3 id="基本的なミックスインの構造">基本的なミックスインの構造</h3>
+<pre><code class="language-javascript">// app/javascript/mixins/useModalControl.js
+export const useModalControl = (controller) => {
+  // 共通のプロパティ
+  const modalElement = document.querySelector('.modal')
+  
+  // 共通のメソッド
+  const showModal = () => {
+    modalElement.classList.remove('hidden')
+    document.body.style.overflow = 'hidden'
+  }
+  
+  const hideModal = () => {
+    modalElement.classList.add('hidden')
+    document.body.style.overflow = 'auto'
+  }
+  
+  // コントローラーにメソッドを追加
+  Object.assign(controller, {
+    showModal,
+    hideModal
+  })
+}
+</code></pre>
+<h3 id="コントローラーでミックスインを使用">コントローラーでミックスインを使用</h3>
+<pre><code class="language-javascript">// app/javascript/controllers/product_controller.js
+import { Controller } from "@hotwired/stimulus"
+import { useModalControl } from "../mixins/useModalControl"
+
+export default class extends Controller {
+  connect() {
+    useModalControl(this)  // ミックスインを適用
+  }
+  
+  handleProductClick(event) {
+    // ミックスインで追加されたメソッドを使用
+    this.showModal()
+  }
+}
+</code></pre>
+<h3 id="htmlでの使用">HTMLでの使用</h3>
+<pre><code class="language-html">&#x3C;div data-controller="product">
+  &#x3C;button data-action="product#handleProductClick">商品詳細を表示&#x3C;/button>
+&#x3C;/div>
+</code></pre>
+<h2 id="実際のプロジェクトでの活用例">実際のプロジェクトでの活用例</h2>
+<h3 id="sms認証機能のミックスイン">SMS認証機能のミックスイン</h3>
+<p>実際のプロジェクトでよくある「SMS認証」を例に、具体的なミックスインの実装を見てみましょう。</p>
+<pre><code class="language-javascript">// app/javascript/mixins/useSmsAuth.js
+import { signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth"
+
+export const useSmsAuth = (controller) => {
+  // reCAPTCHA設定
+  const recaptchaVerifier = new RecaptchaVerifier(controller.auth, 'sms-submit-button', {
+    size: 'invisible',
+  })
+  
+  // SMS送信処理
+  const sendSmsCode = async (event) => {
+    event.preventDefault()
+    
+    const phoneNumber = controller.phoneNumberInputTarget.value
+    const formattedNumber = formatPhoneNumber(phoneNumber)
+    
+    try {
+      // Firebase SMS認証
+      const confirmationResult = await signInWithPhoneNumber(
+        controller.auth, 
+        formattedNumber, 
+        recaptchaVerifier
+      )
+      
+      // 成功時の処理
+      window.confirmationResult = confirmationResult
+      showVerificationForm()
+      
+    } catch (error) {
+      handleSmsError(error)
+    }
+  }
+  
+  // SMS認証コード確認
+  const verifySmsCode = async (event) => {
+    event.preventDefault()
+    
+    const code = controller.verificationCodeInputTarget.value
+    
+    try {
+      const result = await window.confirmationResult.confirm(code)
+      handleAuthSuccess(result)
+    } catch (error) {
+      handleVerificationError(error)
+    }
+  }
+  
+  // UI制御用のヘルパー関数
+  const showVerificationForm = () => {
+    controller.phoneNumberFormTarget.classList.add('hidden')
+    controller.verificationFormTarget.classList.remove('hidden')
+  }
+  
+  const formatPhoneNumber = (phoneNumber) => {
+    // 日本の電話番号を国際形式に変換
+    return '+81' + phoneNumber.replace(/^0/, '')
+  }
+  
+  const handleSmsError = (error) => {
+    let message = 'SMS送信に失敗しました'
+    switch (error.code) {
+      case 'auth/invalid-phone-number':
+        message = '電話番号の形式が正しくありません'
+        break
+      case 'auth/too-many-requests':
+        message = '送信回数が上限に達しました。しばらく経ってから再試行してください'
+        break
+    }
+    alert(message)
+  }
+  
+  // コントローラーにメソッドを追加
+  Object.assign(controller, {
+    sendSmsCode,
+    verifySmsCode,
+    showVerificationForm
+  })
+}
+</code></pre>
+<h3 id="複数のコントローラーで同じミックスインを使用">複数のコントローラーで同じミックスインを使用</h3>
+<pre><code class="language-javascript">// 新規登録時のSMS認証
+// app/javascript/controllers/registration_controller.js
+import { Controller } from "@hotwired/stimulus"
+import { useSmsAuth } from "../mixins/useSmsAuth"
+
+export default class extends Controller {
+  static targets = ["phoneNumberForm", "verificationForm", "phoneNumberInput", "verificationCodeInput"]
+  
+  connect() {
+    useSmsAuth(this)  // SMS認証機能を追加
+  }
+  
+  handleRegistration(event) {
+    // ミックスインのメソッドを使用
+    this.sendSmsCode(event)
+  }
+}
+</code></pre>
+<pre><code class="language-javascript">// ログイン時のSMS認証
+// app/javascript/controllers/login_controller.js
+import { Controller } from "@hotwired/stimulus"
+import { useSmsAuth } from "../mixins/useSmsAuth"
+
+export default class extends Controller {
+  static targets = ["phoneNumberForm", "verificationForm", "phoneNumberInput", "verificationCodeInput"]
+  
+  connect() {
+    useSmsAuth(this)  // 同じミックスインを使用
+  }
+  
+  handleLogin(event) {
+    // 登録と同じSMS認証ロジックを再利用
+    this.sendSmsCode(event)
+  }
+}
+</code></pre>
+<h2 id="高度なミックスインパターン">高度なミックスインパターン</h2>
+<h3 id="設定可能なミックスイン">設定可能なミックスイン</h3>
+<pre><code class="language-javascript">// app/javascript/mixins/useApiClient.js
+export const useApiClient = (controller, options = {}) => {
+  const baseUrl = options.baseUrl || '/api/v1'
+  const timeout = options.timeout || 5000
+  
+  const apiCall = async (endpoint, method = 'GET', data = null) => {
+    const config = {
+      method,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+      }
+    }
+    
+    if (data) {
+      config.body = JSON.stringify(data)
+    }
+    
+    const response = await fetch(`${baseUrl}${endpoint}`, config)
+    
+    if (!response.ok) {
+      throw new Error(`API Error: ${response.status}`)
+    }
+    
+    return await response.json()
+  }
+  
+  Object.assign(controller, {
+    apiCall
+  })
+}
+
+// 使用例
+export default class extends Controller {
+  connect() {
+    useApiClient(this, { 
+      baseUrl: '/api/v2',  // カスタム設定
+      timeout: 10000 
+    })
+  }
+}
+</code></pre>
+<h3 id="ミックスインの組み合わせ">ミックスインの組み合わせ</h3>
+<pre><code class="language-javascript">// app/javascript/controllers/user_management_controller.js
+import { Controller } from "@hotwired/stimulus"
+import { useApiClient } from "../mixins/useApiClient"
+import { useModalControl } from "../mixins/useModalControl"
+import { useFormValidation } from "../mixins/useFormValidation"
+
+export default class extends Controller {
+  connect() {
+    // 複数のミックスインを組み合わせ
+    useApiClient(this)
+    useModalControl(this)
+    useFormValidation(this)
+  }
+  
+  async handleUserCreate(event) {
+    // フォームバリデーション（ミックスイン）
+    if (!this.validateForm()) return
+    
+    try {
+      // API呼び出し（ミックスイン）
+      const userData = this.getFormData()
+      await this.apiCall('/users', 'POST', userData)
+      
+      // モーダル制御（ミックスイン）
+      this.hideModal()
+      
+    } catch (error) {
+      this.showErrorMessage(error.message)
+    }
+  }
+}
+</code></pre>
+<h2 id="ミックスインのベストプラクティス">ミックスインのベストプラクティス</h2>
+<h3 id="1-命名規則の統一">1. 命名規則の統一</h3>
+<pre><code class="language-javascript">// useXXX形式で統一
+export const useModalControl = (controller) => { /* */ }
+export const useApiClient = (controller) => { /* */ }
+export const useFormValidation = (controller) => { /* */ }
+</code></pre>
+<h3 id="2-依存関係の明示">2. 依存関係の明示</h3>
+<pre><code class="language-javascript">export const useAdvancedFeature = (controller) => {
+  // 依存するミックスインのチェック
+  if (!controller.apiCall) {
+    throw new Error('useAdvancedFeature requires useApiClient mixin')
+  }
+  
+  // 実装
+}
+</code></pre>
+<h3 id="3-メソッド名の衝突回避">3. メソッド名の衝突回避</h3>
+<pre><code class="language-javascript">export const useModalControl = (controller) => {
+  Object.assign(controller, {
+    // プレフィックスで名前空間を分ける
+    modal_show: showModal,
+    modal_hide: hideModal
+  })
+}
+</code></pre>
+<h3 id="4-初期化オプションの提供">4. 初期化オプションの提供</h3>
+<pre><code class="language-javascript">export const useDataTable = (controller, options = {}) => {
+  const config = {
+    sortable: true,
+    filterable: true,
+    pageSize: 10,
+    ...options  // デフォルト設定をオーバーライド
+  }
+  
+  // configを使った実装
+}
+</code></pre>
+<h2 id="ミックスインを使う際の注意点">ミックスインを使う際の注意点</h2>
+<h3 id="1-メソッド名の衝突">1. メソッド名の衝突</h3>
+<pre><code class="language-javascript">// 問題のある例
+export const useMixin1 = (controller) => {
+  Object.assign(controller, {
+    handleClick: () => { /* 処理A */ }  // 同じ名前
+  })
+}
+
+export const useMixin2 = (controller) => {
+  Object.assign(controller, {
+    handleClick: () => { /* 処理B */ }  // 衝突！
+  })
+}
+
+// 解決方法：名前空間の使用
+export const useMixin1 = (controller) => {
+  Object.assign(controller, {
+    mixin1_handleClick: () => { /* 処理A */ }
+  })
+}
+</code></pre>
+<h3 id="2-過度な複雑化を避ける">2. 過度な複雑化を避ける</h3>
+<pre><code class="language-javascript">// 避けるべき例：ミックスインが多すぎる
+connect() {
+  useMixin1(this)
+  useMixin2(this)
+  useMixin3(this)
+  useMixin4(this)  // 複雑になりすぎ
+}
+
+// 推奨：関連するミックスインをまとめる
+export const useCompleteFeature = (controller) => {
+  useMixin1(controller)
+  useMixin2(controller)
+  // 内部で組み合わせて提供
+}
+</code></pre>
+<h3 id="3-テスタビリティの確保">3. テスタビリティの確保</h3>
+<pre><code class="language-javascript">// ミックスインもテスト可能にする
+// tests/mixins/useModalControl.test.js
+import { useModalControl } from '../app/javascript/mixins/useModalControl'
+
+describe('useModalControl mixin', () => {
+  let mockController
+  
+  beforeEach(() => {
+    mockController = {}
+    useModalControl(mockController)
+  })
+  
+  test('should add showModal method', () => {
+    expect(typeof mockController.showModal).toBe('function')
+  })
+})
+</code></pre>
+<h2 id="ミックスインの活用場面">ミックスインの活用場面</h2>
+<h3 id="よく使われるパターン">よく使われるパターン</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>パターン</th><th>用途</th><th>例</th></tr></thead><tbody><tr><td><strong>API通信</strong></td><td>サーバーとの通信処理</td><td><code>useApiClient</code></td></tr><tr><td><strong>フォーム処理</strong></td><td>バリデーション・送信</td><td><code>useFormValidation</code></td></tr><tr><td><strong>UI制御</strong></td><td>モーダル・ドロワー制御</td><td><code>useModalControl</code></td></tr><tr><td><strong>認証処理</strong></td><td>ログイン・SMS認証</td><td><code>useSmsAuth</code></td></tr><tr><td><strong>データ処理</strong></td><td>フォーマット・変換</td><td><code>useDataFormatter</code></td></tr></tbody></table>
+<h3 id="実際のプロジェクトでの効果">実際のプロジェクトでの効果</h3>
+<p><strong>導入前：</strong></p>
+<pre><code class="language-javascript">// registration_controller.js (300行)
+// login_controller.js (250行)
+// profile_controller.js (200行)
+// 合計：750行、重複コード多数
+</code></pre>
+<p><strong>導入後：</strong></p>
+<pre><code class="language-javascript">// registration_controller.js (50行) + useSmsAuth (100行)
+// login_controller.js (40行) + useSmsAuth (共通)
+// profile_controller.js (30行) + useFormValidation (50行)
+// 合計：270行、重複なし
+</code></pre>
+<p><strong>メリット：</strong></p>
+<ul>
+<li><strong>コード量64%削減</strong></li>
+<li><strong>保守性大幅向上</strong></li>
+<li><strong>バグ修正が一箇所で完了</strong></li>
+</ul>
+<h2 id="まとめ">まとめ</h2>
+<p>Stimulus.jsでのミックスインパターンは、以下のような場面で大きな威力を発揮します：</p>
+<ol>
+<li><strong>コードの再利用</strong>：同じ機能を複数のコントローラーで使いたい場合</li>
+<li><strong>保守性の向上</strong>：共通処理の修正が一箇所で済む</li>
+<li><strong>テストの効率化</strong>：ミックスイン単体でテストが可能</li>
+<li><strong>開発効率の向上</strong>：一度作れば使い回せる</li>
+</ol>
+<p>特にRailsアプリケーションでは、認証処理、API通信、フォーム処理など、多くのページで共通する機能があります。これらをミックスインとして切り出すことで、より保守しやすく拡張性の高いフロントエンドコードを書くことができます。</p>
+<p>最初は小さな共通処理から始めて、徐々にミックスインの活用範囲を広げていくことをおすすめします。適切に設計されたミックスインは、開発チーム全体の生産性向上に大きく貢献するはずです。</p>
+<h2 id="参考リンク">参考リンク</h2>
+<ul>
+<li><a href="https://stimulus.hotwired.dev/handbook/introduction">Stimulus Handbook</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#mix-ins">JavaScript Mixins - MDN</a></li>
+<li><a href="https://guides.rubyonrails.org/working_with_javascript_in_rails.html">Rails 7 and Stimulus</a></li>
+</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#","$undefined"]}]," ","Stimulus.jsでミックスイン（Mixin）パターンを活用してコードの再利用性を高める"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-09-10 00:51"]}],"$undefined",["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Stimulus.js"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Mixin"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"JavaScript patterns"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Code reuse"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Rails frontend"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L15",null,{}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}

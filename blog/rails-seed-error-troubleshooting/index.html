@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/19bdf9af4d1ae4d4.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-aa7deb192a774533.js"/><script src="/_next/static/chunks/4bd1b696-bc089769d60af88b.js" async=""></script><script src="/_next/static/chunks/1684-b369840b16e4c44b.js" async=""></script><script src="/_next/static/chunks/main-app-2ed07751e45c2a2f.js" async=""></script><script src="/_next/static/chunks/6874-6c1ddde525f3893c.js" async=""></script><script src="/_next/static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><div class="max-w-2xl mx-auto py-10 px-4"><h1 class="text-3xl font-bold mb-2"><span class="text-green-600">#<!-- -->48</span> <!-- -->Rails db:seedエラー完全攻略！NoMethodErrorとActiveRecord例外の原因と解決方法</h1><ul class="list-none border-b border-gray-600 pb-4 mb-6"><li class="text-gray-500 text-sm">作成日時: <!-- -->2025-09-10 20:27</li><li class="text-gray-500 text-sm">更新日時: <!-- -->2025-09-10 20:27</li><li class="flex flex-wrap gap-2 mt-2"><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Rails</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Ruby</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Database</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Debugging</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">ActiveRecord</span></li></ul><nav class="mb-6 pb-4 border-b border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav><article class="prose dark:prose-invert"><h1 id="rails-dbseedエラー完全攻略nomethoderrorとactiverecord例外の原因と解決方法">Rails db:seedエラー完全攻略！NoMethodErrorとActiveRecord例外の原因と解決方法</h1>
+<p>Rails開発において<code>rails db:seed</code>は開発環境のデータ投入やデバッグに欠かせないコマンドです。しかし、アソシエーション関係やデータ整合性の問題で様々なエラーに遭遇することがあります。この記事では、実際のエラー事例を基に、効果的なトラブルシューティング手法を解説します。</p>
+<h2 id="よくあるseedエラーの種類">よくあるseedエラーの種類</h2>
+<h3 id="1-nomethoderror---nil参照エラー">1. NoMethodError - nil参照エラー</h3>
+<h3 id="2-activerecordrecordinvalid---バリデーションエラー">2. ActiveRecord::RecordInvalid - バリデーションエラー</h3>
+<h3 id="3-activerecordstatementinvalid---sql実行エラー">3. ActiveRecord::StatementInvalid - SQL実行エラー</h3>
+<h3 id="4-pgobjectinuse---データベース接続エラー">4. PG::ObjectInUse - データベース接続エラー</h3>
+<p>これらのエラーを実際のケーススタディで見ていきましょう。</p>
+<h2 id="ケーススタディアソシエーション関連のnomethoderror">ケーススタディ：アソシエーション関連のNoMethodError</h2>
+<h3 id="エラー内容">エラー内容</h3>
+<pre><code>NoMethodError: undefined method `invitation_point_amount' for nil:NilClass
+
+        amount: owner.invitation_point_amount,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+/app/app/models/campaign_code.rb:78:in `grant_invitation_signup_points!'
+/app/db/seeds.rb:335:in `block in &#x3C;main>'
+</code></pre>
+<h3 id="問題の分析">問題の分析</h3>
+<h4 id="1-エラーメッセージの読み方">1. エラーメッセージの読み方</h4>
+<pre><code>NoMethodError: undefined method `invitation_point_amount' for nil:NilClass
+</code></pre>
+<p>この部分から以下が分かります：</p>
+<ul>
+<li><code>invitation_point_amount</code>メソッドが呼び出されている</li>
+<li>呼び出し元オブジェクトが<code>nil</code>（NilClass）</li>
+<li>つまり<code>owner</code>オブジェクトが存在しない</li>
+</ul>
+<h4 id="2-スタックトレースの追跡">2. スタックトレースの追跡</h4>
+<pre><code>/app/app/models/campaign_code.rb:78:in `grant_invitation_signup_points!'
+/app/db/seeds.rb:335:in `block in &#x3C;main>'
+</code></pre>
+<p>エラーの流れ：</p>
+<ol>
+<li><code>seeds.rb:335</code>でメソッド呼び出し</li>
+<li><code>campaign_code.rb:78</code>で<code>owner.invitation_point_amount</code>を実行</li>
+<li><code>owner</code>が<code>nil</code>のためエラー発生</li>
+</ol>
+<h4 id="3-関連コードの確認">3. 関連コードの確認</h4>
+<p><strong>CampaignCodeモデル（問題箇所）:</strong></p>
+<pre><code class="language-ruby">def grant_invitation_signup_points!(user)
+  create_invitation_points!(
+    user,
+    {
+      amount: owner.invitation_point_amount,  # ← ここでエラー
+      title: FRIEND_INVITATION_TITLE,
+      kind: :exchange_campaign_code,
+      user_platform: user.last_access_platform
+    }
+  )
+end
+</code></pre>
+<p><strong>アソシエーション定義:</strong></p>
+<pre><code class="language-ruby">class CampaignCode &#x3C; ApplicationRecord
+  belongs_to :owner, class_name: 'User', optional: true
+end
+</code></pre>
+<p><strong>データベーススキーマ:</strong></p>
+<pre><code class="language-ruby"># Table name: campaign_codes
+#  owner_id   :uuid
+</code></pre>
+<h3 id="原因の特定">原因の特定</h3>
+<p><strong>seeds.rbの問題箇所:</strong></p>
+<pre><code class="language-ruby"># 問題のあるコード
+10.times.each do |i|
+  CampaignCode.create!(
+    name: "ポケカキャンペーンコード#{i}",
+    amount: 100 * (i + 1)
+    # owner_idが設定されていない！
+  )
+end
+
+campaign_code = CampaignCode.first
+campaign_code.grant_invitation_signup_points!(user)  # ownerがnilでエラー
+</code></pre>
+<h3 id="解決方法">解決方法</h3>
+<h4 id="修正版コード">修正版コード</h4>
+<pre><code class="language-ruby"># 修正後のコード
+user = User.find_by name: 'sosotown'  # 既存のユーザーを取得
+
+10.times.each do |i|
+  CampaignCode.create!(
+    name: "ポケカキャンペーンコード#{i}",
+    amount: 100 * (i + 1),
+    owner: user  # ← ownerを設定
+  )
+end
+
+campaign_code = CampaignCode.first
+campaign_code.grant_invitation_signup_points!(user)  # 正常に動作
+</code></pre>
+<h4 id="なぜこの修正で解決するのか">なぜこの修正で解決するのか</h4>
+<pre><code class="language-ruby"># Railsアソシエーションの動作
+campaign_code = CampaignCode.create!(owner: user)
+
+puts campaign_code.owner_id    # => user.id（自動設定）
+puts campaign_code.owner       # => userオブジェクト
+puts campaign_code.owner.invitation_point_amount  # => 正常に動作
+</code></pre>
+<h2 id="データベース関連エラーの対処法">データベース関連エラーの対処法</h2>
+<h3 id="pgobjectinuse-エラー">PG::ObjectInUse エラー</h3>
+<pre><code>PG::ObjectInUse: ERROR:  database "app_development" is being accessed by other users
+DETAIL:  There are 9 other sessions using the database.
+</code></pre>
+<h4 id="原因">原因</h4>
+<ul>
+<li>他のプロセスがデータベースに接続している</li>
+<li>Rails console、テスト実行、他の開発者の接続等</li>
+</ul>
+<h4 id="解決方法-1">解決方法</h4>
+<p><strong>1. Dockerコンテナの場合:</strong></p>
+<pre><code class="language-bash"># 全コンテナを停止して再起動
+docker compose down
+docker compose up -d
+
+# データベースを再構築
+docker compose exec web rails db:drop db:create db:migrate db:seed
+</code></pre>
+<p><strong>2. ローカル環境の場合:</strong></p>
+<pre><code class="language-bash"># PostgreSQLの接続を確認
+psql -c "SELECT pid, usename, application_name, state FROM pg_stat_activity WHERE datname = 'app_development';"
+
+# 必要に応じて接続を終了
+psql -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'app_development' AND pid &#x3C;> pg_backend_pid();"
+</code></pre>
+<h3 id="activerecordrecordinvalid-エラー">ActiveRecord::RecordInvalid エラー</h3>
+<pre><code>ActiveRecord::RecordInvalid: すでに使用されたslugです。別のslugをお試しください。
+</code></pre>
+<h4 id="原因と解決法">原因と解決法</h4>
+<p><strong>1. 重複データの問題:</strong></p>
+<pre><code class="language-ruby"># 問題のあるseed
+Tag.create!(name: "Ruby", slug: "ruby")
+Tag.create!(name: "Ruby on Rails", slug: "ruby")  # slug重複でエラー
+</code></pre>
+<p><strong>解決法: find_or_create_byの使用</strong></p>
+<pre><code class="language-ruby"># 重複を避けるseed
+Tag.find_or_create_by!(slug: "ruby") do |tag|
+  tag.name = "Ruby"
+end
+
+Tag.find_or_create_by!(slug: "rails") do |tag|
+  tag.name = "Ruby on Rails"
+end
+</code></pre>
+<p><strong>2. データベースリセットが必要な場合:</strong></p>
+<pre><code class="language-ruby"># seeds.rbの最初でデータをクリア
+Tag.destroy_all
+# または
+ActiveRecord::Base.connection.execute("TRUNCATE tags RESTART IDENTITY CASCADE")
+</code></pre>
+<h2 id="効果的なデバッグ手法">効果的なデバッグ手法</h2>
+<h3 id="1-ログを活用したデバッグ">1. ログを活用したデバッグ</h3>
+<pre><code class="language-ruby"># seeds.rbにログを追加
+puts "Creating Campaign Code..."
+user = User.find_by name: 'sosotown'
+puts "Found user: #{user.inspect}"
+
+10.times.each do |i|
+  campaign_code = CampaignCode.create!(
+    name: "ポケカキャンペーンコード#{i}",
+    amount: 100 * (i + 1),
+    owner: user
+  )
+  puts "Created campaign code: #{campaign_code.id}, owner: #{campaign_code.owner&#x26;.name}"
+end
+</code></pre>
+<h3 id="2-railsコンソールでの事前確認">2. Railsコンソールでの事前確認</h3>
+<pre><code class="language-ruby"># rails console
+user = User.find_by name: 'sosotown'
+puts user.present? ? "User found" : "User not found"
+
+# アソシエーションのテスト
+campaign_code = CampaignCode.new(name: "test", amount: 100, owner: user)
+puts campaign_code.valid?
+puts campaign_code.errors.full_messages if !campaign_code.valid?
+
+# メソッド呼び出しのテスト
+if user&#x26;.respond_to?(:invitation_point_amount)
+  puts "invitation_point_amount method exists: #{user.invitation_point_amount}"
+else
+  puts "invitation_point_amount method not found"
+end
+</code></pre>
+<h3 id="3-トランザクションを使った安全なseed実行">3. トランザクションを使った安全なseed実行</h3>
+<pre><code class="language-ruby"># seeds.rb
+ActiveRecord::Base.transaction do
+  puts 'Creating Campaign Code...'
+  
+  user = User.find_by name: 'sosotown'
+  raise "User 'sosotown' not found" unless user
+  
+  10.times.each do |i|
+    CampaignCode.create!(
+      name: "ポケカキャンペーンコード#{i}",
+      amount: 100 * (i + 1),
+      owner: user
+    )
+  end
+  
+  campaign_code = CampaignCode.first
+  campaign_code.grant_invitation_signup_points!(user)
+  
+  puts 'Campaign Code creation completed successfully!'
+rescue => e
+  puts "Error occurred: #{e.message}"
+  puts "Backtrace: #{e.backtrace.first(5).join("\n")}"
+  raise # トランザクションをロールバック
+end
+</code></pre>
+<h2 id="予防策とベストプラクティス">予防策とベストプラクティス</h2>
+<h3 id="1-依存関係の明確化">1. 依存関係の明確化</h3>
+<pre><code class="language-ruby"># seeds.rbで実行順序を明確にする
+puts "=== Seed Data Creation ==="
+
+puts "Step 1: Creating Users..."
+user = User.find_or_create_by!(name: 'sosotown') do |u|
+  u.email = 'sosotown@example.com'
+  u.firebase_uid = SecureRandom.uuid
+end
+
+puts "Step 2: Creating Campaign Codes..."
+10.times.each do |i|
+  CampaignCode.find_or_create_by!(name: "ポケカキャンペーンコード#{i}") do |cc|
+    cc.amount = 100 * (i + 1)
+    cc.owner = user
+  end
+end
+
+puts "Step 3: Testing Association Methods..."
+campaign_code = CampaignCode.first
+if campaign_code.owner&#x26;.respond_to?(:invitation_point_amount)
+  campaign_code.grant_invitation_signup_points!(user)
+  puts "Association methods tested successfully!"
+else
+  puts "Warning: invitation_point_amount method not available"
+end
+</code></pre>
+<h3 id="2-環境別のseed管理">2. 環境別のseed管理</h3>
+<pre><code class="language-ruby"># seeds.rb
+case Rails.env
+when 'development'
+  load Rails.root.join('db', 'seeds', 'development.rb')
+when 'staging'  
+  load Rails.root.join('db', 'seeds', 'staging.rb')
+when 'production'
+  load Rails.root.join('db', 'seeds', 'production.rb')
+end
+</code></pre>
+<pre><code class="language-ruby"># db/seeds/development.rb
+puts "Loading development seeds..."
+
+# 開発用の豊富なテストデータ
+100.times do |i|
+  User.find_or_create_by!(email: "user#{i}@example.com") do |user|
+    user.name = "テストユーザー#{i}"
+    user.firebase_uid = SecureRandom.uuid
+  end
+end
+</code></pre>
+<h3 id="3-バリデーションエラーの詳細出力">3. バリデーションエラーの詳細出力</h3>
+<pre><code class="language-ruby">def safe_create!(model_class, attributes, description = nil)
+  record = model_class.new(attributes)
+  if record.save
+    puts "✓ Created #{description || model_class.name}: #{record.id}"
+    record
+  else
+    puts "✗ Failed to create #{description || model_class.name}:"
+    record.errors.full_messages.each { |msg| puts "  - #{msg}" }
+    puts "  Attributes: #{attributes.inspect}"
+    nil
+  end
+end
+
+# 使用例
+safe_create!(CampaignCode, {
+  name: "テストキャンペーン",
+  amount: 1000,
+  owner: user
+}, "test campaign code")
+</code></pre>
+<h2 id="まとめ">まとめ</h2>
+<p>Rails seedエラーの効果的な対処法：</p>
+<h3 id="エラー分析のステップ">エラー分析のステップ</h3>
+<ol>
+<li><strong>エラーメッセージを正確に読む</strong> - nil参照、バリデーション失敗、SQL制約違反を区別</li>
+<li><strong>スタックトレースを追跡</strong> - エラーの発生箇所と呼び出し経路を確認</li>
+<li><strong>関連コードを確認</strong> - モデル定義、アソシエーション、バリデーションをチェック</li>
+<li><strong>データベース状態を確認</strong> - 既存データとの整合性を検証</li>
+</ol>
+<h3 id="予防策">予防策</h3>
+<ul>
+<li><strong>依存関係の明確化</strong> - データ作成の順序を適切に管理</li>
+<li><strong>find_or_create_byの活用</strong> - 重複エラーを回避</li>
+<li><strong>トランザクション使用</strong> - エラー時の自動ロールバック</li>
+<li><strong>詳細なログ出力</strong> - 問題箇所の特定を容易に</li>
+</ul>
+<h3 id="デバッグツール">デバッグツール</h3>
+<ul>
+<li>Rails console での事前テスト</li>
+<li>ログ出力による状態確認</li>
+<li>安全なヘルパーメソッドの作成</li>
+</ul>
+<p>これらの手法を活用することで、seedエラーを迅速に解決し、安定した開発環境を維持できます。エラーは学習機会でもあるので、一つ一つ丁寧に分析することが重要です。</p>
+<h2 id="参考リンク">参考リンク</h2>
+<ul>
+<li><a href="https://guides.rubyonrails.org/active_record_migrations.html">Rails Guides - Active Record Migrations</a></li>
+<li><a href="https://guides.rubyonrails.org/active_record_validations.html">Rails Guides - Active Record Validations</a></li>
+<li><a href="https://api.rubyonrails.org/classes/ActiveRecord/Base.html">Rails API - ActiveRecord::Base</a></li>
+</ul></article><nav class="mt-8 pt-4 border-t border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-aa7deb192a774533.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[87555,[],\"\"]\n3:I[31295,[],\"\"]\n5:I[59665,[],\"MetadataBoundary\"]\n7:I[59665,[],\"OutletBoundary\"]\na:I[74911,[],\"AsyncMetadataOutlet\"]\nc:I[59665,[],\"ViewportBoundary\"]\ne:I[26614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"KZrMisSdXyu7FDjuS9HOy\",\"p\":\"\",\"c\":[\"\",\"blog\",\"rails-seed-error-troubleshooting\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"rails-seed-error-troubleshooting\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"blog\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"rails-seed-error-troubleshooting\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",[\"$\",\"$L5\",null,{\"children\":\"$L6\"}],null,[\"$\",\"$L7\",null,{\"children\":[\"$L8\",\"$L9\",[\"$\",\"$La\",null,{\"promise\":\"$@b\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"9c8mAI4YZ-irjTLqPaD2R\",{\"children\":[[\"$\",\"$Lc\",null,{\"children\":\"$Ld\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$e\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"f:\"$Sreact.suspense\"\n10:I[74911,[],\"AsyncMetadata\"]\n6:[\"$\",\"$f\",null,{\"fallback\":null,\"children\":[\"$\",\"$L10\",null,{\"promise\":\"$@11\"}]}]\n"])</script><script>self.__next_f.push([1,"9:null\n"])</script><script>self.__next_f.push([1,"12:I[6874,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"\"]\n14:I[31203,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n15:I[4197,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n13:T35f6,"])</script><script>self.__next_f.push([1,"\u003ch1 id=\"rails-dbseedエラー完全攻略nomethoderrorとactiverecord例外の原因と解決方法\"\u003eRails db:seedエラー完全攻略！NoMethodErrorとActiveRecord例外の原因と解決方法\u003c/h1\u003e\n\u003cp\u003eRails開発において\u003ccode\u003erails db:seed\u003c/code\u003eは開発環境のデータ投入やデバッグに欠かせないコマンドです。しかし、アソシエーション関係やデータ整合性の問題で様々なエラーに遭遇することがあります。この記事では、実際のエラー事例を基に、効果的なトラブルシューティング手法を解説します。\u003c/p\u003e\n\u003ch2 id=\"よくあるseedエラーの種類\"\u003eよくあるseedエラーの種類\u003c/h2\u003e\n\u003ch3 id=\"1-nomethoderror---nil参照エラー\"\u003e1. NoMethodError - nil参照エラー\u003c/h3\u003e\n\u003ch3 id=\"2-activerecordrecordinvalid---バリデーションエラー\"\u003e2. ActiveRecord::RecordInvalid - バリデーションエラー\u003c/h3\u003e\n\u003ch3 id=\"3-activerecordstatementinvalid---sql実行エラー\"\u003e3. ActiveRecord::StatementInvalid - SQL実行エラー\u003c/h3\u003e\n\u003ch3 id=\"4-pgobjectinuse---データベース接続エラー\"\u003e4. PG::ObjectInUse - データベース接続エラー\u003c/h3\u003e\n\u003cp\u003eこれらのエラーを実際のケーススタディで見ていきましょう。\u003c/p\u003e\n\u003ch2 id=\"ケーススタディアソシエーション関連のnomethoderror\"\u003eケーススタディ：アソシエーション関連のNoMethodError\u003c/h2\u003e\n\u003ch3 id=\"エラー内容\"\u003eエラー内容\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003eNoMethodError: undefined method `invitation_point_amount' for nil:NilClass\n\n        amount: owner.invitation_point_amount,\n                     ^^^^^^^^^^^^^^^^^^^^^^^^\n/app/app/models/campaign_code.rb:78:in `grant_invitation_signup_points!'\n/app/db/seeds.rb:335:in `block in \u0026#x3C;main\u003e'\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"問題の分析\"\u003e問題の分析\u003c/h3\u003e\n\u003ch4 id=\"1-エラーメッセージの読み方\"\u003e1. エラーメッセージの読み方\u003c/h4\u003e\n\u003cpre\u003e\u003ccode\u003eNoMethodError: undefined method `invitation_point_amount' for nil:NilClass\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eこの部分から以下が分かります：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003einvitation_point_amount\u003c/code\u003eメソッドが呼び出されている\u003c/li\u003e\n\u003cli\u003e呼び出し元オブジェクトが\u003ccode\u003enil\u003c/code\u003e（NilClass）\u003c/li\u003e\n\u003cli\u003eつまり\u003ccode\u003eowner\u003c/code\u003eオブジェクトが存在しない\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"2-スタックトレースの追跡\"\u003e2. スタックトレースの追跡\u003c/h4\u003e\n\u003cpre\u003e\u003ccode\u003e/app/app/models/campaign_code.rb:78:in `grant_invitation_signup_points!'\n/app/db/seeds.rb:335:in `block in \u0026#x3C;main\u003e'\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eエラーの流れ：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\u003ccode\u003eseeds.rb:335\u003c/code\u003eでメソッド呼び出し\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003ecampaign_code.rb:78\u003c/code\u003eで\u003ccode\u003eowner.invitation_point_amount\u003c/code\u003eを実行\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eowner\u003c/code\u003eが\u003ccode\u003enil\u003c/code\u003eのためエラー発生\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch4 id=\"3-関連コードの確認\"\u003e3. 関連コードの確認\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003eCampaignCodeモデル（問題箇所）:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003edef grant_invitation_signup_points!(user)\n  create_invitation_points!(\n    user,\n    {\n      amount: owner.invitation_point_amount,  # ← ここでエラー\n      title: FRIEND_INVITATION_TITLE,\n      kind: :exchange_campaign_code,\n      user_platform: user.last_access_platform\n    }\n  )\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003eアソシエーション定義:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003eclass CampaignCode \u0026#x3C; ApplicationRecord\n  belongs_to :owner, class_name: 'User', optional: true\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003eデータベーススキーマ:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# Table name: campaign_codes\n#  owner_id   :uuid\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"原因の特定\"\u003e原因の特定\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eseeds.rbの問題箇所:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# 問題のあるコード\n10.times.each do |i|\n  CampaignCode.create!(\n    name: \"ポケカキャンペーンコード#{i}\",\n    amount: 100 * (i + 1)\n    # owner_idが設定されていない！\n  )\nend\n\ncampaign_code = CampaignCode.first\ncampaign_code.grant_invitation_signup_points!(user)  # ownerがnilでエラー\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"解決方法\"\u003e解決方法\u003c/h3\u003e\n\u003ch4 id=\"修正版コード\"\u003e修正版コード\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# 修正後のコード\nuser = User.find_by name: 'sosotown'  # 既存のユーザーを取得\n\n10.times.each do |i|\n  CampaignCode.create!(\n    name: \"ポケカキャンペーンコード#{i}\",\n    amount: 100 * (i + 1),\n    owner: user  # ← ownerを設定\n  )\nend\n\ncampaign_code = CampaignCode.first\ncampaign_code.grant_invitation_signup_points!(user)  # 正常に動作\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\"なぜこの修正で解決するのか\"\u003eなぜこの修正で解決するのか\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# Railsアソシエーションの動作\ncampaign_code = CampaignCode.create!(owner: user)\n\nputs campaign_code.owner_id    # =\u003e user.id（自動設定）\nputs campaign_code.owner       # =\u003e userオブジェクト\nputs campaign_code.owner.invitation_point_amount  # =\u003e 正常に動作\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"データベース関連エラーの対処法\"\u003eデータベース関連エラーの対処法\u003c/h2\u003e\n\u003ch3 id=\"pgobjectinuse-エラー\"\u003ePG::ObjectInUse エラー\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003ePG::ObjectInUse: ERROR:  database \"app_development\" is being accessed by other users\nDETAIL:  There are 9 other sessions using the database.\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\"原因\"\u003e原因\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003e他のプロセスがデータベースに接続している\u003c/li\u003e\n\u003cli\u003eRails console、テスト実行、他の開発者の接続等\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"解決方法-1\"\u003e解決方法\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e1. Dockerコンテナの場合:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# 全コンテナを停止して再起動\ndocker compose down\ndocker compose up -d\n\n# データベースを再構築\ndocker compose exec web rails db:drop db:create db:migrate db:seed\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e2. ローカル環境の場合:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# PostgreSQLの接続を確認\npsql -c \"SELECT pid, usename, application_name, state FROM pg_stat_activity WHERE datname = 'app_development';\"\n\n# 必要に応じて接続を終了\npsql -c \"SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'app_development' AND pid \u0026#x3C;\u003e pg_backend_pid();\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"activerecordrecordinvalid-エラー\"\u003eActiveRecord::RecordInvalid エラー\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003eActiveRecord::RecordInvalid: すでに使用されたslugです。別のslugをお試しください。\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\"原因と解決法\"\u003e原因と解決法\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003e1. 重複データの問題:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# 問題のあるseed\nTag.create!(name: \"Ruby\", slug: \"ruby\")\nTag.create!(name: \"Ruby on Rails\", slug: \"ruby\")  # slug重複でエラー\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e解決法: find_or_create_byの使用\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# 重複を避けるseed\nTag.find_or_create_by!(slug: \"ruby\") do |tag|\n  tag.name = \"Ruby\"\nend\n\nTag.find_or_create_by!(slug: \"rails\") do |tag|\n  tag.name = \"Ruby on Rails\"\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e2. データベースリセットが必要な場合:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# seeds.rbの最初でデータをクリア\nTag.destroy_all\n# または\nActiveRecord::Base.connection.execute(\"TRUNCATE tags RESTART IDENTITY CASCADE\")\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"効果的なデバッグ手法\"\u003e効果的なデバッグ手法\u003c/h2\u003e\n\u003ch3 id=\"1-ログを活用したデバッグ\"\u003e1. ログを活用したデバッグ\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# seeds.rbにログを追加\nputs \"Creating Campaign Code...\"\nuser = User.find_by name: 'sosotown'\nputs \"Found user: #{user.inspect}\"\n\n10.times.each do |i|\n  campaign_code = CampaignCode.create!(\n    name: \"ポケカキャンペーンコード#{i}\",\n    amount: 100 * (i + 1),\n    owner: user\n  )\n  puts \"Created campaign code: #{campaign_code.id}, owner: #{campaign_code.owner\u0026#x26;.name}\"\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-railsコンソールでの事前確認\"\u003e2. Railsコンソールでの事前確認\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# rails console\nuser = User.find_by name: 'sosotown'\nputs user.present? ? \"User found\" : \"User not found\"\n\n# アソシエーションのテスト\ncampaign_code = CampaignCode.new(name: \"test\", amount: 100, owner: user)\nputs campaign_code.valid?\nputs campaign_code.errors.full_messages if !campaign_code.valid?\n\n# メソッド呼び出しのテスト\nif user\u0026#x26;.respond_to?(:invitation_point_amount)\n  puts \"invitation_point_amount method exists: #{user.invitation_point_amount}\"\nelse\n  puts \"invitation_point_amount method not found\"\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"3-トランザクションを使った安全なseed実行\"\u003e3. トランザクションを使った安全なseed実行\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# seeds.rb\nActiveRecord::Base.transaction do\n  puts 'Creating Campaign Code...'\n  \n  user = User.find_by name: 'sosotown'\n  raise \"User 'sosotown' not found\" unless user\n  \n  10.times.each do |i|\n    CampaignCode.create!(\n      name: \"ポケカキャンペーンコード#{i}\",\n      amount: 100 * (i + 1),\n      owner: user\n    )\n  end\n  \n  campaign_code = CampaignCode.first\n  campaign_code.grant_invitation_signup_points!(user)\n  \n  puts 'Campaign Code creation completed successfully!'\nrescue =\u003e e\n  puts \"Error occurred: #{e.message}\"\n  puts \"Backtrace: #{e.backtrace.first(5).join(\"\\n\")}\"\n  raise # トランザクションをロールバック\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"予防策とベストプラクティス\"\u003e予防策とベストプラクティス\u003c/h2\u003e\n\u003ch3 id=\"1-依存関係の明確化\"\u003e1. 依存関係の明確化\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# seeds.rbで実行順序を明確にする\nputs \"=== Seed Data Creation ===\"\n\nputs \"Step 1: Creating Users...\"\nuser = User.find_or_create_by!(name: 'sosotown') do |u|\n  u.email = 'sosotown@example.com'\n  u.firebase_uid = SecureRandom.uuid\nend\n\nputs \"Step 2: Creating Campaign Codes...\"\n10.times.each do |i|\n  CampaignCode.find_or_create_by!(name: \"ポケカキャンペーンコード#{i}\") do |cc|\n    cc.amount = 100 * (i + 1)\n    cc.owner = user\n  end\nend\n\nputs \"Step 3: Testing Association Methods...\"\ncampaign_code = CampaignCode.first\nif campaign_code.owner\u0026#x26;.respond_to?(:invitation_point_amount)\n  campaign_code.grant_invitation_signup_points!(user)\n  puts \"Association methods tested successfully!\"\nelse\n  puts \"Warning: invitation_point_amount method not available\"\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-環境別のseed管理\"\u003e2. 環境別のseed管理\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# seeds.rb\ncase Rails.env\nwhen 'development'\n  load Rails.root.join('db', 'seeds', 'development.rb')\nwhen 'staging'  \n  load Rails.root.join('db', 'seeds', 'staging.rb')\nwhen 'production'\n  load Rails.root.join('db', 'seeds', 'production.rb')\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# db/seeds/development.rb\nputs \"Loading development seeds...\"\n\n# 開発用の豊富なテストデータ\n100.times do |i|\n  User.find_or_create_by!(email: \"user#{i}@example.com\") do |user|\n    user.name = \"テストユーザー#{i}\"\n    user.firebase_uid = SecureRandom.uuid\n  end\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"3-バリデーションエラーの詳細出力\"\u003e3. バリデーションエラーの詳細出力\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003edef safe_create!(model_class, attributes, description = nil)\n  record = model_class.new(attributes)\n  if record.save\n    puts \"✓ Created #{description || model_class.name}: #{record.id}\"\n    record\n  else\n    puts \"✗ Failed to create #{description || model_class.name}:\"\n    record.errors.full_messages.each { |msg| puts \"  - #{msg}\" }\n    puts \"  Attributes: #{attributes.inspect}\"\n    nil\n  end\nend\n\n# 使用例\nsafe_create!(CampaignCode, {\n  name: \"テストキャンペーン\",\n  amount: 1000,\n  owner: user\n}, \"test campaign code\")\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"まとめ\"\u003eまとめ\u003c/h2\u003e\n\u003cp\u003eRails seedエラーの効果的な対処法：\u003c/p\u003e\n\u003ch3 id=\"エラー分析のステップ\"\u003eエラー分析のステップ\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003eエラーメッセージを正確に読む\u003c/strong\u003e - nil参照、バリデーション失敗、SQL制約違反を区別\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eスタックトレースを追跡\u003c/strong\u003e - エラーの発生箇所と呼び出し経路を確認\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e関連コードを確認\u003c/strong\u003e - モデル定義、アソシエーション、バリデーションをチェック\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eデータベース状態を確認\u003c/strong\u003e - 既存データとの整合性を検証\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"予防策\"\u003e予防策\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e依存関係の明確化\u003c/strong\u003e - データ作成の順序を適切に管理\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003efind_or_create_byの活用\u003c/strong\u003e - 重複エラーを回避\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eトランザクション使用\u003c/strong\u003e - エラー時の自動ロールバック\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e詳細なログ出力\u003c/strong\u003e - 問題箇所の特定を容易に\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"デバッグツール\"\u003eデバッグツール\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eRails console での事前テスト\u003c/li\u003e\n\u003cli\u003eログ出力による状態確認\u003c/li\u003e\n\u003cli\u003e安全なヘルパーメソッドの作成\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eこれらの手法を活用することで、seedエラーを迅速に解決し、安定した開発環境を維持できます。エラーは学習機会でもあるので、一つ一つ丁寧に分析することが重要です。\u003c/p\u003e\n\u003ch2 id=\"参考リンク\"\u003e参考リンク\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://guides.rubyonrails.org/active_record_migrations.html\"\u003eRails Guides - Active Record Migrations\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://guides.rubyonrails.org/active_record_validations.html\"\u003eRails Guides - Active Record Validations\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://api.rubyonrails.org/classes/ActiveRecord/Base.html\"\u003eRails API - ActiveRecord::Base\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto py-10 px-4\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold mb-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-green-600\",\"children\":[\"#\",48]}],\" \",\"Rails db:seedエラー完全攻略！NoMethodErrorとActiveRecord例外の原因と解決方法\"]}],[\"$\",\"ul\",null,{\"className\":\"list-none border-b border-gray-600 pb-4 mb-6\",\"children\":[[\"$\",\"li\",null,{\"className\":\"text-gray-500 text-sm\",\"children\":[\"作成日時: \",\"2025-09-10 20:27\"]}],[\"$\",\"li\",null,{\"className\":\"text-gray-500 text-sm\",\"children\":[\"更新日時: \",\"2025-09-10 20:27\"]}],[\"$\",\"li\",null,{\"className\":\"flex flex-wrap gap-2 mt-2\",\"children\":[[\"$\",\"span\",\"0\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Rails\"}],[\"$\",\"span\",\"1\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Ruby\"}],[\"$\",\"span\",\"2\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Database\"}],[\"$\",\"span\",\"3\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Debugging\"}],[\"$\",\"span\",\"4\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"ActiveRecord\"}]]}]]}],[\"$\",\"nav\",null,{\"className\":\"mb-6 pb-4 border-b border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"article\",null,{\"className\":\"prose dark:prose-invert\",\"dangerouslySetInnerHTML\":{\"__html\":\"$13\"}}],[\"$\",\"$L14\",null,{}],[\"$\",\"nav\",null,{\"className\":\"mt-8 pt-4 border-t border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"$L15\",null,{}]]}]\n"])</script><script>self.__next_f.push([1,"d:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n8:null\n"])</script><script>self.__next_f.push([1,"11:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\nb:{\"metadata\":\"$11:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

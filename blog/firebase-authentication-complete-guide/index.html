@@ -1,0 +1,1520 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/19bdf9af4d1ae4d4.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-aa7deb192a774533.js"/><script src="/_next/static/chunks/4bd1b696-bc089769d60af88b.js" async=""></script><script src="/_next/static/chunks/1684-b369840b16e4c44b.js" async=""></script><script src="/_next/static/chunks/main-app-2ed07751e45c2a2f.js" async=""></script><script src="/_next/static/chunks/6874-6c1ddde525f3893c.js" async=""></script><script src="/_next/static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><div class="max-w-2xl mx-auto py-10 px-4"><h1 class="text-3xl font-bold mb-2"><span class="text-green-600">#<!-- -->50</span> <!-- -->Firebase認証完全ガイド：初心者からミドルクラスエンジニアまで</h1><ul class="list-none border-b border-gray-600 pb-4 mb-6"><li class="text-gray-500 text-sm">作成日時: <!-- -->2025-09-10 22:46</li><li class="text-gray-500 text-sm">更新日時: <!-- -->2025-09-10 22:46</li><li class="flex flex-wrap gap-2 mt-2"><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Firebase</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Authentication</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">JavaScript</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">React</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Web Development</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Security</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">OAuth</span></li></ul><nav class="mb-6 pb-4 border-b border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav><article class="prose dark:prose-invert"><h1 id="firebase認証完全ガイド初心者からミドルクラスエンジニアまで">Firebase認証完全ガイド：初心者からミドルクラスエンジニアまで</h1>
+<p>Webアプリケーション開発において、ユーザー認証は最も重要な機能の一つです。Firebase Authentication（Firebase認証）を使えば、複雑な認証システムを簡単に実装できますが、初心者にとって「どの認証方式を選べば良いのか」「どう実装すれば良いのか」は悩ましい問題です。</p>
+<p>この記事では、Firebase認証の基本概念から実際のコード実装、実践的な使い方まで、初心者エンジニアにもミドルクラスエンジニアにも価値のある内容を体系的に解説します。</p>
+<h2 id="この記事で学べること">この記事で学べること</h2>
+<ul>
+<li>✅ <strong>Firebase認証の基本概念と仕組み</strong></li>
+<li>✅ <strong>主要な認証方式（メール、SNS、電話番号）の実装方法</strong></li>
+<li>✅ <strong>認証状態の管理とルーティング</strong></li>
+<li>✅ <strong>セキュリティベストプラクティス</strong></li>
+<li>✅ <strong>実際のプロジェクトでの活用法</strong></li>
+</ul>
+<h2 id="firebase認証とは">Firebase認証とは</h2>
+<h3 id="認証と認可の違い">認証と認可の違い</h3>
+<p>まず、認証システムを理解する上で重要な概念を整理しましょう：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>概念</th><th>英語</th><th>意味</th><th>例</th></tr></thead><tbody><tr><td><strong>認証</strong></td><td>Authentication</td><td>「あなたは誰ですか？」</td><td>ログイン、パスワード確認</td></tr><tr><td><strong>認可</strong></td><td>Authorization</td><td>「あなたは何ができますか？」</td><td>管理者権限、リソースアクセス権</td></tr></tbody></table>
+<p>Firebase Authenticationは<strong>認証</strong>を担当し、ユーザーが本当にその人であるかを確認します。</p>
+<h3 id="firebase-authenticationの特徴">Firebase Authenticationの特徴</h3>
+<p>Firebase Authenticationは、Googleが提供する認証サービスで、以下のメリットがあります：</p>
+<h4 id="-開発効率">🚀 開発効率</h4>
+<ul>
+<li><strong>簡単な実装</strong>：数行のコードで認証機能を実装</li>
+<li><strong>豊富な認証プロバイダー</strong>：メール、Google、GitHub、Twitter、電話番号など</li>
+<li><strong>リアルタイム同期</strong>：認証状態の変化を自動で検知</li>
+</ul>
+<h4 id="-セキュリティ">🔒 セキュリティ</h4>
+<ul>
+<li><strong>業界標準の暗号化</strong>：トークンの安全な管理</li>
+<li><strong>不正アクセス対策</strong>：レート制限、異常検知</li>
+<li><strong>GDPR準拠</strong>：プライバシー保護対応</li>
+</ul>
+<h4 id="-クロスプラットフォーム">📱 クロスプラットフォーム</h4>
+<ul>
+<li><strong>Web、iOS、Android</strong>：同一のユーザーベース</li>
+<li><strong>リアルタイムDatabase/Firestore</strong>との連携</li>
+</ul>
+<p>詳細は<a href="https://firebase.google.com/docs/auth">Firebase Authentication公式ドキュメント</a>をご覧ください。</p>
+<h2 id="基本セットアップ">基本セットアップ</h2>
+<h3 id="1-firebaseプロジェクトの作成">1. Firebaseプロジェクトの作成</h3>
+<ol>
+<li>
+<p><strong>Firebase Console</strong>でプロジェクトを作成</p>
+<ul>
+<li><a href="https://console.firebase.google.com/">Firebase Console</a>にアクセス</li>
+<li>「プロジェクトを作成」をクリック</li>
+<li>プロジェクト名を入力</li>
+</ul>
+</li>
+<li>
+<p><strong>Webアプリを追加</strong></p>
+<ul>
+<li>プロジェクト設定から「Webアプリを追加」</li>
+<li>アプリのニックネームを入力</li>
+<li>Firebase SDKの設定を取得</li>
+</ul>
+</li>
+<li>
+<p><strong>Authentication機能を有効化</strong></p>
+<ul>
+<li>Firebase Console > Authentication > Sign-in method</li>
+<li>使用したい認証プロバイダーを有効化</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-firebase-sdkの導入">2. Firebase SDKの導入</h3>
+<pre><code class="language-bash"># npm を使用する場合
+npm install firebase
+
+# yarn を使用する場合
+yarn add firebase
+</code></pre>
+<h3 id="3-firebase初期化">3. Firebase初期化</h3>
+<pre><code class="language-javascript">// firebase-config.js
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+
+// Firebase設定（Firebase Consoleから取得）
+const firebaseConfig = {
+  apiKey: "your-api-key",
+  authDomain: "your-project.firebaseapp.com",
+  projectId: "your-project-id",
+  storageBucket: "your-project.appspot.com",
+  messagingSenderId: "123456789",
+  appId: "your-app-id"
+};
+
+// Firebaseアプリの初期化
+const app = initializeApp(firebaseConfig);
+
+// Authentication インスタンスの取得
+export const auth = getAuth(app);
+export default app;
+</code></pre>
+<h2 id="主要な認証方式の実装">主要な認証方式の実装</h2>
+<h3 id="1-メールパスワード認証">1. メール/パスワード認証</h3>
+<p>最も基本的な認証方式です。ユーザー名とパスワードでアカウントを作成し、認証を行います。</p>
+<pre><code class="language-javascript">import { 
+  createUserWithEmailAndPassword, 
+  signInWithEmailAndPassword,
+  signOut,
+  sendPasswordResetEmail,
+  updateProfile
+} from 'firebase/auth';
+import { auth } from './firebase-config.js';
+
+// 新規登録
+export const signUp = async (email, password, displayName) => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+    
+    // ユーザープロフィールの更新
+    if (displayName) {
+      await updateProfile(user, {
+        displayName: displayName
+      });
+    }
+    
+    console.log('新規登録成功:', user);
+    return { success: true, user };
+  } catch (error) {
+    console.error('新規登録エラー:', error);
+    return { success: false, error: getErrorMessage(error) };
+  }
+};
+
+// ログイン
+export const signIn = async (email, password) => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+    
+    console.log('ログイン成功:', user);
+    return { success: true, user };
+  } catch (error) {
+    console.error('ログインエラー:', error);
+    return { success: false, error: getErrorMessage(error) };
+  }
+};
+
+// ログアウト
+export const logOut = async () => {
+  try {
+    await signOut(auth);
+    console.log('ログアウト成功');
+    return { success: true };
+  } catch (error) {
+    console.error('ログアウトエラー:', error);
+    return { success: false, error: getErrorMessage(error) };
+  }
+};
+
+// パスワードリセット
+export const resetPassword = async (email) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    console.log('パスワードリセットメール送信完了');
+    return { success: true };
+  } catch (error) {
+    console.error('パスワードリセットエラー:', error);
+    return { success: false, error: getErrorMessage(error) };
+  }
+};
+
+// エラーメッセージの変換
+const getErrorMessage = (error) => {
+  switch (error.code) {
+    case 'auth/email-already-in-use':
+      return 'このメールアドレスは既に使用されています';
+    case 'auth/weak-password':
+      return 'パスワードは6文字以上で設定してください';
+    case 'auth/invalid-email':
+      return 'メールアドレスの形式が正しくありません';
+    case 'auth/user-not-found':
+      return 'ユーザーが見つかりません';
+    case 'auth/wrong-password':
+      return 'パスワードが間違っています';
+    default:
+      return error.message;
+  }
+};
+</code></pre>
+<h4 id="react-での使用例">React での使用例</h4>
+<pre><code class="language-jsx">import React, { useState } from 'react';
+import { signUp, signIn, resetPassword } from './auth-service';
+
+const AuthForm = () => {
+  const [isLogin, setIsLogin] = useState(true);
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    displayName: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage('');
+
+    try {
+      let result;
+      if (isLogin) {
+        result = await signIn(formData.email, formData.password);
+      } else {
+        result = await signUp(formData.email, formData.password, formData.displayName);
+      }
+
+      if (result.success) {
+        setMessage('成功しました！');
+      } else {
+        setMessage(result.error);
+      }
+    } catch (error) {
+      setMessage('予期せぬエラーが発生しました');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePasswordReset = async () => {
+    if (!formData.email) {
+      setMessage('メールアドレスを入力してください');
+      return;
+    }
+
+    const result = await resetPassword(formData.email);
+    setMessage(
+      result.success 
+        ? 'パスワードリセットメールを送信しました' 
+        : result.error
+    );
+  };
+
+  return (
+    &#x3C;div className="auth-form">
+      &#x3C;h2>{isLogin ? 'ログイン' : '新規登録'}&#x3C;/h2>
+      
+      &#x3C;form onSubmit={handleSubmit}>
+        &#x3C;div className="form-group">
+          &#x3C;input
+            type="email"
+            placeholder="メールアドレス"
+            value={formData.email}
+            onChange={(e) => setFormData({...formData, email: e.target.value})}
+            required
+          />
+        &#x3C;/div>
+
+        &#x3C;div className="form-group">
+          &#x3C;input
+            type="password"
+            placeholder="パスワード"
+            value={formData.password}
+            onChange={(e) => setFormData({...formData, password: e.target.value})}
+            required
+          />
+        &#x3C;/div>
+
+        {!isLogin &#x26;&#x26; (
+          &#x3C;div className="form-group">
+            &#x3C;input
+              type="text"
+              placeholder="表示名"
+              value={formData.displayName}
+              onChange={(e) => setFormData({...formData, displayName: e.target.value})}
+            />
+          &#x3C;/div>
+        )}
+
+        &#x3C;button type="submit" disabled={loading}>
+          {loading ? '処理中...' : (isLogin ? 'ログイン' : '登録')}
+        &#x3C;/button>
+      &#x3C;/form>
+
+      &#x3C;div className="auth-options">
+        &#x3C;button 
+          type="button" 
+          onClick={() => setIsLogin(!isLogin)}
+        >
+          {isLogin ? '新規登録はこちら' : 'ログインはこちら'}
+        &#x3C;/button>
+
+        {isLogin &#x26;&#x26; (
+          &#x3C;button 
+            type="button" 
+            onClick={handlePasswordReset}
+          >
+            パスワードを忘れた方
+          &#x3C;/button>
+        )}
+      &#x3C;/div>
+
+      {message &#x26;&#x26; &#x3C;p className="message">{message}&#x3C;/p>}
+    &#x3C;/div>
+  );
+};
+
+export default AuthForm;
+</code></pre>
+<h3 id="2-ソーシャルログイン">2. ソーシャルログイン</h3>
+<p>SNSアカウントを使った認証は、ユーザーの手間を大幅に削減できる人気の認証方式です。</p>
+<h4 id="google認証">Google認証</h4>
+<pre><code class="language-javascript">import { 
+  GoogleAuthProvider, 
+  signInWithPopup, 
+  signInWithRedirect,
+  getRedirectResult 
+} from 'firebase/auth';
+import { auth } from './firebase-config.js';
+
+// Googleプロバイダーの設定
+const googleProvider = new GoogleAuthProvider();
+
+// スコープの追加（オプション）
+googleProvider.addScope('profile');
+googleProvider.addScope('email');
+
+// ポップアップでGoogleログイン
+export const signInWithGooglePopup = async () => {
+  try {
+    const result = await signInWithPopup(auth, googleProvider);
+    const user = result.user;
+    
+    // Google認証の追加情報
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const accessToken = credential?.accessToken;
+    
+    console.log('Googleログイン成功:', {
+      user,
+      accessToken
+    });
+    
+    return { success: true, user, accessToken };
+  } catch (error) {
+    console.error('Googleログインエラー:', error);
+    return { success: false, error: getGoogleErrorMessage(error) };
+  }
+};
+
+// リダイレクトでGoogleログイン（モバイル推奨）
+export const signInWithGoogleRedirect = async () => {
+  try {
+    await signInWithRedirect(auth, googleProvider);
+    return { success: true };
+  } catch (error) {
+    console.error('Googleリダイレクトエラー:', error);
+    return { success: false, error: getGoogleErrorMessage(error) };
+  }
+};
+
+// リダイレクト後の結果を取得
+export const getGoogleRedirectResult = async () => {
+  try {
+    const result = await getRedirectResult(auth);
+    if (result) {
+      const user = result.user;
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const accessToken = credential?.accessToken;
+      
+      return { success: true, user, accessToken };
+    }
+    return { success: true, user: null };
+  } catch (error) {
+    console.error('Googleリダイレクト結果エラー:', error);
+    return { success: false, error: getGoogleErrorMessage(error) };
+  }
+};
+
+const getGoogleErrorMessage = (error) => {
+  switch (error.code) {
+    case 'auth/account-exists-with-different-credential':
+      return '別の認証方法で既に登録されているアカウントです';
+    case 'auth/cancelled-popup-request':
+      return 'ポップアップがキャンセルされました';
+    case 'auth/popup-blocked':
+      return 'ポップアップがブロックされています';
+    case 'auth/popup-closed-by-user':
+      return 'ユーザーがポップアップを閉じました';
+    default:
+      return error.message;
+  }
+};
+</code></pre>
+<h4 id="github認証">GitHub認証</h4>
+<pre><code class="language-javascript">import { 
+  GithubAuthProvider, 
+  signInWithPopup 
+} from 'firebase/auth';
+import { auth } from './firebase-config.js';
+
+const githubProvider = new GithubAuthProvider();
+
+// GitHubログイン
+export const signInWithGithub = async () => {
+  try {
+    const result = await signInWithPopup(auth, githubProvider);
+    const user = result.user;
+    
+    // GitHub認証の追加情報
+    const credential = GithubAuthProvider.credentialFromResult(result);
+    const accessToken = credential?.accessToken;
+    
+    console.log('GitHubログイン成功:', {
+      user,
+      accessToken
+    });
+    
+    return { success: true, user, accessToken };
+  } catch (error) {
+    console.error('GitHubログインエラー:', error);
+    return { success: false, error: error.message };
+  }
+};
+</code></pre>
+<h4 id="react-での使用例-1">React での使用例</h4>
+<pre><code class="language-jsx">import React from 'react';
+import { 
+  signInWithGooglePopup, 
+  signInWithGithub,
+  getGoogleRedirectResult 
+} from './social-auth-service';
+
+const SocialAuth = () => {
+  const [loading, setLoading] = useState(false);
+
+  // コンポーネントマウント時にリダイレクト結果をチェック
+  useEffect(() => {
+    const checkRedirectResult = async () => {
+      const result = await getGoogleRedirectResult();
+      if (result.success &#x26;&#x26; result.user) {
+        console.log('リダイレクト認証成功:', result.user);
+      }
+    };
+    
+    checkRedirectResult();
+  }, []);
+
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    const result = await signInWithGooglePopup();
+    setLoading(false);
+    
+    if (result.success) {
+      console.log('Google認証成功');
+    } else {
+      alert(result.error);
+    }
+  };
+
+  const handleGithubLogin = async () => {
+    setLoading(true);
+    const result = await signInWithGithub();
+    setLoading(false);
+    
+    if (result.success) {
+      console.log('GitHub認証成功');
+    } else {
+      alert(result.error);
+    }
+  };
+
+  return (
+    &#x3C;div className="social-auth">
+      &#x3C;h3>ソーシャルログイン&#x3C;/h3>
+      
+      &#x3C;button 
+        onClick={handleGoogleLogin} 
+        disabled={loading}
+        className="google-login-btn"
+      >
+        &#x3C;img src="/google-icon.svg" alt="Google" />
+        Googleでログイン
+      &#x3C;/button>
+      
+      &#x3C;button 
+        onClick={handleGithubLogin} 
+        disabled={loading}
+        className="github-login-btn"
+      >
+        &#x3C;img src="/github-icon.svg" alt="GitHub" />
+        GitHubでログイン
+      &#x3C;/button>
+    &#x3C;/div>
+  );
+};
+
+export default SocialAuth;
+</code></pre>
+<h3 id="3-電話番号認証">3. 電話番号認証</h3>
+<p>SMS認証による電話番号認証は、セキュリティが高く、グローバルで利用できる認証方式です。</p>
+<pre><code class="language-javascript">import { 
+  signInWithPhoneNumber, 
+  RecaptchaVerifier,
+  linkWithCredential,
+  PhoneAuthProvider 
+} from 'firebase/auth';
+import { auth } from './firebase-config.js';
+
+// reCAPTCHA設定
+export const setupRecaptcha = (elementId = 'recaptcha-container') => {
+  if (window.recaptchaVerifier) {
+    window.recaptchaVerifier.clear();
+  }
+
+  window.recaptchaVerifier = new RecaptchaVerifier(auth, elementId, {
+    'size': 'normal',
+    'callback': (response) => {
+      console.log('reCAPTCHA solved');
+    },
+    'expired-callback': () => {
+      console.log('reCAPTCHA expired');
+    }
+  });
+};
+
+// 電話番号でサインイン
+export const signInWithPhone = async (phoneNumber) => {
+  try {
+    if (!window.recaptchaVerifier) {
+      setupRecaptcha();
+    }
+
+    const confirmationResult = await signInWithPhoneNumber(
+      auth, 
+      phoneNumber, 
+      window.recaptchaVerifier
+    );
+    
+    console.log('SMS送信成功');
+    return { success: true, confirmationResult };
+  } catch (error) {
+    console.error('電話番号認証エラー:', error);
+    return { success: false, error: getPhoneErrorMessage(error) };
+  }
+};
+
+// SMS認証コードを確認
+export const confirmPhoneCode = async (confirmationResult, code) => {
+  try {
+    const result = await confirmationResult.confirm(code);
+    const user = result.user;
+    
+    console.log('電話番号認証成功:', user);
+    return { success: true, user };
+  } catch (error) {
+    console.error('認証コード確認エラー:', error);
+    return { success: false, error: getPhoneErrorMessage(error) };
+  }
+};
+
+// 既存アカウントに電話番号を追加
+export const linkPhoneNumber = async (phoneNumber) => {
+  try {
+    const currentUser = auth.currentUser;
+    if (!currentUser) {
+      throw new Error('ユーザーがサインインしていません');
+    }
+
+    if (!window.recaptchaVerifier) {
+      setupRecaptcha();
+    }
+
+    const confirmationResult = await signInWithPhoneNumber(
+      auth, 
+      phoneNumber, 
+      window.recaptchaVerifier
+    );
+
+    return { success: true, confirmationResult };
+  } catch (error) {
+    console.error('電話番号追加エラー:', error);
+    return { success: false, error: getPhoneErrorMessage(error) };
+  }
+};
+
+// 電話番号リンクを確認
+export const confirmPhoneLink = async (confirmationResult, code) => {
+  try {
+    const currentUser = auth.currentUser;
+    if (!currentUser) {
+      throw new Error('ユーザーがサインインしていません');
+    }
+
+    const phoneCredential = PhoneAuthProvider.credential(
+      confirmationResult.verificationId,
+      code
+    );
+
+    const result = await linkWithCredential(currentUser, phoneCredential);
+    console.log('電話番号追加成功:', result.user);
+    return { success: true, user: result.user };
+  } catch (error) {
+    console.error('電話番号リンクエラー:', error);
+    return { success: false, error: getPhoneErrorMessage(error) };
+  }
+};
+
+const getPhoneErrorMessage = (error) => {
+  switch (error.code) {
+    case 'auth/invalid-phone-number':
+      return '電話番号の形式が正しくありません';
+    case 'auth/missing-phone-number':
+      return '電話番号が入力されていません';
+    case 'auth/quota-exceeded':
+      return 'SMS送信の制限に達しました';
+    case 'auth/invalid-verification-code':
+      return '認証コードが正しくありません';
+    case 'auth/credential-already-in-use':
+      return 'この電話番号は既に他のアカウントで使用されています';
+    default:
+      return error.message;
+  }
+};
+</code></pre>
+<p>電話番号認証については<a href="../0046_firebase-phone-authentication-guide">Firebase電話番号認証完全ガイド</a>でより詳しく解説しています。</p>
+<h2 id="認証状態の管理">認証状態の管理</h2>
+<p>Firebase認証の重要な機能の一つが、認証状態の自動監視です。</p>
+<h3 id="react-での認証状態管理">React での認証状態管理</h3>
+<pre><code class="language-jsx">import React, { createContext, useContext, useEffect, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase-config';
+
+// 認証コンテキストの作成
+const AuthContext = createContext({});
+
+// 認証プロバイダー
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // 認証状態の監視
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      console.log('認証状態変更:', user);
+      setUser(user);
+      setLoading(false);
+    });
+
+    // クリーンアップ
+    return unsubscribe;
+  }, []);
+
+  const value = {
+    user,
+    loading,
+    isAuthenticated: !!user
+  };
+
+  return (
+    &#x3C;AuthContext.Provider value={value}>
+      {!loading &#x26;&#x26; children}
+    &#x3C;/AuthContext.Provider>
+  );
+};
+
+// カスタムフック
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuthはAuthProvider内で使用してください');
+  }
+  return context;
+};
+
+// 使用例: App.js
+const App = () => {
+  return (
+    &#x3C;AuthProvider>
+      &#x3C;Router>
+        &#x3C;Routes>
+          &#x3C;Route path="/login" element={&#x3C;LoginPage />} />
+          &#x3C;Route path="/dashboard" element={&#x3C;ProtectedRoute>&#x3C;Dashboard />&#x3C;/ProtectedRoute>} />
+          &#x3C;Route path="/" element={&#x3C;HomePage />} />
+        &#x3C;/Routes>
+      &#x3C;/Router>
+    &#x3C;/AuthProvider>
+  );
+};
+
+// プロテクトされたルート
+const ProtectedRoute = ({ children }) => {
+  const { isAuthenticated, loading } = useAuth();
+
+  if (loading) {
+    return &#x3C;div>Loading...&#x3C;/div>;
+  }
+
+  if (!isAuthenticated) {
+    return &#x3C;Navigate to="/login" replace />;
+  }
+
+  return children;
+};
+</code></pre>
+<h3 id="vuejs-での認証状態管理">Vue.js での認証状態管理</h3>
+<pre><code class="language-javascript">// composables/useAuth.js
+import { ref, onMounted, onUnmounted } from 'vue';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase-config';
+
+export const useAuth = () => {
+  const user = ref(null);
+  const loading = ref(true);
+  const isAuthenticated = computed(() => !!user.value);
+
+  let unsubscribe;
+
+  onMounted(() => {
+    unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      console.log('認証状態変更:', firebaseUser);
+      user.value = firebaseUser;
+      loading.value = false;
+    });
+  });
+
+  onUnmounted(() => {
+    if (unsubscribe) {
+      unsubscribe();
+    }
+  });
+
+  return {
+    user: readonly(user),
+    loading: readonly(loading),
+    isAuthenticated
+  };
+};
+
+// 使用例: App.vue
+&#x3C;template>
+  &#x3C;div id="app">
+    &#x3C;div v-if="loading">Loading...&#x3C;/div>
+    &#x3C;router-view v-else />
+  &#x3C;/div>
+&#x3C;/template>
+
+&#x3C;script setup>
+import { useAuth } from './composables/useAuth';
+
+const { loading } = useAuth();
+&#x3C;/script>
+</code></pre>
+<h2 id="応用的な使い方">応用的な使い方</h2>
+<h3 id="1-複数認証プロバイダーの連携">1. 複数認証プロバイダーの連携</h3>
+<p>ユーザーが複数の認証方法を使えるようにする実装例：</p>
+<pre><code class="language-javascript">import { 
+  linkWithCredential, 
+  unlink,
+  reauthenticateWithCredential 
+} from 'firebase/auth';
+import { auth } from './firebase-config';
+
+// アカウントに認証プロバイダーを追加
+export const linkProvider = async (credential) => {
+  try {
+    const currentUser = auth.currentUser;
+    if (!currentUser) {
+      throw new Error('ユーザーがサインインしていません');
+    }
+
+    const result = await linkWithCredential(currentUser, credential);
+    console.log('プロバイダー追加成功:', result.user);
+    return { success: true, user: result.user };
+  } catch (error) {
+    console.error('プロバイダー追加エラー:', error);
+    
+    if (error.code === 'auth/requires-recent-login') {
+      return { success: false, error: '再認証が必要です', needsReauth: true };
+    }
+    
+    return { success: false, error: error.message };
+  }
+};
+
+// 認証プロバイダーを削除
+export const unlinkProvider = async (providerId) => {
+  try {
+    const currentUser = auth.currentUser;
+    if (!currentUser) {
+      throw new Error('ユーザーがサインインしていません');
+    }
+
+    const result = await unlink(currentUser, providerId);
+    console.log('プロバイダー削除成功:', result);
+    return { success: true, user: result };
+  } catch (error) {
+    console.error('プロバイダー削除エラー:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// 連携済みプロバイダーの取得
+export const getLinkedProviders = () => {
+  const currentUser = auth.currentUser;
+  if (!currentUser) return [];
+
+  return currentUser.providerData.map(provider => ({
+    providerId: provider.providerId,
+    uid: provider.uid,
+    displayName: provider.displayName,
+    email: provider.email,
+    phoneNumber: provider.phoneNumber
+  }));
+};
+
+// 使用例: プロバイダー管理コンポーネント
+const ProviderManager = () => {
+  const [linkedProviders, setLinkedProviders] = useState([]);
+  const { user } = useAuth();
+
+  useEffect(() => {
+    if (user) {
+      setLinkedProviders(getLinkedProviders());
+    }
+  }, [user]);
+
+  const handleLinkGoogle = async () => {
+    const result = await signInWithGooglePopup();
+    if (result.success &#x26;&#x26; result.credential) {
+      const linkResult = await linkProvider(result.credential);
+      if (linkResult.success) {
+        setLinkedProviders(getLinkedProviders());
+        alert('Google認証が追加されました');
+      }
+    }
+  };
+
+  const handleUnlinkProvider = async (providerId) => {
+    const result = await unlinkProvider(providerId);
+    if (result.success) {
+      setLinkedProviders(getLinkedProviders());
+      alert('認証プロバイダーが削除されました');
+    }
+  };
+
+  return (
+    &#x3C;div className="provider-manager">
+      &#x3C;h3>認証方法の管理&#x3C;/h3>
+      
+      &#x3C;div className="linked-providers">
+        &#x3C;h4>連携済み認証方法&#x3C;/h4>
+        {linkedProviders.map(provider => (
+          &#x3C;div key={provider.providerId} className="provider-item">
+            &#x3C;span>{provider.providerId}&#x3C;/span>
+            &#x3C;span>{provider.email || provider.phoneNumber}&#x3C;/span>
+            {linkedProviders.length > 1 &#x26;&#x26; (
+              &#x3C;button onClick={() => handleUnlinkProvider(provider.providerId)}>
+                削除
+              &#x3C;/button>
+            )}
+          &#x3C;/div>
+        ))}
+      &#x3C;/div>
+
+      &#x3C;div className="available-providers">
+        &#x3C;h4>追加可能な認証方法&#x3C;/h4>
+        {!linkedProviders.find(p => p.providerId === 'google.com') &#x26;&#x26; (
+          &#x3C;button onClick={handleLinkGoogle}>
+            Google認証を追加
+          &#x3C;/button>
+        )}
+      &#x3C;/div>
+    &#x3C;/div>
+  );
+};
+</code></pre>
+<h3 id="2-カスタム認証">2. カスタム認証</h3>
+<p>独自の認証システムがある場合に、Firebase認証と連携する方法：</p>
+<pre><code class="language-javascript">// カスタムトークンを使った認証
+import { signInWithCustomToken } from 'firebase/auth';
+import { auth } from './firebase-config';
+
+export const signInWithCustom = async (customToken) => {
+  try {
+    const userCredential = await signInWithCustomToken(auth, customToken);
+    const user = userCredential.user;
+    
+    console.log('カスタム認証成功:', user);
+    return { success: true, user };
+  } catch (error) {
+    console.error('カスタム認証エラー:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// サーバーサイドでカスタムトークンを生成する例（Node.js）
+// この部分は通常、バックエンドで実装します
+/*
+const admin = require('firebase-admin');
+
+// カスタムトークンの生成
+const createCustomToken = async (uid, additionalClaims = {}) => {
+  try {
+    const customToken = await admin.auth().createCustomToken(uid, additionalClaims);
+    return { success: true, token: customToken };
+  } catch (error) {
+    console.error('カスタムトークン生成エラー:', error);
+    return { success: false, error: error.message };
+  }
+};
+*/
+</code></pre>
+<h2 id="セキュリティベストプラクティス">セキュリティベストプラクティス</h2>
+<h3 id="1-firebase-security-rulesとの連携">1. Firebase Security Rulesとの連携</h3>
+<pre><code class="language-javascript">// Firestore Security Rules の例
+/*
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ユーザーは自分のデータのみアクセス可能
+    match /users/{userId} {
+      allow read, write: if request.auth != null &#x26;&#x26; request.auth.uid == userId;
+    }
+    
+    // 管理者のみアクセス可能
+    match /admin/{document} {
+      allow read, write: if request.auth != null &#x26;&#x26; 
+        request.auth.token.admin == true;
+    }
+  }
+}
+*/
+
+// カスタムクレームの設定（サーバーサイド）
+/*
+const admin = require('firebase-admin');
+
+const setAdminRole = async (uid) => {
+  try {
+    await admin.auth().setCustomUserClaims(uid, { admin: true });
+    console.log(`ユーザー ${uid} に管理者権限を付与`);
+  } catch (error) {
+    console.error('管理者権限付与エラー:', error);
+  }
+};
+*/
+
+// クライアントサイドでカスタムクレームを取得
+export const getUserClaims = async () => {
+  const user = auth.currentUser;
+  if (!user) return null;
+
+  try {
+    const idTokenResult = await user.getIdTokenResult();
+    return idTokenResult.claims;
+  } catch (error) {
+    console.error('カスタムクレーム取得エラー:', error);
+    return null;
+  }
+};
+</code></pre>
+<h3 id="2-セキュリティ強化">2. セキュリティ強化</h3>
+<pre><code class="language-javascript">// セキュリティ強化のための実装例
+import { 
+  reauthenticateWithCredential, 
+  updatePassword,
+  deleteUser 
+} from 'firebase/auth';
+
+// 再認証
+export const reauthenticateUser = async (credential) => {
+  try {
+    const user = auth.currentUser;
+    if (!user) throw new Error('ユーザーが見つかりません');
+
+    await reauthenticateWithCredential(user, credential);
+    return { success: true };
+  } catch (error) {
+    console.error('再認証エラー:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// パスワード変更（再認証が必要）
+export const changePassword = async (currentPassword, newPassword) => {
+  try {
+    const user = auth.currentUser;
+    if (!user || !user.email) {
+      throw new Error('メールアドレスでサインインしたユーザーのみ対応');
+    }
+
+    // 現在のパスワードで再認証
+    const credential = EmailAuthProvider.credential(user.email, currentPassword);
+    await reauthenticateWithCredential(user, credential);
+
+    // パスワード更新
+    await updatePassword(user, newPassword);
+    
+    console.log('パスワード変更成功');
+    return { success: true };
+  } catch (error) {
+    console.error('パスワード変更エラー:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// セキュリティを考慮したユーザー削除
+export const deleteUserAccount = async (password) => {
+  try {
+    const user = auth.currentUser;
+    if (!user) throw new Error('ユーザーが見つかりません');
+
+    // メール認証の場合は再認証
+    if (user.email &#x26;&#x26; password) {
+      const credential = EmailAuthProvider.credential(user.email, password);
+      await reauthenticateWithCredential(user, credential);
+    }
+
+    await deleteUser(user);
+    console.log('ユーザー削除成功');
+    return { success: true };
+  } catch (error) {
+    console.error('ユーザー削除エラー:', error);
+    return { success: false, error: error.message };
+  }
+};
+</code></pre>
+<h2 id="よくある問題と解決法">よくある問題と解決法</h2>
+<h3 id="1-認証エラーの包括的な処理">1. 認証エラーの包括的な処理</h3>
+<pre><code class="language-javascript">// 統一的なエラーハンドリング
+export const handleAuthError = (error) => {
+  console.error('Firebase認証エラー:', error);
+
+  const errorMessages = {
+    // メール認証関連
+    'auth/email-already-in-use': 'このメールアドレスは既に使用されています',
+    'auth/invalid-email': 'メールアドレスの形式が正しくありません',
+    'auth/weak-password': 'パスワードは6文字以上で設定してください',
+    'auth/user-not-found': 'このメールアドレスは登録されていません',
+    'auth/wrong-password': 'パスワードが間違っています',
+    
+    // ソーシャルログイン関連
+    'auth/account-exists-with-different-credential': '別の認証方法で既に登録されています',
+    'auth/popup-blocked': 'ポップアップがブロックされています',
+    'auth/popup-closed-by-user': 'ログインがキャンセルされました',
+    'auth/cancelled-popup-request': 'ポップアップリクエストがキャンセルされました',
+    
+    // 電話番号認証関連
+    'auth/invalid-phone-number': '電話番号の形式が正しくありません',
+    'auth/invalid-verification-code': '認証コードが正しくありません',
+    'auth/code-expired': '認証コードの有効期限が切れています',
+    
+    // 一般的なエラー
+    'auth/network-request-failed': 'ネットワークエラーが発生しました',
+    'auth/too-many-requests': 'リクエストが多すぎます。しばらく待ってから再試行してください',
+    'auth/user-disabled': 'このアカウントは無効化されています',
+    'auth/requires-recent-login': '再度ログインしてから操作してください'
+  };
+
+  return errorMessages[error.code] || `認証エラー: ${error.message}`;
+};
+</code></pre>
+<h3 id="2-パフォーマンス最適化">2. パフォーマンス最適化</h3>
+<pre><code class="language-javascript">// 認証状態の効率的な管理
+import { useEffect, useState, useCallback } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase-config';
+
+export const useAuthOptimized = () => {
+  const [authState, setAuthState] = useState({
+    user: null,
+    loading: true,
+    initialized: false
+  });
+
+  // メモ化されたコールバック
+  const updateAuthState = useCallback((user) => {
+    setAuthState({
+      user,
+      loading: false,
+      initialized: true
+    });
+  }, []);
+
+  useEffect(() => {
+    // 認証状態の監視を一度だけ設定
+    const unsubscribe = onAuthStateChanged(auth, updateAuthState);
+    
+    return unsubscribe;
+  }, [updateAuthState]);
+
+  return authState;
+};
+
+// トークンの効率的な管理
+export const useAuthToken = () => {
+  const [token, setToken] = useState(null);
+  const [tokenLoading, setTokenLoading] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        try {
+          const idToken = await user.getIdToken();
+          setToken(idToken);
+        } catch (error) {
+          console.error('トークン取得エラー:', error);
+          setToken(null);
+        }
+      } else {
+        setToken(null);
+      }
+      setTokenLoading(false);
+    });
+
+    return unsubscribe;
+  }, []);
+
+  return { token, tokenLoading };
+};
+</code></pre>
+<h3 id="3-デバッグとテスト">3. デバッグとテスト</h3>
+<pre><code class="language-javascript">// 開発環境でのデバッグ支援
+export const debugAuth = () => {
+  if (process.env.NODE_ENV !== 'development') return;
+
+  const user = auth.currentUser;
+  
+  console.group('Firebase認証デバッグ情報');
+  console.log('現在のユーザー:', user);
+  
+  if (user) {
+    console.log('UID:', user.uid);
+    console.log('メール:', user.email);
+    console.log('表示名:', user.displayName);
+    console.log('電話番号:', user.phoneNumber);
+    console.log('メール確認済み:', user.emailVerified);
+    console.log('認証プロバイダー:', user.providerData);
+    console.log('作成日時:', user.metadata.creationTime);
+    console.log('最終ログイン:', user.metadata.lastSignInTime);
+  } else {
+    console.log('ユーザーはサインインしていません');
+  }
+  
+  console.groupEnd();
+};
+
+// テスト用のモック関数
+export const createMockUser = (overrides = {}) => {
+  return {
+    uid: 'mock-uid',
+    email: 'test@example.com',
+    displayName: 'Test User',
+    phoneNumber: null,
+    emailVerified: true,
+    providerData: [],
+    metadata: {
+      creationTime: new Date().toISOString(),
+      lastSignInTime: new Date().toISOString()
+    },
+    ...overrides
+  };
+};
+</code></pre>
+<h2 id="実践的な使用例完全な認証システム">実践的な使用例：完全な認証システム</h2>
+<p>実際のプロジェクトで使える、包括的な認証システムの実装例：</p>
+<pre><code class="language-jsx">// hooks/useFirebaseAuth.js
+import { useState, useEffect, useCallback } from 'react';
+import { 
+  onAuthStateChanged, 
+  signOut 
+} from 'firebase/auth';
+import { auth } from '../firebase-config';
+import { 
+  signIn, 
+  signUp, 
+  signInWithGooglePopup,
+  signInWithGithub,
+  resetPassword 
+} from '../services/auth-service';
+
+export const useFirebaseAuth = () => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // 認証状態の監視
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setLoading(false);
+    });
+
+    return unsubscribe;
+  }, []);
+
+  // エラーをクリア
+  const clearError = useCallback(() => {
+    setError(null);
+  }, []);
+
+  // 共通のエラーハンドリング
+  const handleAuthAction = useCallback(async (authFunction, ...args) => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const result = await authFunction(...args);
+      if (!result.success) {
+        setError(result.error);
+      }
+      return result;
+    } catch (err) {
+      setError('予期せぬエラーが発生しました');
+      return { success: false, error: err.message };
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  // 認証メソッド
+  const login = useCallback((email, password) => 
+    handleAuthAction(signIn, email, password), [handleAuthAction]);
+
+  const register = useCallback((email, password, displayName) => 
+    handleAuthAction(signUp, email, password, displayName), [handleAuthAction]);
+
+  const googleLogin = useCallback(() => 
+    handleAuthAction(signInWithGooglePopup), [handleAuthAction]);
+
+  const githubLogin = useCallback(() => 
+    handleAuthAction(signInWithGithub), [handleAuthAction]);
+
+  const forgotPassword = useCallback((email) => 
+    handleAuthAction(resetPassword, email), [handleAuthAction]);
+
+  const logout = useCallback(async () => {
+    setLoading(true);
+    try {
+      await signOut(auth);
+      setUser(null);
+      setError(null);
+    } catch (err) {
+      setError('ログアウトに失敗しました');
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  return {
+    user,
+    loading,
+    error,
+    isAuthenticated: !!user,
+    login,
+    register,
+    googleLogin,
+    githubLogin,
+    forgotPassword,
+    logout,
+    clearError
+  };
+};
+
+// components/AuthProvider.jsx
+import React, { createContext, useContext } from 'react';
+import { useFirebaseAuth } from '../hooks/useFirebaseAuth';
+
+const AuthContext = createContext();
+
+export const AuthProvider = ({ children }) => {
+  const auth = useFirebaseAuth();
+  
+  return (
+    &#x3C;AuthContext.Provider value={auth}>
+      {children}
+    &#x3C;/AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuthはAuthProvider内で使用してください');
+  }
+  return context;
+};
+
+// components/CompleteAuthForm.jsx
+import React, { useState } from 'react';
+import { useAuth } from './AuthProvider';
+
+const CompleteAuthForm = () => {
+  const [mode, setMode] = useState('login'); // 'login', 'register', 'forgot'
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    displayName: ''
+  });
+
+  const { 
+    login, 
+    register, 
+    googleLogin, 
+    githubLogin, 
+    forgotPassword, 
+    loading, 
+    error, 
+    clearError 
+  } = useAuth();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    clearError();
+
+    switch (mode) {
+      case 'login':
+        await login(formData.email, formData.password);
+        break;
+      case 'register':
+        await register(formData.email, formData.password, formData.displayName);
+        break;
+      case 'forgot':
+        const result = await forgotPassword(formData.email);
+        if (result.success) {
+          alert('パスワードリセットメールを送信しました');
+          setMode('login');
+        }
+        break;
+    }
+  };
+
+  const handleInputChange = (field, value) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const renderForm = () => {
+    switch (mode) {
+      case 'login':
+        return (
+          &#x3C;div>
+            &#x3C;h2>ログイン&#x3C;/h2>
+            &#x3C;form onSubmit={handleSubmit}>
+              &#x3C;input
+                type="email"
+                placeholder="メールアドレス"
+                value={formData.email}
+                onChange={(e) => handleInputChange('email', e.target.value)}
+                required
+              />
+              &#x3C;input
+                type="password"
+                placeholder="パスワード"
+                value={formData.password}
+                onChange={(e) => handleInputChange('password', e.target.value)}
+                required
+              />
+              &#x3C;button type="submit" disabled={loading}>
+                {loading ? 'ログイン中...' : 'ログイン'}
+              &#x3C;/button>
+            &#x3C;/form>
+            &#x3C;button type="button" onClick={() => setMode('register')}>
+              新規登録
+            &#x3C;/button>
+            &#x3C;button type="button" onClick={() => setMode('forgot')}>
+              パスワードを忘れた
+            &#x3C;/button>
+          &#x3C;/div>
+        );
+
+      case 'register':
+        return (
+          &#x3C;div>
+            &#x3C;h2>新規登録&#x3C;/h2>
+            &#x3C;form onSubmit={handleSubmit}>
+              &#x3C;input
+                type="text"
+                placeholder="表示名"
+                value={formData.displayName}
+                onChange={(e) => handleInputChange('displayName', e.target.value)}
+              />
+              &#x3C;input
+                type="email"
+                placeholder="メールアドレス"
+                value={formData.email}
+                onChange={(e) => handleInputChange('email', e.target.value)}
+                required
+              />
+              &#x3C;input
+                type="password"
+                placeholder="パスワード（6文字以上）"
+                value={formData.password}
+                onChange={(e) => handleInputChange('password', e.target.value)}
+                required
+              />
+              &#x3C;button type="submit" disabled={loading}>
+                {loading ? '登録中...' : '登録'}
+              &#x3C;/button>
+            &#x3C;/form>
+            &#x3C;button type="button" onClick={() => setMode('login')}>
+              ログインに戻る
+            &#x3C;/button>
+          &#x3C;/div>
+        );
+
+      case 'forgot':
+        return (
+          &#x3C;div>
+            &#x3C;h2>パスワードリセット&#x3C;/h2>
+            &#x3C;form onSubmit={handleSubmit}>
+              &#x3C;input
+                type="email"
+                placeholder="メールアドレス"
+                value={formData.email}
+                onChange={(e) => handleInputChange('email', e.target.value)}
+                required
+              />
+              &#x3C;button type="submit" disabled={loading}>
+                {loading ? '送信中...' : 'リセットメール送信'}
+              &#x3C;/button>
+            &#x3C;/form>
+            &#x3C;button type="button" onClick={() => setMode('login')}>
+              ログインに戻る
+            &#x3C;/button>
+          &#x3C;/div>
+        );
+    }
+  };
+
+  return (
+    &#x3C;div className="auth-form">
+      {renderForm()}
+      
+      &#x3C;div className="social-auth">
+        &#x3C;h3>またはソーシャルログイン&#x3C;/h3>
+        &#x3C;button onClick={googleLogin} disabled={loading}>
+          Googleでログイン
+        &#x3C;/button>
+        &#x3C;button onClick={githubLogin} disabled={loading}>
+          GitHubでログイン
+        &#x3C;/button>
+      &#x3C;/div>
+
+      {error &#x26;&#x26; (
+        &#x3C;div className="error-message">
+          &#x3C;p>{error}&#x3C;/p>
+          &#x3C;button onClick={clearError}>閉じる&#x3C;/button>
+        &#x3C;/div>
+      )}
+    &#x3C;/div>
+  );
+};
+
+export default CompleteAuthForm;
+</code></pre>
+<h2 id="まとめ">まとめ</h2>
+<h3 id="firebase認証の主要なポイント">Firebase認証の主要なポイント</h3>
+<ol>
+<li><strong>豊富な認証方式</strong>: メール、SNS、電話番号など多様な選択肢</li>
+<li><strong>簡単な実装</strong>: 数行のコードで高機能な認証システムを構築</li>
+<li><strong>リアルタイム同期</strong>: 認証状態の自動監視と更新</li>
+<li><strong>高いセキュリティ</strong>: 業界標準の暗号化とセキュリティ機能</li>
+<li><strong>クロスプラットフォーム</strong>: Web、iOS、Androidで統一</li>
+</ol>
+<h3 id="ベストプラクティス">ベストプラクティス</h3>
+<ul>
+<li>✅ <strong>適切なエラーハンドリング</strong>でユーザー体験を向上</li>
+<li>✅ <strong>認証状態の効率的な管理</strong>でパフォーマンスを最適化</li>
+<li>✅ <strong>Security Rules</strong>でデータアクセスを制御</li>
+<li>✅ <strong>再認証</strong>でセンシティブな操作を保護</li>
+<li>✅ <strong>テスト環境</strong>で開発効率を向上</li>
+</ul>
+<h3 id="次のステップ">次のステップ</h3>
+<ol>
+<li><strong>実際のプロジェクトに導入</strong>してみる</li>
+<li><strong>Firebase Security Rules</strong>を学習する</li>
+<li><strong>Firestore/Realtime Database</strong>との連携を理解する</li>
+<li><strong>Firebase Cloud Functions</strong>でバックエンド処理を実装</li>
+<li><strong>Analytics</strong>でユーザー行動を分析</li>
+</ol>
+<p>Firebase認証をマスターして、安全で使いやすいWebアプリケーションを構築しましょう！</p>
+<h2 id="参考リンク">参考リンク</h2>
+<h3 id="firebase公式ドキュメント">Firebase公式ドキュメント</h3>
+<ul>
+<li><a href="https://firebase.google.com/docs/auth">Firebase Authentication 公式ドキュメント</a></li>
+<li><a href="https://firebase.google.com/docs/auth/web/start">Firebase JavaScript SDK 認証ガイド</a></li>
+<li><a href="https://firebase.google.com/docs/web/setup">Firebase プロジェクト設定ガイド</a></li>
+<li><a href="https://firebase.google.com/docs/rules">Firebase Security Rules</a></li>
+<li><a href="https://firebase.google.com/docs/auth/web/account-linking">ユーザー アカウントのリンク</a></li>
+</ul>
+<h3 id="認証方式別の詳細ガイド">認証方式別の詳細ガイド</h3>
+<ul>
+<li><a href="https://firebase.google.com/docs/auth/web/google-signin">Google認証の設定</a></li>
+<li><a href="https://firebase.google.com/docs/auth/web/github-auth">GitHub認証の設定</a></li>
+<li><a href="https://firebase.google.com/docs/auth/web/phone-auth">電話番号認証の実装</a></li>
+</ul>
+<h3 id="関連技術">関連技術</h3>
+<ul>
+<li><a href="https://react.dev/">React公式ドキュメント</a></li>
+<li><a href="https://vuejs.org/">Vue.js公式ドキュメント</a></li>
+<li><a href="https://oauth.net/2/">OAuth 2.0 解説</a></li>
+<li><a href="https://jwt.io/">JSON Web Tokens (JWT)</a></li>
+</ul></article><nav class="mt-8 pt-4 border-t border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-aa7deb192a774533.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[87555,[],\"\"]\n3:I[31295,[],\"\"]\n5:I[59665,[],\"MetadataBoundary\"]\n7:I[59665,[],\"OutletBoundary\"]\na:I[74911,[],\"AsyncMetadataOutlet\"]\nc:I[59665,[],\"ViewportBoundary\"]\ne:I[26614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"KZrMisSdXyu7FDjuS9HOy\",\"p\":\"\",\"c\":[\"\",\"blog\",\"firebase-authentication-complete-guide\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"firebase-authentication-complete-guide\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"blog\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"firebase-authentication-complete-guide\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",[\"$\",\"$L5\",null,{\"children\":\"$L6\"}],null,[\"$\",\"$L7\",null,{\"children\":[\"$L8\",\"$L9\",[\"$\",\"$La\",null,{\"promise\":\"$@b\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"tZXgehN5NBgxCXjD0kSpa\",{\"children\":[[\"$\",\"$Lc\",null,{\"children\":\"$Ld\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$e\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"f:\"$Sreact.suspense\"\n10:I[74911,[],\"AsyncMetadata\"]\n6:[\"$\",\"$f\",null,{\"fallback\":null,\"children\":[\"$\",\"$L10\",null,{\"promise\":\"$@11\"}]}]\n"])</script><script>self.__next_f.push([1,"9:null\n"])</script><script>self.__next_f.push([1,"12:I[6874,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"\"]\n14:I[31203,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n15:I[4197,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n13:Tc2e7,"])</script><script>self.__next_f.push([1,"\u003ch1 id=\"firebase認証完全ガイド初心者からミドルクラスエンジニアまで\"\u003eFirebase認証完全ガイド：初心者からミドルクラスエンジニアまで\u003c/h1\u003e\n\u003cp\u003eWebアプリケーション開発において、ユーザー認証は最も重要な機能の一つです。Firebase Authentication（Firebase認証）を使えば、複雑な認証システムを簡単に実装できますが、初心者にとって「どの認証方式を選べば良いのか」「どう実装すれば良いのか」は悩ましい問題です。\u003c/p\u003e\n\u003cp\u003eこの記事では、Firebase認証の基本概念から実際のコード実装、実践的な使い方まで、初心者エンジニアにもミドルクラスエンジニアにも価値のある内容を体系的に解説します。\u003c/p\u003e\n\u003ch2 id=\"この記事で学べること\"\u003eこの記事で学べること\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e✅ \u003cstrong\u003eFirebase認証の基本概念と仕組み\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003e主要な認証方式（メール、SNS、電話番号）の実装方法\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003e認証状態の管理とルーティング\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003eセキュリティベストプラクティス\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003e実際のプロジェクトでの活用法\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"firebase認証とは\"\u003eFirebase認証とは\u003c/h2\u003e\n\u003ch3 id=\"認証と認可の違い\"\u003e認証と認可の違い\u003c/h3\u003e\n\u003cp\u003eまず、認証システムを理解する上で重要な概念を整理しましょう：\u003c/p\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003e概念\u003c/th\u003e\u003cth\u003e英語\u003c/th\u003e\u003cth\u003e意味\u003c/th\u003e\u003cth\u003e例\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003e認証\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003eAuthentication\u003c/td\u003e\u003ctd\u003e「あなたは誰ですか？」\u003c/td\u003e\u003ctd\u003eログイン、パスワード確認\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003e認可\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003eAuthorization\u003c/td\u003e\u003ctd\u003e「あなたは何ができますか？」\u003c/td\u003e\u003ctd\u003e管理者権限、リソースアクセス権\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\n\u003cp\u003eFirebase Authenticationは\u003cstrong\u003e認証\u003c/strong\u003eを担当し、ユーザーが本当にその人であるかを確認します。\u003c/p\u003e\n\u003ch3 id=\"firebase-authenticationの特徴\"\u003eFirebase Authenticationの特徴\u003c/h3\u003e\n\u003cp\u003eFirebase Authenticationは、Googleが提供する認証サービスで、以下のメリットがあります：\u003c/p\u003e\n\u003ch4 id=\"-開発効率\"\u003e🚀 開発効率\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e簡単な実装\u003c/strong\u003e：数行のコードで認証機能を実装\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e豊富な認証プロバイダー\u003c/strong\u003e：メール、Google、GitHub、Twitter、電話番号など\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eリアルタイム同期\u003c/strong\u003e：認証状態の変化を自動で検知\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"-セキュリティ\"\u003e🔒 セキュリティ\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e業界標準の暗号化\u003c/strong\u003e：トークンの安全な管理\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e不正アクセス対策\u003c/strong\u003e：レート制限、異常検知\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eGDPR準拠\u003c/strong\u003e：プライバシー保護対応\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"-クロスプラットフォーム\"\u003e📱 クロスプラットフォーム\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eWeb、iOS、Android\u003c/strong\u003e：同一のユーザーベース\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eリアルタイムDatabase/Firestore\u003c/strong\u003eとの連携\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e詳細は\u003ca href=\"https://firebase.google.com/docs/auth\"\u003eFirebase Authentication公式ドキュメント\u003c/a\u003eをご覧ください。\u003c/p\u003e\n\u003ch2 id=\"基本セットアップ\"\u003e基本セットアップ\u003c/h2\u003e\n\u003ch3 id=\"1-firebaseプロジェクトの作成\"\u003e1. Firebaseプロジェクトの作成\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eFirebase Console\u003c/strong\u003eでプロジェクトを作成\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://console.firebase.google.com/\"\u003eFirebase Console\u003c/a\u003eにアクセス\u003c/li\u003e\n\u003cli\u003e「プロジェクトを作成」をクリック\u003c/li\u003e\n\u003cli\u003eプロジェクト名を入力\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eWebアプリを追加\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eプロジェクト設定から「Webアプリを追加」\u003c/li\u003e\n\u003cli\u003eアプリのニックネームを入力\u003c/li\u003e\n\u003cli\u003eFirebase SDKの設定を取得\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eAuthentication機能を有効化\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eFirebase Console \u003e Authentication \u003e Sign-in method\u003c/li\u003e\n\u003cli\u003e使用したい認証プロバイダーを有効化\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"2-firebase-sdkの導入\"\u003e2. Firebase SDKの導入\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# npm を使用する場合\nnpm install firebase\n\n# yarn を使用する場合\nyarn add firebase\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"3-firebase初期化\"\u003e3. Firebase初期化\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// firebase-config.js\nimport { initializeApp } from 'firebase/app';\nimport { getAuth } from 'firebase/auth';\n\n// Firebase設定（Firebase Consoleから取得）\nconst firebaseConfig = {\n  apiKey: \"your-api-key\",\n  authDomain: \"your-project.firebaseapp.com\",\n  projectId: \"your-project-id\",\n  storageBucket: \"your-project.appspot.com\",\n  messagingSenderId: \"123456789\",\n  appId: \"your-app-id\"\n};\n\n// Firebaseアプリの初期化\nconst app = initializeApp(firebaseConfig);\n\n// Authentication インスタンスの取得\nexport const auth = getAuth(app);\nexport default app;\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"主要な認証方式の実装\"\u003e主要な認証方式の実装\u003c/h2\u003e\n\u003ch3 id=\"1-メールパスワード認証\"\u003e1. メール/パスワード認証\u003c/h3\u003e\n\u003cp\u003e最も基本的な認証方式です。ユーザー名とパスワードでアカウントを作成し、認証を行います。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003eimport { \n  createUserWithEmailAndPassword, \n  signInWithEmailAndPassword,\n  signOut,\n  sendPasswordResetEmail,\n  updateProfile\n} from 'firebase/auth';\nimport { auth } from './firebase-config.js';\n\n// 新規登録\nexport const signUp = async (email, password, displayName) =\u003e {\n  try {\n    const userCredential = await createUserWithEmailAndPassword(auth, email, password);\n    const user = userCredential.user;\n    \n    // ユーザープロフィールの更新\n    if (displayName) {\n      await updateProfile(user, {\n        displayName: displayName\n      });\n    }\n    \n    console.log('新規登録成功:', user);\n    return { success: true, user };\n  } catch (error) {\n    console.error('新規登録エラー:', error);\n    return { success: false, error: getErrorMessage(error) };\n  }\n};\n\n// ログイン\nexport const signIn = async (email, password) =\u003e {\n  try {\n    const userCredential = await signInWithEmailAndPassword(auth, email, password);\n    const user = userCredential.user;\n    \n    console.log('ログイン成功:', user);\n    return { success: true, user };\n  } catch (error) {\n    console.error('ログインエラー:', error);\n    return { success: false, error: getErrorMessage(error) };\n  }\n};\n\n// ログアウト\nexport const logOut = async () =\u003e {\n  try {\n    await signOut(auth);\n    console.log('ログアウト成功');\n    return { success: true };\n  } catch (error) {\n    console.error('ログアウトエラー:', error);\n    return { success: false, error: getErrorMessage(error) };\n  }\n};\n\n// パスワードリセット\nexport const resetPassword = async (email) =\u003e {\n  try {\n    await sendPasswordResetEmail(auth, email);\n    console.log('パスワードリセットメール送信完了');\n    return { success: true };\n  } catch (error) {\n    console.error('パスワードリセットエラー:', error);\n    return { success: false, error: getErrorMessage(error) };\n  }\n};\n\n// エラーメッセージの変換\nconst getErrorMessage = (error) =\u003e {\n  switch (error.code) {\n    case 'auth/email-already-in-use':\n      return 'このメールアドレスは既に使用されています';\n    case 'auth/weak-password':\n      return 'パスワードは6文字以上で設定してください';\n    case 'auth/invalid-email':\n      return 'メールアドレスの形式が正しくありません';\n    case 'auth/user-not-found':\n      return 'ユーザーが見つかりません';\n    case 'auth/wrong-password':\n      return 'パスワードが間違っています';\n    default:\n      return error.message;\n  }\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\"react-での使用例\"\u003eReact での使用例\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-jsx\"\u003eimport React, { useState } from 'react';\nimport { signUp, signIn, resetPassword } from './auth-service';\n\nconst AuthForm = () =\u003e {\n  const [isLogin, setIsLogin] = useState(true);\n  const [formData, setFormData] = useState({\n    email: '',\n    password: '',\n    displayName: ''\n  });\n  const [loading, setLoading] = useState(false);\n  const [message, setMessage] = useState('');\n\n  const handleSubmit = async (e) =\u003e {\n    e.preventDefault();\n    setLoading(true);\n    setMessage('');\n\n    try {\n      let result;\n      if (isLogin) {\n        result = await signIn(formData.email, formData.password);\n      } else {\n        result = await signUp(formData.email, formData.password, formData.displayName);\n      }\n\n      if (result.success) {\n        setMessage('成功しました！');\n      } else {\n        setMessage(result.error);\n      }\n    } catch (error) {\n      setMessage('予期せぬエラーが発生しました');\n    } finally {\n      setLoading(false);\n    }\n  };\n\n  const handlePasswordReset = async () =\u003e {\n    if (!formData.email) {\n      setMessage('メールアドレスを入力してください');\n      return;\n    }\n\n    const result = await resetPassword(formData.email);\n    setMessage(\n      result.success \n        ? 'パスワードリセットメールを送信しました' \n        : result.error\n    );\n  };\n\n  return (\n    \u0026#x3C;div className=\"auth-form\"\u003e\n      \u0026#x3C;h2\u003e{isLogin ? 'ログイン' : '新規登録'}\u0026#x3C;/h2\u003e\n      \n      \u0026#x3C;form onSubmit={handleSubmit}\u003e\n        \u0026#x3C;div className=\"form-group\"\u003e\n          \u0026#x3C;input\n            type=\"email\"\n            placeholder=\"メールアドレス\"\n            value={formData.email}\n            onChange={(e) =\u003e setFormData({...formData, email: e.target.value})}\n            required\n          /\u003e\n        \u0026#x3C;/div\u003e\n\n        \u0026#x3C;div className=\"form-group\"\u003e\n          \u0026#x3C;input\n            type=\"password\"\n            placeholder=\"パスワード\"\n            value={formData.password}\n            onChange={(e) =\u003e setFormData({...formData, password: e.target.value})}\n            required\n          /\u003e\n        \u0026#x3C;/div\u003e\n\n        {!isLogin \u0026#x26;\u0026#x26; (\n          \u0026#x3C;div className=\"form-group\"\u003e\n            \u0026#x3C;input\n              type=\"text\"\n              placeholder=\"表示名\"\n              value={formData.displayName}\n              onChange={(e) =\u003e setFormData({...formData, displayName: e.target.value})}\n            /\u003e\n          \u0026#x3C;/div\u003e\n        )}\n\n        \u0026#x3C;button type=\"submit\" disabled={loading}\u003e\n          {loading ? '処理中...' : (isLogin ? 'ログイン' : '登録')}\n        \u0026#x3C;/button\u003e\n      \u0026#x3C;/form\u003e\n\n      \u0026#x3C;div className=\"auth-options\"\u003e\n        \u0026#x3C;button \n          type=\"button\" \n          onClick={() =\u003e setIsLogin(!isLogin)}\n        \u003e\n          {isLogin ? '新規登録はこちら' : 'ログインはこちら'}\n        \u0026#x3C;/button\u003e\n\n        {isLogin \u0026#x26;\u0026#x26; (\n          \u0026#x3C;button \n            type=\"button\" \n            onClick={handlePasswordReset}\n          \u003e\n            パスワードを忘れた方\n          \u0026#x3C;/button\u003e\n        )}\n      \u0026#x3C;/div\u003e\n\n      {message \u0026#x26;\u0026#x26; \u0026#x3C;p className=\"message\"\u003e{message}\u0026#x3C;/p\u003e}\n    \u0026#x3C;/div\u003e\n  );\n};\n\nexport default AuthForm;\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-ソーシャルログイン\"\u003e2. ソーシャルログイン\u003c/h3\u003e\n\u003cp\u003eSNSアカウントを使った認証は、ユーザーの手間を大幅に削減できる人気の認証方式です。\u003c/p\u003e\n\u003ch4 id=\"google認証\"\u003eGoogle認証\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003eimport { \n  GoogleAuthProvider, \n  signInWithPopup, \n  signInWithRedirect,\n  getRedirectResult \n} from 'firebase/auth';\nimport { auth } from './firebase-config.js';\n\n// Googleプロバイダーの設定\nconst googleProvider = new GoogleAuthProvider();\n\n// スコープの追加（オプション）\ngoogleProvider.addScope('profile');\ngoogleProvider.addScope('email');\n\n// ポップアップでGoogleログイン\nexport const signInWithGooglePopup = async () =\u003e {\n  try {\n    const result = await signInWithPopup(auth, googleProvider);\n    const user = result.user;\n    \n    // Google認証の追加情報\n    const credential = GoogleAuthProvider.credentialFromResult(result);\n    const accessToken = credential?.accessToken;\n    \n    console.log('Googleログイン成功:', {\n      user,\n      accessToken\n    });\n    \n    return { success: true, user, accessToken };\n  } catch (error) {\n    console.error('Googleログインエラー:', error);\n    return { success: false, error: getGoogleErrorMessage(error) };\n  }\n};\n\n// リダイレクトでGoogleログイン（モバイル推奨）\nexport const signInWithGoogleRedirect = async () =\u003e {\n  try {\n    await signInWithRedirect(auth, googleProvider);\n    return { success: true };\n  } catch (error) {\n    console.error('Googleリダイレクトエラー:', error);\n    return { success: false, error: getGoogleErrorMessage(error) };\n  }\n};\n\n// リダイレクト後の結果を取得\nexport const getGoogleRedirectResult = async () =\u003e {\n  try {\n    const result = await getRedirectResult(auth);\n    if (result) {\n      const user = result.user;\n      const credential = GoogleAuthProvider.credentialFromResult(result);\n      const accessToken = credential?.accessToken;\n      \n      return { success: true, user, accessToken };\n    }\n    return { success: true, user: null };\n  } catch (error) {\n    console.error('Googleリダイレクト結果エラー:', error);\n    return { success: false, error: getGoogleErrorMessage(error) };\n  }\n};\n\nconst getGoogleErrorMessage = (error) =\u003e {\n  switch (error.code) {\n    case 'auth/account-exists-with-different-credential':\n      return '別の認証方法で既に登録されているアカウントです';\n    case 'auth/cancelled-popup-request':\n      return 'ポップアップがキャンセルされました';\n    case 'auth/popup-blocked':\n      return 'ポップアップがブロックされています';\n    case 'auth/popup-closed-by-user':\n      return 'ユーザーがポップアップを閉じました';\n    default:\n      return error.message;\n  }\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\"github認証\"\u003eGitHub認証\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003eimport { \n  GithubAuthProvider, \n  signInWithPopup \n} from 'firebase/auth';\nimport { auth } from './firebase-config.js';\n\nconst githubProvider = new GithubAuthProvider();\n\n// GitHubログイン\nexport const signInWithGithub = async () =\u003e {\n  try {\n    const result = await signInWithPopup(auth, githubProvider);\n    const user = result.user;\n    \n    // GitHub認証の追加情報\n    const credential = GithubAuthProvider.credentialFromResult(result);\n    const accessToken = credential?.accessToken;\n    \n    console.log('GitHubログイン成功:', {\n      user,\n      accessToken\n    });\n    \n    return { success: true, user, accessToken };\n  } catch (error) {\n    console.error('GitHubログインエラー:', error);\n    return { success: false, error: error.message };\n  }\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\"react-での使用例-1\"\u003eReact での使用例\u003c/h4\u003e\n\u003cpre\u003e\u003ccode class=\"language-jsx\"\u003eimport React from 'react';\nimport { \n  signInWithGooglePopup, \n  signInWithGithub,\n  getGoogleRedirectResult \n} from './social-auth-service';\n\nconst SocialAuth = () =\u003e {\n  const [loading, setLoading] = useState(false);\n\n  // コンポーネントマウント時にリダイレクト結果をチェック\n  useEffect(() =\u003e {\n    const checkRedirectResult = async () =\u003e {\n      const result = await getGoogleRedirectResult();\n      if (result.success \u0026#x26;\u0026#x26; result.user) {\n        console.log('リダイレクト認証成功:', result.user);\n      }\n    };\n    \n    checkRedirectResult();\n  }, []);\n\n  const handleGoogleLogin = async () =\u003e {\n    setLoading(true);\n    const result = await signInWithGooglePopup();\n    setLoading(false);\n    \n    if (result.success) {\n      console.log('Google認証成功');\n    } else {\n      alert(result.error);\n    }\n  };\n\n  const handleGithubLogin = async () =\u003e {\n    setLoading(true);\n    const result = await signInWithGithub();\n    setLoading(false);\n    \n    if (result.success) {\n      console.log('GitHub認証成功');\n    } else {\n      alert(result.error);\n    }\n  };\n\n  return (\n    \u0026#x3C;div className=\"social-auth\"\u003e\n      \u0026#x3C;h3\u003eソーシャルログイン\u0026#x3C;/h3\u003e\n      \n      \u0026#x3C;button \n        onClick={handleGoogleLogin} \n        disabled={loading}\n        className=\"google-login-btn\"\n      \u003e\n        \u0026#x3C;img src=\"/google-icon.svg\" alt=\"Google\" /\u003e\n        Googleでログイン\n      \u0026#x3C;/button\u003e\n      \n      \u0026#x3C;button \n        onClick={handleGithubLogin} \n        disabled={loading}\n        className=\"github-login-btn\"\n      \u003e\n        \u0026#x3C;img src=\"/github-icon.svg\" alt=\"GitHub\" /\u003e\n        GitHubでログイン\n      \u0026#x3C;/button\u003e\n    \u0026#x3C;/div\u003e\n  );\n};\n\nexport default SocialAuth;\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"3-電話番号認証\"\u003e3. 電話番号認証\u003c/h3\u003e\n\u003cp\u003eSMS認証による電話番号認証は、セキュリティが高く、グローバルで利用できる認証方式です。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003eimport { \n  signInWithPhoneNumber, \n  RecaptchaVerifier,\n  linkWithCredential,\n  PhoneAuthProvider \n} from 'firebase/auth';\nimport { auth } from './firebase-config.js';\n\n// reCAPTCHA設定\nexport const setupRecaptcha = (elementId = 'recaptcha-container') =\u003e {\n  if (window.recaptchaVerifier) {\n    window.recaptchaVerifier.clear();\n  }\n\n  window.recaptchaVerifier = new RecaptchaVerifier(auth, elementId, {\n    'size': 'normal',\n    'callback': (response) =\u003e {\n      console.log('reCAPTCHA solved');\n    },\n    'expired-callback': () =\u003e {\n      console.log('reCAPTCHA expired');\n    }\n  });\n};\n\n// 電話番号でサインイン\nexport const signInWithPhone = async (phoneNumber) =\u003e {\n  try {\n    if (!window.recaptchaVerifier) {\n      setupRecaptcha();\n    }\n\n    const confirmationResult = await signInWithPhoneNumber(\n      auth, \n      phoneNumber, \n      window.recaptchaVerifier\n    );\n    \n    console.log('SMS送信成功');\n    return { success: true, confirmationResult };\n  } catch (error) {\n    console.error('電話番号認証エラー:', error);\n    return { success: false, error: getPhoneErrorMessage(error) };\n  }\n};\n\n// SMS認証コードを確認\nexport const confirmPhoneCode = async (confirmationResult, code) =\u003e {\n  try {\n    const result = await confirmationResult.confirm(code);\n    const user = result.user;\n    \n    console.log('電話番号認証成功:', user);\n    return { success: true, user };\n  } catch (error) {\n    console.error('認証コード確認エラー:', error);\n    return { success: false, error: getPhoneErrorMessage(error) };\n  }\n};\n\n// 既存アカウントに電話番号を追加\nexport const linkPhoneNumber = async (phoneNumber) =\u003e {\n  try {\n    const currentUser = auth.currentUser;\n    if (!currentUser) {\n      throw new Error('ユーザーがサインインしていません');\n    }\n\n    if (!window.recaptchaVerifier) {\n      setupRecaptcha();\n    }\n\n    const confirmationResult = await signInWithPhoneNumber(\n      auth, \n      phoneNumber, \n      window.recaptchaVerifier\n    );\n\n    return { success: true, confirmationResult };\n  } catch (error) {\n    console.error('電話番号追加エラー:', error);\n    return { success: false, error: getPhoneErrorMessage(error) };\n  }\n};\n\n// 電話番号リンクを確認\nexport const confirmPhoneLink = async (confirmationResult, code) =\u003e {\n  try {\n    const currentUser = auth.currentUser;\n    if (!currentUser) {\n      throw new Error('ユーザーがサインインしていません');\n    }\n\n    const phoneCredential = PhoneAuthProvider.credential(\n      confirmationResult.verificationId,\n      code\n    );\n\n    const result = await linkWithCredential(currentUser, phoneCredential);\n    console.log('電話番号追加成功:', result.user);\n    return { success: true, user: result.user };\n  } catch (error) {\n    console.error('電話番号リンクエラー:', error);\n    return { success: false, error: getPhoneErrorMessage(error) };\n  }\n};\n\nconst getPhoneErrorMessage = (error) =\u003e {\n  switch (error.code) {\n    case 'auth/invalid-phone-number':\n      return '電話番号の形式が正しくありません';\n    case 'auth/missing-phone-number':\n      return '電話番号が入力されていません';\n    case 'auth/quota-exceeded':\n      return 'SMS送信の制限に達しました';\n    case 'auth/invalid-verification-code':\n      return '認証コードが正しくありません';\n    case 'auth/credential-already-in-use':\n      return 'この電話番号は既に他のアカウントで使用されています';\n    default:\n      return error.message;\n  }\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e電話番号認証については\u003ca href=\"../0046_firebase-phone-authentication-guide\"\u003eFirebase電話番号認証完全ガイド\u003c/a\u003eでより詳しく解説しています。\u003c/p\u003e\n\u003ch2 id=\"認証状態の管理\"\u003e認証状態の管理\u003c/h2\u003e\n\u003cp\u003eFirebase認証の重要な機能の一つが、認証状態の自動監視です。\u003c/p\u003e\n\u003ch3 id=\"react-での認証状態管理\"\u003eReact での認証状態管理\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-jsx\"\u003eimport React, { createContext, useContext, useEffect, useState } from 'react';\nimport { onAuthStateChanged } from 'firebase/auth';\nimport { auth } from './firebase-config';\n\n// 認証コンテキストの作成\nconst AuthContext = createContext({});\n\n// 認証プロバイダー\nexport const AuthProvider = ({ children }) =\u003e {\n  const [user, setUser] = useState(null);\n  const [loading, setLoading] = useState(true);\n\n  useEffect(() =\u003e {\n    // 認証状態の監視\n    const unsubscribe = onAuthStateChanged(auth, (user) =\u003e {\n      console.log('認証状態変更:', user);\n      setUser(user);\n      setLoading(false);\n    });\n\n    // クリーンアップ\n    return unsubscribe;\n  }, []);\n\n  const value = {\n    user,\n    loading,\n    isAuthenticated: !!user\n  };\n\n  return (\n    \u0026#x3C;AuthContext.Provider value={value}\u003e\n      {!loading \u0026#x26;\u0026#x26; children}\n    \u0026#x3C;/AuthContext.Provider\u003e\n  );\n};\n\n// カスタムフック\nexport const useAuth = () =\u003e {\n  const context = useContext(AuthContext);\n  if (!context) {\n    throw new Error('useAuthはAuthProvider内で使用してください');\n  }\n  return context;\n};\n\n// 使用例: App.js\nconst App = () =\u003e {\n  return (\n    \u0026#x3C;AuthProvider\u003e\n      \u0026#x3C;Router\u003e\n        \u0026#x3C;Routes\u003e\n          \u0026#x3C;Route path=\"/login\" element={\u0026#x3C;LoginPage /\u003e} /\u003e\n          \u0026#x3C;Route path=\"/dashboard\" element={\u0026#x3C;ProtectedRoute\u003e\u0026#x3C;Dashboard /\u003e\u0026#x3C;/ProtectedRoute\u003e} /\u003e\n          \u0026#x3C;Route path=\"/\" element={\u0026#x3C;HomePage /\u003e} /\u003e\n        \u0026#x3C;/Routes\u003e\n      \u0026#x3C;/Router\u003e\n    \u0026#x3C;/AuthProvider\u003e\n  );\n};\n\n// プロテクトされたルート\nconst ProtectedRoute = ({ children }) =\u003e {\n  const { isAuthenticated, loading } = useAuth();\n\n  if (loading) {\n    return \u0026#x3C;div\u003eLoading...\u0026#x3C;/div\u003e;\n  }\n\n  if (!isAuthenticated) {\n    return \u0026#x3C;Navigate to=\"/login\" replace /\u003e;\n  }\n\n  return children;\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"vuejs-での認証状態管理\"\u003eVue.js での認証状態管理\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// composables/useAuth.js\nimport { ref, onMounted, onUnmounted } from 'vue';\nimport { onAuthStateChanged } from 'firebase/auth';\nimport { auth } from './firebase-config';\n\nexport const useAuth = () =\u003e {\n  const user = ref(null);\n  const loading = ref(true);\n  const isAuthenticated = computed(() =\u003e !!user.value);\n\n  let unsubscribe;\n\n  onMounted(() =\u003e {\n    unsubscribe = onAuthStateChanged(auth, (firebaseUser) =\u003e {\n      console.log('認証状態変更:', firebaseUser);\n      user.value = firebaseUser;\n      loading.value = false;\n    });\n  });\n\n  onUnmounted(() =\u003e {\n    if (unsubscribe) {\n      unsubscribe();\n    }\n  });\n\n  return {\n    user: readonly(user),\n    loading: readonly(loading),\n    isAuthenticated\n  };\n};\n\n// 使用例: App.vue\n\u0026#x3C;template\u003e\n  \u0026#x3C;div id=\"app\"\u003e\n    \u0026#x3C;div v-if=\"loading\"\u003eLoading...\u0026#x3C;/div\u003e\n    \u0026#x3C;router-view v-else /\u003e\n  \u0026#x3C;/div\u003e\n\u0026#x3C;/template\u003e\n\n\u0026#x3C;script setup\u003e\nimport { useAuth } from './composables/useAuth';\n\nconst { loading } = useAuth();\n\u0026#x3C;/script\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"応用的な使い方\"\u003e応用的な使い方\u003c/h2\u003e\n\u003ch3 id=\"1-複数認証プロバイダーの連携\"\u003e1. 複数認証プロバイダーの連携\u003c/h3\u003e\n\u003cp\u003eユーザーが複数の認証方法を使えるようにする実装例：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003eimport { \n  linkWithCredential, \n  unlink,\n  reauthenticateWithCredential \n} from 'firebase/auth';\nimport { auth } from './firebase-config';\n\n// アカウントに認証プロバイダーを追加\nexport const linkProvider = async (credential) =\u003e {\n  try {\n    const currentUser = auth.currentUser;\n    if (!currentUser) {\n      throw new Error('ユーザーがサインインしていません');\n    }\n\n    const result = await linkWithCredential(currentUser, credential);\n    console.log('プロバイダー追加成功:', result.user);\n    return { success: true, user: result.user };\n  } catch (error) {\n    console.error('プロバイダー追加エラー:', error);\n    \n    if (error.code === 'auth/requires-recent-login') {\n      return { success: false, error: '再認証が必要です', needsReauth: true };\n    }\n    \n    return { success: false, error: error.message };\n  }\n};\n\n// 認証プロバイダーを削除\nexport const unlinkProvider = async (providerId) =\u003e {\n  try {\n    const currentUser = auth.currentUser;\n    if (!currentUser) {\n      throw new Error('ユーザーがサインインしていません');\n    }\n\n    const result = await unlink(currentUser, providerId);\n    console.log('プロバイダー削除成功:', result);\n    return { success: true, user: result };\n  } catch (error) {\n    console.error('プロバイダー削除エラー:', error);\n    return { success: false, error: error.message };\n  }\n};\n\n// 連携済みプロバイダーの取得\nexport const getLinkedProviders = () =\u003e {\n  const currentUser = auth.currentUser;\n  if (!currentUser) return [];\n\n  return currentUser.providerData.map(provider =\u003e ({\n    providerId: provider.providerId,\n    uid: provider.uid,\n    displayName: provider.displayName,\n    email: provider.email,\n    phoneNumber: provider.phoneNumber\n  }));\n};\n\n// 使用例: プロバイダー管理コンポーネント\nconst ProviderManager = () =\u003e {\n  const [linkedProviders, setLinkedProviders] = useState([]);\n  const { user } = useAuth();\n\n  useEffect(() =\u003e {\n    if (user) {\n      setLinkedProviders(getLinkedProviders());\n    }\n  }, [user]);\n\n  const handleLinkGoogle = async () =\u003e {\n    const result = await signInWithGooglePopup();\n    if (result.success \u0026#x26;\u0026#x26; result.credential) {\n      const linkResult = await linkProvider(result.credential);\n      if (linkResult.success) {\n        setLinkedProviders(getLinkedProviders());\n        alert('Google認証が追加されました');\n      }\n    }\n  };\n\n  const handleUnlinkProvider = async (providerId) =\u003e {\n    const result = await unlinkProvider(providerId);\n    if (result.success) {\n      setLinkedProviders(getLinkedProviders());\n      alert('認証プロバイダーが削除されました');\n    }\n  };\n\n  return (\n    \u0026#x3C;div className=\"provider-manager\"\u003e\n      \u0026#x3C;h3\u003e認証方法の管理\u0026#x3C;/h3\u003e\n      \n      \u0026#x3C;div className=\"linked-providers\"\u003e\n        \u0026#x3C;h4\u003e連携済み認証方法\u0026#x3C;/h4\u003e\n        {linkedProviders.map(provider =\u003e (\n          \u0026#x3C;div key={provider.providerId} className=\"provider-item\"\u003e\n            \u0026#x3C;span\u003e{provider.providerId}\u0026#x3C;/span\u003e\n            \u0026#x3C;span\u003e{provider.email || provider.phoneNumber}\u0026#x3C;/span\u003e\n            {linkedProviders.length \u003e 1 \u0026#x26;\u0026#x26; (\n              \u0026#x3C;button onClick={() =\u003e handleUnlinkProvider(provider.providerId)}\u003e\n                削除\n              \u0026#x3C;/button\u003e\n            )}\n          \u0026#x3C;/div\u003e\n        ))}\n      \u0026#x3C;/div\u003e\n\n      \u0026#x3C;div className=\"available-providers\"\u003e\n        \u0026#x3C;h4\u003e追加可能な認証方法\u0026#x3C;/h4\u003e\n        {!linkedProviders.find(p =\u003e p.providerId === 'google.com') \u0026#x26;\u0026#x26; (\n          \u0026#x3C;button onClick={handleLinkGoogle}\u003e\n            Google認証を追加\n          \u0026#x3C;/button\u003e\n        )}\n      \u0026#x3C;/div\u003e\n    \u0026#x3C;/div\u003e\n  );\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-カスタム認証\"\u003e2. カスタム認証\u003c/h3\u003e\n\u003cp\u003e独自の認証システムがある場合に、Firebase認証と連携する方法：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// カスタムトークンを使った認証\nimport { signInWithCustomToken } from 'firebase/auth';\nimport { auth } from './firebase-config';\n\nexport const signInWithCustom = async (customToken) =\u003e {\n  try {\n    const userCredential = await signInWithCustomToken(auth, customToken);\n    const user = userCredential.user;\n    \n    console.log('カスタム認証成功:', user);\n    return { success: true, user };\n  } catch (error) {\n    console.error('カスタム認証エラー:', error);\n    return { success: false, error: error.message };\n  }\n};\n\n// サーバーサイドでカスタムトークンを生成する例（Node.js）\n// この部分は通常、バックエンドで実装します\n/*\nconst admin = require('firebase-admin');\n\n// カスタムトークンの生成\nconst createCustomToken = async (uid, additionalClaims = {}) =\u003e {\n  try {\n    const customToken = await admin.auth().createCustomToken(uid, additionalClaims);\n    return { success: true, token: customToken };\n  } catch (error) {\n    console.error('カスタムトークン生成エラー:', error);\n    return { success: false, error: error.message };\n  }\n};\n*/\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"セキュリティベストプラクティス\"\u003eセキュリティベストプラクティス\u003c/h2\u003e\n\u003ch3 id=\"1-firebase-security-rulesとの連携\"\u003e1. Firebase Security Rulesとの連携\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// Firestore Security Rules の例\n/*\nrules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    // ユーザーは自分のデータのみアクセス可能\n    match /users/{userId} {\n      allow read, write: if request.auth != null \u0026#x26;\u0026#x26; request.auth.uid == userId;\n    }\n    \n    // 管理者のみアクセス可能\n    match /admin/{document} {\n      allow read, write: if request.auth != null \u0026#x26;\u0026#x26; \n        request.auth.token.admin == true;\n    }\n  }\n}\n*/\n\n// カスタムクレームの設定（サーバーサイド）\n/*\nconst admin = require('firebase-admin');\n\nconst setAdminRole = async (uid) =\u003e {\n  try {\n    await admin.auth().setCustomUserClaims(uid, { admin: true });\n    console.log(`ユーザー ${uid} に管理者権限を付与`);\n  } catch (error) {\n    console.error('管理者権限付与エラー:', error);\n  }\n};\n*/\n\n// クライアントサイドでカスタムクレームを取得\nexport const getUserClaims = async () =\u003e {\n  const user = auth.currentUser;\n  if (!user) return null;\n\n  try {\n    const idTokenResult = await user.getIdTokenResult();\n    return idTokenResult.claims;\n  } catch (error) {\n    console.error('カスタムクレーム取得エラー:', error);\n    return null;\n  }\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-セキュリティ強化\"\u003e2. セキュリティ強化\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// セキュリティ強化のための実装例\nimport { \n  reauthenticateWithCredential, \n  updatePassword,\n  deleteUser \n} from 'firebase/auth';\n\n// 再認証\nexport const reauthenticateUser = async (credential) =\u003e {\n  try {\n    const user = auth.currentUser;\n    if (!user) throw new Error('ユーザーが見つかりません');\n\n    await reauthenticateWithCredential(user, credential);\n    return { success: true };\n  } catch (error) {\n    console.error('再認証エラー:', error);\n    return { success: false, error: error.message };\n  }\n};\n\n// パスワード変更（再認証が必要）\nexport const changePassword = async (currentPassword, newPassword) =\u003e {\n  try {\n    const user = auth.currentUser;\n    if (!user || !user.email) {\n      throw new Error('メールアドレスでサインインしたユーザーのみ対応');\n    }\n\n    // 現在のパスワードで再認証\n    const credential = EmailAuthProvider.credential(user.email, currentPassword);\n    await reauthenticateWithCredential(user, credential);\n\n    // パスワード更新\n    await updatePassword(user, newPassword);\n    \n    console.log('パスワード変更成功');\n    return { success: true };\n  } catch (error) {\n    console.error('パスワード変更エラー:', error);\n    return { success: false, error: error.message };\n  }\n};\n\n// セキュリティを考慮したユーザー削除\nexport const deleteUserAccount = async (password) =\u003e {\n  try {\n    const user = auth.currentUser;\n    if (!user) throw new Error('ユーザーが見つかりません');\n\n    // メール認証の場合は再認証\n    if (user.email \u0026#x26;\u0026#x26; password) {\n      const credential = EmailAuthProvider.credential(user.email, password);\n      await reauthenticateWithCredential(user, credential);\n    }\n\n    await deleteUser(user);\n    console.log('ユーザー削除成功');\n    return { success: true };\n  } catch (error) {\n    console.error('ユーザー削除エラー:', error);\n    return { success: false, error: error.message };\n  }\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"よくある問題と解決法\"\u003eよくある問題と解決法\u003c/h2\u003e\n\u003ch3 id=\"1-認証エラーの包括的な処理\"\u003e1. 認証エラーの包括的な処理\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 統一的なエラーハンドリング\nexport const handleAuthError = (error) =\u003e {\n  console.error('Firebase認証エラー:', error);\n\n  const errorMessages = {\n    // メール認証関連\n    'auth/email-already-in-use': 'このメールアドレスは既に使用されています',\n    'auth/invalid-email': 'メールアドレスの形式が正しくありません',\n    'auth/weak-password': 'パスワードは6文字以上で設定してください',\n    'auth/user-not-found': 'このメールアドレスは登録されていません',\n    'auth/wrong-password': 'パスワードが間違っています',\n    \n    // ソーシャルログイン関連\n    'auth/account-exists-with-different-credential': '別の認証方法で既に登録されています',\n    'auth/popup-blocked': 'ポップアップがブロックされています',\n    'auth/popup-closed-by-user': 'ログインがキャンセルされました',\n    'auth/cancelled-popup-request': 'ポップアップリクエストがキャンセルされました',\n    \n    // 電話番号認証関連\n    'auth/invalid-phone-number': '電話番号の形式が正しくありません',\n    'auth/invalid-verification-code': '認証コードが正しくありません',\n    'auth/code-expired': '認証コードの有効期限が切れています',\n    \n    // 一般的なエラー\n    'auth/network-request-failed': 'ネットワークエラーが発生しました',\n    'auth/too-many-requests': 'リクエストが多すぎます。しばらく待ってから再試行してください',\n    'auth/user-disabled': 'このアカウントは無効化されています',\n    'auth/requires-recent-login': '再度ログインしてから操作してください'\n  };\n\n  return errorMessages[error.code] || `認証エラー: ${error.message}`;\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-パフォーマンス最適化\"\u003e2. パフォーマンス最適化\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 認証状態の効率的な管理\nimport { useEffect, useState, useCallback } from 'react';\nimport { onAuthStateChanged } from 'firebase/auth';\nimport { auth } from './firebase-config';\n\nexport const useAuthOptimized = () =\u003e {\n  const [authState, setAuthState] = useState({\n    user: null,\n    loading: true,\n    initialized: false\n  });\n\n  // メモ化されたコールバック\n  const updateAuthState = useCallback((user) =\u003e {\n    setAuthState({\n      user,\n      loading: false,\n      initialized: true\n    });\n  }, []);\n\n  useEffect(() =\u003e {\n    // 認証状態の監視を一度だけ設定\n    const unsubscribe = onAuthStateChanged(auth, updateAuthState);\n    \n    return unsubscribe;\n  }, [updateAuthState]);\n\n  return authState;\n};\n\n// トークンの効率的な管理\nexport const useAuthToken = () =\u003e {\n  const [token, setToken] = useState(null);\n  const [tokenLoading, setTokenLoading] = useState(true);\n\n  useEffect(() =\u003e {\n    const unsubscribe = onAuthStateChanged(auth, async (user) =\u003e {\n      if (user) {\n        try {\n          const idToken = await user.getIdToken();\n          setToken(idToken);\n        } catch (error) {\n          console.error('トークン取得エラー:', error);\n          setToken(null);\n        }\n      } else {\n        setToken(null);\n      }\n      setTokenLoading(false);\n    });\n\n    return unsubscribe;\n  }, []);\n\n  return { token, tokenLoading };\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"3-デバッグとテスト\"\u003e3. デバッグとテスト\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 開発環境でのデバッグ支援\nexport const debugAuth = () =\u003e {\n  if (process.env.NODE_ENV !== 'development') return;\n\n  const user = auth.currentUser;\n  \n  console.group('Firebase認証デバッグ情報');\n  console.log('現在のユーザー:', user);\n  \n  if (user) {\n    console.log('UID:', user.uid);\n    console.log('メール:', user.email);\n    console.log('表示名:', user.displayName);\n    console.log('電話番号:', user.phoneNumber);\n    console.log('メール確認済み:', user.emailVerified);\n    console.log('認証プロバイダー:', user.providerData);\n    console.log('作成日時:', user.metadata.creationTime);\n    console.log('最終ログイン:', user.metadata.lastSignInTime);\n  } else {\n    console.log('ユーザーはサインインしていません');\n  }\n  \n  console.groupEnd();\n};\n\n// テスト用のモック関数\nexport const createMockUser = (overrides = {}) =\u003e {\n  return {\n    uid: 'mock-uid',\n    email: 'test@example.com',\n    displayName: 'Test User',\n    phoneNumber: null,\n    emailVerified: true,\n    providerData: [],\n    metadata: {\n      creationTime: new Date().toISOString(),\n      lastSignInTime: new Date().toISOString()\n    },\n    ...overrides\n  };\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"実践的な使用例完全な認証システム\"\u003e実践的な使用例：完全な認証システム\u003c/h2\u003e\n\u003cp\u003e実際のプロジェクトで使える、包括的な認証システムの実装例：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-jsx\"\u003e// hooks/useFirebaseAuth.js\nimport { useState, useEffect, useCallback } from 'react';\nimport { \n  onAuthStateChanged, \n  signOut \n} from 'firebase/auth';\nimport { auth } from '../firebase-config';\nimport { \n  signIn, \n  signUp, \n  signInWithGooglePopup,\n  signInWithGithub,\n  resetPassword \n} from '../services/auth-service';\n\nexport const useFirebaseAuth = () =\u003e {\n  const [user, setUser] = useState(null);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  // 認証状態の監視\n  useEffect(() =\u003e {\n    const unsubscribe = onAuthStateChanged(auth, (user) =\u003e {\n      setUser(user);\n      setLoading(false);\n    });\n\n    return unsubscribe;\n  }, []);\n\n  // エラーをクリア\n  const clearError = useCallback(() =\u003e {\n    setError(null);\n  }, []);\n\n  // 共通のエラーハンドリング\n  const handleAuthAction = useCallback(async (authFunction, ...args) =\u003e {\n    setLoading(true);\n    setError(null);\n\n    try {\n      const result = await authFunction(...args);\n      if (!result.success) {\n        setError(result.error);\n      }\n      return result;\n    } catch (err) {\n      setError('予期せぬエラーが発生しました');\n      return { success: false, error: err.message };\n    } finally {\n      setLoading(false);\n    }\n  }, []);\n\n  // 認証メソッド\n  const login = useCallback((email, password) =\u003e \n    handleAuthAction(signIn, email, password), [handleAuthAction]);\n\n  const register = useCallback((email, password, displayName) =\u003e \n    handleAuthAction(signUp, email, password, displayName), [handleAuthAction]);\n\n  const googleLogin = useCallback(() =\u003e \n    handleAuthAction(signInWithGooglePopup), [handleAuthAction]);\n\n  const githubLogin = useCallback(() =\u003e \n    handleAuthAction(signInWithGithub), [handleAuthAction]);\n\n  const forgotPassword = useCallback((email) =\u003e \n    handleAuthAction(resetPassword, email), [handleAuthAction]);\n\n  const logout = useCallback(async () =\u003e {\n    setLoading(true);\n    try {\n      await signOut(auth);\n      setUser(null);\n      setError(null);\n    } catch (err) {\n      setError('ログアウトに失敗しました');\n    } finally {\n      setLoading(false);\n    }\n  }, []);\n\n  return {\n    user,\n    loading,\n    error,\n    isAuthenticated: !!user,\n    login,\n    register,\n    googleLogin,\n    githubLogin,\n    forgotPassword,\n    logout,\n    clearError\n  };\n};\n\n// components/AuthProvider.jsx\nimport React, { createContext, useContext } from 'react';\nimport { useFirebaseAuth } from '../hooks/useFirebaseAuth';\n\nconst AuthContext = createContext();\n\nexport const AuthProvider = ({ children }) =\u003e {\n  const auth = useFirebaseAuth();\n  \n  return (\n    \u0026#x3C;AuthContext.Provider value={auth}\u003e\n      {children}\n    \u0026#x3C;/AuthContext.Provider\u003e\n  );\n};\n\nexport const useAuth = () =\u003e {\n  const context = useContext(AuthContext);\n  if (!context) {\n    throw new Error('useAuthはAuthProvider内で使用してください');\n  }\n  return context;\n};\n\n// components/CompleteAuthForm.jsx\nimport React, { useState } from 'react';\nimport { useAuth } from './AuthProvider';\n\nconst CompleteAuthForm = () =\u003e {\n  const [mode, setMode] = useState('login'); // 'login', 'register', 'forgot'\n  const [formData, setFormData] = useState({\n    email: '',\n    password: '',\n    displayName: ''\n  });\n\n  const { \n    login, \n    register, \n    googleLogin, \n    githubLogin, \n    forgotPassword, \n    loading, \n    error, \n    clearError \n  } = useAuth();\n\n  const handleSubmit = async (e) =\u003e {\n    e.preventDefault();\n    clearError();\n\n    switch (mode) {\n      case 'login':\n        await login(formData.email, formData.password);\n        break;\n      case 'register':\n        await register(formData.email, formData.password, formData.displayName);\n        break;\n      case 'forgot':\n        const result = await forgotPassword(formData.email);\n        if (result.success) {\n          alert('パスワードリセットメールを送信しました');\n          setMode('login');\n        }\n        break;\n    }\n  };\n\n  const handleInputChange = (field, value) =\u003e {\n    setFormData(prev =\u003e ({\n      ...prev,\n      [field]: value\n    }));\n  };\n\n  const renderForm = () =\u003e {\n    switch (mode) {\n      case 'login':\n        return (\n          \u0026#x3C;div\u003e\n            \u0026#x3C;h2\u003eログイン\u0026#x3C;/h2\u003e\n            \u0026#x3C;form onSubmit={handleSubmit}\u003e\n              \u0026#x3C;input\n                type=\"email\"\n                placeholder=\"メールアドレス\"\n                value={formData.email}\n                onChange={(e) =\u003e handleInputChange('email', e.target.value)}\n                required\n              /\u003e\n              \u0026#x3C;input\n                type=\"password\"\n                placeholder=\"パスワード\"\n                value={formData.password}\n                onChange={(e) =\u003e handleInputChange('password', e.target.value)}\n                required\n              /\u003e\n              \u0026#x3C;button type=\"submit\" disabled={loading}\u003e\n                {loading ? 'ログイン中...' : 'ログイン'}\n              \u0026#x3C;/button\u003e\n            \u0026#x3C;/form\u003e\n            \u0026#x3C;button type=\"button\" onClick={() =\u003e setMode('register')}\u003e\n              新規登録\n            \u0026#x3C;/button\u003e\n            \u0026#x3C;button type=\"button\" onClick={() =\u003e setMode('forgot')}\u003e\n              パスワードを忘れた\n            \u0026#x3C;/button\u003e\n          \u0026#x3C;/div\u003e\n        );\n\n      case 'register':\n        return (\n          \u0026#x3C;div\u003e\n            \u0026#x3C;h2\u003e新規登録\u0026#x3C;/h2\u003e\n            \u0026#x3C;form onSubmit={handleSubmit}\u003e\n              \u0026#x3C;input\n                type=\"text\"\n                placeholder=\"表示名\"\n                value={formData.displayName}\n                onChange={(e) =\u003e handleInputChange('displayName', e.target.value)}\n              /\u003e\n              \u0026#x3C;input\n                type=\"email\"\n                placeholder=\"メールアドレス\"\n                value={formData.email}\n                onChange={(e) =\u003e handleInputChange('email', e.target.value)}\n                required\n              /\u003e\n              \u0026#x3C;input\n                type=\"password\"\n                placeholder=\"パスワード（6文字以上）\"\n                value={formData.password}\n                onChange={(e) =\u003e handleInputChange('password', e.target.value)}\n                required\n              /\u003e\n              \u0026#x3C;button type=\"submit\" disabled={loading}\u003e\n                {loading ? '登録中...' : '登録'}\n              \u0026#x3C;/button\u003e\n            \u0026#x3C;/form\u003e\n            \u0026#x3C;button type=\"button\" onClick={() =\u003e setMode('login')}\u003e\n              ログインに戻る\n            \u0026#x3C;/button\u003e\n          \u0026#x3C;/div\u003e\n        );\n\n      case 'forgot':\n        return (\n          \u0026#x3C;div\u003e\n            \u0026#x3C;h2\u003eパスワードリセット\u0026#x3C;/h2\u003e\n            \u0026#x3C;form onSubmit={handleSubmit}\u003e\n              \u0026#x3C;input\n                type=\"email\"\n                placeholder=\"メールアドレス\"\n                value={formData.email}\n                onChange={(e) =\u003e handleInputChange('email', e.target.value)}\n                required\n              /\u003e\n              \u0026#x3C;button type=\"submit\" disabled={loading}\u003e\n                {loading ? '送信中...' : 'リセットメール送信'}\n              \u0026#x3C;/button\u003e\n            \u0026#x3C;/form\u003e\n            \u0026#x3C;button type=\"button\" onClick={() =\u003e setMode('login')}\u003e\n              ログインに戻る\n            \u0026#x3C;/button\u003e\n          \u0026#x3C;/div\u003e\n        );\n    }\n  };\n\n  return (\n    \u0026#x3C;div className=\"auth-form\"\u003e\n      {renderForm()}\n      \n      \u0026#x3C;div className=\"social-auth\"\u003e\n        \u0026#x3C;h3\u003eまたはソーシャルログイン\u0026#x3C;/h3\u003e\n        \u0026#x3C;button onClick={googleLogin} disabled={loading}\u003e\n          Googleでログイン\n        \u0026#x3C;/button\u003e\n        \u0026#x3C;button onClick={githubLogin} disabled={loading}\u003e\n          GitHubでログイン\n        \u0026#x3C;/button\u003e\n      \u0026#x3C;/div\u003e\n\n      {error \u0026#x26;\u0026#x26; (\n        \u0026#x3C;div className=\"error-message\"\u003e\n          \u0026#x3C;p\u003e{error}\u0026#x3C;/p\u003e\n          \u0026#x3C;button onClick={clearError}\u003e閉じる\u0026#x3C;/button\u003e\n        \u0026#x3C;/div\u003e\n      )}\n    \u0026#x3C;/div\u003e\n  );\n};\n\nexport default CompleteAuthForm;\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"まとめ\"\u003eまとめ\u003c/h2\u003e\n\u003ch3 id=\"firebase認証の主要なポイント\"\u003eFirebase認証の主要なポイント\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003e豊富な認証方式\u003c/strong\u003e: メール、SNS、電話番号など多様な選択肢\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e簡単な実装\u003c/strong\u003e: 数行のコードで高機能な認証システムを構築\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eリアルタイム同期\u003c/strong\u003e: 認証状態の自動監視と更新\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e高いセキュリティ\u003c/strong\u003e: 業界標準の暗号化とセキュリティ機能\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eクロスプラットフォーム\u003c/strong\u003e: Web、iOS、Androidで統一\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"ベストプラクティス\"\u003eベストプラクティス\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e✅ \u003cstrong\u003e適切なエラーハンドリング\u003c/strong\u003eでユーザー体験を向上\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003e認証状態の効率的な管理\u003c/strong\u003eでパフォーマンスを最適化\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003eSecurity Rules\u003c/strong\u003eでデータアクセスを制御\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003e再認証\u003c/strong\u003eでセンシティブな操作を保護\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003eテスト環境\u003c/strong\u003eで開発効率を向上\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"次のステップ\"\u003e次のステップ\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003e実際のプロジェクトに導入\u003c/strong\u003eしてみる\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eFirebase Security Rules\u003c/strong\u003eを学習する\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eFirestore/Realtime Database\u003c/strong\u003eとの連携を理解する\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eFirebase Cloud Functions\u003c/strong\u003eでバックエンド処理を実装\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eAnalytics\u003c/strong\u003eでユーザー行動を分析\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eFirebase認証をマスターして、安全で使いやすいWebアプリケーションを構築しましょう！\u003c/p\u003e\n\u003ch2 id=\"参考リンク\"\u003e参考リンク\u003c/h2\u003e\n\u003ch3 id=\"firebase公式ドキュメント\"\u003eFirebase公式ドキュメント\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/auth\"\u003eFirebase Authentication 公式ドキュメント\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/auth/web/start\"\u003eFirebase JavaScript SDK 認証ガイド\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/web/setup\"\u003eFirebase プロジェクト設定ガイド\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/rules\"\u003eFirebase Security Rules\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/auth/web/account-linking\"\u003eユーザー アカウントのリンク\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"認証方式別の詳細ガイド\"\u003e認証方式別の詳細ガイド\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/auth/web/google-signin\"\u003eGoogle認証の設定\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/auth/web/github-auth\"\u003eGitHub認証の設定\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/auth/web/phone-auth\"\u003e電話番号認証の実装\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"関連技術\"\u003e関連技術\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://react.dev/\"\u003eReact公式ドキュメント\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://vuejs.org/\"\u003eVue.js公式ドキュメント\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://oauth.net/2/\"\u003eOAuth 2.0 解説\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://jwt.io/\"\u003eJSON Web Tokens (JWT)\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto py-10 px-4\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold mb-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-green-600\",\"children\":[\"#\",50]}],\" \",\"Firebase認証完全ガイド：初心者からミドルクラスエンジニアまで\"]}],[\"$\",\"ul\",null,{\"className\":\"list-none border-b border-gray-600 pb-4 mb-6\",\"children\":[[\"$\",\"li\",null,{\"className\":\"text-gray-500 text-sm\",\"children\":[\"作成日時: \",\"2025-09-10 22:46\"]}],[\"$\",\"li\",null,{\"className\":\"text-gray-500 text-sm\",\"children\":[\"更新日時: \",\"2025-09-10 22:46\"]}],[\"$\",\"li\",null,{\"className\":\"flex flex-wrap gap-2 mt-2\",\"children\":[[\"$\",\"span\",\"0\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Firebase\"}],[\"$\",\"span\",\"1\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Authentication\"}],[\"$\",\"span\",\"2\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"JavaScript\"}],[\"$\",\"span\",\"3\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"React\"}],[\"$\",\"span\",\"4\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Web Development\"}],[\"$\",\"span\",\"5\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Security\"}],[\"$\",\"span\",\"6\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"OAuth\"}]]}]]}],[\"$\",\"nav\",null,{\"className\":\"mb-6 pb-4 border-b border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"article\",null,{\"className\":\"prose dark:prose-invert\",\"dangerouslySetInnerHTML\":{\"__html\":\"$13\"}}],[\"$\",\"$L14\",null,{}],[\"$\",\"nav\",null,{\"className\":\"mt-8 pt-4 border-t border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"$L15\",null,{}]]}]\n"])</script><script>self.__next_f.push([1,"d:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n8:null\n"])</script><script>self.__next_f.push([1,"11:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\nb:{\"metadata\":\"$11:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

@@ -1,0 +1,442 @@
+1:"$Sreact.fragment"
+2:I[87555,[],""]
+3:I[31295,[],""]
+5:I[59665,[],"MetadataBoundary"]
+7:I[59665,[],"OutletBoundary"]
+a:I[74911,[],"AsyncMetadataOutlet"]
+c:I[59665,[],"ViewportBoundary"]
+e:I[26614,[],""]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/19bdf9af4d1ae4d4.css","style"]
+0:{"P":null,"b":"KZrMisSdXyu7FDjuS9HOy","p":"","c":["","blog","rails-active-record-associations",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","rails-active-record-associations","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19bdf9af4d1ae4d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.png","type":"image/png"}]}],["$","body",null,{"className":"__variable_5cfdac __variable_9a8899 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","rails-active-record-associations","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",["$","$L5",null,{"children":"$L6"}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","Qf50ZFmgQiUlSEFUtSIm1",{"children":[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+f:"$Sreact.suspense"
+10:I[74911,[],"AsyncMetadata"]
+6:["$","$f",null,{"fallback":null,"children":["$","$L10",null,{"promise":"$@11"}]}]
+9:null
+12:I[6874,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],""]
+14:I[31203,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+15:I[4197,["6874","static/chunks/6874-6c1ddde525f3893c.js","5953","static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js"],"default"]
+13:T4bbe,<h1 id="rails-active-recordのアソシエーション機能を完全理解belongs_toからhas_manyまで実例で解説">Rails Active Recordのアソシエーション機能を完全理解！belongs_toからhas_manyまで実例で解説</h1>
+<p>Rails開発において、データベースのテーブル間の関係性を扱うActive Recordのアソシエーション機能は、非常に重要な概念です。この記事では、アソシエーションの基本概念から実践的な使い方まで、初心者にも分かりやすく解説します。</p>
+<h2 id="アソシエーション機能とは">アソシエーション機能とは</h2>
+<p>**アソシエーション（Association）**は、複数のActive Recordモデル間の関係性を定義する機能です。リレーショナルデータベースの外部キー制約に対応し、Rubyコードでオブジェクトレベルでのデータアクセスを可能にします。</p>
+<h3 id="なぜアソシエーションが必要なのか">なぜアソシエーションが必要なのか</h3>
+<p>従来のSQLでは、関連データを取得するためにJOINクエリを書く必要がありました：</p>
+<pre><code class="language-sql">SELECT users.*, posts.title 
+FROM users 
+INNER JOIN posts ON users.id = posts.user_id 
+WHERE users.id = 1;
+</code></pre>
+<p>アソシエーションを使うと、このような複雑なクエリをRubyの直感的な記法で書けます：</p>
+<pre><code class="language-ruby">user = User.find(1)
+user.posts.each { |post| puts post.title }
+</code></pre>
+<h2 id="主要なアソシエーションタイプ">主要なアソシエーションタイプ</h2>
+<h3 id="1-belongs_to---所属関係">1. belongs_to - 所属関係</h3>
+<p><code>belongs_to</code>は「〜に属する」関係を表現します。外部キーを持つ側のモデルで使用します。</p>
+<h4 id="データベース設計例">データベース設計例</h4>
+<pre><code class="language-ruby"># マイグレーション
+class CreatePosts &#x3C; ActiveRecord::Migration[7.0]
+  def change
+    create_table :users do |t|
+      t.string :name, null: false
+      t.string :email, null: false
+      t.timestamps
+    end
+
+    create_table :posts do |t|
+      t.string :title, null: false
+      t.text :content
+      t.references :user, null: false, foreign_key: true  # 外部キー
+      t.timestamps
+    end
+  end
+end
+</code></pre>
+<h4 id="モデル定義">モデル定義</h4>
+<pre><code class="language-ruby">class User &#x3C; ApplicationRecord
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+end
+
+class Post &#x3C; ApplicationRecord
+  belongs_to :user  # ← belongs_toアソシエーション
+  validates :title, presence: true
+end
+</code></pre>
+<h4 id="使用例">使用例</h4>
+<pre><code class="language-ruby"># 投稿を作成してユーザーに関連付け
+user = User.create!(name: "田中太郎", email: "tanaka@example.com")
+
+# 方法1: オブジェクトで関連付け（推奨）
+post = Post.create!(
+  title: "Rails入門",
+  content: "Railsの基本について...",
+  user: user  # ← userオブジェクトを直接指定
+)
+
+# 方法2: IDで関連付け
+post = Post.create!(
+  title: "Ruby基礎",
+  content: "Rubyの基本文法について...",
+  user_id: user.id  # ← user_idを直接指定
+)
+
+# 関連データへのアクセス
+puts post.user.name  # => "田中太郎"
+puts post.user.email # => "tanaka@example.com"
+</code></pre>
+<h4 id="belongs_toのオプション">belongs_toのオプション</h4>
+<pre><code class="language-ruby">class Post &#x3C; ApplicationRecord
+  belongs_to :user, optional: true        # nilを許可
+  belongs_to :author, class_name: 'User'  # 異なるクラス名を指定
+  belongs_to :user, foreign_key: 'owner_id' # 外部キー名をカスタマイズ
+end
+</code></pre>
+<h3 id="2-has_many---一対多関係">2. has_many - 一対多関係</h3>
+<p><code>has_many</code>は「複数の〜を持つ」関係を表現します。</p>
+<h4 id="モデル定義-1">モデル定義</h4>
+<pre><code class="language-ruby">class User &#x3C; ApplicationRecord
+  has_many :posts  # ← has_manyアソシエーション
+  validates :name, presence: true
+end
+
+class Post &#x3C; ApplicationRecord
+  belongs_to :user
+  validates :title, presence: true
+end
+</code></pre>
+<h4 id="使用例-1">使用例</h4>
+<pre><code class="language-ruby">user = User.create!(name: "佐藤花子", email: "sato@example.com")
+
+# すぐにDBに保存する場合
+user.posts.create!(title: "今日の出来事", content: "...")
+
+# メモリ上にオブジェクトを作成し、後で保存する場合  
+post = user.posts.build(title: "明日の予定", content: "...")
+# post.valid? などでバリデーションを実行できる
+post.save!
+
+# 関連データの取得
+puts user.posts.count  # => 2
+user.posts.each do |post|
+  puts "タイトル: #{post.title}"
+end
+
+# 条件付きで取得
+recent_posts = user.posts.where('created_at > ?', 1.week.ago)
+</code></pre>
+<h4 id="has_manyのオプション">has_manyのオプション</h4>
+<pre><code class="language-ruby">class User &#x3C; ApplicationRecord
+  has_many :posts, dependent: :destroy    # ユーザー削除時に投稿も削除
+  has_many :articles, class_name: 'Post'  # 異なる名前でアクセス
+  has_many :recent_posts, -> { where('created_at > ?', 1.week.ago) }, 
+           class_name: 'Post'              # スコープ付きアソシエーション
+end
+</code></pre>
+<h3 id="3-has_one---一対一関係">3. has_one - 一対一関係</h3>
+<p><code>has_one</code>は「一つの〜を持つ」関係を表現します。</p>
+<h4 id="データベース設計例-1">データベース設計例</h4>
+<pre><code class="language-ruby">class CreateProfiles &#x3C; ActiveRecord::Migration[7.0]
+  def change
+    create_table :profiles do |t|
+      t.text :bio
+      t.string :website
+      t.references :user, null: false, foreign_key: true
+      t.timestamps
+    end
+  end
+end
+</code></pre>
+<h4 id="モデル定義と使用例">モデル定義と使用例</h4>
+<pre><code class="language-ruby">class User &#x3C; ApplicationRecord
+  has_one :profile  # ← has_oneアソシエーション
+end
+
+class Profile &#x3C; ApplicationRecord
+  belongs_to :user
+end
+
+# 使用例
+user = User.create!(name: "山田一郎", email: "yamada@example.com")
+user.create_profile!(bio: "Railsエンジニア", website: "https://example.com")
+
+puts user.profile.bio  # => "Railsエンジニア"
+</code></pre>
+<h3 id="4-has_and_belongs_to_many---多対多関係">4. has_and_belongs_to_many - 多対多関係</h3>
+<p><code>has_and_belongs_to_many</code>は多対多の関係を表現します。シンプルな多対多関係に適していますが、中間テーブルに追加情報を持たせる必要がある場合は後述の<code>has_many :through</code>を使用します。</p>
+<h4 id="データベース設計例-2">データベース設計例</h4>
+<pre><code class="language-ruby">class CreateTagsAndPosts &#x3C; ActiveRecord::Migration[7.0]
+  def change
+    create_table :tags do |t|
+      t.string :name, null: false
+      t.timestamps
+    end
+
+    # 中間テーブル（規約: アルファベット順）
+    create_table :posts_tags do |t|
+      t.references :post, null: false, foreign_key: true
+      t.references :tag, null: false, foreign_key: true
+    end
+
+    add_index :posts_tags, [:post_id, :tag_id], unique: true
+  end
+end
+</code></pre>
+<h4 id="モデル定義と使用例-1">モデル定義と使用例</h4>
+<pre><code class="language-ruby">class Post &#x3C; ApplicationRecord
+  belongs_to :user
+  has_and_belongs_to_many :tags  # ← 多対多アソシエーション
+end
+
+class Tag &#x3C; ApplicationRecord
+  has_and_belongs_to_many :posts  # ← 多対多アソシエーション
+end
+
+# 使用例
+ruby_tag = Tag.create!(name: "Ruby")
+rails_tag = Tag.create!(name: "Rails")
+
+post = Post.create!(
+  title: "Rails入門",
+  content: "...",
+  user: user
+)
+
+# タグの関連付け
+post.tags &#x3C;&#x3C; ruby_tag
+post.tags &#x3C;&#x3C; rails_tag
+
+puts post.tags.map(&#x26;:name)  # => ["Ruby", "Rails"]
+puts ruby_tag.posts.count   # => 1
+</code></pre>
+<h2 id="has_many-through---中間モデルを使った多対多関係">has_many :through - 中間モデルを使った多対多関係</h2>
+<p>より複雑な多対多関係では、<code>has_many :through</code>を使用します。</p>
+<h3 id="なぜ-has_many-through-を使うのか">なぜ <code>has_many :through</code> を使うのか？</h3>
+<p><code>has_and_belongs_to_many</code>は手軽ですが、中間テーブル（<code>posts_tags</code>）をモデルとして扱えません。一方、<code>has_many :through</code>では中間テーブルに対応するモデル（例: <code>Followship</code>）が存在するため、以下のようなメリットがあります：</p>
+<ul>
+<li>中間モデルに独自の属性（例: <code>followed_at</code>）やバリデーション、コールバックを追加できる</li>
+<li>アソシエーション自体に関するロジックを中間モデルに記述できる</li>
+</ul>
+<p>そのため、少しでも中間テーブルに情報を持たせる可能性がある場合は、最初から<code>has_many :through</code>を選択するのが一般的です。</p>
+<h4 id="データベース設計例-3">データベース設計例</h4>
+<pre><code class="language-ruby">class CreateFollowships &#x3C; ActiveRecord::Migration[7.0]
+  def change
+    create_table :followships do |t|
+      t.references :follower, null: false, foreign_key: { to_table: :users }
+      t.references :followed, null: false, foreign_key: { to_table: :users }
+      t.datetime :followed_at, default: -> { 'CURRENT_TIMESTAMP' }
+      t.timestamps
+    end
+
+    add_index :followships, [:follower_id, :followed_id], unique: true
+  end
+end
+</code></pre>
+<h4 id="モデル定義-2">モデル定義</h4>
+<pre><code class="language-ruby">class User &#x3C; ApplicationRecord
+  # フォローしている関係
+  has_many :active_followships, class_name: 'Followship', foreign_key: 'follower_id'
+  has_many :following, through: :active_followships, source: :followed
+
+  # フォローされている関係
+  has_many :passive_followships, class_name: 'Followship', foreign_key: 'followed_id'
+  has_many :followers, through: :passive_followships, source: :follower
+end
+
+class Followship &#x3C; ApplicationRecord
+  belongs_to :follower, class_name: 'User'
+  belongs_to :followed, class_name: 'User'
+  
+  validates :follower_id, uniqueness: { scope: :followed_id }
+end
+</code></pre>
+<h4 id="使用例-2">使用例</h4>
+<pre><code class="language-ruby">user1 = User.create!(name: "ユーザー1", email: "user1@example.com")
+user2 = User.create!(name: "ユーザー2", email: "user2@example.com")
+
+# フォロー関係を作成
+user1.following &#x3C;&#x3C; user2
+
+# データの取得
+puts user1.following.count  # => 1
+puts user2.followers.count  # => 1
+
+# 中間モデルのデータにもアクセス可能
+followship = user1.active_followships.first
+puts followship.followed_at
+</code></pre>
+<h2 id="応用編ポリモーフィック関連">応用編：ポリモーフィック関連</h2>
+<p>1つのモデルが複数の異なるモデルに属することができる関係性を定義したい場合、ポリモーフィック関連を使用します。例えば、「コメント」が「投稿」にも「画像」にも付けられるようなケースです。</p>
+<h3 id="データベース設計例-4">データベース設計例</h3>
+<pre><code class="language-ruby">class CreateComments &#x3C; ActiveRecord::Migration[7.0]
+  def change
+    create_table :comments do |t|
+      t.text :body
+      t.references :commentable, polymorphic: true, null: false # ポリモーフィック関連
+      t.timestamps
+    end
+  end
+end
+</code></pre>
+<p><code>commentable_id</code>と<code>commentable_type</code>（モデル名を格納する文字列カラム）が作成されます。</p>
+<h3 id="モデル定義-3">モデル定義</h3>
+<pre><code class="language-ruby">class Comment &#x3C; ApplicationRecord
+  belongs_to :commentable, polymorphic: true
+end
+
+class Post &#x3C; ApplicationRecord
+  has_many :comments, as: :commentable
+end
+
+class Image &#x3C; ApplicationRecord
+  has_many :comments, as: :commentable
+end
+</code></pre>
+<h3 id="使用例-3">使用例</h3>
+<pre><code class="language-ruby">post = Post.create!(title: "ポリモーフィック入門", content: "...")
+comment = post.comments.create!(body: "分かりやすい！")
+
+puts comment.commentable_type # => "Post"
+puts comment.commentable.title # => "ポリモーフィック入門"
+
+image = Image.create!(title: "サンプル画像")
+image_comment = image.comments.create!(body: "素敵な画像ですね")
+puts image_comment.commentable_type # => "Image"
+</code></pre>
+<h2 id="アソシエーションを使う際のベストプラクティス">アソシエーションを使う際のベストプラクティス</h2>
+<h3 id="1-n1問題の回避">1. N+1問題の回避</h3>
+<pre><code class="language-ruby"># 悪い例：N+1問題が発生
+posts = Post.all
+posts.each { |post| puts post.user.name }  # 各postでSQLクエリが発生
+
+# 良い例：includesで事前読み込み
+posts = Post.includes(:user).all
+posts.each { |post| puts post.user.name }  # 1回のJOINクエリで済む
+</code></pre>
+<h3 id="2-dependent-オプションの適切な使用">2. dependent オプションの適切な使用</h3>
+<pre><code class="language-ruby">class User &#x3C; ApplicationRecord
+  has_many :posts, dependent: :destroy     # ユーザー削除時に投稿も削除
+  has_many :comments, dependent: :nullify  # ユーザー削除時にuser_idをnullに
+end
+</code></pre>
+<h3 id="3-バリデーションとの組み合わせ">3. バリデーションとの組み合わせ</h3>
+<pre><code class="language-ruby">class Post &#x3C; ApplicationRecord
+  belongs_to :user
+  validates :user, presence: true  # ユーザーの存在を確認
+  validates :title, presence: true
+end
+</code></pre>
+<h3 id="4-スコープとの組み合わせ">4. スコープとの組み合わせ</h3>
+<pre><code class="language-ruby">class User &#x3C; ApplicationRecord
+  has_many :posts
+  has_many :published_posts, -> { where(published: true) }, class_name: 'Post'
+end
+</code></pre>
+<h3 id="5-inverse_ofでメモリ上の整合性を保つ">5. <code>inverse_of</code>でメモリ上の整合性を保つ</h3>
+<p><code>belongs_to</code>と<code>has_many</code>を同時に定義した際、メモリ上で同じオブジェクトを指し示すように<code>inverse_of</code>を指定することが推奨されます。</p>
+<pre><code class="language-ruby">class User &#x3C; ApplicationRecord
+  has_many :posts, inverse_of: :user
+end
+
+class Post &#x3C; ApplicationRecord
+  belongs_to :user, inverse_of: :posts
+end
+
+# inverse_ofがない場合
+user = User.first
+post = user.posts.first
+post.user.object_id != user.object_id # => true (別オブジェクト扱い)
+
+# inverse_ofがある場合
+user = User.first  
+post = user.posts.first
+post.user.object_id == user.object_id # => true (同一オブジェクト)
+</code></pre>
+<p>これにより、メモリ上で片方のオブジェクトを変更した際に、もう片方にも即座に反映されるようになります。</p>
+<h2 id="パフォーマンス最適化のコツ">パフォーマンス最適化のコツ</h2>
+<h3 id="1-適切なインデックスの設定">1. 適切なインデックスの設定</h3>
+<pre><code class="language-ruby">class AddIndexToPosts &#x3C; ActiveRecord::Migration[7.0]
+  def change
+    add_index :posts, :user_id        # belongs_toの外部キー
+    add_index :posts, [:user_id, :published]  # 複合インデックス
+  end
+end
+</code></pre>
+<h3 id="2-counter_cacheの活用">2. counter_cacheの活用</h3>
+<pre><code class="language-ruby">class User &#x3C; ApplicationRecord
+  has_many :posts
+end
+
+class Post &#x3C; ApplicationRecord
+  belongs_to :user, counter_cache: true  # users.posts_countを自動更新
+end
+
+# マイグレーション
+add_column :users, :posts_count, :integer, default: 0
+
+# 使用例
+puts user.posts_count  # SQLクエリなしでカウント取得
+</code></pre>
+<h2 id="よくあるエラーとデバッグ方法">よくあるエラーとデバッグ方法</h2>
+<h3 id="1-アソシエーション名のミスタイプ">1. アソシエーション名のミスタイプ</h3>
+<pre><code class="language-ruby"># エラー例
+class Post &#x3C; ApplicationRecord
+  belongs_to :users  # ← 単数形にすべき
+end
+
+# 正しい例
+class Post &#x3C; ApplicationRecord
+  belongs_to :user   # ← 単数形
+end
+</code></pre>
+<h3 id="2-外部キーの不整合">2. 外部キーの不整合</h3>
+<pre><code class="language-ruby"># エラーが発生するケース
+post = Post.new(title: "test")
+post.user_id = 999999  # 存在しないuser_id
+post.save!  # ActiveRecord::InvalidForeignKey エラー
+</code></pre>
+<h3 id="3-アソシエーションのデバッグ">3. アソシエーションのデバッグ</h3>
+<pre><code class="language-ruby"># アソシエーションの確認
+puts User.reflect_on_all_associations.map(&#x26;:name)
+# => [:posts, :profile, :following, :followers]
+
+# SQLクエリの確認
+puts User.includes(:posts).to_sql
+# => SELECT "users".* FROM "users" LEFT OUTER JOIN "posts" ON...
+</code></pre>
+<h2 id="まとめ">まとめ</h2>
+<p>Rails Active Recordのアソシエーション機能を理解することで、データベースの関係性を直感的なRubyコードで扱えるようになります。重要なポイントを整理すると：</p>
+<h3 id="基本的な使い分け">基本的な使い分け</h3>
+<ul>
+<li><strong>belongs_to</strong>: 外部キーを持つ側（多側）</li>
+<li><strong>has_many</strong>: 一対多の関係（一側）</li>
+<li><strong>has_one</strong>: 一対一の関係</li>
+<li><strong>has_and_belongs_to_many</strong>: シンプルな多対多関係</li>
+<li><strong>has_many :through</strong>: 複雑な多対多関係</li>
+<li><strong>ポリモーフィック関連</strong>: 1つのモデルが複数の異なるモデルに属する関係</li>
+</ul>
+<h3 id="パフォーマンス対策">パフォーマンス対策</h3>
+<ul>
+<li>N+1問題の回避にはincludes/preload/eager_load</li>
+<li>適切なインデックスの設定</li>
+<li>counter_cacheの活用</li>
+</ul>
+<h3 id="注意点">注意点</h3>
+<ul>
+<li>アソシエーション名は適切な単数形・複数形を使用</li>
+<li>dependentオプションでデータ整合性を保つ</li>
+<li>バリデーションと組み合わせてデータ品質を確保</li>
+</ul>
+<p>アソシエーションを適切に使用することで、保守性が高く、読みやすいRailsアプリケーションを作成できます。実際のプロジェクトでは、要件に応じてこれらの機能を組み合わせて使用していきましょう。</p>
+<h2 id="参考リンク">参考リンク</h2>
+<ul>
+<li><a href="https://guides.rubyonrails.org/association_basics.html">Rails Guides - Active Record Associations</a></li>
+<li><a href="https://api.rubyonrails.org/classes/ActiveRecord/Associations.html">Rails API Documentation - ActiveRecord::Associations</a></li>
+<li><a href="https://guides.rubyonrails.org/active_record_querying.html">Rails Database Best Practices</a></li>
+</ul>4:["$","div",null,{"className":"max-w-2xl mx-auto py-10 px-4","children":[["$","h1",null,{"className":"text-3xl font-bold mb-2","children":[["$","span",null,{"className":"text-green-600","children":["#",47]}]," ","Rails Active Recordのアソシエーション機能を完全理解！belongs_toからhas_manyまで実例で解説"]}],["$","ul",null,{"className":"list-none border-b border-gray-600 pb-4 mb-6","children":[["$","li",null,{"className":"text-gray-500 text-sm","children":["作成日時: ","2025-09-10 20:16"]}],["$","li",null,{"className":"text-gray-500 text-sm","children":["更新日時: ","2025-09-10 20:16"]}],["$","li",null,{"className":"flex flex-wrap gap-2 mt-2","children":[["$","span","0",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Rails"}],["$","span","1",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Ruby"}],["$","span","2",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ActiveRecord"}],["$","span","3",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"Database"}],["$","span","4",{"className":"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs","children":"ORM"}]]}]]}],["$","nav",null,{"className":"mb-6 pb-4 border-b border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","article",null,{"className":"prose dark:prose-invert","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{}],["$","nav",null,{"className":"mt-8 pt-4 border-t border-gray-700 flex justify-between","children":[["$","$L12",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"← ホームへ"}],["$","$L12",null,{"href":"/blog","className":"text-blue-400 hover:text-blue-300 hover:underline","children":"記事一覧へ →"}]]}],["$","$L15",null,{}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:{"metadata":[["$","title","0",{"children":"Maita Tomoya Dev IO"}],["$","meta","1",{"name":"description","content":"米田智哉の技術ブログ。キャッチアップしたことをメモします。"}]],"error":null,"digest":"$undefined"}
+b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}

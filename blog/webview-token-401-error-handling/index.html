@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/19bdf9af4d1ae4d4.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-aa7deb192a774533.js"/><script src="/_next/static/chunks/4bd1b696-bc089769d60af88b.js" async=""></script><script src="/_next/static/chunks/1684-b369840b16e4c44b.js" async=""></script><script src="/_next/static/chunks/main-app-2ed07751e45c2a2f.js" async=""></script><script src="/_next/static/chunks/6874-6c1ddde525f3893c.js" async=""></script><script src="/_next/static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><div class="max-w-2xl mx-auto py-10 px-4"><h1 class="text-3xl font-bold mb-2"><span class="text-green-600">#</span> <!-- -->WebViewの認証トークン管理：500エラーから401エラーへの改善とセキュリティ考察</h1><ul class="list-none border-b border-gray-600 pb-4 mb-6"><li class="text-gray-500 text-sm">作成日時: <!-- -->2025-09-12 21:18</li><li class="flex flex-wrap gap-2 mt-2"><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Firebase Auth</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">React Native</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Ruby on Rails</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">JWT</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Token Management</span></li></ul><nav class="mb-6 pb-4 border-b border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav><article class="prose dark:prose-invert"><h2 id="はじめに">はじめに</h2>
+<p>React Native（Expo）アプリのWebViewでFirebase Authenticationのトークンを使用している際に、トークン期限切れで500エラーが発生する問題に遭遇しました。この問題を解決する過程で、トークン管理の仕組みやセキュリティについて深く理解することができたので、その内容を共有します。</p>
+<h2 id="問題の背景">問題の背景</h2>
+<h3 id="システム構成">システム構成</h3>
+<pre><code>[React Native App] 
+    ↓ Firebase Auth（IDトークン）
+[WebView] 
+    ↓ Authorizationヘッダー
+[Rails Backend]
+    ↓ JWT検証
+[レスポンス]
+</code></pre>
+<h3 id="発生していた問題">発生していた問題</h3>
+<p>1日約100件の500 Internal Server Errorが発生していました。エラーログを確認すると：</p>
+<pre><code class="language-ruby"># エラーログ
+JWT::ExpiredSignature: Signature has expired
+  from firebase_token_decoder.rb:decode
+</code></pre>
+<h2 id="原因の分析">原因の分析</h2>
+<h3 id="なぜ500エラーが発生していたのか">なぜ500エラーが発生していたのか</h3>
+<p>元のRailsコントローラーの実装：</p>
+<pre><code class="language-ruby">def current_user
+  # ... 省略 ...
+  
+  # WebViewからのアクセス時
+  token, _option = ActionController::HttpAuthentication::Token.token_and_options(request)
+  if token.present?
+    res = TokenDecoder.new(token).decode  # ← ここで例外発生！
+    @current_user = User.find_by(uid: res['user_id'])
+  end
+  
+  @current_user
+end
+</code></pre>
+<p>トークンが期限切れの場合、<code>decode</code>メソッドが例外を投げて500エラーになっていました。</p>
+<h3 id="トークンの有無と期限切れの違い">トークンの有無と期限切れの違い</h3>
+<p>重要な気づきは、**「トークンがない」<strong>と</strong>「トークンがあるけど期限切れ」**は全く別の状態だということです：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>状態</th><th><code>token.present?</code></th><th>結果</th></tr></thead><tbody><tr><td>トークンなし</td><td>false</td><td>セッション認証にフォールバック（正常）</td></tr><tr><td>トークンあり（有効）</td><td>true</td><td>トークン認証成功（正常）</td></tr><tr><td>トークンあり（期限切れ）</td><td>true</td><td><strong>500エラー！</strong></td></tr></tbody></table>
+<h2 id="firebase-authenticationのトークン管理">Firebase Authenticationのトークン管理</h2>
+<h3 id="2種類のトークン">2種類のトークン</h3>
+<p>Firebase Authenticationには2種類のトークンがあります：</p>
+<ol>
+<li>
+<p><strong>IDトークン</strong>（1時間有効）</p>
+<ul>
+<li>JWTフォーマット</li>
+<li>ユーザー情報を含む</li>
+<li>APIリクエストで使用</li>
+</ul>
+</li>
+<li>
+<p><strong>リフレッシュトークン</strong>（無期限）</p>
+<ul>
+<li>IDトークンを更新するために使用</li>
+<li>Firebase SDKが内部で管理</li>
+</ul>
+</li>
+</ol>
+<h3 id="トークンのライフサイクル">トークンのライフサイクル</h3>
+<pre><code class="language-javascript">// React Native側のトークン取得
+const useIdToken = () => {
+  const [idToken, setIdToken] = useState(undefined);
+  
+  useEffect(() => {
+    const fetchIdToken = async () => {
+      const currentUser = auth.currentUser;
+      // デフォルトではキャッシュされたトークンを返す
+      const token = currentUser ? await getIdToken(currentUser) : "";
+      setIdToken(token);
+    };
+    fetchIdToken();
+  }, [auth.currentUser]);
+  
+  return { idToken };
+};
+</code></pre>
+<h3 id="なぜ100件日程度のエラーで済んでいたのか">なぜ100件/日程度のエラーで済んでいたのか</h3>
+<p>Firebase SDKには<strong>自動トークンリフレッシュ機能</strong>があります：</p>
+<ul>
+<li>トークンの有効期限が<strong>5分未満</strong>になると自動的にリフレッシュ</li>
+<li>つまり、通常の使用では期限切れになることは稀</li>
+<li>エラーが発生するのは特殊なケースのみ</li>
+</ul>
+<h4 id="500エラーが発生する具体的なシナリオ">500エラーが発生する具体的なシナリオ</h4>
+<p><strong>パターン1: 長時間アプリを使用</strong></p>
+<pre><code>10:00 - アプリ起動、トークン取得（有効期限11:00）
+10:55 - Firebase SDKが自動更新を試みるが、ネットワーク不調で失敗
+11:01 - WebViewアクセス → 期限切れトークンで500エラー！
+</code></pre>
+<p><strong>パターン2: バックグラウンドからの復帰</strong></p>
+<pre><code>10:00 - WebView表示中（トークン有効期限11:00）
+10:30 - アプリをバックグラウンドへ
+11:30 - アプリを再度開く → 古いトークンで500エラー！
+</code></pre>
+<h2 id="解決策の実装">解決策の実装</h2>
+<h3 id="ステップ1-500エラーを401エラーに変更">ステップ1: 500エラーを401エラーに変更</h3>
+<p>Rails側で例外をキャッチして適切なHTTPステータスを返すように修正：</p>
+<pre><code class="language-ruby"># app/controllers/application_controller.rb
+def current_user
+  # ... 省略 ...
+  
+  if token.present?
+    begin
+      res = TokenDecoder.new(token).decode
+      @current_user = User.find_by(uid: res['user_id'])
+    rescue TokenDecoder::ExpiredTokenError => e
+      # 401エラーを返す
+      Rails.logger.info "WebView token expired: #{e.message}"
+      response.headers['WWW-Authenticate'] = 'Bearer realm="Application", error="invalid_token"'
+      render json: { 
+        error: 'Token expired', 
+        code: 'TOKEN_EXPIRED'
+      }, status: :unauthorized
+      return nil
+    end
+  end
+  
+  @current_user
+end
+</code></pre>
+<h3 id="ステップ2-firebasetokendecoderの改善">ステップ2: FirebaseTokenDecoderの改善</h3>
+<p>期限切れエラーを区別できるように例外クラスを追加：</p>
+<pre><code class="language-ruby"># lib/services/token_decoder.rb
+class TokenDecoder
+  class InvalidTokenError &#x3C; StandardError; end
+  class ExpiredTokenError &#x3C; StandardError; end  # 追加
+  
+  def decode
+    # ... 省略 ...
+  rescue JWT::ExpiredSignature => e
+    Rails.logger.info "Token expired: #{e.message}"
+    raise ExpiredTokenError, e.message  # 専用の例外を投げる
+  end
+end
+</code></pre>
+<h2 id="セキュリティの考慮">セキュリティの考慮</h2>
+<h3 id="当初検討した自動リトライの問題点">当初検討した自動リトライの問題点</h3>
+<p>最初は「401エラー時に自動的にトークンをリフレッシュして再試行」する実装を検討しました：</p>
+<pre><code class="language-javascript">// ❌ セキュリティ上問題のある実装
+const handleHttpError = async (event) => {
+  if (event.nativeEvent.statusCode === 401) {
+    // トークンを強制リフレッシュ
+    const newToken = await getIdToken(currentUser, true);
+    // 新しいトークンでリトライ
+    webView.reload();
+  }
+};
+</code></pre>
+<p>しかし、これには<strong>重大なセキュリティホール</strong>があります：</p>
+<ol>
+<li>Firebaseのリフレッシュトークンは<strong>無期限</strong></li>
+<li>ユーザーをBANしても、リフレッシュトークンがある限り新しいIDトークンを取得可能</li>
+<li>永続的にアクセスを継続できてしまう</li>
+</ol>
+<h3 id="最終的な実装再認証を促す">最終的な実装：再認証を促す</h3>
+<p>セキュリティを重視し、401エラー時は再ログインを要求する実装にしました：</p>
+<pre><code class="language-javascript">// components/WebViewWithRetry.tsx
+export const WebViewWithRetry = ({ onHttpError, ...props }) => {
+  const handleHttpError = useCallback((event) => {
+    if (event.nativeEvent.statusCode === 401) {
+      console.log("WebView received 401, re-authentication required");
+      
+      // 再認証が必要であることを通知
+      onHttpError?.({
+        ...event,
+        nativeEvent: {
+          ...event.nativeEvent,
+          description: "Authentication required",
+        },
+      });
+    } else {
+      onHttpError?.(event);
+    }
+  }, [onHttpError]);
+
+  return &#x3C;RNWebView {...props} onHttpError={handleHttpError} />;
+};
+</code></pre>
+<p>使用側：</p>
+<pre><code class="language-javascript">// app/settings/account.tsx
+&#x3C;WebViewWithRetry
+  source={{ uri: url, headers: { Authorization: `Bearer ${idToken}` } }}
+  onHttpError={(event) => {
+    if (event.nativeEvent.description?.includes("authentication required")) {
+      Alert.alert(
+        "再ログインが必要です",
+        "セキュリティ上の理由により、再度ログインが必要です。",
+        [{ text: "OK", onPress: () => router.replace("/") }]
+      );
+    }
+  }}
+/>
+</code></pre>
+<h2 id="トークン管理のベストプラクティス">トークン管理のベストプラクティス</h2>
+<h3 id="1-firebase-sdkの自動リフレッシュを活用">1. Firebase SDKの自動リフレッシュを活用</h3>
+<pre><code class="language-javascript">// 明示的なリフレッシュは不要
+const token = await getIdToken(currentUser);  // 自動で5分前にリフレッシュされる
+</code></pre>
+<h3 id="2-エラーハンドリングの使い分け">2. エラーハンドリングの使い分け</h3>
+<ul>
+<li><strong>401 Unauthorized</strong>: 再認証を要求</li>
+<li><strong>403 Forbidden</strong>: アクセス権限なし</li>
+<li><strong>500 Internal Server Error</strong>: 避けるべき（今回の改善点）</li>
+</ul>
+<h3 id="3-セキュリティファースト">3. セキュリティファースト</h3>
+<ul>
+<li>自動リトライよりも明示的な再認証</li>
+<li>リフレッシュトークンの無期限利用を防ぐ</li>
+<li>ユーザーへの適切なフィードバック</li>
+</ul>
+<h2 id="webviewの独立性について">WebViewの独立性について</h2>
+<p>重要な発見は、<strong>WebViewのセッションは完全に独立している</strong>ということです：</p>
+<pre><code class="language-javascript">// WebViewのリクエスト
+Authorization: Bearer [IDトークン]  // アプリから渡されたトークン
+
+// 通常のブラウザのリクエスト
+Cookie: _session_id=...  // ブラウザのセッションクッキー
+</code></pre>
+<p>WebViewは：</p>
+<ul>
+<li>ブラウザのCookieを共有しない</li>
+<li>独自のセッション管理が必要</li>
+<li>明示的にトークンを渡す必要がある</li>
+</ul>
+<h2 id="まとめ">まとめ</h2>
+<h3 id="改善結果">改善結果</h3>
+<ul>
+<li><strong>500エラー → 401エラー</strong>: 適切なHTTPステータスコード</li>
+<li><strong>UX向上</strong>: エラー時も分かりやすいメッセージ</li>
+<li><strong>セキュリティ強化</strong>: BANされたユーザーのアクセスを確実に遮断</li>
+</ul>
+<h3 id="学んだこと">学んだこと</h3>
+<ol>
+<li>
+<p><strong>トークンの有無と期限切れは別物</strong></p>
+<ul>
+<li>トークンなし → フォールバック可能</li>
+<li>トークン期限切れ → 明示的なエラー処理が必要</li>
+</ul>
+</li>
+<li>
+<p><strong>Firebase SDKの自動リフレッシュ機能を信頼する</strong></p>
+<ul>
+<li>5分前の自動更新で通常は問題なし</li>
+<li>エッジケースのみ考慮すればよい</li>
+</ul>
+</li>
+<li>
+<p><strong>セキュリティと利便性のバランス</strong></p>
+<ul>
+<li>自動リトライは便利だが、セキュリティリスクがある</li>
+<li>明示的な再認証の方が安全</li>
+</ul>
+</li>
+<li>
+<p><strong>WebViewは独立した環境</strong></p>
+<ul>
+<li>ブラウザセッションとは別物</li>
+<li>専用の認証フローが必要</li>
+</ul>
+</li>
+</ol>
+<h3 id="今後の課題">今後の課題</h3>
+<ul>
+<li>リフレッシュトークンの有効期限管理</li>
+<li>より賢いトークンキャッシュ戦略</li>
+<li>オフライン時の対応</li>
+</ul>
+<h2 id="参考リンク">参考リンク</h2>
+<ul>
+<li><a href="https://firebase.google.com/docs/reference/rest/auth">Firebase Authentication REST API</a></li>
+<li><a href="https://jwt.io/introduction">JWT Token Expiration</a></li>
+<li><a href="https://github.com/react-native-webview/react-native-webview">React Native WebView Documentation</a></li>
+<li><a href="https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Token.html">Rails Action Controller HTTP Authentication</a></li>
+</ul></article><nav class="mt-8 pt-4 border-t border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-aa7deb192a774533.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[87555,[],\"\"]\n3:I[31295,[],\"\"]\n5:I[59665,[],\"MetadataBoundary\"]\n7:I[59665,[],\"OutletBoundary\"]\na:I[74911,[],\"AsyncMetadataOutlet\"]\nc:I[59665,[],\"ViewportBoundary\"]\ne:I[26614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"KZrMisSdXyu7FDjuS9HOy\",\"p\":\"\",\"c\":[\"\",\"blog\",\"webview-token-401-error-handling\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"webview-token-401-error-handling\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"blog\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"webview-token-401-error-handling\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",[\"$\",\"$L5\",null,{\"children\":\"$L6\"}],null,[\"$\",\"$L7\",null,{\"children\":[\"$L8\",\"$L9\",[\"$\",\"$La\",null,{\"promise\":\"$@b\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"k9fnAzU7sHQHE7xQOsNSO\",{\"children\":[[\"$\",\"$Lc\",null,{\"children\":\"$Ld\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$e\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"f:\"$Sreact.suspense\"\n10:I[74911,[],\"AsyncMetadata\"]\n6:[\"$\",\"$f\",null,{\"fallback\":null,\"children\":[\"$\",\"$L10\",null,{\"promise\":\"$@11\"}]}]\n"])</script><script>self.__next_f.push([1,"9:null\n"])</script><script>self.__next_f.push([1,"12:I[6874,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"\"]\n14:I[31203,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n15:I[4197,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n13:T31aa,"])</script><script>self.__next_f.push([1,"\u003ch2 id=\"はじめに\"\u003eはじめに\u003c/h2\u003e\n\u003cp\u003eReact Native（Expo）アプリのWebViewでFirebase Authenticationのトークンを使用している際に、トークン期限切れで500エラーが発生する問題に遭遇しました。この問題を解決する過程で、トークン管理の仕組みやセキュリティについて深く理解することができたので、その内容を共有します。\u003c/p\u003e\n\u003ch2 id=\"問題の背景\"\u003e問題の背景\u003c/h2\u003e\n\u003ch3 id=\"システム構成\"\u003eシステム構成\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003e[React Native App] \n    ↓ Firebase Auth（IDトークン）\n[WebView] \n    ↓ Authorizationヘッダー\n[Rails Backend]\n    ↓ JWT検証\n[レスポンス]\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"発生していた問題\"\u003e発生していた問題\u003c/h3\u003e\n\u003cp\u003e1日約100件の500 Internal Server Errorが発生していました。エラーログを確認すると：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# エラーログ\nJWT::ExpiredSignature: Signature has expired\n  from firebase_token_decoder.rb:decode\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"原因の分析\"\u003e原因の分析\u003c/h2\u003e\n\u003ch3 id=\"なぜ500エラーが発生していたのか\"\u003eなぜ500エラーが発生していたのか\u003c/h3\u003e\n\u003cp\u003e元のRailsコントローラーの実装：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003edef current_user\n  # ... 省略 ...\n  \n  # WebViewからのアクセス時\n  token, _option = ActionController::HttpAuthentication::Token.token_and_options(request)\n  if token.present?\n    res = TokenDecoder.new(token).decode  # ← ここで例外発生！\n    @current_user = User.find_by(uid: res['user_id'])\n  end\n  \n  @current_user\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eトークンが期限切れの場合、\u003ccode\u003edecode\u003c/code\u003eメソッドが例外を投げて500エラーになっていました。\u003c/p\u003e\n\u003ch3 id=\"トークンの有無と期限切れの違い\"\u003eトークンの有無と期限切れの違い\u003c/h3\u003e\n\u003cp\u003e重要な気づきは、**「トークンがない」\u003cstrong\u003eと\u003c/strong\u003e「トークンがあるけど期限切れ」**は全く別の状態だということです：\u003c/p\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003e状態\u003c/th\u003e\u003cth\u003e\u003ccode\u003etoken.present?\u003c/code\u003e\u003c/th\u003e\u003cth\u003e結果\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eトークンなし\u003c/td\u003e\u003ctd\u003efalse\u003c/td\u003e\u003ctd\u003eセッション認証にフォールバック（正常）\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eトークンあり（有効）\u003c/td\u003e\u003ctd\u003etrue\u003c/td\u003e\u003ctd\u003eトークン認証成功（正常）\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eトークンあり（期限切れ）\u003c/td\u003e\u003ctd\u003etrue\u003c/td\u003e\u003ctd\u003e\u003cstrong\u003e500エラー！\u003c/strong\u003e\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\n\u003ch2 id=\"firebase-authenticationのトークン管理\"\u003eFirebase Authenticationのトークン管理\u003c/h2\u003e\n\u003ch3 id=\"2種類のトークン\"\u003e2種類のトークン\u003c/h3\u003e\n\u003cp\u003eFirebase Authenticationには2種類のトークンがあります：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eIDトークン\u003c/strong\u003e（1時間有効）\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eJWTフォーマット\u003c/li\u003e\n\u003cli\u003eユーザー情報を含む\u003c/li\u003e\n\u003cli\u003eAPIリクエストで使用\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eリフレッシュトークン\u003c/strong\u003e（無期限）\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eIDトークンを更新するために使用\u003c/li\u003e\n\u003cli\u003eFirebase SDKが内部で管理\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"トークンのライフサイクル\"\u003eトークンのライフサイクル\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// React Native側のトークン取得\nconst useIdToken = () =\u003e {\n  const [idToken, setIdToken] = useState(undefined);\n  \n  useEffect(() =\u003e {\n    const fetchIdToken = async () =\u003e {\n      const currentUser = auth.currentUser;\n      // デフォルトではキャッシュされたトークンを返す\n      const token = currentUser ? await getIdToken(currentUser) : \"\";\n      setIdToken(token);\n    };\n    fetchIdToken();\n  }, [auth.currentUser]);\n  \n  return { idToken };\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"なぜ100件日程度のエラーで済んでいたのか\"\u003eなぜ100件/日程度のエラーで済んでいたのか\u003c/h3\u003e\n\u003cp\u003eFirebase SDKには\u003cstrong\u003e自動トークンリフレッシュ機能\u003c/strong\u003eがあります：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eトークンの有効期限が\u003cstrong\u003e5分未満\u003c/strong\u003eになると自動的にリフレッシュ\u003c/li\u003e\n\u003cli\u003eつまり、通常の使用では期限切れになることは稀\u003c/li\u003e\n\u003cli\u003eエラーが発生するのは特殊なケースのみ\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"500エラーが発生する具体的なシナリオ\"\u003e500エラーが発生する具体的なシナリオ\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003eパターン1: 長時間アプリを使用\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e10:00 - アプリ起動、トークン取得（有効期限11:00）\n10:55 - Firebase SDKが自動更新を試みるが、ネットワーク不調で失敗\n11:01 - WebViewアクセス → 期限切れトークンで500エラー！\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003eパターン2: バックグラウンドからの復帰\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e10:00 - WebView表示中（トークン有効期限11:00）\n10:30 - アプリをバックグラウンドへ\n11:30 - アプリを再度開く → 古いトークンで500エラー！\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"解決策の実装\"\u003e解決策の実装\u003c/h2\u003e\n\u003ch3 id=\"ステップ1-500エラーを401エラーに変更\"\u003eステップ1: 500エラーを401エラーに変更\u003c/h3\u003e\n\u003cp\u003eRails側で例外をキャッチして適切なHTTPステータスを返すように修正：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# app/controllers/application_controller.rb\ndef current_user\n  # ... 省略 ...\n  \n  if token.present?\n    begin\n      res = TokenDecoder.new(token).decode\n      @current_user = User.find_by(uid: res['user_id'])\n    rescue TokenDecoder::ExpiredTokenError =\u003e e\n      # 401エラーを返す\n      Rails.logger.info \"WebView token expired: #{e.message}\"\n      response.headers['WWW-Authenticate'] = 'Bearer realm=\"Application\", error=\"invalid_token\"'\n      render json: { \n        error: 'Token expired', \n        code: 'TOKEN_EXPIRED'\n      }, status: :unauthorized\n      return nil\n    end\n  end\n  \n  @current_user\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"ステップ2-firebasetokendecoderの改善\"\u003eステップ2: FirebaseTokenDecoderの改善\u003c/h3\u003e\n\u003cp\u003e期限切れエラーを区別できるように例外クラスを追加：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# lib/services/token_decoder.rb\nclass TokenDecoder\n  class InvalidTokenError \u0026#x3C; StandardError; end\n  class ExpiredTokenError \u0026#x3C; StandardError; end  # 追加\n  \n  def decode\n    # ... 省略 ...\n  rescue JWT::ExpiredSignature =\u003e e\n    Rails.logger.info \"Token expired: #{e.message}\"\n    raise ExpiredTokenError, e.message  # 専用の例外を投げる\n  end\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"セキュリティの考慮\"\u003eセキュリティの考慮\u003c/h2\u003e\n\u003ch3 id=\"当初検討した自動リトライの問題点\"\u003e当初検討した自動リトライの問題点\u003c/h3\u003e\n\u003cp\u003e最初は「401エラー時に自動的にトークンをリフレッシュして再試行」する実装を検討しました：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// ❌ セキュリティ上問題のある実装\nconst handleHttpError = async (event) =\u003e {\n  if (event.nativeEvent.statusCode === 401) {\n    // トークンを強制リフレッシュ\n    const newToken = await getIdToken(currentUser, true);\n    // 新しいトークンでリトライ\n    webView.reload();\n  }\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eしかし、これには\u003cstrong\u003e重大なセキュリティホール\u003c/strong\u003eがあります：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eFirebaseのリフレッシュトークンは\u003cstrong\u003e無期限\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003eユーザーをBANしても、リフレッシュトークンがある限り新しいIDトークンを取得可能\u003c/li\u003e\n\u003cli\u003e永続的にアクセスを継続できてしまう\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"最終的な実装再認証を促す\"\u003e最終的な実装：再認証を促す\u003c/h3\u003e\n\u003cp\u003eセキュリティを重視し、401エラー時は再ログインを要求する実装にしました：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// components/WebViewWithRetry.tsx\nexport const WebViewWithRetry = ({ onHttpError, ...props }) =\u003e {\n  const handleHttpError = useCallback((event) =\u003e {\n    if (event.nativeEvent.statusCode === 401) {\n      console.log(\"WebView received 401, re-authentication required\");\n      \n      // 再認証が必要であることを通知\n      onHttpError?.({\n        ...event,\n        nativeEvent: {\n          ...event.nativeEvent,\n          description: \"Authentication required\",\n        },\n      });\n    } else {\n      onHttpError?.(event);\n    }\n  }, [onHttpError]);\n\n  return \u0026#x3C;RNWebView {...props} onHttpError={handleHttpError} /\u003e;\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e使用側：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// app/settings/account.tsx\n\u0026#x3C;WebViewWithRetry\n  source={{ uri: url, headers: { Authorization: `Bearer ${idToken}` } }}\n  onHttpError={(event) =\u003e {\n    if (event.nativeEvent.description?.includes(\"authentication required\")) {\n      Alert.alert(\n        \"再ログインが必要です\",\n        \"セキュリティ上の理由により、再度ログインが必要です。\",\n        [{ text: \"OK\", onPress: () =\u003e router.replace(\"/\") }]\n      );\n    }\n  }}\n/\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"トークン管理のベストプラクティス\"\u003eトークン管理のベストプラクティス\u003c/h2\u003e\n\u003ch3 id=\"1-firebase-sdkの自動リフレッシュを活用\"\u003e1. Firebase SDKの自動リフレッシュを活用\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 明示的なリフレッシュは不要\nconst token = await getIdToken(currentUser);  // 自動で5分前にリフレッシュされる\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-エラーハンドリングの使い分け\"\u003e2. エラーハンドリングの使い分け\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e401 Unauthorized\u003c/strong\u003e: 再認証を要求\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e403 Forbidden\u003c/strong\u003e: アクセス権限なし\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e500 Internal Server Error\u003c/strong\u003e: 避けるべき（今回の改善点）\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"3-セキュリティファースト\"\u003e3. セキュリティファースト\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e自動リトライよりも明示的な再認証\u003c/li\u003e\n\u003cli\u003eリフレッシュトークンの無期限利用を防ぐ\u003c/li\u003e\n\u003cli\u003eユーザーへの適切なフィードバック\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"webviewの独立性について\"\u003eWebViewの独立性について\u003c/h2\u003e\n\u003cp\u003e重要な発見は、\u003cstrong\u003eWebViewのセッションは完全に独立している\u003c/strong\u003eということです：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// WebViewのリクエスト\nAuthorization: Bearer [IDトークン]  // アプリから渡されたトークン\n\n// 通常のブラウザのリクエスト\nCookie: _session_id=...  // ブラウザのセッションクッキー\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eWebViewは：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eブラウザのCookieを共有しない\u003c/li\u003e\n\u003cli\u003e独自のセッション管理が必要\u003c/li\u003e\n\u003cli\u003e明示的にトークンを渡す必要がある\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"まとめ\"\u003eまとめ\u003c/h2\u003e\n\u003ch3 id=\"改善結果\"\u003e改善結果\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e500エラー → 401エラー\u003c/strong\u003e: 適切なHTTPステータスコード\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eUX向上\u003c/strong\u003e: エラー時も分かりやすいメッセージ\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eセキュリティ強化\u003c/strong\u003e: BANされたユーザーのアクセスを確実に遮断\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"学んだこと\"\u003e学んだこと\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eトークンの有無と期限切れは別物\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eトークンなし → フォールバック可能\u003c/li\u003e\n\u003cli\u003eトークン期限切れ → 明示的なエラー処理が必要\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eFirebase SDKの自動リフレッシュ機能を信頼する\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e5分前の自動更新で通常は問題なし\u003c/li\u003e\n\u003cli\u003eエッジケースのみ考慮すればよい\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eセキュリティと利便性のバランス\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e自動リトライは便利だが、セキュリティリスクがある\u003c/li\u003e\n\u003cli\u003e明示的な再認証の方が安全\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eWebViewは独立した環境\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eブラウザセッションとは別物\u003c/li\u003e\n\u003cli\u003e専用の認証フローが必要\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"今後の課題\"\u003e今後の課題\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eリフレッシュトークンの有効期限管理\u003c/li\u003e\n\u003cli\u003eより賢いトークンキャッシュ戦略\u003c/li\u003e\n\u003cli\u003eオフライン時の対応\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"参考リンク\"\u003e参考リンク\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/reference/rest/auth\"\u003eFirebase Authentication REST API\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://jwt.io/introduction\"\u003eJWT Token Expiration\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://github.com/react-native-webview/react-native-webview\"\u003eReact Native WebView Documentation\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Token.html\"\u003eRails Action Controller HTTP Authentication\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto py-10 px-4\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold mb-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-green-600\",\"children\":[\"#\",\"$undefined\"]}],\" \",\"WebViewの認証トークン管理：500エラーから401エラーへの改善とセキュリティ考察\"]}],[\"$\",\"ul\",null,{\"className\":\"list-none border-b border-gray-600 pb-4 mb-6\",\"children\":[[\"$\",\"li\",null,{\"className\":\"text-gray-500 text-sm\",\"children\":[\"作成日時: \",\"2025-09-12 21:18\"]}],\"$undefined\",[\"$\",\"li\",null,{\"className\":\"flex flex-wrap gap-2 mt-2\",\"children\":[[\"$\",\"span\",\"0\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Firebase Auth\"}],[\"$\",\"span\",\"1\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"React Native\"}],[\"$\",\"span\",\"2\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Ruby on Rails\"}],[\"$\",\"span\",\"3\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"JWT\"}],[\"$\",\"span\",\"4\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Token Management\"}]]}]]}],[\"$\",\"nav\",null,{\"className\":\"mb-6 pb-4 border-b border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"article\",null,{\"className\":\"prose dark:prose-invert\",\"dangerouslySetInnerHTML\":{\"__html\":\"$13\"}}],[\"$\",\"$L14\",null,{}],[\"$\",\"nav\",null,{\"className\":\"mt-8 pt-4 border-t border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"$L15\",null,{}]]}]\n"])</script><script>self.__next_f.push([1,"d:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n8:null\n"])</script><script>self.__next_f.push([1,"11:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\nb:{\"metadata\":\"$11:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

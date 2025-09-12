@@ -1,0 +1,969 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/19bdf9af4d1ae4d4.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-aa7deb192a774533.js"/><script src="/_next/static/chunks/4bd1b696-bc089769d60af88b.js" async=""></script><script src="/_next/static/chunks/1684-b369840b16e4c44b.js" async=""></script><script src="/_next/static/chunks/main-app-2ed07751e45c2a2f.js" async=""></script><script src="/_next/static/chunks/6874-6c1ddde525f3893c.js" async=""></script><script src="/_next/static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><div class="max-w-2xl mx-auto py-10 px-4"><h1 class="text-3xl font-bold mb-2"><span class="text-green-600">#<!-- -->46</span> <!-- -->Firebase電話番号認証完全ガイド：signInWithPhoneNumberとlinkWithCredentialの使い方</h1><ul class="list-none border-b border-gray-600 pb-4 mb-6"><li class="text-gray-500 text-sm">作成日時: <!-- -->2025-09-10 01:14</li><li class="text-gray-500 text-sm">更新日時: <!-- -->2025-09-10 01:24</li><li class="flex flex-wrap gap-2 mt-2"><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Firebase</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Authentication</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">JavaScript</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Web Development</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Phone Auth</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Security</span></li></ul><nav class="mb-6 pb-4 border-b border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav><article class="prose dark:prose-invert"><h1 id="firebase電話番号認証完全ガイドsigninwithphonenumberとlinkwithcredentialの使い方">Firebase電話番号認証完全ガイド：signInWithPhoneNumberとlinkWithCredentialの使い方</h1>
+<p>Webアプリケーションでユーザー認証を実装する際、電話番号を使った認証は非常に重要な選択肢の一つです。FirebaseのAuthentication機能を使えば、SMS認証を簡単に実装できますが、<code>signInWithPhoneNumber</code>と<code>linkWithCredential</code>の使い分けに迷う初心者エンジニアも多いのではないでしょうか。</p>
+<p>この記事では、Firebase電話番号認証の基本から、実際のコード例、よくあるユースケースまで詳しく解説します。</p>
+<h2 id="前提条件">前提条件</h2>
+<p>この記事のコード例を試すには、以下の準備が必要です：</p>
+<ol>
+<li>
+<p><strong>Firebaseプロジェクトの作成</strong></p>
+<ul>
+<li><a href="https://console.firebase.google.com/">Firebase Console</a>でプロジェクトを作成</li>
+<li>Webアプリの登録とFirebase SDKの設定</li>
+</ul>
+</li>
+<li>
+<p><strong>電話番号認証の有効化</strong></p>
+<ul>
+<li>Firebase Console > Authentication > Sign-in method</li>
+<li>「電話」プロバイダーを有効化</li>
+</ul>
+</li>
+<li>
+<p><strong>ドメインの承認</strong>（本番環境の場合）</p>
+<ul>
+<li>Authentication > Settings > 承認済みドメイン</li>
+<li>アプリのドメインを追加</li>
+</ul>
+</li>
+</ol>
+<p>詳細な設定手順は<a href="https://firebase.google.com/docs/web/setup">Firebase公式ドキュメント</a>を参照してください。</p>
+<h2 id="この記事で学べること">この記事で学べること</h2>
+<ul>
+<li>✅ <strong>Firebase電話番号認証の基本概念と仕組み</strong></li>
+<li>✅ <strong><code>signInWithPhoneNumber</code>の詳細な使い方</strong></li>
+<li>✅ <strong><code>linkWithCredential</code>でアカウント連携する方法</strong></li>
+<li>✅ <strong><code>PhoneAuthProvider.credential</code>の役割と重要性</strong></li>
+<li>✅ <strong>実際の開発現場でよくあるユースケースとコード例</strong></li>
+</ul>
+<h2 id="firebase電話番号認証とは">Firebase電話番号認証とは</h2>
+<p>Firebase Authenticationは、Googleが提供する認証サービスで、メール、パスワード、SNSログイン、電話番号など様々な認証方法をサポートしています。</p>
+<p>電話番号認証について詳しくは、<a href="https://firebase.google.com/docs/auth/web/phone-auth">Firebase公式ドキュメント - 電話番号認証</a>をご覧ください。</p>
+<h3 id="電話番号認証の仕組み">電話番号認証の仕組み</h3>
+<div class="mermaid">sequenceDiagram
+    participant U as ユーザー
+    participant W as Webアプリ
+    participant F as Firebase
+    participant S as SMS
+
+    U-&gt;&gt;W: 電話番号を入力
+    W-&gt;&gt;F: signInWithPhoneNumber()
+    F-&gt;&gt;S: SMS送信
+    S-&gt;&gt;U: 認証コード
+    U-&gt;&gt;W: 認証コード入力
+    W-&gt;&gt;F: confirm(code)
+    F-&gt;&gt;W: 認証成功</div>
+<ol>
+<li>ユーザーが電話番号を入力</li>
+<li>Firebase が SMS で認証コードを送信</li>
+<li>ユーザーが認証コードを入力</li>
+<li>Firebase が認証を完了</li>
+</ol>
+<h2 id="基本概念firebaseのcredential認証情報システム">基本概念：FirebaseのCredential（認証情報）システム</h2>
+<p>Firebase認証を理解する上で重要なのが**Credential（認証情報）**の概念です。</p>
+<h3 id="credentialとは">Credentialとは</h3>
+<p>Credentialは「この人が本当にその認証方法の持ち主である」という証明書のような役割を果たします。</p>
+<pre><code class="language-javascript">// 各認証プロバイダーごとにCredentialを作成
+const googleCredential = GoogleAuthProvider.credential(idToken, accessToken);
+const githubCredential = GithubAuthProvider.credential(accessToken);
+const phoneCredential = PhoneAuthProvider.credential(verificationId, smsCode);
+</code></pre>
+<h3 id="電話番号認証でのcredential">電話番号認証でのCredential</h3>
+<p>電話番号認証では、以下の2つの要素でCredentialを作成します：</p>
+<ul>
+<li><strong>verificationId</strong>: Firebase が SMS 送信時に発行する一時的なID</li>
+<li><strong>smsCode</strong>: ユーザーが受信した6桁の認証コード</li>
+</ul>
+<h2 id="signinwithphonenumber電話番号でサインイン">signInWithPhoneNumber：電話番号でサインイン</h2>
+<p><code>signInWithPhoneNumber</code>は、電話番号を使って新規ユーザー登録または既存ユーザーのサインインを行う関数です。</p>
+<h3 id="基本的な実装">基本的な実装</h3>
+<pre><code class="language-javascript">import { getAuth, signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
+
+const auth = getAuth();
+
+// 1. reCAPTCHA の初期化
+const initializeRecaptcha = () => {
+  window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
+    'size': 'normal',
+    'callback': (response) => {
+      console.log('reCAPTCHA solved');
+    },
+    'expired-callback': () => {
+      console.log('reCAPTCHA expired');
+    }
+  });
+};
+
+// 2. 電話番号認証の開始
+const sendSMSCode = async (phoneNumber) => {
+  try {
+    // reCAPTCHA初期化
+    if (!window.recaptchaVerifier) {
+      initializeRecaptcha();
+    }
+
+    // SMS送信
+    const confirmationResult = await signInWithPhoneNumber(
+      auth, 
+      phoneNumber, 
+      window.recaptchaVerifier
+    );
+    
+    // confirmationResultを保存（後で認証コード確認に使用）
+    window.confirmationResult = confirmationResult;
+    
+    console.log('SMS sent successfully');
+    return true;
+  } catch (error) {
+    console.error('SMS送信エラー:', error);
+    return false;
+  }
+};
+
+// 3. 認証コードの確認
+const confirmSMSCode = async (code) => {
+  try {
+    if (!window.confirmationResult) {
+      throw new Error('SMS確認プロセスが開始されていません');
+    }
+
+    const result = await window.confirmationResult.confirm(code);
+    const user = result.user;
+    
+    console.log('認証成功:', user);
+    return user;
+  } catch (error) {
+    console.error('認証コード確認エラー:', error);
+    return null;
+  }
+};
+
+// 使用例
+const handlePhoneSignIn = async () => {
+  const phoneNumber = '+819012345678'; // 国際形式で指定
+  
+  // SMS送信
+  const smsSent = await sendSMSCode(phoneNumber);
+  
+  if (smsSent) {
+    // ユーザーからの入力を待つ
+    const code = prompt('SMSで送信された認証コードを入力してください:');
+    
+    // 認証コード確認
+    const user = await confirmSMSCode(code);
+    
+    if (user) {
+      alert('サインイン成功！');
+    }
+  }
+};
+
+// 注意：実際のアプリケーションでは、window.confirmationResultのような
+// グローバル変数ではなく、ReactのuseStateやVueのrefなど、
+// フレームワークが提供する状態管理を使用することを推奨します。
+</code></pre>
+<h3 id="htmlテンプレート例">HTMLテンプレート例</h3>
+<pre><code class="language-html">&#x3C;!DOCTYPE html>
+&#x3C;html>
+&#x3C;head>
+    &#x3C;title>Firebase電話番号認証&#x3C;/title>
+&#x3C;/head>
+&#x3C;body>
+    &#x3C;div>
+        &#x3C;h2>電話番号でサインイン&#x3C;/h2>
+        &#x3C;input type="tel" id="phone-number" placeholder="+819012345678">
+        &#x3C;button onclick="sendSMS()">SMS送信&#x3C;/button>
+    &#x3C;/div>
+    
+    &#x3C;div id="sms-code-section" style="display:none;">
+        &#x3C;h3>認証コードを入力&#x3C;/h3>
+        &#x3C;input type="text" id="sms-code" placeholder="123456">
+        &#x3C;button onclick="confirmCode()">認証&#x3C;/button>
+    &#x3C;/div>
+    
+    &#x3C;!-- reCAPTCHA用のコンテナ -->
+    &#x3C;div id="recaptcha-container">&#x3C;/div>
+
+    &#x3C;script type="module">
+        // ここに上記のJavaScriptコードを配置
+        
+        // グローバル関数の定義
+        window.sendSMS = async () => {
+            const phoneNumber = document.getElementById('phone-number').value;
+            const success = await sendSMSCode(phoneNumber);
+            
+            if (success) {
+                document.getElementById('sms-code-section').style.display = 'block';
+            }
+        };
+
+        window.confirmCode = async () => {
+            const code = document.getElementById('sms-code').value;
+            const user = await confirmSMSCode(code);
+            
+            if (user) {
+                alert(`サインイン成功: ${user.phoneNumber}`);
+            }
+        };
+    &#x3C;/script>
+&#x3C;/body>
+&#x3C;/html>
+</code></pre>
+<h2 id="linkwithcredential既存アカウントに電話番号を追加">linkWithCredential：既存アカウントに電話番号を追加</h2>
+<p><code>linkWithCredential</code>は、既にサインイン済みのユーザーアカウントに別の認証方法を追加する際に使用します。</p>
+<p>アカウントの連携について詳しくは、<a href="https://firebase.google.com/docs/auth/web/account-linking">Firebase公式ドキュメント - アカウントのリンク</a>をご覧ください。</p>
+<h3 id="使用ケース">使用ケース</h3>
+<ul>
+<li>Googleアカウントで登録したユーザーに電話番号認証を追加</li>
+<li>メール＋パスワードで登録したユーザーに電話番号認証を追加</li>
+<li>セキュリティ強化のための多要素認証</li>
+</ul>
+<h3 id="基本的な実装-1">基本的な実装</h3>
+<pre><code class="language-javascript">import { 
+  getAuth, 
+  linkWithCredential, 
+  PhoneAuthProvider,
+  signInWithPhoneNumber 
+} from "firebase/auth";
+
+const auth = getAuth();
+
+// 1. 既存ユーザーに電話番号を追加する関数
+const linkPhoneNumber = async (phoneNumber) => {
+  try {
+    // 現在ログイン中のユーザーを取得
+    const currentUser = auth.currentUser;
+    
+    if (!currentUser) {
+      throw new Error('ユーザーがサインインしていません');
+    }
+
+    // reCAPTCHA初期化（前の例と同じ）
+    if (!window.recaptchaVerifier) {
+      initializeRecaptcha();
+    }
+
+    // SMS送信（電話番号認証の開始）
+    const confirmationResult = await signInWithPhoneNumber(
+      auth, 
+      phoneNumber, 
+      window.recaptchaVerifier
+    );
+
+    // ユーザーからSMSコードの入力を受ける
+    const smsCode = prompt('SMSで受信した認証コードを入力してください:');
+
+    // PhoneAuthProvider.credentialでCredentialを作成
+    const phoneCredential = PhoneAuthProvider.credential(
+      confirmationResult.verificationId,
+      smsCode
+    );
+
+    // 既存アカウントにCredentialをリンク
+    const result = await linkWithCredential(currentUser, phoneCredential);
+    
+    console.log('電話番号の追加成功:', result.user);
+    return result.user;
+
+  } catch (error) {
+    console.error('電話番号追加エラー:', error);
+    
+    // よくあるエラーハンドリング
+    if (error.code === 'auth/credential-already-in-use') {
+      alert('この電話番号は既に他のアカウントで使用されています');
+    } else if (error.code === 'auth/invalid-verification-code') {
+      alert('認証コードが正しくありません');
+    }
+    
+    return null;
+  }
+};
+
+// 2. 実際の使用例
+const handleAddPhoneNumber = async () => {
+  // 現在のユーザー情報を表示
+  const currentUser = auth.currentUser;
+  if (!currentUser) {
+    alert('先にサインインしてください');
+    return;
+  }
+
+  console.log('現在のユーザー:', {
+    uid: currentUser.uid,
+    email: currentUser.email,
+    phoneNumber: currentUser.phoneNumber,
+    providers: currentUser.providerData.map(p => p.providerId)
+  });
+
+  // 電話番号追加
+  const phoneNumber = prompt('追加する電話番号を入力してください（例: +819012345678）:');
+  
+  if (phoneNumber) {
+    const updatedUser = await linkPhoneNumber(phoneNumber);
+    
+    if (updatedUser) {
+      alert('電話番号の追加が完了しました！');
+      
+      // 更新後のユーザー情報を表示
+      console.log('更新後のユーザー:', {
+        uid: updatedUser.uid,
+        email: updatedUser.email,
+        phoneNumber: updatedUser.phoneNumber,
+        providers: updatedUser.providerData.map(p => p.providerId)
+      });
+    }
+  }
+};
+</code></pre>
+<h2 id="phoneauthprovidercredentialの詳細解説">PhoneAuthProvider.credentialの詳細解説</h2>
+<p><code>PhoneAuthProvider.credential</code>は、電話番号認証において最も重要な関数の一つです。この関数の役割と仕組みを詳しく見てみましょう。</p>
+<h3 id="なぜcredentialが必要なのか">なぜCredentialが必要なのか？</h3>
+<p>Firebase認証システムは、様々な認証プロバイダー（Google、GitHub、Phone等）を統一的に扱うため、それぞれの認証情報を<strong>Credential</strong>という標準形式に変換する必要があります。</p>
+<pre><code class="language-javascript">// 各プロバイダーの認証情報を統一形式に変換
+const googleCredential = GoogleAuthProvider.credential(idToken, accessToken);
+const phoneCredential = PhoneAuthProvider.credential(verificationId, smsCode);
+
+// どのCredentialも同じように使える
+await signInWithCredential(auth, googleCredential);
+await signInWithCredential(auth, phoneCredential);
+</code></pre>
+<h3 id="phoneauthprovidercredentialの動作原理">PhoneAuthProvider.credentialの動作原理</h3>
+<pre><code class="language-javascript">// PhoneAuthProvider.credentialの使用例
+const createPhoneCredential = (confirmationResult, userInputCode) => {
+  // confirmationResult.verificationId: Firebase内部で生成される一意のID
+  // userInputCode: ユーザーがSMSで受信した6桁のコード
+  
+  const credential = PhoneAuthProvider.credential(
+    confirmationResult.verificationId,
+    userInputCode
+  );
+  
+  // このCredentialには以下の情報が含まれる
+  console.log('Credential情報:', {
+    providerId: credential.providerId,        // 'phone'
+    signInMethod: credential.signInMethod     // 'phone'
+  });
+  
+  return credential;
+};
+</code></pre>
+<h3 id="verificationidとは">verificationIdとは</h3>
+<p><code>verificationId</code>は、Firebase が SMS 送信時に内部で生成する一意のIDです：</p>
+<pre><code class="language-javascript">// SMS送信時の内部的な流れ
+const sendSMSInternally = async (phoneNumber) => {
+  // 1. Firebaseが電話番号を検証
+  // 2. SMS送信準備
+  // 3. 一意のverificationIdを生成
+  const verificationId = 'AMbdDl7...' // 実際は長い文字列
+  
+  // 4. SMSを送信
+  // 5. confirmationResultとしてverificationIdを含む結果を返す
+  return {
+    verificationId: verificationId,
+    confirm: async (code) => {
+      // ここでPhoneAuthProvider.credentialが内部的に呼ばれる
+      const credential = PhoneAuthProvider.credential(verificationId, code);
+      return await signInWithCredential(auth, credential);
+    }
+  };
+};
+</code></pre>
+<h3 id="手動でcredentialを作成するパターン">手動でCredentialを作成するパターン</h3>
+<pre><code class="language-javascript">// 手動でCredentialを作成して使用する例
+const manualPhoneAuth = async (phoneNumber, smsCode) => {
+  try {
+    // Step 1: SMS送信
+    const confirmationResult = await signInWithPhoneNumber(
+      auth, 
+      phoneNumber, 
+      recaptchaVerifier
+    );
+    
+    // Step 2: 手動でCredentialを作成
+    const phoneCredential = PhoneAuthProvider.credential(
+      confirmationResult.verificationId,
+      smsCode
+    );
+    
+    // Step 3a: 新規サインインの場合
+    const signInResult = await signInWithCredential(auth, phoneCredential);
+    console.log('サインイン成功:', signInResult.user);
+    
+    // Step 3b: または、既存アカウントへのリンクの場合
+    // const linkResult = await linkWithCredential(auth.currentUser, phoneCredential);
+    // console.log('リンク成功:', linkResult.user);
+    
+  } catch (error) {
+    console.error('認証エラー:', error);
+  }
+};
+</code></pre>
+<h2 id="実践的なユースケース">実践的なユースケース</h2>
+<h3 id="ケース1電話番号のみでの認証システム">ケース1：電話番号のみでの認証システム</h3>
+<pre><code class="language-javascript">// 電話番号専用認証システムの実装
+class PhoneOnlyAuth {
+  constructor() {
+    this.auth = getAuth();
+    this.setupRecaptcha();
+  }
+
+  setupRecaptcha() {
+    this.recaptchaVerifier = new RecaptchaVerifier(this.auth, 'recaptcha-container', {
+      'size': 'invisible', // 見えないreCAPTCHA
+      'callback': () => console.log('reCAPTCHA solved')
+    });
+  }
+
+  async signInWithPhone(phoneNumber) {
+    try {
+      const confirmationResult = await signInWithPhoneNumber(
+        this.auth,
+        phoneNumber,
+        this.recaptchaVerifier
+      );
+
+      // 認証結果を保存
+      this.pendingConfirmation = confirmationResult;
+      return true;
+    } catch (error) {
+      console.error('電話番号認証開始エラー:', error);
+      return false;
+    }
+  }
+
+  async confirmCode(code) {
+    try {
+      if (!this.pendingConfirmation) {
+        throw new Error('認証プロセスが開始されていません');
+      }
+
+      const result = await this.pendingConfirmation.confirm(code);
+      const user = result.user;
+
+      // 新規ユーザーの場合の追加処理
+      if (result.additionalUserInfo?.isNewUser) {
+        await this.setupNewUser(user);
+      }
+
+      return user;
+    } catch (error) {
+      console.error('認証コード確認エラー:', error);
+      return null;
+    }
+  }
+
+  async setupNewUser(user) {
+    // 新規ユーザーのプロフィール設定
+    try {
+      await user.updateProfile({
+        displayName: `User_${user.phoneNumber?.slice(-4) || 'Unknown'}`
+      });
+      console.log('新規ユーザーのセットアップ完了');
+    } catch (error) {
+      console.error('新規ユーザーセットアップエラー:', error);
+    }
+  }
+}
+
+// 使用例
+const phoneAuth = new PhoneOnlyAuth();
+
+// サインインフロー
+document.getElementById('send-sms').addEventListener('click', async () => {
+  const phoneNumber = document.getElementById('phone-input').value;
+  const success = await phoneAuth.signInWithPhone(phoneNumber);
+  
+  if (success) {
+    document.getElementById('code-section').style.display = 'block';
+  }
+});
+
+document.getElementById('confirm-code').addEventListener('click', async () => {
+  const code = document.getElementById('code-input').value;
+  const user = await phoneAuth.confirmCode(code);
+  
+  if (user) {
+    window.location.href = '/dashboard';
+  }
+});
+</code></pre>
+<h3 id="ケース2マルチプロバイダー認証システム">ケース2：マルチプロバイダー認証システム</h3>
+<pre><code class="language-javascript">// 複数の認証方法をサポートするシステム
+class MultiProviderAuth {
+  constructor() {
+    this.auth = getAuth();
+    this.currentUser = null;
+    
+    // 認証状態の監視
+    this.auth.onAuthStateChanged((user) => {
+      this.currentUser = user;
+      this.updateUI();
+    });
+  }
+
+  // Googleサインイン
+  async signInWithGoogle() {
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(this.auth, provider);
+      return result.user;
+    } catch (error) {
+      console.error('Googleサインインエラー:', error);
+      return null;
+    }
+  }
+
+  // メール＋パスワードサインイン
+  async signInWithEmail(email, password) {
+    try {
+      const result = await signInWithEmailAndPassword(this.auth, email, password);
+      return result.user;
+    } catch (error) {
+      console.error('メールサインインエラー:', error);
+      return null;
+    }
+  }
+
+  // 既存アカウントに電話番号を追加
+  async addPhoneToExistingAccount(phoneNumber) {
+    if (!this.currentUser) {
+      throw new Error('先にサインインしてください');
+    }
+
+    try {
+      // 電話番号認証の開始
+      const confirmationResult = await signInWithPhoneNumber(
+        this.auth,
+        phoneNumber,
+        this.getRecaptchaVerifier()
+      );
+
+      return confirmationResult;
+    } catch (error) {
+      console.error('電話番号追加開始エラー:', error);
+      throw error;
+    }
+  }
+
+  async confirmPhoneLink(confirmationResult, code) {
+    try {
+      // Credentialを作成
+      const phoneCredential = PhoneAuthProvider.credential(
+        confirmationResult.verificationId,
+        code
+      );
+
+      // 既存アカウントにリンク
+      const result = await linkWithCredential(this.currentUser, phoneCredential);
+      return result.user;
+    } catch (error) {
+      console.error('電話番号リンクエラー:', error);
+      throw error;
+    }
+  }
+
+  // 認証プロバイダーの一覧を取得
+  getLinkedProviders() {
+    if (!this.currentUser) return [];
+    
+    return this.currentUser.providerData.map(provider => ({
+      providerId: provider.providerId,
+      email: provider.email,
+      phoneNumber: provider.phoneNumber
+    }));
+  }
+
+  getRecaptchaVerifier() {
+    if (!this.recaptchaVerifier) {
+      this.recaptchaVerifier = new RecaptchaVerifier(this.auth, 'recaptcha-container', {
+        'size': 'normal'
+      });
+    }
+    return this.recaptchaVerifier;
+  }
+
+  updateUI() {
+    const userInfo = document.getElementById('user-info');
+    const authButtons = document.getElementById('auth-buttons');
+    
+    if (this.currentUser) {
+      userInfo.innerHTML = `
+        &#x3C;h3>サインイン済み&#x3C;/h3>
+        &#x3C;p>UID: ${this.currentUser.uid}&#x3C;/p>
+        &#x3C;p>メール: ${this.currentUser.email || 'なし'}&#x3C;/p>
+        &#x3C;p>電話番号: ${this.currentUser.phoneNumber || 'なし'}&#x3C;/p>
+        &#x3C;h4>連携済みプロバイダー:&#x3C;/h4>
+        &#x3C;ul>
+          ${this.getLinkedProviders().map(provider => 
+            `&#x3C;li>${provider.providerId}: ${provider.email || provider.phoneNumber || 'データなし'}&#x3C;/li>`
+          ).join('')}
+        &#x3C;/ul>
+      `;
+      authButtons.style.display = 'none';
+    } else {
+      userInfo.innerHTML = '&#x3C;p>サインインしていません&#x3C;/p>';
+      authButtons.style.display = 'block';
+    }
+  }
+}
+
+// 使用例
+const multiAuth = new MultiProviderAuth();
+
+// Googleサインイン
+document.getElementById('google-signin').addEventListener('click', async () => {
+  await multiAuth.signInWithGoogle();
+});
+
+// 電話番号追加
+document.getElementById('add-phone').addEventListener('click', async () => {
+  const phoneNumber = prompt('電話番号を入力:');
+  
+  try {
+    const confirmationResult = await multiAuth.addPhoneToExistingAccount(phoneNumber);
+    const code = prompt('SMSコードを入力:');
+    
+    const user = await multiAuth.confirmPhoneLink(confirmationResult, code);
+    alert('電話番号の追加が完了しました！');
+  } catch (error) {
+    alert('エラーが発生しました: ' + error.message);
+  }
+});
+</code></pre>
+<h2 id="テスト環境での開発">テスト環境での開発</h2>
+<h3 id="テスト用電話番号の設定">テスト用電話番号の設定</h3>
+<p>開発中に実際のSMSを送信せずにテストを行うには、Firebase Consoleでテスト用電話番号を設定できます：</p>
+<ol>
+<li>Firebase Console > Authentication > Sign-in method</li>
+<li>「電話」プロバイダーの設定画面で「テスト用の電話番号」を追加</li>
+<li>電話番号と固定の認証コードを設定</li>
+</ol>
+<pre><code class="language-javascript">// テスト用電話番号の例
+const testPhoneNumbers = {
+  '+81901234567': '123456',  // テスト用番号：固定コード
+  '+81987654321': '654321'   // テスト用番号：固定コード
+};
+
+// 開発環境では、これらの番号を使用すると実際のSMS送信なしで認証をテストできます
+const handleTestAuth = async () => {
+  const testPhone = '+81901234567';
+  const testCode = '123456';
+  
+  try {
+    const confirmationResult = await signInWithPhoneNumber(auth, testPhone, recaptchaVerifier);
+    const result = await confirmationResult.confirm(testCode);
+    console.log('テスト認証成功:', result.user);
+  } catch (error) {
+    console.error('テスト認証エラー:', error);
+  }
+};
+</code></pre>
+<h2 id="エラーハンドリングとベストプラクティス">エラーハンドリングとベストプラクティス</h2>
+<h3 id="よくあるエラーとその対処法">よくあるエラーとその対処法</h3>
+<pre><code class="language-javascript">// 包括的なエラーハンドリングの実装
+const handlePhoneAuthError = (error) => {
+  console.error('Firebase認証エラー:', error);
+  
+  switch (error.code) {
+    case 'auth/invalid-phone-number':
+      return '電話番号の形式が正しくありません。国番号を含めて入力してください。';
+      
+    case 'auth/missing-phone-number':
+      return '電話番号が入力されていません。';
+      
+    case 'auth/quota-exceeded':
+      return 'SMS送信の制限に達しました。しばらく時間をおいてからお試しください。';
+      
+    case 'auth/user-disabled':
+      return 'このアカウントは無効化されています。';
+      
+    case 'auth/invalid-verification-code':
+      return '認証コードが正しくありません。';
+      
+    case 'auth/code-expired':
+      return '認証コードの有効期限が切れています。もう一度SMS送信からやり直してください。';
+      
+    case 'auth/credential-already-in-use':
+      return 'この電話番号は既に他のアカウントで使用されています。';
+      
+    case 'auth/requires-recent-login':
+      return 'セキュリティのため、再度サインインしてください。';
+      
+    case 'auth/provider-already-linked':
+      return 'この認証プロバイダーは既にアカウントに連携されています。';
+      
+    case 'auth/captcha-check-failed':
+      return 'reCAPTCHAの認証に失敗しました。ページを再読み込みしてお試しください。';
+      
+    default:
+      return `認証エラーが発生しました: ${error.message}`;
+  }
+};
+
+// 使用例
+const safePhoneAuth = async (phoneNumber, code) => {
+  try {
+    const confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, recaptchaVerifier);
+    const result = await confirmationResult.confirm(code);
+    return { success: true, user: result.user };
+  } catch (error) {
+    const userFriendlyMessage = handlePhoneAuthError(error);
+    return { success: false, error: userFriendlyMessage };
+  }
+};
+</code></pre>
+<h3 id="セキュリティ考慮事項">セキュリティ考慮事項</h3>
+<pre><code class="language-javascript">// セキュリティを考慮した実装例
+class SecurePhoneAuth {
+  constructor() {
+    this.auth = getAuth();
+    this.maxRetries = 3;
+    this.retryCount = 0;
+    this.lastSMSSent = null;
+    this.rateLimitDelay = 60000; // 1分
+  }
+
+  // レート制限チェック
+  canSendSMS() {
+    if (!this.lastSMSSent) return true;
+    
+    const timeSinceLastSMS = Date.now() - this.lastSMSSent;
+    return timeSinceLastSMS >= this.rateLimitDelay;
+  }
+
+  // 電話番号の形式チェック
+  validatePhoneNumber(phoneNumber) {
+    // 国際形式かチェック
+    const phoneRegex = /^\+[1-9]\d{1,14}$/;
+    return phoneRegex.test(phoneNumber);
+  }
+
+  async sendSMS(phoneNumber) {
+    // 入力値検証
+    if (!this.validatePhoneNumber(phoneNumber)) {
+      throw new Error('電話番号は国際形式（+81...）で入力してください');
+    }
+
+    // レート制限チェック
+    if (!this.canSendSMS()) {
+      const remainingTime = Math.ceil((this.rateLimitDelay - (Date.now() - this.lastSMSSent)) / 1000);
+      throw new Error(`SMS送信は${remainingTime}秒後に可能です`);
+    }
+
+    try {
+      const confirmationResult = await signInWithPhoneNumber(
+        this.auth,
+        phoneNumber,
+        this.getRecaptchaVerifier()
+      );
+
+      this.lastSMSSent = Date.now();
+      this.retryCount = 0;
+      
+      return confirmationResult;
+    } catch (error) {
+      console.error('SMS送信エラー:', error);
+      throw error;
+    }
+  }
+
+  async confirmCode(confirmationResult, code) {
+    // リトライ制限チェック
+    if (this.retryCount >= this.maxRetries) {
+      throw new Error('認証試行回数の上限に達しました。最初からやり直してください。');
+    }
+
+    try {
+      const result = await confirmationResult.confirm(code);
+      this.retryCount = 0; // 成功時にリセット
+      return result;
+    } catch (error) {
+      this.retryCount++;
+      
+      if (error.code === 'auth/invalid-verification-code') {
+        const remainingTries = this.maxRetries - this.retryCount;
+        if (remainingTries > 0) {
+          throw new Error(`認証コードが正しくありません。残り${remainingTries}回試行可能です。`);
+        }
+      }
+      
+      throw error;
+    }
+  }
+
+  getRecaptchaVerifier() {
+    if (!this.recaptchaVerifier) {
+      this.recaptchaVerifier = new RecaptchaVerifier(this.auth, 'recaptcha-container', {
+        'size': 'normal',
+        'callback': () => {
+          console.log('reCAPTCHA認証完了');
+        },
+        'expired-callback': () => {
+          console.log('reCAPTCHA期限切れ');
+          this.recaptchaVerifier = null; // 再作成を促す
+        }
+      });
+    }
+    return this.recaptchaVerifier;
+  }
+}
+</code></pre>
+<h2 id="パフォーマンス最適化">パフォーマンス最適化</h2>
+<h3 id="recaptchaの効率的な管理">reCAPTCHAの効率的な管理</h3>
+<pre><code class="language-javascript">// reCAPTCHAを効率的に管理するクラス
+class RecaptchaManager {
+  constructor(auth) {
+    this.auth = auth;
+    this.verifier = null;
+    this.isRendered = false;
+  }
+
+  getVerifier() {
+    if (!this.verifier || this.verifier.destroyed) {
+      this.createVerifier();
+    }
+    return this.verifier;
+  }
+
+  createVerifier() {
+    this.verifier = new RecaptchaVerifier(this.auth, 'recaptcha-container', {
+      'size': 'invisible', // UIを邪魔しない - UX改善のため
+      'callback': () => {
+        console.log('reCAPTCHA solved');
+      },
+      'expired-callback': () => {
+        console.log('reCAPTCHA expired, recreating...');
+        this.cleanup();
+        this.createVerifier();
+      }
+    });
+  }
+
+  cleanup() {
+    if (this.verifier) {
+      this.verifier.clear();
+      this.verifier = null;
+      this.isRendered = false;
+    }
+  }
+
+  // コンポーネントのアンマウント時に呼ぶ
+  destroy() {
+    this.cleanup();
+  }
+}
+
+// React での使用例
+const useFirebasePhoneAuth = () => {
+  const [auth] = useState(() => getAuth());
+  const [recaptchaManager] = useState(() => new RecaptchaManager(auth));
+
+  useEffect(() => {
+    // コンポーネントのクリーンアップ
+    return () => {
+      recaptchaManager.destroy();
+    };
+  }, [recaptchaManager]);
+
+  const signInWithPhone = async (phoneNumber) => {
+    try {
+      const verifier = recaptchaManager.getVerifier();
+      const confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, verifier);
+      return confirmationResult;
+    } catch (error) {
+      console.error('Phone auth error:', error);
+      throw error;
+    }
+  };
+
+  return { signInWithPhone };
+};
+</code></pre>
+<h2 id="テストとデバッグ">テストとデバッグ</h2>
+<h3 id="テスト環境での設定">テスト環境での設定</h3>
+<pre><code class="language-javascript">// テスト用の電話番号認証設定
+const setupTestPhoneAuth = () => {
+  // テスト環境でのみ有効
+  if (process.env.NODE_ENV === 'test') {
+    const auth = getAuth();
+    
+    // テスト用の電話番号を設定
+    auth.settings.appVerificationDisabledForTesting = true;
+    
+    // テスト用電話番号の設定
+    const testPhoneNumbers = {
+      '+819012345678': '123456',
+      '+819087654321': '654321'
+    };
+
+    // Firebase Admin SDKでテスト用設定
+    Object.entries(testPhoneNumbers).forEach(([phoneNumber, code]) => {
+      auth.settings.setAutoRetrievalSMSCode(phoneNumber, code);
+    });
+  }
+};
+
+// Jest でのテスト例
+describe('Firebase電話番号認証', () => {
+  beforeEach(() => {
+    setupTestPhoneAuth();
+  });
+
+  test('電話番号認証が正常に動作する', async () => {
+    const auth = getAuth();
+    const testPhone = '+819012345678';
+    const testCode = '123456';
+
+    // モックreCAPTCHA
+    const mockRecaptcha = {
+      verify: jest.fn().mockResolvedValue('mock-token')
+    };
+
+    const confirmationResult = await signInWithPhoneNumber(auth, testPhone, mockRecaptcha);
+    const result = await confirmationResult.confirm(testCode);
+
+    expect(result.user).toBeDefined();
+    expect(result.user.phoneNumber).toBe(testPhone);
+  });
+});
+</code></pre>
+<h2 id="まとめ">まとめ</h2>
+<h3 id="重要なポイント">重要なポイント</h3>
+<ol>
+<li><strong><code>signInWithPhoneNumber</code></strong>: 新規サインインや既存ユーザーの認証に使用</li>
+<li><strong><code>linkWithCredential</code></strong>: 既存アカウントに電話番号認証を追加する際に使用</li>
+<li><strong><code>PhoneAuthProvider.credential</code></strong>: SMS認証コードからFirebase Credentialを作成する重要な橋渡し役</li>
+<li><strong>セキュリティ考慮</strong>: レート制限、入力値検証、エラーハンドリングを適切に実装</li>
+</ol>
+<h3 id="ベストプラクティス">ベストプラクティス</h3>
+<ul>
+<li>✅ <strong>適切なエラーハンドリング</strong>を実装する</li>
+<li>✅ <strong>reCAPTCHA</strong>を適切に管理し、リークを防ぐ</li>
+<li>✅ <strong>レート制限</strong>を設けてスパムを防ぐ</li>
+<li>✅ <strong>電話番号の形式検証</strong>を行う</li>
+<li>✅ <strong>テスト環境での設定</strong>を適切に行う</li>
+<li>✅ <strong>状態管理のベストプラクティス</strong>：本番アプリケーションではグローバル変数ではなく、適切な状態管理を使用する</li>
+<li>✅ <strong>Invisible reCAPTCHA</strong>の採用でUX改善を図る</li>
+</ul>
+<h3 id="次のステップ">次のステップ</h3>
+<ul>
+<li>実際のアプリケーションに電話番号認証を実装してみる</li>
+<li>マルチファクタ認証（MFA）の実装を検討する</li>
+<li>Firebase Admin SDKを使った管理機能の実装を学ぶ</li>
+<li>セキュリティルールの設定を学習する</li>
+</ul>
+<p>Firebase電話番号認証をマスターして、より安全で使いやすいWebアプリケーションを作りましょう！</p>
+<h2 id="参考リンク">参考リンク</h2>
+<h3 id="firebase公式ドキュメント">Firebase公式ドキュメント</h3>
+<ul>
+<li><a href="https://firebase.google.com/docs/auth">Firebase Authentication 公式ドキュメント</a></li>
+<li><a href="https://firebase.google.com/docs/auth/web/phone-auth">Firebase JavaScript SDK - 電話番号認証</a></li>
+<li><a href="https://firebase.google.com/docs/web/setup">FirebaseをJavaScriptプロジェクトに追加する</a></li>
+<li><a href="https://firebase.google.com/docs/auth/web/account-linking">ユーザー アカウントのリンク</a></li>
+<li><a href="https://firebase.google.com/docs/rules">Firebase セキュリティルール</a></li>
+<li><a href="https://firebase.google.com/docs/admin/setup">Firebase Admin SDK</a></li>
+</ul>
+<h3 id="関連技術">関連技術</h3>
+<ul>
+<li><a href="https://developers.google.com/recaptcha/docs/v3">reCAPTCHA v3 ドキュメント</a></li>
+<li><a href="https://en.wikipedia.org/wiki/E.164">国際電話番号フォーマット (E.164)</a></li>
+</ul></article><nav class="mt-8 pt-4 border-t border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-aa7deb192a774533.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[87555,[],\"\"]\n3:I[31295,[],\"\"]\n5:I[59665,[],\"MetadataBoundary\"]\n7:I[59665,[],\"OutletBoundary\"]\na:I[74911,[],\"AsyncMetadataOutlet\"]\nc:I[59665,[],\"ViewportBoundary\"]\ne:I[26614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"KZrMisSdXyu7FDjuS9HOy\",\"p\":\"\",\"c\":[\"\",\"blog\",\"firebase-phone-authentication-guide\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"firebase-phone-authentication-guide\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"blog\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"firebase-phone-authentication-guide\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",[\"$\",\"$L5\",null,{\"children\":\"$L6\"}],null,[\"$\",\"$L7\",null,{\"children\":[\"$L8\",\"$L9\",[\"$\",\"$La\",null,{\"promise\":\"$@b\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"vVNxzORIBfx-ELqTNXdRW\",{\"children\":[[\"$\",\"$Lc\",null,{\"children\":\"$Ld\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$e\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"f:\"$Sreact.suspense\"\n10:I[74911,[],\"AsyncMetadata\"]\n6:[\"$\",\"$f\",null,{\"fallback\":null,\"children\":[\"$\",\"$L10\",null,{\"promise\":\"$@11\"}]}]\n"])</script><script>self.__next_f.push([1,"9:null\n"])</script><script>self.__next_f.push([1,"12:I[6874,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"\"]\n14:I[31203,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n15:I[4197,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n13:T8de0,"])</script><script>self.__next_f.push([1,"\u003ch1 id=\"firebase電話番号認証完全ガイドsigninwithphonenumberとlinkwithcredentialの使い方\"\u003eFirebase電話番号認証完全ガイド：signInWithPhoneNumberとlinkWithCredentialの使い方\u003c/h1\u003e\n\u003cp\u003eWebアプリケーションでユーザー認証を実装する際、電話番号を使った認証は非常に重要な選択肢の一つです。FirebaseのAuthentication機能を使えば、SMS認証を簡単に実装できますが、\u003ccode\u003esignInWithPhoneNumber\u003c/code\u003eと\u003ccode\u003elinkWithCredential\u003c/code\u003eの使い分けに迷う初心者エンジニアも多いのではないでしょうか。\u003c/p\u003e\n\u003cp\u003eこの記事では、Firebase電話番号認証の基本から、実際のコード例、よくあるユースケースまで詳しく解説します。\u003c/p\u003e\n\u003ch2 id=\"前提条件\"\u003e前提条件\u003c/h2\u003e\n\u003cp\u003eこの記事のコード例を試すには、以下の準備が必要です：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eFirebaseプロジェクトの作成\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://console.firebase.google.com/\"\u003eFirebase Console\u003c/a\u003eでプロジェクトを作成\u003c/li\u003e\n\u003cli\u003eWebアプリの登録とFirebase SDKの設定\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e電話番号認証の有効化\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eFirebase Console \u003e Authentication \u003e Sign-in method\u003c/li\u003e\n\u003cli\u003e「電話」プロバイダーを有効化\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eドメインの承認\u003c/strong\u003e（本番環境の場合）\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eAuthentication \u003e Settings \u003e 承認済みドメイン\u003c/li\u003e\n\u003cli\u003eアプリのドメインを追加\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e詳細な設定手順は\u003ca href=\"https://firebase.google.com/docs/web/setup\"\u003eFirebase公式ドキュメント\u003c/a\u003eを参照してください。\u003c/p\u003e\n\u003ch2 id=\"この記事で学べること\"\u003eこの記事で学べること\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e✅ \u003cstrong\u003eFirebase電話番号認証の基本概念と仕組み\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003e\u003ccode\u003esignInWithPhoneNumber\u003c/code\u003eの詳細な使い方\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003e\u003ccode\u003elinkWithCredential\u003c/code\u003eでアカウント連携する方法\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003e\u003ccode\u003ePhoneAuthProvider.credential\u003c/code\u003eの役割と重要性\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003e実際の開発現場でよくあるユースケースとコード例\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"firebase電話番号認証とは\"\u003eFirebase電話番号認証とは\u003c/h2\u003e\n\u003cp\u003eFirebase Authenticationは、Googleが提供する認証サービスで、メール、パスワード、SNSログイン、電話番号など様々な認証方法をサポートしています。\u003c/p\u003e\n\u003cp\u003e電話番号認証について詳しくは、\u003ca href=\"https://firebase.google.com/docs/auth/web/phone-auth\"\u003eFirebase公式ドキュメント - 電話番号認証\u003c/a\u003eをご覧ください。\u003c/p\u003e\n\u003ch3 id=\"電話番号認証の仕組み\"\u003e電話番号認証の仕組み\u003c/h3\u003e\n\u003cdiv class=\"mermaid\"\u003esequenceDiagram\n    participant U as ユーザー\n    participant W as Webアプリ\n    participant F as Firebase\n    participant S as SMS\n\n    U-\u0026gt;\u0026gt;W: 電話番号を入力\n    W-\u0026gt;\u0026gt;F: signInWithPhoneNumber()\n    F-\u0026gt;\u0026gt;S: SMS送信\n    S-\u0026gt;\u0026gt;U: 認証コード\n    U-\u0026gt;\u0026gt;W: 認証コード入力\n    W-\u0026gt;\u0026gt;F: confirm(code)\n    F-\u0026gt;\u0026gt;W: 認証成功\u003c/div\u003e\n\u003col\u003e\n\u003cli\u003eユーザーが電話番号を入力\u003c/li\u003e\n\u003cli\u003eFirebase が SMS で認証コードを送信\u003c/li\u003e\n\u003cli\u003eユーザーが認証コードを入力\u003c/li\u003e\n\u003cli\u003eFirebase が認証を完了\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch2 id=\"基本概念firebaseのcredential認証情報システム\"\u003e基本概念：FirebaseのCredential（認証情報）システム\u003c/h2\u003e\n\u003cp\u003eFirebase認証を理解する上で重要なのが**Credential（認証情報）**の概念です。\u003c/p\u003e\n\u003ch3 id=\"credentialとは\"\u003eCredentialとは\u003c/h3\u003e\n\u003cp\u003eCredentialは「この人が本当にその認証方法の持ち主である」という証明書のような役割を果たします。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 各認証プロバイダーごとにCredentialを作成\nconst googleCredential = GoogleAuthProvider.credential(idToken, accessToken);\nconst githubCredential = GithubAuthProvider.credential(accessToken);\nconst phoneCredential = PhoneAuthProvider.credential(verificationId, smsCode);\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"電話番号認証でのcredential\"\u003e電話番号認証でのCredential\u003c/h3\u003e\n\u003cp\u003e電話番号認証では、以下の2つの要素でCredentialを作成します：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003everificationId\u003c/strong\u003e: Firebase が SMS 送信時に発行する一時的なID\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003esmsCode\u003c/strong\u003e: ユーザーが受信した6桁の認証コード\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"signinwithphonenumber電話番号でサインイン\"\u003esignInWithPhoneNumber：電話番号でサインイン\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003esignInWithPhoneNumber\u003c/code\u003eは、電話番号を使って新規ユーザー登録または既存ユーザーのサインインを行う関数です。\u003c/p\u003e\n\u003ch3 id=\"基本的な実装\"\u003e基本的な実装\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003eimport { getAuth, signInWithPhoneNumber, RecaptchaVerifier } from \"firebase/auth\";\n\nconst auth = getAuth();\n\n// 1. reCAPTCHA の初期化\nconst initializeRecaptcha = () =\u003e {\n  window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {\n    'size': 'normal',\n    'callback': (response) =\u003e {\n      console.log('reCAPTCHA solved');\n    },\n    'expired-callback': () =\u003e {\n      console.log('reCAPTCHA expired');\n    }\n  });\n};\n\n// 2. 電話番号認証の開始\nconst sendSMSCode = async (phoneNumber) =\u003e {\n  try {\n    // reCAPTCHA初期化\n    if (!window.recaptchaVerifier) {\n      initializeRecaptcha();\n    }\n\n    // SMS送信\n    const confirmationResult = await signInWithPhoneNumber(\n      auth, \n      phoneNumber, \n      window.recaptchaVerifier\n    );\n    \n    // confirmationResultを保存（後で認証コード確認に使用）\n    window.confirmationResult = confirmationResult;\n    \n    console.log('SMS sent successfully');\n    return true;\n  } catch (error) {\n    console.error('SMS送信エラー:', error);\n    return false;\n  }\n};\n\n// 3. 認証コードの確認\nconst confirmSMSCode = async (code) =\u003e {\n  try {\n    if (!window.confirmationResult) {\n      throw new Error('SMS確認プロセスが開始されていません');\n    }\n\n    const result = await window.confirmationResult.confirm(code);\n    const user = result.user;\n    \n    console.log('認証成功:', user);\n    return user;\n  } catch (error) {\n    console.error('認証コード確認エラー:', error);\n    return null;\n  }\n};\n\n// 使用例\nconst handlePhoneSignIn = async () =\u003e {\n  const phoneNumber = '+819012345678'; // 国際形式で指定\n  \n  // SMS送信\n  const smsSent = await sendSMSCode(phoneNumber);\n  \n  if (smsSent) {\n    // ユーザーからの入力を待つ\n    const code = prompt('SMSで送信された認証コードを入力してください:');\n    \n    // 認証コード確認\n    const user = await confirmSMSCode(code);\n    \n    if (user) {\n      alert('サインイン成功！');\n    }\n  }\n};\n\n// 注意：実際のアプリケーションでは、window.confirmationResultのような\n// グローバル変数ではなく、ReactのuseStateやVueのrefなど、\n// フレームワークが提供する状態管理を使用することを推奨します。\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"htmlテンプレート例\"\u003eHTMLテンプレート例\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-html\"\u003e\u0026#x3C;!DOCTYPE html\u003e\n\u0026#x3C;html\u003e\n\u0026#x3C;head\u003e\n    \u0026#x3C;title\u003eFirebase電話番号認証\u0026#x3C;/title\u003e\n\u0026#x3C;/head\u003e\n\u0026#x3C;body\u003e\n    \u0026#x3C;div\u003e\n        \u0026#x3C;h2\u003e電話番号でサインイン\u0026#x3C;/h2\u003e\n        \u0026#x3C;input type=\"tel\" id=\"phone-number\" placeholder=\"+819012345678\"\u003e\n        \u0026#x3C;button onclick=\"sendSMS()\"\u003eSMS送信\u0026#x3C;/button\u003e\n    \u0026#x3C;/div\u003e\n    \n    \u0026#x3C;div id=\"sms-code-section\" style=\"display:none;\"\u003e\n        \u0026#x3C;h3\u003e認証コードを入力\u0026#x3C;/h3\u003e\n        \u0026#x3C;input type=\"text\" id=\"sms-code\" placeholder=\"123456\"\u003e\n        \u0026#x3C;button onclick=\"confirmCode()\"\u003e認証\u0026#x3C;/button\u003e\n    \u0026#x3C;/div\u003e\n    \n    \u0026#x3C;!-- reCAPTCHA用のコンテナ --\u003e\n    \u0026#x3C;div id=\"recaptcha-container\"\u003e\u0026#x3C;/div\u003e\n\n    \u0026#x3C;script type=\"module\"\u003e\n        // ここに上記のJavaScriptコードを配置\n        \n        // グローバル関数の定義\n        window.sendSMS = async () =\u003e {\n            const phoneNumber = document.getElementById('phone-number').value;\n            const success = await sendSMSCode(phoneNumber);\n            \n            if (success) {\n                document.getElementById('sms-code-section').style.display = 'block';\n            }\n        };\n\n        window.confirmCode = async () =\u003e {\n            const code = document.getElementById('sms-code').value;\n            const user = await confirmSMSCode(code);\n            \n            if (user) {\n                alert(`サインイン成功: ${user.phoneNumber}`);\n            }\n        };\n    \u0026#x3C;/script\u003e\n\u0026#x3C;/body\u003e\n\u0026#x3C;/html\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"linkwithcredential既存アカウントに電話番号を追加\"\u003elinkWithCredential：既存アカウントに電話番号を追加\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003elinkWithCredential\u003c/code\u003eは、既にサインイン済みのユーザーアカウントに別の認証方法を追加する際に使用します。\u003c/p\u003e\n\u003cp\u003eアカウントの連携について詳しくは、\u003ca href=\"https://firebase.google.com/docs/auth/web/account-linking\"\u003eFirebase公式ドキュメント - アカウントのリンク\u003c/a\u003eをご覧ください。\u003c/p\u003e\n\u003ch3 id=\"使用ケース\"\u003e使用ケース\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eGoogleアカウントで登録したユーザーに電話番号認証を追加\u003c/li\u003e\n\u003cli\u003eメール＋パスワードで登録したユーザーに電話番号認証を追加\u003c/li\u003e\n\u003cli\u003eセキュリティ強化のための多要素認証\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"基本的な実装-1\"\u003e基本的な実装\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003eimport { \n  getAuth, \n  linkWithCredential, \n  PhoneAuthProvider,\n  signInWithPhoneNumber \n} from \"firebase/auth\";\n\nconst auth = getAuth();\n\n// 1. 既存ユーザーに電話番号を追加する関数\nconst linkPhoneNumber = async (phoneNumber) =\u003e {\n  try {\n    // 現在ログイン中のユーザーを取得\n    const currentUser = auth.currentUser;\n    \n    if (!currentUser) {\n      throw new Error('ユーザーがサインインしていません');\n    }\n\n    // reCAPTCHA初期化（前の例と同じ）\n    if (!window.recaptchaVerifier) {\n      initializeRecaptcha();\n    }\n\n    // SMS送信（電話番号認証の開始）\n    const confirmationResult = await signInWithPhoneNumber(\n      auth, \n      phoneNumber, \n      window.recaptchaVerifier\n    );\n\n    // ユーザーからSMSコードの入力を受ける\n    const smsCode = prompt('SMSで受信した認証コードを入力してください:');\n\n    // PhoneAuthProvider.credentialでCredentialを作成\n    const phoneCredential = PhoneAuthProvider.credential(\n      confirmationResult.verificationId,\n      smsCode\n    );\n\n    // 既存アカウントにCredentialをリンク\n    const result = await linkWithCredential(currentUser, phoneCredential);\n    \n    console.log('電話番号の追加成功:', result.user);\n    return result.user;\n\n  } catch (error) {\n    console.error('電話番号追加エラー:', error);\n    \n    // よくあるエラーハンドリング\n    if (error.code === 'auth/credential-already-in-use') {\n      alert('この電話番号は既に他のアカウントで使用されています');\n    } else if (error.code === 'auth/invalid-verification-code') {\n      alert('認証コードが正しくありません');\n    }\n    \n    return null;\n  }\n};\n\n// 2. 実際の使用例\nconst handleAddPhoneNumber = async () =\u003e {\n  // 現在のユーザー情報を表示\n  const currentUser = auth.currentUser;\n  if (!currentUser) {\n    alert('先にサインインしてください');\n    return;\n  }\n\n  console.log('現在のユーザー:', {\n    uid: currentUser.uid,\n    email: currentUser.email,\n    phoneNumber: currentUser.phoneNumber,\n    providers: currentUser.providerData.map(p =\u003e p.providerId)\n  });\n\n  // 電話番号追加\n  const phoneNumber = prompt('追加する電話番号を入力してください（例: +819012345678）:');\n  \n  if (phoneNumber) {\n    const updatedUser = await linkPhoneNumber(phoneNumber);\n    \n    if (updatedUser) {\n      alert('電話番号の追加が完了しました！');\n      \n      // 更新後のユーザー情報を表示\n      console.log('更新後のユーザー:', {\n        uid: updatedUser.uid,\n        email: updatedUser.email,\n        phoneNumber: updatedUser.phoneNumber,\n        providers: updatedUser.providerData.map(p =\u003e p.providerId)\n      });\n    }\n  }\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"phoneauthprovidercredentialの詳細解説\"\u003ePhoneAuthProvider.credentialの詳細解説\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003ePhoneAuthProvider.credential\u003c/code\u003eは、電話番号認証において最も重要な関数の一つです。この関数の役割と仕組みを詳しく見てみましょう。\u003c/p\u003e\n\u003ch3 id=\"なぜcredentialが必要なのか\"\u003eなぜCredentialが必要なのか？\u003c/h3\u003e\n\u003cp\u003eFirebase認証システムは、様々な認証プロバイダー（Google、GitHub、Phone等）を統一的に扱うため、それぞれの認証情報を\u003cstrong\u003eCredential\u003c/strong\u003eという標準形式に変換する必要があります。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 各プロバイダーの認証情報を統一形式に変換\nconst googleCredential = GoogleAuthProvider.credential(idToken, accessToken);\nconst phoneCredential = PhoneAuthProvider.credential(verificationId, smsCode);\n\n// どのCredentialも同じように使える\nawait signInWithCredential(auth, googleCredential);\nawait signInWithCredential(auth, phoneCredential);\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"phoneauthprovidercredentialの動作原理\"\u003ePhoneAuthProvider.credentialの動作原理\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// PhoneAuthProvider.credentialの使用例\nconst createPhoneCredential = (confirmationResult, userInputCode) =\u003e {\n  // confirmationResult.verificationId: Firebase内部で生成される一意のID\n  // userInputCode: ユーザーがSMSで受信した6桁のコード\n  \n  const credential = PhoneAuthProvider.credential(\n    confirmationResult.verificationId,\n    userInputCode\n  );\n  \n  // このCredentialには以下の情報が含まれる\n  console.log('Credential情報:', {\n    providerId: credential.providerId,        // 'phone'\n    signInMethod: credential.signInMethod     // 'phone'\n  });\n  \n  return credential;\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"verificationidとは\"\u003everificationIdとは\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003everificationId\u003c/code\u003eは、Firebase が SMS 送信時に内部で生成する一意のIDです：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// SMS送信時の内部的な流れ\nconst sendSMSInternally = async (phoneNumber) =\u003e {\n  // 1. Firebaseが電話番号を検証\n  // 2. SMS送信準備\n  // 3. 一意のverificationIdを生成\n  const verificationId = 'AMbdDl7...' // 実際は長い文字列\n  \n  // 4. SMSを送信\n  // 5. confirmationResultとしてverificationIdを含む結果を返す\n  return {\n    verificationId: verificationId,\n    confirm: async (code) =\u003e {\n      // ここでPhoneAuthProvider.credentialが内部的に呼ばれる\n      const credential = PhoneAuthProvider.credential(verificationId, code);\n      return await signInWithCredential(auth, credential);\n    }\n  };\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"手動でcredentialを作成するパターン\"\u003e手動でCredentialを作成するパターン\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 手動でCredentialを作成して使用する例\nconst manualPhoneAuth = async (phoneNumber, smsCode) =\u003e {\n  try {\n    // Step 1: SMS送信\n    const confirmationResult = await signInWithPhoneNumber(\n      auth, \n      phoneNumber, \n      recaptchaVerifier\n    );\n    \n    // Step 2: 手動でCredentialを作成\n    const phoneCredential = PhoneAuthProvider.credential(\n      confirmationResult.verificationId,\n      smsCode\n    );\n    \n    // Step 3a: 新規サインインの場合\n    const signInResult = await signInWithCredential(auth, phoneCredential);\n    console.log('サインイン成功:', signInResult.user);\n    \n    // Step 3b: または、既存アカウントへのリンクの場合\n    // const linkResult = await linkWithCredential(auth.currentUser, phoneCredential);\n    // console.log('リンク成功:', linkResult.user);\n    \n  } catch (error) {\n    console.error('認証エラー:', error);\n  }\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"実践的なユースケース\"\u003e実践的なユースケース\u003c/h2\u003e\n\u003ch3 id=\"ケース1電話番号のみでの認証システム\"\u003eケース1：電話番号のみでの認証システム\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 電話番号専用認証システムの実装\nclass PhoneOnlyAuth {\n  constructor() {\n    this.auth = getAuth();\n    this.setupRecaptcha();\n  }\n\n  setupRecaptcha() {\n    this.recaptchaVerifier = new RecaptchaVerifier(this.auth, 'recaptcha-container', {\n      'size': 'invisible', // 見えないreCAPTCHA\n      'callback': () =\u003e console.log('reCAPTCHA solved')\n    });\n  }\n\n  async signInWithPhone(phoneNumber) {\n    try {\n      const confirmationResult = await signInWithPhoneNumber(\n        this.auth,\n        phoneNumber,\n        this.recaptchaVerifier\n      );\n\n      // 認証結果を保存\n      this.pendingConfirmation = confirmationResult;\n      return true;\n    } catch (error) {\n      console.error('電話番号認証開始エラー:', error);\n      return false;\n    }\n  }\n\n  async confirmCode(code) {\n    try {\n      if (!this.pendingConfirmation) {\n        throw new Error('認証プロセスが開始されていません');\n      }\n\n      const result = await this.pendingConfirmation.confirm(code);\n      const user = result.user;\n\n      // 新規ユーザーの場合の追加処理\n      if (result.additionalUserInfo?.isNewUser) {\n        await this.setupNewUser(user);\n      }\n\n      return user;\n    } catch (error) {\n      console.error('認証コード確認エラー:', error);\n      return null;\n    }\n  }\n\n  async setupNewUser(user) {\n    // 新規ユーザーのプロフィール設定\n    try {\n      await user.updateProfile({\n        displayName: `User_${user.phoneNumber?.slice(-4) || 'Unknown'}`\n      });\n      console.log('新規ユーザーのセットアップ完了');\n    } catch (error) {\n      console.error('新規ユーザーセットアップエラー:', error);\n    }\n  }\n}\n\n// 使用例\nconst phoneAuth = new PhoneOnlyAuth();\n\n// サインインフロー\ndocument.getElementById('send-sms').addEventListener('click', async () =\u003e {\n  const phoneNumber = document.getElementById('phone-input').value;\n  const success = await phoneAuth.signInWithPhone(phoneNumber);\n  \n  if (success) {\n    document.getElementById('code-section').style.display = 'block';\n  }\n});\n\ndocument.getElementById('confirm-code').addEventListener('click', async () =\u003e {\n  const code = document.getElementById('code-input').value;\n  const user = await phoneAuth.confirmCode(code);\n  \n  if (user) {\n    window.location.href = '/dashboard';\n  }\n});\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"ケース2マルチプロバイダー認証システム\"\u003eケース2：マルチプロバイダー認証システム\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 複数の認証方法をサポートするシステム\nclass MultiProviderAuth {\n  constructor() {\n    this.auth = getAuth();\n    this.currentUser = null;\n    \n    // 認証状態の監視\n    this.auth.onAuthStateChanged((user) =\u003e {\n      this.currentUser = user;\n      this.updateUI();\n    });\n  }\n\n  // Googleサインイン\n  async signInWithGoogle() {\n    try {\n      const provider = new GoogleAuthProvider();\n      const result = await signInWithPopup(this.auth, provider);\n      return result.user;\n    } catch (error) {\n      console.error('Googleサインインエラー:', error);\n      return null;\n    }\n  }\n\n  // メール＋パスワードサインイン\n  async signInWithEmail(email, password) {\n    try {\n      const result = await signInWithEmailAndPassword(this.auth, email, password);\n      return result.user;\n    } catch (error) {\n      console.error('メールサインインエラー:', error);\n      return null;\n    }\n  }\n\n  // 既存アカウントに電話番号を追加\n  async addPhoneToExistingAccount(phoneNumber) {\n    if (!this.currentUser) {\n      throw new Error('先にサインインしてください');\n    }\n\n    try {\n      // 電話番号認証の開始\n      const confirmationResult = await signInWithPhoneNumber(\n        this.auth,\n        phoneNumber,\n        this.getRecaptchaVerifier()\n      );\n\n      return confirmationResult;\n    } catch (error) {\n      console.error('電話番号追加開始エラー:', error);\n      throw error;\n    }\n  }\n\n  async confirmPhoneLink(confirmationResult, code) {\n    try {\n      // Credentialを作成\n      const phoneCredential = PhoneAuthProvider.credential(\n        confirmationResult.verificationId,\n        code\n      );\n\n      // 既存アカウントにリンク\n      const result = await linkWithCredential(this.currentUser, phoneCredential);\n      return result.user;\n    } catch (error) {\n      console.error('電話番号リンクエラー:', error);\n      throw error;\n    }\n  }\n\n  // 認証プロバイダーの一覧を取得\n  getLinkedProviders() {\n    if (!this.currentUser) return [];\n    \n    return this.currentUser.providerData.map(provider =\u003e ({\n      providerId: provider.providerId,\n      email: provider.email,\n      phoneNumber: provider.phoneNumber\n    }));\n  }\n\n  getRecaptchaVerifier() {\n    if (!this.recaptchaVerifier) {\n      this.recaptchaVerifier = new RecaptchaVerifier(this.auth, 'recaptcha-container', {\n        'size': 'normal'\n      });\n    }\n    return this.recaptchaVerifier;\n  }\n\n  updateUI() {\n    const userInfo = document.getElementById('user-info');\n    const authButtons = document.getElementById('auth-buttons');\n    \n    if (this.currentUser) {\n      userInfo.innerHTML = `\n        \u0026#x3C;h3\u003eサインイン済み\u0026#x3C;/h3\u003e\n        \u0026#x3C;p\u003eUID: ${this.currentUser.uid}\u0026#x3C;/p\u003e\n        \u0026#x3C;p\u003eメール: ${this.currentUser.email || 'なし'}\u0026#x3C;/p\u003e\n        \u0026#x3C;p\u003e電話番号: ${this.currentUser.phoneNumber || 'なし'}\u0026#x3C;/p\u003e\n        \u0026#x3C;h4\u003e連携済みプロバイダー:\u0026#x3C;/h4\u003e\n        \u0026#x3C;ul\u003e\n          ${this.getLinkedProviders().map(provider =\u003e \n            `\u0026#x3C;li\u003e${provider.providerId}: ${provider.email || provider.phoneNumber || 'データなし'}\u0026#x3C;/li\u003e`\n          ).join('')}\n        \u0026#x3C;/ul\u003e\n      `;\n      authButtons.style.display = 'none';\n    } else {\n      userInfo.innerHTML = '\u0026#x3C;p\u003eサインインしていません\u0026#x3C;/p\u003e';\n      authButtons.style.display = 'block';\n    }\n  }\n}\n\n// 使用例\nconst multiAuth = new MultiProviderAuth();\n\n// Googleサインイン\ndocument.getElementById('google-signin').addEventListener('click', async () =\u003e {\n  await multiAuth.signInWithGoogle();\n});\n\n// 電話番号追加\ndocument.getElementById('add-phone').addEventListener('click', async () =\u003e {\n  const phoneNumber = prompt('電話番号を入力:');\n  \n  try {\n    const confirmationResult = await multiAuth.addPhoneToExistingAccount(phoneNumber);\n    const code = prompt('SMSコードを入力:');\n    \n    const user = await multiAuth.confirmPhoneLink(confirmationResult, code);\n    alert('電話番号の追加が完了しました！');\n  } catch (error) {\n    alert('エラーが発生しました: ' + error.message);\n  }\n});\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"テスト環境での開発\"\u003eテスト環境での開発\u003c/h2\u003e\n\u003ch3 id=\"テスト用電話番号の設定\"\u003eテスト用電話番号の設定\u003c/h3\u003e\n\u003cp\u003e開発中に実際のSMSを送信せずにテストを行うには、Firebase Consoleでテスト用電話番号を設定できます：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eFirebase Console \u003e Authentication \u003e Sign-in method\u003c/li\u003e\n\u003cli\u003e「電話」プロバイダーの設定画面で「テスト用の電話番号」を追加\u003c/li\u003e\n\u003cli\u003e電話番号と固定の認証コードを設定\u003c/li\u003e\n\u003c/ol\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// テスト用電話番号の例\nconst testPhoneNumbers = {\n  '+81901234567': '123456',  // テスト用番号：固定コード\n  '+81987654321': '654321'   // テスト用番号：固定コード\n};\n\n// 開発環境では、これらの番号を使用すると実際のSMS送信なしで認証をテストできます\nconst handleTestAuth = async () =\u003e {\n  const testPhone = '+81901234567';\n  const testCode = '123456';\n  \n  try {\n    const confirmationResult = await signInWithPhoneNumber(auth, testPhone, recaptchaVerifier);\n    const result = await confirmationResult.confirm(testCode);\n    console.log('テスト認証成功:', result.user);\n  } catch (error) {\n    console.error('テスト認証エラー:', error);\n  }\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"エラーハンドリングとベストプラクティス\"\u003eエラーハンドリングとベストプラクティス\u003c/h2\u003e\n\u003ch3 id=\"よくあるエラーとその対処法\"\u003eよくあるエラーとその対処法\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// 包括的なエラーハンドリングの実装\nconst handlePhoneAuthError = (error) =\u003e {\n  console.error('Firebase認証エラー:', error);\n  \n  switch (error.code) {\n    case 'auth/invalid-phone-number':\n      return '電話番号の形式が正しくありません。国番号を含めて入力してください。';\n      \n    case 'auth/missing-phone-number':\n      return '電話番号が入力されていません。';\n      \n    case 'auth/quota-exceeded':\n      return 'SMS送信の制限に達しました。しばらく時間をおいてからお試しください。';\n      \n    case 'auth/user-disabled':\n      return 'このアカウントは無効化されています。';\n      \n    case 'auth/invalid-verification-code':\n      return '認証コードが正しくありません。';\n      \n    case 'auth/code-expired':\n      return '認証コードの有効期限が切れています。もう一度SMS送信からやり直してください。';\n      \n    case 'auth/credential-already-in-use':\n      return 'この電話番号は既に他のアカウントで使用されています。';\n      \n    case 'auth/requires-recent-login':\n      return 'セキュリティのため、再度サインインしてください。';\n      \n    case 'auth/provider-already-linked':\n      return 'この認証プロバイダーは既にアカウントに連携されています。';\n      \n    case 'auth/captcha-check-failed':\n      return 'reCAPTCHAの認証に失敗しました。ページを再読み込みしてお試しください。';\n      \n    default:\n      return `認証エラーが発生しました: ${error.message}`;\n  }\n};\n\n// 使用例\nconst safePhoneAuth = async (phoneNumber, code) =\u003e {\n  try {\n    const confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, recaptchaVerifier);\n    const result = await confirmationResult.confirm(code);\n    return { success: true, user: result.user };\n  } catch (error) {\n    const userFriendlyMessage = handlePhoneAuthError(error);\n    return { success: false, error: userFriendlyMessage };\n  }\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"セキュリティ考慮事項\"\u003eセキュリティ考慮事項\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// セキュリティを考慮した実装例\nclass SecurePhoneAuth {\n  constructor() {\n    this.auth = getAuth();\n    this.maxRetries = 3;\n    this.retryCount = 0;\n    this.lastSMSSent = null;\n    this.rateLimitDelay = 60000; // 1分\n  }\n\n  // レート制限チェック\n  canSendSMS() {\n    if (!this.lastSMSSent) return true;\n    \n    const timeSinceLastSMS = Date.now() - this.lastSMSSent;\n    return timeSinceLastSMS \u003e= this.rateLimitDelay;\n  }\n\n  // 電話番号の形式チェック\n  validatePhoneNumber(phoneNumber) {\n    // 国際形式かチェック\n    const phoneRegex = /^\\+[1-9]\\d{1,14}$/;\n    return phoneRegex.test(phoneNumber);\n  }\n\n  async sendSMS(phoneNumber) {\n    // 入力値検証\n    if (!this.validatePhoneNumber(phoneNumber)) {\n      throw new Error('電話番号は国際形式（+81...）で入力してください');\n    }\n\n    // レート制限チェック\n    if (!this.canSendSMS()) {\n      const remainingTime = Math.ceil((this.rateLimitDelay - (Date.now() - this.lastSMSSent)) / 1000);\n      throw new Error(`SMS送信は${remainingTime}秒後に可能です`);\n    }\n\n    try {\n      const confirmationResult = await signInWithPhoneNumber(\n        this.auth,\n        phoneNumber,\n        this.getRecaptchaVerifier()\n      );\n\n      this.lastSMSSent = Date.now();\n      this.retryCount = 0;\n      \n      return confirmationResult;\n    } catch (error) {\n      console.error('SMS送信エラー:', error);\n      throw error;\n    }\n  }\n\n  async confirmCode(confirmationResult, code) {\n    // リトライ制限チェック\n    if (this.retryCount \u003e= this.maxRetries) {\n      throw new Error('認証試行回数の上限に達しました。最初からやり直してください。');\n    }\n\n    try {\n      const result = await confirmationResult.confirm(code);\n      this.retryCount = 0; // 成功時にリセット\n      return result;\n    } catch (error) {\n      this.retryCount++;\n      \n      if (error.code === 'auth/invalid-verification-code') {\n        const remainingTries = this.maxRetries - this.retryCount;\n        if (remainingTries \u003e 0) {\n          throw new Error(`認証コードが正しくありません。残り${remainingTries}回試行可能です。`);\n        }\n      }\n      \n      throw error;\n    }\n  }\n\n  getRecaptchaVerifier() {\n    if (!this.recaptchaVerifier) {\n      this.recaptchaVerifier = new RecaptchaVerifier(this.auth, 'recaptcha-container', {\n        'size': 'normal',\n        'callback': () =\u003e {\n          console.log('reCAPTCHA認証完了');\n        },\n        'expired-callback': () =\u003e {\n          console.log('reCAPTCHA期限切れ');\n          this.recaptchaVerifier = null; // 再作成を促す\n        }\n      });\n    }\n    return this.recaptchaVerifier;\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"パフォーマンス最適化\"\u003eパフォーマンス最適化\u003c/h2\u003e\n\u003ch3 id=\"recaptchaの効率的な管理\"\u003ereCAPTCHAの効率的な管理\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// reCAPTCHAを効率的に管理するクラス\nclass RecaptchaManager {\n  constructor(auth) {\n    this.auth = auth;\n    this.verifier = null;\n    this.isRendered = false;\n  }\n\n  getVerifier() {\n    if (!this.verifier || this.verifier.destroyed) {\n      this.createVerifier();\n    }\n    return this.verifier;\n  }\n\n  createVerifier() {\n    this.verifier = new RecaptchaVerifier(this.auth, 'recaptcha-container', {\n      'size': 'invisible', // UIを邪魔しない - UX改善のため\n      'callback': () =\u003e {\n        console.log('reCAPTCHA solved');\n      },\n      'expired-callback': () =\u003e {\n        console.log('reCAPTCHA expired, recreating...');\n        this.cleanup();\n        this.createVerifier();\n      }\n    });\n  }\n\n  cleanup() {\n    if (this.verifier) {\n      this.verifier.clear();\n      this.verifier = null;\n      this.isRendered = false;\n    }\n  }\n\n  // コンポーネントのアンマウント時に呼ぶ\n  destroy() {\n    this.cleanup();\n  }\n}\n\n// React での使用例\nconst useFirebasePhoneAuth = () =\u003e {\n  const [auth] = useState(() =\u003e getAuth());\n  const [recaptchaManager] = useState(() =\u003e new RecaptchaManager(auth));\n\n  useEffect(() =\u003e {\n    // コンポーネントのクリーンアップ\n    return () =\u003e {\n      recaptchaManager.destroy();\n    };\n  }, [recaptchaManager]);\n\n  const signInWithPhone = async (phoneNumber) =\u003e {\n    try {\n      const verifier = recaptchaManager.getVerifier();\n      const confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, verifier);\n      return confirmationResult;\n    } catch (error) {\n      console.error('Phone auth error:', error);\n      throw error;\n    }\n  };\n\n  return { signInWithPhone };\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"テストとデバッグ\"\u003eテストとデバッグ\u003c/h2\u003e\n\u003ch3 id=\"テスト環境での設定\"\u003eテスト環境での設定\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003e// テスト用の電話番号認証設定\nconst setupTestPhoneAuth = () =\u003e {\n  // テスト環境でのみ有効\n  if (process.env.NODE_ENV === 'test') {\n    const auth = getAuth();\n    \n    // テスト用の電話番号を設定\n    auth.settings.appVerificationDisabledForTesting = true;\n    \n    // テスト用電話番号の設定\n    const testPhoneNumbers = {\n      '+819012345678': '123456',\n      '+819087654321': '654321'\n    };\n\n    // Firebase Admin SDKでテスト用設定\n    Object.entries(testPhoneNumbers).forEach(([phoneNumber, code]) =\u003e {\n      auth.settings.setAutoRetrievalSMSCode(phoneNumber, code);\n    });\n  }\n};\n\n// Jest でのテスト例\ndescribe('Firebase電話番号認証', () =\u003e {\n  beforeEach(() =\u003e {\n    setupTestPhoneAuth();\n  });\n\n  test('電話番号認証が正常に動作する', async () =\u003e {\n    const auth = getAuth();\n    const testPhone = '+819012345678';\n    const testCode = '123456';\n\n    // モックreCAPTCHA\n    const mockRecaptcha = {\n      verify: jest.fn().mockResolvedValue('mock-token')\n    };\n\n    const confirmationResult = await signInWithPhoneNumber(auth, testPhone, mockRecaptcha);\n    const result = await confirmationResult.confirm(testCode);\n\n    expect(result.user).toBeDefined();\n    expect(result.user.phoneNumber).toBe(testPhone);\n  });\n});\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"まとめ\"\u003eまとめ\u003c/h2\u003e\n\u003ch3 id=\"重要なポイント\"\u003e重要なポイント\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003esignInWithPhoneNumber\u003c/code\u003e\u003c/strong\u003e: 新規サインインや既存ユーザーの認証に使用\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003elinkWithCredential\u003c/code\u003e\u003c/strong\u003e: 既存アカウントに電話番号認証を追加する際に使用\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003ePhoneAuthProvider.credential\u003c/code\u003e\u003c/strong\u003e: SMS認証コードからFirebase Credentialを作成する重要な橋渡し役\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eセキュリティ考慮\u003c/strong\u003e: レート制限、入力値検証、エラーハンドリングを適切に実装\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"ベストプラクティス\"\u003eベストプラクティス\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e✅ \u003cstrong\u003e適切なエラーハンドリング\u003c/strong\u003eを実装する\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003ereCAPTCHA\u003c/strong\u003eを適切に管理し、リークを防ぐ\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003eレート制限\u003c/strong\u003eを設けてスパムを防ぐ\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003e電話番号の形式検証\u003c/strong\u003eを行う\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003eテスト環境での設定\u003c/strong\u003eを適切に行う\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003e状態管理のベストプラクティス\u003c/strong\u003e：本番アプリケーションではグローバル変数ではなく、適切な状態管理を使用する\u003c/li\u003e\n\u003cli\u003e✅ \u003cstrong\u003eInvisible reCAPTCHA\u003c/strong\u003eの採用でUX改善を図る\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"次のステップ\"\u003e次のステップ\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e実際のアプリケーションに電話番号認証を実装してみる\u003c/li\u003e\n\u003cli\u003eマルチファクタ認証（MFA）の実装を検討する\u003c/li\u003e\n\u003cli\u003eFirebase Admin SDKを使った管理機能の実装を学ぶ\u003c/li\u003e\n\u003cli\u003eセキュリティルールの設定を学習する\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eFirebase電話番号認証をマスターして、より安全で使いやすいWebアプリケーションを作りましょう！\u003c/p\u003e\n\u003ch2 id=\"参考リンク\"\u003e参考リンク\u003c/h2\u003e\n\u003ch3 id=\"firebase公式ドキュメント\"\u003eFirebase公式ドキュメント\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/auth\"\u003eFirebase Authentication 公式ドキュメント\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/auth/web/phone-auth\"\u003eFirebase JavaScript SDK - 電話番号認証\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/web/setup\"\u003eFirebaseをJavaScriptプロジェクトに追加する\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/auth/web/account-linking\"\u003eユーザー アカウントのリンク\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/rules\"\u003eFirebase セキュリティルール\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/admin/setup\"\u003eFirebase Admin SDK\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"関連技術\"\u003e関連技術\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://developers.google.com/recaptcha/docs/v3\"\u003ereCAPTCHA v3 ドキュメント\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://en.wikipedia.org/wiki/E.164\"\u003e国際電話番号フォーマット (E.164)\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto py-10 px-4\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold mb-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-green-600\",\"children\":[\"#\",46]}],\" \",\"Firebase電話番号認証完全ガイド：signInWithPhoneNumberとlinkWithCredentialの使い方\"]}],[\"$\",\"ul\",null,{\"className\":\"list-none border-b border-gray-600 pb-4 mb-6\",\"children\":[[\"$\",\"li\",null,{\"className\":\"text-gray-500 text-sm\",\"children\":[\"作成日時: \",\"2025-09-10 01:14\"]}],[\"$\",\"li\",null,{\"className\":\"text-gray-500 text-sm\",\"children\":[\"更新日時: \",\"2025-09-10 01:24\"]}],[\"$\",\"li\",null,{\"className\":\"flex flex-wrap gap-2 mt-2\",\"children\":[[\"$\",\"span\",\"0\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Firebase\"}],[\"$\",\"span\",\"1\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Authentication\"}],[\"$\",\"span\",\"2\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"JavaScript\"}],[\"$\",\"span\",\"3\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Web Development\"}],[\"$\",\"span\",\"4\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Phone Auth\"}],[\"$\",\"span\",\"5\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Security\"}]]}]]}],[\"$\",\"nav\",null,{\"className\":\"mb-6 pb-4 border-b border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"article\",null,{\"className\":\"prose dark:prose-invert\",\"dangerouslySetInnerHTML\":{\"__html\":\"$13\"}}],[\"$\",\"$L14\",null,{}],[\"$\",\"nav\",null,{\"className\":\"mt-8 pt-4 border-t border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"$L15\",null,{}]]}]\n"])</script><script>self.__next_f.push([1,"d:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n8:null\n"])</script><script>self.__next_f.push([1,"11:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\nb:{\"metadata\":\"$11:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

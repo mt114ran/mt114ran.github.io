@@ -1,0 +1,322 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/19bdf9af4d1ae4d4.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-aa7deb192a774533.js"/><script src="/_next/static/chunks/4bd1b696-bc089769d60af88b.js" async=""></script><script src="/_next/static/chunks/1684-b369840b16e4c44b.js" async=""></script><script src="/_next/static/chunks/main-app-2ed07751e45c2a2f.js" async=""></script><script src="/_next/static/chunks/6874-6c1ddde525f3893c.js" async=""></script><script src="/_next/static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="icon" href="/favicon.png" type="image/png"/><title>Maita Tomoya Dev IO</title><meta name="description" content="米田智哉の技術ブログ。キャッチアップしたことをメモします。"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_5cfdac __variable_9a8899 antialiased"><div class="max-w-2xl mx-auto py-10 px-4"><h1 class="text-3xl font-bold mb-2"><span class="text-green-600">#</span> <!-- -->JWT（JSON Web Token）とJWT Signatureを分かりやすく解説</h1><ul class="list-none border-b border-gray-600 pb-4 mb-6"><li class="flex flex-wrap gap-2 mt-2"><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">JWT</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">認証</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">Firebase</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">セキュリティ</span><span class="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">トークン</span></li></ul><nav class="mb-6 pb-4 border-b border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav><article class="prose dark:prose-invert"><h2 id="はじめに">はじめに</h2>
+<p>Web開発において「JWT」という言葉をよく耳にしますが、その仕組みを正確に理解していますか？特に「Signature has expired」といったエラーに遭遇した時、なぜこのエラーが発生するのか理解できていると、適切な対処ができるようになります。</p>
+<p>本記事では、JWTの基本概念から、その中核を成すSignature（署名）の仕組みまで、初心者にも分かりやすく解説します。</p>
+<h2 id="jwtとは何か">JWTとは何か</h2>
+<p>**JWT（JSON Web Token）**は、当事者間で安全に情報を伝送するためのオープンスタンダードです。主にWebアプリケーションの認証・認可に使用されます。</p>
+<h3 id="jwtが生まれた背景">JWTが生まれた背景</h3>
+<p>従来のセッション認証では、サーバー側でセッション情報を保持する必要がありました。しかし、マイクロサービスアーキテクチャやSPA（Single Page Application）の普及により、<strong>ステートレス</strong>（状態を持たない）な認証方式が求められるようになりました。</p>
+<pre><code>従来のセッション認証の課題:
+- サーバー側でセッション情報を保持する必要
+- 複数のサーバー間でのセッション共有が困難
+- スケーラビリティの問題
+</code></pre>
+<p>JWTは、これらの課題を解決する認証方式として登場しました。</p>
+<h2 id="jwtの構造">JWTの構造</h2>
+<p>JWTは3つの部分がドット（.）で区切られた文字列です：</p>
+<pre><code>Header.Payload.Signature
+</code></pre>
+<h3 id="実際のjwtの例">実際のJWTの例</h3>
+<pre><code>eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2NzAyODA2MDc2In0.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcG9rZWNhLWFwcCIsImF1ZCI6InBva2VjYS1hcHAiLCJhdXRoX3RpbWUiOjE3MjU1ODk5ODQsInVzZXJfaWQiOiJhYmMxMjMiLCJzdWIiOiJhYmMxMjMiLCJpYXQiOjE3MjU1ODk5ODQsImV4cCI6MTcyNTU5MzU4NCwiZW1haWwiOiJ1c2VyQGV4YW1wbGUuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsidXNlckBleGFtcGxlLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.K1fVX2pQk3...（Signature部分は省略）
+</code></pre>
+<p>一見複雑に見えますが、各部分を分解してみましょう。</p>
+<p><strong>重要</strong>: HeaderとPayloadは、JSON形式のデータを<strong>Base64URLエンコード</strong>という方法で安全な文字列に変換してから結合されています。</p>
+<h3 id="1-headerヘッダー">1. Header（ヘッダー）</h3>
+<pre><code class="language-json">{
+  "alg": "RS256",
+  "kid": "1670280607656"
+}
+</code></pre>
+<p><strong>Headerの役割:</strong></p>
+<ul>
+<li><code>alg</code>: 署名に使用するアルゴリズム</li>
+<li><code>kid</code>: 署名に使用する鍵のID（複数の公開鍵を管理している場合に、どの鍵で検証すればよいかを特定するための識別子）</li>
+</ul>
+<h3 id="2-payloadペイロード">2. Payload（ペイロード）</h3>
+<pre><code class="language-json">{
+  "iss": "https://securetoken.google.com/pokeca-app",
+  "aud": "pokeca-app",
+  "auth_time": 1725589984,
+  "user_id": "abc123",
+  "sub": "abc123",
+  "iat": 1725589984,
+  "exp": 1725593584,
+  "email": "user@example.com",
+  "email_verified": true,
+  "firebase": {
+    "identities": {
+      "email": ["user@example.com"]
+    },
+    "sign_in_provider": "password"
+  }
+}
+</code></pre>
+<p><strong>重要なフィールド:</strong></p>
+<ul>
+<li><code>iss</code>: 発行者（Issuer）</li>
+<li><code>aud</code>: 対象者（Audience）</li>
+<li><code>exp</code>: 有効期限（Expiration）← <strong>これが今回の記事の重要ポイント</strong></li>
+<li><code>iat</code>: 発行時刻（Issued At）</li>
+<li><code>user_id</code>: ユーザーID</li>
+<li><code>sub</code>: 標準クレーム「Subject」（そのトークンが誰に関するものかを示す。Firebaseでは慣例的に<code>user_id</code>と同じ値）</li>
+</ul>
+<h3 id="3-signature署名">3. Signature（署名）</h3>
+<pre><code>K1fVX2pQk3...（実際の署名データ）
+</code></pre>
+<p><strong>Signatureの生成方法（例: RS256の場合）:</strong></p>
+<pre><code>RSASHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  privateKey
+)
+</code></pre>
+<p>署名は、エンコードされたHeaderとPayload、そして**秘密鍵（Private Key）<strong>を使って生成されます。この署名は、対になる</strong>公開鍵（Public Key）**でのみ検証できます。これにより、秘密鍵を持つ発行者だけが有効なJWTを生成できることが保証されます。</p>
+<h2 id="jwt-signatureの詳細解説">JWT Signatureの詳細解説</h2>
+<h3 id="signatureとは">Signatureとは</h3>
+<p>**Signature（署名）**は、JWTの真正性と完全性を保証するための暗号学的な仕組みです。</p>
+<h3 id="signatureの2つの重要な役割">Signatureの2つの重要な役割</h3>
+<h4 id="1-改ざん検知完全性の保証">1. 改ざん検知（完全性の保証）</h4>
+<pre><code>元のトークン: Header.Payload.ValidSignature
+改ざん後:     Header.ModifiedPayload.ValidSignature
+                    ↑                    ↑
+              内容が変更された      署名は元のまま
+</code></pre>
+<p>署名を検証することで、トークンが改ざんされていないことを確認できます。</p>
+<h4 id="2-発行者の認証">2. 発行者の認証</h4>
+<p>JWTは特定の秘密鍵（または秘密の文字列）で署名されます。その署名を対応する公開鍵（または同じ文字列）で検証することで、トークンが信頼できる発行者によって作成されたことを確認できます。</p>
+<h3 id="署名アルゴリズム-hs256とrs256の違い">署名アルゴリズム: HS256とRS256の違い</h3>
+<p>JWTの署名でよく使われるアルゴリズムにHS256とRS256があります。</p>
+<h4 id="hs256-hmac-using-sha-256">HS256 (HMAC using SHA-256)</h4>
+<ul>
+<li><strong>方式</strong>: 対称鍵暗号（共通鍵暗号）</li>
+<li><strong>仕組み</strong>: 署名の生成と検証に、同じ一つの「秘密鍵（secret）」を使用</li>
+<li><strong>ユースケース</strong>: サーバー内でのみJWTを完結させる場合など、署名と検証を行う主体が同じ場合に適している</li>
+</ul>
+<h4 id="rs256-rsa-signature-with-sha-256">RS256 (RSA Signature with SHA-256)</h4>
+<ul>
+<li><strong>方式</strong>: 非対称鍵暗号（公開鍵暗号）</li>
+<li><strong>仕組み</strong>: 署名の生成には「秘密鍵」、検証には「公開鍵」のペアを使用</li>
+<li><strong>ユースケース</strong>: Firebase認証のように、第三者が発行したJWTを自分のサーバーで安全に検証する場合に適している（本記事の例はこちら）</li>
+</ul>
+<h3 id="jwtの検証プロセス">JWTの検証プロセス</h3>
+<p>JWTライブラリ（例: Rubyの<code>jwt</code> gem）は、トークンを検証する際に以下のステップを内部的に実行します。</p>
+<ol>
+<li>
+<p><strong>署名の検証</strong>:</p>
+<ul>
+<li>HeaderとPayloadから署名を再計算</li>
+<li>再計算した署名と、トークンに含まれる署名が一致することを確認</li>
+<li>これにより、改ざんがないことと、正しい発行者であることが保証される</li>
+</ul>
+</li>
+<li>
+<p><strong>Payloadクレームの検証</strong>:</p>
+<ul>
+<li><code>exp</code>（有効期限）: 現在時刻が有効期限を過ぎていないか確認（<strong><code>JWT::ExpiredSignature</code>エラーはここで発生</strong>）</li>
+<li><code>nbf</code>（Not Before）: 現在時刻が、トークンが有効になる時刻を過ぎているか確認</li>
+<li><code>iss</code>（発行者）、<code>aud</code>（対象者）: 期待される値と一致するか確認</li>
+</ul>
+</li>
+</ol>
+<h3 id="signatureの検証プロセス詳細">Signatureの検証プロセス（詳細）</h3>
+<pre><code class="language-ruby"># Ruby（JWT gem）での検証例
+def verify_jwt(token)
+  begin
+    # JWT.decodeは以下を自動で行う:
+    # 1. Header、Payload、Signatureを分離
+    # 2. HeaderとPayloadから署名を再計算
+    # 3. 再計算した署名と付与された署名を比較
+    # 4. Payloadのexpフィールドと現在時刻を比較
+    decoded_token = JWT.decode(token, public_key, true, { algorithm: 'RS256' })
+    puts "トークンは有効です"
+  rescue JWT::ExpiredSignature => e
+    puts "トークンが期限切れです: #{e.message}"
+  rescue JWT::DecodeError => e  
+    puts "トークンが無効です: #{e.message}"
+  end
+end
+</code></pre>
+<h2 id="firebase-tokenでの実例">Firebase tokenでの実例</h2>
+<h3 id="firebase-tokenの特徴">Firebase tokenの特徴</h3>
+<p>Firebase tokenは<strong>1時間</strong>で自動的に期限切れになります。これは、セキュリティを向上させるための仕組みです。</p>
+<pre><code class="language-json">{
+  "iat": 1725589984,  // 発行時刻: 2025-09-06 09:13:04
+  "exp": 1725593584   // 有効期限: 2025-09-06 10:13:04（1時間後）
+}
+</code></pre>
+<h3 id="idトークンとリフレッシュトークンの役割分担">IDトークンとリフレッシュトークンの役割分担</h3>
+<p>Firebaseでは、認証時に2種類のトークンが発行されます：</p>
+<ul>
+<li>
+<p><strong>IDトークン</strong>（JWT形式、本記事で扱っているもの）</p>
+<ul>
+<li>有効期限が短い（1時間）</li>
+<li>ユーザーの認証情報を含む</li>
+<li>APIアクセス時の認証に使用</li>
+</ul>
+</li>
+<li>
+<p><strong>リフレッシュトークン</strong></p>
+<ul>
+<li>有効期限が長い（通常30日〜1年）</li>
+<li>IDトークンを再発行するためのトークン</li>
+<li>サーバーに安全に保存</li>
+</ul>
+</li>
+</ul>
+<p><strong>フロー</strong>: IDトークンの期限が切れたら、リフレッシュトークンを使って新しいIDトークンを取得する仕組みです。これにより、ユーザーは頻繁に再ログインする必要がありません。</p>
+<h3 id="期限切れエラーが発生する流れ">期限切れエラーが発生する流れ</h3>
+<pre><code>1. ユーザーがアプリにログイン
+   ↓
+2. Firebase tokenを取得（有効期限: 1時間）
+   ↓
+3. アプリを1時間以上使用続ける
+   ↓
+4. WebViewで画面を表示しようとする
+   ↓
+5. サーバー側でtoken検証
+   ↓
+6. JWT::ExpiredSignature エラーが発生！
+</code></pre>
+<h3 id="エラーハンドリングの重要性">エラーハンドリングの重要性</h3>
+<pre><code class="language-ruby"># 悪い例: すべてのエラーを一律に処理
+begin
+  JWT.decode(token, public_key, true)
+rescue StandardError => e
+  raise InternalServerError  # 500エラーが発生
+end
+
+# 良い例: エラーを適切に分類
+begin
+  JWT.decode(token, public_key, true)
+rescue JWT::ExpiredSignature => e
+  # 期限切れは正常な挙動なので、適切にハンドリング
+  handle_expired_token
+rescue JWT::DecodeError => e
+  # その他の無効tokenはエラーログ出力
+  logger.error("無効なtoken: #{e.message}")
+  handle_invalid_token
+end
+</code></pre>
+<h2 id="実開発でよくある問題と対策">実開発でよくある問題と対策</h2>
+<h3 id="問題1-期限切れtokenで500エラー">問題1: 期限切れtokenで500エラー</h3>
+<p><strong>原因:</strong>
+期限切れを例外的な状況として扱い、適切なエラーハンドリングをしていない。</p>
+<p><strong>対策:</strong></p>
+<pre><code class="language-ruby"># フォールバック戦略の実装
+def authenticate_user
+  # 1st priority: Firebase token認証
+  if firebase_token.present?
+    begin
+      user = verify_firebase_token(firebase_token)
+      return user if user
+    rescue JWT::ExpiredSignature
+      # 期限切れの場合は既存セッションにフォールバック
+      logger.info("Firebase tokenが期限切れのため、セッション認証にフォールバック")
+    rescue JWT::DecodeError => e
+      # 無効tokenの場合はログ出力
+      logger.warn("無効なFirebase token: #{e.message}")
+    end
+  end
+  
+  # 2nd priority: セッション認証
+  authenticate_by_session
+end
+</code></pre>
+<h3 id="問題2-token更新タイミングの制御">問題2: token更新タイミングの制御</h3>
+<p><strong>課題:</strong>
+tokenを更新するタイミングを適切に制御しないと、パフォーマンスの問題やエラーが発生する。</p>
+<p><strong>対策:</strong></p>
+<pre><code class="language-ruby">def token_needs_refresh?
+  return true if current_user.firebase_id_token.blank?
+  
+  begin
+    decoded = JWT.decode(current_user.firebase_id_token, nil, false)
+    exp_time = Time.zone.at(decoded[0]['exp'])
+    
+    # 5分前にリフレッシュ（バッファ時間を設ける）
+    exp_time &#x3C;= 5.minutes.from_now
+  rescue JWT::DecodeError
+    true  # デコードできない場合はリフレッシュが必要
+  end
+end
+</code></pre>
+<h3 id="問題3-デバッグの困難さ">問題3: デバッグの困難さ</h3>
+<p><strong>JWTのデバッグツール:</strong></p>
+<ol>
+<li>
+<p><strong><a href="https://jwt.io/">jwt.io</a></strong></p>
+<ul>
+<li>JWTの内容を視覚的に確認できるWebサイト</li>
+<li>Header、Payload、Signatureを分離して表示</li>
+</ul>
+</li>
+<li>
+<p><strong>コマンドライン での確認</strong></p>
+<pre><code class="language-bash"># Base64デコードでPayloadを確認
+# 注意: macOSでは base64 -D を使用する必要がある場合があります
+echo "eyJpc3MiOiJodHRwczov..." | base64 -d | jq .
+</code></pre>
+</li>
+<li>
+<p><strong>Railsコンソールでの確認</strong></p>
+<pre><code class="language-ruby"># 期限切れかどうかを確認
+token = "your_jwt_token_here"
+decoded = JWT.decode(token, nil, false)  # 署名検証なし
+exp_time = Time.zone.at(decoded[0]['exp'])
+puts "有効期限: #{exp_time}"
+puts "期限切れ: #{exp_time &#x3C; Time.current}"
+</code></pre>
+</li>
+</ol>
+<h2 id="まとめ">まとめ</h2>
+<h3 id="jwtの重要ポイント">JWTの重要ポイント</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>要素</th><th>説明</th><th>重要性</th></tr></thead><tbody><tr><td><strong>Header</strong></td><td>アルゴリズム情報</td><td>署名方式を定義</td></tr><tr><td><strong>Payload</strong></td><td>実際のデータ</td><td>ユーザー情報や有効期限を含む</td></tr><tr><td><strong>Signature</strong></td><td>真正性の保証</td><td>改ざん検知と発行者確認</td></tr></tbody></table>
+<h3 id="signature-expired-への対処法">Signature expired への対処法</h3>
+<ol>
+<li><strong>期限切れを正常な挙動として扱う</strong></li>
+<li><strong>適切なエラーハンドリングを実装</strong></li>
+<li><strong>フォールバック戦略を用意</strong></li>
+<li><strong>token更新タイミングを最適化</strong></li>
+</ol>
+<h3 id="セキュリティのベストプラクティス">セキュリティのベストプラクティス</h3>
+<ul>
+<li><strong>短い有効期限</strong>: 1時間程度が推奨</li>
+<li><strong>適切なアルゴリズム</strong>: RS256やHS256</li>
+<li><strong>秘密鍵の管理</strong>: 環境変数での管理</li>
+<li><strong>HTTPSの使用</strong>: token送信時は必須</li>
+<li><strong>アルゴリズム明示</strong>: 検証時にアルゴリズムを明示的に指定（<code>alg: none</code>攻撃対策）</li>
+<li><strong>JWTの保存場所</strong>: XSS対策でHttpOnly Cookie推奨、CSRF対策も併用</li>
+</ul>
+<p>JWTとSignatureの仕組みを理解することで、認証エラーの適切な対処ができるようになり、より堅牢なWebアプリケーションを構築できます。</p>
+<h2 id="参考リンク">参考リンク</h2>
+<ul>
+<li><a href="https://tools.ietf.org/html/rfc7519">RFC 7519 - JSON Web Token (JWT)</a></li>
+<li><a href="https://jwt.io/">JWT.io - JWT Debugger</a></li>
+<li><a href="https://firebase.google.com/docs/auth">Firebase Authentication Documentation</a></li>
+<li><a href="https://github.com/jwt/ruby-jwt">Ruby JWT gem</a></li>
+</ul></article><nav class="mt-8 pt-4 border-t border-gray-700 flex justify-between"><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/">← ホームへ</a><a class="text-blue-400 hover:text-blue-300 hover:underline" href="/blog/">記事一覧へ →</a></nav></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-aa7deb192a774533.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[87555,[],\"\"]\n3:I[31295,[],\"\"]\n5:I[59665,[],\"MetadataBoundary\"]\n7:I[59665,[],\"OutletBoundary\"]\na:I[74911,[],\"AsyncMetadataOutlet\"]\nc:I[59665,[],\"ViewportBoundary\"]\ne:I[26614,[],\"\"]\n:HL[\"/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"KZrMisSdXyu7FDjuS9HOy\",\"p\":\"\",\"c\":[\"\",\"blog\",\"understanding-jwt-and-jwt-signature\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"understanding-jwt-and-jwt-signature\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/19bdf9af4d1ae4d4.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.png\",\"type\":\"image/png\"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_5cfdac __variable_9a8899 antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"blog\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"understanding-jwt-and-jwt-signature\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",[\"$\",\"$L5\",null,{\"children\":\"$L6\"}],null,[\"$\",\"$L7\",null,{\"children\":[\"$L8\",\"$L9\",[\"$\",\"$La\",null,{\"promise\":\"$@b\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"0OvFqP76hn2ujnyD-ERzT\",{\"children\":[[\"$\",\"$Lc\",null,{\"children\":\"$Ld\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$e\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"f:\"$Sreact.suspense\"\n10:I[74911,[],\"AsyncMetadata\"]\n6:[\"$\",\"$f\",null,{\"fallback\":null,\"children\":[\"$\",\"$L10\",null,{\"promise\":\"$@11\"}]}]\n"])</script><script>self.__next_f.push([1,"9:null\n"])</script><script>self.__next_f.push([1,"12:I[6874,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"\"]\n14:I[31203,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n15:I[4197,[\"6874\",\"static/chunks/6874-6c1ddde525f3893c.js\",\"5953\",\"static/chunks/app/blog/%5Bslug%5D/page-26397bcee018c1a3.js\"],\"default\"]\n13:T4020,"])</script><script>self.__next_f.push([1,"\u003ch2 id=\"はじめに\"\u003eはじめに\u003c/h2\u003e\n\u003cp\u003eWeb開発において「JWT」という言葉をよく耳にしますが、その仕組みを正確に理解していますか？特に「Signature has expired」といったエラーに遭遇した時、なぜこのエラーが発生するのか理解できていると、適切な対処ができるようになります。\u003c/p\u003e\n\u003cp\u003e本記事では、JWTの基本概念から、その中核を成すSignature（署名）の仕組みまで、初心者にも分かりやすく解説します。\u003c/p\u003e\n\u003ch2 id=\"jwtとは何か\"\u003eJWTとは何か\u003c/h2\u003e\n\u003cp\u003e**JWT（JSON Web Token）**は、当事者間で安全に情報を伝送するためのオープンスタンダードです。主にWebアプリケーションの認証・認可に使用されます。\u003c/p\u003e\n\u003ch3 id=\"jwtが生まれた背景\"\u003eJWTが生まれた背景\u003c/h3\u003e\n\u003cp\u003e従来のセッション認証では、サーバー側でセッション情報を保持する必要がありました。しかし、マイクロサービスアーキテクチャやSPA（Single Page Application）の普及により、\u003cstrong\u003eステートレス\u003c/strong\u003e（状態を持たない）な認証方式が求められるようになりました。\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e従来のセッション認証の課題:\n- サーバー側でセッション情報を保持する必要\n- 複数のサーバー間でのセッション共有が困難\n- スケーラビリティの問題\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eJWTは、これらの課題を解決する認証方式として登場しました。\u003c/p\u003e\n\u003ch2 id=\"jwtの構造\"\u003eJWTの構造\u003c/h2\u003e\n\u003cp\u003eJWTは3つの部分がドット（.）で区切られた文字列です：\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eHeader.Payload.Signature\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"実際のjwtの例\"\u003e実際のJWTの例\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003eeyJhbGciOiJSUzI1NiIsImtpZCI6IjE2NzAyODA2MDc2In0.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcG9rZWNhLWFwcCIsImF1ZCI6InBva2VjYS1hcHAiLCJhdXRoX3RpbWUiOjE3MjU1ODk5ODQsInVzZXJfaWQiOiJhYmMxMjMiLCJzdWIiOiJhYmMxMjMiLCJpYXQiOjE3MjU1ODk5ODQsImV4cCI6MTcyNTU5MzU4NCwiZW1haWwiOiJ1c2VyQGV4YW1wbGUuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsidXNlckBleGFtcGxlLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.K1fVX2pQk3...（Signature部分は省略）\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e一見複雑に見えますが、各部分を分解してみましょう。\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e重要\u003c/strong\u003e: HeaderとPayloadは、JSON形式のデータを\u003cstrong\u003eBase64URLエンコード\u003c/strong\u003eという方法で安全な文字列に変換してから結合されています。\u003c/p\u003e\n\u003ch3 id=\"1-headerヘッダー\"\u003e1. Header（ヘッダー）\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"alg\": \"RS256\",\n  \"kid\": \"1670280607656\"\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003eHeaderの役割:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003ealg\u003c/code\u003e: 署名に使用するアルゴリズム\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003ekid\u003c/code\u003e: 署名に使用する鍵のID（複数の公開鍵を管理している場合に、どの鍵で検証すればよいかを特定するための識別子）\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"2-payloadペイロード\"\u003e2. Payload（ペイロード）\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"iss\": \"https://securetoken.google.com/pokeca-app\",\n  \"aud\": \"pokeca-app\",\n  \"auth_time\": 1725589984,\n  \"user_id\": \"abc123\",\n  \"sub\": \"abc123\",\n  \"iat\": 1725589984,\n  \"exp\": 1725593584,\n  \"email\": \"user@example.com\",\n  \"email_verified\": true,\n  \"firebase\": {\n    \"identities\": {\n      \"email\": [\"user@example.com\"]\n    },\n    \"sign_in_provider\": \"password\"\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003e重要なフィールド:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eiss\u003c/code\u003e: 発行者（Issuer）\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eaud\u003c/code\u003e: 対象者（Audience）\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eexp\u003c/code\u003e: 有効期限（Expiration）← \u003cstrong\u003eこれが今回の記事の重要ポイント\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eiat\u003c/code\u003e: 発行時刻（Issued At）\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003euser_id\u003c/code\u003e: ユーザーID\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003esub\u003c/code\u003e: 標準クレーム「Subject」（そのトークンが誰に関するものかを示す。Firebaseでは慣例的に\u003ccode\u003euser_id\u003c/code\u003eと同じ値）\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"3-signature署名\"\u003e3. Signature（署名）\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003eK1fVX2pQk3...（実際の署名データ）\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003eSignatureの生成方法（例: RS256の場合）:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eRSASHA256(\n  base64UrlEncode(header) + \".\" +\n  base64UrlEncode(payload),\n  privateKey\n)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e署名は、エンコードされたHeaderとPayload、そして**秘密鍵（Private Key）\u003cstrong\u003eを使って生成されます。この署名は、対になる\u003c/strong\u003e公開鍵（Public Key）**でのみ検証できます。これにより、秘密鍵を持つ発行者だけが有効なJWTを生成できることが保証されます。\u003c/p\u003e\n\u003ch2 id=\"jwt-signatureの詳細解説\"\u003eJWT Signatureの詳細解説\u003c/h2\u003e\n\u003ch3 id=\"signatureとは\"\u003eSignatureとは\u003c/h3\u003e\n\u003cp\u003e**Signature（署名）**は、JWTの真正性と完全性を保証するための暗号学的な仕組みです。\u003c/p\u003e\n\u003ch3 id=\"signatureの2つの重要な役割\"\u003eSignatureの2つの重要な役割\u003c/h3\u003e\n\u003ch4 id=\"1-改ざん検知完全性の保証\"\u003e1. 改ざん検知（完全性の保証）\u003c/h4\u003e\n\u003cpre\u003e\u003ccode\u003e元のトークン: Header.Payload.ValidSignature\n改ざん後:     Header.ModifiedPayload.ValidSignature\n                    ↑                    ↑\n              内容が変更された      署名は元のまま\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e署名を検証することで、トークンが改ざんされていないことを確認できます。\u003c/p\u003e\n\u003ch4 id=\"2-発行者の認証\"\u003e2. 発行者の認証\u003c/h4\u003e\n\u003cp\u003eJWTは特定の秘密鍵（または秘密の文字列）で署名されます。その署名を対応する公開鍵（または同じ文字列）で検証することで、トークンが信頼できる発行者によって作成されたことを確認できます。\u003c/p\u003e\n\u003ch3 id=\"署名アルゴリズム-hs256とrs256の違い\"\u003e署名アルゴリズム: HS256とRS256の違い\u003c/h3\u003e\n\u003cp\u003eJWTの署名でよく使われるアルゴリズムにHS256とRS256があります。\u003c/p\u003e\n\u003ch4 id=\"hs256-hmac-using-sha-256\"\u003eHS256 (HMAC using SHA-256)\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e方式\u003c/strong\u003e: 対称鍵暗号（共通鍵暗号）\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e仕組み\u003c/strong\u003e: 署名の生成と検証に、同じ一つの「秘密鍵（secret）」を使用\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eユースケース\u003c/strong\u003e: サーバー内でのみJWTを完結させる場合など、署名と検証を行う主体が同じ場合に適している\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"rs256-rsa-signature-with-sha-256\"\u003eRS256 (RSA Signature with SHA-256)\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e方式\u003c/strong\u003e: 非対称鍵暗号（公開鍵暗号）\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e仕組み\u003c/strong\u003e: 署名の生成には「秘密鍵」、検証には「公開鍵」のペアを使用\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eユースケース\u003c/strong\u003e: Firebase認証のように、第三者が発行したJWTを自分のサーバーで安全に検証する場合に適している（本記事の例はこちら）\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"jwtの検証プロセス\"\u003eJWTの検証プロセス\u003c/h3\u003e\n\u003cp\u003eJWTライブラリ（例: Rubyの\u003ccode\u003ejwt\u003c/code\u003e gem）は、トークンを検証する際に以下のステップを内部的に実行します。\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e署名の検証\u003c/strong\u003e:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eHeaderとPayloadから署名を再計算\u003c/li\u003e\n\u003cli\u003e再計算した署名と、トークンに含まれる署名が一致することを確認\u003c/li\u003e\n\u003cli\u003eこれにより、改ざんがないことと、正しい発行者であることが保証される\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003ePayloadクレームの検証\u003c/strong\u003e:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eexp\u003c/code\u003e（有効期限）: 現在時刻が有効期限を過ぎていないか確認（\u003cstrong\u003e\u003ccode\u003eJWT::ExpiredSignature\u003c/code\u003eエラーはここで発生\u003c/strong\u003e）\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003enbf\u003c/code\u003e（Not Before）: 現在時刻が、トークンが有効になる時刻を過ぎているか確認\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eiss\u003c/code\u003e（発行者）、\u003ccode\u003eaud\u003c/code\u003e（対象者）: 期待される値と一致するか確認\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"signatureの検証プロセス詳細\"\u003eSignatureの検証プロセス（詳細）\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# Ruby（JWT gem）での検証例\ndef verify_jwt(token)\n  begin\n    # JWT.decodeは以下を自動で行う:\n    # 1. Header、Payload、Signatureを分離\n    # 2. HeaderとPayloadから署名を再計算\n    # 3. 再計算した署名と付与された署名を比較\n    # 4. Payloadのexpフィールドと現在時刻を比較\n    decoded_token = JWT.decode(token, public_key, true, { algorithm: 'RS256' })\n    puts \"トークンは有効です\"\n  rescue JWT::ExpiredSignature =\u003e e\n    puts \"トークンが期限切れです: #{e.message}\"\n  rescue JWT::DecodeError =\u003e e  \n    puts \"トークンが無効です: #{e.message}\"\n  end\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"firebase-tokenでの実例\"\u003eFirebase tokenでの実例\u003c/h2\u003e\n\u003ch3 id=\"firebase-tokenの特徴\"\u003eFirebase tokenの特徴\u003c/h3\u003e\n\u003cp\u003eFirebase tokenは\u003cstrong\u003e1時間\u003c/strong\u003eで自動的に期限切れになります。これは、セキュリティを向上させるための仕組みです。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"iat\": 1725589984,  // 発行時刻: 2025-09-06 09:13:04\n  \"exp\": 1725593584   // 有効期限: 2025-09-06 10:13:04（1時間後）\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"idトークンとリフレッシュトークンの役割分担\"\u003eIDトークンとリフレッシュトークンの役割分担\u003c/h3\u003e\n\u003cp\u003eFirebaseでは、認証時に2種類のトークンが発行されます：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eIDトークン\u003c/strong\u003e（JWT形式、本記事で扱っているもの）\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e有効期限が短い（1時間）\u003c/li\u003e\n\u003cli\u003eユーザーの認証情報を含む\u003c/li\u003e\n\u003cli\u003eAPIアクセス時の認証に使用\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eリフレッシュトークン\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e有効期限が長い（通常30日〜1年）\u003c/li\u003e\n\u003cli\u003eIDトークンを再発行するためのトークン\u003c/li\u003e\n\u003cli\u003eサーバーに安全に保存\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003eフロー\u003c/strong\u003e: IDトークンの期限が切れたら、リフレッシュトークンを使って新しいIDトークンを取得する仕組みです。これにより、ユーザーは頻繁に再ログインする必要がありません。\u003c/p\u003e\n\u003ch3 id=\"期限切れエラーが発生する流れ\"\u003e期限切れエラーが発生する流れ\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003e1. ユーザーがアプリにログイン\n   ↓\n2. Firebase tokenを取得（有効期限: 1時間）\n   ↓\n3. アプリを1時間以上使用続ける\n   ↓\n4. WebViewで画面を表示しようとする\n   ↓\n5. サーバー側でtoken検証\n   ↓\n6. JWT::ExpiredSignature エラーが発生！\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"エラーハンドリングの重要性\"\u003eエラーハンドリングの重要性\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# 悪い例: すべてのエラーを一律に処理\nbegin\n  JWT.decode(token, public_key, true)\nrescue StandardError =\u003e e\n  raise InternalServerError  # 500エラーが発生\nend\n\n# 良い例: エラーを適切に分類\nbegin\n  JWT.decode(token, public_key, true)\nrescue JWT::ExpiredSignature =\u003e e\n  # 期限切れは正常な挙動なので、適切にハンドリング\n  handle_expired_token\nrescue JWT::DecodeError =\u003e e\n  # その他の無効tokenはエラーログ出力\n  logger.error(\"無効なtoken: #{e.message}\")\n  handle_invalid_token\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"実開発でよくある問題と対策\"\u003e実開発でよくある問題と対策\u003c/h2\u003e\n\u003ch3 id=\"問題1-期限切れtokenで500エラー\"\u003e問題1: 期限切れtokenで500エラー\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e原因:\u003c/strong\u003e\n期限切れを例外的な状況として扱い、適切なエラーハンドリングをしていない。\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e対策:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# フォールバック戦略の実装\ndef authenticate_user\n  # 1st priority: Firebase token認証\n  if firebase_token.present?\n    begin\n      user = verify_firebase_token(firebase_token)\n      return user if user\n    rescue JWT::ExpiredSignature\n      # 期限切れの場合は既存セッションにフォールバック\n      logger.info(\"Firebase tokenが期限切れのため、セッション認証にフォールバック\")\n    rescue JWT::DecodeError =\u003e e\n      # 無効tokenの場合はログ出力\n      logger.warn(\"無効なFirebase token: #{e.message}\")\n    end\n  end\n  \n  # 2nd priority: セッション認証\n  authenticate_by_session\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"問題2-token更新タイミングの制御\"\u003e問題2: token更新タイミングの制御\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e課題:\u003c/strong\u003e\ntokenを更新するタイミングを適切に制御しないと、パフォーマンスの問題やエラーが発生する。\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e対策:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003edef token_needs_refresh?\n  return true if current_user.firebase_id_token.blank?\n  \n  begin\n    decoded = JWT.decode(current_user.firebase_id_token, nil, false)\n    exp_time = Time.zone.at(decoded[0]['exp'])\n    \n    # 5分前にリフレッシュ（バッファ時間を設ける）\n    exp_time \u0026#x3C;= 5.minutes.from_now\n  rescue JWT::DecodeError\n    true  # デコードできない場合はリフレッシュが必要\n  end\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"問題3-デバッグの困難さ\"\u003e問題3: デバッグの困難さ\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eJWTのデバッグツール:\u003c/strong\u003e\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ca href=\"https://jwt.io/\"\u003ejwt.io\u003c/a\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eJWTの内容を視覚的に確認できるWebサイト\u003c/li\u003e\n\u003cli\u003eHeader、Payload、Signatureを分離して表示\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eコマンドライン での確認\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e# Base64デコードでPayloadを確認\n# 注意: macOSでは base64 -D を使用する必要がある場合があります\necho \"eyJpc3MiOiJodHRwczov...\" | base64 -d | jq .\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eRailsコンソールでの確認\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-ruby\"\u003e# 期限切れかどうかを確認\ntoken = \"your_jwt_token_here\"\ndecoded = JWT.decode(token, nil, false)  # 署名検証なし\nexp_time = Time.zone.at(decoded[0]['exp'])\nputs \"有効期限: #{exp_time}\"\nputs \"期限切れ: #{exp_time \u0026#x3C; Time.current}\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch2 id=\"まとめ\"\u003eまとめ\u003c/h2\u003e\n\u003ch3 id=\"jwtの重要ポイント\"\u003eJWTの重要ポイント\u003c/h3\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003e要素\u003c/th\u003e\u003cth\u003e説明\u003c/th\u003e\u003cth\u003e重要性\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003eHeader\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003eアルゴリズム情報\u003c/td\u003e\u003ctd\u003e署名方式を定義\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003ePayload\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003e実際のデータ\u003c/td\u003e\u003ctd\u003eユーザー情報や有効期限を含む\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003eSignature\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003e真正性の保証\u003c/td\u003e\u003ctd\u003e改ざん検知と発行者確認\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\n\u003ch3 id=\"signature-expired-への対処法\"\u003eSignature expired への対処法\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003e期限切れを正常な挙動として扱う\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e適切なエラーハンドリングを実装\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eフォールバック戦略を用意\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003etoken更新タイミングを最適化\u003c/strong\u003e\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"セキュリティのベストプラクティス\"\u003eセキュリティのベストプラクティス\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e短い有効期限\u003c/strong\u003e: 1時間程度が推奨\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e適切なアルゴリズム\u003c/strong\u003e: RS256やHS256\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e秘密鍵の管理\u003c/strong\u003e: 環境変数での管理\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eHTTPSの使用\u003c/strong\u003e: token送信時は必須\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eアルゴリズム明示\u003c/strong\u003e: 検証時にアルゴリズムを明示的に指定（\u003ccode\u003ealg: none\u003c/code\u003e攻撃対策）\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eJWTの保存場所\u003c/strong\u003e: XSS対策でHttpOnly Cookie推奨、CSRF対策も併用\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eJWTとSignatureの仕組みを理解することで、認証エラーの適切な対処ができるようになり、より堅牢なWebアプリケーションを構築できます。\u003c/p\u003e\n\u003ch2 id=\"参考リンク\"\u003e参考リンク\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://tools.ietf.org/html/rfc7519\"\u003eRFC 7519 - JSON Web Token (JWT)\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://jwt.io/\"\u003eJWT.io - JWT Debugger\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://firebase.google.com/docs/auth\"\u003eFirebase Authentication Documentation\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://github.com/jwt/ruby-jwt\"\u003eRuby JWT gem\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"max-w-2xl mx-auto py-10 px-4\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold mb-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-green-600\",\"children\":[\"#\",\"$undefined\"]}],\" \",\"JWT（JSON Web Token）とJWT Signatureを分かりやすく解説\"]}],[\"$\",\"ul\",null,{\"className\":\"list-none border-b border-gray-600 pb-4 mb-6\",\"children\":[\"$undefined\",\"$undefined\",[\"$\",\"li\",null,{\"className\":\"flex flex-wrap gap-2 mt-2\",\"children\":[[\"$\",\"span\",\"0\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"JWT\"}],[\"$\",\"span\",\"1\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"認証\"}],[\"$\",\"span\",\"2\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"Firebase\"}],[\"$\",\"span\",\"3\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"セキュリティ\"}],[\"$\",\"span\",\"4\",{\"className\":\"px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs\",\"children\":\"トークン\"}]]}]]}],[\"$\",\"nav\",null,{\"className\":\"mb-6 pb-4 border-b border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"article\",null,{\"className\":\"prose dark:prose-invert\",\"dangerouslySetInnerHTML\":{\"__html\":\"$13\"}}],[\"$\",\"$L14\",null,{}],[\"$\",\"nav\",null,{\"className\":\"mt-8 pt-4 border-t border-gray-700 flex justify-between\",\"children\":[[\"$\",\"$L12\",null,{\"href\":\"/\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"← ホームへ\"}],[\"$\",\"$L12\",null,{\"href\":\"/blog\",\"className\":\"text-blue-400 hover:text-blue-300 hover:underline\",\"children\":\"記事一覧へ →\"}]]}],[\"$\",\"$L15\",null,{}]]}]\n"])</script><script>self.__next_f.push([1,"d:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n8:null\n"])</script><script>self.__next_f.push([1,"11:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Maita Tomoya Dev IO\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"米田智哉の技術ブログ。キャッチアップしたことをメモします。\"}]],\"error\":null,\"digest\":\"$undefined\"}\nb:{\"metadata\":\"$11:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>
